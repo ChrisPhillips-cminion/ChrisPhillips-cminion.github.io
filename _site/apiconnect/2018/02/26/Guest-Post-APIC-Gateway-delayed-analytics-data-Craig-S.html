@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Guest Post: APIC Gateway delayed analytics data [Craig S] | Chris Phillips’ Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Guest Post: APIC Gateway delayed analytics data [Craig S]" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Guest Post: APIC Gateway delayed analytics data [Craig S]" />
+<meta property="og:description" content="Guest Post: APIC Gateway delayed analytics data [Craig S]" />
+<link rel="canonical" href="/apiconnect/2018/02/26/Guest-Post-APIC-Gateway-delayed-analytics-data-Craig-S.html" />
+<meta property="og:url" content="/apiconnect/2018/02/26/Guest-Post-APIC-Gateway-delayed-analytics-data-Craig-S.html" />
+<meta property="og:site_name" content="Chris Phillips’ Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-26T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Guest Post: APIC Gateway delayed analytics data [Craig S]","@type":"BlogPosting","url":"/apiconnect/2018/02/26/Guest-Post-APIC-Gateway-delayed-analytics-data-Craig-S.html","headline":"Guest Post: APIC Gateway delayed analytics data [Craig S]","dateModified":"2018-02-26T00:00:00+00:00","datePublished":"2018-02-26T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/apiconnect/2018/02/26/Guest-Post-APIC-Gateway-delayed-analytics-data-Craig-S.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Chris Phillips' Blog" /><!---->
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Phillips&#39; Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Guest Post: APIC Gateway delayed analytics data \[Craig S\]</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-02-26T00:00:00+00:00" itemprop="datePublished">Feb 26, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="guest-post-apic-gateway-delayed-analytics-data-craig-s">Guest Post: APIC Gateway delayed analytics data [Craig S]</h1>
+
+<p>So this post is stolen with permission from Craig Simmons IBM
+(https://www.linkedin.com/in/craig-simmons-1b67436b/)</p>
+
+<hr />
+
+<h3 id="guest-post-apic-gateway-delayed-analytics-data-craigs">Guest Post: APIC Gateway delayed analytics data [Craig S]</h3>
+
+<p>So this post is stolen with permission from Craig Simmons IBM
+(<a href="https://www.linkedin.com/in/craig-simmons-1b67436b/">https://www.linkedin.com/in/craig-simmons-1b67436b/</a>)</p>
+
+<p>So we have several DR’s amongst us (DR = Dashboard Refresher). These
+good folk are refreshing their charts every 30 seconds or thereabouts.
+As a result it’s come to their attention yesterday morning that for
+several hours no data was being delivered to their dashboards. Though
+initially they thought this data was appearing later it appears the data
+was lost. So we need to troubleshoot what’s going on, particularly as
+the same thing happened the following day during a similar window, but
+with differing start and end times.</p>
+
+<p>So a PMR was raised (02305,001,866) and the logs sent for analysis. In
+the meantime (thanks to Chris Phillips) I invoked a rest call against
+the catalog. This call pulls back ‘recent’ data from the Kibana database
+in the APIC Management cluster. I’m guessing it returns x number of
+recent rows. It doesn’t for obvious reasons, attempt to boil the ocean
+and return everything.</p>
+
+<p>The call takes on the following syntax: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://&lt;APIMF5&gt;/v1/orgs//environments//events
+</code></pre></div></div>
+
+<p>where</p>
+
+<p>&lt;APIMF5&gt; is the loadbalancer in front of the APIC Management cluster.
+Of you’re not using n LB, go straight to the management host</p>
+
+<p>= the organisation short name</p>
+
+<p>= the catalog name (environments are APIC ‘old speak’ for
+catalogs</p>
+
+<p>A quick way to obtain these ID’s to flesh out your call is to: -</p>
+
+<p>Log in to the APIM Manager, select your organization top right, hit the
+‘menu’ item top left, Dashboard, and click on the ‘paperclip’ icon
+underneath the appropriate catalog. This returns the catalog identifier,
+something like: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apic config:set catalog=apic-catalog://apic-mgt.service.group/orgs/jobloggscompany-prd/catalogs/prod1
+</code></pre></div></div>
+
+<p>So the rest string derived from this info would be: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://&lt;APIMF5&gt;/v1/orgs/jobloggscompany-prd/environments/prod1/events
+</code></pre></div></div>
+
+<p>You’ll then be asked for credentials. After this, your data is returned
+as a JSON object. It will look something like this (some data obfuscated
+for obvious reasons): -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/consent-preferences”,”spaceId”:””,”spaceName”:””,”timeToServeRequest”:26,”bytesSent”:2,”requestProtocol”:”https”,”requestMethod”:”GET”,”uriPath”:”/
+&lt;SNIP&gt;
+</code></pre></div></div>
+
+<p>So what does this tell us?</p>
+
+<p>1. The database is up</p>
+
+<p>2. Non corrupted and readable data is being returned</p>
+
+<p>3. A recent timestamp of data written to the database (14:42 in this
+case)</p>
+
+<p>So we can compare this with the dashboards. Do they reflect the same
+date/time? Do they reflect a similar amount of total calls (in this case
+1660929)</p>
+
+<p>If that’s NOT the case, we have some form of problem at the dashboards.
+i.e. they are not reflecting the content of the database. If the two
+concur, it’s a case of troubleshooting why the data is not being pushed
+from the Gateway in a timely fashion….</p>
+
+<p>Update 21/02/18</p>
+
+<p>I witnessed a ‘live’ failure via the rest call above. The dashboard
+showed a similar response. So we can determine that the problem lay
+somewhere between the gateway and the management cluster, it is NOT a
+case of the dashboards not reflecting the database content.</p>
+
+<p>The details were: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1552:53.588 — last analytics data received
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1643 data received timestamped 15:52:55.186
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1646 data received timestamped 15:52:55.875
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1649 data received timestamped 15:52:56.746
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1659 — data now arriving ‘real time’ but ‘hole’ since last transmission at 1552:56.746
+</code></pre></div></div>
+
+<p>So now we have a failure window we can obtain the APIC and DataPower
+logs</p>
+
+<p>So APIC first. We are going to look at the following file: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/log/apim_rproxy_access.log
+</code></pre></div></div>
+
+<p>Update 22/02/18</p>
+
+<p>Received PMR response as follows: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NODE03 logstash is in an error state showing the below error since 2018–02–14 15:28:05: 
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018–02–21 09:27:03 +0000: Read error: #&lt;IOError: No space left on device&gt;
+/opt/logstash/vendor/jruby/lib/ruby/shared/tmpdir.rb:144:in `create’
+org/jruby/ext/tempfile/Tempfile.java:96:in `initialize19'
+org/jruby/RubyIO.java:871:in `new’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/client.rb:140:in `setup_body’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/client.rb:178:in `try_to_finish’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/client.rb:101:in `reset’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/server.rb:414:in `process_client’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/server.rb:400:in `process_client’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/server.rb:270:in `run’
+org/jruby/RubyProc.java:281:in `call’
+/opt/logstash/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/thread_pool.rb:106:in `spawn_thread’
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In order to address the above, a reboot of the nodes is required as soon as possible. Please reboot one node at a time and wait for that node to fully reboot and is fully back up before working on the others. As NODE01 is your Primary node for Informix cluster I would advise to reboot it last — you may consider to elect another node to be Primary during the reboot of NODE01 to minimize the failover time for another node to become Primary.
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>As logstash is one of the processes responsible for receiving analytic data from the DataPower Gateway the above issue explains your gap in receiving data and not being able to visualize those.
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This problem is a likely known issue tracked by APAR LI79840, which is fixed in v5.0.8.2. The workaround recommended, until you are ready to upgrade, is the reboot your Management Nodes every 60 days so that you will trigger a clean up of the space under the temporary directory.
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If you upload the last management server logs (likely named NODE02) I can check its state as well, although a reboot of that one as well is probably the best course of action.
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please let me know if you have additional questions about this case.
+</code></pre></div></div>
+
+<p>A question I had was in relation to which log file the above info was
+gleaned from; the answer being: -</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/log/logstash.log
+</code></pre></div></div>
+
+<p>So case closed. No requirement to analyse the DataPower logs, which we’d
+already looked through, and we believe DataPower is very much ‘push and
+forget’ in terms of analytics delivery, and likewise, no detailed
+analysis of the apim_rproxy_access.log in the same directory as the
+logstash.log file. however, its worth noting that when we did look
+through it, we noticed ‘404’ errors around the dates/times of the
+outages</p>
+
+<p>By <a href="https://medium.com/@cminion">Chris Phillips</a> on
+<a href="https://medium.com/p/47171f13b91f">February 26, 2018</a>.</p>
+
+<p><a href="https://medium.com/@cminion/guest-post-apic-gateway-delayed-analytics-data-craig-s-47171f13b91f">Canonical
+link</a></p>
+
+<p>Exported from <a href="https://medium.com">Medium</a> on April 6, 2019.</p>
+
+  </div><a class="u-url" href="/apiconnect/2018/02/26/Guest-Post-APIC-Gateway-delayed-analytics-data-Craig-S.html" hidden></a>
+</article>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5762182881741486"
+     data-ad-slot="5834821709"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col one-half">
+      <h2 class="footer-heading">Chris Phillips&#39; Blog</h2>
+        <ul class="contact-list">
+          <li class="p-name">Chris Phillips&#39; Blog</li><li><a class="u-email" href="mailto:chris.phillips@uk.ibm.com">chris.phillips@uk.ibm.com</a></li></ul>
+      </div>
+
+      <div class="footer-col one-half">
+        <p>Father of 2 - IBM Master Inventor &amp; SWAT Integration Architect - API, Integration and Governance SME and Enthusiast, Board Gamer, My opinions are very much mine</p>
+      </div>
+
+      <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+    </div>
+
+  </div>
+
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139881144-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139881144-1');
+</script>
+
+
+  </body>
+
+</html>
