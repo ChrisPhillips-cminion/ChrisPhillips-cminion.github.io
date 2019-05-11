@@ -23,7 +23,7 @@ github_username:  ChrisPhillips-cminion
 
 # Build settings
 markdown: kramdown
-theme: cminionminima
+theme: minima
 plugins:
   - jekyll-feed
 
