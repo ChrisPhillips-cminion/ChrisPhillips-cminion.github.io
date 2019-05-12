@@ -4,7 +4,7 @@ date: 2018-04-11  00:00:00
 categories: APIConnect
 title: 'QuickNote: IBM APIConnect 2018 CLI --- debug'
 ---
-# QuickNote: IBM APIConnect 2018 CLI --- debug 
+
 
 API Connect released a new major version labelled 2018.
 

@@ -6,8 +6,6 @@ title: So this turned up today
 ---
 
 
-#So this turned up today
-
 ![](https://cdn-images-1.medium.com/max/800/1*XGEG4locow14dxHKHglLqA@2x.jpeg)
 
 

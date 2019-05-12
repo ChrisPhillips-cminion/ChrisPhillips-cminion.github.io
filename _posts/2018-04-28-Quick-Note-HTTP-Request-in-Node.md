@@ -4,7 +4,7 @@ date: 2018-04-28  00:00:00
 categories: APIConnect
 title: Quick Note HTTP Request in Node
 ---
-# Quick Note HTTP Request in Node 
+
 
 I am only posting this because every time i need to do one I end up
 googling it.

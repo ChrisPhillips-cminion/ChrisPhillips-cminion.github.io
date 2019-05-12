@@ -4,7 +4,7 @@ layout: post
 date:   2017-07-17 00:00:00
 categories: APIConnect
 ---
-# MQ in Docker, removing the tie to the QMGR Process --- Docker Staying Alive
+
 
 So recently Aiden Gallagher (Another IBM Intergration SME) and I were
 trying to do API Connect in BM integration with an MQ Docker instance

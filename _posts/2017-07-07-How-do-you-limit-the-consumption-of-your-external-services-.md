@@ -4,7 +4,7 @@ layout: post
 date:   2017-07-07 00:00:00
 categories: APIConnect
 ---
-# How do you limit the consumption of your external services? How do you track who is calling IBM Watson when they dont have business reason? Answer: Use API Connect!
+### How do you track who is calling IBM Watson when they don't have business reason? Answer: Use API Connect!
 
 I recently authored a blog post with [Charlotte
 Hutchinson](https://medium.com/u/bbd8359f304e) on using API Connect to protect external services.

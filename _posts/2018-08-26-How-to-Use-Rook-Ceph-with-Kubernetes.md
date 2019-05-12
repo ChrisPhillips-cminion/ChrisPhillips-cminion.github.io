@@ -4,7 +4,7 @@ date: 2018-08-26  00:00:00
 categories: APIConnect
 title: 'How to: Use Rook Ceph with Kubernetes'
 ---
-# How to: Use Rook Ceph with Kubernetes 
+
 
 ![](https://cdn-images-1.medium.com/max/600/1*gJQ7_l2Q03aX7cYeCYpiFQ.png)
 

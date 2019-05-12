@@ -4,7 +4,7 @@ layout: post
 date:   2017-07-13 00:00:00
 categories: APIConnect
 ---
-# Analyse This! API Connect impact analyses tool.
+
 
 This was published on IBM developerWorks. For the full article please go
 <https://www.ibm.com/developerworks/library/mw-1703-phillips/index.html>

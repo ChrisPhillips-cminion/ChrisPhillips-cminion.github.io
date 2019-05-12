@@ -6,7 +6,6 @@ title: |
     Teaching my daughter to code Part 2 --- How to avoid callbacks at all
     cost when teaching a 7yo
 ---
-# Teaching my daughter to code Part 2 --- How to avoid callbacks at all cost when teaching a 7yo
 
 So Jessica finally persudaded that we should do some more work on her
 quiz. She wanted ot make it interactive so that people could answer the

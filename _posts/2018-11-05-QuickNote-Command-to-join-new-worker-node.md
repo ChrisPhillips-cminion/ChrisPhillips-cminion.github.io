@@ -4,7 +4,7 @@ date: 2018-11-05  00:00:00
 categories: APIConnect
 title: 'QuickNote: Command to join new worker node'
 ---
-# QuickNote: Command to join new worker node 
+
 
 ```
 sudo kubeadm token create --print-join-command

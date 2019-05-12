@@ -4,7 +4,7 @@ date: 2019-01-11  00:00:00
 categories: APIConnect
 title: 'QuickNote: Deploying on ICP 3.1.1 and you don''t know what you are doing.'
 ---
-# QuickNote: Deploying on ICP 3.1.1 and you don't know what you are doing. 
+
 
 ICP 3.1.1 is locked down.
 

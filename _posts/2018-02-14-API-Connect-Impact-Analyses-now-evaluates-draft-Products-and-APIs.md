@@ -4,7 +4,7 @@ date: 2018-02-14  00:00:00
 categories: APIConnect
 title: 'API Connect Impact Analyses --- now evaluates draft Products and APIs'
 ---
-# API Connect Impact Analyses --- now evaluates draft Products and APIs 
+
 
 Just a note to say I have added into the beta stream support for
 analysing products in drafts.

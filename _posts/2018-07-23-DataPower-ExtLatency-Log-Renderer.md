@@ -4,7 +4,7 @@ date: 2018-07-23  00:00:00
 categories: APIConnect
 title: DataPower ExtLatency Log Renderer
 ---
-# DataPower ExtLatency Log Renderer 
+
 
 My nephew joined me for a couple of weeks at IBM Hursley as his work
 experience.

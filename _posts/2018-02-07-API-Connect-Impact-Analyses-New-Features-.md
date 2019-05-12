@@ -4,7 +4,7 @@ date: 2018-02-07  00:00:00
 categories: APIConnect
 title: 'API Connect Impact Analyses --- New Features!'
 ---
-# API Connect Impact Analyses --- New Features! 
+
 
 Last year we released a useful script for analyzing API Connect. For
 more information take a look

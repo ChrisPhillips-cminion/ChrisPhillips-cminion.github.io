@@ -27,6 +27,9 @@ theme: minima
 plugins:
   - jekyll-feed
 
+site:
+  disqus:
+    shortname: chrisphillips-blog
 disqus:
   shortname: chrisphillips-blog
 # Exclude from processing.

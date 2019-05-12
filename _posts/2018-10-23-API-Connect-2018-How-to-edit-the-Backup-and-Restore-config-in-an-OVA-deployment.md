@@ -6,7 +6,7 @@ title: |
     API Connect 2018 --- How to edit the Backup and Restore config in an OVA
     deployment
 ---
-# API Connect 2018 --- How to edit the Backup and Restore config in an OVA deployment
+
 
 Recently we got asked how do we enable back up of the API Manager in an
 API Connect OVA deployment that is already running.

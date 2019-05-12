@@ -3,10 +3,9 @@ layout: post
 date: 2018-07-23  00:00:00
 categories: APIConnect
 title: |
-    No really, what is the difference between a Web Service and an API? And
-    why do I need to care.
+    No really, what is the difference between a Web Service and an API?
 ---
-# No really, what is the difference between a Web Service and an API? And why do I need to care. 
+### and why do I need to care?
 
 Recently at a Business Partner summit I was asked this question. I have
 tried to come up with the right answer to this question many times, here

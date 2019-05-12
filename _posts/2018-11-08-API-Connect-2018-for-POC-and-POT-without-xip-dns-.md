@@ -4,7 +4,7 @@ date: 2018-11-08  00:00:00
 categories: APIConnect
 title: 'API Connect 2018 for POC and POT without xip dns.'
 ---
-# API Connect 2018 for POC and POT without xip dns.
+
 
 A few months back I wrote an article on how to get a quick dns working
 for working with API Connect 2018. This is another strategy that you can

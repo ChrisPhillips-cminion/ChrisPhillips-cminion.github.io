@@ -4,7 +4,7 @@ date: 2018-04-16  00:00:00
 categories: APIConnect
 title: Impact Analyses for API Connect v2018
 ---
-# Impact Analyses for API Connect v2018 
+
 
 So I have been asked when the Impact Analysis tool will work on 2018 of
 API Connect.

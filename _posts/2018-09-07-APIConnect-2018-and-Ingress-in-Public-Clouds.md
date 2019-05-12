@@ -4,10 +4,13 @@ date: 2018-09-07  00:00:00
 categories: APIConnect
 title: APIConnect 2018 and Ingress in Public Clouds
 ---
-# **APIConnect 2018 and Ingress in Public Clouds**When installing API Connect 2018 to any pubic cloud solution the ingress
+# APIConnect 2018 and Ingress in Public Clouds
+
+**When installing API Connect 2018 to any pubic cloud solution the ingress
 needs to be modified to allow for SSL Pass through. The purpose of this
 series is to explain how to it for each Cloud Service.New Public Cloud offerings will be added as I use them. If you would
 like to advise on other environments please comment below.
+
 **IBM Kubernetes Services (IKS)**![](https://cdn-images-1.medium.com/max/1200/1*iuNeL_y9rFDCSle0jSJkPQ.png)Edit each of the API Connect ingress files for the DataPower, Portal and
 Analytics```
 kubectl edit ing <name>

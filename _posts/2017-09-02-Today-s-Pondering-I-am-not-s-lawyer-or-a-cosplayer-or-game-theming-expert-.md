@@ -1,13 +1,12 @@
 ---
 layout: post
 date: 2017-09-02  00:00:00
-categories: APIConnect
+categories: Misc
 title: |
     Today's Pondering (I am not s lawyer or a cosplayer or game theming
     expert)
 ---
-#Today's Pondering (I am not s lawyer or a cosplayer or game theming
-expert)
+
 
 Do professional cosplayers (I.e. those who get paid for being a
 cosplayer) have to adhere to licensing rules?

@@ -4,7 +4,7 @@ date: 2019-01-22  00:00:00
 categories: APIConnect
 title: 'API Connect 2018 ---  Removing a user from a UserRegistry'
 ---
-# API Connect 2018 --- Removing a user from a UserRegistry
+
 
 In API Connect you can create your own user registries, these can be
 backed on to LDAP or be a local user registry.

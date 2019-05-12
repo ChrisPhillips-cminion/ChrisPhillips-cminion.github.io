@@ -4,7 +4,7 @@ date: 2018-11-16  00:00:00
 categories: APIConnect
 title: Custom Certs in API Connect 2018
 ---
-# Custom Certs in API Connect 2018 
+
 
 ![](https://cdn-images-1.medium.com/max/600/0*zRF-4_vZpkunUNXo.png)
 

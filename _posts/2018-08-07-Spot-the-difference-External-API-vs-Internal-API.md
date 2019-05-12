@@ -4,7 +4,7 @@ date: 2018-08-07  00:00:00
 categories: APIConnect
 title: 'Spot the difference: External API vs Internal API'
 ---
-# Spot the difference: External API vs Internal API
+
 
 So in response to my previous blog post
 (<https://medium.com/@cminion/no-really-what-is-the-difference-between-a-web-service-and-an-api-and-why-do-i-need-to-care-a6f5c4ead61f>)

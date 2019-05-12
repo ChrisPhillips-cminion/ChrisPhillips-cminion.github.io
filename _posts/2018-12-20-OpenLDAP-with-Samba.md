@@ -4,7 +4,7 @@ date: 2018-12-20  00:00:00
 categories: Kubernetes
 title: OpenLDAP with Samba
 ---
-# OpenLDAP with Samba
+
 
 So like all good techies I have spent my week off setting up my home
 LDAP because I need to ensure my kids (8 and 6) need to learn about

@@ -4,7 +4,6 @@ layout: post
 date:   2017-07-07 00:00:00
 categories: APIConnect
 ---
-# Teaching my 7yo Daughter to Code
 
 This evening I sat down with my daughter and showed her some basic
 coding. Nothing complex, just print out commands and incrementing

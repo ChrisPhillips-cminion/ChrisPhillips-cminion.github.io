@@ -7,8 +7,6 @@ title: |
     and port forwarding.
 ---
 
-# QuickNote: Changing the IP of vmnet0 interface when using VMWare Fusion and port forwarding.
-
 So if you need to change the vmnet1 or vmnet8 ipaddress edit the
 following file
 

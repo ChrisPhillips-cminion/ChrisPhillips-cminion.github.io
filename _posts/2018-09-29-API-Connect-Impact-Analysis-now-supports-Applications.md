@@ -4,7 +4,7 @@ date: 2018-09-29  00:00:00
 categories: APIConnect
 title: 'API Connect Impact Analysis --- now supports Applications'
 ---
-# API Connect Impact Analysis --- now supports Applications 
+
 
 
 

@@ -4,7 +4,7 @@ date: 2018-11-02  00:00:00
 categories: APIConnect
 title: Enabling the DataPower WebUI in a Kubernetes Deployment
 ---
-# Enabling the DataPower WebUI in a Kubernetes Deployment
+
 
 In order to access the DataPower WebUI please follow these steps.
 

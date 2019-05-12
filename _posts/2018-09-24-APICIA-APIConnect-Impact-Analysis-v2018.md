@@ -4,7 +4,7 @@ date: 2018-09-24  00:00:00
 categories: APIConnect
 title: 'APICIA --- APIConnect Impact Analysis v2018'
 ---
-# APICIA --- APIConnect Impact Analysis v2018 
+
 
 ![](https://cdn-images-1.medium.com/max/600/1*8EqY65l3Py0YKt5HZ8f3hQ.png)
 

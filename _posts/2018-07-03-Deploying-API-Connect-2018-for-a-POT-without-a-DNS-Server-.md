@@ -4,7 +4,7 @@ date: 2018-07-03  00:00:00
 categories: APIConnect
 title: 'Deploying API Connect 2018 for a POT without a DNS Server.'
 ---
-# Deploying API Connect 2018 for a POT without a DNS Server. 
+
 
 Though these steps will make your pods contactable I recommend that you
 only do this in a POT environment
