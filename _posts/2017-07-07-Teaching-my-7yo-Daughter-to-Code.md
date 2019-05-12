@@ -4,25 +4,7 @@ layout: post
 date:   2017-07-07 00:00:00
 categories: APIConnect
 ---
-
-Teaching my 7yo Daughter to Code
-================================
-
-
-This evening I sat down with my daughter and showed her some basic
-coding. Nothing complex, just print out commands and incrementing...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Teaching my 7yo Daughter to Code
+# Teaching my 7yo Daughter to Code
 
 This evening I sat down with my daughter and showed her some basic
 coding. Nothing complex, just print out commands and incrementing
@@ -42,9 +24,6 @@ Nest we added a couple more questions and a title.
 
 ```
 console.log("Queen quiz - by Jessica")
-```
-
-```
 console.log("")
 console.log("How many dogs does the Queen have?")
 console.log("")
@@ -65,55 +44,24 @@ questions..
 var color = require('colors');
 
 console.log("Queen quiz - by Jessica".bold)
-```
-
-```
 console.log("")
 console.log("How many dogs does the Queen have?".yellow)
 console.log("")
-```
-
-```
 console.log("How many grandchildren does the Queen have?");
 console.log("")
-```
-
-```
 console.log("How many castles does the Queen have?".magenta);
 console.log("")
-```
-
-```
 console.log("How many princesses does the Queen have?".blue);
-console.log("")
-```
-
-```
 console.log("How many types of dogs does the Queen have?".green);
 console.log("")
-```
-
-```
 console.log("How many princes deos the Queen have?".cyan);
 console.log("")
-```
-
-```
 console.log("Who is the Queen's Great Great Grandmother?".magenta);
 console.log("")
-```
-
-```
 console.log("Who is the Queen's Great Grandmother?");
 console.log("")
-```
-
-```
 console.log("How old is the Queen?".rainbow.bold);
 console.log("")
-```
-
-```
 console.log("Who is the Queen Mother?".magenta);
 console.log("")
 ```
@@ -127,55 +75,25 @@ concatenation.
 var color = require('colors');
 j=1
 console.log("Queen quiz - by Jessica".bold)
-```
-
-```
 console.log("")
 console.log("How many dogs does the Queen have?".yellow)
 console.log("")
-```
-
-```
 console.log(j++ + "\tHow many grandchildren does the Queen have?");
 console.log("")
-```
-
-```
 console.log(j++ + "\tHow many castles does the Queen have?".magenta);
 console.log("")
-```
-
-```
 console.log(j++ + "\tHow many princesses does the Queen have?".blue);
 console.log("")
-```
-
-```
 console.log(j++ + "\tHow many types of dogs does the Queen have?".green);
 console.log("")
-```
-
-```
 console.log(j++ + "\tHow many princes deos the Queen have?".cyan);
 console.log("")
-```
-
-```
 console.log(j++ + "\tWho is the Queen's Great Great Grandmother?".magenta);
 console.log("")
-```
-
-```
 console.log(j++ + "\tWho is the Queen's Great Grandmother?");
 console.log("")
-```
-
-```
 console.log(j++ + "\tHow old is the Queen?".rainbow.bold);
 console.log("")
-```
-
-```
 console.log(j++ + "\tWho is the Queen Mother?".magenta);
 console.log("")
 ```
@@ -187,45 +105,15 @@ End Result.
 
 ```
 Queen quiz - by Jessica
-```
-
-```
 1 How many dogs does the Queen have?
-```
-
-```
 2 How many grandchildren does the Queen have?
-```
-
-```
 3 How many castles does the Queen have?
-```
-
-```
 4 How many princesses does the Queen have?
-```
-
-```
 5 How many types of dogs does the Queen have?
-```
-
-```
 6 How many princes deos the Queen have?
-```
-
-```
 7 Who is the Queen's Great Great Grandmother?
-```
-
-```
 8 Who is the Queen's Great Grandmother?
-```
-
-```
 9 How old is the Queen?
-```
-
-```
 10 Who is the Queen Mother?
 ```
 

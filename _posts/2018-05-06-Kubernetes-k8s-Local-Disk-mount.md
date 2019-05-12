@@ -4,25 +4,7 @@ date: 2018-05-06  00:00:00
 categories: APIConnect
 title: 'Kubernetes (k8s) --- Local Disk mount'
 ---
-
-Kubernetes (k8s) --- Local Disk mount
-=====================================
-
-
-So I have spent far to long trying to mount a local disk into my k8s
-cluster. My aim is to run pihole on my home system in k8s, primarily...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Kubernetes (k8s) --- Local Disk mount
+# Kubernetes (k8s) --- Local Disk mount
 
 So I have spent far to long trying to mount a local disk into my k8s
 cluster. My aim is to run [pihole](https://pi-hole.net/) on my home system in k8s, primarily to educate me.
@@ -36,93 +18,27 @@ copied and pasted the pv into my local helm chart.
 
 ```
 apiVersion: v1
-```
-
-```
 kind: PersistentVolume
-```
-
-```
 metadata:
-```
-
-```
    name: }-pv
-```
-
-```
 spec:
-```
-
-```
   capacity:
-```
-
-```
   storage: 5Gi
-```
-
-```
   # volumeMode field requires BlockVolume Alpha feature gate to be enabled.
-```
-
-```
   volumeMode: Filesystem
-```
-
-```
   accessModes:
-```
-
-```
   - ReadWriteOnce
-```
-
-```
   persistentVolumeReclaimPolicy: Delete
-```
-
-```
   storageClassName: local-storage
-```
-
-```
   local:
-```
-
-```
     path: /mnt/pihole
-```
-
-```
   nodeAffinity:
-```
-
-```
     required:
-```
-
-```
       nodeSelectorTerms:
-```
-
-```
       - matchExpressions:
-```
-
-```
         - key: kubernetes.io/hostname
-```
-
-```
           operator: In
-```
-
-```
           values:
-```
-
-```
             - example-node
 ```
 

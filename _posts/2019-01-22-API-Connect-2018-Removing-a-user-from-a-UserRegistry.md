@@ -4,25 +4,7 @@ date: 2019-01-22  00:00:00
 categories: APIConnect
 title: 'API Connect 2018 ---  Removing a user from a UserRegistry'
 ---
-
-API Connect 2018 ---  Removing a user from a UserRegistry
-=========================================================
-
-
-In API Connect you can create your own user registries, these can be
-backed on to LDAP or be a local user registry.
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### API Connect 2018 --- Removing a user from a UserRegistry
+# API Connect 2018 --- Removing a user from a UserRegistry
 
 In API Connect you can create your own user registries, these can be
 backed on to LDAP or be a local user registry.
@@ -81,17 +63,8 @@ This returns
 
 ```
 hamster                                https://platform.cminion.cf/api/user-registries/4a1d6fb2-3c81-493e-b168-f76fce33cf37/ef389d90-875b-43dd-988e-2487301d2991/users/ac120227-68ce-49e2-be87-634ac70a7ec2
-```
-
-```
 jo                                     https://platform.cminion.cf/api/user-registries/4a1d6fb2-3c81-493e-b168-f76fce33cf37/ef389d90-875b-43dd-988e-2487301d2991/users/fdf0bb82-104b-4576-b988-811a820a188b
-```
-
-```
 rainbowjess11                          https://platform.cminion.cf/api/user-registries/4a1d6fb2-3c81-493e-b168-f76fce33cf37/ef389d90-875b-43dd-988e-2487301d2991/users/1bd06598-4007-4b8c-9417-d790f3df8294
-```
-
-```
 val                                    https://platform.cminion.cf/api/user-registries/4a1d6fb2-3c81-493e-b168-f76fce33cf37/ef389d90-875b-43dd-988e-2487301d2991/users/b9bdb3fa-d285-4906-b8a2-a09ccd68069c
 ```
 

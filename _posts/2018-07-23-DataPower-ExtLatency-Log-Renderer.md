@@ -4,25 +4,7 @@ date: 2018-07-23  00:00:00
 categories: APIConnect
 title: DataPower ExtLatency Log Renderer
 ---
-
-DataPower ExtLatency Log Renderer 
-=================================
-
- 
-My nephew joined me for a couple of weeks at IBM Hursley as his work
-experience.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### DataPower ExtLatency Log Renderer 
+# DataPower ExtLatency Log Renderer 
 
 My nephew joined me for a couple of weeks at IBM Hursley as his work
 experience.
@@ -39,11 +21,11 @@ I asked my nephew to produce something similar in python. This took in a
 text based extLatency file and rendered the output as below.
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/1200/0*U3EgiJwkheiOd2Tj)
 
 
- 
+
 The code has been released here
 <https://github.com/ruling11ghs/DP-EXD-Latency-Graph> . As ever I am
 always looking for feedback for both myself and my nephew.

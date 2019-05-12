@@ -1,28 +1,10 @@
 ---
 layout: post
 date: 2018-12-26  00:00:00
-categories: APIConnect
+categories: Kubernetes
 title: 'PiHole DNS Server running in Kubernetes --- Holiday Project Part 1'
 ---
-
-PiHole DNS Server running in Kubernetes --- Holiday Project Part 1 
-==================================================================
-
- 
-During my two weeks off of work I set myself the challenge to move as
-much of my home network infrastructure to Kubernetes as possible. My...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### PiHole DNS Server running in Kubernetes --- Holiday Project Part 1 
+# PiHole DNS Server running in Kubernetes --- Holiday Project Part 1
 
 ![](https://cdn-images-1.medium.com/max/800/1*EScuR6TCDCBgmvTrClI43g.png)
 

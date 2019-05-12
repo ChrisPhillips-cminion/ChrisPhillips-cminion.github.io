@@ -4,25 +4,7 @@ layout: post
 date:   2017-07-14 00:00:00
 categories: APIConnect
 ---
-
-Drupal Rule-Action Module to Clear Messages
-===========================================
-
-
-I was asked what was the best way to hide all the system messages when
-an action occurs in Drupal. This was for the API Connect Developer...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Drupal Rule-Action Module to Clear Messages
+# Drupal Rule-Action Module to Clear Messages
 
 I was asked what was the best way to hide all the system messages when
 an action occurs in Drupal. This was for the API Connect Developer

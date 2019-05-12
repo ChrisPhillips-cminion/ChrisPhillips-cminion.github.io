@@ -4,24 +4,7 @@ date: 2017-07-20  00:00:00
 categories: APIConnect
 title: 'APIConnect Developer Portal --- Logs'
 ---
-
-APIConnect Developer Portal --- Logs 
-====================================
-
- 
-Thanks to Chris Dudley for providing this information
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### APIConnect Developer Portal --- Logs 
+# APIConnect Developer Portal --- Logs 
 
 Thanks to Chris Dudley for providing this information
 
@@ -31,7 +14,7 @@ When upgrading the developer portal additional logs can be found in
 The following command will print them to the screen while the upgrade is
 taking place.
 
-``` 
+```
 sudo tail -F  /var/log/devportal/site_action.log /var/log/syslog
 ```
 

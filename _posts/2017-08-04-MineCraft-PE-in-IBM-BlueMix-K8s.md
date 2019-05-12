@@ -4,26 +4,7 @@ date: 2017-08-04  00:00:00
 categories: APIConnect
 title: MineCraft PE in IBM BlueMix K8s
 ---
-
-MineCraft PE in IBM BlueMix K8s
-===============================
-
-
-Like many parents our there I think my daughters are addicted to
-MineCraft Pocket Edition. Though we have had a lot of fun building
-stuff...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### MineCraft PE in IBM BlueMix K8s
+# MineCraft PE in IBM BlueMix K8s
 
 Like many parents our there I think my daughters are addicted to
 MineCraft Pocket Edition. Though we have had a lot of fun building stuff
@@ -118,9 +99,6 @@ We then need to create the DockerFile.
 
 ```
 FROM ubuntu:latest
-```
-
-```
 RUN apt-get purge openjdk* &&  apt-get autoremove
 RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 5CB26B26 && echo "deb http://www.duinsoft.nl/pkg debs all" |  tee -a /etc/apt/sources.list.d/duinsoft.list && apt-get update
 RUN apt-get install -y software-properties-common lsof
@@ -129,17 +107,11 @@ RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
 RUN apt-get install -y oracle-java8-installer
 RUN apt-get clean
-```
-
-```
 RUN mkdir nukkit
 COPY nukkit-1.0-SNAPSHOT.jar /nukkit
 COPY server.properties /nukkit
 COPY nukkit.yml /nukkit
 COPY run.sh /nukkit
-```
-
-```
 EXPOSE 8080
 CMD sh /nukkit/run.sh
 ```

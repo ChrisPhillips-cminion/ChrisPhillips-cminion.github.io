@@ -6,26 +6,8 @@ title: |
     Today's Pondering (I am not s lawyer or a cosplayer or game theming
     expert)
 ---
-
-Today's Pondering (I am not s lawyer or a cosplayer or game theming expert) 
-===========================================================================
-
- 
-Do professional cosplayers (I.e. those who get paid for being a
-cosplayer) have to adhere to licensing rules?
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-**Today's Pondering (I am not s lawyer or a cosplayer or game theming
-expert)**
+#Today's Pondering (I am not s lawyer or a cosplayer or game theming
+expert)
 
 Do professional cosplayers (I.e. those who get paid for being a
 cosplayer) have to adhere to licensing rules?

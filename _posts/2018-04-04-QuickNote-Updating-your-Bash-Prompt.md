@@ -4,25 +4,7 @@ date: 2018-04-04  00:00:00
 categories: APIConnect
 title: 'QuickNote: Updating your Bash Prompt'
 ---
-
-QuickNote: Updating your Bash Prompt 
-====================================
-
- 
-There are a million guides out there but as I always googled this I
-thought I would post the answer here.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### QuickNote: Updating your Bash Prompt 
+# QuickNote: Updating your Bash Prompt 
 
 There are a million guides out there but as I always googled this I
 thought I would post the answer here.
@@ -30,7 +12,7 @@ thought I would post the answer here.
 Simple set the PS1 environmental variable in to .bashrc
 or .bash\_profile
 
-``` 
+```
 PS1=’#[\D\] $(whoami)\e[0m \e[1m$PWD$/ \e[0m >>> ‘
 ```
 
@@ -40,7 +22,7 @@ this gives me
 
 Where
 
-``` 
+```
 \D\ -  provides the date
 $PWD$ - provides the pwd output
 whoami - provides the current user

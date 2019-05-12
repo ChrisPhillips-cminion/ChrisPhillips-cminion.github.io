@@ -4,24 +4,7 @@ layout: post
 date:   2017-07-12 00:00:00
 categories: APIConnect
 ---
-
-Manage your cognitive processes with IBM Watson and API Connect
-===============================================================
-
-
-This was posted on IBM developerWorks
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Manage your cognitive processes with IBM Watson and API Connect
+# Manage your cognitive processes with IBM Watson and API Connect
 
 ### This was posted on IBM developerWorks
 

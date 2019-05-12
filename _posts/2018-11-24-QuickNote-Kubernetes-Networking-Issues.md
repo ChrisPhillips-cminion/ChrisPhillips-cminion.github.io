@@ -1,28 +1,11 @@
 ---
 layout: post
 date: 2018-11-24  00:00:00
-categories: APIConnect
+categories: Kubernetes
+
 title: 'QuickNote: Kubernetes --- Networking Issues'
 ---
-
-QuickNote: Kubernetes --- Networking Issues 
-===========================================
-
- 
-I am writing this because I assume I am not the only idiot in the world.
-This has caused me to waste days of effort.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### QuickNote: Kubernetes --- Networking Issues 
+# QuickNote: Kubernetes --- Networking Issues
 
 I am writing this because I assume I am not the only idiot in the world.
 This has caused me to waste days of effort.

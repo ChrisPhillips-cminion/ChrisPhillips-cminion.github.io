@@ -1,28 +1,10 @@
 ---
 layout: post
 date: 2018-11-05  00:00:00
-categories: APIConnect
+categories: Misc
 title: 'QuickNote : Network not working on ubuntu cosmic'
 ---
-
-QuickNote : Network not working on ubuntu cosmic 
-================================================
-
- 
-I installed ubuntu cosmic and upgraded so everything was on the latest
-package in the ubuntu repos.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### QuickNote : Network not working on ubuntu cosmic 
+# QuickNote : Network not working on ubuntu cosmic
 
 I installed ubuntu cosmic and upgraded so everything was on the latest
 package in the ubuntu repos.

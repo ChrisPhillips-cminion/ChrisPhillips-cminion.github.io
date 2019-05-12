@@ -4,25 +4,7 @@ date: 2018-10-27  00:00:00
 categories: APIConnect
 title: 'Quick Note --- Installing Ceph Common on Ubuntu Cosmic (18.10)'
 ---
-
-Quick Note --- Installing Ceph Common on Ubuntu Cosmic (18.10)
-==============================================================
-
-
-If you are doing a fresh install of ubuntu cosmic you may come across a
-package issue when install ceph-common.
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Quick Note --- Installing Ceph Common on Ubuntu Cosmic (18.10)
+# Quick Note --- Installing Ceph Common on Ubuntu Cosmic (18.10)
 
 If you are doing a fresh install of ubuntu cosmic you may come across a
 package issue when install ceph-common.

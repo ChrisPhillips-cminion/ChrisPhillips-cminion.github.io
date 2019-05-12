@@ -6,24 +6,7 @@ title: |
     Installing IBM Cloud Private install 3.1 or 2.1 on Amazon Web Service
     (AWS)
 ---
-
-Installing IBM Cloud Private install 3.1 or 2.1 on Amazon Web Service (AWS)
-===========================================================================
-
-
-I was asked to install ICP on AWS for a demo.
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Installing IBM Cloud Private install 3.1 or 2.1 on Amazon Web Service (AWS)
+# Installing IBM Cloud Private install 3.1 or 2.1 on Amazon Web Service (AWS)
 
 ![](https://cdn-images-1.medium.com/max/600/0*KL_6rSvcBPvTDmXv.gif)
 

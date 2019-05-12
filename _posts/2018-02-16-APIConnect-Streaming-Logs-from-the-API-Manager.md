@@ -4,25 +4,7 @@ date: 2018-02-16  00:00:00
 categories: APIConnect
 title: APIConnect Streaming Logs from the API Manager
 ---
-
-APIConnect Streaming Logs from the API Manager 
-==============================================
-
- 
-Recently we were debugging an infrastructure "situation" and we did not
-have an external log source set up. The postmortem was failing and...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### APIConnect Streaming Logs from the API Manager 
+# APIConnect Streaming Logs from the API Manager 
 
 Recently we were debugging an infrastructure "situation" and we did not
 have an external log source set up. The postmortem was failing and the
@@ -39,7 +21,7 @@ CIRCUMSTANCES.**
 The Log Tailer simple creates one or more SSH sessions and runs the
 following command.
 
-``` 
+```
 debug tail file <filepath>
 ```
 

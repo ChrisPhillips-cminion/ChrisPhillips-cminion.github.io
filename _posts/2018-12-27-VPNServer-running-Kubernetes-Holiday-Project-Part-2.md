@@ -4,25 +4,7 @@ date: 2018-12-27  00:00:00
 categories: APIConnect
 title: 'VPNServer running Kubernetes --- Holiday Project Part 2'
 ---
-
-VPNServer running Kubernetes --- Holiday Project Part 2 
-=======================================================
-
- 
-During my two weeks off of work I set myself the challenge to move as
-much of my home network infrastructure to Kubernetes as possible. My...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### VPNServer running Kubernetes[ --- Holiday Project Part ](https://medium.com/p/b0e3d01657f5?source=your_stories_page---------------------------)2 
+# VPNServer running Kubernetes[ --- Holiday Project Part ](https://medium.com/p/b0e3d01657f5?source=your_stories_page---------------------------)2
 
 ![](https://cdn-images-1.medium.com/max/800/1*EScuR6TCDCBgmvTrClI43g.png)
 
@@ -50,7 +32,7 @@ Update the values.yaml file then run helm install \<path to directory\>
 
 The values file must contain these entries
 
-``` 
+```
 VPN_IPSEC_PSK: shared-password
 VPN_USER: cminion
 VPN_PASSWORD: password

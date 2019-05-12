@@ -4,25 +4,7 @@ layout: post
 date:   2017-07-10 00:00:00
 categories: APIConnect
 ---
-
-API Connect: Test Your APIs Better with Latency Injection
-=========================================================
-
-
-This was originally posted on IBM APIConnects's Blog. ---
-http://developer.ibm.com/apiconnect/2017/05/24/test-apis-better-latency-injection/
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-**API Connect: Test Your APIs Better with Latency Injection**
+#API Connect: Test Your APIs Better with Latency Injection**
 
 This was originally posted on IBM APIConnects's
 Blog. --- <http://developer.ibm.com/apiconnect/2017/05/24/test-apis-better-latency-injection/>

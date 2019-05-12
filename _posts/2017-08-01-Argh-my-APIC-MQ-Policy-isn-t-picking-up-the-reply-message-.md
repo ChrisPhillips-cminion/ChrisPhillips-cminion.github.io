@@ -4,25 +4,7 @@ date: 2017-08-01  00:00:00
 categories: APIConnect
 title: 'Argh my APIC MQ Policy isn''t picking up the reply message.'
 ---
-
-Argh my APIC MQ Policy isn't picking up the reply message. 
-==========================================================
-
- 
-This is a response to the most common question I get from
-http://www.ibm.com/developerworks/library/mw-1611-hutchinson-trs/index.html
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### **Argh my APIC MQ Policy isn't picking up the reply message.** 
+# **Argh my APIC MQ Policy isn't picking up the reply message.** 
 
 This is a response to the most common question I get from
 <http://www.ibm.com/developerworks/library/mw-1611-hutchinson-trs/index.html>

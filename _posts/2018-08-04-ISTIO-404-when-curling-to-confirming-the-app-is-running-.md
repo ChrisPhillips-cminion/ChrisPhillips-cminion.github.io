@@ -4,31 +4,13 @@ date: 2018-08-04  00:00:00
 categories: APIConnect
 title: 'ISTIO --- 404 when curling to confirming the app is running.'
 ---
-
-ISTIO --- 404 when curling to confirming the app is running. 
-============================================================
-
- 
-So I spent a few hours this morning trying to get the ISTIO sample
-running to see if i can rewrite some of my home micro sevices using...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### ISTIO --- 404 when curling to confirming the app is running. 
+# ISTIO --- 404 when curling to confirming the app is running. 
 
 So I spent a few hours this morning trying to get the ISTIO sample
 running to see if i can rewrite some of my home micro sevices using
 ISTIO.
 
-``` 
+```
 curl -o /dev/null -s -w “%\n” http://$/productpage`
 ```
 
@@ -39,13 +21,13 @@ were provided was incorrect.
 
 If you do not have a Load Balancer run
 
-``` 
+```
 kubectl get endpoints --all-namespaces | grep ingress
 ```
 
 this returns
 
-``` 
+```
 istio-system   istio-ingressgateway                    192.168.99.218:80,192.168.99.218:15030,192.168.99.218:15011 + 4 more...    40m
 ```
 

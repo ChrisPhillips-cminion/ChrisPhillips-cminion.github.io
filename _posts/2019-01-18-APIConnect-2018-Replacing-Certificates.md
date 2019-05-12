@@ -4,25 +4,7 @@ date: 2019-01-18  00:00:00
 categories: APIConnect
 title: 'APIConnect 2018: Replacing Certificates'
 ---
-
-APIConnect 2018: Replacing Certificates
-=======================================
-
-
-This post assumes that you have already generated your certificates. If
-you have not read this post...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### APIConnect 2018: Replacing Certificates
+# APIConnect 2018: Replacing Certificates
 
 This post assumes that you have already generated your certificates. If
 you have not read this post

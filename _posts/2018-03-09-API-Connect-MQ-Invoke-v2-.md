@@ -4,32 +4,14 @@ date: 2018-03-09  00:00:00
 categories: APIConnect
 title: 'API Connect MQ Invoke v2.'
 ---
-
-API Connect MQ Invoke v2. 
-=========================
-
- 
-I have finally managed to sit down and spend sometime with this
-artifact. I was asked to produce a Lab at Think 2018 with Natasha...
+# API Connect MQ Invoke v2. 
 
 
- 
- 
- 
 
-------------------------------------------------------------------------
-
-
- 
- 
-### API Connect MQ Invoke v2. 
-
-
- 
 ![](https://cdn-images-1.medium.com/max/2560/1*7Gh8_izqdIsi5knXr7p1Vw.png)
 
 
- 
+
 I have finally managed to sit down and spend sometime with this
 artifact. I was asked to produce a Lab at Think 2018 with Natasha
 (<https://www.linkedin.com/in/natasha-kirkup-1896b360/>) to shows off

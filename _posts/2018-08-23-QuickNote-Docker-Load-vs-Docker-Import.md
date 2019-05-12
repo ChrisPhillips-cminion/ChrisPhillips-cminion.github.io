@@ -4,24 +4,7 @@ date: 2018-08-23  00:00:00
 categories: APIConnect
 title: 'QuickNote --- Docker Load vs Docker Import'
 ---
-
-QuickNote --- Docker Load vs Docker Import
-==========================================
-
-
-As usual here is what I have been burnt with today.
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### QuickNote --- Docker Load vs Docker Import
+# QuickNote --- Docker Load vs Docker Import
 
 As usual here is what I have been burnt with today.
 

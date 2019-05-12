@@ -1,28 +1,10 @@
 ---
 layout: post
 date: 2018-12-20  00:00:00
-categories: APIConnect
+categories: Kubernetes
 title: OpenLDAP with Samba
 ---
-
-OpenLDAP with Samba
-===================
-
-
-So like all good techies I have spent my week off setting up my home
-LDAP because I need to ensure my kids (8 and 6) need to learn about...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### OpenLDAP with Samba
+# OpenLDAP with Samba
 
 So like all good techies I have spent my week off setting up my home
 LDAP because I need to ensure my kids (8 and 6) need to learn about
@@ -42,29 +24,11 @@ Add the following config to the `/etc/samba/smb.conf`
 
 ```
 [global]
-```
-
-```
 WORKGROUP=WORKGROUP
-```
-
-```
 passdb backend = ldapsam:ldap://192.168.1.132
-```
-
-```
 ldap suffix = dc=cminion,dc=cf
-```
-
-```
 ldap admin dn = cn=admin,dc=cminion,dc=cf
-```
-
-```
 ldap ssl = no
-```
-
-```
 ldap passwd sync = yes
 ```
 

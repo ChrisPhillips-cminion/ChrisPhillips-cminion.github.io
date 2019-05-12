@@ -4,25 +4,7 @@ date: 2018-08-26  00:00:00
 categories: APIConnect
 title: 'How to: Use Rook Ceph with Kubernetes'
 ---
-
-How to: Use Rook Ceph with Kubernetes 
-=====================================
-
- 
-I have spent the last few months getting CephFS to work. 99% of the
-issues I had were user error. This article goes through the steps I...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### How to: Use Rook Ceph with Kubernetes 
+# How to: Use Rook Ceph with Kubernetes 
 
 ![](https://cdn-images-1.medium.com/max/600/1*gJQ7_l2Q03aX7cYeCYpiFQ.png)
 
@@ -41,24 +23,24 @@ What you will need,
     instructions found here.
     <https://github.com/rook/rook.github.io/blob/master/docs/rook/master/block.md>]
 
-``` 
+```
 git clone https://github.com/ChrisPhillips-cminion/kubernetes-rook-ceph
 ```
 
 
 
 
- 
- 
+
+
 
 ------------------------------------------------------------------------
 
 
- 
- 
+
+
 2\. Before applying these configs run the following command on each node.
 
-``` 
+```
 sudo sgdisk /dev/sdb1 -Z
 ```
 
@@ -72,17 +54,17 @@ investigated why.
 
 
 
- 
- 
+
+
 
 ------------------------------------------------------------------------
 
 
- 
- 
+
+
 3\. Now apply the configuration you cloned from git.
 
-``` 
+```
 kubectl apply -f <file name>
 ```
 
@@ -91,17 +73,17 @@ In 5--10 minutes the rook ceph will be up and running.
 
 
 
- 
- 
+
+
 
 ------------------------------------------------------------------------
 
 
- 
- 
+
+
 4\. To determine if it is up, run the following command
 
-``` 
+```
 kubectl get pvc --all-namespaces
 ```
 
@@ -112,14 +94,14 @@ Any issues please leave a comment below or raise an issue on the github.
 
 
 
- 
- 
+
+
 
 ------------------------------------------------------------------------
 
 
- 
- 
+
+
 **Notes:**
 
 -   [I have limited the CPU of each pod because at times it was eating
@@ -131,35 +113,35 @@ Any issues please leave a comment below or raise an issue on the github.
 -   [I use the following hacky script to wait for pvc to be
     bound]
 
-``` 
+```
 wc=0
 ```
 
-``` 
+```
 while [ "$wc" -ne "1" ] ; do
 ```
 
-``` 
+```
   wc=$(kubectl get pvc | grep testpvc | grep Bound | wc -l )
 ```
 
-``` 
+```
   echo "sleeping ofr 10sec and trying again";
 ```
 
-``` 
+```
   kubectl get pvc
 ```
 
-``` 
+```
   sleep 10s
 ```
 
-``` 
+```
 done
 ```
 
-``` 
+```
 kubectl get pvc | grep testpvc | grep Bound
 ```
 

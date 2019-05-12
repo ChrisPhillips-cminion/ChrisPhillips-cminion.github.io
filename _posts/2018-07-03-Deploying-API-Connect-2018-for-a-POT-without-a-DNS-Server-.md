@@ -4,25 +4,7 @@ date: 2018-07-03  00:00:00
 categories: APIConnect
 title: 'Deploying API Connect 2018 for a POT without a DNS Server.'
 ---
-
-Deploying API Connect 2018 for a POT without a DNS Server. 
-==========================================================
-
- 
-Though these steps will make your pods contactable I recommend that you
-only do this in a POT environment
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### Deploying API Connect 2018 for a POT without a DNS Server. 
+# Deploying API Connect 2018 for a POT without a DNS Server. 
 
 Though these steps will make your pods contactable I recommend that you
 only do this in a POT environment
@@ -36,12 +18,12 @@ replacing \<ingress ip\> with the ip of your ingress. note: you may need
 to change the gw, gateway and gateway-director for the sub system you
 are installing.
 
-``` 
-apicup endpoints set gw gateway gw.<ingress ip>.nip.io ; 
+```
+apicup endpoints set gw gateway gw.<ingress ip>.nip.io ;
 ```
 
-``` 
-apicup endpoints set gw gateway-director gwd.<ingress ip>.nip.io ; 
+```
+apicup endpoints set gw gateway-director gwd.<ingress ip>.nip.io ;
 ```
 
 Now continue your install as normal.

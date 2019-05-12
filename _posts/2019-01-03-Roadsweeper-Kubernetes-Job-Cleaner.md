@@ -4,25 +4,7 @@ date: 2019-01-03  00:00:00
 categories: APIConnect
 title: 'Roadsweeper --- Kubernetes Job Cleaner'
 ---
-
-Roadsweeper --- Kubernetes Job Cleaner 
-======================================
-
- 
-During my two weeks off of work I set myself the challenge to move as
-much of my home network infrastructure to Kubernetes as possible. My...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### Roadsweeper --- Kubernetes Job Cleaner --- [Holiday Project Part ](https://medium.com/p/b0e3d01657f5?source=your_stories_page---------------------------)3 
+# Roadsweeper --- Kubernetes Job Cleaner --- [Holiday Project Part ](https://medium.com/p/b0e3d01657f5?source=your_stories_page---------------------------)3 
 
 *During my two weeks off of work I set myself the challenge to move as
 much of my home network infrastructure to Kubernetes as possible. My

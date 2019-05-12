@@ -4,25 +4,7 @@ layout: post
 date:   2017-07-11 00:00:00
 categories: APIConnect
 ---
-
-Routing By Plan in API Connect
-==============================
-
-
-Get exactly the quality you asked for even beyond API Connect.
-Co-Authored by Oliver Wynn
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Routing By Plan in API Connect
+# Routing By Plan in API Connect
 
 #### Get exactly the quality you asked for even beyond API Connect. Co-Authored by Oliver Wynn
 

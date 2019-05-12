@@ -4,25 +4,7 @@ date: 2018-11-01  00:00:00
 categories: APIConnect
 title: 'QuickNote : LDAP --- No Such Object'
 ---
-
-QuickNote : LDAP --- No Such Object 
-===================================
-
- 
-If you are connecting to LDAP and get an error back saying No Such
-Object this often means that you LDAP requires a non anon bind.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### QuickNote : LDAP --- No Such Object 
+# QuickNote : LDAP --- No Such Object 
 
 If you are connecting to LDAP and get an error back saying
 `No Such Object` this often means that

@@ -6,32 +6,13 @@ title: |
     Full Stack Developers --- The Modern Jack of all Trade and still master
     of none
 ---
-
-Full Stack Developers --- The Modern Jack of all Trade and still master of none 
-===============================================================================
-
- 
-As this blog may be particularly controversial I want to point out
-clearly that this is all my own opinion and not that of my employer
-or...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### Full Stack Developers --- The Modern Jack of all Trade and still master of none 
+# Full Stack Developers --- The Modern Jack of all Trade and still master of none 
 
 As this blog may be particularly controversial I want to point out
 clearly that this is **all my own opinion and not that of my employer**
 or anyone else.
 
-``` 
+```
 A full stack is everything from the end user interface to the system of record.
 ```
 

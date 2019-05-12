@@ -4,36 +4,18 @@ date: 2018-02-07  00:00:00
 categories: APIConnect
 title: 'API Connect Impact Analyses --- New Features!'
 ---
-
-API Connect Impact Analyses --- New Features! 
-=============================================
-
- 
-Last year we released a useful script for analyzing API Connect. For
-more information take a look...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### API Connect Impact Analyses --- New Features! 
+# API Connect Impact Analyses --- New Features! 
 
 Last year we released a useful script for analyzing API Connect. For
 more information take a look
 here.<https://www.ibm.com/developerworks/library/mw-1703-phillips/index.html>
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/2560/1*wFES1nin1znbZKN-RWPNxg.png)
 
 
- 
+
 I have just published an update that allows you to not only look at the
 down stream services, but also look at the policies or OAuth URLs.
 

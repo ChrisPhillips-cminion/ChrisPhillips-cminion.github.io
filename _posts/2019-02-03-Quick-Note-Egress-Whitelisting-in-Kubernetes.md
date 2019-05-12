@@ -4,25 +4,7 @@ date: 2019-02-03  00:00:00
 categories: APIConnect
 title: 'Quick Note --- Egress Whitelisting in Kubernetes'
 ---
-
-Quick Note --- Egress Whitelisting in Kubernetes
-================================================
-
-
-I got bored flying back from Germany last week and so I tried to solve a
-problem our test team were hitting. They needed to whitelist...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Quick Note --- Egress Whitelisting in Kubernetes
+# Quick Note --- Egress Whitelisting in Kubernetes
 
 I got bored flying back from Germany last week and so I tried to solve a
 problem our test team were hitting. They needed to whitelist access to

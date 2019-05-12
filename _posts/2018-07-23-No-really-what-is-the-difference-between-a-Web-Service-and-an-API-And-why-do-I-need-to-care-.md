@@ -6,36 +6,18 @@ title: |
     No really, what is the difference between a Web Service and an API? And
     why do I need to care.
 ---
-
-No really, what is the difference between a Web Service and an API? And why do I need to care. 
-==============================================================================================
-
- 
-Recently at a Business Partner summit I was asked this question. I have
-tried to come up with the right answer to this question many times...
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### No really, what is the difference between a Web Service and an API? And why do I need to care. 
+# No really, what is the difference between a Web Service and an API? And why do I need to care. 
 
 Recently at a Business Partner summit I was asked this question. I have
 tried to come up with the right answer to this question many times, here
 is my two cents.
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/2560/1*m-5Xs2OMZltGDd1KBjiefg.png)
 
 
- 
+
 A Web Service and an API are different perspectives on the same idea.
 Both are used for exposing an interface to access a function or data.
 Both have the same set of criteria for Non Functional Requirements
@@ -50,14 +32,14 @@ The only difference is the motivation or reason for the interface.
 
 
 
- 
- 
+
+
 
 ------------------------------------------------------------------------
 
 
- 
- 
+
+
 So what does this mean?
 
 **A simple example**: A Web Service will expose all data attributes. An
@@ -71,14 +53,14 @@ attributes that must not be made available to the API Consumers.
 
 
 
- 
- 
+
+
 
 ------------------------------------------------------------------------
 
 
- 
- 
+
+
 On to the final question, "Why do i need to care?"
 
 As we discuss above the person who designs the interface will have one

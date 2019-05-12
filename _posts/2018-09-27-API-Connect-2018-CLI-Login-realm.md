@@ -4,25 +4,7 @@ date: 2018-09-27  00:00:00
 categories: APIConnect
 title: 'API Connect 2018 CLI --- Login --- realm'
 ---
-
-API Connect 2018 CLI --- Login --- realm
-========================================
-
-
-API Connect 2018 comes with a much better CLI then version v5. The
-interface is similar but its easier to install and much quicker to run.
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### API Connect 2018 CLI --- Login --- realm
+# API Connect 2018 CLI --- Login --- realm
 
 ![](https://cdn-images-1.medium.com/max/800/1*RpK5B2rBTfCGX15_7Ln6zw.png)
 

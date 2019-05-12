@@ -6,25 +6,7 @@ title: |
     Teaching my daughter to code Part 2 --- How to avoid callbacks at all
     cost when teaching a 7yo
 ---
-
-Teaching my daughter to code Part 2 --- How to avoid callbacks at all cost when teaching a 7yo
-==============================================================================================
-
-
-So Jessica finally persudaded that we should do some more work on her
-quiz. She wanted ot make it interactive so that people could answer...
-
-
-
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-### Teaching my daughter to code Part 2 --- How to avoid callbacks at all cost when teaching a 7yo
+# Teaching my daughter to code Part 2 --- How to avoid callbacks at all cost when teaching a 7yo
 
 So Jessica finally persudaded that we should do some more work on her
 quiz. She wanted ot make it interactive so that people could answer the
@@ -133,9 +115,6 @@ read({
         } else {
           console.log("Wrong");
         }
-```
-
-```
 console.log(j++ + "\tHow many princesses does the Queen have?".blue);
         console.log("")
         read({
@@ -146,9 +125,6 @@ console.log(j++ + "\tHow many princesses does the Queen have?".blue);
           } else {
             console.log("Wrong");
           }
-```
-
-```
 console.log(j++ + "\tHow many types of dogs does the Queen have?".green);
           console.log("")
           read({
@@ -159,9 +135,6 @@ console.log(j++ + "\tHow many types of dogs does the Queen have?".green);
             } else {
               console.log("Wrong");
             }
-```
-
-```
 console.log(j++ + "\tHow many princes deos the Queen have?".cyan);
             console.log("")
             read({
@@ -172,9 +145,6 @@ console.log(j++ + "\tHow many princes deos the Queen have?".cyan);
               } else {
                 console.log("Wrong");
               }
-```
-
-```
 console.log(j++ + "\tWho is the Queen's Great Great Grandmother?".magenta);
               console.log("")
               read({
@@ -226,13 +196,7 @@ console.log(j++ + "\tWho is the Queen's Great Great Grandmother?".magenta);
                           console.log("Wrong");
                         }
                         console.log("")
-```
-
-```
 console.log(j++ + "\tHow many sister does the Queen have?".magenta);
-```
-
-```
 read({
                           prompt: "??"
                         }, function(err, answer) {

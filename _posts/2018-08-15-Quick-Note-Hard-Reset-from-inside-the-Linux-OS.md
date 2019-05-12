@@ -5,7 +5,6 @@ categories: APIConnect
 title: 'Quick Note --- Hard Reset from inside the Linux OS'
 ---
 
-
 # Quick Note --- Hard Reset from inside the Linux OS
 
 I have been using CEPH a lot recently that has an annoying habit of

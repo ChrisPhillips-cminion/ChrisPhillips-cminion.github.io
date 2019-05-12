@@ -4,24 +4,7 @@ date: 2019-01-11  00:00:00
 categories: APIConnect
 title: 'QuickNote: Deploying on ICP 3.1.1 and you don''t know what you are doing.'
 ---
-
-QuickNote: Deploying on ICP 3.1.1 and you don't know what you are doing. 
-========================================================================
-
- 
-ICP 3.1.1 is locked down.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-### QuickNote: Deploying on ICP 3.1.1 and you don't know what you are doing. 
+# QuickNote: Deploying on ICP 3.1.1 and you don't know what you are doing. 
 
 ICP 3.1.1 is locked down.
 
@@ -29,7 +12,7 @@ I used the following PSP to remove all the locked down settings. Please
 only use this for POC and POTs, and be aware you are weakening your
 environment.
 
-``` 
+```
 apiVersion: extensions/v1beta1
 kind: PodSecurityPolicy
 metadata:

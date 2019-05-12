@@ -1,28 +1,10 @@
 ---
 layout: post
 date: 2018-06-06  00:00:00
-categories: APIConnect
+categories: other
 title: 'UK Star Trek Attack Wing --- Un Nationals 2018'
 ---
-
-UK Star Trek Attack Wing --- Un Nationals 2018 
-==============================================
-
- 
-Sunday the 3rd of June 2018, Fourteen admirals arrived to participate in
-a series of War Games to show who is the best commander.
-
-
- 
- 
- 
-
-------------------------------------------------------------------------
-
-
- 
- 
-**UK Star Trek Attack Wing --- Un Nationals 2018**
+#UK Star Trek Attack Wing --- Un Nationals 2018
 
 Sunday the 3rd of June 2018, Fourteen admirals arrived to participate in
 a series of War Games to show who is the best commander.
@@ -127,7 +109,7 @@ could qualify depending on the outcome of the fourth and final round.
 now in an extensive training regime for next year)
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/400/1*hDGkjoN8B80ymoqC2b_Miw.jpeg)
 
 ![](https://cdn-images-1.medium.com/max/400/1*CYWsYBV4AGobdOcewFIcEQ.jpeg)
@@ -135,7 +117,7 @@ now in an extensive training regime for next year)
 ![](https://cdn-images-1.medium.com/max/400/1*ND9BrcQJqHDOwb0oBCaYpw.jpeg)
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/400/1*cm8JMXNSBI7rmXQdfeM7EA.jpeg)
 
 ![](https://cdn-images-1.medium.com/max/400/1*K5-LAh7pi_VBmd32UDmlcw.jpeg)
@@ -143,7 +125,7 @@ now in an extensive training regime for next year)
 ![](https://cdn-images-1.medium.com/max/400/1*Iyd3caQ7hDWEnmk51joAdQ.jpeg)
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/400/1*rGWFGFrGLGhuXnFlg1wr-Q.jpeg)
 
 ![](https://cdn-images-1.medium.com/max/400/1*Q-FJpt7pt2nf1IX5ybeODg.jpeg)
@@ -151,7 +133,7 @@ now in an extensive training regime for next year)
 ![](https://cdn-images-1.medium.com/max/600/1*0puObLd3cySKRYiKDREUwA.jpeg)
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/400/1*IfRnzMAgNCWglsSkZqIBFw.jpeg)
 
 ![](https://cdn-images-1.medium.com/max/600/1*NagjKcwkZau8KEPN1Ex6ag.jpeg)
@@ -159,7 +141,7 @@ now in an extensive training regime for next year)
 ![](https://cdn-images-1.medium.com/max/600/1*qzf57iA_LE3q8tugQNN-hQ.jpeg)
 
 
- 
+
 ![](https://cdn-images-1.medium.com/max/600/1*SRr9m0jmSAAxtKiSujlzBA.jpeg)
 
 ![](https://cdn-images-1.medium.com/max/600/1*Z1n-R_14eurZ2Y7HQiTfqQ.jpeg)
