@@ -2,7 +2,7 @@
 layout: post
 date: 2019-05-13  00:00:00
 categories: Kubernetes
-title: 'Setting vm.max\_map_count on Kubernetes [Guest Post by Nick Cawood]'
+title: 'Setting vm.max_map_count on Kubernetes [Guest Post by Nick Cawood]'
 ---
 
 *This is a guest post by Nick Cawood*
@@ -12,7 +12,7 @@ I've recently been installing API Connect 2018.4.1X on a Kubernetes Container Se
 
 As any experienced APIC 2018 installer knows this parameter needs to be set to 1048575 in order for all the components to install and then function as required.
 
-To set this value on your [IKS] Cluster, create the following file (I call mine vm.max_map_count.yaml): 
+To set this value on your [IKS] Cluster, create the following file (I call mine vm.max_map_count.yaml):
 
 
 ```apiVersion: "extensions/v1beta1"
@@ -58,5 +58,3 @@ You see output something like this:
 `daemonset.extensions/navigator-elasticsearch-sysctl configured`
 
 Your [IKS] Cluster will now use 1048575 for this parameter!
-
-
