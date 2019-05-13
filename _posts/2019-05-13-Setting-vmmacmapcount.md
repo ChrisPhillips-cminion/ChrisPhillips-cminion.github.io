@@ -15,7 +15,8 @@ As any experienced APIC 2018 installer knows this parameter needs to be set to 1
 To set this value on your [IKS] Cluster, create the following file (I call mine vm.max_map_count.yaml):
 
 
-```apiVersion: "extensions/v1beta1"
+```
+apiVersion: "extensions/v1beta1"
 kind: "DaemonSet"
 metadata:
  name: "navigator-elasticsearch-sysctl"

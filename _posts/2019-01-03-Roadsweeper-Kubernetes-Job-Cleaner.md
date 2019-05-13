@@ -2,9 +2,9 @@
 layout: post
 date: 2019-01-03  00:00:00
 categories: Kubernetes
-title: 'Roadsweeper --- Kubernetes Job Cleaner'
+title: 'Roadsweeper - Kubernetes Job Cleaner'
 ---
-## Holiday Project Part 3 
+## Holiday Project Part 3
 
 *During my two weeks off of work I set myself the challenge to move as
 much of my home network infrastructure to Kubernetes as possible. My

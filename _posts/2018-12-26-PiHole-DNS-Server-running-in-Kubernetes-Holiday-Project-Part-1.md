@@ -2,9 +2,9 @@
 layout: post
 date: 2018-12-26  00:00:00
 categories: Kubernetes
-title: 'PiHole DNS Server running in Kubernetes --- Holiday Project Part 1'
+title: 'PiHole DNS Server running in Kubernetes '
 ---
-
+## Holiday Project Part 1
 
 ![](https://cdn-images-1.medium.com/max/800/1*EScuR6TCDCBgmvTrClI43g.png)
 

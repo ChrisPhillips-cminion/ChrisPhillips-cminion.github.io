@@ -2,7 +2,7 @@
 layout: post
 date: 2018-12-27  00:00:00
 categories: APIConnect
-title: 'VPNServer running Kubernetes --- Holiday Project Part 2'
+title: 'VPNServer running Kubernetes'
 ---
 ## Holiday Project Part 2
 
