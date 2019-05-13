@@ -17,7 +17,10 @@ title: Chris Phillips' Blog
 email: chris.phillips@uk.ibm.com
 description: Father of 2 - IBM Master Inventor & SWAT Integration Architect - API, Integration and Governance SME and Enthusiast, Board Gamer, My opinions are very much mine
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: ""
+plugins:
+  - jekyll-sitemap
+
 twitter_username: cminion
 github_username:  ChrisPhillips-cminion
 
