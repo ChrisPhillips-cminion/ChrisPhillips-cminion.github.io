@@ -9,4 +9,4 @@ title: 'IBM API Connect WhitePaper in Physical Form'
 
 If you are lucky enough to attend the IBM Hursley Summit next week, we (Jenny) has printed out a few copies of the WhitePaper. First Come first served.
 
-If you cannot attend and want a copy download it here, https://www.ibm.com/downloads/cas/30YERA2R
+*If you cannot attend and want a copy download it [here](https://www.ibm.com/downloads/cas/30YERA2R)*
