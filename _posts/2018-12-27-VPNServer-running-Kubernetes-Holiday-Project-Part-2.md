@@ -3,8 +3,9 @@ layout: post
 date: 2018-12-27  00:00:00
 categories: APIConnect
 title: 'VPNServer running Kubernetes'
+image: 'https://cdn-images-1.medium.com/max/800/1*EScuR6TCDCBgmvTrClI43g.png'
 ---
-## Holiday Project Part 2
+##  Holiday Project Part 2
 
 ![](https://cdn-images-1.medium.com/max/800/1*EScuR6TCDCBgmvTrClI43g.png)
 

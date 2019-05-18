@@ -3,6 +3,7 @@ layout: post
 date: 2019-05-18 02:00:00
 categories: APIConnect
 title: 'IBM API Connect WhitePaper in Physical Form'
+image: '/images/2019-05-18-WHITEpaper.jpg'
 ---
 
 ![image](/images/2019-05-18-WHITEpaper.jpg)
