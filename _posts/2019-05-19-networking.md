@@ -20,3 +20,5 @@ I have a static route in my ASUS router that forwards all traffic to 192.168.2.0
 The workstation 192.168.2.5 can ping google.comm, 8.8.8.8 and  192.168.2.3. However we cannot establish and SSL connection to the internet. (I have not tried locally)
 
 My laptop on 192.168.1.100 that connects directly to the ASUS wifi point can nmap 192.186.2.5 and 192.186.2.2 but not 192.168.2.3. However it cannot ssh into 192.168.2.5 with  a timeout error. The other nodes on that the CISCO unmanaged switch do not seem to have IPs. Or at least I can only see 192.168.2.5 from my laptop.
+
+HELP....
