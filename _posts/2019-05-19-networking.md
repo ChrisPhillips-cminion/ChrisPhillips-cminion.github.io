@@ -23,4 +23,6 @@ My laptop on 192.168.1.100 that connects directly to the ASUS wifi point can nma
 
 HELP....
 
-**UPDATE 1** : All computers on 192.168.2.* can connect to each other and can connect to the internet. I blame the internet connection before on virgin doing work on the line. 
+**UPDATE 1** : All computers on 192.168.2.* can connect to each other and can connect to the internet. I blame the internet connection before on virgin doing work on the line.
+
+The problem is how do i get into 192.168.2.* from either the internet or the 192.168.1.* network. I tried port forwarding but got a connection timeout. 
