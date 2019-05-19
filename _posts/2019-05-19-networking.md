@@ -3,6 +3,7 @@ layout: post
 date: 2019-05-19 02:00:00
 categories: Networking
 title: 'ARGH NETWORKS !!! - A Question'
+image: '/images/2019-05-19-network.png'
 ---
 
 *This is an blog post on what i am currently stuck on. This is posted partially to get my thoughts in order and to help anyone else hitting the same issue feel like they are not alone*
