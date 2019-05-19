@@ -22,3 +22,5 @@ The workstation 192.168.2.5 can ping google.comm, 8.8.8.8 and  192.168.2.3. Howe
 My laptop on 192.168.1.100 that connects directly to the ASUS wifi point can nmap 192.186.2.5 and 192.186.2.2 but not 192.168.2.3. However it cannot ssh into 192.168.2.5 with  a timeout error. The other nodes on that the CISCO unmanaged switch do not seem to have IPs. Or at least I can only see 192.168.2.5 from my laptop.
 
 HELP....
+
+**UPDATE 1** : All computers on 192.168.2.* can connect to each other and can connect to the internet. I blame the internet connection before on virgin doing work on the line. 
