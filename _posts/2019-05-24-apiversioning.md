@@ -158,6 +158,7 @@ The following table compares the four strategies to help you make the best choic
 Strategy comparison
 
 | Characteristic | One-dot V0.0 | Two-dot V0.0.0 | Three-dot V0.0.0.0 | Decoupled (one dot) V0.0 V0.0 |
+|---|---|---|---|---|
 | Simple, clear, obvious | Yes | No | No | No |
 | Couples the interface to the implementation | Tight | Loose | Loose | None |
 | Number of streams to manage | 2 | 3 | 4 | 2 2 |
