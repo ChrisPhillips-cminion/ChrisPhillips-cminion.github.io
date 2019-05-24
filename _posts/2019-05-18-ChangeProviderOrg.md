@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-05-19  00:00:00
+date: 2019-05-18 01:00:00
 categories: APIConnect
 title: 'Changing Provider Organisation Owner in APIConnect 2018 [Guest Post by Nick Cawood]'
 ---
@@ -14,8 +14,7 @@ To change the owner of a Provider Organisation firstly the new owner needs to be
 
 Firstly login
 
-`
-$ ./apic login --server platform.AAA.BB.CC.DD.nip.io --username EXISTING_OWNER --password PASSWORD --realm provider/default-idp-2`
+`$ ./apic login --server platform.AAA.BB.CC.DD.nip.io --username EXISTING_OWNER --password PASSWORD --realm provider/default-idp-2`
 
 Logged into platform.AAA.BB.CC.DD.nip.io successfully
 

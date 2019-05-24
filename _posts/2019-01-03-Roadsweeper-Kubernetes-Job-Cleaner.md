@@ -3,6 +3,7 @@ layout: post
 date: 2019-01-03  00:00:00
 categories: Kubernetes
 title: 'Roadsweeper - Kubernetes Job Cleaner'
+image: 'https://cdn-images-1.medium.com/max/800/1*fT5FZirLsGVFYmFQf-PHew.png'
 ---
 ## Holiday Project Part 3
 
