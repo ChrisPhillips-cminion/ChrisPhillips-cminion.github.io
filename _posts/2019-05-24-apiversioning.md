@@ -38,15 +38,15 @@ Maximum number of versions for a one-dot strategy
 
 | Version | State      |
 |---------|------------|
-| V1.4    | Live       |
+| V1.6    | Live       |
 | V1.5    | Superseded |
-| V1.6    | Deprecated |
-| V2.3    | Live       |
+| V1.3    | Deprecated |
+| V2.5    | Live       |
 | V2.4    | Superseded |
-| V2.5    | Deprecated |
-| V3.1    | Live       |
+| V2.3    | Deprecated |
+| V3.3    | Live       |
 | V3.2    | Superseded |
-| V3.3    | Deprecated |
+| V3.1    | Deprecated |
 
 
 In this example, the maximum number of deployments is the number of dots plus one to the power of three.
