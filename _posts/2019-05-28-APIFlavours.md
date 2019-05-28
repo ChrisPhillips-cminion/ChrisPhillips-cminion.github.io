@@ -3,7 +3,7 @@ layout: post
 date: 2019-05-28 02:00:00
 categories: API
 title: 'Mix and Matching your API Flavours'
-image:  'images/2019-05-27-CUPCAKE1.JPG'
+image:  '/images/2019-05-25-CUPCAKE1.JPG'
 ---
 
 There are many types of APIs available, I propose to reference these as flavours. In this article I am going to talk about the three key flavours.  
@@ -15,7 +15,7 @@ There are many types of APIs available, I propose to reference these as flavours
 These APIs can work by themselves or together depending on the requirements, but not every combination is suitable for everyone. A bit like Ice Cream.
 
 ![](/images/2019-05-25-CUPCAKE1.JPG)
-*Vegan BlackForrest, Mint Choc and Mocha Cupcakes made by* [Indulgent Me](https://www.facebook.com/indulgentme/) 
+*Vegan BlackForrest, Mint Choc and Mocha Cupcakes made by* [Indulgent Me](https://www.facebook.com/indulgentme/)
 
 ## What is an API?
 
