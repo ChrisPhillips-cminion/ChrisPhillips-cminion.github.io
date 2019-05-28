@@ -15,7 +15,7 @@ There are many types of APIs available, I propose to reference these as flavours
 These APIs can work by themselves or together depending on the requirements, but not every combination is suitable for everyone. A bit like Ice Cream.
 
 ![](/images/2019-05-25-CUPCAKE1.JPG)
-*Vegan BlackForrest, Mint Choc and Mocha Cupcakes made by* [Indulgent Me](https://www.facebook.com/indulgentme/)
+*Vegan BlackForrest, Mint Choc and Mocha Cupcakes made by* [Indulgent Me](https://indulgentme.co.uk/)
 
 ## What is an API?
 
@@ -115,4 +115,4 @@ The table below summaries the key differences.
 
 **Please note there is not a one size fits all pattern. An understanding about how and who is using the APIs is essential for selecting the correct flavour.**
 
-*All Cup Cakes made by [Indulgent Me](https://www.facebook.com/indulgentme/)*
+*All Cup Cakes made by [Indulgent Me](https://indulgentme.co.uk/)*
