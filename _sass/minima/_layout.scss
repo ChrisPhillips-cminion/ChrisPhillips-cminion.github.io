@@ -15,7 +15,24 @@
   max-height: 200px
 }
 
+#background{
+    position:absolute;
+    z-index:0;
+    background:white;
+    display:block;
+    color:yellow;
+    height:0px;
+    transform:rotate(60deg);
+-webkit-transform:rotate(60deg);
+}
 
+#bg-text
+{
+    color:lightgrey;
+    font-size:500px;
+     max-height:0px;
+
+}
 
 .site-title {
   @include relative-font-size(1.625);
@@ -197,6 +214,7 @@
  * Page content
  */
 .page-content {
+  z-index:1;
   padding: $spacing-unit 0;
   flex: 1 0 auto;
 }
@@ -243,10 +261,12 @@
 
 .post-title,
 .post-content h1 {
+
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
-
+  position:relative;
+z-index:1;
   @media screen and (min-width: $on-large) {
     @include relative-font-size(2.625);
   }
@@ -254,7 +274,8 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-
+  position:relative;
+  z-index:1;
   h2 {
     @include relative-font-size(1.75);
 

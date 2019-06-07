@@ -15,7 +15,11 @@ comments: true
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
       {%- endif -%}</p>
   </header>
-
+  {%- if page.draft -%}
+  <div id="background">
+  <p id="bg-text">Draft!!</p>
+  </div>
+  {%- endif -%}
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
