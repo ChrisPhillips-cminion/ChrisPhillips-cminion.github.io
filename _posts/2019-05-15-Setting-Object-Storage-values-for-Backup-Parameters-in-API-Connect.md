@@ -20,7 +20,7 @@ In a Container Service like IKS Object Storage can be selected as the back stora
 | Management | cassandra-backup-auth-pass | The password of the Service Account in the Container Service (apicup --validate will encrypt this value).
 | Management | cassandra-backup-protocol | The Backup Protocol e.g. `ObjStore` |
 | Management | cassandra-backup-schedule | The cronjob backup schedule e.g. `"0 0 * * *"`|
-|Portal | site-backup-host |  The private endpoint for the Bucket / region (e.g. s3.private.eu-de.cloud-object-storage.appdomain.cloud/eu-de). | 
+|Portal | site-backup-host |  The private endpoint for the Bucket / region (e.g. s3.private.eu-de.cloud-object-storage.appdomain.cloud/eu-de). |
 | Portal | site-backup-path | The "Bucket Name" from your Container Service Object Storage.|
 | Portal | site-backup-auth-user |  The username of the Service Account in the Container Service. |
 | Portal | site-backup-auth-pass |  The password of the Service Account in the Container Service (apicup --validate will encrypt this value). |
@@ -28,26 +28,4 @@ In a Container Service like IKS Object Storage can be selected as the back stora
 | Portal | site-backup-schedule | The cronjob backup schedule e.g. `"0 0 * * *"`|
 
 
-
-
-
-
-
-
-These parameters are set / re-set with the apicup apicup subsys set management|portal commands and then instantiated with the apicup subsys install management|portal command.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+These parameters are set / re-set with the apicup apicup subsys set management portal commands and then instantiated with the apicup subsys install management portal command.
