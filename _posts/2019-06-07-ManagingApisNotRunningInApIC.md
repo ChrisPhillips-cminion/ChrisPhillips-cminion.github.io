@@ -52,6 +52,6 @@ In the Portal it will appear like the following.
 ![](/images/2019-06-06-sh2.png)
 
 
-For a demo on how to do this please take a look at the following developer portal article. [https://developer.ibm.com/APIconnect/2019/05/20/consolidated-and-unified-catalog-with-API-connect/](https://developer.ibm.com/APIconnect/2019/05/20/consolidated-and-unified-catalog-with-API-connect/)
+For a demo on how to do this please take a look at the following developer works article. [https://developer.ibm.com/APIconnect/2019/05/20/consolidated-and-unified-catalog-with-API-connect/](https://developer.ibm.com/APIconnect/2019/05/20/consolidated-and-unified-catalog-with-API-connect/)
 
 Thanks to Takashi Sakairi and Swetha Sridharan for proof reading.
