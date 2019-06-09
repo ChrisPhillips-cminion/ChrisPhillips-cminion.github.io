@@ -4,7 +4,7 @@ date: 2019-06-09 10:00:00
 categories: Home Dashboard
 title: 'Home Dashboard Part 1 - My Location'
 ---
-I travel a lot for work, rough 75% of weeks I am away often out of the country.
+I travel a lot for work, rough 75% of weeks I am away, often out of the country.
 
 My kids always want to know where I am and my wife wanted a home dashboard so we can quickly check useful things.
 
@@ -14,7 +14,8 @@ I have an Iphone and I found a brilliant wrapper for node js module [find-my-iph
 
 This lets you take a username and password and then you can query for your location data. My sample code is below.
 
-```var icloud = require("find-my-iphone").findmyphone;
+```
+var icloud = require("find-my-iphone").findmyphone;
 var sleep = require("sleep");
 var mqtt = require('mqtt')
 console.log("Connecting")
