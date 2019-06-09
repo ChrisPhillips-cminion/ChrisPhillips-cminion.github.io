@@ -8,7 +8,7 @@ I travel a lot for work, rough 75% of weeks I am away, often out of the country.
 
 My kids always want to know where I am and my wife wanted a home dashboard so we can quickly check useful things.
 
-I will do another post on the dashboard aims, objectives and architecture but today I wanted to find a way to get my location data and share it on a map.
+I will do another post on the dashboard aims, objectives and architecture but today I wanted to find a way to get my location data and share it.
 
 I have an Iphone and I found a brilliant wrapper for node js module [find-my-iphone](https://www.npmjs.com/package/find-my-iphone).
 
@@ -58,6 +58,12 @@ I wanted to send the location to MQTT as my dashboard will pick up all info from
 }
 ```
 
-Next Steps
+### Working around the annoyances
+
+If you have tested this you may realise that every time the script is invoked it sends an alert to the iCloud account you are logging in with. This is not suitable if i want the script to run every ten minutes.
+
+To get around this you must create a new iCloud account and add it to the same iCloud family. The new account will now be able to query all devices in the family.  As this is a benign account the notifications are ignored.
+
+### Next Steps
 * Dockerise this script and turn it into a kuberentes job
 * Build my dashboard
