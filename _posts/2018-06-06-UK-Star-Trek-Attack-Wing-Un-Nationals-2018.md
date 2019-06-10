@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-06-06  00:00:00
-categories: other
+categories: StarTrekNationals
 title: 'UK Star Trek Attack Wing --- Un Nationals 2018'
 ---
 
