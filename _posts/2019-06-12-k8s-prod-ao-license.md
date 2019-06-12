@@ -11,7 +11,7 @@ draft: true
 If you are using API Connect with DataPower in Production you need to have the AO License file in order send on the analytics.
 
 However if DataPower is running in Kubernetes and the pod gets restarted the applied license is lost.
-
+ 
 
 If you are not in Production the best solution to this issue is  use the Non Production DataPower image.
 
