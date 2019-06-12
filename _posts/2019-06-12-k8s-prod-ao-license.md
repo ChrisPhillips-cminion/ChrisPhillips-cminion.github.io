@@ -6,7 +6,7 @@ title: "API Connect  - DataPower (Gateway) not forward logging events to Analyti
 draft: true
 ---
 
-*Thanks to August Ziesemer for helping me here*
+
 
 If you are using API Connect with DataPower in Production you need to have the AO License file in order send on the analytics.
 
