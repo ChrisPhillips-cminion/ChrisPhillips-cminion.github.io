@@ -34,6 +34,11 @@ layout: drafts
 ---
 ```
 
-Now I can view all my draft content at https://chrisphillips-cminion.github.io/drafts.html and when I am ready to publish I just remove the `draft: true`  from the header.
+Now I can view all my draft content at https://chrisphillips-cminion.github.io/drafts and when I am ready to publish I just remove the `draft: true`  from the header.
+
 
 Feel free to poke around my source [here](https://github.com/chrisPhillips-cminion/ChrisPhillips-cminion.github.io).
+
+
+
+***Update:** I have changed the path to drafts and updated it in this document. In addition I added a robots.txt file.*
