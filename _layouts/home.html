@@ -27,7 +27,7 @@ comments: true
           </td></tr>
         <!-- </h3> -->
         {%- if post.image  -%}
-        <tr class="post-img"><td align=center colspan = 2><img class="img-title" src={{ post.image }} /></td></tr>
+        <tr class="post-img"><td align=center colspan = 2><a class="post-link" href="{{ post.url | relative_url }}"><img class="img-title" src={{ post.image }} /></a></td></tr>
         {%- endif -%}
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
