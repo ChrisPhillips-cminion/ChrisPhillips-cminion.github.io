@@ -1,9 +1,8 @@
 ---
 layout: post
-date: 2019-06-10 10:00:00
+date: 2019-06-15 10:00:00
 categories: StarTrekNationals
 title: 'Star Trek Attack Wing Unnationals 2019.'
-draft: true
 ---
 
 
