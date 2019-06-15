@@ -10,6 +10,7 @@ draft: true
 
  Star Trek Attack Wing Unnationals has never been the busiest game but we had 11 players across the UK, including returning three time national champion Bryan G.
 
+
 _Trophy Kindly Provided by UK Games Expo_
 
 _Note: While watching the videos of this event you may have seen two things that may not appear quite right. This is a friendly tournament where want to test the skill of the players not the players ability to pack. Dan flew two Klingon B'rels that appeared to be permanently cloaked because of breakages on route. Also Byron lost one of his dials after arriving at the show. All players agreed that neither of these problems should stop them from playing._
@@ -118,6 +119,9 @@ The fourth round was
 | Table 5   |  Joey (12) vs Bryon (13)  | Joey |
 | Bye   |  Shug (9) | Shug |
 
+
+Link to Video Bryan vs Jed
+
 Final Standing before the cut
 
 | **Name** |	**Location** |	**Wins** | **Fleet Points**
@@ -140,6 +144,8 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 ### UK Semi Final - Final of Scotland
 
 **Bryan (1st)** vs **Derek (4th)**
+Link to Video Bryan vs Derek
+
 
 ### UK Semi Final - Final of England
 
@@ -148,6 +154,7 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 ## Final
 
 **Bryan** vs **Jed (+ Alex)**
+Link to Video Bryan vs Jed
 
 ### 3rd place play off.
 
@@ -155,7 +162,36 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 
 ## Final Listing
 
+Once again Bryan retains his crown but it was wonderful to see more countries in the top four after last years all Scotish.
+
+From the cut
+1. Bryan
+2. Jed
+3. Derek
+4. Dan
+
+From the Swis
+
+|**Name**|**Location**|**2018 Ranking**|**Win**|**Loss**|**Total Fleet Point**|**Round 1**|**Round 2**|**Round 3**|**Round 4**|
+|Bryan|Scotland|1|4|0|520|130|130|130|130|
+|Jed|Manchester|5|3|1|381|120|130|130|1
+|Dan|Weston Super Maire|8|3|1|376|130|130|1|115
+|Derek|Scotland|6|2|2|437|67|110|130|130
+|G|Scotland|3|2|2|433|130|117|56|130
+|David|Scotland|2|2|2|394|130|104|106|54
+|Shug|Scotland|9|2|2|216|21|130|65|0
+|Simon|Manchester|11|2|2|166|0|46|91|29
+|Joey|Weston Super Maire|12|2|2|152|1|20|0|51
+|Sam|Weston Super Maire|14|1|3|146|0|21|86|39
+|Byron|Weston Super Maire|13|1|3|51|0|0|0|51
+
 # Special Mentions
+
+### Shug (Fellowship award)
+
+Shug was voted the best player by everyone winning the fellowship award. Though we had a tiny prize pool this year I always like to give out a fellowship award equal to first place.
+
+Secondly no one has ever in my history of playing this game had such excitement of being awarded a bye. I was generally shocked by the size of the smile and the jumping for joy. (He needed a cigarette I found out later)
 
 ### David
 
@@ -165,6 +201,6 @@ David every year makes full use of of his 3d printer and prints a load of tokens
 
 Byron arrived with his fleet sheet, including an entire dosier on his ships and his opponents ships, highlighting entry points and week spots. I felt he had done the perfect amount of planning.
 
-### Shug
+### Peter Clark
 
-No one has ever in my history of playing this game had such excitement of being awarded a bye. I was generally shocked by the size of the smile and the jumping for joy. (He needed a cigarette I found out later)
+Though Peter once again was full of excuses for not making it, Peter  donated a number of the prizes. Peter is the prize master for the Stirling CGG and always goes out of his way to find prizes for events running. He does this volenteerly and often out of his own pocket.
