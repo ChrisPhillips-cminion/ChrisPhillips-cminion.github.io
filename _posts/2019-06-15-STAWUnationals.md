@@ -73,7 +73,7 @@ Standing at the end of the Second Round
 
 | **Name** |	**Location** |	**Wins** | **Fleet Points**
 |Bryan|Scotland|2|260
-|Dan|Weston Super Maire|2|261
+|Dan|Weston Super Maire|2|260
 |Jed|Manchester|2|250
 |G|Scotland|1|247
 |David|Scotland|1|234
