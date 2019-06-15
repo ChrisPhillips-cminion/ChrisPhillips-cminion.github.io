@@ -171,7 +171,7 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 
 ## Final Listing
 
-![](/images/2019-06-15-stawwk.jpg)
+![](/images/2019-06-15-stawwk.JPG)
 <br>
 *Bryan and Jed with Wizkids the day after the event*
 
