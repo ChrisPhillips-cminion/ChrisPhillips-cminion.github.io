@@ -6,15 +6,23 @@ title: 'Star Trek Attack Wing Unnationals 2019.'
 draft: true
 ---
 
+
+<span style="float:right; margin-right:5px; margin-left:5px"> <img src="/images/2019-06-15-staw2.png" /><BR><i>_Trophy Kindly Provided by UK Games Expo_</i></span>
+
+
  The first week of June is the (UK Games Expo)[https://www.ukgamesexpo.co.uk/]. For the last three years I have judged the UK Star Trek Attack Wing National Championships. Sometimes these are official this year unfortunately it was not.
 
  Star Trek Attack Wing Unnationals has never been the busiest game but we had 11 players across the UK, including returning three time national champion Bryan G.
 
 
-_Trophy Kindly Provided by UK Games Expo_
-
 _Note: While watching the videos of this event you may have seen two things that may not appear quite right. This is a friendly tournament where want to test the skill of the players not the players ability to pack. Dan flew two Klingon B'rels that appeared to be permanently cloaked because of breakages on route. Also Byron lost one of his dials after arriving at the show. All players agreed that neither of these problems should stop them from playing._
 
+
+<br/>
+<hr/>
+<br/>
+
+![](/images/2019-06-15-staw3.png)
 ### Round 1
 
 Every Year I ensure that the first round no one plays someone from their same town. This is so everyone gets a different opponent. The first round drawings were as followed.
@@ -29,7 +37,7 @@ Every Year I ensure that the first round no one plays someone from their same to
 | Table 5   |  Dan (8) vs Derek (6)  | Dan |
 | Bye   |  Sam (14) | Sam |
 
-Link to Video Dan vs Derek
+
 
 
 Standing at the end of the first Round
@@ -60,12 +68,12 @@ Sound Round listing were as follows
 | Bye   |  Byron (13) | Byron |
 
 
-Link to G vs Dan Video
+
 
 Standing at the end of the Second Round
 
 | **Name** |	**Location** |	**Wins** | **Fleet Points**
-|Bryan|Scotland|2|130
+|Bryan|Scotland|2|260
 |Dan|Weston Super Maire|2|261
 |Jed|Manchester|2|250
 |G|Scotland|1|247
@@ -89,7 +97,7 @@ The third round was
 | Table 5   |  Byron (13) vs Derek (6)  | Derek |
 | Bye   |  Joey (12) | Joey |
 
-Link to Bryan vs Dan
+
 
 Standing at the end of the Third Round
 
@@ -120,7 +128,7 @@ The fourth round was
 | Bye   |  Shug (9) | Shug |
 
 
-Link to Video Bryan vs Jed
+
 
 Final Standing before the cut
 
@@ -137,6 +145,9 @@ Final Standing before the cut
 |Sam|Weston Super Maire|1|146
 |Byron|Weston Super Maire|1|51
 
+
+<span style="float:right; margin-right:5px; margin-left:5px"> <img src="/images/2019-06-15-staw1.png" /><BR><i>Jed form Manchester</i></span>
+
 ## Top Cut - Semi Finals
 
 This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a Semi Final of the Scotsmen. Thus they were named as follows.
@@ -144,7 +155,6 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 ### UK Semi Final - Final of Scotland
 
 **Bryan (1st)** vs **Derek (4th)**
-Link to Video Bryan vs Derek
 
 
 ### UK Semi Final - Final of England
@@ -154,7 +164,7 @@ Link to Video Bryan vs Derek
 ## Final
 
 **Bryan** vs **Jed (+ Alex)**
-Link to Video Bryan vs Jed
+
 
 ### 3rd place play off.
 
@@ -162,7 +172,12 @@ Link to Video Bryan vs Jed
 
 ## Final Listing
 
-Once again Bryan retains his crown but it was wonderful to see more countries in the top four after last years all Scotish.
+![](/images/2019-06-15-stawwk.jpg)
+<br>
+*Bryan and Jed with Wizkids the day after the event*
+
+
+Once again Bryan retains his crown but it was wonderful to see more countries in the top four after last years all Scotish cut.
 
 From the cut
 1. Bryan
