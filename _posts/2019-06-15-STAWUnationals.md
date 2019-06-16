@@ -25,7 +25,7 @@ Every Year I ensure that the first round no one plays someone from their same to
 
 _Numbers in brackets is where they came last year_
 
-\| **Table** \| **vs** \| **Winner** \|
+| **Table** | **vs** | **Winner** |
 | Table 1 | Bryan (1) vs Joey (12) | Bryan |
 | Table 2 | David (2) vs Simon (11) | David |
 | Table 3   |  Jed (5) vs Shug (9) | Jed |
@@ -35,7 +35,7 @@ _Numbers in brackets is where they came last year_
 
 Standing at the end of the first Round
 
-\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
+| **Name** |	**Location** |	**Wins** | **Fleet Points**
 |Dan|Weston Super Maire|1|130
 |G|Scotland|1|130
 |Bryan|Scotland|1|130
@@ -52,7 +52,7 @@ Standing at the end of the first Round
 
 Sound Round listing were as follows
 
-\| **Table** \| **vs** \| **Winner** \|
+| **Table** | **vs** | **Winner** |
 | Table 1 | G (3) vs Dan (8) | Dan |
 | Table 2 | David (2) vs Bryan (1) | Bryan |
 | Table 3   |  Jed (5) vs Sam (14) | Jed |
@@ -62,7 +62,7 @@ Sound Round listing were as follows
 
 Standing at the end of the Second Round
 
-\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
+| **Name** |	**Location** |	**Wins** | **Fleet Points**
 |Bryan|Scotland|2|260
 |Dan|Weston Super Maire|2|260
 |Jed|Manchester|2|250
@@ -79,7 +79,7 @@ Standing at the end of the Second Round
 
 The third round was
 
-\| **Table** \| **vs** \| **Winner** \|
+| **Table** | **vs** | **Winner** |
 | Table 1 | Bryan (1) vs Dan (8) | Bryan |
 | Table 2 | Jed (5) vs G (3) | Jed |
 | Table 3   |  David (2) vs Shug (9) | David |
@@ -89,7 +89,7 @@ The third round was
 
 Standing at the end of the Third Round
 
-\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
+| **Name** |	**Location** |	**Wins** | **Fleet Points**
 |Bryan|Scotland|3|390
 |Jed|Manchester|3|381
 |David|Scotland|2|340
@@ -106,7 +106,7 @@ Standing at the end of the Third Round
 
 The fourth round was
 
-\| **Table** \| **vs** \| **Winner** \|
+| **Table** | **vs** | **Winner** |
 | Table 1 | Bryan (1) vs Jed (5) | Bryan |
 | Table 2 | Dan (8) vs David (2) | Dan |
 | Table 3   |  Simon (11) vs Derek (6) | Derek |
@@ -116,7 +116,7 @@ The fourth round was
 
 Final Standing before the cut
 
-\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
+| **Name** |	**Location** |	**Wins** | **Fleet Points**
 |Bryan|Scotland|4|520
 |Jed|Manchester|3|381
 |Dan|Weston Super Maire|3|376
@@ -160,14 +160,15 @@ _Bryan and Jed with Wizkids the day after the event_
 Once again Bryan retains his crown but it was wonderful to see more countries in the top four after last years all Scotish cut.
 
 From the cut
-1\. Bryan
-2\. Jed
-3\. Derek
-4\. Dan
+
+| 1\. Bryan |
+| 2\. Jed|
+| 3\. Derek|
+| 4\. Dan|
 
 From the Swis
 
-\|**Name**\|**Location**\|**2018 Ranking**\|**Win**\|**Loss**\|**Total Fleet Point**\|**Round 1**\|**Round 2**\|**Round 3**\|**Round 4**\|
+|**Name**|**Location**|**2018 Ranking**|**Win**|**Loss**|**Total Fleet Point**|**Round 1**|**Round 2**|**Round 3**|**Round 4**|
 |Bryan|Scotland|1|4|0|520|130|130|130|130|
 |Jed|Manchester|5|3|1|381|120|130|130|1
 |Dan|Weston Super Maire|8|3|1|376|130|130|1|115
