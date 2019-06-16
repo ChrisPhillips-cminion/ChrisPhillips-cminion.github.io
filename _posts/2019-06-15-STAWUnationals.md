@@ -5,30 +5,27 @@ categories: StarTrekNationals
 title: 'Star Trek Attack Wing Unnationals 2019.'
 ---
 
-
 <span style="float:right; margin-right:5px; margin-left:5px"> <img src="/images/2019-06-15-staw2.png" /><BR><i>_Trophy Kindly Provided by UK Games Expo_</i></span>
-
 
  The first week of June is the [UK Games Expo](https://www.ukgamesexpo.co.uk/). For the last three years I have judged the UK Star Trek Attack Wing National Championships. Sometimes these are official this year unfortunately it was not.
 
  Star Trek Attack Wing Unnationals has never been the busiest game but we had 11 players across the UK, including returning three time national champion Bryan G.
 
-
 _Note: While watching the videos of this event you may have seen two things that may not appear quite right. This is a friendly tournament where want to test the skill of the players not the players ability to pack. Dan flew two Klingon B'rels that appeared to be permanently cloaked because of breakages on route. Also Byron lost one of his dials after arriving at the show. All players agreed that neither of these problems should stop them from playing._
-
 
 <br/>
 <hr/>
 <br/>
 
 ![](/images/2019-06-15-staw3.png)
+
 ### Round 1
 
 Every Year I ensure that the first round no one plays someone from their same town. This is so everyone gets a different opponent. The first round drawings were as followed.
 
-*Numbers in brackets is where they came last year*
+_Numbers in brackets is where they came last year_
 
-| **Table** | **vs** | **Winner** |
+\| **Table** \| **vs** \| **Winner** \|
 | Table 1 | Bryan (1) vs Joey (12) | Bryan |
 | Table 2 | David (2) vs Simon (11) | David |
 | Table 3   |  Jed (5) vs Shug (9) | Jed |
@@ -36,12 +33,9 @@ Every Year I ensure that the first round no one plays someone from their same to
 | Table 5   |  Dan (8) vs Derek (6)  | Dan |
 | Bye   |  Sam (14) | Sam |
 
-
-
-
 Standing at the end of the first Round
 
-| **Name** |	**Location** |	**Wins** | **Fleet Points**
+\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
 |Dan|Weston Super Maire|1|130
 |G|Scotland|1|130
 |Bryan|Scotland|1|130
@@ -58,7 +52,7 @@ Standing at the end of the first Round
 
 Sound Round listing were as follows
 
-| **Table** | **vs** | **Winner** |
+\| **Table** \| **vs** \| **Winner** \|
 | Table 1 | G (3) vs Dan (8) | Dan |
 | Table 2 | David (2) vs Bryan (1) | Bryan |
 | Table 3   |  Jed (5) vs Sam (14) | Jed |
@@ -66,12 +60,9 @@ Sound Round listing were as follows
 | Table 5   |  Joey (12) vs Simon (11)  | Simon |
 | Bye   |  Byron (13) | Byron |
 
-
-
-
 Standing at the end of the Second Round
 
-| **Name** |	**Location** |	**Wins** | **Fleet Points**
+\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
 |Bryan|Scotland|2|260
 |Dan|Weston Super Maire|2|260
 |Jed|Manchester|2|250
@@ -88,7 +79,7 @@ Standing at the end of the Second Round
 
 The third round was
 
-| **Table** | **vs** | **Winner** |
+\| **Table** \| **vs** \| **Winner** \|
 | Table 1 | Bryan (1) vs Dan (8) | Bryan |
 | Table 2 | Jed (5) vs G (3) | Jed |
 | Table 3   |  David (2) vs Shug (9) | David |
@@ -96,11 +87,9 @@ The third round was
 | Table 5   |  Byron (13) vs Derek (6)  | Derek |
 | Bye   |  Joey (12) | Joey |
 
-
-
 Standing at the end of the Third Round
 
-| **Name** |	**Location** |	**Wins** | **Fleet Points**
+\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
 |Bryan|Scotland|3|390
 |Jed|Manchester|3|381
 |David|Scotland|2|340
@@ -113,25 +102,21 @@ Standing at the end of the Third Round
 |Joey|Weston Super Maire|1|21
 |Byron|Weston Super Maire|1|0
 
-
 ### Round 4
 
 The fourth round was
 
-| **Table** | **vs** | **Winner** |
-| Table 1 | Bryan (1) vs Jed (5) | Jed |
+\| **Table** \| **vs** \| **Winner** \|
+| Table 1 | Bryan (1) vs Jed (5) | Bryan |
 | Table 2 | Dan (8) vs David (2) | Dan |
 | Table 3   |  Simon (11) vs Derek (6) | Derek |
 | Table 4   | G (3) vs Sam (14)  | G |
 | Table 5   |  Joey (12) vs Bryon (13)  | Joey |
 | Bye   |  Shug (9) | Shug |
 
-
-
-
 Final Standing before the cut
 
-| **Name** |	**Location** |	**Wins** | **Fleet Points**
+\| **Name** |	**Location** |	**Wins** \| **Fleet Points**
 |Bryan|Scotland|4|520
 |Jed|Manchester|3|381
 |Dan|Weston Super Maire|3|376
@@ -144,7 +129,6 @@ Final Standing before the cut
 |Sam|Weston Super Maire|1|146
 |Byron|Weston Super Maire|1|51
 
-
 <span style="float:right; margin-right:5px; margin-left:5px"> <img src="/images/2019-06-15-staw1.png" /><BR><i>Jed form Manchester</i></span>
 
 ## Top Cut - Semi Finals
@@ -155,7 +139,6 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 
 **Bryan (1st)** vs **Derek (4th)**
 
-
 ### UK Semi Final - Final of England
 
 **Jed (+ Alex) (2nd)** vs **Dan (3rd)**
@@ -163,7 +146,6 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 ## Final
 
 **Bryan** vs **Jed (+ Alex)**
-
 
 ### 3rd place play off.
 
@@ -173,20 +155,19 @@ This led us to the Top 4 cut. By chance we had a Semi Final of Englishmen and a 
 
 ![](/images/2019-06-15-stawwk.JPG)
 <br>
-*Bryan and Jed with Wizkids the day after the event*
-
+_Bryan and Jed with Wizkids the day after the event_
 
 Once again Bryan retains his crown but it was wonderful to see more countries in the top four after last years all Scotish cut.
 
 From the cut
-1. Bryan
-2. Jed
-3. Derek
-4. Dan
+1\. Bryan
+2\. Jed
+3\. Derek
+4\. Dan
 
 From the Swis
 
-|**Name**|**Location**|**2018 Ranking**|**Win**|**Loss**|**Total Fleet Point**|**Round 1**|**Round 2**|**Round 3**|**Round 4**|
+\|**Name**\|**Location**\|**2018 Ranking**\|**Win**\|**Loss**\|**Total Fleet Point**\|**Round 1**\|**Round 2**\|**Round 3**\|**Round 4**\|
 |Bryan|Scotland|1|4|0|520|130|130|130|130|
 |Jed|Manchester|5|3|1|381|120|130|130|1
 |Dan|Weston Super Maire|8|3|1|376|130|130|1|115
