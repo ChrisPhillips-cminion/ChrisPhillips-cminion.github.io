@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-06-13 20:00:00
-categories: Misc
+categories: API
 title: "Go full throttle: The essentials of throttling in your application architecture"
 image:  '/images/2019-06-13-throttling-title.png'
 ---
