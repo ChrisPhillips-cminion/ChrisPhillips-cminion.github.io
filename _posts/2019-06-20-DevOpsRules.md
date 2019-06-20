@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-06-20 01:00:00
-categories: API
+categories: Misc
 title: "101 Rules for Deploying with Dev Ops"
 ---
 
