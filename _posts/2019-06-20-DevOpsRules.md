@@ -1,12 +1,11 @@
 ---
 layout: post
-date: 2019-06-14 01:00:00
+date: 2019-06-20 01:00:00
 categories: API
 title: "101 Rules for Deploying with Dev Ops"
-draft: true
 ---
 
-DevOps is the colloquial name for Automating Deployments. I have been to a number of clients that have run into issues because they did not properly plan or consider how DevOps could be best used for their business. The purpose of this article is to explain some ground rules that must be considered to start any DevOps journey.
+DevOps is the colloquial name for Automating Deployments. The purpose of this article is to explain some ground rules that must be considered to start any DevOps journey. I have seen a number of clients run into issues because they did not properly plan or consider how DevOps could be best used for their business.
 
 ## Rule No. 001
 ### The right number of  Environments
