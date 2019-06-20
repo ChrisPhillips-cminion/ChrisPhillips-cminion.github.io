@@ -13,6 +13,7 @@ API Connect has a lesser known feature that allows you to manage and expose on p
 You would still use the same swagger spec but set the host variable to point to the external API Gateway and set the enforced option to false.. A sample is below.
 
 ```
+
 swagger: '2.0'
 info:
   title: HTTPBin Example
@@ -41,6 +42,7 @@ paths:
             type: string
       consumes: []
       produces: []
+      
 ```
 
 

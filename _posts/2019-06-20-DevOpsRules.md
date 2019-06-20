@@ -19,16 +19,16 @@ I recommend that everyone starts with four and then scales out to additional one
 | **Environment** | **Purpose of the Environment**                                                                                                                                                                                                        |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Production      | Environment used for business operations. If this goes down the business is considered down.                                                                                                                                          |
-| Non Production  | The e2e test environment. Where all functional integration tests place for application being built takes place. If there is no NFT environment this is also done here                                                                       |
+| Non Production  | The e2e test environment. Where all functional integration tests place for Application/Service/Asset being built takes place. If there is no NFT environment this is also done here                                                                       |
 | Sandbox         | The Infrastructure Team use this environment to test upgrades and infrastructure changes prior to rolling them out to the other environments. After testing the changes are applied to each environment in order, from Dev through to Production. |
-| Dev             | Where developers develop their application or artefacts.                                                                                                                                                                              |
+| Dev             | Where developers develop their Application/Service/Asset.                                                                                                             |
 
 If there are funds available and need I would also add the following Environments
 
 | **Optional Environments** | **Purpose of the Environment**   |
 | NFT                       | Where non functional testing takes place, 'ilitility testing, performance testing. etc                                                                                                                                                |
 | Pre Production            | An environment identical to production, used by operations to validate that any changes will not impact production.   This should be a mirror of production.                                                                          |
-| Consumer Test             | Used to allow consumers of this application service or api to validate their code works. This should be a mirror of production.                                                                                                       |
+| Consumer Test             | Used to allow consumers of this Application/Service/Asset service or api to validate their code works. This should be a mirror of production.                                                                                                       |
 
 I would not recommend dynamic environments because these are hard to track the usage of and may mean environments are stood up but never used, increasing running costs and overheads. In short, they are stood up but rarely taken down again.
 
@@ -85,7 +85,7 @@ Each environment should have its own dedicated gate keeper who determines which 
 | Pre Production            | Operations          | - Everything must go via Pre Production                                            |
 |                           |                     | - This environment must mirror Production not just be representative               |
 |                           |                     | - Any issue seen in this environment suggests the same issue happens in production |
-| Consumer Test             | Operations          | - Consumers must have confidence the down stream applications and apis work.       |
+| Consumer Test             | Operations          | - Consumers must have confidence the downstream applications and apis work.       |
 |                           |                     | - Any issue seen in this environment suggests the same issue happens in production |
 
 **Each owner must decide what level of approval they require for their environment but the owner also carries the responsibility for the enviornment.**
@@ -96,3 +96,7 @@ Each environment should have its own dedicated gate keeper who determines which 
 It is common place to see DevOps being used to roll out Applications/Service/Assets, however the automation of deploying new environments or scaling / patching an existing one can be automated as well.
 
 **By Automating the management of environments you create a simpler system to manage.**
+<br><br>
+<hr>
+<br><br>
+*Doesn't everyone count in binary?*
