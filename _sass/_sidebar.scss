@@ -102,16 +102,16 @@ a.sidebar-nav-item:hover {
 }
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
-  position: relative;
+  // position: relative;
   // top:  .8rem;
-  @if $reverse-layout {
-    left: auto;
-    right: 1rem;
-  } @else {
-    left: 1rem;
-    right: auto;
-  }
-  display: block;
+  // @if $reverse-layout {
+  //   left: auto;
+  //   right: 1rem;
+  // } @else {
+  //   left: 1rem;
+  //   right: auto;
+  // }
+  // display: block;
   padding: 0.25rem 0.75rem;
   color: $theme-color;
   background-color: $white;
@@ -141,7 +141,7 @@ a.sidebar-nav-item:hover {
 }
 @media (min-width: 30.1em) {
   .sidebar-toggle {
-    position: fixed;
+    // position: fixed;
   }
 }
 @media print {

@@ -5,11 +5,13 @@
     <!-- {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%} -->
+
     <div display=flex>
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
       <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
     </div>
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
 
     <script>
       (function(document) {
