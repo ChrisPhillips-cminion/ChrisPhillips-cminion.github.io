@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<div class="wrap">
 <div class="tags-expo">
   <div class="tags-expo-list">
     <h2>Categories</h2>
@@ -24,4 +24,5 @@ layout: default
 </table>
     {% endfor %}
   </div>
+</div>
 </div>
