@@ -88,7 +88,7 @@ Each environment should have its own dedicated gate keeper who determines which 
 | Consumer Test             | Operations          | - Consumers must have confidence the downstream applications and apis work.       |
 |                           |                     | - Any issue seen in this environment suggests the same issue happens in production |
 
-**Each owner must decide what level of approval they require for any changes to their environment. The owner also carries the responsibility for the enviornment.**
+**Each owner must decide what level of approval they require for any changes to their environment. The owner also carries the responsibility for the environment.**
 
 ## Rule No. 101
 ### DevOps Infrastructure not just Applications/Service/Assets aka Infrastructure as Code
