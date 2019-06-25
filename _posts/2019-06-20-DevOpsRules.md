@@ -5,7 +5,7 @@ categories: Misc
 title: "101 Rules for Deploying with Dev Ops"
 ---
 
-DevOps is the colloquial name for Automating Deployments. The purpose of this article is to explain some ground rules that must be considered to start any DevOps journey. I have seen a number of clients run into issues because they did not properly plan or consider how DevOps could be best used for their business.
+Deployment automation is at the heart of DevOps. The purpose of this article is to explain some ground rules that must be considered to start any DevOps journey. I have seen a number of clients run into issues because they did not properly plan or consider how DevOps could be best used for their business.
 
 ## Rule No. 001
 ### The right number of  Environments
@@ -30,7 +30,7 @@ If there are funds available and need I would also add the following Environment
 | Pre Production            | An environment identical to production, used by operations to validate that any changes will not impact production.   This should be a mirror of production.                                                                          |
 | Consumer Test             | Used to allow consumers of this Application/Service/Asset service or api to validate their code works. This should be a mirror of production.                                                                                                       |
 
-I would not recommend dynamic environments because these are hard to track the usage of and may mean environments are stood up but never used, increasing running costs and overheads. In short, they are stood up but rarely taken down again.
+Dynamic environments are a contenous subject, because these are hard to track the usage of and may mean environments are stood up but never used, increasing running costs and overheads. In short, they are stood up but rarely taken down again.
 
 **Continually critically analyse the need of each environments. If an environment is not being used determine why and if it is needed.**
 
@@ -88,10 +88,10 @@ Each environment should have its own dedicated gate keeper who determines which 
 | Consumer Test             | Operations          | - Consumers must have confidence the downstream applications and apis work.       |
 |                           |                     | - Any issue seen in this environment suggests the same issue happens in production |
 
-**Each owner must decide what level of approval they require for their environment but the owner also carries the responsibility for the enviornment.**
+**Each owner must decide what level of approval they require for any changes to their environment. The owner also carries the responsibility for the enviornment.**
 
 ## Rule No. 101
-### DevOps Infrastructure not just Applications/Service/Assets
+### DevOps Infrastructure not just Applications/Service/Assets aka Infrastructure as Code
 
 It is common place to see DevOps being used to roll out Applications/Service/Assets, however the automation of deploying new environments or scaling / patching an existing one can be automated as well.
 
