@@ -4,7 +4,6 @@ date: 2019-06-26 01:00:00
 categories: APIConnect
 title: "APIC Profiler"
 image: "https://asciinema.org/a/zSkEqXvfHSN8I6Sb2UgHI0LwW.svg"
-draft: true
 ---
 
 I spend a lot of time at clients trying to debug their issues. It was suggested that it would help if we had a tool that could extract volumetrics out of the API Manager. This is not the transaction rate but the quantity of content.
