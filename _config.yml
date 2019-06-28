@@ -28,7 +28,10 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
 
+paginate: 10
+paginate_path: "/page:num/"
 
 future: false
 site:
