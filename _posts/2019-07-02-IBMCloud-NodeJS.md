@@ -1,18 +1,22 @@
 ---
 layout: post
-date: 2019-07-01 01:00:00
+date: 2019-07-02 01:00:00
 categories: IBMCloud
 title: "Publishing a NodeJS Application to IBM Cloud"
-draft: true
 ---
 
 This article explains the basics for publishing a Node JS application to the IBM Cloud (Formally Bluemix). It assumes that you are already have an IBM ID that is used on IBM Cloud.
 
 ## Pre Reqs
 
-1. Have an IBM ID that is connected to an IBM Cloud account
-2. Have an http service Node JS Implementation that starts with npm `start`.
-
+1. An IBM ID that is connected to an IBM Cloud account
+2. A Node JS Application exposing an HTTP(s) Interface
+3. The package.json of the NodeJS Application includes the following
+```
+"scripts": {
+  "start": "node index.js"
+}
+```
 
 ## 1. Manifest file
 
@@ -28,11 +32,21 @@ applications:
   routes:
   - route: applicationName.us-south.cf.appdomain.cloud
   timeout: 180
+
+
 ```
 
-Note the route must be unique and match the IBM Cloud you are routing to.
+The terms in the manifest are as explained below
 
-ApplicationName should be updated to match the name of your node application.
+| **Term**   | **Definition**  |
+| buildpack |  The IBM Cloud buildpack to pull in |
+| command   | The Shell command to execute the nodejs application   |
+| instances   |   The number of instances to spin up |
+| memory   | The amount of memory each instance should have.    |
+| name   | The name of  your application. This is used to identify the application in the IBM Cloud interfaces  |
+| routes   | The URL to access the application. Note the route must be unique and match the IBM Cloud you are routing to. |
+|  Timeout | How long to wait for the applciation to start.  |
+
 
 ## 2. Update package.json
 
@@ -50,7 +64,7 @@ This tells the BuildPack which version of node and npm to use. If this is not th
 ## 3. Push
 
 Log into the cloud with
-`ibmcloud login --sso`
+`ibmcloud login --sso` if you require logging in through your organization
 or
 `ibmcloud login`
 
@@ -59,5 +73,5 @@ Then push the application by running the following command in the directory with
 
 ## Getting the logs
 If you need to get the logs of your application then run the following command.
-`bx cf logs ApplicationName --recent`
+`ibmcloud cf logs ApplicationName --recent`
 Remember to update ApplicationName to the name you set in the manifest.
