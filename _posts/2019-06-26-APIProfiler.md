@@ -42,7 +42,8 @@ To download and install the tool please go to [https://github.com/ChrisPhillips-
 
 --------------------------------------------------------------------------------------------------------
 
- ## Number of Availability Zones 2
+## Number of Availability Zones 2
+
 --------------------------------------------------------------------------------------------------------
 
 |           NAME            | NUMBER OF V5C GWS | NUMBER OF API GWS | NUMBER OF PORTALS | NUMBER OF ANALYTICS |

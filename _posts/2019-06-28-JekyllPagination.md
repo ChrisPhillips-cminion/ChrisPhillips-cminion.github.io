@@ -12,7 +12,7 @@ This post is just a rehash of [https://jekyllrb.com/docs/pagination/](https://je
 
 To enable pagination in your Jekyll Blog
 
-1 - Add `jekyll-paginate` plugin is in the `_config.yaml` similar to the below
+1 - Add `jekyll-paginate` plugin in the `_config.yaml` similar to the below
 
 ```
 plugins:
@@ -28,10 +28,9 @@ paginate: 10
 paginate_path: "/page:num/"
 ```
 
-3 - Add `jekyll-paginate` to the `Gemfile` in the `jekyll_plugins` like below
+3 - Add `jekyll-paginate` to the `Gemfile` in the `jekyll_plugins` section like below
 
-<pre><code>
-group :jekyll_plugins do
+<pre><code>group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-sitemap"
   gem "jekyll-paginate"
@@ -44,8 +43,6 @@ end
 
 {% raw %}
 ```
-
-
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
