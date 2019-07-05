@@ -16,7 +16,7 @@ comments: true
     <!-- <ul class="post-list"> -->
     <table class="post-list">
       {%- for post in site.posts -%}
-      {%- if  post.draft == true -%}
+      {%- if  post.draft == 'hidden' -%}
       <!-- <li> -->
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <tr><td valign=top width=20%><span class="post-meta">{{ post.date | date: date_format }}</span></td><td>
