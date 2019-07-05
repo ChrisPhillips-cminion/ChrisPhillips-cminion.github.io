@@ -12,7 +12,7 @@ DataPower provides the facility to proxy WebSocket connections. This article is 
 * *Part 2* - How you can use API Connect to secure your implementation
 * *Part 3* - How to socialise it via the Developer Portal giving your consumers the easiest
 
-DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower before the connection is upgraded it applies the MultiProtocol Gateway Policies. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.
+DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower, it applies the Multiprotocol Gateway policies before the connection is upgraded. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.
 
 ### Prerequisites
 
@@ -42,7 +42,7 @@ DataPower is used to protect and proxy http connections. As a WebSocket is an up
 * Set the `Default Backside url`
   * Note that this should use http/https not wss/ws
   * Publicly available sites do not always upgrade requests on http or https.
-  * If you do not have a WebSocket server application available use my one available here.
+  * If you do not have a WebSocket server application available use my one available here https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets
 * Set the `Response and Request Type` to non-xml
 
 ![](/images/2019-07-04-WebSocketspt1-4.png)
@@ -74,7 +74,7 @@ DataPower is used to protect and proxy http connections. As a WebSocket is an up
 * Set `Validate server certificate` to off
   * This is not recommend for systems that are not prototypes
 
-Press Apply
+
 5. Press Apply.
 
 ### Testing
