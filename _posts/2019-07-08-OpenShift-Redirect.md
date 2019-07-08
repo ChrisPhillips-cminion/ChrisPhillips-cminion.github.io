@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2019-07-02 01:00:00
-categories: Kubernetes,openshift
+date: 2019-07-08 01:00:00
+categories: Kubernetes
 title: "Openshift Console redirects to 127.0.0.1"
 ---
 As I spent about an hour this issue I imagine I will not be the only one.
@@ -17,7 +17,7 @@ This happens if you have already completed one install without setting the publi
 3. redeploy the cluster `ov cluster up --public-hostname=<IP or hostname>`
 4. go to `http://<IP or hostname>:8443/console`
 
-![]("/images/2019-7-08-openshift.png")
+![](/images/2019-7-08-openshift.png)
 
 
 In order to give full credit where it is due, I found the solution here
