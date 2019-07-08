@@ -18,3 +18,7 @@ This happens if you have already completed one install without setting the publi
 4. go to `http://<IP or hostname>:8443/console`
 
 ![]("/images/2019-7-08-openshift.png")
+
+
+In order to give full credit where it is due, I found the solution here
+ [https://github.com/openshift/origin/issues/20726#issuecomment-467464588](https://github.com/openshift/origin/issues/20726#issuecomment-467464588)
