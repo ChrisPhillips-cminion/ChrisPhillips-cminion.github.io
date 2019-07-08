@@ -14,7 +14,7 @@ To enable pagination in your Jekyll Blog
 
 1 - Add `jekyll-paginate` plugin in the `_config.yaml` similar to the below
 
-```
+```yaml
 plugins:
   - jekyll-paginate
   - jekyll-feed
@@ -23,7 +23,7 @@ plugins:
 
 2 - Add the following two lines to `_config.yaml`
 
-```
+```yaml
 paginate: 10
 paginate_path: "/page:num/"
 ```
@@ -42,7 +42,7 @@ end
 5 - Add the following snippet to after the post list in your layout page. This adds the page links at the bottom of the page.
 
 {% raw %}
-```
+```html
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}

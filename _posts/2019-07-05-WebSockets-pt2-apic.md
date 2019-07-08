@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-07-05 01:00:00
+date: 2019-07-08 01:00:00
 categories: IBMCloud
 title: "WebSockets Part 2 - Securing with API Connect"
 draft: true
@@ -23,35 +23,68 @@ In Part 2 we will go through how API Connect can be used to provide Authenticati
 
 The API works similarly to an Authorisation URL. The API must be secured with the same security that you want to have to secure the Web Socket. When the Web Socket is establishing the connection to the DataPower, DataPower sends a request to this API with the credentials and the API responds with 200, 400, 401 or 500
 
-### 1. Create the API
+### 1. Create and Publish the API
 
-To simplify this  guide I have provided a sample API below.
+This guide assumes you have experience creating and using APIs in API Connect 2018. There is a sample provided below that can be used as a starting point.  This should be published to a catalog and the URl for the API should be recorded for future parts of this guide.
 
-To Import this into API Connect 2018.
-1. Login to API Connect
-2. Go to Drafts
-3. New API.
-4. Select Import.
-5. Create a new Product
+``` API Sample ```
 
-### 2. Publish the API
-1. Login to API Connect
-2. Go to Drafts
-3. Click on the hotdog menu and publish
+If you are using the sample a subscription is required, this is enforced by passing in a client id. You may choose to extend this so that a secret and/or Token or other Third Party security system. If that is case you need  to ensure in the gateway script below we pass in the correct details to the API.
 
-### 3. Subscribe to the API
-1. Login to API Connect
-2. Go to Catalogs
-3. Select the Catalog you published to
-4.  Select Consumer Organization
-5. Click add
-6. Select Applications
-7. Subscribe
+### 2. Call the API From DataPower
+We now need to modify the DataPower Policy so that it invokes the API when the initial connection is made.  When the connection is attempted prior to the upgrade DataPower will invoke the API with the required security details.
 
-### 6. Call the API From DataPower
+The sample below extracts the headers from the initial connection and proxies them on to the API call. If you have changed or extend the security requirements from the sample this will need updating.
+
+If the API returns to DataPower a 200 then the connection continues and is upgraded. If 200 is not responded then a 500 is thrown. This is sample code that should be adapted to handle error scenarios as you need.
+
+``` Sample Code ```
+
+Please save the sample code to a file on your local file system.
+
+### 2.1 Uploading the Sample Code
+
+Uploading the Script
+
 1. Log into DataPower
+![](/images/2019-07-04-WebSocketspt1-1.png)
+2. Upload the GatewayScript
+* Click on File System storage
+![](/images/2019-07-08-1.png)
+* Click on Actions to the right of local (feel free to use any path as long as you select the right file in 2.2)
+![](/images/2019-07-08-2.png)
+* Click on Upload files.
+![](/images/2019-07-08-3.png)
+* Select the file containing the source above and upload it.
+
+### 2.2 Uploading the Sample Code
+1. Click on Control Panel on the top left
+
+![](/images/2019-07-08-0.png)
 2. Go to the Multi-Protocol Gateways
-3. Select the WebSocket MPG
-4. Go to policies
+![](/images/2019-07-04-WebSocketspt1-2.png)
+3. Select the WebSocket MPG that was created in part 1
+4. Click on the plus by Multi-Protocol Gateway Policy so we can create a new policy.
+![](/images/2019-07-08-4.png)
+5. Give the policy a name and press Apply Policy
+6. Create a new rule and change the rule direction to be `Client to Server`
+![](/images/2019-07-08-5.png)
+7. Drag a GatewayScript icon ![](/images/2019-07-08-gw.png) from the panel to the line after the match icon ![](/images/2019-07-08-m.png).
+![](/images/2019-07-08-6.png)
+8. Double click on the gateway script policy
+9. Select the location of the GatewayScript file and press done
+![](/images/2019-07-08-8.png)
+10. Press  Apply Policy and Close Window
+11. Press Apply
 
 ### Test
+To test this you need to ensure that the headers are set when creating the websocket connection. To use my sample implementation with the sample API set the `x-ibm-client-id` to the client id from step 1.
+
+```javascript
+const connection = new WebSocket(url, {
+  headers: {
+    "x-ibm-client-id": "ID"
+  }
+})
+```
+My very basic websocket sample is available [here](https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets)

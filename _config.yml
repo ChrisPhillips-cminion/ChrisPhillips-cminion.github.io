@@ -19,6 +19,9 @@ description: Father of 2 - IBM Master Inventor & SWAT Integration Architect - AP
 baseurl: "" # the subpath of your site, e.g. /blog
 url: ""
 
+highlighter: rouge
+
+
 twitter_username: cminion
 github_username:  ChrisPhillips-cminion
 

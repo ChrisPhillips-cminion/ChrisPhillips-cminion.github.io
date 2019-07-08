@@ -12,7 +12,7 @@ This article explains the basics for publishing a Node JS application to the IBM
 1. An IBM ID that is connected to an IBM Cloud account
 2. A Node JS Application exposing an HTTP(s) Interface
 3. The package.json of the NodeJS Application includes the following
-```
+```javascript
 "scripts": {
   "start": "node index.js"
 }
@@ -22,7 +22,7 @@ This article explains the basics for publishing a Node JS application to the IBM
 
 In the root of the node js application create a manifest.yml
 
-```
+```yaml
 applications:
 - buildpack: sdk-for-nodejs_v3_27-20190530-0937
   command: npm start
@@ -52,7 +52,7 @@ The terms in the manifest are as explained below
 
 Ensure your package.json you have the following section.
 
-```
+```javascript
 "engines": {
   "node": "12.x",
   "npm": "6.x"
