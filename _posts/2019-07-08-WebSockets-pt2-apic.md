@@ -10,7 +10,7 @@ DataPower provides the facility to proxy WebSocket connections. This article is 
 
 * *Part 1* - How to create a WebSocket Proxy in DataPower
 * **Part 2 - How you can use API Connect to secure your implementation**
-* *Part 3* - How to socialise it via the Developer Portal giving your consumers the easiest
+* *Part 3* - How to socialise it via the Developer Portal giving your consumers the best onboarding experience (Delayed)
 
 *DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower before the connection is upgraded it applies the MultiProtocol Gateway Policies. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.*
 
@@ -27,7 +27,58 @@ The API works similarly to an Authorisation URL. The API must be secured with th
 
 This guide assumes you have experience creating and using APIs in API Connect 2018. There is a sample provided below that can be used as a starting point.  This should be published to a catalog and the URl for the API should be recorded for future parts of this guide.
 
-``` API Sample ```
+```yaml
+swagger: '2.0'
+info:
+  title: WebSocketAA
+  x-ibm-name: websocketaa
+  version: 1.0.0
+  description: Used To Authenticate and Authorize WebSocket calls
+schemes:
+  - https
+basePath: /websocketaa
+security:
+  - clientID: []
+securityDefinitions:
+  clientID:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+x-ibm-configuration:
+  cors:
+    enabled: true
+  gateway: datapower-gateway
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  assembly:
+    execute:
+      - set-variable:
+          version: 1.0.0
+          title: set-variable
+          actions:
+            - set: message.body
+              value: SUCCESS
+    catch: []
+  properties:
+    target-url:
+      value: 'http://example.com/operation-name'
+      description: The URL of the target service
+      encoded: false
+  application-authentication:
+    certificate: false
+paths:
+  /:
+    get:
+      responses:
+        '200':
+          description: ok
+          schema:
+            type: string
+      consumes: []
+      produces: []
+```
 
 If you are using the sample a subscription is required, this is enforced by passing in a client id. You may choose to extend this so that a secret and/or Token or other Third Party security system. If that is case you need  to ensure in the gateway script below we pass in the correct details to the API.
 
@@ -74,9 +125,8 @@ Uploading the Script
 8. Double click on the gateway script policy
 9. Select the location of the GatewayScript file and press done
 ![](/images/2019-07-08-8.png)
-10. Press  Apply Policy and Close Window
+10. Press Apply Policy and Close Window
 11. Press Apply
-
 ### Test
 To test this you need to ensure that the headers are set when creating the websocket connection. To use my sample implementation with the sample API set the `x-ibm-client-id` to the client id from step 1.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-07-05 01:00:00
+date: 2019-07-08 01:00:00
 categories: IBMCloud
 title: "WebSockets Part 1 - How to create a WebSocket Proxy in DataPower"
 draft: true
@@ -10,9 +10,11 @@ DataPower provides the facility to proxy WebSocket connections. This article is 
 
 * **Part 1 - How to create a WebSocket Proxy in DataPower**
 * *Part 2* - How you can use API Connect to secure your implementation
-* *Part 3* - How to socialise it via the Developer Portal giving your consumers the easiest
+* *Part 3* - How to socialise it via the Developer Portal giving your consumers the best onboarding experience (Delayed)
 
 DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower, it applies the Multiprotocol Gateway policies before the connection is upgraded. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.
+
+*Note: if you are doing this on the same DataPower as API Connect I recommend this is run in its own dedicated domain. This solution should not be used in a Multi-Protocol Gateway that was created for the purpose of exposing APIs.*
 
 ### Prerequisites
 
