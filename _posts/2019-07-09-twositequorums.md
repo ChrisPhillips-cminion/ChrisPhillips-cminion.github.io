@@ -6,7 +6,7 @@ title: "What are the risks with running a Quorum over two sites in a Active Acti
 draft: true
 ---
 
-Nearly every customer in the world has two data centres for a given solution or region.  In order for Quorums to work they require one or three plus DataCenters. This article  covers the complexities of quorums running over two sites.
+Nearly every organization in the world has two data centres for a given solution or region.  In order for Quorums to work they require one or three plus DataCenters. This article  covers the complexities of quorums running over two sites.
 
 ### 1. - Background, What is a Quorum
 
