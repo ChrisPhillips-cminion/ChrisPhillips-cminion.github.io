@@ -125,9 +125,9 @@ Three DataCenters with a low latency connection. The latency requirement is dica
 
 This pattern allows for the quorum to fail after two outages. Greatly improving availability over the pattens in section 2.
 
-### 3.2. - Arbitor Nodes
+### 3.2. - Arbiter Node
 
-This Pattern is the same as 3.1 however **no data is sent to site3**.  Site three is only used to determine Quorum integrity.
+This Pattern is the same as 3.1 however node 3 is the arbiter node. In this pattern **no data is sent to site3**.  Node 3 is only used to determine Quorum integrity.
 
 Please note: This still requires three sites. If you put the Arbitor Node on to site 1 or site 2 then you have the same problems as those dictated in 2.
 
