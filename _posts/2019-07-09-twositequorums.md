@@ -13,7 +13,7 @@ Nearly every organization in the world has two data centres for a given solution
 A Quorum is a computer science pattern for allowing HA across multiple nodes or sites while removing the risk of HA.
 
 
-In a Quorum a node can only write to a disk (or elect a primary) if it can connect to more then 50% of the total nodes. This means that if a node looses connectivity with 50% or more other nodes it shuts itself down greatly reducing the risk of split brain.
+In a Quorum a node can only write to a disk (or elect a primary) if it can connect to more then 50% of the total nodes. This means that if a node loses connectivity with 50% or more other nodes it shuts itself down greatly reducing the risk of split brain.
 
 The key advantage of Quorums is the reduction of data corruption caused by split brain.
 
@@ -25,7 +25,7 @@ The key advantage of Quorums is the reduction of data corruption caused by split
 | Down  | Up    | Up     | Yes           |
 | Down  | Down  | Up     | No            |
 
-If you loose two nodes the quorum is lost.
+If you lose two nodes the quorum is lost.
 
 ### 1.2. - 4 Node Quorum Example
 
@@ -35,7 +35,7 @@ If you loose two nodes the quorum is lost.
 | Down  | Up    | Up     | Up     | Yes           |
 | Down  | Down  | Up     | Up     | No            |
 
-If you loose two nodes we still have lost quorum because we do not have more then 50% of the nodes available. Quroums are recomended to have an odd number of nodes as from an availability standpoint an even number has the same availability as one less.
+If you lose two nodes we still have lost quorum because we do not have more then 50% of the nodes available. Quroums are recomended to have an odd number of nodes as from an availability standpoint an even number has the same availability as one less.
 
 
 ### 2. - Active Active
@@ -43,6 +43,8 @@ If you loose two nodes we still have lost quorum because we do not have more the
 There are three common anti patterns for Active Active deployments.
 
 ### 2.1 - Majority of nodes on one site
+
+**TLDR: This provide no additional availablity over having a single site.**
 
 For this example I will use two nodes on  site 1 and one on site 2. This is true regardless of the number of nodes as long as they are not equal and there are only two sites.
 
@@ -62,6 +64,7 @@ This means that site 1 is a single point of failure and this solution provide no
 
 ### 2.2 - Equal number of nodes on each site
 
+**TLDR: This provide LESS availablity then having a single site.**
 
 For this example I will use one node on  site 1 and one on site 2. This is true regardless of the number of nodes as long as they are equal and there are only two sites.
 
@@ -83,6 +86,8 @@ This means that there are two critical points of failure and this solution provi
 
 ### 2.3 - Floating node
 
+**TLDR: This has a significant risk of data Corruption. If data corruption occurs then you must role back to your last good backup.**
+
 For this example I will use one static node on each site and a third node that is replicated between the sites. If the second site detects that the first site is having an outage then it will active the third node in site 2 thus creating a majority.
 
 This example brings in the concept of site connectivity. The site connectivity is the network connection linking the sites together.
@@ -94,19 +99,43 @@ This example brings in the concept of site connectivity. The site connectivity i
 | Up |  Up |Up | Up  | Standby | Yes | Eveything running as normal |
 | Up |  Up |Up | Outage  | Outage | Yes | Site 2 Outage |
 | Outage |  Outage |Up | Up  | Up | No | Site 1 Outage |
-| Up |  Up | Down | Up  | Up | Yes but data Corruption | Split Brain, Connectivity lost between sites. |
+| Up |  Up | Down | Up  | Up | No  | Split Brain, Connectivity lost between sites. |
 
-With this pattern if we loose either Site 1 or Site 2 then the Quorum will be intact, allowing for RPO RTO.
+With this pattern if we lose either Site 1 or Site 2 then the Quorum will be intact, allowing for RPO RTO.
 
 However if a site connectivity issue occurs, site 2 will believe that site 1 is having an outage. This means that the floating VM will be activated on site 2.  Once this is activated on site 2 There are two quorums both writing to disk. In the event of this scenario you have data corruption as the data sets will not trivially be mergable as there is a high chance of data conflicts.
 
 This pattern carries the most risk.
 
-### 3. - Conclusion
+### 3. How it should work - Three sites
+
+Three plus sites is the prefered option for Quorums.  There are two common patterns for three sites but not all solutions support both.
+
+### 3.1. Active Active Active
+
+Three DataCenters with a low latency connection. The latency requirement is dicated by the application requiring the Quorum. For kubernetes this is 50ms round trip between each site.
+
+| Site1  | Site2 | Site3 | Quourm Intact | Comment |
+|---|---|---|---|---|
+| Node1  | Node2 | Node3 |  |  |
+|---|---|---|---|---|
+| Up   |  Up |  Up | Yes  | Business as Usual  |
+| Up   |  Up |  Down |  Yes |  Site 3 Outage  |
+| Up   |  Down |  Down |  No |  Site 3 and Site 2 Outage  |
+
+This pattern allows for the quorum to fail after two outages. Greatly improving availability over the pattens in section 2.
+
+### 3.2. - Arbitor Nodes
+
+This Pattern is the same as 3.1 however **no data is sent to site3**.  Site three is only used to determine Quorum integrity.
+
+Please note: This still requires three sites. If you put the Arbitor Node on to site 1 or site 2 then you have the same problems as those dictated in 2.
+
+### 4. - Conclusion
 
 From section two of this article I have shown the significant risks of having,
 * A majority on one site
 * An equal numbers on each site
 * Replicating a node between sites.
 
-Given the solutions above I would recommend getting a third site. If this is not possible I would  evaluate Active Passive along side any above other solution. Though the cost is more, the risk is greatly reduced.
+Given the solutions above **I would recommend having a third site**. If this is not possible I would **evaluate Active Passive** along side any above other solution. Though the cost is more, the risk is **greatly reduced**.
