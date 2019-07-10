@@ -35,7 +35,7 @@ If you lose two nodes the quorum is lost.
 | Down  | Up    | Up     | Up     | Yes           |
 | Down  | Down  | Up     | Up     | No            |
 
-If you lose two nodes we still have lost quorum because we do not have more then 50% of the nodes available. Quroums are recomended to have an odd number of nodes as from an availability standpoint an even number has the same availability as one less.
+If you lose two nodes we still have lost quorum because we do not have more then 50% of the nodes available. Qurums are recomended to have an odd number of nodes as from an availability standpoint an even number has the same availability as one less.
 
 
 ### 2. - Active Active
@@ -129,7 +129,7 @@ This pattern allows for the quorum to fail after two outages. Greatly improving 
 
 This Pattern is the same as 3.1 however node 3 is the arbiter node. In this pattern **no data is sent to site3**.  Node 3 is only used to determine Quorum integrity.
 
-Please note: This still requires three sites. If you put the Arbitor Node on to site 1 or site 2 then you have the same problems as those dictated in 2.
+Please note: This still requires three sites. If you put the Arbiter Node on to site 1 or site 2 then you have the same problems as those dictated in 2.
 
 ### 4. - Conclusion
 
