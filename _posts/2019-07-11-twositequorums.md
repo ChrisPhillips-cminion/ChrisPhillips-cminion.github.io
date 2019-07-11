@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-07-11 07:00:00
+date: 2019-07-11 06:00:00
 categories: Misc
 title: "What are the risks with running a Quorum over two sites in an Active Active Pattern. "
 ---
