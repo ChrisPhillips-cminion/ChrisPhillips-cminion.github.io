@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-07-11 06:00:00
+date: 2019-07-11 06o:00:00
 categories: Misc
 title: "What are the risks with running a Quorum over two sites in an Active Active Pattern. "
 ---
@@ -87,7 +87,7 @@ This means that there are two critical points of failure and this solution provi
 
 **TLDR: This has a significant risk of data Corruption. If data corruption occurs then you must role back to your last good backup.**
 
-For this example I will use one static node on each site and a third node that is replicated between the sites. If the second site detects that the first site is having an outage then it will active the third node in site 2 thus creating a majority.
+For this example I will use one static node on each site and a third node that is replicated between the sites. If the second site detects that the first site is having an outage then it will activate the third node in site 2 thus creating a majority.
 
 This example brings in the concept of site connectivity. The site connectivity is the network connection linking the sites together.
 
