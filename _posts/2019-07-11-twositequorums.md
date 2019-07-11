@@ -1,25 +1,24 @@
 ---
 layout: post
-date: 2019-07-09 01:00:00
+date: 2019-07-11 07:00:00
 categories: Misc
-title: "What are the risks with running a Quorum over two sites in a Active Active Pattern. "
-draft: true
+title: "What are the risks with running a Quorum over two sites in an Active Active Pattern. "
 ---
 
-Nearly every organization in the world has two data centres for a given solution or region.  In order for Quorums to work they require one or three plus DataCenters. This article  covers the complexities of quorums running over two sites.
+Nearly every organisation in the world has two data centres for a given solution or region.  In order for Quorums to work they require one or three plus DataCenters. This article  covers the complexities of quorums running over two sites.
 
 ### 1. - Background, What is a Quorum
 
 A Quorum is a computer science pattern for allowing HA across multiple nodes or sites while removing the risk of HA.
 
 
-In a Quorum a node can only write to a disk (or elect a primary) if it can connect to more then 50% of the total nodes. This means that if a node loses connectivity with 50% or more other nodes it shuts itself down greatly reducing the risk of split brain.
+In a Quorum a node can only write to a disk (or elect a primary) if it can connect to **more then 50%** of the total nodes. This means that if a node loses connectivity with 50% or more other nodes it shuts itself down greatly reducing the risk of split brain.
 
 The key advantage of Quorums is the reduction of data corruption caused by split brain.
 
 ### 1.1. - 3 Node Quorum Example
 
-| Node1 | Node2 | Node3 | Quorum Intact |
+| Node1 | Node2 | Node3  | Quorum Intact |
 | ----- | ----- | ------ | ------------- |
 | Up    | Up    | Up     | Yes           |
 | Down  | Up    | Up     | Yes           |
@@ -29,13 +28,13 @@ If you lose two nodes the quorum is lost.
 
 ### 1.2. - 4 Node Quorum Example
 
-| Node1 | Node2 | Node3 | Node4 | Quorum Intact |
+| Node1 | Node2 | Node3  | Node4  | Quorum Intact |
 | ----- | ----- | ------ | ------ | ------------- |
 | Up    | Up    | Up     | Up     | Yes           |
 | Down  | Up    | Up     | Up     | Yes           |
 | Down  | Down  | Up     | Up     | No            |
 
-If you lose two nodes we still have lost quorum because we do not have more then 50% of the nodes available. Qurums are recomended to have an odd number of nodes as from an availability standpoint an even number has the same availability as one less.
+If you lose two nodes we still have lost quorum because we do not have more then 50% of the nodes available. Quorums are recommended to have an odd number of nodes as from an availability standpoint an even number has the same availability as one less.
 
 
 ### 2. - Active Active
@@ -44,7 +43,7 @@ There are three common anti patterns for Active Active deployments.
 
 ### 2.1 - Majority of nodes on one site
 
-**TLDR: This provide no additional availablity over having a single site.**
+**TLDR: This provide no additional availability over having a single site.**
 
 For this example I will use two nodes on  site 1 and one on site 2. This is true regardless of the number of nodes as long as they are not equal and there are only two sites.
 
@@ -53,7 +52,7 @@ For this example I will use two nodes on  site 1 and one on site 2. This is true
 | Site 1 | | Site 2 | Quorum Intact  | Comment |
 | ------ | --- | ------ | ------------- | --- |
 | Node1  | Node2 | Node3 |              |     |
-| Up |  Up | Up  | Yes | Eveything running as normal |
+| Up |  Up | Up  | Yes | Everything running as normal |
 | Up |  Up | Outage  | Yes | Site 2 Outage |
 | Outage |  Outage | Up  | No | Site 1 Outage |
 
@@ -64,7 +63,7 @@ This means that site 1 is a single point of failure and this solution provide no
 
 ### 2.2 - Equal number of nodes on each site
 
-**TLDR: This provide LESS availablity then having a single site.**
+**TLDR: This provide LESS availability then having a single site.**
 
 For this example I will use one node on  site 1 and one on site 2. This is true regardless of the number of nodes as long as they are equal and there are only two sites.
 
@@ -73,7 +72,7 @@ For this example I will use one node on  site 1 and one on site 2. This is true 
 | Site 1 |  Site 2 | Quorum Intact  | Comment |
 | ------ | ------ | ------------- | --- |
 | Node1 |  Node2   | | |
-| Up |  Up  | Yes | Eveything running as normal |
+| Up |  Up  | Yes | Everything running as normal |
 | ------ | ------ | ------------- | -- |
 |    Up | Outage  | No | Site 2 Outage |
 | Outage | Up  | No | Site 1 Outage |
@@ -96,26 +95,26 @@ This example brings in the concept of site connectivity. The site connectivity i
 | Site 1 | | Site Connectivity| Site 2 | |Quorum Intact  | Comment |
 | ------ | | | ------ | |------------- | --- |
 | Node1 | Floating Node3  | | Node2  | Floating Node3 | | |
-| Up |  Up |Up | Up  | Standby | Yes | Eveything running as normal |
+| Up |  Up |Up | Up  | Standby | Yes | Everything running as normal |
 | Up |  Up |Up | Outage  | Outage | Yes | Site 2 Outage |
 | Outage |  Outage |Up | Up  | Up | No | Site 1 Outage |
 | Up |  Up | Down | Up  | Up | No  | Split Brain, Connectivity lost between sites. |
 
 With this pattern if we lose either Site 1 or Site 2 then the Quorum will be intact, allowing for RPO RTO.
 
-However if a site connectivity issue occurs, site 2 will believe that site 1 is having an outage. This means that the floating VM will be activated on site 2.  Once this is activated on site 2 There are two quorums both writing to disk. In the event of this scenario you have data corruption as the data sets will not trivially be mergable as there is a high chance of data conflicts.
+However if a site connectivity issue occurs, site 2 will believe that site 1 is having an outage. This means that the floating VM will be activated on site 2.  Once this is activated on site 2 There are two quorums both writing to disk. In the event of this scenario you have data corruption as the data sets will not trivially be merged as there is a very high chance of data conflicts.
 
 This pattern carries the most risk.
 
 ### 3. How it should work - Three sites
 
-Three plus sites is the prefered option for Quorums.  There are two common patterns for three sites but not all solutions support both.
+Three plus sites is the preferred option for Quorums.  There are two common patterns for three sites but not all solutions support both.
 
 ### 3.1. Active Active Active
 
-Three DataCenters with a low latency connection. The latency requirement is dicated by the application requiring the Quorum. For kubernetes this is 50ms round trip between each site.
+Three DataCenters with a low latency connection. The latency requirement is dictated by the application requiring the Quorum. For Kubernetes this is 50ms round trip between each site.
 
-| Site1  | Site2 | Site3 | Quourm Intact | Comment |
+| Site1  | Site2 | Site3 | Quorum Intact | Comment |
 |---|---|---|---|---|
 | Node1  | Node2 | Node3 |  |  |
 |---|---|---|---|---|
