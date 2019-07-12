@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-07-12 01:00:00
+date: 2019-07-12 12:00:00
 categories: Jekyll
 title: "Hiding blocks while using Jekyll"
 ---
