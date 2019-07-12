@@ -13,7 +13,7 @@ Just a note to say that I have released the API Connect Profiler tool.
 2. Fixed and issue with logging into the multiple provider orgs with different user creds
 3. Pushed the code change that fixed the issue where it was using Title not Name when making requests.
 
-https://github.com/ChrisPhillips-cminion/APIConnect-Profiler/releases/tag/v1.0.3
+[https://github.com/ChrisPhillips-cminion/APIConnect-Profiler/releases/tag/v1.0.3](https://github.com/ChrisPhillips-cminion/APIConnect-Profiler/releases/tag/v1.0.3)
 
 **TODO**
 Tidy up the multi provider org code.
