@@ -15,12 +15,12 @@
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
         document.addEventListener('click', function(e) {
           var target = e.target;
+          var sidebar = document.querySelector('#sidebar');
+          var checkbox = document.querySelector('#sidebar-checkbox');
           if (target === toggle) {
-            checkbox.checked = !checkbox.checked;
+            checkbox.checked = checkbox==null?false:!checkbox.checked;
             e.preventDefault();
           } else if (checkbox.checked && !sidebar.contains(target)) {
             /* click outside the sidebar when sidebar is open */
@@ -31,5 +31,6 @@
     </script>
 
     {%- include adUp.html -%}
+    
   </div>
 </header>

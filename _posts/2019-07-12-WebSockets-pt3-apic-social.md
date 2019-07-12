@@ -20,9 +20,14 @@ In the previous parts we created a WebSocket proxy and secured it with an API Co
 This API is an unenforced API as explained in [https://chrisphillips-cminion.github.io/api/2019/06/07/ManagingApisNotRunningInApIC.html](https://chrisphillips-cminion.github.io/api/2019/06/07/ManagingApisNotRunningInApIC.html)
 
 
-Below is a sample.
+
+
+<button class="collapsible" id="yaml">Click here for the sample.</button>
+
+<div class="content" id="yamldata" markdown="1">
 
 ```yaml
+
 swagger: '2.0'
 info:
   title: WebSocketDemo
@@ -58,6 +63,7 @@ paths:
 
 ```
 
+</div>
 The key parts of this api are listed blow.
 
 |---|---|---|

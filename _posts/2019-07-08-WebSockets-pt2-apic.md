@@ -27,6 +27,13 @@ The API works similarly to an Authorisation URL. The API must be secured with th
 
 This guide assumes you have experience creating and using APIs in API Connect 2018. There is a sample provided below that can be used as a starting point.  This should be published to a catalog and the URl for the API should be recorded for future parts of this guide.
 
+
+<button class="collapsible" id="yaml">Click here for the sample.</button>
+
+<div class="content" id="yamldata" markdown="1">
+
+
+
 ```yaml
 swagger: '2.0'
 info:
@@ -80,6 +87,8 @@ paths:
       produces: []
 ```
 
+</div>
+
 If you are using the sample a subscription is required, this is enforced by passing in a client id. You may choose to extend this so that a secret and/or Token or other Third Party security system. If that is case you need  to ensure in the gateway script below we pass in the correct details to the API.
 
 ### 2. Call the API From DataPower
@@ -89,7 +98,14 @@ The sample below extracts the headers from the initial connection and proxies th
 
 If the API returns to DataPower a 200 then the connection continues and is upgraded. If 200 is not responded then a 500 is thrown. This is sample code that should be adapted to handle error scenarios as you need.
 
-``` Sample Code ```
+
+<button class="collapsible" id="js">Click here for the sample.</button>
+
+<div class="content" id="jsdata" markdown="1">
+
+ Sample Code
+
+</div>
 
 Please save the sample code to a file on your local file system.
 
