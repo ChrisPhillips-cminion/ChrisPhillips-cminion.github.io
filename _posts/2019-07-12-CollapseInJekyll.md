@@ -7,11 +7,12 @@ title: "Hiding blocks while using Jekyll"
 
 I was wanting to hide sample code in my posts so  the meat of the information could be more easily seen.
 
-I went to w3Schools to and they provided me with the sample I needed. However it does not work in Jekyll.
+I went to W3Schools  and they provided me with the sample I needed. However it does not work in Jekyll because of how it generates html from markdown.
+
 
 [https://www.w3schools.com/howto/howto_js_collapsible.asp](https://www.w3schools.com/howto/howto_js_collapsible.asp)
 
-Make the CSS changes as recommended in the artlce.  Once that is done you need to do things slightly differently.
+In order to allow this to work in Jekyll, make the CSS changes as recommended in the w3 article.  Once that is done you need to do things slightly differently to their sapmle code.
 
 
 
@@ -29,7 +30,7 @@ Make the CSS changes as recommended in the artlce.  Once that is done you need t
 ```
 </div>
 
-The id tag needs to be set on both the button and the corresponding div. The div id tag must be the same as the button id with data postfixed. In additionl you should `markdown="1"`  as a final tag to ensure that jekyll process the internal of the div.
+The id tag needs to be set on both the button and the corresponding div. The div id tag must be the same as the button id with `data` postfixed. In addition you should have `markdown="1"`  as a final tag to ensure that jekyll process the inside of the div.
 
 <button class="collapsible" id="js">Click here for the code.</button>
 
@@ -55,4 +56,4 @@ for (i = 0; i < coll.length; i++) {
 <!-- End Collapse.html -->
 ```
 </div>
-In the code I modified  `var content = document.getElementById(this.id+"data");` so that it referenced the content div directly, and did not just assume it was the next element. I put just this  code into an include called collpase.html and then referenced it from my footer. {% raw %}`{%- include collapse.html -%}` {% endraw %}
+In the code I modified  `var content = document.getElementById(this.id+"data");` so that it referenced the content div directly, and did not just assume it was the next element. I put this code into an include called collpase.html and then referenced it from my footer. {% raw %}`{%- include collapse.html -%}` {% endraw %}
