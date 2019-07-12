@@ -21,12 +21,12 @@ comments: true
         <tr><td valign=top width=20%><span class="post-meta">{{ post.date | date: date_format }}</span></td><td>
         <!-- <h3> -->
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+            <b>{{ post.title | escape }}</b>
           </a>
           </td></tr>
         <!-- </h3> -->
         {%- if post.image  -%}
-        <tr class="post-img"><td align=center colspan = 2><b><a class="post-link" href="{{ post.url | relative_url }}"><img class="img-title" src={{ post.image }} alt="{{ post.title | escape }}"/></a></b></td></tr>
+        <tr class="post-img"><td align=center colspan = 2><a class="post-link" href="{{ post.url | relative_url }}"><img class="img-title" src={{ post.image }} alt="{{ post.title | escape }}"/></a></td></tr>
         {%- endif -%}
           {%- if site.show_excerpts -%}
             {{ post.excerpt }}
