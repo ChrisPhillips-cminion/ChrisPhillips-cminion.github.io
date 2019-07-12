@@ -16,4 +16,4 @@ Just a note to say that I have released the API Connect Profiler tool.
 [https://github.com/ChrisPhillips-cminion/APIConnect-Profiler/releases/tag/v1.0.3](https://github.com/ChrisPhillips-cminion/APIConnect-Profiler/releases/tag/v1.0.3)
 
 **TODO**
-Tidy up the multi provider org code.
+* Tidy up the multi provider org code.
