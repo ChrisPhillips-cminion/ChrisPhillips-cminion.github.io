@@ -45,7 +45,7 @@ DataPower is used to protect and proxy http connections. As a WebSocket is an up
   * Note that this should use http/https not wss/ws
   * Publicly available sites do not always upgrade requests on http or https.
   * If you do not have a WebSocket server application available use my one available here https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets
-* Set the `Response and Request Type` to non-xml
+* Set the `Response and Request Type` to passthrough
 
 ![](/images/2019-07-04-WebSocketspt1-4.png)
 
