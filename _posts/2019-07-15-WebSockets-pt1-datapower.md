@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2019-07-08 01:00:00
-categories: IBMCloud
+date: 2019-07-15 01:00:00
+categories: APIConnect
 title: "WebSockets Part 1 - How to create a WebSocket Proxy in DataPower"
 draft: true
 ---
