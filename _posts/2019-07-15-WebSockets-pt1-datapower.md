@@ -12,7 +12,7 @@ DataPower provides the facility to proxy WebSocket connections. This article is 
 * *Part 2* - How you can use API Connect to secure your implementation
 * *Part 3* - How to socialise it via the Developer Portal giving your consumers the best onboarding experience (Delayed)
 
-DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower, it applies the Multiprotocol Gateway policies before the connection is upgraded. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.
+DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower, it applies the Multi-Protocol Gateway policies before the connection is upgraded. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.
 
 *Note: if you are doing this on the same DataPower as API Connect I recommend this is run in its own dedicated domain. This solution should not be used in a Multi-Protocol Gateway that was created for the purpose of exposing APIs.*
 
@@ -80,4 +80,5 @@ DataPower is used to protect and proxy http connections. As a WebSocket is an up
 5. Press Apply.
 
 ### Testing
-In your WebSocket Client set the url to be ws://\<DataPower Host\>:\<Port set in step 3\>
+
+In order to test this you will need a WebSocket client and WebSocket server. I have a simple sample available here [https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets](https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets). The DataPower should be configured to point to the server NodeJS application. In your WebSocket Client set the url to be ws://\<DataPower Host\>:\<Port set in step 3\>
