@@ -7,15 +7,15 @@ image:  '/images/2019-06-07-title.png'
 draft: true
 ---
 
-
 *Written by Chris Phillips and Claudio Tag*
 
 API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago I wrote an article on how to use this for plan variable to route to specific endpoints.  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
 
 ## What is istio?
 
-
-``` Tag to write ```
+```
+Tag to write
+```
 
 ## Writing the API and Product Logic
 In order for this to work the keyword that Istio will look for will be the name as the name of the plan. Please note this is not the title.
@@ -26,7 +26,11 @@ In order for this to work the keyword that Istio will look for will be the name 
 
 In the example below `plan1` will be picked up and sent to istio.
 
-```
+<button class="collapsible" id="yaml2">Click here for the example.</button>
+
+<div class="content" id="yaml2data" markdown="1">
+
+```yaml
 plan1:
   rate-limits:
     default:
@@ -35,7 +39,7 @@ plan1:
   description: First Plan
   approval: false
 ```
-
+</div>
 Complete sample available at the end of the document
 
 ### API Sample
@@ -43,7 +47,11 @@ Complete sample available at the end of the document
 The API Logic is extract the plan value from the context variable, set it as a header and invoke the proxy. The core logic from the yaml is below.
 
 
-```
+<button class="collapsible" id="yaml3">Click here for the example.</button>
+
+<div class="content" id="yaml3data" markdown="1">
+
+```yaml
 - set-variable:
     version: 1.0.0
     title: set-variable
@@ -56,6 +64,7 @@ The API Logic is extract the plan value from the context variable, set it as a h
     verb: GET
     target-url: $(target-url)/theInfo
 ```
+</div>
 
 And a screenshoot from the UI.
 
@@ -76,7 +85,11 @@ The complete sample is available at the end of this article.
 ## Samples
 ### Product Sample
 
-```
+<button class="collapsible" id="yaml">Click here for the sample.</button>
+
+<div class="content" id="yamldata" markdown="1">
+
+```yaml
 
 info:
   name: istoRoutingSample-product
@@ -123,9 +136,14 @@ visibility:
 product: 1.0.0
 
 ```
+</div>
 ### API Sample
 
-```
+<button class="collapsible" id="yaml4">Click here for the Sample.</button>
+
+<div class="content" id="yaml4data" markdown="1">
+
+```yaml
 swagger: '2.0'
 info:
   title: istoRoutingSample
@@ -201,3 +219,4 @@ paths:
           type: string
           description: Name of the backend service
 ```
+</div>
