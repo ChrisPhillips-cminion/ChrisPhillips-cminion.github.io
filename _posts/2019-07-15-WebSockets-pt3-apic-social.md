@@ -3,7 +3,6 @@ layout: post
 date: 2019-07-15 01:00:00
 categories: APIConnect
 title: "WebSockets Part 3 - Socialising with API Connect"
-draft: true
 ---
 
 DataPower provides the facility to proxy WebSocket connections. This article is part **three** of a three part guide consisting of
