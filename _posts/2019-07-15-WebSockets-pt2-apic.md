@@ -8,13 +8,13 @@ draft: true
 
 DataPower provides the facility to proxy WebSocket connections. This article is part **two** of a three part guide consisting of
 
--   _Part 1_ - How to create a WebSocket Proxy in DataPower
--   **Part 2 - How you can use API Connect to secure your implementation**
--   _Part 3_ - How to socialise it via the Developer Portal giving your consumers the best onboarding experience (Delayed)
+* _Part 1_ - How to create a WebSocket Proxy in DataPower
+* **Part 2 - How you can use API Connect to secure your implementation**
+* _Part 3_ - How to socialise it via the Developer Portal giving your consumers the best onboarding experience (Delayed)
 
 _DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower before the connection is upgraded it applies the MultiProtocol Gateway Policies. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this._
 
-In Part 2 we will go through how API Connect can be used to provide Authentication and Authorization for the websocket connection using the API Connect Security Definitions.
+In Part 2 we will go through how API Connect can be used to provide Authentication and Authorization for the WebSocket connection using the API Connect Security Definitions. When the WebSocket connection is made to DataPower, DataPower can run additional policies on the request. In this article we route to API Connect to validate the user can be Authenticated and Authorized.
 
 ### Prerequisites
 
@@ -36,12 +36,12 @@ This guide assumes you have experience creating and using APIs in API Connect 20
 swagger: '2.0'
 info:
   title: WebSocketAA
-  x-ibm-name: websocketaa
+  x-ibm-name: WebSocketaa
   version: 1.0.0
   description: Used To Authenticate and Authorize WebSocket calls
 schemes:
   - https
-basePath: /websocketaa
+basePath: /WebSocketaa
 security:
   - clientID: []
 securityDefinitions:
@@ -160,7 +160,7 @@ Uploading the Script
     ![](/images/2019-07-08-3.png)
 -   Select the file containing the source above and upload it.
 
-### 2.2 Uploading the Sample Code
+### 2.2 Creating the Policy
 
 1.  Click on Control Panel on the top left
 
@@ -183,7 +183,7 @@ Uploading the Script
 
 ### Test
 
-To test this you need to ensure that the headers are set when creating the websocket connection. To use my sample implementation with the sample API set the `x-ibm-client-id` to the client id from step 1.
+To test this you need to ensure that the headers are set when creating the WebSocket connection. To use my sample implementation with the sample API set the `x-ibm-client-id` to the client id from step 1.
 
 ```javascript
 const connection = new WebSocket(url, {
@@ -193,4 +193,4 @@ const connection = new WebSocket(url, {
 })
 ```
 
-My very basic websocket sample is available [here](https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets)
+My very basic WebSocket sample is available [here](https://github.com/ChrisPhillips-cminion/PlayingWithWebSockets)
