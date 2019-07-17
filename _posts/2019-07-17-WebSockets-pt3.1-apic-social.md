@@ -46,14 +46,14 @@ Taking the API Swagger  from Part 2
 ```yaml
 swagger: '2.0'
 info:
-  title: WebSocketAA
-  x-ibm-name: WebSocketaa
+  title: WebSocket
+  x-ibm-name: WebSocket
   version: 1.0.0
-  description: Used To Authenticate and Authorize WebSocket calls
+  description: This is a Web Socket Service. You need to use a WebSocket client to use invoke. Other instructions also go on here.
 schemes:
   - https
 host: websocketendpoint.com
-basePath: /WebSocketaa
+basePath: /WebSocket
 security:
   - clientID: []
 securityDefinitions:
