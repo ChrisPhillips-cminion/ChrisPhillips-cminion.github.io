@@ -3,8 +3,6 @@ layout: post
 date: 2019-07-18 01:00:00
 categories: APIConnect
 title: "Scaling out pods in Kubernetes with DataPower"
-image: "/images/2019-7-16-websocket-pt3.1.2.png"
-draft: true
 ---
 
 Kubernetes is a container orchestration system that provides many advantages. In this article I am going to describe how DataPower or any pod can be scaled out with a simple request. There are ways to solve this.
@@ -22,11 +20,10 @@ Run the following command to increase the replica count in the config.
 
 Then deploy the updated config
 `apicup subsys install <subcomponent name>`
-`
 
 ### Using Kubectl
 
-This is the standard way to scale out Kubernetes applications.
+This is the standard way to scale out Kubernetes StatefulSets.
 
 `kubectl get statefulset -n <namespace>`
 
