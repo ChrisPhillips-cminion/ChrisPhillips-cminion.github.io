@@ -54,6 +54,7 @@ kubectl scale statefulset/r62bf86f4e0-dynamic-gateway-service --replicas=3  -n a
 ```
 
 **Pros**
+ - Faster
  - Does not require access the APICUP project or the APICUP binary.
 
 **Cons**
