@@ -21,6 +21,13 @@ Run the following command to increase the replica count in the config.
 Then deploy the updated config
 `apicup subsys install <subcomponent name>`
 
+
+**Pros**
+ - If you patch or make config changes the replica value is stored
+
+**Cons**
+ - It requires access to the APICUP project
+
 ### Using Kubectl
 
 This is the standard way to scale out Kubernetes StatefulSets.
@@ -45,3 +52,9 @@ e.g.
 ```
 kubectl scale statefulset/r62bf86f4e0-dynamic-gateway-service --replicas=3  -n apic
 ```
+
+**Pros**
+ - Does not require access the APICUP project or the APICUP binary.
+
+**Cons**
+ - If config changes are made or the environment is patched then the replica changes are lost.
