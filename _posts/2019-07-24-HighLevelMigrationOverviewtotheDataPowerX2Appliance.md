@@ -1,12 +1,11 @@
 ---
 layout: post
-date: 2019-07-24 01:00:00
+date: 2019-07-24 06:00:00
 categories: DataPower
-title: "High Level Migration Overview to the DataPower X2 Appliance [by  R George Innes]"
-draft: true
+title: "High Level Migration Overview to the DataPower X2 Appliance [by  R George Inness]"
 image: https://developer.ibm.com/apiconnect/wp-content/uploads/sites/23/2018/03/Screen-Shot-2018-03-16-at-3.07.06-PM.png
 ---
-*This is a guest post by R George Innes*
+*This is a guest post by R George Inness*
 
 ![](https://developer.ibm.com/apiconnect/wp-content/uploads/sites/23/2018/03/Screen-Shot-2018-03-16-at-3.07.06-PM.png)
 *Image taken from ibm.com*
