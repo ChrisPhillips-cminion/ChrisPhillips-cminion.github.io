@@ -1,9 +1,8 @@
 ---
 layout: post
-date: 2019-07-26 01:00:00
+date: 2019-07-26 11:00:00
 categories: IBMCloud
 title: "API Connect - Deploying a Gateway in a different cloud than the manager."
-draft: true
 ---
 
 
@@ -17,9 +16,9 @@ API Connect supports that each component running in its own cloud. The most comm
 The common usecase for this is when exposing a service or system of record already deployed to that cloud.
 
 ![](/images/2019-07-03-multicloud-1.png)
-*MultiCloud Deployment Diagram*
+*MultiCloud (Hybrid) Deployment Diagram*
 
-In the diagram above we show a Gateway being deployed in AWS, GCP and IBM Cloud as well as in the on-premise environment. OpenShift can be running on any of these clouds and on-premise.  The latency between the gateway and the management server needs to be less then the ingress timeout in the environment hosting the Gateway. By default, this is 30seconds. (Note seconds not milliseconds).
+In the diagram above we show a Gateway being deployed in AWS, GCP and IBM Cloud as well as in the on-premise environment. OpenShift can be running on any of these clouds and on-premise.  The latency between the gateway and the management server needs to be less than the ingress timeout in the environment hosting the Gateway. By default, this is 30seconds. (Note seconds not milliseconds).
 
 Each box in the diagram above signifies a self-manages cluster of a component.
 
