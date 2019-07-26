@@ -38,6 +38,7 @@ The Diagram above shows DataPower running in Kubernetes. The Management is runni
 * Supports Double Jeopardy i.e. can apply maintenance even during a site outage.
 * Does not require three sites.
 * Gateway and Analytics work in Active Active
+
 **Cons**
 * When the gateways are created the OAuth Secret must be the same. This is to allow both DataPowers to enforce all OAuth Tokens.
 * Token Revocation is not synced between the gateways
@@ -60,6 +61,6 @@ The diagram above differs from Figure 6 Routing to a Gateway Running in a cloud 
 * Gateway can share tokens and quota enforcement between sites while there is a quorum.
 
 **Cons**
-* Gateway cannot run in a Kubernetes cluster
+* Gateway cannot run in a Kubernetes cluster, thus does not benefit from kubernetes facilities.
 
 The pros and cons between these solutions are discussed in the API Connect White paper in Section 8. [API Connect WhitePaper](https://www.ibm.com/downloads/cas/30YERA2R)
