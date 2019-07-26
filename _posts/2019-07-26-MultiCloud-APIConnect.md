@@ -2,7 +2,7 @@
 layout: post
 date: 2019-07-26 11:00:00
 categories: IBMCloud
-title: "API Connect - Deploying a Gateway in a different cloud than the manager."
+title: "API Connect - Multi Cloud deployments"
 ---
 
 
