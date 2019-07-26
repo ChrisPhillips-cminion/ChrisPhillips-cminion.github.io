@@ -6,6 +6,17 @@ title: "API Connect - Deploying a Gateway in a different cloud than the manager.
 draft: hidden
 ---
 
+
+---
+It would be good to touch upon  flexibility in deploying to any cloud that they like
+
+also personally i think its good to briefly list the pros and cons of each approach and then point them to white paper for digging deeper
+
+Pros and Cons
+
+----
+
+
 *This article builds on top of the API Connect WhitePaper, this may be included in the WhitePaper in a future revision*
 
 API Connect supports that each component running in its own cloud. The most common use of this is the Gateway Service (DataPower) running in AWS, IBM Cloud or GCP. This is commonly used when exposing a service or system of record already running in that cloud.

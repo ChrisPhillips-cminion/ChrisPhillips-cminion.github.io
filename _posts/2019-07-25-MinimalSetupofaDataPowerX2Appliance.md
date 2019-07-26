@@ -3,7 +3,6 @@ layout: post
 date: 2019-07-25 08:00:00
 categories: DataPower
 title: "Minimal Setup of a DataPower X2 Appliance [by  R George Inness]"
-draft: true
 ---
 
 *This is a guest post by R George Inness*
@@ -112,8 +111,8 @@ Your company has just bought DataPower X2 appliances.  The datacenter that they 
 ![](/images/2019-07-26-DP9.png)
 
 * Enter `co` to enter the configuration mode.
-* Enter `web-mgmt <<IP address>>; 9090` to start the Web-GUI where IP address is the IP address of the interface configured earlier.
-* Enter `ssh <<IP address>>;` to start SSH where IP address is the IP address of the interface configured earlier.
+* Enter `web-mgmt <<IP address>> 9090` to start the Web-GUI where IP address is the IP address of the interface configured earlier.
+* Enter `ssh <<IP address>>` to start SSH where IP address is the IP address of the interface configured earlier.
 * Enter `write mem` to save the configuration.
 * Enter `y`  to overwrite the previously saved configuration.
 
