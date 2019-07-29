@@ -19,7 +19,6 @@ comments: true
       {%- if  post.draft != true and  post.draft != 'hidden' -%}
       <tr>
         <td><a href="/{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></td>
-        <td width="100px">{{ post.date | date_to_string }}</td>
       </tr>
       {% endif %}
       {% endfor %}
