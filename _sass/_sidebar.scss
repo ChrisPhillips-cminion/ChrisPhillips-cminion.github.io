@@ -13,6 +13,13 @@
  * Source: http://css-tricks.com/off-canvas-menu-with-css-target/#comment-207504
  */
 /* Style and "hide" the sidebar */
+.logo {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+}
+
 .sidebar {
   position: fixed;
   top: 0;

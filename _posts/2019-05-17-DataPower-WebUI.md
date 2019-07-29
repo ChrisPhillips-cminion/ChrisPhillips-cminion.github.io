@@ -3,9 +3,9 @@ layout: post
 date: 2019-05-17  00:00:00
 categories: APIConnect
 title: 'Enabling the WebUI in DataPower in Kubernetes for APIConnect 2018 [Guest Post by Nick Cawood]'
+tags: [ "Nick Cawood"]
+author: "Nick Cawood"
 ---
-
-*This is a guest post by Nick Cawood*
 
 To access the DataPower UI with API Connect 2018.4.1.X values need to be set during the installation of the Gateway subsystem. These values are set using the extra-values-file parameter of the apicup tool:
 
