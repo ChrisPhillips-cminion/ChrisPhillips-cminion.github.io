@@ -96,7 +96,3 @@ kubectl get po -n <namespace>  -w
 
 
 Samples taken from https://kubernetes.io
-
-
-
-Video

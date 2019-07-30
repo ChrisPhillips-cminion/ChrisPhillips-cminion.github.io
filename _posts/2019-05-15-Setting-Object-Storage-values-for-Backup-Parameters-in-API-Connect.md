@@ -3,10 +3,9 @@ layout: post
 date: 2019-05-15  00:00:00
 categories: APIConnect
 title: 'Setting Object Storage values for Backup Parameters in API Connect 2018.4.1.X [Guest Post by Nick Cawood]'
+tags: [ "Nick Cawood"]
+author: "Nick Cawood"
 ---
-
-*This is a guest post by Nick Cawood*
-
 
 
 In a Container Service like IKS Object Storage can be selected as the back storage destination for the Management and Portal subsystems. Knowledge Center contains guidance for the parameters for the backups (set with apicup tool) but for clarity here is some guidance on how these translate to the values you need to extract from your Container Service and use.
