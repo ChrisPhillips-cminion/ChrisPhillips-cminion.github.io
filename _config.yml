@@ -17,7 +17,7 @@ title: Chris Phillips' Blog
 email: chris.phillips@uk.ibm.com
 description: API, Integration and Governance SME and Enthusiast, My opinions are very much mine
 #An blog on APIs and other interesting Technology
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: ""
 
 highlighter: rouge
@@ -34,20 +34,15 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
-paginate: 20
+paginate: 10
 paginate_path: "/page:num/"
 
 future: false
 site:
   disqus:
     shortname: chrisphillips-blog
-minima:
-  social_links:
-    twitter: cminion
-    github: ChrisPhillips-cminion
 disqus:
   shortname: chrisphillips-blog
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

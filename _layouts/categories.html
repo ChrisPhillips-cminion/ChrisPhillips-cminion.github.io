@@ -10,19 +10,19 @@ comments: true
     {% endfor %}
     <br>
   </div>
-  <hr />
+  <hr/>
   <div class="tags-expo-section">
     {% for tag in site.categories %}
     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
     <table>
+
       {% for post in tag[1] %}
-      {%- if  post.draft != true and  post.draft != 'hidden' -%}
-      <tr>
-        <td><a href="/{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></td>
-      </tr>
-      {% endif %}
+        {%- if  post.draft != true and  post.draft != 'hidden' -%}
+              <tr><td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td><td width="100px" >{{ post.date | date_to_string }}</td></tr>
+        {% endif %}
       {% endfor %}
-    </table>
+
+</table>
     {% endfor %}
   </div>
 </div>

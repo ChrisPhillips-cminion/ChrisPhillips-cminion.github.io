@@ -26,12 +26,6 @@
         {% for tag in site.categories %}
         <li><a href="/categories.html#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a></li>
         {% endfor %}
-        <br>
-        <hr />
-        <h3><a class="page-link" href="/authors.html">Guest Authors</a></h3>
-        {% for tag in site.tags %}
-        <li><a href="/authors.html#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a></li>
-        {% endfor %}
       </div>
     </div>
   </div>
