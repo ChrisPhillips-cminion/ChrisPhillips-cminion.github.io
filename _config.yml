@@ -43,6 +43,11 @@ site:
     shortname: chrisphillips-blog
 disqus:
   shortname: chrisphillips-blog
+
+minima:
+  social_links:
+    twitter: cminion
+    github: ChrisPhillips-cminion
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
