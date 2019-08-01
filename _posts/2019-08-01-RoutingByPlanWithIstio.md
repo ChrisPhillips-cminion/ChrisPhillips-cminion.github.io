@@ -6,9 +6,10 @@ title: 'Using API Connect to allow Istio to route by plan'
 image:  '/images/2019-08-01-istio.png'
 tags: [ "Claudio Tag", "Tim Quigly", "Chris Phillips"]
 author: "Claudio Tag, Tim Quigly and Chris Phillips"
+youtubeId: 53o15ESfpdM
 ---
 
-API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago I wrote an article on how to use this for plan variable to route to specific endpoints.  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
+API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago Chris wrote an article on how to use this for plan variable to route to specific endpoints. []()  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
 
 ## What is a Service Mesh and Istio?
 *Taken from a future publication*
@@ -392,3 +393,7 @@ paths:
           description: Name of the backend service
 ```
 </div>
+
+### Demo Video 
+
+{% include youtube.html id=page.youtubeId %}
