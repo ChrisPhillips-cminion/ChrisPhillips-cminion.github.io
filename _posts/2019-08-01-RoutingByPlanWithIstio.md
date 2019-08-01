@@ -129,7 +129,7 @@ spec:
   type: ClusterIP
   ports:
   - port: < Port number for the service >
-    targetPort: < Target ort number for the service >
+    targetPort: < Target port number for the service >
     protocol: TCP
     name: http-istio
   selector:
@@ -169,13 +169,13 @@ spec:
           number: < Port number for the service >
         host: istio-plan-routing-svc
         subset: PLAN1
-      weight: 0
+      weight: 100
     - destination:
         port:
           number: < Port number for the service >
         host: istio-plan-routing-svc
         subset: PLAN2
-      weight: 100
+      weight: 0
     # Match sends ALL traffic with the PLAN2 header
   - match:
     - headers:
@@ -187,13 +187,13 @@ spec:
           number: < Port number for the service >
         host: istio-plan-routing-svc
         subset: PLAN1
-      weight: 100
+      weight: 0
     - destination:
         port:
           number: < Port number for the service >
         host: istio-plan-routing-svc
         subset: PLAN2
-      weight: 0
+      weight: 100
 ```
 </div>
 
