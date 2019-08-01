@@ -11,11 +11,43 @@ draft: true
 
 API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago I wrote an article on how to use this for plan variable to route to specific endpoints.  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
 
-## What is istio?
+## What is a Service Mesh and Istio?
+*Taken from a future publication*
+In traditional applications, communication patterns are usually built into application code and service endpoint configuration is usually statically defined per environment.
 
-```
-Tag to write
-```
+As application componentisation grows and applications become more cloud-native, so does the number of components on the network. These components, often called services, typically expose APIs to be consumable by other services. Service-to-service communication in cloud native world is dramatically more complex than in traditional IT.
+
+Therefore, there is a requirement for an additional infrastructure layer that helps manage communication between complex applications consisting of a large number of distinct services. Such a layer is usually called a service mesh.
+
+It is important to note that a service mesh is not an overlay network. A service mesh simplifies and enhances how service communicate over the network provided by the underlying platform.
+
+The aim of a service mesh is to abstract that complexity away from applications and their components, and to manage it at cloud-native infrastructure level. As such, a service mesh is a cloud-native infrastructure layer which handles communication between services, and allows reliable delivery of requests across services.
+
+At a high level, a service mesh is responsible for:
+* providing efficient communication between services,
+* abstracting the mechanism for reliable request/response delivery from the application code,
+* allowing management of services, independently from their number and growth rate,
+* handling network failures,
+* providing visibility and control of the service-to-service communication.
+
+More specifically, typical functional requirements for a service mesh are:
+* Service discovery
+* Service registry
+* Traffic management
+* Traffic encryption
+* Observability and traceability
+* Authentication and authorisation
+* Failure recovery
+
+Often a service mesh also has more complex operational requirements, like A/B testing, canary rollouts, rate limiting, access control, and end-to-end encryption.
+From a non-functional point of view, all these capabilities are available to applications and their components without impacting the application code, so that developers can leverage them without having to instrument their code.
+
+Finally, a typical building block of cloud-native infrastructure is a container orchestration platform, as Kuberentes. For this reason, it is expected from a service mesh to be able to interact natively with Kubernetes controllers and resources, and to enhance their functionality, when it comes to service-to-service communication.
+
+
+Istio (https://istio.io) is one of the most popular technology implementations for a service mesh. Istio is a Kubernetes-compatible open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
+In short, Istio allows to connect, secure, control, and observe microservices running on Kubernetes.
+
 
 ## Writing the API and Product Logic
 In order for this to work the keyword that Istio will look for will be the name as the name of the plan. Please note this is not the title.
@@ -74,7 +106,9 @@ The complete sample is available at the end of this article.
 
 
 ## Istio configuration
-``` Tag to write```
+```
+Tag to write
+```
 
 
 ## Links
