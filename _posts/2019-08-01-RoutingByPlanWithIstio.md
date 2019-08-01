@@ -251,8 +251,8 @@ For all of it to work, make sure to label your deployments with:
 
 
 ## Links
-* Links to github where samples are stored
-* Links to learn more about Istio
+* Samples on GitHub (Coming)
+* [Learn more about Istio](https://istio.io)
 
 
 ## Samples
@@ -394,6 +394,6 @@ paths:
 ```
 </div>
 
-### Demo Video 
+### Demo Video
 
 {% include youtube.html id=page.youtubeId %}
