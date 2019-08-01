@@ -9,7 +9,6 @@ author: "Claudio Tag, Tim Quigly and Chris Phillips"
 draft: true
 ---
 
-
 API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago I wrote an article on how to use this for plan variable to route to specific endpoints.  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
 
 ## What is a Service Mesh and Istio?
@@ -108,6 +107,7 @@ The complete sample is available at the end of this article.
 
 ## Istio configuration
 In your istio-enabled namespace, create a Kubernetes service, an Istio virtual service and two Istio destination rules, each pointing at the different Kubernetes deployments that you want to connect to.
+![](/images/2019-08-01-istio.png)
 The Kubernetes Service will have a label selector which we’ll use to point at the two deployments.
 The K8s Service will look like this, where the label selector is `istio-plan`.
 
@@ -121,6 +121,17 @@ apiVersion: v1
 kind: Service
 metadata:
   name: istio-plan-routing-svc
+  labels:
+    istio: istio-plan-routing
+spec:
+  type: ClusterIP
+  ports:
+  - port: < Port number for the service >
+    targetPort: < Target ort number for the service >
+    protocol: TCP
+    name: http-istio
+  selector:
+    istio: istio-plan
 ```
 </div>
 
