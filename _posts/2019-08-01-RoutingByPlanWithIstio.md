@@ -2,11 +2,10 @@
 layout: post
 date: 2019-08-01 09:00:00
 categories: APIConnect
-title: 'Using API Connect to allow Istio to route by plan - [Draft]'
+title: 'Using API Connect to allow Istio to route by plan'
 image:  '/images/2019-08-01-istio.png'
 tags: [ "Claudio Tag", "Tim Quigly", "Chris Phillips"]
 author: "Claudio Tag, Tim Quigly and Chris Phillips"
-draft: true
 ---
 
 API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago I wrote an article on how to use this for plan variable to route to specific endpoints.  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
@@ -45,7 +44,7 @@ From a non-functional point of view, all these capabilities are available to app
 Finally, a typical building block of cloud-native infrastructure is a container orchestration platform, as Kuberentes. For this reason, it is expected from a service mesh to be able to interact natively with Kubernetes controllers and resources, and to enhance their functionality, when it comes to service-to-service communication.
 
 
-Istio (https://istio.io) is one of the most popular technology implementations for a service mesh. Istio is a Kubernetes-compatible open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
+Istio ([https://istio.io]("https://istio.io")) is one of the most popular technology implementations for a service mesh. Istio is a Kubernetes-compatible open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
 In short, Istio allows to connect, secure, control, and observe microservices running on Kubernetes.
 
 
