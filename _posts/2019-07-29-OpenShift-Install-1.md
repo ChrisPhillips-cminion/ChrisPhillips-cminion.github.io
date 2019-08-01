@@ -2,9 +2,8 @@
 layout: post
 date: 2019-07-28 12:00:00
 categories: Kubernetes
-title: "Installing OpenShift 3.11  Again part1"
+title: "Installing OpenShift 3.11  Again Part - 1"
 draft: true
-
 ---
 
 _So Jeff has gone to a better place. My many year old ATOM that I was using as one of the nodes and bootstrap server for OpenShift 3.11. Its CPU was clocked at 80'c and then overnight it never returned._

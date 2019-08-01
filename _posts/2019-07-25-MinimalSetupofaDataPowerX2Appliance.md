@@ -3,10 +3,9 @@ layout: post
 date: 2019-07-25 08:00:00
 categories: DataPower
 title: "Minimal Setup of a DataPower X2 Appliance [by  R George Inness]"
+tag: "R George Inness"
+author: "R George Inness"
 ---
-
-*This is a guest post by R George Inness*
-
 
 ### Introduction
 

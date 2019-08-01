@@ -4,22 +4,23 @@ date: 2019-07-24 06:00:00
 categories: DataPower
 title: "High Level Migration Overview to the DataPower X2 Appliance [by  R George Inness]"
 image: https://developer.ibm.com/apiconnect/wp-content/uploads/sites/23/2018/03/Screen-Shot-2018-03-16-at-3.07.06-PM.png
+tag: "R George Inness"
+author: "R George Inness"
 ---
-*This is a guest post by R George Inness*
 
 ![](https://developer.ibm.com/apiconnect/wp-content/uploads/sites/23/2018/03/Screen-Shot-2018-03-16-at-3.07.06-PM.png)
 *Image taken from ibm.com*
 
 ### Introduction
 
-Your company has just bought DataPower X2 appliances and you have been assigned to lead the effort to migrate from the current appliances to the new X2s and you are looking for some direction on how to put together a high-level plan.  This article will give you an overview on how to plan and execute the migration with some key pointers on what to look for and possible gotchas.  It will not be a detailed step by step on how to do the migration.  
+Your company has just bought DataPower X2 appliances and you have been assigned to lead the effort to migrate from the current appliances to the new X2s and you are looking for some direction on how to put together a high-level plan.  This article will give you an overview on how to plan and execute the migration with some key pointers on what to look for and possible gotchas.  It will not be a detailed step by step on how to do the migration.
 
-The IBM recommended methodology to migrate the appliance configuration between appliances is the Secure Backup and Restore feature.  This feature moves all of the configuration information to the new appliance except the content of the Hardware Security Module (HSM) if one is installed and being used.  The Secure Backup and Restore feature can be compared to the process of moving to a newer iPhone using iTunes.  
+The IBM recommended methodology to migrate the appliance configuration between appliances is the Secure Backup and Restore feature.  This feature moves all of the configuration information to the new appliance except the content of the Hardware Security Module (HSM) if one is installed and being used.  The Secure Backup and Restore feature can be compared to the process of moving to a newer iPhone using iTunes.
 
 The major assumptions in this article are:
 
 1.	You and your team have a detailed understanding on DataPower setup and configuration and have used Secure Backup and Restore.  If your team does not have the skills, we recommend working with your sales team to engage a DataPower Business Partner or IBM Lab Services to put together a proposal for the migration.
-2.	Your company is doing a like for like migration where the services on the existing DataPowers will not be changed.  An example is moving domains around and consolidating the usage of the appliances.  This methodology supports downsizing the number of appliances that maintain the same usage where your team.  
+2.	Your company is doing a like for like migration where the services on the existing DataPowers will not be changed.  An example is moving domains around and consolidating the usage of the appliances.  This methodology supports downsizing the number of appliances that maintain the same usage where your team.
 3.	If your company is downsizing the number of DataPower appliances, your team has done a performance study to ensure the number of appliances being migrated perform as needed.
 4.	Your team has the skills necessary to do the appliance migration.  If your team does not have skills, we recommend working with your sales team to engage a DataPower Business Partner or IBM Lab Services to put together a Statement of Work for the migration.
 5.	Your current appliances are running v7.6.0.8 or higher.  If they are not, it is recommended that you install and test on either v7.6.0.latest or v2018.40.1.latest in all of your environments then do the appliance migration.  Upgrading firmware and then immediately doing an appliance migration is not recommended because if there are issues, it will be harder to debug.
@@ -45,10 +46,10 @@ You will need to gather the following information from all of the source applian
 
 ### Planning Phase
 
-Review the Inventory details gathered in the previous phase then use the details to put together a plan.  From the inventory gathered,  
+Review the Inventory details gathered in the previous phase then use the details to put together a plan.  From the inventory gathered,
 
 **Determine the version to install on the X2s.**
-* This information can be found in the `show version` output.  
+* This information can be found in the `show version` output.
 
 **Determine if Secure Backup is enabled on the current appliances.**
 * On the show system output, review the backup mode field and make sure it is set to secure.  If backup mode is set to normal, open a support ticket to get a scrypt3 file to enable secure restore.
