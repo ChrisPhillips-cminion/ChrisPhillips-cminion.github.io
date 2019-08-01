@@ -3,7 +3,7 @@ layout: post
 date: 2019-08-01 09:00:00
 categories: APIConnect
 title: 'Using API Connect to allow Istio to route by plan - [Draft]'
-image:  '/images/2019-06-07-title.png'
+image:  '/images/2019-08-01-istio.png'
 tags: [ "Claudio Tag", "Tim Quigly", "Chris Phillips"]
 author: "Claudio Tag, Tim Quigly and Chris Phillips"
 draft: true
