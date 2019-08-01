@@ -69,7 +69,7 @@ plan1:
   rate-limits:
     default:
       value: 100/1minute
-  title: PLAN 1
+  title: PLAN1
   description: First Plan
   approval: false
 ```
@@ -108,10 +108,97 @@ The complete sample is available at the end of this article.
 
 
 ## Istio configuration
-```
-Tag to write
-```
 
+In your istio-enabled namespace, create a virtual service and two destination rules pointing at a different version of the microservice you want to connect to. Make sure that you have tagged your microservices deployment with the version value. E.g. `PLAN1` or `PLAN2`.
+The virtual service and destination rules will look like the following example:
+
+
+<button class="collapsible" id="yaml3">Click here for the example.</button>
+
+<div class="content" id="yaml3data" markdown="1">
+```yaml
+# Virtual Service
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-plan-routing-vs
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - < Istio Ingress Gateway >
+  http:
+  # Match sends ALL traffic with the PLAN1 header
+  - match:
+    - headers:
+        X-PLAN:
+          exact: PLAN1
+    route:
+    - destination:
+        port:
+          number: < Port number for the service >
+        host: istio-plan-routing-svc
+        subset: PLAN1
+      weight: 0
+    - destination:
+        port:
+          number: < Port number for the service >
+        host: istio-plan-routing-svc
+        subset: PLAN2
+      weight: 100
+    # Match sends ALL traffic with the PLAN2 header
+  - match:
+    - headers:
+        X-PLAN:
+          exact: PLAN2
+    route:
+    - destination:
+        port:
+          number: < Port number for the service >
+        host: istio-plan-routing-svc
+        subset: PLAN1
+      weight: 100
+    - destination:
+        port:
+          number: < Port number for the service >
+        host: istio-plan-routing-svc
+        subset: PLAN2
+      weight: 0
+---
+# Destination Rule 1
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: istio-plan-routing-dr1
+spec:
+  host: istio-plan-routing-svc
+  subsets:
+  - name: PLAN1
+    labels:
+      version: PLAN1
+  trafficPolicy:
+    tls:
+      #mode: ISTIO_MUTUAL
+      mode: < value to enable mutual TLS >
+---
+# Destination Rule 2
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: istio-plan-routing-dr2
+spec:
+  host: istio-plan-routing-svc
+  subsets:
+  - name: PLAN2
+    labels:
+      version: PLAN2
+  trafficPolicy:
+    tls:
+      #mode: ISTIO_MUTUAL
+      mode: < value to enable mutual TLS >
+
+```
+</div>
 
 ## Links
 * Links to github where samples are stored
@@ -145,11 +232,11 @@ plans:
     rate-limits:
       default:
         value: 100/1minute
-    title: PLAN 1
+    title: PLAN1
     description: First Plan
     approval: false
   plan2:
-    title: PLAN 2
+    title: PLAN2
     description: Everything Else Plan
     approval: false
     rate-limits:
