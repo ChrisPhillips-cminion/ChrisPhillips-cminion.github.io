@@ -4,12 +4,11 @@ date: 2019-08-01 09:00:00
 categories: APIConnect
 title: 'Using API Connect to allow Istio to route by plan - [Draft]'
 image:  '/images/2019-06-07-title.png'
-tag: "Claudio Tag"
-Authors: "Claudio Tag and Chris Phillips"
+tags: [ "Claudio Tag", "Tim Quigly", "Chris Phillips"]
+author: ["Claudio Tag", "Tim Quigly", "Chris Phillips"]
 draft: true
 ---
 
-*Written by Chris Phillips and Claudio Tag*
 
 API Connect allows an Application to subscribe to one plan for a product. This is traditionally used to determine which rate limit they are allowed to subscribe to. A couple of years ago I wrote an article on how to use this for plan variable to route to specific endpoints.  Istio provides the facility to route to different endpoints depending on header variables. This article shows how you can take the plan from a context variable and set it to a header to be picked up by Istio.
 
@@ -108,14 +107,32 @@ The complete sample is available at the end of this article.
 
 
 ## Istio configuration
+In your istio-enabled namespace, create a Kubernetes service, an Istio virtual service and two Istio destination rules, each pointing at the different Kubernetes deployments that you want to connect to.
+The Kubernetes Service will have a label selector which we’ll use to point at the two deployments.
+The K8s Service will look like this, where the label selector is `istio-plan`.
 
-In your istio-enabled namespace, create a virtual service and two destination rules pointing at a different version of the microservice you want to connect to. Make sure that you have tagged your microservices deployment with the version value. E.g. `PLAN1` or `PLAN2`.
-The virtual service and destination rules will look like the following example:
+
+<button class="collapsible" id="yamlK8s-service.yaml">Click here for the K8s-service.yaml</button>
+
+<div class="content" id="yamlK8s-service.yamldata" markdown="1">
+```yaml
+# Kubernetes Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: istio-plan-routing-svc
+```
+</div>
 
 
-<button class="collapsible" id="yaml3">Click here for the example.</button>
+The Istio Virtual Service will point at the K8s service, and in addition will:
+- match the header in the API invocation, mapping the plan name, to the subset in the destination rules.
+- weight the traffic distribution across the two deployments.  In this case 100% on one or the other.
 
-<div class="content" id="yaml3data" markdown="1">
+
+<button class="collapsible" id="yamlvirtual-service.yaml">Click here for the virtual-service.yaml</button>
+
+<div class="content" id="yamlvirtual-service.yamldata" markdown="1">
 ```yaml
 # Virtual Service
 apiVersion: networking.istio.io/v1alpha3
@@ -164,7 +181,19 @@ spec:
         host: istio-plan-routing-svc
         subset: PLAN2
       weight: 0
----
+```
+</div>
+
+The Destination Rules will:
+- reference to the K8s service.
+- create a subset pointing at one specific deployment.
+- Enforce encryption policies. E.g. Mutual TLS.
+
+
+<button class="collapsible" id="yamldestination-rules.yaml">Click here for the destination-rules.yaml.</button>
+
+<div class="content" id="yamldestination-rules.yamldata" markdown="1">
+```yaml
 # Destination Rule 1
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -180,6 +209,7 @@ spec:
     tls:
       #mode: ISTIO_MUTUAL
       mode: < value to enable mutual TLS >
+
 ---
 # Destination Rule 2
 apiVersion: networking.istio.io/v1alpha3
@@ -196,9 +226,16 @@ spec:
     tls:
       #mode: ISTIO_MUTUAL
       mode: < value to enable mutual TLS >
-
 ```
 </div>
+
+For all of it to work, make sure to label your deployments with:
+- the label for the K8s service to select them. E.g. `istio-plan` for both deployments.
+- the destination rule's subset value. E.g. `PLAN1` for one deployment, and `PLAN2` for the other.
+
+
+
+
 
 ## Links
 * Links to github where samples are stored
