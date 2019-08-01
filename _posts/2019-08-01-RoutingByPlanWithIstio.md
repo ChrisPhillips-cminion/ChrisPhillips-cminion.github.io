@@ -106,13 +106,13 @@ The complete sample is available at the end of this article.
 
 
 ## Istio configuration
-In your istio-enabled namespace, create a Kubernetes service, an Istio virtual service and two Istio destination rules, each pointing at the different Kubernetes deployments that you want to connect to.
 
-![](/images/2019-08-01-istio.png)
+<span style="float:left; margin-right:5px; margin-left:5px"> <img src="/images/2019-08-01-istio.png" /></span>
+
+In your istio-enabled namespace, create a Kubernetes service, an Istio virtual service and two Istio destination rules, each pointing at the different Kubernetes deployments that you want to connect to.
 
 The Kubernetes Service will have a label selector which we’ll use to point at the two deployments.
 The K8s Service will look like this, where the label selector is `istio-plan`.
-
 
 <button class="collapsible" id="yamlK8s-service.yaml">Click here for the K8s-service.yaml</button>
 
