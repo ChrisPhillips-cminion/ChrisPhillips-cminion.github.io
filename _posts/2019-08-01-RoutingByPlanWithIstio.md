@@ -44,7 +44,7 @@ From a non-functional point of view, all these capabilities are available to app
 Finally, a typical building block of cloud-native infrastructure is a container orchestration platform, as Kuberentes. For this reason, it is expected from a service mesh to be able to interact natively with Kubernetes controllers and resources, and to enhance their functionality, when it comes to service-to-service communication.
 
 
-Istio ([https://istio.io]("https://istio.io")) is one of the most popular technology implementations for a service mesh. Istio is a Kubernetes-compatible open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
+Istio ([https://istio.io](https://istio.io)) is one of the most popular technology implementations for a service mesh. Istio is a Kubernetes-compatible open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
 In short, Istio allows to connect, secure, control, and observe microservices running on Kubernetes.
 
 
