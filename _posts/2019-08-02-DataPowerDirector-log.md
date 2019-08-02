@@ -34,11 +34,11 @@ write memory
 ### Via the Web UI
 
 1. Log into DataPower
-![]("/images/2019-08-02-1.png")
+![](/images/2019-08-02-1.png)
 2. Go to the domain with the API Connect Gateway Service
 
 3. Go to the log target
-![]("/images/2019-08-02-2.png")
+![](/images/2019-08-02-2.png)
 4. Click Add
 
 5. Set the following properties
@@ -46,9 +46,9 @@ write memory
 * Name
 * File Name - logtemp:///gwd-log
 * Log Size - 50000
-![]("/images/2019-08-02-3.png")
+![](/images/2019-08-02-3.png)
 6. Click on Event Subscription
-![]("/images/2019-08-02-4.png")
+![](/images/2019-08-02-4.png)
 7. Click on Add
 
 8. Select apic-gw-service with the debug level  (feel free to change the level if need be )
