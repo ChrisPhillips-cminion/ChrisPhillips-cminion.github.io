@@ -13,7 +13,7 @@ DataPower is the gateway/runtime for API Connect. In order for API Connect to sy
 
 ### Viewing the log
 
-If you follow the steps below or you are using DataPower by APICUP the log file will be available in logtemp:///gwd-log
+If you follow the steps below or you are using DataPower by deployed by APICUP the log file will be available in logtemp:///gwd-log
 
 
 ### Via the Cli
