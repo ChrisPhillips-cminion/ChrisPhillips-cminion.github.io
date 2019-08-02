@@ -3,7 +3,7 @@ layout: post
 date: 2019-06-26 01:00:00
 categories: APIConnect
 title: "APIC Profiler"
-image: "https://asciinema.org/a/zSkEqXvfHSN8I6Sb2UgHI0LwW.svg"
+image: "https://asciinema.org/a/vYaGpTZszAK0XseXjExT78Yf6.svg"
 ---
 I spend a lot of time with clients trying to debug their issues. It was suggested that a tool that could extract volumetrics out of the API Manager would help. This is not the transaction rate but the quantity of content.
 
@@ -13,7 +13,7 @@ The tool outputs in either markdown, yaml or json.
 
 For a demo of the tool please take a look at the video below. A sample of the output is available at the end of this article.
 
-[![asciicast](https://asciinema.org/a/zSkEqXvfHSN8I6Sb2UgHI0LwW.svg)](https://asciinema.org/a/zSkEqXvfHSN8I6Sb2UgHI0LwW)
+[![asciicast](https://asciinema.org/a/vYaGpTZszAK0XseXjExT78Yf6.svg)](https://asciinema.org/a/vYaGpTZszAK0XseXjExT78Yf6)
 
 
 To download and install the tool please go to [https://github.com/ChrisPhillips-cminion/APIConnect-Profiler](https://github.com/ChrisPhillips-cminion/APIConnect-Profiler)
