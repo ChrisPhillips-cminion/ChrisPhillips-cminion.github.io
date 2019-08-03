@@ -6,7 +6,7 @@ title: "What are the risks with running a Quorum over two sites in an Active Act
 ---
 
 Nearly every organisation in the world has two data centres for a given solution or region.  In order for Quorums to work they require one or three plus DataCenters. This article  covers the complexities of quorums running over two sites.
-
+<!--more-->
 ### 1. - Background, What is a Quorum
 
 A Quorum is a computer science pattern for allowing HA across multiple nodes or sites while removing the risk of HA.

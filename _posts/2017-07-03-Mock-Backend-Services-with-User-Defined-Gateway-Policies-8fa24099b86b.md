@@ -5,7 +5,7 @@ date:   2017-07-03 00:00:00
 categories: APIConnect
 comments: true
 ---
-
+<!--more-->
 
 This article was published on **IBM developerWorks.** For the complete article please go here [https://developer.ibm.com/apiconnect/2017/05/11/mocking-backend-services-gateway-policies/](https://developer.ibm.com/apiconnect/2017/05/11/mocking-backend-services-gateway-policies/)
 

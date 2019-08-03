@@ -8,7 +8,7 @@ title: 'Enable Log Rotation in Kubernetes'
 This week we had a number of issues with diagnosing a customer system because the kubernetes logs were rotating far too quickly.
 
 We were unable to off box the logs to an external source for non tecbnical reasons.
-
+<!--more-->
 Kubernetes does not really handle logging. However docker does have the facility.
 
 

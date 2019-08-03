@@ -6,7 +6,7 @@ title: "Publishing a NodeJS Application to IBM Cloud"
 ---
 
 This article explains the basics for publishing a Node JS application to the IBM Cloud (Formally Bluemix). It assumes that you are already have an IBM ID that is used on IBM Cloud.
-
+<!--more-->
 ## Pre Reqs
 
 1. An IBM ID that is connected to an IBM Cloud account

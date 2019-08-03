@@ -11,7 +11,7 @@ ICP 3.1.1 is locked down.
 I used the following PSP to remove all the locked down settings. Please
 only use this for POC and POTs, and be aware you are weakening your
 environment.
-
+<!--more-->
 ```
 apiVersion: extensions/v1beta1
 kind: PodSecurityPolicy

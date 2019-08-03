@@ -6,6 +6,7 @@ title: "Scaling out pods in Kubernetes with DataPower"
 ---
 
 Kubernetes is a container orchestration system that provides many advantages. In this article I am going to describe how DataPower or any pod can be scaled out with a simple request. There are ways to solve this.
+<!--more-->
 
 ### Using APICUP (Helm)
 

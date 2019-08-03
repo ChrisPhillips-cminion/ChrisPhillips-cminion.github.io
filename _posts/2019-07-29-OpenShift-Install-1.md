@@ -5,7 +5,7 @@ categories: Kubernetes
 title: "Installing OpenShift 3.11  Again Part - 1"
 draft: true
 ---
-
+<!--more-->
 _So Jeff has gone to a better place. My many year old ATOM that I was using as one of the nodes and bootstrap server for OpenShift 3.11. Its CPU was clocked at 80'c and then overnight it never returned._
 
 Jeff held my inventory file (config file) for my openshift and with the passing off Jeff (and his disk) I have lost the file and all notes I had made.

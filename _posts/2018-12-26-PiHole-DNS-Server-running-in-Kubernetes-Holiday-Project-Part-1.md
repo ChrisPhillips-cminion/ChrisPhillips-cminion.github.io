@@ -13,7 +13,7 @@ much of my home network infrastructure to Kubernetes as possible. My
 wife has often questioned "Why do you need any network Infrastructure,
 other then a wifi point?". This article is **not** going to address that
 question.
-
+<!--more-->
 **What is PiHole (**<https://pi-hole.net/>)
 
 ![](https://cdn-images-1.medium.com/max/600/1*cvIMIEgd3RWs6aDQnW-VDA.png)

@@ -6,11 +6,8 @@ title: 'Four strategies to version APIs'
 ---
 Originally published October 16, 2017
 
-
-
-## Introduction
 To manage and maintain any runtime system, you need a comprehensive versioning strategy. Without a clear strategy in place, how do you know which services and APIs are deployed and which version to use? This article highlights four strategies to help you manage API and service interfaces and implementations. It also presents the advantages and disadvantages for each strategy.
-
+<!--more-->
 ## The importance of versioning
 
 When you define a versioning strategy, you focus on your requirements for the following two key areas:

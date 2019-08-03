@@ -4,7 +4,7 @@ date: 2017-07-17  00:00:00
 categories: APIConnect
 title: 'Proxy and Invoke --- What is the difference in API Connect?'
 ---
- 
+ <!--more-->
 
 API Connect offers both Proxy and Invoke policies. I am often asked what
 hte difference. Ulas Cubuk from the IBM Pan European API Connect team

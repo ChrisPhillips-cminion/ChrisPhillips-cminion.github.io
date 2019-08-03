@@ -10,7 +10,7 @@ title: Custom Certs in API Connect 2018
 
 When generating your own certificates for use with API connect you need
 to ensure the x509 extension options are correctly set.
-
+<!--more-->
 Adrian Osadcenco, Chris Twomey and Michael O'Sullivan put together this
 script which i have been using. The script generates all the required
 certificates that can then be used during the configuration.

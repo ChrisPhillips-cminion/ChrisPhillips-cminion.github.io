@@ -4,7 +4,7 @@ date: 2017-08-18  00:00:00
 categories: APIConnect
 title: 'Securing APIs with Two-Factor Authentication'
 ---
-
+<!--more-->
 
 Two-factor Authentication is a recognized method for applying increased
 security to user requests by requiring additional user information,

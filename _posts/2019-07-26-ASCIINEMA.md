@@ -9,6 +9,7 @@ In a few articles I have used Asciinema. I am not affiliated anyway with this to
 _It is the youtube of the command prompt._
 
 The service is free (As far as I have found). It allows you to record a terminal/bash session and upload it to their website. What it uploads is much smaller then a regular video. In addition if you want to copy and paste from the video, you can!
+<!--more-->
 
 ### Demo
 

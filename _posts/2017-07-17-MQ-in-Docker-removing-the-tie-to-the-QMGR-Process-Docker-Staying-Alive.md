@@ -4,7 +4,7 @@ layout: post
 date:   2017-07-17 00:00:00
 categories: APIConnect
 ---
-
+<!--more-->
 
 So recently Aiden Gallagher (Another IBM Intergration SME) and I were
 trying to do API Connect in BM integration with an MQ Docker instance

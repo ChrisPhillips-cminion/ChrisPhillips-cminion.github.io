@@ -5,7 +5,7 @@ categories: APIConnect
 title: 'QuickNote : LDAP --- No Such Object'
 ---
 
-
+<!--more-->
 
 If you are connecting to LDAP and get an error back saying
 `No Such Object` this often means that

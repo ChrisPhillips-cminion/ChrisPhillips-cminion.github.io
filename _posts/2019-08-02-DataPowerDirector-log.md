@@ -8,6 +8,7 @@ title: "Enabling API Connect Gateway Service Logs in DataPower"
 *Thanks to Sara Hagger*
 
 DataPower is the gateway/runtime for API Connect. In order for API Connect to synchronise APIs with the Gateway it uses a new DataPower piece of function called the API Connect Gateway Service. When you deploy DataPower in Kubernetes with APIC UP a special log target is configured to store the API Connect Gateway Service logs. However on all other forms of DataPower this is needs to be enabled.
+<!--more-->
 
 
 ### Viewing the log

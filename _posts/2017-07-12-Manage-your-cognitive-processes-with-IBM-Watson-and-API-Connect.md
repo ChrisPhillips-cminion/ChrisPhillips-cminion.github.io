@@ -4,7 +4,7 @@ layout: post
 date:   2017-07-12 00:00:00
 categories: APIConnect
 ---
-
+<!--more-->
 
 ### This was posted on IBM developerWorks
 

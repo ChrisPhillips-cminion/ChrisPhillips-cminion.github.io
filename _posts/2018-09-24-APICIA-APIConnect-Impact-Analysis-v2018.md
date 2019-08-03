@@ -5,6 +5,7 @@ categories: APIConnect
 title: 'APICIA --- APIConnect Impact Analysis v2018'
 ---
 
+<!--more-->
 
 ![](https://cdn-images-1.medium.com/max/600/1*8EqY65l3Py0YKt5HZ8f3hQ.png)
 

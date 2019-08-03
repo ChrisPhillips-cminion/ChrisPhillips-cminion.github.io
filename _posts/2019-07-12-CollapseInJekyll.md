@@ -8,7 +8,7 @@ title: "Hiding blocks while using Jekyll"
 I was wanting to hide sample code in my posts so  the meat of the information could be more easily seen.
 
 I went to W3Schools  and they provided me with the sample I needed. However it does not work in Jekyll because of how it generates html from markdown.
-
+<!--more-->
 
 [https://www.w3schools.com/howto/howto_js_collapsible.asp](https://www.w3schools.com/howto/howto_js_collapsible.asp)
 

@@ -7,7 +7,7 @@ image:  '/images/2019-06-06-sh1.png'
 ---
 
 There are many places today to run your APIs. zOS Connect and Akamai are two such examples. Though I recommend that DataPower runs all APIs, if different API Gateways are available then you may want to socialise all of your APIs throught a single shop window. However these APIs still need to be managed and socialised.
-
+<!--more-->
 API Connect has a lesser known feature that allows you to manage and expose on portal APIs running on other platforms. This is where the enforced option comes in.  Please note that authentication, authorisation and other policies will not be enforced through API Gateway as DataPower is not being used.
 
 You would still use the same swagger spec but set the host variable to point to the external API Gateway and set the enforced option to false.. A sample is below.
@@ -42,7 +42,7 @@ paths:
             type: string
       consumes: []
       produces: []
-      
+
 ```
 
 

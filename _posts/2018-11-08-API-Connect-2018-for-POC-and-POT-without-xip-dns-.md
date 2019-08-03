@@ -8,9 +8,8 @@ title: 'API Connect 2018 for POC and POT without xip dns.'
 
 A few months back I wrote an article on how to get a quick dns working
 for working with API Connect 2018. This is another strategy that you can
-do at your own risk. [www.dot.tk](http://www.dot.tk) allow you to register a free domain, that is free for
-12 months. You can then use their DNS server.
-
+do at your own risk. [www.dot.tk](http://www.dot.tk) allow you to register a free domain, that is free for 12 months. You can then use their DNS server.
+<!--more-->
 I recommend fully reading the T&Cs of dot.tk first.
 
 Dot.tk off a service to register a free domain on some of the lesser

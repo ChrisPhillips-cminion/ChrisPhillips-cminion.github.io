@@ -9,6 +9,7 @@ title: 'Quick Note --- Egress Whitelisting in Kubernetes'
 I got bored flying back from Germany last week and so I tried to solve a
 problem our test team were hitting. They needed to whitelist access to
 the internet for all the pods of one application
+<!--more-->
 
 I had wanted to play with K8s network policies for ages, finally I got
 an excuse.

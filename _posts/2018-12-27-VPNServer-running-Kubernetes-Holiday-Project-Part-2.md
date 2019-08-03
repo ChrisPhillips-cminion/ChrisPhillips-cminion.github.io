@@ -14,7 +14,7 @@ much of my home network infrastructure to Kubernetes as possible. My
 wife has often questioned "Why do you need any network Infrastructure,
 other then a wifi point?". This article is still* ***not*** *going to
 address that question.*
-
+<!--more-->
 **What is VPN?**
 
 In short by having a VPN Server allows me to connect to my home network

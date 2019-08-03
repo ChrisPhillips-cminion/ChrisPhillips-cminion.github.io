@@ -4,6 +4,7 @@ date: 2017-07-27  00:00:00
 categories: APIConnect
 title: 'T Shaped People, Pi Shaped People and Cthulhu Shaped People'
 ---
+<!--more-->
 
 Edit: Apparently not everyone knows who Cthulhu.
 <https://en.wikipedia.org/wiki/Cthulhu>

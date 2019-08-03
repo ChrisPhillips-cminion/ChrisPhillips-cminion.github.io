@@ -4,7 +4,7 @@ date: 2018-06-06  00:00:00
 categories: StarTrekNationals
 title: 'UK Star Trek Attack Wing --- Un Nationals 2018'
 ---
-
+<!--more-->
 
 Sunday the 3rd of June 2018, Fourteen admirals arrived to participate in
 a series of War Games to show who is the best commander.

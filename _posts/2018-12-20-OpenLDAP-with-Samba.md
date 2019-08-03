@@ -13,7 +13,7 @@ enterprise computing.
 OpenLDAP is an Open Source User Registry. Samba is a file sharing system
 that allows you to share files across a network. The aim here is to
 allow users to log into the samba service with users from the LDAP.
-
+<!--more-->
 LDAP in K8s was a dream. Backing samba (not running in k8s) on to the
 LDAP was a challenge.
 

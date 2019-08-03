@@ -5,7 +5,7 @@ categories: Kubernetes
 title: "HPA Policies and adding one to DataPower"
 draft: true
 ---
-
+<!--more-->
 HPA Policies provide a way to scale out kubernetes pods when the CPU utilization for that pod hits a configured threshold.
 
 To create an HPA policy can run the following command **or** use the yaml file blow.

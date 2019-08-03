@@ -4,6 +4,7 @@ date: 2018-10-10  00:00:00
 categories: APIConnect
 title: 'Are you using the 2018 cli or the v5 one? can you please run'
 ---
+<!--more-->
 #Are you using the 2018cli or the v5 one? can you please run
 
 ```

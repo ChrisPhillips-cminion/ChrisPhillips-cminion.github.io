@@ -3,12 +3,11 @@ layout: post
 date: 2019-05-18 01:00:00
 categories: APIConnect
 title: 'Changing Provider Organisation Owner in APIConnect 2018 [Guest Post by Nick Cawood]'
-tags: [ "Nick Cawood" ]
-author: "Nick Cawood"
+author: ["NickCawood"]
 ---
 
 In API Connect 2018.4.1.X the Management UIs do not support changing the owner of a Provider Organisation. Therefore to change the ownership the APIC Toolkit should used, and specifically the orgs transfer owner commands.
-
+<!--more-->
 To change the owner of a Provider Organisation firstly the new owner needs to be a member of the Provider Organisation. The APIC Toolkit is then used by logging into the Management Server, getting the new owner’s “associate” detail, then transferring the ownership and finally logging out of the Management Server.
 
 

@@ -9,7 +9,7 @@ title: 'QuickNote: Kubernetes --- Networking Issues'
 
 I am writing this because I assume I am not the only idiot in the world.
 This has caused me to waste days of effort.
-
+<!--more-->
 **Symptoms**
 
 Pods on the worker nodes are unable to connec to the API Server

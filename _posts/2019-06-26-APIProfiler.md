@@ -6,7 +6,7 @@ title: "APIC Profiler"
 image: "https://asciinema.org/a/vYaGpTZszAK0XseXjExT78Yf6.svg"
 ---
 I spend a lot of time with clients trying to debug their issues. It was suggested that a tool that could extract volumetrics out of the API Manager would help. This is not the transaction rate but the quantity of content.
-
+<!--more-->
 APIC Profiler was created to do this job. The tool is run against an API Connect 2018 stack. Firstly, it calls the Admin API to determine the number of provider orgs and other key details. Then the user can select which provider orgs to drill down into. If these require different credentials that’s fine, it prompts for each provider org. If you want to automate the solution all parameters can be passed in on the cli.
 
 The tool outputs in either markdown, yaml or json.

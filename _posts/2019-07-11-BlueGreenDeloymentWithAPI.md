@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Blue - Green deployment for API Connect"
 image: "https://media.licdn.com/dms/image/C4D12AQEdiOrSy3swJw/article-cover_image-shrink_423_752/0?e=1568246400&v=beta&t=fchmSXNu_0NQUYKIPcJslvzRj7BQ9wVdVLJR4869ZXU  "
 ---
-
+<!--more-->
 
 ![image](https://media.licdn.com/dms/image/C4D12AQEdiOrSy3swJw/article-cover_image-shrink_423_752/0?e=1568246400&v=beta&t=fchmSXNu_0NQUYKIPcJslvzRj7BQ9wVdVLJR4869ZXU)
 

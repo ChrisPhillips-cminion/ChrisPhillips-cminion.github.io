@@ -7,7 +7,7 @@ draft: true
 ---
 
 When designing your enterprise API Connect environment there are a number of different patterns that can be followed.  In the [API Connect WhitePaper](https://www.ibm.com/downloads/cas/30YERA2R) I present two common patterns. This article is a third pattern that I will propose to put into a future release of the WhitePaper.
-
+<!--more-->
 Today Organizations want to decentralise their development of their APIs but keep a single teams for Test and Operations.
 
 This article assumes the following teams types exist.
@@ -96,7 +96,7 @@ The Test Manager who owns their provider organization has responsible for on boa
 
 This API Cloud is there just for the Operations Infrastructure team to allow them to validate patches and configuration changes prior to roling out to other enviornments.
 
-Where possible this environment should have the same APIs as those in production. All aspects of this environment is used in the same way as production. 
+Where possible this environment should have the same APIs as those in production. All aspects of this environment is used in the same way as production.
 
 | Task                                       | Owner                     |
 | ------------------------------------------ | ------------------------- |

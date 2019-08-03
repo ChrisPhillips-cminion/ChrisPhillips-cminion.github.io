@@ -6,7 +6,7 @@ title: "101 Rules for Deploying with Dev Ops"
 ---
 
 Deployment automation is at the heart of DevOps. The purpose of this article is to explain some ground rules that must be considered to start any DevOps journey. I have seen a number of clients run into issues because they did not properly plan or consider how DevOps could be best used for their business.
-
+<!--more-->
 ## Rule No. 001
 ### The right number of  Environments
 

@@ -8,7 +8,7 @@ title: 'Star Trek Attack Wing Unnationals 2019.'
 <span style="float:right; margin-right:5px; margin-left:5px"> <img src="/images/2019-06-15-staw2.png" /><BR><i>_Trophy Kindly Provided by UK Games Expo_</i></span>
 
  The first week of June is the [UK Games Expo](https://www.ukgamesexpo.co.uk/). For the last three years I have judged the UK Star Trek Attack Wing National Championships. Sometimes these are official this year unfortunately it was not.
-
+<!--more-->
  Star Trek Attack Wing Unnationals has never been the busiest game but we had 11 players across the UK, including returning three time national champion Bryan G.
 
 _Note: While watching the videos of this event you may have seen two things that may not appear quite right. This is a friendly tournament where want to test the skill of the players not the players ability to pack. Dan flew two Klingon B'rels that appeared to be permanently cloaked because of breakages on route. Also Byron lost one of his dials after arriving at the show. All players agreed that neither of these problems should stop them from playing._

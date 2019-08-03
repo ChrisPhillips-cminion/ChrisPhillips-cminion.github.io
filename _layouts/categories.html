@@ -18,7 +18,7 @@ comments: true
 
       {% for post in tag[1] %}
         {%- if  post.draft != true and  post.draft != 'hidden' -%}
-              <tr><td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td><td width="100px" >{{ post.date | date_to_string }}</td></tr>
+              <tr><td><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td><td width="100px" >{{ post.date | date_to_string }}</td></tr>
         {% endif %}
       {% endfor %}
 

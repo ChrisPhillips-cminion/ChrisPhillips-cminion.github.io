@@ -4,6 +4,7 @@ layout: post
 date:   2017-07-07 00:00:00
 categories: APIConnect
 ---
+<!--more-->
 ### How do you track who is calling IBM Watson when they don't have business reason? Answer: Use API Connect!
 
 I recently authored a blog post with [Charlotte

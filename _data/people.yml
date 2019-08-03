@@ -1,0 +1,29 @@
+ChrisPhillips:
+  name: ChrisPhillips
+  display_name: Chris Phillips
+  gravatar: b7c569f4862b794f5f98c15f59a042f7
+  twitter: cminion
+  github: ChrisPhillips-cminion
+  linkedin: chrisjphillips
+  bio:
+  hide: true
+ClaudioTag:
+  name: ClaudioTag
+  display_name: Claudio Tag
+  twitter: ClaudioTag
+  linkedin: claudiotagliabue
+  bio: Technical Evangelist @IBM with infinite curiosity for technology.
+TimQuigly:
+  name: TimQuigly
+  display_name: Tim Quigly
+  linkedin: timquigly
+RGeorgeInness:
+  name: RGeorgeInness
+  display_name: R George Inness
+  linkedin: george-inness-80a3082
+NickCawood:
+  name: NickCawood
+  display_name: Nick Cawood
+JPSchiller:
+  name: JPSchiller
+  display_name: JP Schiller

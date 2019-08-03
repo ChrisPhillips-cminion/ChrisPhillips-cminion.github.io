@@ -12,6 +12,7 @@ backed on to LDAP or be a local user registry.
 There are two ways to delete users from a user registry. Both of these
 require that the user is no longer a member to any provider orgs. There
 is no way to remove a user from a user registry in the UI today.
+<!--more-->
 
 1.  [Delete yourself with the CLI]
 

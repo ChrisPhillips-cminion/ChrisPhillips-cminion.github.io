@@ -11,7 +11,7 @@ There are many types of APIs available, I propose to reference these as flavours
 * Resource APIs
 * System APIs
 * Consumer APIs
-
+<!--more-->
 These APIs can work by themselves or together depending on the requirements, but not every combination is suitable for everyone. A bit like Ice Cream.
 
 ![](/images/2019-05-25-CUPCAKE1.JPG)

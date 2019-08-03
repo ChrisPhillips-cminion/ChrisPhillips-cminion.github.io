@@ -2,6 +2,7 @@
 layout: default
 comments: true
 ---
+
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -11,17 +12,29 @@ comments: true
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-        • <span itemprop="category" itemscope itemtype="http://schema.org/Category"><span class="p-author h-card" itemprop="name"> Category <a href="/categories.html#{{ page.categories[0] | slugify }}" class="post-tag">{{ page.categories[0] | escape }}</a></span></span>
-      {%- if page.author -%}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> Guest Post by <a href="/authors.html#{{ page.author | slugify }}" class="post-tag">{{ page.author | escape }}</a></span></span>
+      • <span itemprop="category" itemscope itemtype="http://schema.org/Category"><span class="p-author h-card" itemprop="name"> Category <a href="/categories.html#{{ page.categories[0] | slugify }}"
+            class="post-tag">{{ page.categories[0] | escape }}</a></span></span>
+      {%- if page.author[0] -%}
+
+      • Guest Post by
+      {%- for a in page.author -%}
+      {% assign author = site.data.people[a] %}
+      {%- if page.author[1] -%}
+      <br />•
+      {%- endif -%}
+      <a rel="author" href="" title="{{ author.display_name }}">
+        {{ author.display_name }}</a> {%- include author-social.html -%}
+      {%- endfor -%}
       {%- else -%}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> by Chris Phillips </span></span>
+      {% assign author = site.data.people['ChrisPhillips'] %}
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> by <a rel="author" href="" title="{{ author.display_name }}">
+        {{ author.display_name }}</a> {%- include author-social.html -%} </span></span>
       {%- endif -%}
     </p>
   </header>
   {%- if page.draft -%}
   <div id="background">
-  <p id="bg-text">Draft!!</p>
+    <p id="bg-text">Draft!!</p>
   </div>
   {%- endif -%}
   <div class="post-content e-content" itemprop="articleBody">

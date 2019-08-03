@@ -7,7 +7,7 @@ draft: true
 ---
 
 Kubernetes is a container orchestration system. In side a kubernetes deployment there are multiple worker nodes. Each worker node runs one or more pods. For a introduction on pods please watch https://www.cncf.io/the-childrens-illustrated-guide-to-kubernetes/. The Kubernetes master determines which pods run on which worker nodes. If a worker node goes down kubernetes will bring the pods back up on a different worker node.
-
+<!--more-->
 This is great if you do not need to persist state. However persisting state is hard. There are multiple methods of storing state today that fit into the following categories.
 
 * Local Disk (Easiest)

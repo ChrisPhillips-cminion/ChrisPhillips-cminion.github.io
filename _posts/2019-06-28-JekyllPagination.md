@@ -7,7 +7,7 @@ image: "/images/2019-06-28-paginationb.png"
 ---
 
 This post is just a rehash of [https://jekyllrb.com/docs/pagination/](https://jekyllrb.com/docs/pagination/), but as it took me a few attempts I thought I would try and post a consise list of instructions.
-
+<!--more-->
 ![](/images/2019-06-28-paginationb.png)
 
 To enable pagination in your Jekyll Blog

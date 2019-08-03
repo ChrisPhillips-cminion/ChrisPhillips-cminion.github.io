@@ -8,7 +8,7 @@ title: 'QuickNote : Network not working on ubuntu cosmic'
 
 I installed ubuntu cosmic and upgraded so everything was on the latest
 package in the ubuntu repos.
-
+<!--more-->
 I rebooted and then the onboard network card failed to get an IP. Now
 this is not a guide on how to debug it, but just how i fixed it.
 

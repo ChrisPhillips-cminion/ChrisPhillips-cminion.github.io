@@ -11,6 +11,7 @@ DataPower provides the facility to proxy WebSocket connections. This article is 
 * *Part 2* - How you can use API Connect to secure your implementation
 * ~~Part 3 - How to socialise it via the Developer Portal giving your consumers the easiest~~
 * _Part 3.1_  - How to socialise it via the Developer Portal giving your consumers the easiest way to use your websocket
+<!--more-->
 
 DataPower is used to protect and proxy http connections. As a WebSocket is an upgraded HTTP Connection it allows DataPower to offer similar protection and proxying facilities. When a WebSocket connection is established with DataPower, it applies the Multi-Protocol Gateway policies before the connection is upgraded. This means that additional logic can be applied to validate the request. In this series of articles we are going to be using API Connect for this.
 

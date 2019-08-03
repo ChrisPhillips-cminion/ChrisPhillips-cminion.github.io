@@ -38,8 +38,10 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,hr,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 10;
 }
+
+
 
 
 
@@ -243,7 +245,7 @@ table {
   //   }
   // }
   th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    padding: ($spacing-unit / 10 - 2) ($spacing-unit / 2);
   }
   // th {
   //   background-color: lighten($grey-color-light, 3%);

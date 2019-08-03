@@ -7,7 +7,7 @@ image: '/images/2019-06-07-jekylldraft.png'
 ---
 
 Like many people I  write a load of blog posts that never will be published. This is because they don't get finished or because my proof readers explain to me what I am writing is rubbish.  One of the challenges I have head is how to share an article before it s published in a simple way. I have tried sharing the mark down but that doesn't show the images. I have tried setting the date to the past so it is at the bottom of the list, however that does not hide the article.
-
+<!--more-->
 
 ![](/images/2019-06-07-jekylldraft.png)
 

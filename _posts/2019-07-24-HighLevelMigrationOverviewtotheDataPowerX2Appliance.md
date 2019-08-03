@@ -3,17 +3,15 @@ layout: post
 date: 2019-07-24 06:00:00
 categories: DataPower
 title: "High Level Migration Overview to the DataPower X2 Appliance [by  R George Inness]"
-image: https://developer.ibm.com/apiconnect/wp-content/uploads/sites/23/2018/03/Screen-Shot-2018-03-16-at-3.07.06-PM.png
-tag: "R George Inness"
-author: "R George Inness"
+author: [ "RGeorgeInness" ]
 ---
 
 ![](https://developer.ibm.com/apiconnect/wp-content/uploads/sites/23/2018/03/Screen-Shot-2018-03-16-at-3.07.06-PM.png)
 *Image taken from ibm.com*
 
-### Introduction
 
 Your company has just bought DataPower X2 appliances and you have been assigned to lead the effort to migrate from the current appliances to the new X2s and you are looking for some direction on how to put together a high-level plan.  This article will give you an overview on how to plan and execute the migration with some key pointers on what to look for and possible gotchas.  It will not be a detailed step by step on how to do the migration.
+<!--more-->
 
 The IBM recommended methodology to migrate the appliance configuration between appliances is the Secure Backup and Restore feature.  This feature moves all of the configuration information to the new appliance except the content of the Hardware Security Module (HSM) if one is installed and being used.  The Secure Backup and Restore feature can be compared to the process of moving to a newer iPhone using iTunes.
 

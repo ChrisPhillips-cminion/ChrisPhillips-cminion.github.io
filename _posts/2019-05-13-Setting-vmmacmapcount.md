@@ -3,12 +3,11 @@ layout: post
 date: 2019-05-13  00:00:00
 categories: Kubernetes
 title: 'Setting vm.max_map_count on Kubernetes [Guest Post by Nick Cawood]'
-tags: [ "Nick Cawood"]
-author: "Nick Cawood"
+author: ["NickCawood"]
 ---
 
 I've recently been installing API Connect 2018.4.1X on a Kubernetes Container Service (IKS - IBM Cloud Kubernetes Service). I can highly recommend this experience as many of the complexities of setting up Kubernetes are handled by the Container Service. However some of the unique settings that APIC needs are not covered implicitly (or access to the Nodes as root is required, which is not possible via IKS) so some work is needed to manage these:
-
+<!--more-->
 
 As any experienced APIC 2018 installer knows this parameter needs to be set to 1048575 in order for all the components to install and then function as required.
 

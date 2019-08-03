@@ -11,6 +11,7 @@
       <div class="sidebar-personal-info-section">
         <img src="/images/me.jpg" alt="MI Photo" />
       </div>
+      {%- include social.html -%}
       <BR>
       <hr />
       <div class="trigger">
@@ -29,8 +30,10 @@
         <br>
         <hr />
         <h3><a class="page-link" href="/authors.html">Guest Authors</a></h3>
-        {% for tag in site.tags %}
-        <li><a href="/authors.html#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a></li>
+        {% assign people =  site.data.people  | sort %}
+        {%- for tempA in people -%}
+        {% assign author =  tempA[1] %}
+        <li><a href="/authors.html#{{ author.name | slugify }}" class="post-tag">{{ author.display_name }}</a></li>
         {% endfor %}
       </div>
     </div>

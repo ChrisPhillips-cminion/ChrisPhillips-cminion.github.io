@@ -5,6 +5,7 @@ categories: Kubernetes
 title: "Helm ERROR 'User \"system:serviceaccount:kube-system:default\" cannot get namespaces in the namespace '\"default\"'"
 
 ---
+<!--more-->
 
 Trying to use a new k8s instance with helm deploying to the default namespace to test an idea.
 

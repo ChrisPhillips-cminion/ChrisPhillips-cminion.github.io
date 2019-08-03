@@ -11,7 +11,7 @@ API Connect has two different APIs, the provider API and the consumer API.
 
 The provider API is used to control artefacts from the perspective of the API Provider. The consumer API is used to control artefacts belonging to the developers consuming the APIs.
 
-
+<!--more-->
 To get the access token to call additional systems I use the following curl command.
 
 

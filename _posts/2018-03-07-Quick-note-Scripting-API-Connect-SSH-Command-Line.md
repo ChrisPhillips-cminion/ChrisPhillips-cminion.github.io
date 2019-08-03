@@ -4,7 +4,7 @@ date: 2018-03-07  00:00:00
 categories: APIConnect
 title: 'Quick note: Scripting API Connect SSH Command Line'
 ---
-
+<!--more-->
 
 When building an automated backup solution either you need to hard code
 the password (DON'T DO THIS) or use SSH keys. Layne Miller has writing a

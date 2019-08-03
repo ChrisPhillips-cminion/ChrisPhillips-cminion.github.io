@@ -4,7 +4,7 @@ date: 2018-03-09  00:00:00
 categories: APIConnect
 title: So this turned up today
 ---
-
+<!--more-->
 
 ![](https://cdn-images-1.medium.com/max/800/1*XGEG4locow14dxHKHglLqA@2x.jpeg)
 

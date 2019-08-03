@@ -6,7 +6,7 @@ title: |
     Deploying IBM DataPower into IBM BlueMix Kubernetes Service for API
     Connect v2018
 ---
-
+<!--more-->
 
 This article goes through the steps required to deploy IBM DataPower to
 the IBM Bluemix Kubernetes Services.

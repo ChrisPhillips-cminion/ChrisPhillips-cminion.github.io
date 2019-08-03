@@ -6,6 +6,7 @@ title: |
     Installing IBM Cloud Private install 3.1 or 2.1 on Amazon Web Service
     (AWS)
 ---
+<!--more-->
 
 ![](https://cdn-images-1.medium.com/max/600/0*KL_6rSvcBPvTDmXv.gif)
 

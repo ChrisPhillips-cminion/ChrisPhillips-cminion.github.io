@@ -11,7 +11,7 @@ title: "API Connect - Multi Cloud deployments"
 
 API Connect supports that each component running in its own cloud. The most common use of this is the Gateway Service (DataPower) running in AWS, IBM Cloud, Azure, GCP or any cloud that provides a Kubernetes Runtime.
 
-
+<!--more-->
 
 The common usecase for this is when exposing a service or system of record already deployed to that cloud.
 

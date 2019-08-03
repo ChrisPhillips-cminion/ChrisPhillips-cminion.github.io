@@ -10,7 +10,7 @@ image:  '/images/2019-06-13-throttling-title.png'
 *First published  Published May 31, 2017 and Updated June 1, 2017*
 
 Throttling is the threshold for limiting the number of requests to a component. This threshold is important wherever an invocation chain passes through several distributed components. For example, a call passes from an API consumer through various layers of the architecture before it reaches the system of record where the server responds to the request. If throttling is not configured correctly, the infrastructure is at risk of accidental or malicious overload. By taking time to correctly design the throttling implementation, you can dramatically reduce this risk.
-
+<!--more-->
 This article covers throttling concepts and key considerations for five throttling scenarios. It describes throttling in the context of a service-oriented architecture (SOA) or microservices architecture. For example, you can use throttling to protect a service host or to limit a user to the agreed service-level agreement (SLA).
 
 ## Terminology

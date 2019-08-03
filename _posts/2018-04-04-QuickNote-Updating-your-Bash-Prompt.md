@@ -4,7 +4,7 @@ date: 2018-04-04  00:00:00
 categories: APIConnect
 title: 'QuickNote: Updating your Bash Prompt'
 ---
-
+<!--more-->
 There are a million guides out there but as I always googled this I
 thought I would post the answer here.
 

@@ -3,13 +3,11 @@ layout: post
 date: 2019-07-25 08:00:00
 categories: DataPower
 title: "Minimal Setup of a DataPower X2 Appliance [by  R George Inness]"
-tag: "R George Inness"
-author: "R George Inness"
+author: [ "RGeorgeInness" ]
 ---
 
-### Introduction
-
 Your company has just bought DataPower X2 appliances.  The datacenter that they will be installed in is remote and you have been asked to put together a plan to remotely do their setup.  This article will provide instructions and guidance on what is needed for a minimal setup to get the appliance on your network and accessible via the DataPower WebGUI.
+<!--more-->
 
 ### DataCenter Prerequisites
 

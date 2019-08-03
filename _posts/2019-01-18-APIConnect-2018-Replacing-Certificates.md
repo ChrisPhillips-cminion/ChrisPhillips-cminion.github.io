@@ -4,19 +4,11 @@ date: 2019-01-18  00:00:00
 categories: APIConnect
 title: 'APIConnect 2018: Replacing Certificates'
 ---
-
+<!--more-->
 
 This post assumes that you have already generated your certificates. If
 you have not read this post
-<https://medium.com/@cminion/custom-certs-in-api-connect-2018-c7aacecd7b44?source=user_profile---------8------------------>.
 
-
-
-
-
-
-
-------------------------------------------------------------------------
 
 
 

@@ -4,7 +4,7 @@ date: 2018-05-06  00:00:00
 categories: APIConnect
 title: 'Kubernetes (k8s) --- Local Disk mount'
 ---
-
+<!--more-->
 
 So I have spent far to long trying to mount a local disk into my k8s
 cluster. My aim is to run [pihole](https://pi-hole.net/) on my home system in k8s, primarily to educate me.

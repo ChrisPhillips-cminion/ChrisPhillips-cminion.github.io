@@ -4,7 +4,7 @@ date: 2018-02-26  00:00:00
 categories: APIConnect
 title: 'Guest Post: APIC Gateway delayed analytics data \[Craig S\]'
 ---
-
+<!--more-->
 
 So this post is stolen with permission from Craig Simmons IBM
 (<https://www.linkedin.com/in/craig-simmons-1b67436b/>)

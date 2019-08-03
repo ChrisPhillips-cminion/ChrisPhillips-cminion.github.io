@@ -5,6 +5,7 @@ categories: Kubernetes
 title: "OpenShift Error - no attribute oo_first_master"
 
 ---
+<!--more-->
 
 When running the ansible playbooks I got the following error message.
 

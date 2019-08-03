@@ -6,6 +6,7 @@ title: "API Connect White Paper Update v1.0.8 "
 ---
 
 On the 15th of July, I updated the API Connect WhitePaper to 1.0.8. This can be downloaded from the same location as before, [https://www.ibm.com/downloads/cas/30YERA2R](https://www.ibm.com/downloads/cas/30YERA2R)
+<!--more-->
 
 A summary of changes are shown in the table below.
 

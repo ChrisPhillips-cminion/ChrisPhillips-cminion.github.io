@@ -11,6 +11,7 @@ One of my most viewed posts is
 
 In 2018.4.1.1 the term realm has been replaced with identify provider so
 the command is now
+<!--more-->
 
 `apic identity-providers -s <server> --scope [provder|admin]`
 https://pbs.twimg.com/profile_images/1044237992305545216/239SMuWD_400x400.jpg

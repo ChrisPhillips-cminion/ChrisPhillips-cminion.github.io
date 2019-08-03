@@ -4,6 +4,8 @@ date: 2018-09-07  00:00:00
 categories: APIConnect
 title: APIConnect 2018 and Ingress in Public Clouds
 ---
+<!--more-->
+
 # APIConnect 2018 and Ingress in Public Clouds
 
 **When installing API Connect 2018 to any pubic cloud solution the ingress

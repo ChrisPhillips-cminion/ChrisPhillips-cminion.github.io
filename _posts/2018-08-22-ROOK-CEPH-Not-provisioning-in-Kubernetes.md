@@ -4,7 +4,7 @@ date: 2018-08-22  00:00:00
 categories: APIConnect
 title: 'ROOK CEPH --- Not provisioning in Kubernetes'
 ---
-
+<!--more-->
 
 We are deploying to a Kubernetes Environment using RookCeph.
 

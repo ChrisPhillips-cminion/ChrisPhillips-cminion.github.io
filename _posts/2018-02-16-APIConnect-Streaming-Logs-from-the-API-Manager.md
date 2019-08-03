@@ -4,7 +4,7 @@ date: 2018-02-16  00:00:00
 categories: APIConnect
 title: APIConnect Streaming Logs from the API Manager
 ---
- 
+ <!--more-->
 
 Recently we were debugging an infrastructure "situation" and we did not
 have an external log source set up. The postmortem was failing and the

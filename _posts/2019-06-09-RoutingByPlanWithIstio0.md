@@ -9,7 +9,7 @@ I travel a lot for work, rough 75% of weeks I am away, often out of the country.
 My kids always want to know where I am and my wife wanted a home dashboard so we can quickly check useful things.
 
 I will do another post on the dashboard aims, objectives and architecture but today I wanted to find a way to get my location data and share it.
-
+<!--more-->
 I have an Iphone and I found a brilliant wrapper for node js module [find-my-iphone](https://www.npmjs.com/package/find-my-iphone).
 
 This lets you take a username and password and then you can query for your location data. My sample code is below.

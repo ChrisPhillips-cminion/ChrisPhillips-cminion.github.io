@@ -12,7 +12,7 @@ much of my home network infrastructure to Kubernetes as possible. My
 wife has often questioned "Why do you need any network Infrastructure,
 other then a wifi point?". This article is still* ***not*** *going to
 address that question.*
-
+<!--more-->
 ![](https://cdn-images-1.medium.com/max/800/1*fT5FZirLsGVFYmFQf-PHew.png)
 
 One of my projects over xmas was to build my own build engine, im not

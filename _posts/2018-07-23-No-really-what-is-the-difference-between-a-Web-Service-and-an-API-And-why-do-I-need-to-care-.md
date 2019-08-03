@@ -5,6 +5,8 @@ categories: APIConnect
 title: |
     No really, what is the difference between a Web Service and an API?
 ---
+<!--more-->
+
 ### and why do I need to care?
 
 Recently at a Business Partner summit I was asked this question. I have

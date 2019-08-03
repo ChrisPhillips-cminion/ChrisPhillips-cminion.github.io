@@ -8,7 +8,7 @@ title: 'API Connect WhitePaper 2018.4.1.x'
 Alongside Aiden Gallagher I put together the API Connect WhitePaper for 2018.4.1
 
 The document can be downloaded from https://developer.ibm.com/apiconnect/2019/02/08/api-connect-v2018-deployment-whitepaper-now-available/
-
+<!--more-->
 The paper covers the following main topics:
 
 * API Connect Component Diagram

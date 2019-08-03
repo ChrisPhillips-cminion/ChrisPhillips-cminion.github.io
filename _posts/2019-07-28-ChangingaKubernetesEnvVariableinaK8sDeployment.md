@@ -8,6 +8,7 @@ title: "Adding or Changing an ENV Variable in a Kubernetes Deployment"
 This is a very simple task.  However one I occasionally get the syntax wrong for.
 
 The scenario is you need to modify the environmental variable of a Kubernetes Pod/Deployment. In order to do this you must edit the Deployment. Once this is saved a new pod is spawned and the old pod is terminated. This is repeated until all pods have been updated. When modifying the deployment if you create a syntax error k8s does not save the config change.
+<!--more-->
 
 It is recommend to do this at the deploy level not the pod level so the changes are persisted.
 
