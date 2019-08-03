@@ -33,7 +33,10 @@
         {% assign people =  site.data.people  | sort %}
         {%- for tempA in people -%}
         {% assign author =  tempA[1] %}
+        {%- if  author['hide'] != true  -%}
+
         <li><a href="/authors.html#{{ author.name | slugify }}" class="post-tag">{{ author.display_name }}</a></li>
+        {%- endif -%}
         {% endfor %}
       </div>
     </div>
