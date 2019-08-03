@@ -2,7 +2,7 @@
 layout: post
 date: 2019-08-02 01:00:00
 categories: APIConnect
-title: "Enabling GW Director Logs in DataPower"
+title: "Enabling API Connect Gateway Service Logs in DataPower"
 ---
 
 *Thanks to Sara Hagger*
