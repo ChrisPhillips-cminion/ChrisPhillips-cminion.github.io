@@ -3,12 +3,11 @@ layout: post
 date: 2019-08-02 01:00:00
 categories: APIConnect
 title: "Enabling GW Director Logs in DataPower"
-draft: true
 ---
 
 *Thanks to Sara Hagger*
 
-DataPower is the gateway/runtime for API Connect. In order for API Connect to synchronise APIs with the Gateway it uses a new DataPower piece of function called the Gateway Directory. When you deploy DataPower in Kubernetes with APIC UP a special log target is configured to store the gateway director logs. However on all other forms of DataPower this is needs to be enabled.
+DataPower is the gateway/runtime for API Connect. In order for API Connect to synchronise APIs with the Gateway it uses a new DataPower piece of function called the API Connect Gateway Service. When you deploy DataPower in Kubernetes with APIC UP a special log target is configured to store the API Connect Gateway Service logs. However on all other forms of DataPower this is needs to be enabled.
 
 
 ### Viewing the log
@@ -18,10 +17,10 @@ If you follow the steps below or you are using DataPower by deployed by APICUP t
 
 ### Via the Cli
 
-Log into the cli either directly via the console or ssh. Run the following commands.
+Log into the cli either directly via the console or ssh. Run the following commands, where the domain containing the API Connect Gateway Service is called apiconnect.
 
 ```
-co ; logging target gwd-log
+top; configure; switch apiconnect; logging target gwd-log
       type file
       format text
       timestamp syslog
