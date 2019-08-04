@@ -20,9 +20,22 @@ comments: true
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
     <tr>
-      <td valign=top width=20%><span class="post-meta">{{ post.date | date: date_format }}</span>    <br> <span itemprop="category" itemscope itemtype="http://schema.org/Category"><span class="post-meta" itemprop="name"> <a href="/categories.html#{{ post.categories[0] | slugify }}"
-                class="post-meta">{{ post.categories[0] | escape }}</a></span></span></td>
-      <td>
+      <td align=center valign=top width=20%>
+        {% assign catName = post.categories[0] %}
+        {% assign category = site.data.categories[catName] %}
+
+        <a href="/categories.html#{{ post.categories[0] | slugify }}"
+                class="post-meta">
+                {%- if category -%}
+                  <img src="{{category.icon}}" title="{{category.display_name}}" width=70/>
+                {%- else -%}
+                  {{  post.categories[0] }}
+                {%- endif -%}
+              </a><br>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <!-- <span itemprop="category" itemscope itemtype="http://schema.org/Category"><span class="post-meta" itemprop="name"> <a href="/categories.html#{{ post.categories[0] | slugify }}"
+                class="post-meta">{{ post.categories[0] | escape }}</a></span></span></td> -->
+      <td valign=top>
         <!-- <h3> -->
         <a class="post-link" href="{{ post.url | relative_url }}">
           <b>{{ post.title | escape }}</b>

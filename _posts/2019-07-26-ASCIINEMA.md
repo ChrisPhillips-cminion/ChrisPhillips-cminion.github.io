@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-07-27 01:00:00
-categories: IBMCloud
+categories: Misc
 title: "ASCIINEMA - How to use it!"
 ---
 In a few articles I have used Asciinema. I am not affiliated anyway with this tool just a big fan.

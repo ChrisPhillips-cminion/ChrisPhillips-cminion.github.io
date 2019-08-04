@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-07-28 01:00:00
-categories: Kuberentes
+categories: Kubernetes
 title: "Adding or Changing an ENV Variable in a Kubernetes Deployment"
 ---
 
