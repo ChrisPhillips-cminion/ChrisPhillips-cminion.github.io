@@ -22,7 +22,7 @@ comments: true
       {%- if page.author[1] -%}
       <br />•
       {%- endif -%}
-      <a rel="author" href="" title="{{ author.display_name }}">
+      <a href="/authors.html#{{ author.name | slugify }}" class="post-tag">
         {{ author.display_name }}</a> {%- include author-social.html -%}
       {%- endfor -%}
       {%- else -%}

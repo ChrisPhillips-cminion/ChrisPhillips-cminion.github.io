@@ -17,6 +17,10 @@ TimQuigly:
   name: TimQuigly
   display_name: Tim Quigly
   linkedin: timquigly
+  bio: |
+    I am a messaging and DevOps IT specialist, currently working for IBM Cloud Labs’ consulting organisation, where I am on placement at a large building society. My current role is focussed on Docker and Kubernetes, using these with IBM App Connect Enterprise to create integration micro-services on AWS and IBM Cloud Private. This area is the one that I am most passionate about: improving outcomes by deploying infrastructure as code and using agile and lean principles to allow sustainable progress.
+    I have led teams designing and building critical messaging infrastructure, from development to production, for high focus projects, such as PSD2 (Open Banking), plus have worked on IBM Cloud (Pure Systems) and Amazon Web Services – delivering MQ and IIB messaging solutions for customers on both of these platforms.
+    Prior to my life in consulting I worked in IBM’ Hursley Labs, focussing on integration test between two of IBM’s flagship middleware offerings: IBM MQ and WebSphere Application Server. In this role I performed integration testing using agile methodologies and took ownership of a complex test automation project across Linux, Windows and z/OS mainframe. I was also fortunate enough to present on MQ:WAS integration at Impact 2014 in Las Vegas. Finally, during my time in the Labs, I was member of a patent team who successfully gained four United States patents. These were granted by the United States Patent Office in 2018.
 RGeorgeInness:
   name: RGeorgeInness
   display_name: R George Inness
