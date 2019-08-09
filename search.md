@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Search
+title:  Search - Chris Phillips' Blog
 permalink: /search/
 ---
 {%- include search.html -%}
