@@ -15,7 +15,7 @@ Out of the box the DataPower init container is set to be a busy box image deploy
 
 In order to work around this problem follow these steps, where `<gateway name>` should be replaced by the gateway you are installing.
 
-1. configure the install as normal up until the command `apicup subsys install <gateway name>` .
+1. Configure the install as normal up until the command `apicup subsys install <gateway name>` .
 2. Instead run
 ```
 apicup subsys install <gateway name> --out chart-<gateway name>
@@ -25,11 +25,11 @@ This generates the Helm chart in the `chart-<gateway name>` directory but does n
 ```
 kubectl apply -f chart-<gateway name>/secrets
 ```
-4. extract the tar files from `chart-<gateway name>/helm` but do not delete the original tar.
+4. Extract the tar files from `chart-<gateway name>/helm` but do not delete the original tar.
 ```
 tar zxvf chart-dp/helm/dynamic-gateway-service-1.0.27.tgz
 ```
-5. grep the values file to retrieve the tag for the DataPower image .
+5. Grep the values file to retrieve the tag for the DataPower image .
 ```
 cat dynamic-gateway-service/values.yaml  | grep tag
 ```
@@ -39,14 +39,15 @@ tag: 2018.4.1.6-309660-release-prod
 tag: 1.29-glibc
 ```
 
-6. copy the tag line that matches the version of DataPower you wish to install, in this case `tag: 2018.4.1.6-309660-release-prod`
+6. Copy the tag line that matches the version of DataPower you wish to install, in this case `tag: 2018.4.1.6-309660-release-prod`
 
-7. edit the `chart-<gateway name>/values/dynamic-gateway-service.yml` and add the copied tag line to the `datapower.busybox` section
+7. Edit the `chart-<gateway name>/values/dynamic-gateway-service.yml` and add the copied tag line to the `datapower.busybox` section
 
-8. in `chart-<gateway name>/values/dynamic-gateway-service.yml` values file replace `datapower.busybox.repository` with `datapower.image.repository`
+8. In `chart-<gateway name>/values/dynamic-gateway-service.yml` values file replace `datapower.busybox.repository` with `datapower.image.repository`
+
 9. Now install DataPower with the following command.
 ```
-helm install <gateway name> chart-<gateway name>/helm/dynamic-gateway-service*.tgz -f chart-<gateway name>/values/dynamic-gateway-service
+helm install --name <gateway name> chart-<gateway name>/helm/dynamic-gateway-service*.tgz -f chart-<gateway name>/values/dynamic-gateway-service
 ```
 
 [![asciicast](https://asciinema.org/a/KdpZDyyOEJBauXkXXwbH6gChK.svg)](https://asciinema.org/a/KdpZDyyOEJBauXkXXwbH6gChK)
