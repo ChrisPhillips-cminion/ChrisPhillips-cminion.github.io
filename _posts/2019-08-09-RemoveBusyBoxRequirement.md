@@ -7,7 +7,6 @@ draft: true
 ---
 
 This is a work around to a problem I have seen a couple of times. I expect this problem to be fixed in the next release of APIConnect.
-
 <!--more-->
 
 When APICUP (the API Connect Installer) configures a DataPower Gateway to be deployed it internally generates a helm chart. This helm chart includes a stateful set that includes both an init container as well a the main container.  
@@ -47,5 +46,7 @@ tag: 1.29-glibc
 8. in `chart-<gateway name>/values/dynamic-gateway-service.yml` values file replace `datapower.busybox.repository` with `datapower.image.repository`
 9. Now install DataPower with the following command.
 ```
-helm install <gateway name> chart-<gateway name>/helm/<file name>.tgz -f chart-<gateway name>/values/<file name>
+helm install <gateway name> chart-<gateway name>/helm/dynamic-gateway-service*.tgz -f chart-<gateway name>/values/dynamic-gateway-service
 ```
+
+[![asciicast](https://asciinema.org/a/KdpZDyyOEJBauXkXXwbH6gChK.svg)](https://asciinema.org/a/KdpZDyyOEJBauXkXXwbH6gChK)
