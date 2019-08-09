@@ -3,15 +3,15 @@ layout: post
 date: 2019-08-09 02:00:00
 categories: APIConnect
 title: "Deploying DataPower into Kubernetes without external internet access. "
-draft: true
 ---
 
-This is a work around to a problem I have seen a couple of times. I expect this problem to be fixed in the next release of APIConnect.
-<!--more-->
+This is a work around to a problem I have seen a couple of times. I expect this problem to be fixed in a future release of APIConnect.
 
 When APICUP (the API Connect Installer) configures a DataPower Gateway to be deployed it internally generates a helm chart. This helm chart includes a stateful set that includes both an init container as well a the main container.  
 
 Out of the box the DataPower init container is set to be a busy box image deployed on docker hub. Therefore if the environment that is being used to host the Kubernetes deployment does not have internet access then it fails.
+
+<!--more-->
 
 In order to work around this problem follow these steps, where `<gateway name>` should be replaced by the gateway you are installing.
 
