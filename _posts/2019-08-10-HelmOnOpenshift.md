@@ -5,7 +5,7 @@ categories: OpenShift
 title: "Setting up Helm v2.x"
 ---
 
-Helm is the de facto standard  for deploying to Kubernetes. OpenShift does not ship with helm but instead provides their own system called Templates. Thus far I have never used OpenShift Templates and so I focus on helm. This article does not go through the differences but just shows how to get helm v2 up and running.
+Helm is the de facto standard for deploying to Kubernetes. OpenShift does not ship with helm but instead provides their own system called Templates. Thus far I have never used OpenShift Templates and so I focus on helm. This article does not go through the differences but just shows how to get helm v2 up and running.
 
 <!--more-->
 
@@ -36,4 +36,8 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 ```
 Please note you may want to consider a different role to bind then cluster-admin for production systems .
 
-12. Now to test it run `helm ls` and you should got no error back
+12. Now to test it run `helm version` and you should got a response similar to the below
+```
+Client: &version.Version{SemVer:"v2.14.3", GitCommit:"0e7f3b6637f7af8fcfddb3d2941fcc7cbebb0085", GitTreeState:"clean"}
+Server: &version.Version{SemVer:"v2.14.3", GitCommit:"0e7f3b6637f7af8fcfddb3d2941fcc7cbebb0085", GitTreeState:"clean"}
+```
