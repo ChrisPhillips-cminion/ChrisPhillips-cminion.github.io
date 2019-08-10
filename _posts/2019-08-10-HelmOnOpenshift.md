@@ -11,7 +11,7 @@ Helm is the de facto standard for deploying to Kubernetes. OpenShift does not sh
 
 These instructions assume that the worker node can reach docker hub.
 
-1. Download from github (https://github.com/helm/helm/releases)[https://github.com/helm/helm/releases)]
+1. Download from github [https://github.com/helm/helm/releases](https://github.com/helm/helm/releases)
 2. Extract the tar `tar zxvf helm-v2*gz`
 3. Move helm to the usr local bin `cp */helm /usr/local/bin`
 4. Change permissions on the executable `chmod 755 /usr/local/bin/helm`
@@ -27,7 +27,8 @@ The error is because there is no server side component installed yet.
 ```
 Error: configmaps is forbidden: User "system:serviceaccount:kube-system:default" cannot list configmaps in the namespace "kube-system": no RBAC policy matched
 ```
-11. I have already blogged how to fix this issue (https://chrisphillips-cminion.github.io/kubernetes/2019/07/20/HelmError.html)[https://chrisphillips-cminion.github.io/kubernetes/2019/07/20/HelmError.html]
+11. I have already blogged how to fix this issue [https://chrisphillips-cminion.github.io/kubernetes/2019/07/20/HelmError.html](https://chrisphillips-cminion.github.io/kubernetes/2019/07/20/HelmError.html)
+
 *TLDR*
 ```bash
 kubectl create serviceaccount --namespace kube-system tiller
