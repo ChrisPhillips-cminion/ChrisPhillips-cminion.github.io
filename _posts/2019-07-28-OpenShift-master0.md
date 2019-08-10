@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-07-28 12:00:00
-categories: Kubernetes
+categories: OpenShift
 title: "OpenShift Error - no attribute oo_first_master"
 
 ---

@@ -26,3 +26,11 @@ DataPower:
   name: datapower
   display_name: DataPower
   icon: /images/apic.png
+OpenShift:
+  name: openshift
+  display_name: OpenShift
+  icon: /images/openshift.png
+VMWare:
+  name: vmware
+  display_name: VMWare
+  icon: /images/vmware_cloud_logo.jpg

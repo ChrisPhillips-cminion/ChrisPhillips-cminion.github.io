@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-07-28 12:00:00
-categories: Kubernetes
+categories: OpenShift
 title: "Installing OpenShift 3.11  Again Part - 1"
 draft: true
 ---
