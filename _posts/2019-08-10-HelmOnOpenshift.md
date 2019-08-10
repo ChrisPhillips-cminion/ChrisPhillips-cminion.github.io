@@ -2,7 +2,7 @@
 layout: post
 date: 2019-08-10 12:00:00
 categories: OpenShift
-title: "Setting up Helm v2.x"
+title: "Setting up Helm v2.x on OpenShift"
 ---
 
 Helm is the de facto standard for deploying to Kubernetes. OpenShift does not ship with helm but instead provides their own system called Templates. Thus far I have never used OpenShift Templates and so I focus on helm. This article does not go through the differences but just shows how to get helm v2 up and running.
