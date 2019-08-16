@@ -2,7 +2,7 @@
 layout: post
 date: 2019-08-16 01:00:00
 categories: APIConnect
-title: "Desiging Environments for API Connect"
+title: "Designing Environments for API Connect"
 ---
 
 When designing your enterprise API Connect environment there are a number of different patterns that can be followed.  In the [API Connect WhitePaper](https://www.ibm.com/downloads/cas/30YERA2R) I present two common patterns. This article is a third pattern that I will propose to put into a future release of the WhitePaper.
@@ -22,7 +22,7 @@ This article assumes the following teams types exist:
 | Test                | A central team that is responsible for non-functional and cross team testing. This team may be split into different sub test teams covering testing areas. e.g. Perf, e2e, System Test |
 | Development Team    | A series of teams producing APIs. Each Team will be aligned with either business lines in organization or functional requirements of organization.                                                                                    |
 
-In order to do this effectively I advise that five API Clouds are used.
+In order to do this effectively I advise that arleast four API Clouds are used.
 
 | API Cloud      | Purpose |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,9 +44,9 @@ The table below shows the roles for production and which team is responsible for
 | Task                                   | Owner                     |
 | -------------------------------------- | ------------------------- |
 | Approve Deployment into Production     | Application Support |
-| Manages at Cloud Manager Level         | Infrastructure |
-| Manages at Provider Organization Level | Infrastructure |
-| Manages at Catalog Level               | Infrastructure |
+| Manages at Cloud Manager Level         | Operations with Infrastructure |
+| Manages at Provider Organization Level | Operations with Infrastructure |
+| Manages at Catalog Level               | Operations with Infrastructure |
 | Manages at Space Level                 | Application Support |
 
 
@@ -70,7 +70,7 @@ The development team can decide how to use channels to sub divide their developm
 
 ### Non Production
 
-Each Test subteam has their own Provider Organization. Unlike Developent where these are separated by business line these are separated by test area. Some examples are listed below. This list is not exhaustive and not all organizations will need all environments.
+Each Test subteam has their own Provider Organization. Unlike Development where these are separated by business line these are separated by test area. Some examples are listed below. This list is not exhaustive and not all organizations will need all environments.
 
 -   End to End
 -   Consumer Test
@@ -78,7 +78,7 @@ Each Test subteam has their own Provider Organization. Unlike Developent where t
 -   System Test
 -   Pre Production
 
-If multiple instances of the same test area is required then a second provier organization is created. However these environments should be monitored to ensure they are being used. If environmnets are determined to no longer be needed they should be shutdown.
+If multiple instances of the same test area is required then a second provider organization is created. However these environments should be monitored to ensure they are being used. If environmnets are determined to no longer be needed they should be shutdown.
 
 Each Non Production Provider Organization will have the same number of Catalogs as Production.
 
@@ -98,7 +98,7 @@ The Test Manager who owns their provider organization is responsible for on boar
 
 ### Infrastructure
 
-This API Cloud is there for the Infrastructure team to allow them to validate patches and configuration changes prior to roling out to other environment.
+This API Cloud is there for the Infrastructure team to allow them to validate patches and configuration changes prior to rolling out to other environment.
 
 Where possible this environment should have the same APIs as those in production. All aspects of this environment is used in the same way as production.
 
