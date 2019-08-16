@@ -3,7 +3,6 @@ layout: post
 date: 2019-08-16 01:00:00
 categories: APIConnect
 title: "Desiging Environments for API Connect"
-draft: true
 ---
 
 When designing your enterprise API Connect environment there are a number of different patterns that can be followed.  In the [API Connect WhitePaper](https://www.ibm.com/downloads/cas/30YERA2R) I present two common patterns. This article is a third pattern that I will propose to put into a future release of the WhitePaper.
