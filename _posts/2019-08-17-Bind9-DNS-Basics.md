@@ -3,7 +3,6 @@ layout: post
 date: 2019-08-17 07:00:00
 categories: misc
 title: "Bind9 DNS Basics"
-draft: true
 ---
 
 Today I sat down and installed Bind9 to act as a local DNS server. As this took me far to long I have attached a config similar to my home one explaining the changes I made from the default.
