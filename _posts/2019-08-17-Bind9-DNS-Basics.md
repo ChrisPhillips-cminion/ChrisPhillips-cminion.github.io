@@ -10,7 +10,7 @@ Today I sat down and installed Bind9 to act as a local DNS server. As this took 
 <!--more-->
 
 
-*/etc/named.config*
+**/etc/named.config**
 
 ```
 acl goodclients {
@@ -33,9 +33,12 @@ forwarders {
 ```
 In order to look up public IP addresses a public DNS Provider must be configured.
 
+```
+include "/etc/named/named.conf.local";
+```
+Continue the config in the specified file
 
 <button class="collapsible" id="yaml">Click here for the complete /etc/named.conf.</button>
-
 <div class="content" id="yamldata" markdown="1">
 ```
 //
@@ -94,5 +97,105 @@ zone "." IN {
 
 include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
+include "/etc/named/named.conf.local";
+
 ```
+</div>
+
+**/etc/named/named.conf.local**
+```
+zone "myhome.cf" {
+    type master;
+    file "/etc/named/zones/dns.myhome.cf"; # zone file path
+};
+```
+Configure the zone for look ups, the directory is stored in `/etc/named/zones/dns.myhome.cf`
+
+```
+zone "192.in-addr.arpa" {
+    type master;
+    file "/etc/named/zones/db.192";  # 192.0.0.0/8  subnet
+};
+```
+Configure the zone for the reverse look ups, the director is stored in /etc/named/zones/db.192
+
+
+<button class="collapsible" id="yaml2">Click here for the complete /etc/named/named.conf.local.</button>
+<div class="content" id="yaml2data" markdown="1">
+```
+zone "myhome.cf" {
+    type master;
+    file "/etc/named/zones/dns.myhome.cf"; # zone file path
+};
+
+zone "192.in-addr.arpa" {
+    type master;
+    file "/etc/named/zones/db.192";  # 192.0.0.0/8  subnet
+};
+```
+</div>
+
+
+**/etc/named/zones/dns.myhome.cf**
+```
+@       IN      SOA     myhome.cf. admin.dns.myhome.cf. (
+```
+Put your search domain in here.
+
+
+```
+dns          IN      A       192.168.0.200
+*.openshift  IN      A       192.168.0.36
+js	         IN        A       192.168.0.4
+```
+This is the directory of host entries, this can be extended as needed.
+
+<button class="collapsible" id="yaml3">Click here for the complete /etc/named/zones/dns.myhome.cf,</button>
+<div class="content" id="yaml3data" markdown="1">
+```
+@       IN      SOA     myhome.cf. admin.dns.myhome.cf. (
+                              3         ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800 )   ; Negative Cache TTL
+
+
+
+; name servers - NS records
+    IN      NS      dns
+
+dns          IN      A       192.168.0.200
+*.openshift  IN      A       192.168.0.36
+js	     IN      A       192.168.0.4
+```
+</div>
+
+
+**/etc/named/zones/db.192**
+This file contains the diretory for allowing reverse lookups, i.e. looking up a hostname from an IP address.
+
+```
+            IN      NS      dns.myhome.cf.
+200.0.168	  IN      PTR   dns.myhome.cf.
+4.0.168     IN      PTR   js.myhome.cf.
+```
+This has the same structure as the previous file but it contains PTR instead of A records.
+
+
+<button class="collapsible" id="yaml3">Click here for the complete /etc/named/zones/db.192,</button>
+<div class="content" id="yaml3data" markdown="1">
+@       IN      SOA     dns.myhome.cf. admin.dns.myhome.cf. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+
+
+; name servers - NS records
+    IN      NS      dns.myhome.cf.
+200.0.168	  IN      PTR   dns.myhome.cf.
+4.0.168     IN      PTR   js.myhome.cf.
 </div>
