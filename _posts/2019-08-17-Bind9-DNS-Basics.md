@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-08-16 01:00:00
+date: 2019-08-17 07:00:00
 categories: misc
 title: "Bind9 DNS Basics"
 draft: true
