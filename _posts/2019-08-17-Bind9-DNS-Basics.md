@@ -19,7 +19,7 @@ acl goodclients {
     192.168.0.0/24;
 };
 ```
-Crate a list of clients who are allowed to access the dns server. This is to avoid the DNS server being used for DDOS attacks.  `192.168.0.0/24` says accept all requests from `192.168.x.x`. I have changed IP ranges for this articlex
+Crate a list of clients who are allowed to access the dns server. This is to avoid the DNS server being used for DDOS attacks.  `192.168.0.0/24` says accept all requests from `192.168.x.x`. I have changed IP ranges for this article.
 
 ```
 listen-on port 53 { 127.0.0.1; 192.168.0.200; };
@@ -32,7 +32,7 @@ forwarders {
         8.8.4.4;
 };
 ```
-In order to look up public IP addresses a publi DNS Provider must be configured.
+In order to look up public IP addresses a public DNS Provider must be configured.
 
 
 <button class="collapsible" id="yaml">Click here for the complete /etc/named.conf.</button>
