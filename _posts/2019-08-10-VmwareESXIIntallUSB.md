@@ -7,7 +7,7 @@ title: "Quick Note: Making a bootable USB to install  Vmware ESXI "
 
 VMWARE ESXI is a free VMWare hosting system. The primary differences between this and the full vSphere are support, limit to one host and no of supported cpus.
 
-*TLDR* : Use (Rufus)[https://rufus.ie] on Windows not DD or anything else.
+**TLDR** : Use (Rufus)[https://rufus.ie] on Windows not DD or anything else.
 <!--more-->
 
 In order to install it you need to download an ISO burn it to a USB and install it on boot like a new OS.

@@ -9,6 +9,15 @@ Today I sat down and installed Bind9 to act as a local DNS server. As this took 
 
 <!--more-->
 
+To install bind on centos/rhel/fedora use the following command
+
+
+```
+yum install bind bind-utils -y
+```
+
+The following are based on default configs. If no file is present create one. 
+
 
 **/etc/named.config**
 
