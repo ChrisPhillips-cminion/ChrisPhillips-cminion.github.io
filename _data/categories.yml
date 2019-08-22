@@ -6,6 +6,10 @@ APIConnect:
   name: apiconnect
   display_name: API Connect
   icon: /images/apic.png
+EventStreams:
+  name: eventstreams
+  display_name: Event Streams
+  icon: /images/EventStreams.png
 StarTrekNationals:
   name: StarTrekNationals
   display_name: Star Trek Nationals
