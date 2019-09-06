@@ -16,7 +16,7 @@ There is no right answer to this question as it depends on the requirements and 
 
 ### Option 1 - Gateway behind DMZ
 ![](/images/gatewayloc-option1.png)
-gatewayloc-option2
+
 Pros
 
 -   Latency between subsystems between the Gateway and other API Connect Subsystems will be minimal
