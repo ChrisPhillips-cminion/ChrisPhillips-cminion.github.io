@@ -5,7 +5,6 @@ categories: APIConnect
 title: "API Gateway in DMZ or after the DMZ"
 Location: "Black Phoenix Pub - Southampton"
 author: [ "KursadYildirim","UsameGoksun", "ChrisPhillips" ]
-draft: true
 ---
 
 The API Gateway can be placed in a DMZ or it can be placed behind the DMZ with a reverse proxy in front of it. Here we will discuss the pros and cons regarding each option.
@@ -24,18 +23,22 @@ Pros
 -   Clear separation of responsibility between API Connect team and other teams.
 -   Fewer ports need to be opened between the DMZ and private network.
 
+
 Cons
 
 -   Reverse proxy must be provided in the DMZ to route traffic to the Gateway.
     -   This is already required for exposing the Developer Portal.
+-   If Security policies require SSL Termination in the DMZ, MTLS is not possible using the API Connect functionality.
 
 ### Option 2 - Gateway in the DMZ
 ![](/images/gatewayloc-option2.png)
+
 Pro
 
 -   Production proven technology IBM DataPower Gateway Virtual Appliance
 -   Reverse Proxy is not required for routing API traffic.
 -   Can be used as a reverse proxy for the Developer Portal.
+-    If Security policies require SSL Termination in the DMZ, MTLS is possible using the API Connect functionality.
 
 Con
 
@@ -50,7 +53,7 @@ Con
 | Latency        | MIN                                | MAX                                                                                                                                      |
 | Kubernetes     | Everything in a Kubernetes Cluster | For Management-Analytics-Portal in one Kubernetes cluster, Gateway is either in its own Kubernetes cluster or not deployed to Kubernetes |
 | Firewall ports | MIN                                | MAX                                                                                                                                      |
-| Endpoint Type  | API endpoint is reverse proxy      | API endpoint is Load Balancer in front of  the Gateway                                                                                   |
+| Endpoint Type  | API endpoint is reverse proxy      | API endpoint is Load Balancer in front of  the Gateway                                                                                   |  
 
 ### My opinion
 
