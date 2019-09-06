@@ -2,7 +2,7 @@
 layout: post
 date: 2019-09-04 01:00:00
 categories: APIConnect
-title: "API Gateway in DMZ or not"
+title: "API Gateway in DMZ or after the DMZ"
 Location: "Black Phoenix Pub - Southampton"
 author: [ "KursadYildirim","UsameGoksun", "ChrisPhillips" ]
 draft: true
@@ -50,3 +50,6 @@ If there were no requirements or policies impacting my decision I would go with 
 
 ### Additional
 Though in this article we have discussed putting the API Gateway into the DMZ, no other API Connect component should put in the DMZ.
+
+### Thanks
+Thanks to my two Co Authors for reminding me of this question and allowing me to reuse their pros and cons. 
