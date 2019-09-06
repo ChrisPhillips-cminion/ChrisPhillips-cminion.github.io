@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-09-04 01:00:00
+date: 2019-09-06 01:00:00
 categories: APIConnect
 title: "API Gateway in DMZ or after the DMZ"
 Location: "Black Phoenix Pub - Southampton"
