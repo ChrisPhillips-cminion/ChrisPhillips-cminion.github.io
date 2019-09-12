@@ -2,7 +2,7 @@
 layout: post
 date: 2019-09-12 01:00:00
 categories: Home
-title: Timelapse and Taking Snapshots with a Ring Doorbell"
+title: "Timelapse and Taking Snapshots with a Ring Doorbell"
 ---
 
 I recently bit the bullet and bought a ring doorbell pro. I have always wanted to do a timelapse over the year but something always got in the way. I did my research before deciding between NEST and RING and decided on RING simply because of the `ring-client-api` npm module.
