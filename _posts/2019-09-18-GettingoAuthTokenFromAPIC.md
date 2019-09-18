@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-09-12 01:00:00
+date: 2019-09-18 01:00:00
 categories: API Connect
 title: "Getting an OAuth Token to invoke the API Connect Rest interface"  
 author: ["ChrisPhillips","sachinkj"]
