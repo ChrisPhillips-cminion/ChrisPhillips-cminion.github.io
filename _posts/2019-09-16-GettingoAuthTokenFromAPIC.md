@@ -2,8 +2,7 @@
 layout: post
 date: 2019-09-12 01:00:00
 categories: API Connect
-title: "Getting an OAuth Token to invoke the API Connect Rest interface"
-draft: true
+title: "Getting an OAuth Token to invoke the API Connect Rest interface"  
 author: ["ChrisPhillips","sachinkj"]
 ---
 When using the API Connect REST interface  you need to identify yourself with a bearer token. This guide quickly walks through the commands needed.
