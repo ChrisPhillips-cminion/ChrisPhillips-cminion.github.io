@@ -2,7 +2,7 @@
 layout: post
 date: 2019-09-20 01:00:00
 categories: APIConnect
-title: "Getting a Client ID and Secret to control the API Connect Management REST Interface"  
+title: "Getting a Client ID and Secret to control the API Connect Management REST Interface"
 author: ["ChrisPhillips","JPSchiller"]
 ---
 
@@ -43,7 +43,7 @@ After logging into the Cloud Manager (nto API Manager) with the apic tool, the f
 ```
 This returns the following
 ```
-    consumingapplication    [state: enabled]   https://localhost:2000/api/cloud/registrations/bbc547ee-6d8f-4bfa-83f4-907894a6cb57   
+    consumingapplication    [state: enabled]   https://<APIM Hostname>/api/cloud/registrations/bbc547ee-6d8f-4bfa-83f4-907894a6cb57
 ```
 To test this we run the following payload in the command below
 
@@ -59,5 +59,5 @@ To test this we run the following payload in the command below
 ```
 
 ```bash
-curl  -k -X POST -d '<PAYLOAD>' -H 'Content-Type: application/json' -H 'Accept: application/json' https://localhost:2000/api/token
+curl  -k -X POST -d '<PAYLOAD>' -H 'Content-Type: application/json' -H 'Accept: application/json' https://<APIM Hostname>/api/token
 ```
