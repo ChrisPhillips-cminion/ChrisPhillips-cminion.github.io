@@ -16,9 +16,9 @@ The purpose of the Local Test Environment was to allow developers to build and t
 
 ### The Components
 
-LTE requires the API Connect Designer and docker running localling on the Laptop. Please set the memory of docker to be atleast 6GB.
+LTE requires the API Connect Designer and Docker running localling on the Laptop. Please set the memory of docker to be atleast 6GB.
 
-LTE requries a number of docker containers running together. *Please note it does not require Kuebrnetes*
+LTE requries a number of docker containers running together. *Please note it does not require kubernetes*
 
 ### Installing the Local Test environment
 
