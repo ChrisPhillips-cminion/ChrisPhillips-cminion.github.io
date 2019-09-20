@@ -12,15 +12,15 @@ ClaudioTag:
   display_name: Claudio Tag
   twitter: ClaudioTag
   linkedin: claudiotagliabue
-  bio: Tag is an IBM Cloud Solution Architect experienced in the world of DigitalTransformation and the world of XaaS. He is excited by business change in the 21st Century and the consequent demands on technology. Making the "complicated" "business as usual" has been Tag's focus for the past 10 years. Through his work with clients as a domain expert for IBM's ground-breaking cloud technologies, Tag has gained significant insight into today's senior IT stakeholder motivations. Tag has worked in various IBM labs, and regularly presents at conferences around the world, focusing on Public and Private Cloud, Kubernetes, Terraform, microservices, BPM, RPA, IaaS, PaaS, and SaaS. Tag also authored two IBM Redbook publications. He can be followed on Twitter @ClaudioTag
+  bio: <p>Tag is an IBM Cloud Solution Architect experienced in the world of DigitalTransformation and the world of XaaS. He is excited by business change in the 21st Century and the consequent demands on technology. Making the "complicated" "business as usual" has been Tag's focus for the past 10 years. Through his work with clients as a domain expert for IBM's ground-breaking cloud technologies, Tag has gained significant insight into today's senior IT stakeholder motivations.</p> <p>Tag has worked in various IBM labs, and regularly presents at conferences around the world, focusing on Public and Private Cloud, Kubernetes, Terraform, microservices, BPM, RPA, IaaS, PaaS, and SaaS. Tag also authored two IBM Redbook publications. He can be followed on Twitter @ClaudioTag</p>
 TimQuigly:
   name: TimQuigly
   display_name: Tim Quigly
   linkedin: timquigly
   bio: |
-    I am a messaging and DevOps IT specialist, currently working for IBM Cloud Labs’ consulting organisation, where I am on placement at a large building society. My current role is focussed on Docker and Kubernetes, using these with IBM App Connect Enterprise to create integration micro-services on AWS and IBM Cloud Private. This area is the one that I am most passionate about: improving outcomes by deploying infrastructure as code and using agile and lean principles to allow sustainable progress.
-    I have led teams designing and building critical messaging infrastructure, from development to production, for high focus projects, such as PSD2 (Open Banking), plus have worked on IBM Cloud (Pure Systems) and Amazon Web Services – delivering MQ and IIB messaging solutions for customers on both of these platforms.
-    Prior to my life in consulting I worked in IBM’ Hursley Labs, focussing on integration test between two of IBM’s flagship middleware offerings: IBM MQ and WebSphere Application Server. In this role I performed integration testing using agile methodologies and took ownership of a complex test automation project across Linux, Windows and z/OS mainframe. I was also fortunate enough to present on MQ:WAS integration at Impact 2014 in Las Vegas. Finally, during my time in the Labs, I was member of a patent team who successfully gained four United States patents. These were granted by the United States Patent Office in 2018.
+    <p>I am a messaging and DevOps IT specialist, currently working for IBM Cloud Labs’ consulting organisation, where I am on placement at a large building society. My current role is focussed on Docker and Kubernetes, using these with IBM App Connect Enterprise to create integration micro-services on AWS and IBM Cloud Private. This area is the one that I am most passionate about: improving outcomes by deploying infrastructure as code and using agile and lean principles to allow sustainable progress.</p>
+    <p>I have led teams designing and building critical messaging infrastructure, from development to production, for high focus projects, such as PSD2 (Open Banking), plus have worked on IBM Cloud (Pure Systems) and Amazon Web Services – delivering MQ and IIB messaging solutions for customers on both of these platforms.</p>
+    <p>Prior to my life in consulting I worked in IBM’ Hursley Labs, focussing on integration test between two of IBM’s flagship middleware offerings: IBM MQ and WebSphere Application Server. In this role I performed integration testing using agile methodologies and took ownership of a complex test automation project across Linux, Windows and z/OS mainframe. I was also fortunate enough to present on MQ:WAS integration at Impact 2014 in Las Vegas. Finally, during my time in the Labs, I was member of a patent team who successfully gained four United States patents. These were granted by the United States Patent Office in 2018. </p>
 RGeorgeInness:
   name: RGeorgeInness
   display_name: R George Inness
@@ -35,11 +35,11 @@ JPSchiller:
   display_name: JP Schiller
   xing: JanPhilipp_Schiller
 UsameGoksun:
-  name: Usame Goksun
+  name: UsameGoksun
   display_name: Usame Goksun
   linkedin: üsame-göksün-7b0097b1
 KursadYildirim:
-  name: Kursad Yildirim
+  name: KursadYildirim
   display_name: Kursad Yildirim
   linkedin: kursad-yildirim-2613ab22
   twitter: yildirim_kursad
