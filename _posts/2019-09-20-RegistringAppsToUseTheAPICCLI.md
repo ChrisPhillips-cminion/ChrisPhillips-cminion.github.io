@@ -7,7 +7,7 @@ author: ["ChrisPhillips","JPSchiller"]
 ---
 
 When using the API Connect REST interface  you need to identify yourself with a bearer token. We produced a
-![https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html](<guide on how to get this bearer token a few days ago>). However a common question is how do you get the ClientID and ClientSecret required,
+[https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html](guide on how to get this bearer token a few days ago). However a common question is how do you get the ClientID and ClientSecret required,
 
 <!--more-->
 
