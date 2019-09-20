@@ -5,6 +5,7 @@ categories: APIConnect
 title: "Debugging SSL Connection Problems, with API Connect"
 image: /images/SSLtest.png
 draft: true
+Location: "Tunis Airport, Tunisia"
 ---
 
 A common user error that I get asked, is regarding errors in the  communcation between the API Connect components. This  normally relates to SSL Passthrough not being correctly configured on the F5s or Ingress. In API Connect the communication between the API Manager and the other components must not have the SSL terminated prior to the Pods.

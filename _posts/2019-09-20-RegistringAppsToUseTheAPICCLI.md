@@ -4,6 +4,7 @@ date: 2019-09-20 01:00:00
 categories: APIConnect
 title: "Getting a Client ID and Secret to control the API Connect Management REST Interface"
 author: ["ChrisPhillips","JPSchiller"]
+Location: "Tunis, Tunisia"
 ---
 
 When using the API Connect REST interface  you need to identify yourself with a bearer token. We produced a [guide on how to get this bearer token a few days ago](https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html. However a common question is how do you get the ClientID and ClientSecret required,
