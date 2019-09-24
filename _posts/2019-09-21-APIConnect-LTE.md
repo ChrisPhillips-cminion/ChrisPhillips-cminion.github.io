@@ -7,22 +7,22 @@ draft: true
 Location: "Tunis Airport, Tunisia"
 ---
 
-API Connect Local Test Environment was releaed in Beta in August 2019.
+API Connect Local Test Environment was releaed in beta in August 2019.
 
-The purpose of the Local Test Environment is to allow developers to build and test APIs on their laptops and not have to depend on a server instance.
+The purpose of the Local Test Environment is to allow developers to build and test APIs on their laptops without depending on a server instance.
 
 <!--more-->
 
 
 ### The Components
 
-LTE requires the API Connect Designer and Docker running locally on the laptop. Set the memory of docker to be atleast 6GB.
+LTE requires the API Connect Designer and Docker running locally on the laptop. Set the memory of docker to be at least 6GB.
 
 LTE requries a number of docker containers running together. *Please note it does not require Kubernetes*
 
 ### Installing the Local Test environment
 
-Download the binary from Passport Advantage or Fix Central. The video below will explain how to install the LTE components.
+Download the binary from IBM Passport Advantage or IBM Fix Central. The video below will explain how to install the LTE components.
 
 
 [![asciicast](https://asciinema.org/a/267155
@@ -53,7 +53,7 @@ Once you have created an API click on the publication button in the header of th
 
 ### Testing an API
 
-Go to a terminal window and run `apic-lte status`. This will return an output similar to the below.
+Go to a terminal window and run `apic-lte status`. This will return similar to the output below.
 
 ```bash
 >>$ apic-lte status
@@ -74,9 +74,9 @@ apic-lte-lur                    Up 4 days
 - Datapower API Gateway API base url: https://localhost:9444/localtest/sandbox/
 ```
 
-Here you can see the target context route of the endpoint and the client ID and Secret if it is required.
+Here you can see the target context route of the endpoint, and the client ID and Secret if required.
 
-You can invoke the API from any HTTP test tool, such as API Connect Test and Monitor, Curl or Postman.
+You can invoke the API from any HTTP test tool, such as API Connect Test and Monitor, curl or Postman.
 
 
 [![asciicast](https://asciinema.org/a/270133
