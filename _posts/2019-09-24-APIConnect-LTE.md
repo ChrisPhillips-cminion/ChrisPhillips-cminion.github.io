@@ -46,7 +46,7 @@ You can now create an API in the designer
 Once you have created an API click on the publication button in the header of the API Designer.
 
 
-![](images/publishButton.png)
+![](/images/publishButton.png)
 
 
 
