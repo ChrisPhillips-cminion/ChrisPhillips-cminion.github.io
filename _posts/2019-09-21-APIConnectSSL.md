@@ -8,7 +8,7 @@ draft: true
 Location: "Tunis Airport, Tunisia"
 ---
 
-A common user error is regarding errors in the communication between the API Connect components. This  normally relates to SSL Passthrough not being correctly configured on the F5s or Ingress. In API Connect the communication between the API Manager and the other components must not have the SSL terminated before the Pods.
+A common problem area is the SSL communication between the API Connect components. Often, this is due to SSL Passthrough not being correctly configured on the F5s or the ingress. In API Connect, the SSL communication between the API Manager and the other components must be terminated before the pods.
 
 <!--more-->
 
@@ -17,7 +17,7 @@ The diagram below shows the most common network flow.
 ![](/images/SSLtest.png)
 
 
-The API Manager invokes the load balancer, which routes traffic to the ingress.  The ingress then routes to the service which routes to the pod.
+The API Manager connects to the load balancer, which routes traffic to the ingress.  The ingress then routes to the service, which routes to the pod.
 
 ### Gettiong the certificate Pod is exposing
 
@@ -27,7 +27,7 @@ Run the following command on the master or worker node.
 kubectl get po -owide -n <namespace>
 ```
 
-This returns all the pods including their current IPs. Select the pod you are trying to connect and make a note of the pod name and the IP address. Then describe the pod with
+This returns all the pods including their current IPs. Find the pod to which you are trying to connect and make a note of the pod name and the IP address. Then describe the pod with
 
 ```
 kubectl describe po -n <namespace> <podname>
@@ -42,7 +42,7 @@ kubectl describe po -n <namespace> <podname>
 
 
 
-The output from this includes a description of the container ports being used. Normally this is configured to 443 but it is worth confirming.  Look for a sample like below.
+The output from this includes a description of the container ports in use. Normally SSL is configured to use 443 but it is worth confirming.  Look for a sample like below.
 
 ```yaml
 sample: will go here
@@ -50,6 +50,8 @@ sample: will go here
 
 
 Now we have the pod IP and port. Run the following command to validate the SSL certificate being used.
+
+***BAC: Don't you need to be using the shell on the same node as the pod for this to work?***
 
 ```
 openssl s_client -connect <Pod IP>:<Pod Port>
@@ -63,7 +65,7 @@ This retruns a message similar to
 ```
 </div>
 
-Look in the response for the certificate  and make a note of it.
+Look in the response for the certificate  and copy the text.
 
 ```
 -----BEGIN CERTIFICATE-----
@@ -86,7 +88,7 @@ hIOiXV9tMhyA1SvatKdA
 -----END CERTIFICATE-----
 ```
 
-The certificate should be the same for all the layers of the flow. We must compare this to what is provided in the other layers.
+The certificate should be the same for all the layers of the flow. Compare this certificate to what is provided in the other layers.
 
 
 ### Getting the certificate from the Load Balancer.
@@ -96,7 +98,7 @@ Run the following command
 openssl s_client -connect <Public Hostname>:<Public Port>
 ```
 
-Validate the certificate value matches the certificate we got from the pod. If it is not then the SSL connection is being terminated by one of the layers between the Load Balancer and the Pod.
+Validate the certificate value matches the certificate obtained from the pod. If it does not, then the SSL connection is being terminated by one of the layers between the load balancer and the pod.
 
 ### Getting the certificate from Ingress.
 
@@ -105,7 +107,7 @@ Now run the following command to validate the connection to ingress.
 openssl s_client -connect <Kuberenetes Worker Node Hostname>:<443>
 ```
 
-Validate the certificate value matches the certificate we got from the pod. If it is then the SSL is being terminated in the F5. If not then the SSL Connection is being terminated probably by Ingress itself. To confirm if ingress is the problem we run the openssl command against the service.
+Validate that the certificate matches the certificate obtained from the pod. If does, then the SSL is being terminated in the F5. If not then the SSL Connection is being terminated probably by Ingress itself. To confirm if ingress is the problem we run the openssl command against the service.
 
 ### Getting the certificate from the Kubernetes Service
 
@@ -114,10 +116,10 @@ Run the following command.
 kubectl get service -n <namespace>
 ```
 
-Then select the relevant service and make a note of the internal IP address and port. From the Kubernetes master or worker node run the following command.
+Then select the relevant service and make a note of the internal IP address and port. From the Kubernetes master or worker node run the following command:
 
 ```
 openssl s_client -connect <Service IP>:<Service Port>
 ```
 
-The certificate must match the certificate of the Pod because it does not have its own certificate. If it does not then the service is connecting to the wrong Pod or the pods in the same deployment are designed badly and exposing different certificates.  If the certificate from the service does match that of the Pod, but not that of Ingress then SSL is being terminated in Ingress.
+The certificate must match the certificate of the pod because it does not have its own certificate. If it does not then the service is connecting to the wrong pod or the pods in the same deployment are implemented badly and exposing different certificates.  If the certificate of the service does match that of the pod, but not that of the ingress then SSL is being terminated in the ingress.
