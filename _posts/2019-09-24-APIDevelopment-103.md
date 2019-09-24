@@ -219,6 +219,14 @@ definitions:
 ```
 </div>
 
+*Sample Request*
+```
+curl -k https://<DP endpoint>/<org>/<catalog>/debug-sample?id=123  -H "x-ibm-client-id: <client id>" -v -d '{"p1":"asddsd","p2":"123"}' -H "Content-Type:application/json" -v
+```
+e.g.
+```
+curl -k https://localhost:9444/localtest/sandbox/debug-sample?id=123  -H "x-ibm-client-id: d0db0196fee3c3751ad3514978a3795c" -v -d '{"p1":"asddsd","p2":"123"}' -H "Content-Type:application/json" -v
+```
 ### Accessing the DataPower Log
 
 
@@ -231,7 +239,7 @@ If you are not running LTE  then you must have access to a DataPower WebUI, the 
 ### Gateway Script Code
 The easiest way to log the message to the DataPower console is with the following gateway script.
 
-*Data-API-Gateway*
+*DataPower-API-Gateway*
 ```javascript
 console.error("Point of Flow")
 console.error(context.get("message.body"))
@@ -244,7 +252,7 @@ console.error(apim.getvariable("message.body"))
 console.error(apim.getvariable("message.headers"))
 ```
 
-The message value is the default variable name. If an invoke, parse or validate is configured to save its response in a different variable then use that variable name instead of message.
+The `message` value is the default variable name. If an invoke, parse or validate is configured to save its response in a different variable,  use that variable name instead of `message`.
 
 Though I have used `error` in the sample above this can be modified for any of the DataPower standard verbs. However by default the `error` messages appear in the DataPower logs and do not require additional logging to be enabled.
 
