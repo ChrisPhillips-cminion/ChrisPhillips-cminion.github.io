@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-09-23 06:00:00
+date: 2019-09-24 06:00:00
 categories: APIConnect
 title: "Developing APIs - 102 - Adding Parameters"
 Location: "Paris, France"

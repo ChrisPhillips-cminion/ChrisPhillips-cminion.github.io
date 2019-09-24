@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-09-23 06:00:00
+date: 2019-09-24 06:00:00
 categories: APIConnect
 title: "Developing APIs - 103 - Debugging an API"
 Location: "Paris, France"
@@ -8,9 +8,6 @@ draft: true
 ---
 Part of Three of the API Development Series. In this part we will show how to add debug messages and how to retrieve them in the DataPower Logs.
 <!--more-->
-
-
-
 
 <button class="collapsible" id="fulloutput">Sample Yaml for the new DataPower API Gateway</button>
 
