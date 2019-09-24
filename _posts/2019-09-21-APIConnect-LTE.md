@@ -42,13 +42,14 @@ Download the binary from Passport Advantage or Fix Central. The video below will
 
 You can now create an API in the designer
 
-![](images/publishButton.png)
-
 ### Publishing an API to LTE
 
 Once you have created an API click on the publication button in the header of the API Designer.
 
-SCREEN SHOT
+
+![](images/publishButton.png)
+
+
 
 ### Testing an API
 
