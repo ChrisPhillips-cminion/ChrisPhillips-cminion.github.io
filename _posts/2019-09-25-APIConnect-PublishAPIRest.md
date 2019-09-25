@@ -6,12 +6,14 @@ title: "Publishing a product using the APIC Rest interface"
 draft: true
 author: ["ChrisPhillips","sachinkj"]
 ---
-When using the API Connect REST interface  you need to identify yourself with a bearer token. See the earlier post for steps to generate bearer token.
+When using the API Connect REST interface  you need to identify yourself with a bearer token. See [this earlier post](/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html) for steps to get a bearer token.
+
 <!--more-->
 ### Things you need for this API
 1. OpenAPI Product definition for the product you want to publish.
 2. OpenAPI API definition for the API included in the product.
-3. bearer token
+3. Bearer token
+
 ### Sample product yaml file
 To request a token you generate the following payload.
 ```yaml
@@ -43,9 +45,13 @@ visibility:
     enabled: true
 product: 1.0.0
 ````
-Note that api ref in product defintion is using via  name: <apiname>:<apiversio>  instead of $ref which is added by default when using apic toolkit or api manager  to generate the API.
+
+Note that api ref in product defintion is using via  `name: <apiname>:<apiversion>` instead of `$ref` which is added by default when using apic toolkit or api manager.
+
 ### Sample api yaml file
+
 To request a token you generate the following payload.
+
 ```yaml
 swagger: '2.0'
 info:
@@ -139,12 +145,17 @@ paths:
       consumes: []
       produces: []
 ````
+
 This Payload is POSTed to `https://<APIMHOST>/api/catalogs/<ORG_NAME>/<CATALOG_NAME>/stage`
-*Curl Sample to publish the Product *
+
+*Curl Sample to publish the Product*
+
 ```bash
 curl -X POST -v -k -H 'Accept: application/json' -H "Authorization: bearer <BEARER_TOKEN>" -H "Content-Type: multipart/form-data" -F "product=@/home/sachin/test_product_1.0.0.yaml;type=application/yaml" -F "openapi=@/home/sachin/test_api_1.0.0.yaml;type=application/yaml" https://<APIMHOST>/api/catalogs/<ORG_NAME>/<CATALOG_NAME>/stage
 ```
+
 *Sample response*
+
 ```json
 {
     "type": "product",
