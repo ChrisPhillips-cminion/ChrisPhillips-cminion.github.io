@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-25-12 01:00:00
+date: 2019-09-25 01:00:00
 categories: API Connect
 title: "Publishing a product using the APIC Rest interface"
 draft: true
