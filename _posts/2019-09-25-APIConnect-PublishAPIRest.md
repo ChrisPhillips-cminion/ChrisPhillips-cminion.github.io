@@ -151,10 +151,10 @@ This Payload is POSTed to `https://<APIMHOST>/api/catalogs/<ORG_NAME>/<CATALOG_N
 *Curl Sample to publish the Product*
 
 ```bash
-curl -X POST -v -k -H 'Accept: application/json'\
- -H "Authorization: bearer <BEARER_TOKEN>"\
- -H "Content-Type: multipart/form-data"\
- -F "product=@/home/sachin/test_product_1.0.0.yaml;type=application/yaml"\
+curl -X POST -v -k -H "Accept: application/json" \
+ -H "Authorization: bearer <BEARER_TOKEN>" \
+ -H "Content-Type: multipart/form-data" \
+ -F "product=@/home/sachin/test_product_1.0.0.yaml;type=application/yaml" \
  -F "openapi=@/home/sachin/test_api_1.0.0.yaml;type=application/yaml" \
  https://<APIMHOST>/api/catalogs/<ORG_NAME>/<CATALOG_NAME>/stage
 ```
