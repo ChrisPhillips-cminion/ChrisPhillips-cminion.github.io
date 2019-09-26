@@ -1,9 +1,8 @@
 ---
 layout: post
-date: 2019-09-25 01:00:00
+date: 2019-09-26 01:00:00
 categories: API Connect
 title: "Staging a product using the APIC Rest interface"
-draft: true
 author: ["ChrisPhillips","sachinkj"]
 ---
 When using the API Connect REST interface  you need to identify yourself with a bearer token. See [this earlier post](/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html) for steps to get a bearer token.
