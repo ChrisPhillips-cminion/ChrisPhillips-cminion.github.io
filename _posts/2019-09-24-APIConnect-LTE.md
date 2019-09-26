@@ -17,6 +17,8 @@ The purpose of the Local Test Environment is to allow developers to build and te
 
 LTE requires the API Connect Designer and Docker running locally on the laptop. Set the memory of docker to be at least 6GB.
 
+**NOTE: This requires the API Designer Desktop Application to be used. This can be downloaded from PassPort Advantage or from any API Manager**
+
 LTE requries a number of docker containers running together. *Please note it does not require Kubernetes*
 
 ### Installing the Local Test environment
