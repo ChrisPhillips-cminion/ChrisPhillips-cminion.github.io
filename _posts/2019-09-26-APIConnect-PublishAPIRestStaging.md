@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-09-26 01:00:00
-categories: API Connect
+categories: APIConnect
 title: "Staging a product using the APIC Rest interface"
 author: ["ChrisPhillips","sachinkj"]
 ---
