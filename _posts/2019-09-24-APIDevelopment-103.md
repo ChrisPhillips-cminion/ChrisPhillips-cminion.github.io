@@ -258,3 +258,8 @@ Before putting the API into production the `error` verbs should be replaced with
 ### Logging the initial Payload  (DataPower API Gateway Only)
 
 At the start of an API or after an invoke in the new DataPower API Gateway the payload is a buffer. The easiest way to turn the buffer into a XML or JSON object is using the Parse Policy.
+
+
+
+
+*These are the tips I have for debugging APIs in API Connect, if I have missed anything please put them down in the comments below.*
