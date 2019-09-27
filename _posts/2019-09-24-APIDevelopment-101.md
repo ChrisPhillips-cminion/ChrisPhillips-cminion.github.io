@@ -4,7 +4,6 @@ date: 2019-09-24 06:00:00
 categories: APIConnect
 title: "Developing APIs - 101 - Proxy a Rest Service"
 Location: "Paris, France"
-draft: true
 ---
 
  Part of One of the API Development Series.  In this part we will show screenshot by screenshot how to create a very basic API.
