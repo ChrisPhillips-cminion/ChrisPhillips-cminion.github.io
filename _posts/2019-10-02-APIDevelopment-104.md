@@ -130,7 +130,8 @@ We will modify the API to accept the following payload
 
 11. Press Save
 
-12. Now we will create the definitio for the Service Request.
+12. Now we will create the definition for the Service Request.
+
 Click on Add
 
 13. Enter the following parameters
@@ -189,10 +190,12 @@ Click on Add
 
 19. Drag a Parse Policy onto the start of the flow. The parse policy is required to turn the input message from a buffer into an Object.
 
-20. Drag a Validate Policy and place it ager the parse. We want to validate the payload prior to invoking the DownSteam service.
+20. Drag a Validate policy and place it after the Parse policy. We want to validate the payload prior to invoking the DownSteam service.
 
-21. Drag a Map Policy after the validate and before the Invoke and configure it like below.
+21. Click on the Validate policy and select the following
 
-22. Save and Publish the API,
+22. Drag a Map Policy after the validate and before the Invoke and configure it like below.
 
-23. Invoke it as described in [part 1](/apiconnect/2019/09/23/APIDevelopment-101.html)
+23. Save and Publish the API,
+
+24. Invoke it as described in [part 1](/apiconnect/2019/09/28/APIDevelopment-101.html)

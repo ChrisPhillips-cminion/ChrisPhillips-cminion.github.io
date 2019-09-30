@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Developing APIs on API Connect - 102 - Adding Parameters"
 Location: "Paris, France"
 ---
-Part of Two of the API Development on API Connect Series. In this part we will show how to specify parameters for an API call. This builds on from the artefact and knowledge created in [part 1.](/apiconnect/2019/09/23/APIDevelopment-101.html)
+Part of Two of the API Development on API Connect Series. In this part we will show how to specify parameters for an API call. This builds on from the artefact and knowledge created in [part 1.](/apiconnect/2019/09/28/APIDevelopment-101.html)
 
 <!--more-->
 
@@ -51,4 +51,4 @@ Part of Two of the API Development on API Connect Series. In this part we will s
 
 12. Press Save
 
-13. Republish and test the API as we detailed in [part 1.](/apiconnect/2019/09/23/APIDevelopment-101.html). If you are using the API Designer ensure you add the paremeter `?uid=1001` or `?uid=1002` at the end of the url you are invoking. If you are using the API Manager you will need specify the parameter in the test form.
+13. Republish and test the API as we detailed in [part 1.](/apiconnect/2019/09/28/APIDevelopment-101.html). If you are using the API Designer ensure you add the paremeter `?uid=1001` or `?uid=1002` at the end of the url you are invoking. If you are using the API Manager you will need specify the parameter in the test form.
