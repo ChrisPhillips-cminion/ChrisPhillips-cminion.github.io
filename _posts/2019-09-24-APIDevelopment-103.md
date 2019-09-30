@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2019-09-24 06:00:00
+date: 2019-10-01 06:00:00
 categories: APIConnect
-title: "Developing APIs - 103 - Debugging an API"
+title: "Developing APIs on API Connect - 103 - Debugging an API"
 Location: "Paris, France"
 draft: true
 ---
