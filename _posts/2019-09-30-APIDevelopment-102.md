@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Developing APIs on API Connect - 102 - Adding Parameters"
 Location: "Paris, France"
 ---
-Part of Two of the API Development on API Connect Series. In this part we will show how to specify parameters for an API call. This builds on from the artefact and knowledge created in [part 1.](/apiconnect/2019/09/28/APIDevelopment-101.html)
+Part of Two of the API Development on API Connect Series. In this part we will show how to specify parameters for an API call. This builds on from the artefact and knowledge created in [part 1.](/apiconnect/2019/09/27/APIDevelopment-101.html)
 
 <!--more-->
 

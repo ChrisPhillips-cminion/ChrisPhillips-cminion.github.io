@@ -11,7 +11,7 @@ Part of Four of the API Development Series. In this part we will show how to cre
 
 
 ### Introduction
-Start by creating a new API liked we did in [part 1](/apiconnect/2019/09/23/APIDevelopment-101.html) only with this endpoint. `http://apic-test-app.eu-gb.mybluemix.net/api/payment`
+Start by creating a new API liked we did in [part 1](/apiconnect/2019/09/27/APIDevelopment-101.html) only with this endpoint. `http://apic-test-app.eu-gb.mybluemix.net/api/payment`
 
 The sample below can be used,
 
