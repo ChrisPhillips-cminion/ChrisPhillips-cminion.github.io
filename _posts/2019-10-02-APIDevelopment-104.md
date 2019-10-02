@@ -1,11 +1,11 @@
 ---
 layout: post
-date: 2019-10-02 06:00:00
+date: 2019-10-02 01:00:00
 categories: APIConnect
 title: "Developing APIs on API Connect - 104 - Adding Definitions"
 Location: "Paris, France"
 ---
-Part of Four of the API Development Series. In this part we will show how to create simple definitions in API Connect and use teh Mapping Policy to map between them.
+Part of Four of the API Development Series. In this part we will show how to create simple definitions in API Connect and use the Mapping Policy to map between them.
 <!--more-->
 
 
@@ -133,7 +133,7 @@ We will modify the API to accept the following payload
 <br>Click on Add
 
 13. Enter the following parameters
-<br>![](/images/2019-10-02-APIDevelopment-140-4.png){:height="100px" }
+<br>![](/images/2019-10-02-APIDevelopment-140-4.5.png){:height="200px" }
 <br>*Name* : ServiceRequest
 <br>*Description* : This is the payload schema for the data passed into the Downstream Service
 
@@ -166,14 +166,14 @@ We will modify the API to accept the following payload
 11. Press Save
 
 12. Go to Path
-<br>![](/images/2019-10-02-APIDevelopment-140-5.png){:height="100px" }
+<br>![](/images/2019-10-02-APIDevelopment-140-5.png){:height="200px" }
 
 13. Click on `/`
 
 14. Click on `Post`
 
 15. Click on Add in the Parameters Section
-<br>![](/images/2019-10-02-APIDevelopment-140-6.png){:height="100px"
+<br>![](/images/2019-10-02-APIDevelopment-140-6.png)
 
 16. Enter the following details
 <br>*Required* : True
@@ -202,10 +202,10 @@ We will modify the API to accept the following payload
 23. Set the Input to the following
 <br>![](/images/2019-10-02-APIDevelopment-140-12.png){:height="300px"}
 
-24. Set the Output to teh following
+24. Set the Output to the following
 <br>![](/images/2019-10-02-APIDevelopment-140-13.png){:height="300px"}
 
-25. Link up the parameters,
+25. Link up the parameters, dragging the left circle to the corresponding right circle for each parameter.
 <br>![](/images/2019-10-02-APIDevelopment-140-15.png){:height="300px"}
 
 26. Save and Publish the API,
