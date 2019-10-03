@@ -1,10 +1,9 @@
 ---
 layout: post
-date: 2019-10-02 06:00:00
+date: 2019-10-03 06:00:00
 categories: APIConnect
 title: "Developing APIs - 105 - Avoiding losing Plans and Subscriptions"
 Location: "Paris, France"
-draft: true
 author: ["NickCawood"]
 ---
 
