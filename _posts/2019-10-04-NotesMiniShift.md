@@ -3,9 +3,7 @@ layout: post
 date: 2019-10-03 02:00:00
 categories: OpenShift
 title: "MiniShift - Notes for installation"
-Location: "Paris, France"
 author: ["MarkTayler"]
-draft: true
 ---
 Notes shamelessly stolen from Mark Tayler for installing Mini Shift
 <!--more-->
