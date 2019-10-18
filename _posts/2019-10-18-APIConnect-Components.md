@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-10-18 00:01:00
+date: 2019-10-17 00:01:00
 categories: APIConnect
 title: APIConnect Component Interactions
 ---
