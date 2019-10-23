@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-10-17 00:01:00
+date: 2019-10-22 00:01:00
 categories: APIConnect
 title: Changing the session timeout - API Connect  2018.4.1.x
 author: ["AnkPatel"]
