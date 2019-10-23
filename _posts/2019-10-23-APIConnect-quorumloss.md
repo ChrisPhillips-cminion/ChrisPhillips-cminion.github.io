@@ -4,9 +4,10 @@ date: 2019-10-23 00:01:00
 categories: APIConnect
 title: Loosing Quorums
 ---
-When each API Connect component looses quorums it changes how the components work.,
+When each API Connect component looses quorums it changes how the components work.
+
 <!--more-->
-These notes state what is happens after a quorum is lost.
+These notes state what happens after a quorum is lost.
 
 **Gateway**
 * NO downtime for your APIs - Gateway will continue to serve traffic
