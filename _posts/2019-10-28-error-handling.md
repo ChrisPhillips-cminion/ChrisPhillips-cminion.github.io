@@ -38,11 +38,11 @@ This article explains the basics of error handling in APIs in API Connect 2018.
 -   The first step is to activate the Catch functionality for the API:
     ensure the "Show catches" button is toggled to be on.
 
-![](/images/image8.png){width="6.5in" height="2.71875in"}
+![](/images/image8.png)
 
 -   Click on "catch" to enter the Catches of the API.
 
-![](/images/image9.png){width="6.5in" height="2.6972222222222224in"}
+![](/images/image9.png)
 
 -   The Catches can now be updated.
 
