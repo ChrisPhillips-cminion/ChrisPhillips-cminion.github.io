@@ -2,7 +2,7 @@
 layout: post
 date: 2019-10-28 00:01:00
 categories: APIConnect
-title: API Error Handling in  API connect 2018
+title: "Developing APIs on API Connect - 106 - Error Handling"
 author: ["NickCawood"]
 draft: true
 ---
