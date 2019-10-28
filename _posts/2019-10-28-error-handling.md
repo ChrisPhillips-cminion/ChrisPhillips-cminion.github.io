@@ -20,7 +20,7 @@ This article explains the basics of error handling in APIs in API Connect 2018.
     URLs), two INVOKE policies (to call the target URLs) and a
     GATEWAYSCRIPT policy (to format the response from the target URLs).
 
-![](../images/image4.tiff){width="6.5in" height="2.6819444444444445in"}
+![](/images/image4.tiff){width="6.5in" height="2.6819444444444445in"}
 
 ![](../images/image5.tiff){width="6.5in" height="1.5375in"}
 
