@@ -4,7 +4,6 @@ date: 2019-10-28 00:01:00
 categories: OpenShift
 title: "Ingress (or other pods) unable to route to pods in different namespaces"
 author: ["ChrisPhillips","JamesHewitt"]
-draft: true
 ---
 This article explains the basics of error handling in APIs in API Connect 2018.
 <!--more-->
