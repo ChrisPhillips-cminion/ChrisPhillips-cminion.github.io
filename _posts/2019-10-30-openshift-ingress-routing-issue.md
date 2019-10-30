@@ -15,3 +15,6 @@ With ICP on OpenShift ingress is installed into the `kube-system` namespace and 
 In order to allow this communication runt he following command
 
 ```oc adm pod-network make-projects-global kube-system```
+
+
+*update* This issue also stopped images being pulled from the local docker registry under certain circumstances
