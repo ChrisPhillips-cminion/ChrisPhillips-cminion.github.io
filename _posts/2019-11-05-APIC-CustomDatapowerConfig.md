@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-11-5 00:01:00
+date: 2019-11-05 00:01:00
 categories: APIConnect
 title: "API Connect - Additional DataPower configuration "
 draft: true
