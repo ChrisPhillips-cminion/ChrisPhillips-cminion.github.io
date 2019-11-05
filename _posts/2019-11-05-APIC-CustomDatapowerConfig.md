@@ -14,8 +14,8 @@ In order to persist additional DataPower config in Kubernetes the `DataPower cfg
 
 
 ### Additional Configuration and Domains
-1. Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
-2. Add the following lines into the file
+1 Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
+2 Add the following lines into the file
 ```
 datapower:
   additionalConfig:
@@ -26,14 +26,14 @@ datapower:
 | Domain Name | the domain name that the config file must be applied to, this can be `default`, `apiconnect` or a new domain. If the domain does not exist it is created. |
 | Config File | Config file name that contains the datapower configuration. This can be extract from an existing DataPower file system in the config directory |
 
-3. To add the extra values file to the `APICUP` config tun the following Command
+3 To add the extra values file to the `APICUP` config tun the following Command
 `apicup subsys set <gwy> extra-values-file <path to dp-extravaluesfile.yaml>`
 
-4. Now follow the steps in the **Deployment** section below.
+4 Now follow the steps in the **Deployment** section below.
 
 ### Additional Local files
-1. Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
-2. Add the following lines into the file
+1 Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
+2 Add the following lines into the file
 
 ```
 datapower:
@@ -42,10 +42,10 @@ datapower:
 
 | localtar | name of the tar file to be applied |
 
-3. To add the extra values file to the `APICUP` config run the following Command
+3 To add the extra values file to the `APICUP` config run the following Command
 `apicup subsys set <gwy> extra-values-file <path to dp-extravaluesfile.yaml>`
 
-4. Now follow the steps in the deployment section below.
+4 Now follow the steps in the deployment section below.
 
 ### Deployment
 In order to apply these changes the helm chart needs to include these files, in `2018.4.1.8fp1` this is not an automatic action.
