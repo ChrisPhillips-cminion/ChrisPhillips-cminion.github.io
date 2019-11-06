@@ -32,6 +32,7 @@ datapower:
 
 ### Additional Local files
 1 Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
+
 2 Add the following lines into the file
 
 ```
