@@ -15,7 +15,7 @@ In order to persist additional DataPower config in Kubernetes the `DataPower cfg
 ### Additional Configuration and Domains
 1 Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
 2 Add the following lines into the file
-```
+```yaml
 datapower:
   additionalConfig:
   - domain: "<Domain Name>"
@@ -35,7 +35,7 @@ datapower:
 
 2 Add the following lines into the file
 
-```
+```yaml
 datapower:
   additionalLocalTar: "<localtar>"
 ```
@@ -46,6 +46,29 @@ datapower:
 `apicup subsys set <gwy> extra-values-file <path to dp-extravaluesfile.yaml>`
 
 4 Now follow the steps in the deployment section below.
+
+
+### Certificates
+If certificates need to be loaded into the datapower, first load the certificate as  a secret into kubernetes.
+
+1 Create or extend a file called `dp-extravaluesfile.yaml` in the `APICUP` project directory
+
+2 Add the following lines into the file
+
+```yaml
+datapower:
+  additionalCerts:
+  - domain: "<DP Domain>"
+    secret: "<Kubernetes secret name>"
+```
+
+The Kubernetes secret name will be the name used for the certificate in the `cert://` in datapower.
+
+3 To add the extra values file to the `APICUP` config run the following Command
+`apicup subsys set <gwy> extra-values-file <path to dp-extravaluesfile.yaml>`
+
+4 Now follow the steps in the deployment section below.
+
 
 ### Deployment
 In order to apply these changes the helm chart needs to include these files, in `2018.4.1.8fp1` this is not an automatic action.
