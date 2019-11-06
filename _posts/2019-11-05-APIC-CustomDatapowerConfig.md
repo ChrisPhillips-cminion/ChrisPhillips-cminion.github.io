@@ -2,8 +2,7 @@
 layout: post
 date: 2019-11-05 00:01:00
 categories: APIConnect
-title: "API Connect - Additional DataPower configuration "
-draft: true
+title: "API Connect - Additional DataPower configuration"
 ---
 This article explains how in API Connect 2018.4.1.8 you can persist additional configuration to DataPower.
 <!--more-->
