@@ -50,6 +50,8 @@ This solution allows for both DataPowers to be identical. In my opinion this mak
 
 ### Conclusion
 
-Both of these solutions have their own merits. Three domains over two DataPowers provides slightly better availability however it is more complex to govern and manage because you cannot treat each DataPower equally. If I was asked to make a decision with no requirements I would choose the second option as it is easier to manage and if the quorum is lost APIs can still be processed.
+Both of these solutions have their own merits. Three domains over two DataPowers provides slightly better availability however it is more complex to govern and manage because you cannot treat each DataPower equally.
+
+If I was asked to make a decision with no requirements I would choose the second option as it is easier to manage and if the quorum is lost APIs can still be processed.
 
 *TLDR: It depends on the requirements.*
