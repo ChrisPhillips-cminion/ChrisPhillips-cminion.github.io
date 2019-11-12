@@ -8,7 +8,7 @@ draft: true
 Ways to handle the DataPower quorum when there is only enough Licenses for two DataPowers.
 <!--more-->
 
-This article assumes that there are only two DataPowers available to run as the  API Connect Gateway, wether v5c or api-gateway
+This article assumes that there are only two DataPowers available to run as the  API Connect Gateway, whether v5c or api-gateway
 
 There are two common solutions to this and I am regularly asked which is better. The answer is always it depends.
 
