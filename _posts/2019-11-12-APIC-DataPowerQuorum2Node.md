@@ -14,7 +14,7 @@ There are two common solutions to this and I am regularly asked which is better.
 
 *~When a quorum is lost APIs can still be processed, however token management, publications of APIs and quota enforcement is not available.~*
 
-In DataPower (only not API Connect) a manual operation re-enable the quorum with the available nodes.
+In DataPower (only, not  other API Connect Components) a manual operation can be run re-enable the quorum with the available nodes.
 
 ### Three DataPower domains over two DataPower Instances.
 
@@ -30,7 +30,7 @@ In DataPower (only not API Connect) a manual operation re-enable the quorum with
 | DOWN       | DOWN       | DOWN |
 
 
-This solution requires having tow DataPower domains on Node 1 and one on Node 2. If Node 2 has an outage Node 1 continues with no problem. If Node 1 goes down then the quorum is lost.  If a split brain occurs (where network Communication between Node 2 and Node 1 occurs) Node 2 is considered out of quorum, but Node 1 can continue
+This solution requires having twox§ DataPower domains on Node 1 and one on Node 2. If Node 2 has an outage Node 1 continues with no problem. If Node 1 goes down then the quorum is lost.  If a split brain occurs (where network Communication between Node 2 and Node 1 occurs) Node 2 is considered out of quorum, but Node 1 can continue
 
 ### Two DataPower domains over  two DataPower Instances.
 
