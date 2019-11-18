@@ -3,7 +3,6 @@ layout: post
 date: 2019-11-14 00:01:00
 categories: APIConnect
 title: "API Connect 2018 and GraphQL"
-draft: true
 authors: ["IvanPryanichnikov"]
 ---
 I’m often asked whether IBM API Connect supports GraphQL APIs. The short answer is “yes” but let’s have a deeper look at the topic.
@@ -76,6 +75,4 @@ If your target endpoint requires additional headers eg. X-IBM-Client-Id you can 
 
 In the example above, we used the Loopback [OpenAPI-to-GraphQL](http://v4.loopback.iooasgraph.html)package to create a GraphQL wrapper for the REST API exposed via IBM API Connect.
 
-Due to the nature of GraphQL and depeding on the structure of the GraphQL interface, it's important to have an API Management solution that understands GraphQL and is able to limit access to the endpoints based on the complexity of a query.
-
-And then link to our GraphQL tech preview
+Due to the nature of GraphQL and depending on the structure of the GraphQL interface, it's important to have an API Management solution that understands GraphQL and is able to limit access to the endpoints based on the complexity of a query.
