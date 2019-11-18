@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-11-14 00:01:00
+date: 2019-11-18 00:01:00
 categories: APIConnect
 title: "API Connect 2018 and GraphQL"
 author: ["IvanPryanichnikov"]
