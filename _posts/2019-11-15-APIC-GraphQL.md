@@ -3,7 +3,7 @@ layout: post
 date: 2019-11-14 00:01:00
 categories: APIConnect
 title: "API Connect 2018 and GraphQL"
-authors: ["IvanPryanichnikov"]
+author: ["IvanPryanichnikov"]
 ---
 I’m often asked whether IBM API Connect supports GraphQL APIs. The short answer is “yes” but let’s have a deeper look at the topic.
 
