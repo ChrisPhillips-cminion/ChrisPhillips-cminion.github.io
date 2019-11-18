@@ -88,3 +88,19 @@ In order to apply these changes the helm chart needs to include these files, in 
 7. If this is an upgrade to an existing DataPower the DataPower Pods must be restarted after the apicup command
 
 Now whenever DataPower restarts it will re run the DataPower config and load the local files into the local disk.
+
+
+
+### Appendix
+Script to assist the Deployment
+```
+mv gwy gwy-$(date +%s)
+apicup subsys install gwy --out  gwy
+cd gwy/helm/
+tar zxvf dynamic-gateway-service-1.0.49.tgz
+cp ../../websocket.* dynamic-gateway-service
+service/templates/datapower-monitor.yaml
+tar czvf dynamic-gateway-service-1.0.49.tgz dynamic-gateway-service
+cd ../..
+apicup subsys install gwy --plan-dir gwy
+```
