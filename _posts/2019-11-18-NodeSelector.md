@@ -44,8 +44,23 @@ A sample extra value file is below, if the deployment you are extending already 
 *API Manager v2018.4.1.8*
 ```yaml
 cassandra:
-  nodeSelector:
-    node: apic
+  affinity:
+    podAntiAffinity:
+     preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        podAffinityTerm:
+          topologyKey: kubernetes.io/hostname
+          labelSelector:
+            matchLabels:
+              app: cassandra
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node
+            operator: In
+            values:
+            - apic
 analytics-proxy:
   nodeSelector:
     node: apic
