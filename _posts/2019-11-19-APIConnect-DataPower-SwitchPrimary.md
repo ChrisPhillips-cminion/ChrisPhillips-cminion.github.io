@@ -13,7 +13,10 @@ In the event that a DataPower quorum is lost the remaining DataPowers can be for
 **Note: Please note that a human must decide when this takes place so there is reduced risk of split brain**
 
 
-1. SSH into thee DataPower pod that you wish to become master
+1. SSH into thee DataPower pod that you wish to become master  or connect to  the pod
+`ssh <hotname> -p<configured ssh port>`
+or
+`kubectl attach -ti <datapower pod name> -n <namespace>` If you  attach to the pod  do not use `ctl+d` to exit the session as this will end the DataPower process and cause the pod to restart. Instead use `ctl+p ctl+q` to quit without ending the process
 
 2. login with admin  / admin  (or whatever the user has changed it to previously)
 
