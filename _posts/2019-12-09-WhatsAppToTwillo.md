@@ -28,8 +28,8 @@ The first gateway script is responsible validating the HMAC form Twilio. Informa
 
 ```javascript
 //############# These are the params that need updating
-var params="https://apigw.lts.apicww.cloud/chris-p-org/sandbox/whatsappbotv2/" //URL that the request is coming in on.
-var key ='5333b22f56661b2fa018af5ebc057317' //Auth Token from Twilio
+var params="https://123/123/123/123" //URL that the request is coming in on.
+var key ='123123' //Auth Token from Twilio
 //######
 
 var crypto = require('crypto');
@@ -75,6 +75,8 @@ context.set('message.body',params)
 
 The Switch is used to determine which operations need to be routed down stream.
 
+
+The complete example is available below.
 ```yaml
 swagger: '2.0'
 info:
@@ -104,10 +106,10 @@ x-ibm-configuration:
           title: CheckSum Validation
           source: >-
             var
-            params="https://apigw.lts.apicww.cloud/chris-p-org/sandbox/whatsappbotv2/"
+            params="123123123123123"
             //URL that the request is coming in on.
 
-            var key ='5333b22f56661b2fa018af5ebc057317' //Auth Token from Twilio
+            var key ='123123123123' //Auth Token from Twilio
 
             var hmac = require('crypto').createHmac('hmac-sha1', new Buffer(key)
             );
