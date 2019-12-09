@@ -11,12 +11,9 @@ Chatbots have been the a current fashionable project to work on right now. An AP
 <!--more-->
 
 
+In  this example we will make a request  to WhatsApp. Twilio will forward that onto the API Gateway. The API Gateway will validate the HMAC Signature sent by Twilio and then simply return the the body back to whats app. Instead this map can be preceded with  an invoke to reach a downstream service.
 
-Diagram 1 - High Level Architecture
-
-In  this example we will make a request  to WhatsApp. Twilio will forward that onto the API Gateway. The API Gateway will validate the HMAC  Signature sent by Twilio and then  call a downstream service.
-
-The downstream service will execute business logic required and send a response to the API Gateway. The API Gateway wraps this response up into the format required for Twilio.
+The downstream service will execute the business logic required and send a response to the API Gateway. The API Gateway would wrap this response with the Map Policy  into the format required for Twilio.
 
 This guide assumes that the user can configure Twilio with the basic settings. In Twilio you specify the API Gateway Endpoint.
 
@@ -25,11 +22,6 @@ Though this guide talks about Twilio the same flow can be used for  other ChatBo
 
 
 ![chatbot2.png](/images/chatbot2.png)
-The API in API Connect is as follows
-
-
-Diagram 2 - API Flow
-
 
 
 The first gateway script is responsible validating the HMAC form Twilio. Information on the login can be found here.  [https://www.twilio.com/docs/usage/security#test-the-validity-of-your-webhook-signature](https://www.twilio.com/docs/usage/security#test-the-validity-of-your-webhook-signature)
