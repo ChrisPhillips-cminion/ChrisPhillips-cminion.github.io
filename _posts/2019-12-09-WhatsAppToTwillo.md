@@ -6,12 +6,12 @@ title: "Chatbot with Twilio via API Connect "
 draft: true
 ---
 
-Chatbots have been the a current fashionable project to work on right now. An API Gateway is  critical to help take the load off the main business application as well as providing a way to implement multiple Chatbot intermediaries without rewriting the business logic.
+Chatbots have been a current fashionable project to work on right now. An API Gateway is  critical to help take the load off the main business application as well as providing a way to implement multiple Chatbot intermediaries without rewriting the business logic.
 
 <!--more-->
 
 
-In  this example we will make a request  to WhatsApp. Twilio will forward that onto the API Gateway. The API Gateway will validate the HMAC Signature sent by Twilio and then simply return the the body back to whats app. Instead this map can be preceded with  an invoke to reach a downstream service.
+In  this example we will make a request  to WhatsApp. Twilio will forward that onto the API Gateway. The API Gateway will validate the HMAC Signature sent by Twilio and then simply return the the body back to Whats App.. Instead this map can be preceded with  an invoke to reach a downstream service.
 
 The downstream service will execute the business logic required and send a response to the API Gateway. The API Gateway would wrap this response with the Map Policy  into the format required for Twilio.
 
@@ -24,7 +24,7 @@ Though this guide talks about Twilio the same flow can be used for  other ChatBo
 ![chatbot2.png](/images/chatbot2.png)
 
 
-The first gateway script is responsible validating the HMAC form Twilio. Information on the login can be found here.  [https://www.twilio.com/docs/usage/security#test-the-validity-of-your-webhook-signature](https://www.twilio.com/docs/usage/security#test-the-validity-of-your-webhook-signature)
+The first gateway script is responsible validating the HMAC form Twilio. Information on the validation can be found here.  [https://www.twilio.com/docs/usage/security#test-the-validity-of-your-webhook-signature](https://www.twilio.com/docs/usage/security#test-the-validity-of-your-webhook-signature)
 
 ```javascript
 //############# These are the params that need updating
