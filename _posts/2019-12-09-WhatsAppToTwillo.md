@@ -8,10 +8,12 @@ draft: true
 
 Chatbots have been a current fashionable project to work on right now. An API Gateway is critical to help take the load off the main business application as well as providing a way to implement multiple Chatbot intermediaries without rewriting the business logic.
 
+![chatbot1.png](/images/chatbot1.png)
+
 <!--more-->
 
 
-In  this example we will make a request  to WhatsApp. Twilio will forward that onto the API Gateway. The API Gateway will validate the HMAC Signature sent by Twilio and then simply return the the body back to Whats App.. Instead this map can be preceded with  an invoke to reach a downstream service.
+In this example we will make a request  to WhatsApp. Twilio will forward that onto the API Gateway. The API Gateway will validate the HMAC Signature sent by Twilio and then simply return the the body back to Whats App.. Instead this map can be preceded with  an invoke to reach a downstream service.
 
 The downstream service will execute the business logic required and send a response to the API Gateway. The API Gateway would wrap this response with the Map Policy  into the format required for Twilio.
 
