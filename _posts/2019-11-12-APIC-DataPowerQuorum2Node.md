@@ -1,10 +1,10 @@
 ---
 layout: post
-date: 2019-11-12 00:01:00
+date: 2019-12-10 00:01:00
 categories: APIConnect
-title: "DataPower Quorums with two DataPowers "
-draft: true
+title: "DataPower Quorums with two DataPowers"
 ---
+
 Ways to handle the DataPower quorum when there is only enough Licenses for two DataPowers.
 <!--more-->
 
@@ -42,7 +42,7 @@ This solution requires having two DataPower domains on Node 1 and one on Node 2.
 | Node 1     | Node 2     | Quorum Status |
 | :------------- | :------------- |  :------------- |
 | UP       | UP       | UP |
-| UP       | DOWN       | Down |
+| UP       | DOWN       | DOWN |
 | DOWN       | UP       | DOWN |
 | DOWN       | DOWN       | DOWN |
 
