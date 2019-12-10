@@ -3,7 +3,6 @@ layout: post
 date: 2019-12-9 00:02:00
 categories: APIConnect
 title: "Chatbot with Twilio via API Connect "
-draft: true
 ---
 
 Chatbots have been a current fashionable project to work on right now. An API Gateway is critical to help take the load off the main business application as well as providing a way to implement multiple Chatbot intermediaries without rewriting the business logic.
