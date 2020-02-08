@@ -18,14 +18,16 @@
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {%- endif -%}
         </ul>
+        <p>{{- site.description | escape -}}</p>
+        <div class="social-links">
+          {%- include social.html -%}
+        </div>
       </div>
 
       <div class="footer-col one-half">
-        <p>{{- site.description | escape -}}</p>
+        {%- include buymeacoffee.html -%}
       </div>
-      <div class="social-links">
-        {%- include social.html -%}
-      </div>
+
     </div>
 {%- include adDown.html -%}
     <p>Built on - {{ site.time }}</p>
