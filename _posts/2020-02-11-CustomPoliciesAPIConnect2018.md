@@ -3,7 +3,7 @@ layout: post
 date: 2020-02-11 00:01:00
 categories: APIConnect
 title: "User Defined Policies / Custom Policies in API Connect 2018  (MQ invoke Example)"
-location: singapore
+Location: Singapore
 draft: true
 ---
 
