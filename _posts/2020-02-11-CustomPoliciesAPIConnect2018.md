@@ -7,20 +7,19 @@ location: singapore
 draft: true
 ---
 
-User Defined Policies (aka Custom Policies) allow a customer bespoke piece of function to be exposed on a catalog. in this example I will explain the different pieces that  need to be constructed to build an MQ Invoke Policy. This article explains how to create them for the API Gateway.
+User Defined Policies (aka Custom Policies) allow a customer to provide a bespoke piece of function as a policy in the API Designer Pallet. In this example I will explain the different pieces that need to be constructed to build an MQ Invoke Policy.
 
 <!--more-->
 
-*This article is not going to include how to persist this config to DataPower running in Kubernetes or OpenShift. This will be covered in another article*
+*This article is not going to include how to persist this config to DataPower running in Kubernetes or OpenShift. This will be covered in another article. ALSO this article does not explain how to create the corresponding MQ objects required.*
 
 In order to produce a User Defined Policy a number of objects must be created in DataPower.
 
 
-
-#### Assembly-Function-Call ->  Assembly-Function -> Assembly -> Api-Rule -> Action
+#### Assembly-Function-Call ->  Assembly-Function -> Assembly -> Api-Rule -> Action(s)
 
 ### Assembly Function - Call
-The Assembly  Function call  takes a list of  properties that are exposed to the  API Manager.  Along side the properties it links the Assembly-Function
+The Assembly  Function call  takes a list of  properties that are exposed in the  API Manager.  Along side the properties it links the Assembly-Function
 ```
 assembly-function-call "mq-invoke"
  title "mq-invoke"
