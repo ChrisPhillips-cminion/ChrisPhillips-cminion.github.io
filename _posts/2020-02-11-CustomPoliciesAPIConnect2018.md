@@ -1,10 +1,8 @@
 ---
 layout: post
-date: 2020-02-11 00:01:00
+date: 2020-3-16 00:01:00
 categories: APIConnect
 title: "User Defined Policies / Custom Policies in API Connect 2018  (MQ invoke Example)"
-Location: Singapore
-draft: true
 ---
 
 User Defined Policies (aka Custom Policies) allow a customer to provide a bespoke piece of function as a policy in the API Designer Pallet. In this example I will explain the different pieces that need to be constructed to build an MQ Invoke Policy.
