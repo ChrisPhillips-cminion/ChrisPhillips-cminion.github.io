@@ -8,7 +8,7 @@ title: "Vanity URLs in APIConnect v2018 and onwards"
 API Connect v2018 has the ability to configure vanity Urls for the API Endpoints	. Vanity URLs allow the api developer/administrator to change how the endpoint is rendered in the API Connect Developer portal. This is useful if you wish to go via a CDN or there is a requirement for each catalog having a different URL subdomain.
 
 <!--more-->
-A
+
 Instructions on how to configure this in API Connect can be found here  https://www.ibm.com/support/knowledgecenter/SSMNED_2018/com.ibm.apic.apionprem.doc/create_env.html (step 15)
 
 
