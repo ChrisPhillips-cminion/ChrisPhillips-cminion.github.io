@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Vanity URLs in APIConnect v2018 and onwards"
 ---
 
-PI Connect v2018 has the ability to configure vanity Urls for the API Endpoints	. Vanity URLs allow the api developer/administrator to change how the endpoint is rendered in the API Connect Developer portal. This is useful if you wish to go via a CDN or there is a requirement for each catalog having a different URL subdomain.
+API Connect v2018 has the ability to configure vanity Urls for the API Endpoints	. Vanity URLs allow the api developer/administrator to change how the endpoint is rendered in the API Connect Developer portal. This is useful if you wish to go via a CDN or there is a requirement for each catalog having a different URL subdomain.
 
 <!--more-->
 A
