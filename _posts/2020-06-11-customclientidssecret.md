@@ -2,7 +2,7 @@
 layout: post
 date: 2020-6-11 00:01:00
 categories: APIConnect
-title: "Customer Client ID and Client Secret values"
+title: "Custom Client ID and Client Secret values"
 ---
 
 From API Connect V5 and onwards users have been able to customise the Client ID and Client Secret values on applications. But this is a rarely known gem.  This article will explains the API calls required to do this.
