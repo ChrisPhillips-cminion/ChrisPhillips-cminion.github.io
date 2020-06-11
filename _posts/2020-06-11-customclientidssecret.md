@@ -15,31 +15,20 @@ In order to use custom Client ID and Secrets the following API calls need to be 
 1. Log into to the provider or consumer realm to get the TOKEN
 
 2. Create the application payload
+*Note redirect_endpoints and  application_public_certificate_entry are optional*
 ```json
 {
   "type": "app",
   "api_version": "2.0.0",
-  "id": "4589218290466816",
   "name": "tate",
   "title": "tesid",
   "summary": "Lu babahjo ufatap lih fargisso imsih porkumhaw mumadmuh votupoafa pec kudiri huibwud puuc fahenol ari mov.",
-  "state": "enabled",
-  "lifecycle_state": "production",
-  "lifecycle_state_pending": "production",
   "client_id": "836505056575488",
   "client_secret": "hopi",
   "redirect_endpoints": [
     "http://hinkidun.lt/kitawuja"
   ],
-  "application_public_certificate_entry": "-----BEGIN CERTIFICATE-----xxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxx-----END CERTIFICATE-----",
-  "org_url": "http://jaj.th/defco",
-  "catalog_url": "http://ruliz.tk/ze",
-  "consumer_org_url": "http://mecivi.mg/mol",
-  "task_urls": [
-    "http://kuh.pt/ade"
-  ],
-  "image_endpoint": "http://gunnoka.ag/se",
-  "application_type_url": "http://edrod.kh/isratco"
+  "application_public_certificate_entry": "-----BEGIN CERTIFICATE-----xxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxEXAMPLExxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxxxxxxxxEXAMPLExxxx-----END CERTIFICATE-----"
 }
 ```
 
