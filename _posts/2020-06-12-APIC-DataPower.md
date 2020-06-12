@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2020-6-10 00:01:00
+date: 2020-6-12 00:01:00
 categories: APIConnect
-title: "Calling DataPower's Rest interface from API Connect"
+title: "Calling DB2's Rest interface from API Connect"
 author: ["lfanebost"]
 ---
 Lars Fanebost put together this awesome guide on calling DB2 from inside of API connect. This is taken from [https://github.com/lfanebost/api-connect-exposing-db-data-pub/](https://github.com/lfanebost/api-connect-exposing-db-data-pub/)
