@@ -14,7 +14,7 @@ When deploying API Connect it is possible that the postgres does not start due t
 
 
 ```
-kubectl patch <mgmt-name> mgmt -n <namespaec> -p '{"metadata":{"finalizers": []}}' --type=merge
+kubectl patch mgmt <mgmt-name>  -n <namespaec> -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
 
 Then you can delete the mgmt cr with `kubctl delele mgmt -n <namespaec> <mgmt-name> `
