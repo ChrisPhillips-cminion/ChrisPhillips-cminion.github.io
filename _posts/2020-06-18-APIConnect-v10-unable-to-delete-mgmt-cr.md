@@ -3,7 +3,7 @@ layout: post
 date: 2020-6-16 00:01:00
 categories: APIConnect
 title: "API Connect v10 - unable to delete mangement cr"
-author: ["MannieKagan"]
+author: ["LukeRaus","ChrisPhillips"]
 ---
 
 When deploying API Connect it is possible that the postgres does not start due to user error. (Most commonly due to invalid image registry url).
@@ -14,7 +14,7 @@ When deploying API Connect it is possible that the postgres does not start due t
 
 
 ```
-kubectl patch $MANAGMENT_CR_NAME management -n $KUBE_NAMESPACE -p '{"metadata":{"finalizers": []}}' --type=merge
+kubectl patch <mgmt-name> mgmt -n <namespaec> -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
 
 Then you can delete the mgmt cr with `kubctl delele mgmt -n <namespaec> <mgmt-name> `
