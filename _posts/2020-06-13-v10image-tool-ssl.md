@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-6-13 00:02:00
-categories: APIConnecct
+categories: APIConnect
 title: "APIConnect v10 unable to load images into registry because of  x509: certificate signed by unknown authority - Sellf signed certificate  "
 ---
 When using the image-tool to load images into  your docker registry with a self signed certificate you will see the following error.
