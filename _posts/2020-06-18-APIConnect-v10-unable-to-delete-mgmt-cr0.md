@@ -35,4 +35,4 @@ and so it is the same solution
 kubectl patch mgmt <mgmt-name>  -n <namespaec> -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
 
-Then you can delete the namespace again `kubectl delete ns apic`
+Then you can delete the namespace  `kubectl delete ns apic`
