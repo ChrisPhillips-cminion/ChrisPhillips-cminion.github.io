@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-6-16 00:01:00
+date: 2020-6-22 00:02:00
 categories: APIConnect
 title: "API Connect v10 - Install on IKS with IBM Entitlement registry "
 draft: true
