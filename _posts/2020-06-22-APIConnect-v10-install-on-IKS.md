@@ -2,7 +2,7 @@
 layout: post
 date: 2020-6-22 00:02:00
 categories: APIConnect
-title: "API Connect v10 - Install on IKS with IBM Entitlement registry "
+title: "API Connect v10 - Install on IKS with IBM Entitlement Registry "
 draft: true
 ---
 API Connect v10  was released on the 16th of June 2010. This guide shows you the steps to take a vanilla IKS 1.17 to a fully working APIC v10.
@@ -14,7 +14,7 @@ This will be a living document updated as needed. These instructions assume you 
 Download the following part from PPA.
 
 
-## Part 2 - Pre reqs
+## Part 2 - Pre Reqs
 
 1. Deploy kubernetes in IKS 1.17.
 2. Confirm the cluster name
@@ -31,6 +31,7 @@ In the example above we need to make a note of `v10-k8s2`
 run the following command `ibmcloud cs cluster config --cluster <clustername>`
 e.g. `ibmcloud cs cluster config --cluster v10-k8s2`
 returns
+
 ```
 OK
 The configuration for v10-k8s2 was downloaded successfully.
@@ -43,6 +44,7 @@ You can now execute 'kubectl' commands against your cluster. For example, run 'k
 Helm is used only for installing the block storage depenency. You must have the helm client on your laptop, this can be helm2 or helm3.
 
 Run the following commands
+
 ```shell
 helm init
 kubectl create serviceaccount --namespace kube-system tiller
@@ -50,12 +52,15 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 ```
 
+
 5. Install IBM Block Storage Plugin
+
 ```
 helm repo add iks-charts https://icr.io/helm/iks-charts
 helm repo update
 helm install ibm-block-storage iks-charts/ibmcloud-block-storage-plugin -n kube-system
 ```
+
 Check the storage classes are created.
 `kubectl get storageclass`
 
@@ -86,10 +91,13 @@ ibmc-file-silver-gid       ibm.io/ibmc-file    Delete          Immediate        
 
 6. Install custom ingress
 IKS Ingress does not support SSL Passthrough and so we must install the community Ingress. v0.30 is the recommend version
+
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.30.0/deploy/static/mandatory.yaml
 ```
+
 Returns
+
 ```
 namespace/ingress-nginx configured
 configmap/nginx-configuration configured
@@ -108,59 +116,88 @@ limitrange/ingress-nginx configured
 In order to use the custom ingress with a hostname we must create a load balancer.
 
 Run the following command to get the external IP for the community ingress. `kubectl get svc -n kube-system 	ingress-nginx-ingress-controller`
+
 Returns
+
 ```
 NAME                               TYPE           CLUSTER-IP    EXTERNAL-IP       PORT(S)                      AGE
 ingress-nginx-ingress-controller   LoadBalancer   172.21.5.44   159.142.219.218   80:30829/TCP,443:32422/TCP   3d7h
 ```
+
 Make a note of `159.142.219.218`
 
 Now run
-`ibmcloud ks nlb-dns create classic --cluster <clustername> --ip <external ip from above>`
+```
+ibmcloud ks nlb-dns create classic --cluster <clustername> --ip <external ip from above>
+```
+
 for example
-`ibmcloud ks nlb-dns create classic --cluster v10-k8s2 --ip  159.142.219.218`
+
+```
+ibmcloud ks nlb-dns create classic --cluster v10-k8s2 --ip  159.142.219.218
+```
+
 This returns something similar to the below
+
 ```
 NLB hostname was created as v10-k8s2-420eb34h056ae68f3969289d61f61851-0002.eu-gb.containers.appdomain.cloud
 ```
-Make a note of the hotname above.
+
+Make a note of the hostname above.
 
 
 8. Install certman
 Certman is an optional tool to assist with the creation of SSL certificates.
+
 `kubectl apply -f  https://github.com/jetstack/cert-manager/releases/download/v0.12.0/cert-manager.yaml`
 
 ## Part 3 installing API Connect
 
 1. Create the namespace to install API Connect into.
+
 `kubectl create ns <namespace name>`
-e.g.
+
+For Example
+
 `kubectl create ns apic`
 
 2. Create ibm-entitlenment-key
 In order to connect to the entitlement registry we must have a secret containing the your personal token.
 
 2.1. Go to [https://myibm.ibm.com/products-services/containerlibrary ](https://myibm.ibm.com/products-services/containerlibrary) and copy the key.
+
 2.2. Run the following command
+
 `kubectl create secret -n <namespace> docker-registry ibm-entitlement-key --docker-server=cp.icr.io --docker-username=cp --docker-password=<your IBM Entitled registry key>`
+
 e.g.
+
 `kubectl create secret -n apic docker-registry ibm-entitlement-key --docker-server=cp.icr.io --docker-username=cp --docker-password=eyJhbGciOiJIUzI1NiJ9.eyNOTAREALKEYBUTITWILLBEABITLONGERTHENTHIS.0FXuM3wvlr72K-pbUODVEjk2qqL3d_vs4jPJzt8MQUQ
 `
+
 Returns
+
 `secret/ibm-entitlement-key created`
 
 
 3. Create DataPower admin credentials
 The default password for datapower must be created in a secret ahead of time.
+
 `kubectl create secret generic datapower-admin-credentials --from-literal=password=<password> -n <namespace>`
+
 for example.
+
 `kubectl create secret generic datapower-admin-credentials --from-literal=password=PickABetterPasssword -n apic`
 
 
 4. Unzip release_files.zip
+
 5. Install the API Connect CRD
+
 `kubectl apply -f ibm-apiconnect-crds.yaml`
+
 Returns
+
 ```
 customresourcedefinition.apiextensions.k8s.io/analyticsbackups.analytics.apiconnect.ibm.com configured
 customresourcedefinition.apiextensions.k8s.io/analyticsclusters.analytics.apiconnect.ibm.com configured
@@ -181,24 +218,36 @@ customresourcedefinition.apiextensions.k8s.io/portalrestores.portal.apiconnect.i
 customresourcedefinition.apiextensions.k8s.io/natsstreamingclusters.streaming.nats.io configured
 customresourcedefinition.apiextensions.k8s.io/datapowerservices.datapower.ibm.com configured
 ```
+
 6. Edit ibm-apiconnect.yaml
+
 6. 1. Change `apic-dev-docker-local.artifactory.swg-devops.com/velox/v1000/` to `cp.icr.io/cp/`
+
 6. 2. Change all instances of `default` to the namespace you created in Part 2.1
+
 6. 3. Change `apic-registry-secret` to `ibm-entitlement-key`
+
 7. Run `kubectl apply -f ibm-apiconnect.yaml -n <namespace>`
 e.g.
 `kubectl apply -f ibm-apiconnect.yaml -n apic`
 
 8. Edit ibm-datapoweryaml
+
 8. 1. Change `datapower-docker-local.artifactory.swg-devops.com` to `ibmcom/``
+
 8. 2. Change all instances of default to the namespace you created
+
 8. 3. datapower-docker-local-cred to ibm-entitlement-key
+
 9. Run `kubectl apply -f ibm-datapower.yaml -n <namespace>`
+
 e.g.
+
 `kubectl apply -f ibm-datapower.yaml -n apic`
 
 
 10. Check the pods have started with an output similar to below.
+
 ```
 bash-3.2$ kubectl  get po -napic
 NAME                                                              READY   STATUS      RESTARTS   AGE
@@ -233,13 +282,16 @@ We must add the hostname. From Part 2 step 7 take the hostname and run the follo
 ```shell
 sed -i s/.STACK_HOST/<From 2.7>/ *yaml
 ```
-for examples
+
+for example
+
 ```shell
 sed -i s/.STACK_HOST/v10-k8s2-420eb34f056ae68f3969289d61f61851-0002.eu-gb.containers.appdomain.cloud/ *yaml
 ```
 
 
 13. Now you are ready to install
+
 ```shell
 kubectl apply -f custom-certs-external.yaml -n <namespace>
 kubectl apply -f  management_cr.yaml  -n <namespace>
@@ -248,12 +300,23 @@ kubectl apply -f v5cgateway_cr.yaml -n <namespace>
 kubectl apply -f analytics_cr.yaml -n <namespace>
 kubectl apply -f portal_cr.yaml -n <namespace>
 ```
+
 e.g.
+
 ```shell  
 kubectl apply -f custom-certs-external.yaml -n apic
 kubectl apply -f  management_cr.yaml  -n apic
 kubectl apply -f  apigateway_cr.yaml -n apic
 kubectl apply -f v5cgateway_cr.yaml -n apic
 kubectl apply -f analytics_cr.yaml -n apic
-      kubectl apply -f portal_cr.yaml -n apic
+kubectl apply -f portal_cr.yaml -n apic
 ```
+
+
+# Part 4 - Debug Failure
+
+If the API Manager, Portal or Analytics fail to come up you need to look at the logs in the following pod
+`ibm-apiconnect-5f85df4c79-c92hj`
+
+If the Gateway fails to come up look in the following pod for errors
+`datapower-operator-5d88c99bfc-rk4f8  `
