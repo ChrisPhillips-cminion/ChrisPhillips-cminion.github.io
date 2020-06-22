@@ -11,7 +11,7 @@ API Connect v10  was released on the 16th of June 2010. This guide shows you the
 This will be a living document updated as needed. These instructions assume you have access to APIConnect v10 through the IBM Entitlement Registry
 
 ## Part 1 - Download the files from PPA
-From Passport advantage download
+From Passport Advantage download
 
 `IBM API Connect Operator Install Files 10.0.0 long-term support for Containers English (CC6SWEN )`
 
