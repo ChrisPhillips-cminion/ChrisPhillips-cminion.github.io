@@ -15,9 +15,14 @@ e.g.
 
 However if you have API Connect v10 deployed in that namespace the delete will stall because it is unable to delete the API Manager CR.
 
-To validate this is the issue run `kubectl get all -n <namespace>`
+To validate this is the issue run
+
+`kubectl get all -n <namespace>`
+
 e.g.
+
 `kubectl get mgmt -n apic`
+
 
 The only object will be the api connect management cr.
 
