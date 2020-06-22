@@ -110,17 +110,17 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/ngin
 Returns
 
 ```
-namespace/ingress-nginx configured
-configmap/nginx-configuration configured
-configmap/tcp-services configured
-configmap/udp-services configured
-serviceaccount/nginx-ingress-serviceaccount configured
-clusterrole.rbac.authorization.k8s.io/nginx-ingress-clusterrole configured
-role.rbac.authorization.k8s.io/nginx-ingress-role configured
-rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding configured
-clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding configured
-deployment.apps/nginx-ingress-controller configured
-limitrange/ingress-nginx configured
+namespace/ingress-nginx created
+configmap/nginx-configuration created
+configmap/tcp-services created
+configmap/udp-services created
+serviceaccount/nginx-ingress-serviceaccount created
+clusterrole.rbac.authorization.k8s.io/nginx-ingress-clusterrole created
+role.rbac.authorization.k8s.io/nginx-ingress-role created
+rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding created
+clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding created
+deployment.apps/nginx-ingress-controller created
+limitrange/ingress-nginx created
 ```
 
  7. Add hostname to custom Ingress
@@ -210,24 +210,24 @@ for example.
 Returns
 
 ```
-customresourcedefinition.apiextensions.k8s.io/analyticsbackups.analytics.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/analyticsclusters.analytics.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/analyticsrestores.analytics.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/pgclusters.crunchydata.com configured
-customresourcedefinition.apiextensions.k8s.io/pgpolicies.crunchydata.com configured
-customresourcedefinition.apiextensions.k8s.io/pgreplicas.crunchydata.com configured
-customresourcedefinition.apiextensions.k8s.io/pgtasks.crunchydatsa.com configured
-customresourcedefinition.apiextensions.k8s.io/gatewayclusters.gateway.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/managementbackups.management.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/managementclusters.management.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/managementrestores.management.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/natsclusters.nats.io configured
-customresourcedefinition.apiextensions.k8s.io/natsserviceroles.nats.io configured
-customresourcedefinition.apiextensions.k8s.io/portalbackups.portal.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/portalclusters.portal.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/portalrestores.portal.apiconnect.ibm.com configured
-customresourcedefinition.apiextensions.k8s.io/natsstreamingclusters.streaming.nats.io configured
-customresourcedefinition.apiextensions.k8s.io/datapowerservices.datapower.ibm.com configured
+customresourcedefinition.apiextensions.k8s.io/analyticsbackups.analytics.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/analyticsclusters.analytics.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/analyticsrestores.analytics.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/pgclusters.crunchydata.com created
+customresourcedefinition.apiextensions.k8s.io/pgpolicies.crunchydata.com created
+customresourcedefinition.apiextensions.k8s.io/pgreplicas.crunchydata.com created
+customresourcedefinition.apiextensions.k8s.io/pgtasks.crunchydatsa.com created
+customresourcedefinition.apiextensions.k8s.io/gatewayclusters.gateway.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/managementbackups.management.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/managementclusters.management.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/managementrestores.management.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/natsclusters.nats.io created
+customresourcedefinition.apiextensions.k8s.io/natsserviceroles.nats.io created
+customresourcedefinition.apiextensions.k8s.io/portalbackups.portal.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/portalclusters.portal.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/portalrestores.portal.apiconnect.ibm.com created
+customresourcedefinition.apiextensions.k8s.io/natsstreamingclusters.streaming.nats.io created
+customresourcedefinition.apiextensions.k8s.io/datapowerservices.datapower.ibm.com created
 ```
 
  6. Edit ibm-apiconnect.yaml
@@ -288,7 +288,7 @@ sed -i s/.PROFILE/n1xc2.m16/  analytics_cr.yaml
 
 ```
 
-We must add the hostname. From Part 2 step 7 take the hostname and run the following command
+We must add the hostname. From Part 2 step 7, take the hostname and run the following command
 
 ```shell
 sed -i s/.STACK_HOST/<From 2.7>/ *yaml
