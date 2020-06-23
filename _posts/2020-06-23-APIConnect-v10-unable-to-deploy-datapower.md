@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-6-23 00:02:00
-categories: API Connect
+categories: APIConnect
 title: "API Connect v10  - DataPower Pods are not created after Gateway CR is applied"
 ---
 
