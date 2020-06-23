@@ -8,7 +8,7 @@ title: "API Connect v10  - DataPower Pods are not created after Gateway CR is ap
 When installing gateway sub component this can fail if stale webhooks are not cleaned up first.
 
 <!--more-->
-# Symptons
+## Symptoms
 
 1. DataPower CR is applied but nothing happens.
 2. The API Connect Operator has an error message similar to
@@ -32,8 +32,9 @@ The actual error is
 "Internal error occurred: failed calling webhook \"DataPowerservices.validator.DataPower.ibm.com\": Post https://DataPower-operator.apic.svc:443/validate-DataPower-ibm-com-v1beta1-DataPowerservice?timeout=2s: x509: certificate signed by unknown authority (possibly because of \"crypto/rsa: verification error\" while trying to verify candidate authority certificate \"DataPower-operator-ca\")"
 ```
 
+## Solution
 
-This problems is caused by stale webhooks. The solution to this problem can be found here [https://ibm.github.io/DataPower-operator-doc/troubleshooting/stale-webhooks](https://ibm.github.io/DataPower-operator-doc/troubleshooting/stale-webhooks)
+This problems is caused by stale webhooks. The solution to this problem can be found here [https://ibm.github.io/datapower-operator-doc/troubleshooting/stale-webhooks/](https://ibm.github.io/datapower-operator-doc/troubleshooting/stale-webhooks/)
 
 Then delete both the  DataPower operator and API Connect operator pod to force them to recreate the webhooks.
 
