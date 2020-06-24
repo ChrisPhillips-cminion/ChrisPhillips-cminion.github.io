@@ -8,7 +8,7 @@ title: "API Connect v10 - Install on IKS with IBM Entitlement Registry "
 API Connect v10 was released on the 1 - th of June 2010. This guide shows you the steps to take a vanilla IKS 1 - 17 to a fully working APIC v10.
 
 <!--more-->
-This will be a living document updated as needed. These instructions assume you have access to APIConnect v10 through the IBM Entitlement Registry
+This will be a living document updated as needed. These instructions assume you have access to APIConnect v10 through the IBM Entitlement Registry  
 
 ## Part 1 - - Download the files from PPA
 From Passport Advantage download
@@ -70,7 +70,12 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 ```
 helm repo add iks-charts https://icr.io/helm/iks-charts
 helm repo update
+
+#helm3
 helm install ibm-block-storage iks-charts/ibmcloud-block-storage-plugin -n kube-system
+
+#helm2
+helm install --name ibm-block-storage iks-charts/ibmcloud-block-storage-plugin -n kube-system
 ```
 
 Check the storage classes are created.
