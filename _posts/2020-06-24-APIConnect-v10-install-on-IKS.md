@@ -3,7 +3,6 @@ layout: post
 date: 2020-6-24 00:12:00
 categories: APIConnect
 title: "API Connect v10 - Install on IKS with IBM Entitlement Registry "
-draft: true
 ---
 
 API Connect v10 was released on the 1 - th of June 2010. This guide shows you the steps to take a vanilla IKS 1 - 17 to a fully working APIC v10.
