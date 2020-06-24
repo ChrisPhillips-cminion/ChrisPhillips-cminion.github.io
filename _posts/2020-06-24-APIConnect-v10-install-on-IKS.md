@@ -23,6 +23,7 @@ Once it is downloaded the zip file will be named `release_files.zip`
 ## Part 2 - Pre Reqs
 
 1 - Deploy kubernetes in IKS 1 - 17.
+
 2 - Confirm the cluster name
 
 `ibmcloud cs clusters`
