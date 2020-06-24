@@ -131,7 +131,7 @@ limitrange/ingress-nginx created
 
 6.2 - Save the following yaml file and run it.
 
-*ingrees-svc.yaml*
+*ingress-svc.yaml*
 ```yaml
 apiVersion: v1
 kind: Service
@@ -320,13 +320,13 @@ sed -i s/.PROFILE/n1xc4.m8/ apigateway_cr.yaml
 sed -i s/.PROFILE/n1xc4.m8/ v5cgateway_cr.yaml
 sed -i s/.PROFILE/n1xc2.m8/ portal_cr.yaml
 sed -i s/.PROFILE/n1xc2.m16/ analytics_cr.yaml
-
 ```
 
 We must add the hostname. From Part 2 step 7, take the hostname and run the following command
 
 ```shell
 sed -i s/.STACK_HOST/<From 2.7>/ *yaml
+sed -i s/example.com/<From 2.7>/ custom-certs-external.yaml
 ```
 
 for example
