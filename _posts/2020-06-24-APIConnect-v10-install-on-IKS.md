@@ -161,13 +161,13 @@ kubectl apply -n ingress-nginx -f  ingrees-svc.yaml
 7 - Add hostname to custom Ingress
 In order to use the custom ingress with a hostname we must create a load balancer.
 
-Run the following command to get the external IP for the community ingress. `kubectl get svc -n ingress-nginx 	ingress-nginx-ingress-controller`
+Run the following command to get the external IP for the community ingress. `kubectl get svc -n ingress-nginx 	ingress-nginx`
 
 Returns
 
 ```
 NAME                TYPE      CLUSTER-IP  EXTERNAL-IP    PORT(S)           AGE
-ingress-nginx-ingress-controller  LoadBalancer  1 - 2.21.5.44  1 - 9.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
+ingress-nginx-ingress  LoadBalancer  1 - 2.21.5.44  1 - 9.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
 ```
 
 Make a note of `159.142.219.218`
