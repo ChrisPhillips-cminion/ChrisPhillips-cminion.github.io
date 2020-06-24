@@ -10,18 +10,18 @@ API Connect v10 was released on the 16 th of June 2020. This guide shows you the
 <!--more-->
 This will be a living document updated as needed. These instructions assume you have access to APIConnect v10 through the IBM Entitlement Registry  
 
-## Part 1 - - Download the files from PPA
+## Part 1 - Download the files from PPA
 From Passport Advantage download
 
-`IBM API Connect Operator Install Files 1 - .0.0 long-term support for Containers English (CC6SWEN )`
+`IBM API Connect Operator Install Files 1.0.0 long-term support for Containers English (CC6SWEN )`
 
-This file is 0.5 megabytes and was published on 1 - th June 2020.
+This file is 0.5 megabytes and was published on 16th June 2020.
 
 Once it is downloaded the zip file will be named `release_files.zip`
 
 ## Part 2 - Pre Reqs
 
-1 - Deploy kubernetes in IKS 1 - 17.
+1 - Deploy kubernetes in IKS 1.17.
 
 2 - Confirm the cluster name
 
@@ -32,7 +32,7 @@ returns
 ```
 OK
 Name    ID           State  Created   Workers  Location  Version    Resource Group Name  Provider  
-v10-k8s2  brlsmorl0vj0ige9tgp0  normal  4 days ago  3     London   1 - 17.6_1526  default        classic  
+v10-k8s2  brlsmorl0vj0ige9tgp0  normal  4 days ago  3     London   1.17.6_1526  default        classic  
 ```
 In the example above we need to make a note of `v10-k8s2`
 
@@ -167,7 +167,7 @@ Returns
 
 ```
 NAME                TYPE      CLUSTER-IP  EXTERNAL-IP    PORT(S)           AGE
-ingress-nginx-ingress  LoadBalancer  1 - 2.21.5.44  1 - 9.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
+ingress-nginx-ingress  LoadBalancer  152.21.5.44  159.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
 ```
 
 Make a note of `159.142.219.218`
@@ -180,7 +180,7 @@ ibmcloud ks nlb-dns create classic --cluster <clustername> --ip <external ip fro
 for example
 
 ```
-ibmcloud ks nlb-dns create classic --cluster v10-k8s2 --ip 1 - 9.142.219.218
+ibmcloud ks nlb-dns create classic --cluster v10-k8s2 --ip 1 59.142.219.218
 ```
 
 This returns something similar to the below
@@ -295,10 +295,10 @@ e.g.
 10 - Check the pods have started with an output similar to below.
 
 ```
-bash- 3 - 2$ kubectl get po -napic
+bash-2$ kubectl get po -napic
 NAME                               READY  STATUS   RESTARTS  AGE
-datapower-operator-5d88c99bfc-rvqmk                1 - 1   Running   0     70m
-ibm-apiconnect-5f85df4c79-c92hj                  1 - 1   Running   0     52m
+datapower-operator-5d88c99bfc-rvqmk                1/1   Running   0     70m
+ibm-apiconnect-5f85df4c79-c92hj                  1/1   Running   0     52m
 ```
 
 11 - Unzip helper_files.zip
