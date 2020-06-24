@@ -129,10 +129,39 @@ deployment.apps/nginx-ingress-controller created
 limitrange/ingress-nginx created
 ```
 
+6.2 - Save the following yaml file and run it.
+
+*ingrees-svc.yaml*
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: ingress-nginx
+  ports:
+   - name: http
+     protocol: TCP
+     port: 80
+   - name: https
+     protocol: TCP
+     port: 443
+  externalTrafficPolicy: Cluster
+```
+
+run
+
+```
+kubectl apply -n ingress-nginx -f  ingrees-svc.yaml
+
+```
+
 7 - Add hostname to custom Ingress
 In order to use the custom ingress with a hostname we must create a load balancer.
 
-Run the following command to get the external IP for the community ingress. `kubectl get svc -n kube-system 	ingress-nginx-ingress-controller`
+Run the following command to get the external IP for the community ingress. `kubectl get svc -n ingress-nginx 	ingress-nginx-ingress-controller`
 
 Returns
 
