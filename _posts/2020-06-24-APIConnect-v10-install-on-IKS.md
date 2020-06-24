@@ -154,7 +154,7 @@ spec:
 run
 
 ```
-kubectl apply -n ingress-nginx -f  ingrees-svc.yaml
+kubectl apply -n ingress-nginx -f  ingress-svc.yaml
 
 ```
 
