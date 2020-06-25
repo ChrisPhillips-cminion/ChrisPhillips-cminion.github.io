@@ -107,66 +107,163 @@ ibmc-file-silver-gid    ibm.io/ibmc-file  Delete     Immediate      false       
 ```
 
 6 - Install custom ingress
-IKS Ingress does not support SSL Passthrough and so we must install the community Ingress. V0.30 is the recommend version
+IKS Ingress does not support SSL Passthrough and so we must install the community Ingress.
 
-```shell
-kubectl apply -f https://raw.githubusercontent.com/ChrisPhillips-cminion/apicv10-k8s-install/master/mandatory.yaml
-```
-
-Returns
-
-```
-namespace/ingress-nginx created
-configmap/nginx-configuration created
-configmap/tcp-services created
-configmap/udp-services created
-serviceaccount/nginx-ingress-serviceaccount created
-clusterrole.rbac.authorization.k8s.io/nginx-ingress-clusterrole created
-role.rbac.authorization.k8s.io/nginx-ingress-role created
-rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding created
-clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding created
-deployment.apps/nginx-ingress-controller created
-```
-
-6.2 - Save the following yaml file and run it.
-
-*ingress-svc.yaml*
+Save this as `ingress-config.yaml`
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: ingress-nginx
-spec:
-  type: LoadBalancer
-  selector:
-    app: ingress-nginx
-  ports:
-   - name: http
-     protocol: TCP
-     port: 80
-   - name: https
-     protocol: TCP
-     port: 443
-  externalTrafficPolicy: Cluster
+controller:
+  config:
+    hsts-max-age: "31536000"
+    keepalive: "32"
+    log-format: '{ "@timestamp": "$time_iso8601", "@version": "1", "clientip": "$remote_addr",
+      "tag": "ingress", "remote_user": "$remote_user", "bytes": $bytes_sent, "duration":
+      $request_time, "status": $status, "request": "$request_uri", "urlpath": "$uri",
+      "urlquery": "$args", "method": "$request_method", "referer": "$http_referer",
+      "useragent": "$http_user_agent", "software": "nginx", "version": "$nginx_version",
+      "host": "$host", "upstream": "$upstream_addr", "upstream-status": "$upstream_status"
+      }'
+    main-snippets: load_module "modules/ngx_stream_module.so"
+    proxy-body-size: "0"
+    proxy-buffering: "off"
+    server-name-hash-bucket-size: "128"
+    server-name-hash-max-size: "1024"
+    server-tokens: "False"
+    ssl-ciphers: HIGH:!aNULL:!MD5
+    ssl-prefer-server-ciphers: "True"
+    ssl-protocols: TLSv1.2
+    use-http2: "true"
+    worker-connections: "10240"
+    worker-cpu-affinity: auto
+    worker-processes: "1"
+    worker-rlimit-nofile: "65536"
+    worker-shutdown-timeout: 5m
+  daemonset:
+    useHostPort: false
+  extraArgs:
+    annotations-prefix: ingress.kubernetes.io
+    enable-ssl-passthrough: true
+  hostNetwork: true
+  kind: DaemonSet
+  name: controller
+rbac:
+  create: "true"
 ```
+Run to install ingresss
 
-run
+`helm install stable/nginx-ingress --name ingress --values ingress-config.yml --namespace kube-system`
 
+returnss
 ```
-kubectl apply -n kube-system -f  ingress-svc.yaml
+NAME:   ingress
+LAST DEPLOYED: Thu Jun 25 19:24:23 2020
+NAMESPACE: kube-system
+STATUS: DEPLOYED
 
+RESOURCES:
+==> v1/ClusterRole
+NAME                   AGE
+ingress-nginx-ingress  1s
+
+==> v1/ClusterRoleBinding
+NAME                   AGE
+ingress-nginx-ingress  1s
+
+==> v1/ConfigMap
+NAME                              DATA  AGE
+ingress-nginx-ingress-controller  18    1s
+
+==> v1/DaemonSet
+NAME                              DESIRED  CURRENT  READY  UP-TO-DATE  AVAILABLE  NODE SELECTOR  AGE
+ingress-nginx-ingress-controller  4        4        0      4           0          <none>         1s
+
+==> v1/Deployment
+NAME                                   READY  UP-TO-DATE  AVAILABLE  AGE
+ingress-nginx-ingress-default-backend  0/1    1           0          1s
+
+==> v1/Pod(related)
+NAME                                                   READY  STATUS             RESTARTS  AGE
+ingress-nginx-ingress-controller-62rs4                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-pvplx                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-st6jg                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-vhxrt                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-default-backend-cb576588c-j9src  0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-62rs4                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-pvplx                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-st6jg                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-controller-vhxrt                 0/1    ContainerCreating  0         1s
+ingress-nginx-ingress-default-backend-cb576588c-j9src  0/1    ContainerCreating  0         1s
+
+==> v1/Role
+NAME                   AGE
+ingress-nginx-ingress  1s
+
+==> v1/RoleBinding
+NAME                   AGE
+ingress-nginx-ingress  1s
+
+==> v1/Service
+NAME                                   TYPE          CLUSTER-IP     EXTERNAL-IP     PORT(S)                     AGE
+ingress-nginx-ingress-controller       LoadBalancer  172.21.149.42  149.81.114.237  80:30306/TCP,443:30078/TCP  1s
+ingress-nginx-ingress-default-backend  ClusterIP     172.21.32.198  <none>          80/TCP                      1s
+
+==> v1/ServiceAccount
+NAME                           SECRETS  AGE
+ingress-nginx-ingress          1        1s
+ingress-nginx-ingress-backend  1        1s
+
+
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace kube-system get services -o wide -w ingress-nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
 ```
 
 7 - Add hostname to custom Ingress
 In order to use the custom ingress with a hostname we must create a load balancer.
 
-Run the following command to get the external IP for the community ingress. `kubectl get svc -n kube-system 	ingress-nginx  `
+Run the following command to get the external IP for the community ingress. `kubectl get svc -n kube-system 	ingress-nginx-ingress-controller  `
 
 Returns
 
 ```
 NAME                TYPE      CLUSTER-IP  EXTERNAL-IP    PORT(S)           AGE
-ingress-nginx  LoadBalancer  152.21.5.44  159.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
+ingress-nginx-ingress-controller    LoadBalancer  152.21.5.44  159.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
 ```
 
 Make a note of `159.142.219.218`
