@@ -107,10 +107,10 @@ ibmc-file-silver-gid    ibm.io/ibmc-file  Delete     Immediate      false       
 ```
 
 6 - Install custom ingress
-IKS Ingress does not support SSL Passthrough and so we must install the community Ingress. v0.30 is the recommend version
+IKS Ingress does not support SSL Passthrough and so we must install the community Ingress. V0.30 is the recommend version
 
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.30.0/deploy/static/mandatory.yaml
+kubectl apply -f https://raw.githubusercontent.com/ChrisPhillips-cminion/apicv10-k8s-install/master/mandatory.yaml
 ```
 
 Returns
@@ -126,7 +126,6 @@ role.rbac.authorization.k8s.io/nginx-ingress-role created
 rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding created
 clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding created
 deployment.apps/nginx-ingress-controller created
-limitrange/ingress-nginx created
 ```
 
 6.2 - Save the following yaml file and run it.
@@ -154,20 +153,20 @@ spec:
 run
 
 ```
-kubectl apply -n ingress-nginx -f  ingress-svc.yaml
+kubectl apply -n kube-system -f  ingress-svc.yaml
 
 ```
 
 7 - Add hostname to custom Ingress
 In order to use the custom ingress with a hostname we must create a load balancer.
 
-Run the following command to get the external IP for the community ingress. `kubectl get svc -n ingress-nginx 	ingress-nginx`
+Run the following command to get the external IP for the community ingress. `kubectl get svc -n kube-system 	ingress-nginx  `
 
 Returns
 
 ```
 NAME                TYPE      CLUSTER-IP  EXTERNAL-IP    PORT(S)           AGE
-ingress-nginx-ingress  LoadBalancer  152.21.5.44  159.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
+ingress-nginx  LoadBalancer  152.21.5.44  159.142.219.218  80:30829/TCP,443:32422/TCP  3d7h
 ```
 
 Make a note of `159.142.219.218`
