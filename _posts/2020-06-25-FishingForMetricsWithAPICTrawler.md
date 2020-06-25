@@ -4,7 +4,7 @@ date: 2020-6-25 01:12:00
 categories: APIConnect
 title: "API Connect - Fishing you Pod metrics into Prometheus with APIConnect Trawler "
 ---
-![Trawler Logo ](docs/trawler.png)
+![Trawler Logo ](https://github.com/IBM/apiconnect-trawler/raw/main/docs/trawler.png)
 
 Trawler is a metrics exporter for IBM API Connect, allowing Kuberentes metrics to be sent to Prometheus.
 
