@@ -406,7 +406,7 @@ We need to update the variables in the files ending with `_cr.yaml`. To keep thi
 sed -i s/.ADMIN_USER_SECRET/datapower-admin-credentials/ *yaml
 sed -i s/.APP_PRODUCT_VERSION/10.0.0.0/ *yaml
 sed -i s/.DATA_VOLUME_SIZE/100Gi/ *yaml
-sed -i s/.DOCKER_REGISTRY/cp.icr.io\/cp\/apic/ *yaml
+sed -i s/.DOCKER_REGISTRY/cp.icr.io\\/cp\\/apic/ *yaml
 sed -i s/.SECRET_NAME/ibm-entitlement-key/ *yaml
 sed -i s/.STORAGE_CLASS/ibmc-block-gold/ *yaml
 sed -I s/certManager$/custom/ *yaml
@@ -465,5 +465,5 @@ If the API Manager, Portal or Analytics fail to come up you need to look at the 
 `ibm-apiconnect-5f85df4c79-c92hj`
 
 If the Gateway fails to come up look in the following pods for errors
-* `datapower-operator-5d88c99bfc-rk4f8 `
+* `datapower-operator-5d88c99bfc-rk4f8`
 * `ibm-apiconnect-5f85df4c79-c92hj`
