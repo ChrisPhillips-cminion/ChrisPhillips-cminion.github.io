@@ -417,8 +417,8 @@ sed -i s/.PROFILE/n1xc4.m8/ v5cgateway_cr.yaml
 sed -i s/.PROFILE/n1xc2.m8/ portal_cr.yaml
 sed -i s/.PROFILE/n1xc2.m16/ analytics_cr.yaml
 
-sed -e s/certmanager.k8s.io.*// *_cr.yaml
-sed -e s/annotations:// *_cr.yaml
+sed -i s/certmanager.k8s.io.*// *_cr.yaml
+sed -i s/annotations:// *_cr.yaml
 
 ```
 
