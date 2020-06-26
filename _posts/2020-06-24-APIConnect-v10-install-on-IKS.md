@@ -409,7 +409,7 @@ sed -i s/.DATA_VOLUME_SIZE/100Gi/ *yaml
 sed -i s/.DOCKER_REGISTRY/cp.icr.io\\/cp\\/apic/ *yaml
 sed -i s/.SECRET_NAME/ibm-entitlement-key/ *yaml
 sed -i s/.STORAGE_CLASS/ibmc-block-gold/ *yaml
-sed -I s/certManager$/custom/ *yaml
+sed -i s/certManager$/custom/ *yaml
 #This sets up a dev install not a full production.
 sed -i s/.PROFILE/n1xc4.m16/ management_cr.yaml
 sed -i s/.PROFILE/n1xc4.m8/ apigateway_cr.yaml
