@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2020-6-25 00:12:00
-categories: Helm
+date: 2020-6-25 05:12:00
+categories: Kubernetes
 title: "Helm v2 - Error: error installing: the server could not find the requested resource "
 ---
 

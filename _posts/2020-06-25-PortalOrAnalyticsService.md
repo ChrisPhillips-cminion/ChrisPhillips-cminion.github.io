@@ -1,14 +1,14 @@
 ---
 layout: post
-date: 2020-6-25 00:12:00
+date: 2020-6-25 00:13:00
 categories: APIConnect
 title: "APIConnect v10 - Error while registering portal or analytics service. "
 ---
 
+The following error while registering the Portal or Analytics service means a step was missed when installing API Connect.
 
 
 <!--more-->
-The following error while registering the Portal or Analytics service means a step was missed when installing API Connect.
 
 ```
 : Error: An error occurred communicating with the https://ai.apic10-507231-1ea39f2197613090e80c4981ab6eab96-0002.eu-de.containers.appdomain.cloud at '[object Object]' (status: undefined, response: '<html>
