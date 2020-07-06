@@ -11,7 +11,7 @@ To publish OpenAPIv3 APIs into API Connect you need to add some IBM tags to add 
 
 <!--more-->
 
-This *hacky* script was built in order to quickly turn a stock OpenAPIv3 into all the artefacts required to publish into API Connect. This must be loaded via the APIConnect CLI.
+This *hacky* script was built in order to quickly turn a stock OpenAPIv3 into all the artefacts required to publish into API Connect. This script produces an API yaml file and a corresponding Product yaml file. The Product yaml file must be loaded via the CLI into an API Connect catalog. 
 
 
 
