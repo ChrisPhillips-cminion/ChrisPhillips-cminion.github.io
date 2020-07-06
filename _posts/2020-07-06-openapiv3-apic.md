@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-6-25 00:13:00
+date: 2020-7-6 00:13:00
 categories: APIConnect
 title: "APIConnect v10 - Loading and Publishing an OpenAPI v3 specification. "
 ---
