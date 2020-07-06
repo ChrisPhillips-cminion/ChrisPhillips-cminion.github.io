@@ -1,0 +1,37 @@
+<header class="site-header">
+  <img for="sidebar-checkbox"  class="logo" id=logo  src="/images/logo.png" alt="Pink Teddy Logo" />
+  <img width=100% src="/images/title.png" alt="Pink Teddy at API Strat - Title Image" />
+
+  <div class="wrapper">
+    <!-- {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%} -->
+
+    <div display=flex>
+      <h1><label for="sidebar-checkbox" class="sidebar-toggle"></label> <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Chris Phillips’ Blog - API, Integration and Governance</a></h1>
+
+    </div>
+
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+          var sidebar = document.querySelector('#sidebar');
+          var checkbox = document.querySelector('#sidebar-checkbox');
+          if (target === toggle) {
+            checkbox.checked = checkbox==null?false:!checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+
+    {%- include adUp.html -%}
+
+  </div>
+</header>

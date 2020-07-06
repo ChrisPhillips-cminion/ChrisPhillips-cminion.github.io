@@ -1,0 +1,41 @@
+---
+layout: default
+comments: true
+---
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+<div class="tags-expo">
+  <title>Authors</title>
+  <div class="tags-expo-list">
+    <h2>Guest Authors</h2>
+    {% assign people =  site.data.people  | sort %}
+    {%- for tempA in people -%}
+      {% assign author =  tempA[1] %}
+      {%- if  author['hide'] != true  -%}
+        <li><a href="#{{ author.name | slugify }}" class="post-tag">{{ author.display_name }}</a> {%- include author-social.html -%}</li>
+      {% endif %}
+    {% endfor %}
+    <br>
+  </div>
+  <hr/>
+  <div class="tags-expo-section">
+    {% assign people =  site.data.people  | sort %}
+    {%- for tempA in people -%}
+    {% assign author =  tempA[1] %}
+      {%- if  author['hide'] != true  -%}
+
+        <h2 id="{{ author.name | slugify }}">{{ author.display_name }}</h2> {%- include author-social.html -%}
+        {%- if author['bio']  -%}
+          <p>{{ author.bio }}</p>
+        {% endif %}
+        <table>
+          {% for post in site.posts %}
+{%- if post.author contains author.name -%}
+               <li><a href="{{ post.url | relative_url }}">{{ post.date | date: date_format }} - {{ post.title }}</a></li>
+               {% endif %}
+
+           {% endfor %}
+        </table>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,102 @@
+{%- assign social = site.minima.social_links -%}
+
+<ul class="social-media-list">
+  {%- if social.dribbble -%}<li><a href="https://dribbble.com/{{ social.dribbble | cgi_escape | escape }}" title="{{ social.dribbble | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#dribbble' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.facebook -%}<li><a href="https://www.facebook.com/{{ social.facebook | cgi_escape | escape }}" title="{{ social.facebook | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.flickr -%}<li><a href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}" title="{{ social.flickr | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#flickr' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.github -%}<li><a href="https://github.com/{{ social.github | cgi_escape | escape }}" title="{{ social.github | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.instagram -%}<li><a href="https://www.instagram.com/{{ social.instagram | cgi_escape | escape }}" title="{{ social.instagram | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.linkedin -%}<li><a href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}" title="{{ social.linkedin | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.pinterest -%}<li><a href="https://www.pinterest.com/{{ social.pinterest | cgi_escape | escape }}" title="{{ social.pinterest | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#pinterest' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- for mst in social.mastodon -%}{%- if mst.username and mst.instance -%}<li><a rel="me" href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" title="{{ mst.username | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#mastodon' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}{%- endfor -%}
+  {%- if social.twitter -%}<li><a href="https://twitter.com/{{ social.twitter | cgi_escape | escape }}" title="{{ social.twitter | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.youtube -%}<li><a href="https://www.youtube.com/{{ social.youtube | cgi_escape | escape }}" title="{{ social.youtube | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#youtube' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.youtube_channel -%}<li><a href="https://www.youtube.com/channel/{{ social.youtube_channel | cgi_escape | escape }}" title="{{ social.youtube_channel_name | escape | default: 'YouTube' }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#youtube' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.telegram -%}<li><a href="https://t.me/{{ social.telegram | cgi_escape | escape }}" title="{{ social.telegram | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#telegram' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.microdotblog -%}<li><a rel="me" href="https://micro.blog/{{ social.microdotblog | cgi_escape | escape }}" title="{{ social.microdotblog | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#microdotblog' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.googleplus -%}<li><a href="https://plus.google.com/{{ social.googleplus | escape }}" title="{{ social.googleplus | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#googleplus' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.xing -%}<li><a href="https://www.xing.com/profile/{{ social.xing | escape }}" title="{{ social.xing | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#xing' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.rss -%}<li><a href="{{ 'feed.xml' | relative_url }}" title="{{ social.rss | escape }}"><svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+      </svg></a></li>{%- endif -%}
+  {%- if social.buymeacoffee -%}<li>
+    <style>
+      .bmc-button img {
+        height: 16px !important;
+        width: 16px !important;
+        margin-bottom: 1px !important;
+        box-shadow: none !important;
+        border: none !important;
+        vertical-align: middle !important;
+      }
+
+      .bmc-button {
+        padding: 7px 10px 7px 10px !important;
+        line-height: 16px !important;
+        height: 16px !important;
+        min-width: 80px !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        color: #FFFFFF !important;
+        background-color: #FF813F !important;
+        border-radius: 5px !important;
+        border: 1px solid transparent !important;
+        padding: 7px 10px 7px 10px !important;
+        font-size: 12px !important;
+        letter-spacing: 0.6px !important;
+        box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+        -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+        margin: 0 auto !important;
+        font-family: 'Cookie', cursive !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        -o-transition: 0.3s all linear !important;
+        -webkit-transition: 0.3s all linear !important;
+        -moz-transition: 0.3s all linear !important;
+        -ms-transition: 0.3s all linear !important;
+        transition: 0.3s all linear !important;
+      }
+      .bmc-button:hover,
+      .bmc-button:active,
+      .bmc-button:focus {
+        -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+        text-decoration: none !important;
+        box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+        opacity: 0.85 !important;
+        color: #FFFFFF !important;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/{{ social.buymeacoffee | escape }}"><img
+        src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:12px !important;">Buy me a coffee</span></a>
+  </li>{%- endif -%}
+</ul>

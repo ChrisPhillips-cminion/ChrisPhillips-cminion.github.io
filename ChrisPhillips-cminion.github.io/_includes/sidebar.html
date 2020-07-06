@@ -1,0 +1,45 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <div class="sidebar-personal-info">
+      <div class="sidebar-personal-info-section">
+        <img src="/images/me.jpg" alt="MI Photo" />
+      </div>
+      {%- include social.html -%}
+      <BR>
+      <hr />
+      <div class="trigger">
+        <h3><a class="page-link" href="/">Home</a><br></h3>
+        {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <h3><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a><br></h3>
+        {%- endif -%}
+        {%- endfor -%}
+        <hr />
+        <h3><a class="page-link" href="/categories.html">Categories</a></h3>
+        {% for tag in site.categories %}
+        {% assign category = site.data.categories[tag[0]] %}
+        <li><a href="/categories.html#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }} {{ category }}</a></li>
+        {% endfor %}
+        <br>
+        <hr />
+        <h3><a class="page-link" href="/authors.html">Guest Authors</a></h3>
+        {% assign people =  site.data.people  | sort %}
+        {%- for tempA in people -%}
+        {% assign author =  tempA[1] %}
+        {%- if  author['hide'] != true  -%}
+
+        <li><a href="/authors.html#{{ author.name | slugify }}" class="post-tag">{{ author.display_name }}</a></li>
+        {%- endif -%}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

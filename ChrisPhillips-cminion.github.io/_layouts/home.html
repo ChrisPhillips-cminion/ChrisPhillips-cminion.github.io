@@ -1,0 +1,115 @@
+---
+layout: default
+comments: true
+---
+<div class="home">
+  <!-- <title>{{ page.title }}</title> -->
+  <!-- {%- if page.title -%} -->
+  <h1 class="page-heading">{{ page.title }}</h1>
+  <!-- {%- endif -%} -->
+
+  {%- include intro.html -%}
+
+  {%- if site.posts.size > 0 -%}
+
+  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  <!-- <ul class="post-list"> -->
+  <table class="post-list">
+    {% for post in paginator.posts %}
+    {%- if  post.draft != true and  post.draft != 'hidden' -%}
+    <!-- <li> -->
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+    <tr>
+      <td align=center valign=top width=20%>
+        {% assign catName = post.categories[0] %}
+        {% assign category = site.data.categories[catName] %}
+
+        <a href="/categories.html#{{ post.categories[0] | slugify }}"
+                class="post-meta">
+                {%- if category -%}
+                  <img src="{{category.icon}}" title="{{category.display_name}}" width=70/>
+                {%- else -%}
+                  {{  post.categories[0] }}
+                {%- endif -%}
+              </a><br>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <!-- <span itemprop="category" itemscope itemtype="http://schema.org/Category"><span class="post-meta" itemprop="name"> <a href="/categories.html#{{ post.categories[0] | slugify }}"
+                class="post-meta">{{ post.categories[0] | escape }}</a></span></span></td> -->
+      <td valign=top>
+        <!-- <h3> -->
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <b>{{ post.title | escape }}</b>
+        </a>
+      </td>
+    </tr>
+    {%- if post.author -%}
+    <tr>
+      <td></td>
+      <td>
+        <i>Guest Post by
+          {%- for a in post.author -%}
+          {% assign author = site.data.people[a] %}
+          <a href=/authors.html# {{ author.name | slugify }}>{{ author.display_name }}</a>
+          {%- endfor -%}
+        </i></td>
+    </tr>
+    {%- endif -%}
+    <tr>
+      <td colspan=2 width=100%>
+        <p>{{ post.excerpt }}</p>
+      </td>
+    </tr>
+    <!-- </h3> -->
+    {%- if post.image  -%}
+    <tr class="post-img">
+      <td align=center colspan=2><p><a class="post-link" href="{{ post.url | relative_url }}"><img class="img-title" src={{ post.image }} alt="{{ post.title | escape }}" /></a></p></td>
+
+
+    </tr>
+
+    {%- endif -%}
+    <tr>
+      <td colspan=2>
+        <hr />
+      </td>
+    </tr>
+    {%- endif -%}
+    <!-- </li> -->
+
+    {%- endfor -%}
+    <!-- </ul> -->
+  </table>
+
+  {% if paginator.total_pages > 1 %}
+  <div align=center class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+    {% else %}
+    <span>&laquo; Prev</span>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <em>{{ page }}</em>
+    {% elsif page == 1 %}
+    <a href="/">{{ page }}</a>
+    {% else %}
+    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+    {% else %}
+    <span>Next &raquo;</span>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <p class="feed-subscribe"><svg class="svg-icon orange">
+      <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+    </svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+  {%- endif -%}
+
+</div>

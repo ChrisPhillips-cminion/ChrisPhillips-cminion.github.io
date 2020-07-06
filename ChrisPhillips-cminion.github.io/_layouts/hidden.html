@@ -1,0 +1,44 @@
+---
+layout: default
+comments: true
+---
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+{%- include intro.html -%}
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+
+    <h2 class="post-list-heading">{{ page.list_title | default: "Draft Posts" }}</h2>
+    <!-- <ul class="post-list"> -->
+    <table class="post-list">
+      {%- for post in site.posts -%}
+      {%- if  post.draft == 'hidden' -%}
+      <!-- <li> -->
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <tr><td valign=top width=20%><span class="post-meta">{{ post.date | date: date_format }}</span></td><td>
+        <!-- <h3> -->
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+          </td></tr>
+        <!-- </h3> -->
+        {%- if post.image  -%}
+        <tr class="post-img"><td align=center colspan = 2><img class="img-title" src={{ post.image }} /></td></tr>
+        {%- endif -%}
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+{%- endif -%}
+      <!-- </li> -->
+      {%- endfor -%}
+    <!-- </ul> -->
+    </table>
+
+    <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+  {%- endif -%}
+
+</div>

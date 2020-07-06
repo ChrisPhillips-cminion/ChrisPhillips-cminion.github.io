@@ -1,0 +1,84 @@
+---
+layout: post
+date: 2020-7-06 00:13:00
+categories: APIConnect
+title: "Product Generation for OpenAPI V3 in APIConnect V10"
+---
+
+This script will take an OpenAPI v3 yaml file and add the ibm extensions to include an invoke policy and add the x-ibm-name header. It will then create a product for the is API.
+
+This is not supported  and will be evolving as needed.
+
+<!--more-->
+
+```bash
+#!/bin/bash
+filename=$1
+
+url=$(cat ${filename}.yaml | grep \\-\ url  | sed -e s/.*\\-\ url\://)
+name=$(cat ${filename}.yaml | grep title:  | sed -e s/.*\:\ *// | sed s/[^a-zA-Z0-9]+/-/g | sed -e s/\ /-/g | tr A-Z a-z)
+
+
+cp ${filename}.yaml ${filename}_apic.yaml
+
+cat >>${filename}_apic.yaml <<EOF
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - invoke:
+          target-url: $url
+          header-control:
+            type: blacklist
+            values: []
+          parameter-control:
+            type: whitelist
+            values: []
+          version: 2.0.0
+EOF
+
+sed -e 's/info:/info:\'$'\n  x-ibm-name: x-ibm-name-name/g' ${filename}_apic.yaml > ${filename}_apic2.yaml
+sed -e "s/x-ibm-name-name/$name/g" ${filename}_apic2.yaml > ${filename}_apic.yaml
+rm -rf  ${filename}_apic2.yaml
+
+cat ${filename}_apic.yaml
+
+
+cat >${filename}_product.yaml<<EOF
+info:
+  version: 1.0.0
+  title: product
+  name: product
+gateways:
+  - datapower-api-gateway
+plans:
+  default-plan:
+    rate-limits:
+      default:
+        value: 100/1hour
+    title: Default Plan
+    description: Default Plan
+    approval: false
+apis:
+  ${name}1.0.0:
+    \$ref: ${filename}_apic.yaml
+visibility:
+  view:
+    type: public
+    orgs: []
+    tags: []
+    enabled: true
+  subscribe:
+    type: authenticated
+    orgs: []
+    tags: []
+    enabled: true
+product: 1.0.0
+EOF
+
+```
+
+Apologies for the hacky nature of the script
