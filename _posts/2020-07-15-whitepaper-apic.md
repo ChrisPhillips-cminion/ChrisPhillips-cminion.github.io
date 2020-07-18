@@ -5,7 +5,7 @@ categories: APIConnect
 title: "APIConnect v10 - White Paper and Deployment Guide"
 ---
 
-The API Connect White Paper I produced for v2018 was often described as the bible to complex installs for API Connect. Well after 16months, more than one customer asking me to sign their paper and lots of free beer I am humbled by the reception.  
+The API Connect White Paper I produced for v2018 was often described as the bible for new users and experienced users. 16 months on, I have had more than one customer asking me to sign their paper and lots of free beer I am humbled by the reception.  
 
 Today I am publishing the API Connect v10 White Paper this covers the new deployment patterns for v10 and all the good stuff we covered for v2018.
 
