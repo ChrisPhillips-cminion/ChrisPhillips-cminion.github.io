@@ -26,7 +26,7 @@ porg_password=chrisp
 porg_realm=provider/default-idp-2
 catalog=sandbox
 org=dev
-server=https://manager.v10-k8s2-420eb34f056ae68f3969289d61f61851-0002.eu-gb.containers.appdomain.cloud
+server=https://manager.v10-k8s2-0002.eu-gb.containers.appdomain.cloud
 apic_cli=/usr/local/bin/apic-slim
 
 $apic_cli login -s $server -u $porg_username -p $porg_password --realm $porg_realm
@@ -39,7 +39,7 @@ memberin=$(cat <<EOF )
     "scope": "consumer_org",
     "email": "$email",
     "org_type": "consumer_org",
-    "consumer_org_url": "https://manager.v10-k8s2-420eb34f056ae68f3969289d61f61851-0002.eu-gb.containers.appdomain.cloud/api/consumer-orgs/$org/$catalog/$consumer_org"
+    "consumer_org_url": "$server/api/consumer-orgs/$org/$catalog/$consumer_org"
 }
 EOF
 
@@ -73,7 +73,7 @@ porg_realm=provider/default-idp-2
 consumer_org=fred
 catalog=sandbox
 org=dev
-server=https://manager.v10-k8s2-420eb34f056ae68f3969289d61f61851-0002.eu-gb.containers.appdomain.cloud
+server=https://manager.v10-k8s2-0002.eu-gb.containers.appdomain.cloud
 
 
 apic-slim login -s $server -u $porg_username -p $porg_password --realm $porg_realm
@@ -105,7 +105,7 @@ member=$(cat <<EOF )
 "title": "$username",
 "scope": "consumer_org",
 "user": {
-  "url":"https://manager.v10-k8s2-420eb34f056ae68f3969289d61f61851-0002.eu-gb.containers.appdomain.cloud/api/user-registries/$org/sandbox-catalog/users/$username"
+  "url":"$server/api/user-registries/$org/sandbox-catalog/users/$username"
 }}
 EOF
 
