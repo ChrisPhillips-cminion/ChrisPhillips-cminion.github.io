@@ -41,7 +41,7 @@ assembly-function-call "mq-invoke"
    name "structureid"
  exit
  parameter
-   name "version"
+   name "rfh-version"
  exit
  parameter
    name "encoding"
@@ -105,7 +105,7 @@ assembly-function "mq-invoke"
    default "RFH"
  exit
  parameter
-   name "version"
+   name "rfh-version"
    label "Version"
    description "Version"
    value-type string
@@ -217,7 +217,7 @@ assembly-function-call "mq-invoke"
    name "structureid"
  exit
  parameter
-   name "version"
+   name "rfh-version"
  exit
  parameter
    name "encoding"
@@ -306,7 +306,7 @@ assembly-function "mq-invoke"
    default "RFH"
  exit
  parameter
-   name "version"
+   name "rfh-version"
    label "Version"
    description "Version"
    value-type string
@@ -400,7 +400,7 @@ function ResponseTimeOutException() {
 }
 
 function InvalidSOAPResponse(SOAPResponse) {
-    return APICMQErrorHelper("InvalidSOAPResponse", "APICMQ005 : Invalid SOAP Response  : Please check the BackOut Queue for the message", 400);
+    return APICMQErrorHelper("InvalidSOAPResponse", "APICMQ005 : Invalid SOAP Response  : Please check the BackOut Queue for the message", 500);
 }
 
 function InvalidRequest(SOAPResponse) {
@@ -505,7 +505,7 @@ function process(options) {
                     });
 
                     var errorMessage = 'Thrown error on urlopen.open for target ' + options.target + ':   statusCode:' + res.statusCode
-                    APICMQErrorHelper("Unknown Error", errorMessage, 400)
+                    APICMQErrorHelper("Unknown Error", errorMessage, 500)
                 } else {
                     counter++;
                     console.error('Failed to put message on to Queue Retry: ' + counter + ' of 5');
@@ -583,7 +583,7 @@ var MQRFH2 = {
             "$": context.get('local.parameter.structureid') || "RFH"
         },
         Version: {
-            "$": context.get('local.parameter.version') || "MQRFH_VERSION_2"
+            "$": context.get('local.parameter.rfh-version') || "MQRFH_VERSION_2"
         },
         Format: {
             "$": context.get('local.parameter.format') || "MQSTR"
