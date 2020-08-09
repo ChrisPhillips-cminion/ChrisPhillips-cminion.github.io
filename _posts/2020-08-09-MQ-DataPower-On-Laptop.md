@@ -1,8 +1,8 @@
   ---
 layout: post
-date: 2020-8-6 00:13:00
+date: 2020-8-9 00:13:00
 categories: APIConnect
-title: "DataPower and MQ in Docker on yourlaptop"
+title: "DataPower and MQ in Docker on your laptop"
 draft: true
 ---
 
