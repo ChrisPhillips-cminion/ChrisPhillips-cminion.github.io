@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-8-9 00:13:00
+date: 2020-8-10 00:13:00
 categories: APIConnect
 title: "Setting the DataPower Password on deployment using ExtraValueFiles"
 ---
