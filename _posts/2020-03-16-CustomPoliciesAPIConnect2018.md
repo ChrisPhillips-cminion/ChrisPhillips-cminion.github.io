@@ -383,7 +383,7 @@ function APICMQErrorHelper(name, message, code) {
         code = 400;
     }
     context.set("message.status.code",code)
-    context.set("mess age.status.reason",name)
+    context.set("message.status.reason",name)
     context.set("message.body",message)
 }
 
@@ -446,7 +446,7 @@ function MessageOnBoQ(data, response) {
 
 
 function process(options) {
-    console.error(options);
+
 
     try {
 
@@ -549,7 +549,6 @@ if (respq == '') {
 var boqURL = 'dpmq://' + qm + '/?RequestQueue=' + boq + ';timeout=' + timeout
 
 var MQMD = {
-    MQMD: {
         MsgType: {
             "$": MsgType
         },
@@ -559,8 +558,8 @@ var MQMD = {
         Format: {
             "$": 'MQHRF2'
         }
-    }
 }
+
 // '<MQMD>' +
 //    '<StructId>MD</StructId>' +
 //    '<Format>MQHRF2</Format>' +
@@ -577,8 +576,6 @@ var MQMD = {
 //     '<StrucId>'+props.structid+'</StrucId>'+
 //     '</MQRFH2>';
 var MQRFH2 = {
-    MQRFH2: {
-
         StrucId: {
             "$": context.get('local.parameter.structureid') || "RFH"
         },
@@ -600,13 +597,11 @@ var MQRFH2 = {
         NameValueCCSID: {
             "$": context.get('local.parameter.ccsid')|| "1208"
         }
-    }
 }
 
 var outputObject = {};
 
 //Read the payload as XML
-
 process({
     target: mqURL,
     data: context.get('message.body'),
