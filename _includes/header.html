@@ -16,6 +16,7 @@
     <div class=menubanner>
       <center>
       <table align=center><tr align=center>
+      <td class="menubanner-link"><a href="/about" class="menubanner-link"><b>ABOUT</b></a></td>
       {% for tag in site.categories %}
       {% assign cat = tag[0] %}
       {% assign category = site.data.categories[cat]  %}
@@ -53,7 +54,7 @@
       })(document);
     </script>
 
-    <!-- {%- include adUp.html -%} -->
+     {%- include adUp.html -%}
 
   </div>
 </header>
