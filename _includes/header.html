@@ -13,9 +13,9 @@
     <!-- {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%} -->
-    <div class=menubanner>
+    <div >
       <center>
-      <table align=center><tr align=center>
+      <table align=center><tr align=center class=menubanner>
       <td class="menubanner-link"><a href="/about" class="menubanner-link"><b>ABOUT</b></a></td>
       {% for tag in site.categories %}
       {% assign cat = tag[0] %}
