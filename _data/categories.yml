@@ -2,14 +2,17 @@ Kubernetes:
   name: Kubernetes
   display_name: Kubernetes
   icon: /images/kube.png
+  primary: true
 APIConnect:
   name: apiconnect
   display_name: API Connect
   icon: /images/apic.png
+  primary: true
 EventStreams:
   name: eventstreams
   display_name: Event Streams
   icon: /images/EventStreams.png
+  primary: true
 StarTrekNationals:
   name: StarTrekNationals
   display_name: Star Trek Nationals
@@ -30,11 +33,17 @@ DataPower:
   name: datapower
   display_name: DataPower
   icon: /images/apic.png
+  primary: true
 OpenShift:
   name: openshift
   display_name: OpenShift
   icon: /images/openshift.png
+  primary: true
 VMWare:
   name: vmware
   display_name: VMWare
   icon: /images/vmware_cloud_logo.jpg
+Integration:
+  name: integration
+  display_name: Other Integration
+  primary: true

@@ -1,13 +1,35 @@
 <header class="site-header">
-  <img for="sidebar-checkbox"  class="logo" id=logo  src="/images/logo.png" alt="Pink Teddy Logo" />
-  <img width=100% src="/images/title.png" alt="Pink Teddy at API Strat - Title Image" />
 
-  <div class="wrapper">
+  <!--<td><img for="sidebar-checkbox" id=logo  src="/images/logo.png" alt="Pink Teddy Logo" /></td>-->
+  <table border=0><tr><td align=center>
+    <img src="/images/header/banner.png" alt="New Banner" />
+  </td><td valign=bottom align=left>
+    {%- include social.html -%}
+  </td></tr></table>
+
+
+
+
     <!-- {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%} -->
+    <div class=menubanner>
+      <center>
+      <table align=center><tr align=center>
+      {% for tag in site.categories %}
+      {% assign cat = tag[0] %}
+      {% assign category = site.data.categories[cat]  %}
+      {%  if category.primary == true %}
+      <td class="menubanner-link"><a href="/categories.html#{{ tag[0] | slugify }}" class="menubanner-link"><b>{{ cat | upcase }}</b></a></td>
+      {% endif %}
+      {% endfor %}
+      </tr></table>
+      </center>
+    </div>
 
+    <div class="wrapper">
     <div display=flex>
+
       <h1><label for="sidebar-checkbox" class="sidebar-toggle"></label> <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Chris Phillips’ Blog - API, Integration and Governance</a></h1>
 
     </div>

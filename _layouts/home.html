@@ -8,23 +8,23 @@ comments: true
   <h1 class="page-heading">{{ page.title }}</h1>
   <!-- {%- endif -%} -->
 
-  {%- include intro.html -%}
+  <!-- {%- include intro.html -%} -->
 
   {%- if site.posts.size > 0 -%}
 
-  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+
   <!-- <ul class="post-list"> -->
-  <table class="post-list">
+  <table border=1 cell-spacing=10 class="post-list">
     {% for post in paginator.posts %}
     {%- if  post.draft != true and  post.draft != 'hidden' -%}
     <!-- <li> -->
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {% assign catName = post.categories[0] %}
+    {% assign category = site.data.categories[catName] %}
+    <tr class="post-title">      <td class="post-title" colspan=2 align=left valign=top > {{ category.display_name | upcase }}</td></tr>
 
     <tr>
-      <td align=center valign=top width=20%>
-        {% assign catName = post.categories[0] %}
-        {% assign category = site.data.categories[catName] %}
-
+      <td class="post-body" align=center valign=top width=20% rowspan=2>
         <a href="/categories.html#{{ post.categories[0] | slugify }}"
                 class="post-meta">
                 {%- if category -%}
@@ -36,25 +36,28 @@ comments: true
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <!-- <span itemprop="category" itemscope itemtype="http://schema.org/Category"><span class="post-meta" itemprop="name"> <a href="/categories.html#{{ post.categories[0] | slugify }}"
                 class="post-meta">{{ post.categories[0] | escape }}</a></span></span></td> -->
-      <td valign=top>
+      </td><td valign=top class="post-body" >
         <!-- <h3> -->
         <a class="post-link" href="{{ post.url | relative_url }}">
           <b>{{ post.title | escape }}</b>
         </a>
       </td>
     </tr>
-    {%- if post.author -%}
+
     <tr>
-      <td></td>
+
       <td>
+        {%- if post.author -%}
         <i>Guest Post by
           {%- for a in post.author -%}
           {% assign author = site.data.people[a] %}
           <a href=/authors.html# {{ author.name | slugify }}>{{ author.display_name }}</a>
           {%- endfor -%}
-        </i></td>
+        </i>
+      {%- endif -%}
+    </td>
     </tr>
-    {%- endif -%}
+
     <tr>
       <td colspan=2 width=100%>
         <p>{{ post.excerpt }}</p>

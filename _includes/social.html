@@ -49,10 +49,10 @@
   {%- if social.rss -%}<li><a href="{{ 'feed.xml' | relative_url }}" title="{{ social.rss | escape }}"><svg class="svg-icon grey">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
       </svg></a></li>{%- endif -%}
-  {%- if social.buymeacoffee -%}<li>
+<li>
     <style>
       .bmc-button img {
-        height: 16px !important;
+        height: 32px !important;
         width: 16px !important;
         margin-bottom: 1px !important;
         box-shadow: none !important;
@@ -63,7 +63,7 @@
       .bmc-button {
         padding: 7px 10px 7px 10px !important;
         line-height: 16px !important;
-        height: 16px !important;
+        height: 32px !important;
         min-width: 80px !important;
         text-decoration: none !important;
         display: inline-flex !important;
@@ -98,5 +98,5 @@
     </style>
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/{{ social.buymeacoffee | escape }}"><img
         src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:12px !important;">Buy me a coffee</span></a>
-  </li>{%- endif -%}
+  </li>
 </ul>

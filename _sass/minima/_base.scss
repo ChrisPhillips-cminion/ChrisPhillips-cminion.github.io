@@ -196,7 +196,16 @@ pre {
     padding-left: $spacing-unit;
   }
 }
-
+ .menubanner {
+   max-width: 100%;
+   margin-right: auto;
+   margin-left: auto;
+   background-color: #221E56;
+   border: 1;
+   border-width: 5px;
+   border-color: $black;
+   align-content: center;
+ }
 
 
 /**
@@ -236,7 +245,7 @@ pre {
  * Tables
  */
 table {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 0;
   width: 100%;
   text-align: $table-text-align;
   color: lighten($text-color, 18%);
@@ -258,4 +267,88 @@ table {
   // td {
   //   border: 1px solid $grey-color-light;
   // }
+}
+
+
+a.menubanner-link {
+  display: inline-block;
+  // background: $white;
+  // padding: 0 .5rem;
+  // margin-right: .5rem;
+  border-radius: 1px;
+  // border: 10px
+  color: $white;
+  font-family: $font-sans;
+  // font-size: 90%;
+  &:before {
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+  }
+  &:after {
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $lightgrey;
+    color: $black;
+  }
+
+}
+
+td.menubanner-link {
+  display: inline-block;
+  // background: $white;
+  // padding: 0 .5rem;
+  // margin-right: .5rem;
+  border-radius: 1px;
+  // border: 10px
+  color: $white;
+  font-family: $font-sans;
+  // font-size: 90%;
+  &:before {
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+  }
+  &:after {
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $lightgrey;
+    color: $black;
+  }
+
+}
+
+td.post-title {
+  color: $white;
+  border-radius: 5px;
+  border-color: #8CB0D4;
+  font-size: 50%;
+  padding: 10px 10px;
+  margin:10px;
+  padding-left: 40px ;
+  font-style: italic;
+  box-shadow: 0 0.5rem 1rem rgba($black, 0.15) ;
+  &:before {
+    font-family: $font-font-awesome;
+    padding-left: .5em;
+  }
+  &:after {
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+  }
+
+  background-color: #8CB0D4;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+
+
+td.post-body {
+  padding-top: 20px;
+  margin:10px;
 }

@@ -1,9 +1,8 @@
-  ---
+---
 layout: post
 date: 2020-8-9 00:13:00
-categories: APIConnect
+categories: Integration
 title: "DataPower and MQ in Docker on your laptop"
-draft: true
 ---
 
 A question I am regularly asked is how do I make DataPower and MQ run on my laptop together,  This guide gives you a step by step guide to get the basics up and running. **This is a skunkworks environment only**

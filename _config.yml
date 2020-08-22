@@ -28,14 +28,19 @@ twitter_username: cminion
 github_username:  ChrisPhillips-cminion
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
+markdown: CommonMark
+commonmark:
+ options: ["SMART", "FOOTNOTES"]
+ extensions: ["strikethrough", "autolink", "table"]
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-
+  - jekyll-commonmark
+  - jekyll-include-cache
 paginate: 10
 paginate_path: "/page:num/"
 
@@ -51,3 +56,6 @@ minima:
     twitter: cminion
     github: ChrisPhillips-cminion
     linkedin: chrisjphillips
+
+exclude:
+  - .jekyll-cache
