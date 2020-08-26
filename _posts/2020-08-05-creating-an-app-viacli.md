@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-8-5 00:13:00
+date: 2020-8-5 00:12:00
 categories: APIConnect
 title: "Using the APIC CLI to create an application"
 ---
