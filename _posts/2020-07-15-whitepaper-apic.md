@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-7-18 00:13:00
+date: 2020-7-15 00:13:00
 categories: APIConnect
 title: "APIConnect v10 - White Paper and Deployment Guide"
 ---
