@@ -18,7 +18,7 @@ email: chris.phillips@uk.ibm.com
 description: API, Integration and Governance SME and Enthusiast, My opinions are very much mine
 #An blog on APIs and other interesting Technology
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: ""
+url: "https://chrisphillips-cminion.github.io/"
 
 highlighter: rouge
 excerpt_separator: <!--more-->
