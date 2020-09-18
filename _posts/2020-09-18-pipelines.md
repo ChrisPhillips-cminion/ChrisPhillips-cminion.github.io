@@ -9,8 +9,12 @@ title: "Pipelines :: How and why to use them to deploy Products and APIs into AP
 ​
 
 <!--more-->
-_This article is about API Connect, however it does not specify any particular pipeline technolgy._
-​
+_This article is about API Connect, however it does not specify any particular pipeline technolgy or tool._
+
+![Pipelines](/images/2020-09-18-pipelines.PNG)
+_Images taken from [https://github.com/IBM/cp4i-deployment-samples/](https://github.com/IBM/cp4i-deployment-samples/)_
+
+
 ## Automated Build
 ​
 API Connect publishes products that encapsulate one or more APIs. Products and APIs are each represented as a YAML file. These YAML files can be published directly and do not need to be built.
@@ -82,3 +86,7 @@ This phase of testing should validate that the messages being sent to and the re
 ## Conclusion
 ​
 In this article we cover the key parts of a pipeline in a tool-agnostic way. Though pipelines will not contain all of these sections in their first version, in order to get the most from pipeline delivery all of these steps should be implemented.
+
+
+### Further Reading:
+[https://github.com/IBM/cp4i-deployment-samples/tree/main/DrivewayDentDeletion/Operators](https://github.com/IBM/cp4i-deployment-samples/tree/main/DrivewayDentDeletion/Operators) - by [Thomas Li](https://github.com/tim-lo) and others
