@@ -24,19 +24,23 @@ If this behaviour is required at the build stage it can be achieved using a simp
 The initial purpose of Linting is check what we are trynig to load into API connect is valid. There purpose has grown from just validating the sturcture to ensuring that business  governance standards are met.
 
 Linting is the process of validating the YAML files prior to deploying them into API Connect. Linting does two main functions:
+
 ​
 **Syntactically:**
+
 Such As
 * Is it valid YAML/JSON?
 * Is it valid OpenAPI 2/3/3.1?
 
 **Governance:**
+
 Additional rules can be written to validate the files in any way necessary e.g.
 ​
 * Validate examples are set
 * Validated paths fit the corporate guidelines
 * Validate that descriptions are populated, and free of spelling mistakes
 ​
+
 A future article will provide more detail on this topic and examples.
 ​
 ​
