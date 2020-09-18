@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Pipelines :: How and why to use them to deploy Products and APIs into API Connect "
 ---
 
-*_Pipelines are an in fashion_*. They provide an important part of a modern development approach. A typical pipeline takes artefacts from git, builds and then deploys them.  Customers often ask for advice on how to create nd build pipeline for API Connect.  Pipelines combine the stages of automated build, linting/syntax testing, continuous/automated deploy and continuous/automated testing.  I will go through each of these stages and explain how to apply them to API Connect
+_*Pipelines are an in fashion*._ They provide an important part of a modern development approach. A typical pipeline takes artefacts from git, builds and then deploys them.  Customers often ask for advice on how to create nd build pipeline for API Connect.  Pipelines combine the stages of automated build, linting/syntax testing, continuous/automated deploy and continuous/automated testing.  I will go through each of these stages and explain how to apply them to API Connect
 ​
 
 <!--more-->
@@ -25,14 +25,13 @@ The initial purpose of Linting is check what we are trynig to load into API conn
 
 Linting is the process of validating the YAML files prior to deploying them into API Connect. Linting does two main functions:
 ​
-### Syntactically:
-​
-* Is it valid YAML/JSON?
+*Syntactically:*
+
+​* Is it valid YAML/JSON?
 * Is it valid OpenAPI 2/3/3.1?
-​
-### Governance:
-​
-We can add additional rules to validate the files in any way necessary e.g.
+
+*Governance:*
+Additional rules can be written to validate the files in any way necessary e.g.
 ​
 * Validate examples are set
 * Validated paths fit the corporate guidelines
