@@ -12,7 +12,7 @@ title: "Pipelines :: How and why to use them to deploy Products and APIs into AP
 _This article is about API Connect, however it does not specify any particular pipeline technolgy or tool._
 
 ![Pipelines](/images/2020-09-18-pipelines.PNG)
-_Images taken from [https://github.com/IBM/cp4i-deployment-samples/](https://github.com/IBM/cp4i-deployment-samples/)_
+_Image taken from [https://github.com/IBM/cp4i-deployment-samples/](https://github.com/IBM/cp4i-deployment-samples/)_
 
 
 ## Automated Build
