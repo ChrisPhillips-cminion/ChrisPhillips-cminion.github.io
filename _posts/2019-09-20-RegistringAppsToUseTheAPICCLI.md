@@ -7,7 +7,7 @@ author: ["ChrisPhillips","JPSchiller"]
 Location: "Tunis, Tunisia"
 ---
 
-When using the API Connect REST interface  you need to identify yourself with a bearer token. We produced a [guide on how to get this bearer token a few days ago](https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html. However a common question is how do you get the ClientID and ClientSecret required,
+When using the API Connect REST interface  you need to identify yourself with a bearer token. We produced a [https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html](guide on how to get this bearer token a few days ago). However a common question is how do you get the ClientID and ClientSecret required,
 
 <!--more-->
 
@@ -38,11 +38,11 @@ scopes:
 
 Please update the client_id and client_secret with your desired value
 
-After logging into the Cloud Manager (nto API Manager) with the apic tool, the following command is run
+After logging into the Cloud Manager (not API Manager) with the apic tool, the following command is run
 ```
     apic registrations:create  -s <ServerHost> <path registration document>
 ```
-This returns the following
+This returns the followinG
 ```
     consumingapplication    [state: enabled]   https://<APIM Hostname>/api/cloud/registrations/bbc547ee-6d8f-4bfa-83f4-907894a6cb57
 ```
