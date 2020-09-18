@@ -73,6 +73,8 @@ To use the REST interface see the following articles.
 * [https://chrisphillips-cminion.github.io/apiconnect/2019/09/26/APIConnect-PublishAPIRestStaging.html](https://chrisphillips-cminion.github.io/apiconnect/2019/09/26/APIConnect-PublishAPIRestStaging.html)
 ​
 ​
+
+
 ## Continuous or automated testing.
 ​
 This phase of testing should validate that the messages being sent to and the responses received from the API are correct. There are several strategies for testing on the context of continuous delivery which are widely documented and are beyond the scope of this document. The key principle to follow is the testing should not require human intervention, and test failures as well as the golden path.
