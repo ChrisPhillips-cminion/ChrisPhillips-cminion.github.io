@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Pipelines :: How and why to use them to deploy Products and APIs into API Connect "
 ---
 
-**_Pipelines are an in fashion_**. They provide an important part of a modern development approach. A typical pipeline takes artefacts from git, builds and then deploys them.  Customers often ask for advice on how to create and build pipeline for API Connect.  Pipelines combine the stages of automated build, linting/syntax testing, continuous/automated deploy and continuous/automated testing.  I will go through each of these stages and explain how to apply them to API Connect
+**_Pipelines are in fashion_**. They provide an important part of a modern development approach. A typical pipeline takes artefacts from git, builds and then deploys them.  Customers often ask for advice on how to create and build pipeline for API Connect.  Pipelines combine the stages of automated build, linting/syntax testing, continuous/automated deploy and continuous/automated testing.  I will go through each of these stages and explain how to apply them to API Connect
 ​
 
 <!--more-->
