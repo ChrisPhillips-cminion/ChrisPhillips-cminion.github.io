@@ -12,8 +12,11 @@ API Connect supports deploying each of their components on different clouds and 
 <!--more-->
 
 1 - Install the API Connect manager and validate that you can log into the Cloud Admin console
+
 2 - Install CertMan and the API Operator into the cluster to host the remote analytics.
+
 3 - Ensure the ibm-entlitlement-key secret is in the namespace on the cluster to host the remote analytics.
+
 4 - Export the `<APIC mgmt deployment name>-ingress-ca` secret from the namespaces with API Connect Manager. _In these examples `APIC mgmt deployment name` is `apic-new`._
 
 `oc get secret -n apic apic-new-ingress-ca -ojson | jq 'del(.metadata.creationTimestamp,.metadata.namespace,.metadata.resourceVersion,.metadata.uid,.metadata.selfLink)' > ingress-secret.json`
@@ -96,5 +99,7 @@ spec:
 ```
 
 10 - run `oc apply -f a7s.yaml` into the remote analytics cluster
+
 11 - Wait 5 mins and have a coffee for the  pods to start
+
 12 - Log in to the APIC Cloud Admin on the management server on the original cluster and register the Analytics Client Service. Use the default TLS Profile.
