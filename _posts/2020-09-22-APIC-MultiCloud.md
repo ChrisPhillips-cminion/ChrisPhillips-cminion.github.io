@@ -21,6 +21,7 @@ API Connect supports deploying each of their components on different clouds and 
 5. Load ingress-secret.json into the desiredname space on the new cluster.
 
 6. Put the following lines into a file call `ingress-issuer.yaml` and apply it to the namespaces on the cluster to host the remote analytics.
+
 ```yaml
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Issuer
@@ -37,17 +38,20 @@ metadata:
 spec:
   selfSigned: {}
 ```
+
 7. run `oc apply -f ingress-issuer.yaml` to create the Issuer
 
 8. Validate that the Issuer is in the ready state with the following command.
 `oc get issuer`
 which returns
+
 ```
 NAME                                         READY
 <APIC mgmt deployment name>-ingress-issuer   True`
 ```
 
 9. Create the analytics CR from the following template into a file called a7s.yaml
+
 ```yaml
 apiVersion: analytics.apiconnect.ibm.com/v1beta1
 kind: AnalyticsCluster
