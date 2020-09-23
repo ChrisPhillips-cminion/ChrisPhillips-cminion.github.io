@@ -3,7 +3,6 @@ layout: post
 date: 2020-9-22 00:13:00
 categories: APIConnect
 title: "Deploying Analytics in a different Cloud"
-draft: true
 ---
 
 API Connect supports deploying each of their components on different clouds and managing them from a single API Management server. This article goes through the steps on how to do this in OpenShift and Kubernetes.
@@ -50,7 +49,8 @@ which returns
 
 ```
 NAME                                         READY
-<APIC mgmt deployment name>-ingress-issuer   True`
+<APIC mgmt deployment name>-ingress-issuer   True
+<APIC mgmt deployment name>-self-signed      True
 ```
 
 9 - Create the analytics CR from the following template into a file called a7s.yaml
@@ -65,23 +65,17 @@ spec:
   appVersion: 10.0.0.0
   certManagerIssuer:
     kind: Issuer
-    name: <Analytics Deployment name>-self-signed
+    name: <APIC mgmt deployment name>-self-signed
   client:
     clientSubjectDN: 'CN=<APIC mgmt deployment name>-a7s-cl-client,O=cert-manager'
     endpoint:
       annotations:
         certmanager.k8s.io/issuer: <APIC mgmt deployment name>-ingress-issuer
-      hosts:
-        - name: <analytics client endpoint>
-          secretName: <Analytics Deployment name>-endpoint-secret
   ingestion:
     clientSubjectDN: 'CN=<APIC mgmt deployment name>-a7s-ing-client,O=cert-manager'
     endpoint:
       annotations:
         certmanager.k8s.io/issuer: <APIC mgmt deployment name>-ingress-issuer
-      hosts:
-        - name: <analytics ingestion endpoint>
-          secretName: <Analytics Deployment name>-ai-endpoint-secret
   license:
     accept: true
     use: nonproduction
