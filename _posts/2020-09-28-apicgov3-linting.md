@@ -3,7 +3,6 @@ layout: post
 date: 2020-9-28 00:14:00
 categories: APIConnect
 title: "Applying API Governance Part 3 –  Linting"
-draft: true
 ---
 This is part three of a series on how to apply governance in API Connect.  Governance is sometimes considered a taboo topic because when people imagine governance, they see red tape that stifles progress. If governance is designed properly it can provide a single approach for all parts of the project with minimal impact on the development rate.
 
