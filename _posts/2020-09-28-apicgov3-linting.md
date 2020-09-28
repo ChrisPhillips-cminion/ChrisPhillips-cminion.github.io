@@ -7,17 +7,17 @@ draft: true
 ---
 This is part three of a series on how to apply governance in API Connect.  Governance is sometimes considered a taboo topic because when people imagine governance, they see red tape that stifles progress. If governance is designed properly it can provide a single approach for all parts of the project with minimal impact on the development rate.
 
-Linting is the process of validating files prior to deployment to catch the low hanging fruit. With APIs we would expect to link the OpenAPI Specification both syntactically as well as allowing custom validation to be run to ensure governance standards are met
+Linting is the process of validating files prior to deployment to catch the low hanging fruit. With APIs we would expect to link the OpenAPI Specification both syntactically as well as allowing for custom validation to be run to ensure governance standards are met.
 
 <!--more-->
 
 Every organization must have governance standards to follow, whether naming conventions, requirements for fields, self documenting, versioning or many others.
 
-When these are applied all of the APIs will follow the same pattern and provide a joined up experience for consumers. If each API follows their own strategy each consumer has to relearn the language and definitions for each API which makes consumption significantly harder. In addition it is easier to find an API that provides an existing function if there is a standard naming convention to follow.
+When these are applied all of the APIs will follow the same pattern and provide a joined up experience for consumers. If each API follows it's own strategy each consumer has to relearn the language and definitions for each API which makes consumption significantly harder. In addition it is easier to find an API that provides an existing function if there is a standard naming convention to follow.
 
 The challenge has always been enforcing these.  Traditionally this has been validated manually but that does not work at scale or at speed.
 
-IBM have an open source project called the openapi-validator ([https://github.com/IBM/openapi-validator](https://github.com/IBM/openapi-validator)). Out of the box the OpenAPI Validator will validate if an OpenAPI specification meets the specification. If it does not it provides alerts and warnings on the concerns.
+IBM have an open source project called the openapi-validator ([https://github.com/IBM/openapi-validator](https://github.com/IBM/openapi-validator)). Out of the box the OpenAPI Validator will validate if an OpenAPI specification meets the specification. If the API does not meet the specification it provides alerts and warnings on the concerns.
 
 # How to install
 
@@ -30,7 +30,7 @@ IBM have an open source project called the openapi-validator ([https://github.co
 1. Edit `.validaterc` and modify the warnings and error lines to be either warning, error or off.
 
 # Custom Validation Rules (Beta)
-In the current release of the openapi-validator there is beta option run a spectral config. This can be used to create custom rules.
+In the current release of the openapi-validator there is beta option to run a spectral config. This can be used to create custom rules.
 1. create a file in the same directory as `.validaterc` called `.spectral.json` and paste in the following configuration
 ```json
 {
@@ -82,7 +82,7 @@ In the current release of the openapi-validator there is beta option run a spect
 	}
 }
 ```
-2. Inside the rules you my extend these rules with the required custom rules. These rules will walk down the tree in the openapi specification and validate items as required.
+2. Inside the rules you may extend these rules with the required custom rules. These rules will walk down the tree in the OpenAPI specification and validate items as required.
 
 # Sample
 
