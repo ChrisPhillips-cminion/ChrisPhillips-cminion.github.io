@@ -5,6 +5,7 @@ categories: APIConnect
 title: "Applying API Governance Part 3 –  Linting"
 draft: true
 ---
+This is part three of a series on how to apply governance in API Connect.  Governance is sometimes considered a taboo topic because when people imagine governance, they see red tape that stifles progress. If governance is designed properly it can provide a single approach for all parts of the project with minimal impact on the development rate.
 
 Linting is the process of validating files prior to deployment to catch the low hanging fruit. With APIs we would expect to link the OpenAPI Specification both syntactically as well as allowing custom validation to be run to ensure governance standards are met
 
