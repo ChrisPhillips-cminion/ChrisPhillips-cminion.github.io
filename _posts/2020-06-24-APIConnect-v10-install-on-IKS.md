@@ -363,7 +363,7 @@ customresourcedefinition.apiextensions.k8s.io/datapowerservices.datapower.ibm.co
 
 6 - Edit ibm-apiconnect.yaml
 
-6.1 - Change `apic-dev-docker-local.artifactory.swg-devops.com/velox/v1000/` to `cp.icr.io/cp/`
+6.1 - Change `apic-dev-docker-local.artifactory.swg-devops.com/velox/v1000/` to `docker.io/ibmcom`
 
 6.2 - Change all instances of `default` to the namespace you created in Part 2.1
 
