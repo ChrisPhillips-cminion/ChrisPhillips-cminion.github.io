@@ -5,3 +5,4 @@ _site
 *.gem
 .DS_Store
 images/.DS_Store
+.jekyll-cache
