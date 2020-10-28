@@ -13,5 +13,3 @@ Under the covers this is because a REST API call from the UI to the other pods i
 In order to fix this we recommend setting `tcp-segmentation-offload` to  off. It is on by default.
 
 **I am not a network engineer** but `tcp-segmentation-offload` when turned on for the majority of configurations will improve  performance by allowing the NIC Driver to segment the traffic. If it is disabled the segmentation is done by the CPU and so this may have a negative impact on performance across all aspects.
-
-<!-- Thanks to the two gentlemen ..... for assisting with this. -->
