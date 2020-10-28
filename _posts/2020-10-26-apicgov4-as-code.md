@@ -79,6 +79,7 @@ x-governance:
     production: Awaiting
 ```
 Example checks
+
 | stage | What Certification means |
 |-----|-----|
 | design | The design includes descriptions and follow naming conventions |
@@ -100,6 +101,7 @@ x-governance:
 ```
 
 Example checks
+
 | stage | What Certification means |
 |-----|-----|
 | design | The design includes descriptions and follow naming conventions |
