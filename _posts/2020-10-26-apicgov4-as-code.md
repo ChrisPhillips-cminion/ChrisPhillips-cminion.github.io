@@ -78,6 +78,14 @@ x-governance:
     performance: Error
     production: Awaiting
 ```
+Example checks
+| stage | What Certification means |
+|-----|-----|
+| design | The design includes descriptions and follow naming conventions |
+| dev | Examples includes valid data and  naming standards are followed |
+| system-test | Test have passed  |
+| performance  | Performance test have run and results are within the predicted needs  |
+| production  | Operations team accepts the other certifications and the API is ready for it to go into production  |
 
 The example above shows how I see the majority of clients arrange their approvals in a waterfall like way. Certifications must match to the approvals gates not to environments. In the example below is an example where the approval gates don't align with environments.
 
@@ -91,7 +99,14 @@ x-governance:
     operations-review: Awaiting
 ```
 
-
+Example checks
+| stage | What Certification means |
+|-----|-----|
+| design | The design includes descriptions and follow naming conventions |
+| performance-short | Performance test have run and results are within the predicted needs |
+| performance-long |  Performance test of over 24 hours have run and results are within the predicted needs |
+| pentest  | Pen Testing is complete and all concerns have been addressed  |
+| operations-review  | Operations team accepts the other certifications and the API is ready for it to go into production |
 
 
 Each environment must have a set of criteria for which certifications are required in order to deploy an API into that environment. e.g. Unable to deploy into system-test until the dev certification is in the certified or warning state. This must be enforced using a linting tool to validate that the certifications are of the correct level prior to deployment.
@@ -101,6 +116,6 @@ Naming standards are important to ensure that a common language are used over al
 
 Where possible linting rules should be included to ensure that the common styles, such as camelCase or snake_case are used consistently. In addition more complex rules can be produced to validate if paths contain blacklisted words, or creation of new definitions where existing ones would be best.
 
-Content standards cover the metadata fields that must be included. Some examples of content standards are each Description and example must be populated. Descriptions and examples must verified to exist. Examples must then be validated against the schema in the API to ensure it was updated as the schema is extended.  Descriptions can be run against tools such as Watson Natural Language Understanding to ensure the emotion level and keywords are as expected for the API and meet a predefined criteria.  This will help set a consistent message and style to the consuming users.
+Content standards cover the metadata fields that must be included. Some examples of content standards are each Description and ex   ample must be populated. Descriptions and examples must verified to exist. Examples must then be validated against the schema in the API to ensure it was updated as the schema is extended.  Descriptions can be run against tools such as Watson Natural Language Understanding to ensure the emotion level and keywords are as expected for the API and meet a predefined criteria.  This will help set a consistent message and style to the consuming users.
 
-This article has covered multiple strategies for API governance as code. Many of these strategies are already being incorporated today in organizations around the world. //TODO waterfally
+This article has covered multiple strategies for API governance as code. Many of these strategies are already being incorporated today in organizations around the world.
