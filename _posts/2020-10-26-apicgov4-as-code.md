@@ -108,9 +108,9 @@ The table below shows what sort of checks that could be done at each stage.
 | stage | What Certification means |
 |-----|-----|
 | design | The design includes descriptions and follow naming conventions |
-| performance-short | Performance test have run and results are within the predicted needs |
-| performance-long |  Performance test of over 24 hours have run and results are within the predicted needs |
-| pentest  | Pen Testing is complete and all concerns have been addressed  |
+| performance-short | Performance tests have run and results are within the predicted needs |
+| performance-long |  Performance tests of over 24 hours have run and results are within the predicted needs |
+| pentest  | Penetration Testing is complete and all concerns have been addressed  |
 | operations-review  | Operations team accepts the other certifications and the API is ready for it to go into production |
 
 
