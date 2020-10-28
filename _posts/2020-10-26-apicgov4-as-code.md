@@ -89,6 +89,8 @@ The table below shows what sort of checks that could be done at each stage.
 | performance  | Performance test have run and results are within the predicted needs  |
 | production  | Operations team accepts the other certifications and the API is ready for it to go into production  |
 
+
+
 The example above shows how I see the majority of clients arrange their approvals in a waterfall like way. Certifications must match to the approvals gates not to environments. In the example below is an example where the approval gates don't align with environments.
 
 ```YAML
@@ -110,6 +112,8 @@ The table below shows what sort of checks that could be done at each stage.
 | performance-long |  Performance test of over 24 hours have run and results are within the predicted needs |
 | pentest  | Pen Testing is complete and all concerns have been addressed  |
 | operations-review  | Operations team accepts the other certifications and the API is ready for it to go into production |
+
+
 
 
 Each environment must have a set of criteria for which certifications are required in order to deploy an API into that environment. e.g. Unable to deploy into system-test until the dev certification is in the certified or warning state. This must be enforced using a linting tool to validate that the certifications are of the correct level prior to deployment.
