@@ -78,7 +78,8 @@ x-governance:
     performance: Error
     production: Awaiting
 ```
-Example checks
+
+The table below shows what sort of checks that could be done at each stage.
 
 | stage | What Certification means |
 |-----|-----|
@@ -100,7 +101,7 @@ x-governance:
     operations-review: Awaiting
 ```
 
-Example checks
+The table below shows what sort of checks that could be done at each stage.
 
 | stage | What Certification means |
 |-----|-----|
