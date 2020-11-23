@@ -27,12 +27,13 @@ Therefore in order to persist the changes you need to update the OperandConfigs.
 oc get  operandconfigs.operator.ibm.com
 ```
 This will provide a response like below.
+
 ```
 NAME             AGE    PHASE     CREATED AT
 common-service   172m   Running   2020-11-23T11:17:47Z
 ```
 
-2. Run the following command
+2. Edit the OperandConfig, Run the following command
 ```
 oc edit  operandconfigs.operator.ibm.com common-service
 ```
