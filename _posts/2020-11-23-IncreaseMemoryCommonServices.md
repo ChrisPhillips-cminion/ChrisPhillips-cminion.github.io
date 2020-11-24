@@ -2,7 +2,7 @@
 layout: post
 categories: CommonServices
 date: 2020-11-23 00:14:00
-title: Out Of Memory (OOMKilled) CertMan, secret watcher and ignress on install of Common Services
+title: Out Of Memory (OOMKilled) CertMan, secret watcher and ingress on install of Common Services
 ---
 
 While installing IBM common services (a preq for CP4I) we hit an issue were some of the pods were terminating because of memory or CPU limits. This article will show how to increase these limits.
