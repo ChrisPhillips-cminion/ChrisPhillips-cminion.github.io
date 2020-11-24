@@ -19,110 +19,61 @@ These values can be set on the Deployment (DaemonSet or StatefulSet). However in
 
 For IBM Common Services  the value in the CR is set by the OperandConfigs. Therefore if you change the CR the OperandConfigs will revert you back to the original value.
 
+If you want to set custom limits in OperandConfig then you must put the changes in the CommonServices object to over ride these values.
 
-Therefore in order to persist the changes you need to update the OperandConfigs.
+`oc edit commonservice common-services`
+and replace the spec section with content with content similar to the following
 
-1. Verify the name of the OperandConfigs, run the following command
-```
-oc get  operandconfigs.operator.ibm.com
-```
-This will provide a response like below.
 
-```
-NAME             AGE    PHASE     CREATED AT
-common-service   172m   Running   2020-11-23T11:17:47Z
-```
-
-2. Edit the OperandConfig, Run the following command
-```
-oc edit  operandconfigs.operator.ibm.com common-service
-```
-This will load a text editor with the contents of the file.
-
-3. Change the limits (not requests) of the following sections
-
-I increased CPU and memory.
-```
-- name: ibm-cert-manager-operator
-   spec:
-     certManager:
-       certManagerCAInjector:
-         resources:
-           limits:
-             cpu: 1000m
-             memory: 1024Mi
-           requests:
-             cpu: 30m
-             memory: 230Mi
-       certManagerController:
-         resources:
-           limits:
-             cpu: 1000m
-             memory: 1024Mi
-           requests:
-             cpu: 50m
-             memory: 175Mi
-       certManagerWebhook:
-         resources:
-           limits:
-             cpu: 1000m
-             memory: 1024Mi
-           requests:
-             cpu: 30m
-             memory: 70Mi
-       configMapWatcher:
-         resources:
-           limits:
-             cpu: 1000m
-             memory: 1024Mi
-           requests:
-             cpu: 10m
-             memory: 50Mi
-     certificate: {}
-     clusterIssuer: {}
-     issuer: {}
-```
-
-Increase memory in
-```
-- name: ibm-management-ingress-operator
-  spec:
-    managementIngress:
-      replicas: 1
-      resources:
-        limits:
-          cpu: 1000m
-          memory: 1536Mi
-        requests:
-          cpu: 60m
-          memory: 110Mi
-    operandBindInfo: {}
-    operandRequest: {}
-```
-
-Increase memory in
-```
-- name: ibm-monitoring-exporters-operator
+```yaml
+spec:
+  services:
+  - name: ibm-cert-manager-operator
+    spec:
+      certManager:
+        certManagerCAInjector:
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
+        certManagerController:
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
+        certManagerWebhook:
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
+        configMapWatcher:
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
+  - name: ibm-management-ingress-operator
+    spec:
+      managementIngress:
+        replicas: 1
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1536Mi
+  - name: ibm-monitoring-exporters-operator
     spec:
       exporter:
-....        
         kubeStateMetrics:
           resource:
             limits:
               cpu: 1540m
               memory: 1800Mi
-            requests:
-              cpu: 500m
-              memory: 150Mi
-....
-      operandRequest: {}
-```
-
-
-
-4. Delete the following pods
-```
-cert-manager-controller-
-ibm-monitoring-kube-state-
-secret-watcher-
+  - name: ibm-iam-operator
+    spec:
+      secretwatcher:
+        replicas: 1
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1450Mi
+  size: small
 ```
