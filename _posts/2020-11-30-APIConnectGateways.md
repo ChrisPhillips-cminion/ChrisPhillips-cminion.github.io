@@ -3,7 +3,6 @@ layout: post
 categories: APIConnect
 date: 2020-11-30 00:14:00
 title: API Gateway what's the difference -  V5c, Native and V5e
-draft: true
 ---
 
 API Connect has seen a number of changes in its API Gateway in the last few years. This article will go through the current gateways how they compare and what the elusive V5e is.
