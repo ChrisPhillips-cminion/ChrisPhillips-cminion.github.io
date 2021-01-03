@@ -19,7 +19,7 @@ Outside of work I founded and run a free to enter 220 person tournament for a ca
 # Background tech
 In order to run this website I store all of my data in google sheets (for my sins) and over the course of Christmas I rewrote my application as a microservice "ish"  implementation. When I say Microservice I mean I split it into a handful core applications that each has its own role and responsibility.   I also took this opportunity to learn Svelte as frontend framework.
 
-[!/images/KoteDiagram.JPG]
+![Component Diagram](/images/KoteDiagram.JPG)
 
 ## Rules of engagement
 I started with these guiding principles
