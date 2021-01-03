@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: APIConnect
-date: 2020-11-30 00:14:00
+date: 2021-01-03 00:14:00
 title: API Gateway what's the difference -  V5c, Native and V5e
 draft: true
 ---
