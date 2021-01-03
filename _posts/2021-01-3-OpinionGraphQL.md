@@ -16,7 +16,7 @@ I have been an Integration SME for the majority of my career. I was cynical when
 GraphQL is a great tool in your toolbox, but use it for the right purpose and dont assume it can be your only API Strategy.
 
 ## Background
-Outside of work I founded and run a free to enter 220 person tournament for a card came called KeyForge. This game is a physical card game that I started playing and often play on my travels to customers around the world. I started this event to encourage people I played with around the world to face off against each other. There is an online platform call https://theCrucible.online that allows people to play with their real decks online. (Yes its like Magic The Gathering and has the same creator)
+Outside of work I founded and run a free to enter 220 person tournament for a card came called KeyForge. This game is a physical card game that I started playing and often play on my travels to customers around the world. I started this event to encourage people I played with around the world to face off against each other. There is an online platform called (https://theCrucible.online)[https://theCrucible.online] that allows people to play with their real decks online. (Yes its like Magic The Gathering and has the same creator)
 
 ## Background tech
 In order to run this website I store all of my data in google sheets (for my sins) and over the course of Christmas I rewrote my application as a microservice "ish"  implementation. When I say Microservice I mean I split it into a handful core applications that each has its own role and responsibility.   I also took this opportunity to learn Svelte as frontend framework.
