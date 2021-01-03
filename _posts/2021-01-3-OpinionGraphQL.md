@@ -49,13 +49,12 @@ The KOTE-Search uses fuse (Thanks Ritchie) to provide a fuzzy logic search on da
 
 The KOTE-Left calls KOTE-Jam to simply analyses the results and reports to discord the games that are not yet complete.
 
-THe KOTE-Draw calls the GraphQL endpoint and simplifies the round pairing
-
+The KOTE-Draw calls the GraphQL endpoint and simplifies the round pairing
 
 ## So what did I think
 My opinion of the usefulness of GraphQL has changed multiple times in the two weeks I have been using it. GraphQL does what it says it does. It simplifies data exposure to consuming applications. However it does not make APIs easier to consumer, just expose. As I have written for a public API approach to be successful it must be easy to consume, usually this means exposing APIs to achieve a use cases with minimal calls and minimal knowledge of the expansive data model. ([https://chrisphillips-cminion.github.io/api/2019/05/28/APIFlavours.html](https://chrisphillips-cminion.github.io/api/2019/05/28/APIFlavours.html)) I would say GraphQL is not an API but rather a completely different beast to simplify the separation of responsibilities in estates..
 
-If challenged I would do this again. GraphQL provided me a way to cleanly separate out the data processing logic for the front end way from the the data source itself. I believe this allowed for a much quicker and better quality application and it  forced me to work in a standard patterns when accessing the data.  In addition if I needed to add any additional functions  I can do it with minimal risk as I will not need to change the existing components, rather adding new components to provide the need.
+If challenged I would do this again. GraphQL provided me a way to cleanly separate out the data processing logic for the front end way from the the data source itself. I believe this allowed for a much quicker and better quality application and it  forced me to work in a standard patterns when accessing the data.  In addition if I needed to add any additional functions  I can do it with minimal risk as I will not need to change the existing components, rather adding new components to provide the need.  However I would not say GraphQL is suitable for exposing complex data models directly to those not experienced  with model. In addition GraphQL is all about providing data not providing function. This is often not suitable for the majority of use cases.
 
 ## Bottom Line
 GraphQL is a great tool in your toolbox, but use it for the right purpose and dont assume it can be your only API Strategy.
