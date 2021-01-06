@@ -3,7 +3,6 @@ layout: post
 categories: GraphQL
 date: 2021-01-04 00:14:00
 title: What I did on my Xmas Holidays - GraphQL - An Opinion Piece
-draft: true
 ---
 
 I have been an Integration SME for the majority of my career. I was cynical when I first saw GraphQL come around. As I have seen more and more people declare they want to use it I decided to spend some time over Christmas not just learning it but actually applying it to an application used by a few hundred people. **This is not going to be another introduction to GraphQL or even GraphQL with IBM software, rather my initial impressions of it.**
