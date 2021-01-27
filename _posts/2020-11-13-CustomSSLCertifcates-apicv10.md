@@ -17,23 +17,11 @@ We recommend that each customer uses their own SSL Certificates signed with thei
 <button class="collapsible" id="fulloutput">Shell script to generate and load all certificates</button>
 
 
-<!-- <div class="content" id="fulloutputdata" markdown="1">
+
 <button onclick="copy(content)">Copy text</button>
-<div id="content"> -->
+<div id="content">
 
-<details>
-  <summary>Click to expand!</summary>   
-```yaml
-   test: true
-```
-</details>
-
-
-
-<details>
-  <summary>Click to expand!</summary>   
-
-```
+```bash
 MGMT=admin.apic-playground.eu-gb.containers.appdomain.cloud
 MGMT2=manager.apic-playground.eu-gb.containers.appdomain.cloud
 MGMT3=api.apic-playground.eu-gb.containers.appdomain.cloud
@@ -124,11 +112,8 @@ EOF
 done
 ```
 
-<!-- <div>
-</div> -->
-
-</details>
-
+<div>
+</div>
 
 The following certificates must be generated
 * api-endpoint
