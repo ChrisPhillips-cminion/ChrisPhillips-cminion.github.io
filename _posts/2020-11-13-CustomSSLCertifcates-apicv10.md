@@ -3,6 +3,7 @@ layout: post
 categories: APIConnect
 date: 2020-11-13 00:14:00
 title: Custom SSL Certificates on API Connect V10.
+draft: true
 ---
 
 We recommend that each customer uses their own SSL Certificates signed with their own CA. These instructions will show a script to generate and load all certificates as well as instructions for rolling your own.
@@ -15,7 +16,10 @@ We recommend that each customer uses their own SSL Certificates signed with thei
 
 <button class="collapsible" id="fulloutput">Shell script to generate and load all certificates</button>
 
+
 <div class="content" id="fulloutputdata" markdown="1">
+<button onclick="copy('content')">Copy text</button>
+<div id="content">
 ```bash
 MGMT=admin.apic-playground.eu-gb.containers.appdomain.cloud
 MGMT2=manager.apic-playground.eu-gb.containers.appdomain.cloud
@@ -106,6 +110,7 @@ EOF
   let i+=1
 done
 ```
+<div>
 </div>
 
 
