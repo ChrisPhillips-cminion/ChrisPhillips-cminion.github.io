@@ -20,11 +20,20 @@ We recommend that each customer uses their own SSL Certificates signed with thei
 <!-- <div class="content" id="fulloutputdata" markdown="1">
 <button onclick="copy(content)">Copy text</button>
 <div id="content"> -->
+
+<details>
+  <summary>Click to expand!</summary>   
+```yaml
+   test: true
+```
+</details>
+
+
+
 <details>
   <summary>Click to expand!</summary>   
 
-```bash
-
+```
 MGMT=admin.apic-playground.eu-gb.containers.appdomain.cloud
 MGMT2=manager.apic-playground.eu-gb.containers.appdomain.cloud
 MGMT3=api.apic-playground.eu-gb.containers.appdomain.cloud
@@ -114,6 +123,7 @@ EOF
   let i+=1
 done
 ```
+
 <!-- <div>
 </div> -->
 
