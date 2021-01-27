@@ -18,7 +18,7 @@ We recommend that each customer uses their own SSL Certificates signed with thei
 
 
 <div class="content" id="fulloutputdata" markdown="1">
-<button onclick="copy('content')">Copy text</button>
+<button onclick="copy(content)">Copy text</button>
 <div id="content">
 ```bash
 MGMT=admin.apic-playground.eu-gb.containers.appdomain.cloud
