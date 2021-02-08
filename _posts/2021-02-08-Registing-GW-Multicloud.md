@@ -19,9 +19,13 @@ API Connect declaires itself as the first API Management solution to support mul
 **Thanks to John Bellessa for the help finding this out.**
 
 ### Steps
+
 1 Extract the CA from the API manager endpoint and rename it to `api-manager.crt`
+
 2 Add the CA into a secret using the following command
+
 `kubectl create secret generic apimanager-ca --from-file=./api-manager.crt`
+
 3 Create the following dp-configmap.yaml
 ```yaml
 apiVersion: v1
@@ -39,7 +43,9 @@ data:
     exit
     exit
 ```
+
 4 Apply the config ConfigMap
+
 `kubectl apply -f  dp-configmap.yaml`
 
 5 Save save the gateway cr below into a file called `gateway-cr.yaml`. Please update all variables as detailed in the API Connect Knowledge center [https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.install.doc/tapic_v10_install_kubernetes_gwy.html](https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.install.doc/tapic_v10_install_kubernetes_gwy.html)
@@ -99,8 +105,11 @@ spec:
   syslogConfig:
     enabled: false # if true, provide below details
 ```
+
 6 Apply the cr
+
 `kubectl apply -f gateway-cr.yaml`
+
 
 7 The final step is to extract the gateway client certificates and load them into the API Cloud Admin.
 ```bash
