@@ -6,7 +6,7 @@ title: Configuring a Gateway in a different cloud.
 draft: true
 ---
 
-API Connect declaires itself as the first API Management solution to support multi cloud deployments. This is where you can deploy each part of a the API Cloud into a different cloud, if required. This article will go through the steps to configure a DataPower in Kubernetes that can be configured to work with an API Manager that is in another cloud.
+API Connect is the first API Management solution to support multi cloud deployments. This is where you can deploy each part of a the API Cloud into different clouds as required. This article will go through the steps to configure a DataPower in Kubernetes (or Openshift) that can be configured to work with an API Manager that is in another cloud.
 
 <!--more-->
 ### Assumptions
