@@ -16,6 +16,8 @@ API Connect declaires itself as the first API Management solution to support mul
 4. You an API Manager available, RI, OVA, Kubernetes or Openshift.
 5. You are not prepared to export the CA Key from the API Manager to loading into the certman in the DataPower Cluster. (We recommend you do NOT do this as it is a security risk.)
 
+**Thanks to John Bellessa for the help finding this out.**
+
 ### Steps
 1 Extract the CA from the API manager endpoint and rename it to `api-manager.crt`
 2 Add the CA into a secret using the following command
