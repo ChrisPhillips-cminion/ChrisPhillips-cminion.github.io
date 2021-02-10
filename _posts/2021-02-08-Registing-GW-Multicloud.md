@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: API Connect
+categories: APIConnect
 date: 2021-02-08 00:14:00
 title: Configuring a Gateway in a different cloud.
 ---
