@@ -19,6 +19,7 @@ Please fill in the details in the export lines at the start. These need to be fi
 
 Thanks to Will Simmons for his assistance in getting me an HA test environment
 
+**This script is provided with no support and as is.** If you find any issues please comment below and I will take a look if able.
 ```bash
 
 #!/usr/bin/bash
