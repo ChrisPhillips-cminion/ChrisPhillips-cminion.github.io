@@ -11,12 +11,13 @@ This article provides a script that will allow you to validate network connectiv
 
 
 
-This script can be run on teach of the  API Manager, Analytics and Portal vms.
+This script can be run on teach of the  API Manager, Analytics and Portal VMs.
 
 The script will validate communication as documented by the API Connect Knowledge center. For APIConnect v10 the firewall rules are described here [https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.install.doc/overview_apimgmt_portreqs_vmware.html](https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.install.doc/overview_apimgmt_portreqs_vmware.html)
 
 Please fill in the details in the export lines at the start. These need to be filled in for all environments.  It prints a summary to the screen and stores the longer error messages to a file. `errorLog-DATESTAMP.txt`
 
+Thanks to Will Simmons for his assistance in getting me an HA test environment
 
 ```bash
 
