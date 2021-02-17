@@ -79,7 +79,7 @@ portCheck () {
 date=$(date +%s)
 if [ "$ScriptRunningOn" == "API_MANAGER" ] ; then
   echo $(date) -  Validating API Manager to API Manager connectivity
-  for i in 22 443 2379 2380 6443 10250 10254 10256 10257 10259  ; do
+  for i in 22 443 2379 2380 6443 9178 9177 442 10250 10254 10256 10257 10259  ; do
     portCheck $API_MANAGER  $i
     if [[ -n "$API_MANAGER2" ]]
     then
