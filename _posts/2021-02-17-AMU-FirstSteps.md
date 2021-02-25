@@ -21,7 +21,7 @@ You then apply the role to the access group and specify which RI provider org is
 ### Create a role
 To create a role, login into [https://cloud.ibm.com/iam/roles](https://cloud.ibm.com/iam/roles)
 
-![/images/2021-02-25-iam1.jpg](/images/2021-02-25-iam1.jpg)
+!(/images/2021-02-25-iam1.jpg)[/images/2021-02-25-iam1.jpg]
 
 Click on Create
 
@@ -29,7 +29,7 @@ Click on Create
 * Select `API Connect` from the service.
 * Select the permissions you wish to assgin to the role.   
 
-![/images/2021-02-25-iam2.jpg](/images/2021-02-25-iam2.jpg)
+!(/images/2021-02-25-iam2.jpg)[/images/2021-02-25-iam2.jpg]
 
 Today the only granularity we allow is the role level, not individual permissions.
 
@@ -42,7 +42,7 @@ Click on create
 
 * Enter a name and Description and press create
 * Click on Add Users to add users to the group
-![/2021-02-25-iam3.jpg](/2021-02-25-iam3.jpg)
+!(/2021-02-25-iam3.jpg)[/images/2021-02-25-iam3.jpg]
 
 ### Bind a role an Access Group for specific  API Connect Provide Org
 To create a group, login into  [https://cloud.ibm.com/iam/groups](https://cloud.ibm.com/iam/groups)
@@ -52,7 +52,7 @@ To create a group, login into  [https://cloud.ibm.com/iam/groups](https://cloud.
 * Click on `Assign access`
 
 The roles you have created will appear under `Custom access` at the bottom of the list
-![/2021-02-25-iam4.jpg](/2021-02-25-iam4.jpg)
+!(/2021-02-25-iam4.jpg)[/2021-02-25-iam4.jpg]
 
 To select which Provider Org to apply this to,  click on `Service based on attributes` and click on  `Service Instance` then from the drop down select the Provider Org you want this to be applied to.
 
