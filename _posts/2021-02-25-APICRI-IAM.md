@@ -11,7 +11,7 @@ More and more people are signing up to IBM API Connect Reserve Instance. IBM API
 One of the common questions I am asked is how do we configure complex  user topologies to allow only subsets of users to each role.
 <!--more-->
 
-*Thanks to [https://www.linkedin.com/in/rickymoorhouse/](Ricky Moorhouse) for his help and support putting this together*
+*Thanks to [Ricky Moorhouse](https://www.linkedin.com/in/rickymoorhouse/) for his help and support putting this together*
 
 In IAM you need to configure two things
 
