@@ -21,7 +21,7 @@ You then apply the role to the access group and specify which RI provider org is
 ### Create a role
 To create a role, login into [https://cloud.ibm.com/iam/roles](https://cloud.ibm.com/iam/roles)
 
-![/2021-02-25-iam1.jpg](/2021-02-25-iam1.jpg)
+![/images/2021-02-25-iam1.jpg](/images/2021-02-25-iam1.jpg)
 
 Click on Create
 
@@ -29,7 +29,7 @@ Click on Create
 * Select `API Connect` from the service.
 * Select the permissions you wish to assgin to the role.   
 
-![/2021-02-25-iam2.jpg](/2021-02-25-iam2.jpg)
+![/images/2021-02-25-iam2.jpg](/images/2021-02-25-iam2.jpg)
 
 Today the only granularity we allow is the role level, not individual permissions.
 
