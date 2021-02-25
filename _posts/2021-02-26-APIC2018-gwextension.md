@@ -19,8 +19,7 @@ Anyone on API Connect 2018 I recommend you move to v10. But if you are unable to
     ```yaml
     datapower:  
         customDatapowerConfig: "custom-dp-config"
-    ```
-
+        ```
 4. run  `apicup subsys set <gwy> extra-values-file   dp-extravaluesfile.yaml`
 5. run `apicup subsys install gwy`
 
