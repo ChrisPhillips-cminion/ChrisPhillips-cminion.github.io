@@ -1,36 +1,59 @@
 ---
 layout: post
 categories: APIConnect
-date: 2021-02-17 00:14:00
-title: v5->v10 Assessing the impact of a migration
+date: 2021-02-25 00:14:00
+title: API Connect Reserve Instance - configure IAM
+draft: true
 ---
 
-Migrating from API Connect v10 from v5 is a common practice right now. Customers are always asking how they can evaluate if any additional changes are required to move from v5 to either of APIConnect v10's gateways (v5c or  native gateway.)
+More and more people are signing up to IBM API Connect Reserve Instance. IBM API Connect Reserve Instance allows you to have all the benefits of API Connect while IBM Manages the invite so you can just bring your developers and publish APIs. Also you can bring in additional Gateway Services from a different location or from your Data Center to be managed by API Connect in RI.
 
+One of the common questions I am asked is how do we configure complex  user topologies to allow only subsets of users to each role.
 <!--more-->
 
-Once you have entitlement for API Connect v10 you can download the AMU tool from PPA or Fix Central.
+In IAM you need to configure two things
 
-This tool has a number of functions.
-1. Extract a v5 export and convert the content to v10 and with the v5c Gateway. (APIs, Applications, Consumer Orgs, everything really)
-2. Take v5c APIs and convert them to new API Gateway
-3. Loads the converted data from step 1 and/or step 2 into an a target APIConnect v10 system.
+* A role - collection of permissions
+* Access Group  - collection of users
 
+You then apply the role to the access group and specify which RI provider org is for.
 
-1 and 2 can be used to evaluate if any work needs to be done to the APIs prior to having an API Connect v10 running.
+### Create a role
+To create a role, login into [https://cloud.ibm.com/iam/roles](https://cloud.ibm.com/iam/roles)
 
-To do this you must have API Connect v5 on the latest firmware.
+![/2021-02-25-iam1.jpg](/2021-02-25-iam1.jpg)
 
-1. SSH into the APIConnect v5  and run `dbExtract` to export the data in an unencrypted form for the AMU to use.
-2. Copy dbExtract.tar.gz to the same system AMU is installed on
-3. Run the AMU `archive:unpack` function to extract and complete the v5c conversion. This may take several hours depending on the size of the v5 estate.
-4. Evaluate any errors that this throws. These errors will show any additional work that should be completed in v5 and a new dbExtract taken.
-5. Run the AMU `archive:port-to-apigw` against the export data.
-6. Evaluate any errors that this throws.
+Click on Create
 
-In order to fix all errors from `archive:unpack` steps 1-3 may need to be run after each set of changes to v5. However in the majority of use cases no errors are seen here.
+* Enter a Name, ID and Description
+* Select `API Connect` from the service.
+* Select the permissions you wish to assgin to the role.   
 
-The errors from `archive:port-to-apigw` are usually fixable on the file system by modifying the convert APIs.
+![/2021-02-25-iam2.jpg](/2021-02-25-iam2.jpg)
 
+Today the only granularity we allow is the role level, not individual permissions.
 
-To see the full whitepaper on AMU Migration please take a look at this whitepaper [https://community.ibm.com/community/user/middleware/viewdocument/api-connect-migration-utility-amu](https://community.ibm.com/community/user/middleware/viewdocument/api-connect-migration-utility-amu)
+Click on Create
+
+### Create an Access Group
+To create a group, login into  [https://cloud.ibm.com/iam/groups](https://cloud.ibm.com/iam/groups)
+
+Click on create
+
+* Enter a name and Description and press create
+* Click on Add Users to add users to the group
+![/2021-02-25-iam3.jpg](/2021-02-25-iam3.jpg)
+
+### Bind a role an Access Group for specific  API Connect Provide Org
+To create a group, login into  [https://cloud.ibm.com/iam/groups](https://cloud.ibm.com/iam/groups)
+
+* Click on the group you want to associate with a role
+* Click on `Access policies`
+* Click on `Assign access`
+
+The roles you have created will appear under `Custom access` at the bottom of the list
+![/2021-02-25-iam4.jpg](/2021-02-25-iam4.jpg)
+
+To select which Provider Org to apply this to,  click on `Service based on attributes` and click on  `Service Instance` then from the drop down select the Provider Org you want this to be applied to.
+
+Click on `Add`
