@@ -2,11 +2,10 @@
 layout: post
 categories: APIConnect
 date: 2021-02-25 00:14:00
-title: API Connect Reserve Instance - configure IAM
-draft: true
+title: API Connect Reserved Instance - configure IAM
 ---
 
-More and more people are signing up to IBM API Connect Reserve Instance. IBM API Connect Reserve Instance allows you to have all the benefits of API Connect while IBM Manages the invite so you can just bring your developers and publish APIs. Also you can bring in additional Gateway Services from a different location or from your Data Center to be managed by API Connect in RI.
+More and more people are signing up to IBM API Connect Reserved Instance. IBM API Connect Reserved Instance allows you to have all the benefits of API Connect while IBM manages the infrastructure  so you can just bring your developers and publish APIs. Also you can bring in additional Gateway Services from a different location or from your Data Center to be managed by API Connect in RI.
 
 One of the common questions I am asked is how do we configure complex  user topologies to allow only subsets of users to each role.
 <!--more-->
@@ -18,7 +17,7 @@ In IAM you need to configure two things
 * A role - collection of permissions
 * Access Group  - collection of users
 
-You then apply the role to the access group and specify which RI provider org is for.
+You then apply the role to the access group   and specify which RI provider org is for.
 
 ### Create a role
 To create a role, login into [https://cloud.ibm.com/iam/roles](https://cloud.ibm.com/iam/roles)
@@ -28,8 +27,8 @@ To create a role, login into [https://cloud.ibm.com/iam/roles](https://cloud.ibm
 Click on Create
 
 * Enter a Name, ID and Description
-* Select `API Connect` from the service.
-* Select the permissions you wish to assgin to the role.   
+* Select `API Connect` from the service.  
+* Select the permissions you wish to assign to the role.   
 
 ![/images/2021-02-25-iam2.JPG](/images/2021-02-25-iam2.JPG)
 
