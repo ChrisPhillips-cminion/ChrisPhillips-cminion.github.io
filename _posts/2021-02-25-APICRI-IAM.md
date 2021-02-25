@@ -11,6 +11,8 @@ More and more people are signing up to IBM API Connect Reserve Instance. IBM API
 One of the common questions I am asked is how do we configure complex  user topologies to allow only subsets of users to each role.
 <!--more-->
 
+*Thanks to [https://www.linkedin.com/in/rickymoorhouse/](Ricky Moorhouse) for his help and support putting this together*
+
 In IAM you need to configure two things
 
 * A role - collection of permissions
@@ -52,7 +54,7 @@ To create a group, login into  [https://cloud.ibm.com/iam/groups](https://cloud.
 * Click on `Assign access`
 
 The roles you have created will appear under `Custom access` at the bottom of the list
-![/images/2021-02-25-iam4.JPG](/images/2021-02-25-iam4.JPG)
+![/images/  2021-02-25-iam4.JPG](/images/2021-02-25-iam4.JPG)
 
 To select which Provider Org to apply this to,  click on `Service based on attributes` and click on  `Service Instance` then from the drop down select the Provider Org you want this to be applied to.
 
