@@ -3,7 +3,6 @@ layout: post
 categories: APIConnect
 date: 2021-02-25 00:14:00
 title: API Connect 2018 - Gateway Extension
-draft: true
 ---
 
 Anyone on API Connect 2018 I recommend you move to v10. But if you are unable to and need to apply some configuration to DataPower you can apply configs like below.
