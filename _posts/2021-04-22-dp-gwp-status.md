@@ -7,6 +7,8 @@ title: Validating the Gateway Peering status
 ---
 API Connect Gateways create a number of peering objeccts to ensure that everything is in sync between the cluster nodes.
 
+![GatewayPeerStatus](/images/gwpeer.png)
+
 <!--more-->
 
 If you wish to validate the status in kubernetes attach to each gateway pod
@@ -36,7 +38,7 @@ To get the passsord from the secret the following command  `oc get secret minimu
 Then run the  following command
 
 ```
-top;co;sh gateway-peering-st
+top;config;show gateway-peering-status
 ```
 
 This returns the follow entries for each peer member.
