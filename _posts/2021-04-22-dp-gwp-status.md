@@ -21,14 +21,25 @@ or
 kubectl attach -ti <gateway pod name> -n <namespace>
 ```
 
-and run the following command
+You will be prompted to login with your datapower credentials.  If no secret is set on the Gateway Cluster CR the username and password is admin and admin. If this does not work look to see if there is a secret ending with `gw-admin`
+
+e.g.
+
+```
+NAME                TYPE     DATA   AGE
+minimum2-gw-admin   Opaque   1      75m
+```
+
+To get the passsord from the secret the following command  `oc get secret minimum2-gw-admin -ojson | jq .data.password | sed -e s/\"//g | base64 -d`
+
+
+Then run the  following command
 
 ```
 top;co;sh gateway-peering-st
 ```
 
-This return the follow entries for each peer member.
-
+This returns the follow entries for each peer member.
 ```
  172.30.106.142 api-probe          0               0                  ok          yes     
  172.30.106.142 gwd                0               0                  ok          yes     
