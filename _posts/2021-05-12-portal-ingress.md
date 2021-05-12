@@ -17,7 +17,7 @@ If we assume that the developer portal was installed with the endpoint  `develop
 
 To do this we need to extract the original ingress and then modify. The sample code below will extract the relievent parts of the original ingress.
 
-```
+```bash
 cat > ingressjson.json <<EOF
 {
   "apiVersion": "route.openshift.io/v1",
