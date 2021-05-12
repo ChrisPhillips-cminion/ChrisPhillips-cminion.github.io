@@ -10,7 +10,9 @@ When deploying API Connect with  a Developer portal you specify the end point th
 
 <!--more-->
 e.g.
+
 Public API Catalog `developer.public.company.com`
+
 B2B API Catalog    `developer.b2b.company.com`
 
 If we assume that the developer portal was installed with the endpoint  `developer.public.company.com` we need to create an additional ingress entry to allow the routing to `developer.b2b.company.com`.
