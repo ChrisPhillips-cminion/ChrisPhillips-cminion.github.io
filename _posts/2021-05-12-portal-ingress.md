@@ -3,7 +3,6 @@ layout: post
 categories: APIConnect
 date: 2021-05-12 00:15:00
 title: Exposing a developer portal through a non default hostname.
-draft: true
 ---
 
 When deploying API Connect with  a Developer portal you specify the end point that end users must to connect to the developer portal. However some deployments require a subset of the developer portal sites to be accesible from a different hostname.
