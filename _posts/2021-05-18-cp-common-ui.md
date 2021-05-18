@@ -13,10 +13,10 @@ However out of the box the switcher shows the Cloud Pak name and no other identi
 
 ![/images/menu-1.png]
 
-1. In order to customise these titles you must go into the `Platform customization` for each entry. <BR>![/images/menu-2.png]
+1. In order to customise these titles you must go into the `Platform customization` for each entry. <BR>![/images/menu-2.PNG]
 2. Then click on Branding
-3. Then set the product name. This will be displayed in the switcher. Please note at this time the name contain special characters.<BR>![/images/menu-3.png]
+3. Then set the product name. This will be displayed in the switcher. Please note at this time the name contain special characters.<BR>![/images/menu-3.PNG]
 
 
 The result is that you will have a menu like
-![/images/menu-4.png]
+![/images/menu-4.PNG]
