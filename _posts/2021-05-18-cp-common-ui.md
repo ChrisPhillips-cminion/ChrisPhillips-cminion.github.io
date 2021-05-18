@@ -2,7 +2,7 @@
 layout: post
 categories: APIConnect
 date: 2021-05-18 00:15:00
-title: Customising the names of the components in the CP switcher.
+title: Customising the names of the components in the CloudPak Switcher.
 ---
 
 When installing IBM Cloud Packs 2021.x you get the option of having a dashboard for each namespace. This dashboard allows all CloudPaks in the same namespace to share a single pain of glass for various information.
