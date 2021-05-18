@@ -14,10 +14,14 @@ However out of the box the switcher shows the Cloud Pak name and no other identi
 ![https://chrisphillips-cminion.github.io/images/menu-1.png](https://chrisphillips-cminion.github.io/images/menu-1.png)
 
 
-1. In order to customise these titles you must go into the `Platform customization` for each entry. <BR> ![https://chrisphillips-cminion.github.io/images/menu-2.png](https://chrisphillips-cminion.github.io/images/menu-1.png)
-2. Click on Branding
-3. Set the product name. This will be displayed in the switcher. Please note at this time the name contain special characters.<BR> ![https://chrisphillips-cminion.github.io/images/menu-3.png](https://chrisphillips-cminion.github.io/images/menu-1.png)
+**To change it follow these steps**
+
+1. Log into the common UI
+2. Go into the `Platform customization` for each entry. <BR> ![https://chrisphillips-cminion.github.io/images/menu-2.png](https://chrisphillips-cminion.github.io/images/menu-2.png)
+3. Click on Branding
+4. Set the product name. This will be displayed in the switcher. Please note at this time the name contain special characters.<BR> ![https://chrisphillips-cminion.github.io/images/menu-3.png](https://chrisphillips-cminion.github.io/images/menu-3.png)
 
 
 The result is that you will have a menu like
-![https://chrisphillips-cminion.github.io/images/menu-4.png](https://chrisphillips-cminion.github.io/images/menu-1.png)
+
+![https://chrisphillips-cminion.github.io/images/menu-4.png](https://chrisphillips-cminion.github.io/images/menu-3.png)
