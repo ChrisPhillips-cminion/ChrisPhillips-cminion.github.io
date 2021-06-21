@@ -2,7 +2,7 @@
 layout: post
 date: 2021-06-21 00:13:00
 categories: APIConnect
-title: "API Connect v10 WhitePaper 1.4 released"
+title: "API Connect v10 WhitePaper 1.5 released"
 ---
 
 Just a quick note to say I have released version 1.5 of the  API Connect v10.x Whitepaper. The changes are relatively minor
