@@ -10,7 +10,8 @@ Recovery Time Objective and Recovery Point Objective are the most important requ
 <!--more-->
 
 My rough steps for an RTO timeline.
-**Scenario:**  The event assumes that the engineer does not need support from the vendor to fix the problem. The issue involves the engineer logging on to a system and doing a corrective action. E.e restart a VM or clearing a cache.
+
+**Scenario:**  The event assumes that the engineer does not need support from the vendor to fix the problem. The issue involves the engineer logging on to a system and doing a corrective action.  E.e restart a VM or clearing a cache. The corrective change requires management approval as it may cause an interrupt to another service.
 
 Stage | Description | Rough time since previous step
 ---|---|---
@@ -34,4 +35,6 @@ Problem Fixed | outage is complete | n/a
 ---|---|---
 
 
-When I talk to many clients they want a near zero RTO for a DR, but they often do not consider the actions that need to be taken beyond fixing the issue. If they measure DR as just the Engineer fixing the issue (which may be failing over to a second site) then we can usually achieve an RTO of sub an hour. Many of the steps cab be automated but often are not today. If a decision needs to be done this takes time, it is easy to say that a decision should only need to take five minutes but if the issue occurs at 2am the manager needs to wake up enough to make a thought out choice.
+When I talk to many clients they want a near zero RTO for a DR, but they often do not consider the actions that need to be taken beyond fixing the issue. If they measure DR as just the Engineer fixing the issue (which may be failing over to a second site) then we can usually achieve an RTO of sub an hour. Many of the steps can be automated but often are not today.
+
+The decision to complete a DR should not be taken lightly and is usually a management decisions, sometimes going up to the CIO, this takes time. It is easy to say that a decision should only need to take five minutes but if the issue occurs at 2am the manager needs to wake up enough to make a thought out choice, and potentially wake his manager as well.
