@@ -13,26 +13,26 @@ My rough steps for an RTO timeline.
 
 **Scenario:**  The event assumes that the engineer does not need support from the vendor to fix the problem. The issue involves the engineer logging on to a system and doing a corrective action.  E.e restart a VM or clearing a cache. The corrective change requires management approval as it may cause an interrupt to another service.
 
-Stage | Description | Time between steps
+no | Stage | Description | Max Time between steps
 ---|---|---|---
 1 | Problem Occurs | An outage event has occurred. | n/a
-2 | Problem Detected | Monitoring Solution has detected there was a problem or it was discovered by a user | Sub 30  Seconds
-3 | Alert Sent | Alert is sent to the Operations Team (L2) | Sub 1 Second
-4 | Alert Delivered | Alert is delivered to the Operations Team (L2) | Sub 30 seconds
-5 | Decision: Callout |  The operations team (L2) decides if they need to call  an engineer (L3).  | Sub 10 Minutes
-6 | Engineer Allocated | Engineer contact details are retrieved or pager duty is used to contact the engineer | Sub 10 minutes
-7 | Engineer Alert Sent | Alert is sent to the Engineer (L3) | Sub 30 seconds
-8 | Engineer Alert Delivered | Alert is delivered to the Engineer | Sub 5 minutes
-9 | Engineer Logs on to the network | This may be 2am, so includes the engineer waking up. | Sub 30 minutes
-10 | Engineer Starts investigating | Engineer reads up on the ticket to understand where to look then jumps in | Sub 5 minutes
+2 | Problem Detected | Monitoring Solution has detected there was a problem or it was discovered by a user | 30  Seconds
+3 | Alert Sent | Alert is sent to the Operations Team (L2) | 1 second
+4 | Alert Read | Alert is delivered to the Operations Team (L2) | 10 minutes
+5 | Decision: Callout |  The operations team (L2) decides if they need to call  an engineer (L3).  | 10 Minutes
+6 | Engineer Allocated | Engineer contact details are retrieved or pager duty is used to contact the engineer | 10 minutes
+7 | Engineer Alert Sent | Alert is sent to the Engineer (L3) | 30 seconds
+8 | Engineer Alert Read | Alert is Read by the Engineer | 30 minutes
+9 | Engineer Logs on to the network | This may be 2am, so includes the engineer waking up. | 30 minutes
+10 | Engineer Starts investigating | Engineer reviews the ticket | 5 minutes
 11 | Engineer Determines Issue | Engineer understands the problem | *Unable to predict*
-12 | Engineer Calls out Management for approval | In this scenario, in order for the change to be applied a manager must make a decision to fail over to DR or potentially impact another running component. | Sub 5 minutes
-13 | Management Alert Sent | Alert is sent to the Manager | Sub 30 seconds
-14 | Management Alert Delivered   | Alert is delivered to the Manager | Sub 5 minutes
-15 | Management Responds with a decisions  | Manager provide a go no go answer to the Engineer | Sub 45 minutes
+12 | Engineer Calls out Management for approval | In order to fix the existing issue a VM must be restarted that would impact another critical system for a control period of time.  | 5 minutes
+13 | Management Alert Sent | Alert is sent to the Manager | 30 seconds
+14 | Management Alert Read   | Alert is delivered to the Manager | 5 minutes
+15 | Management Responds with a decisions  | Manager provide a go no go answer to the Engineer | 45 minutes
 16 | Engineer Fixes | Engineer Fixes the problem | *Unable to predict*
 17 | Problem Fixed | outage is complete | n/a
----|---|---
+---|---|---|---
 
 
 When I talk to many clients they want a near zero RTO for a DR, but they often do not consider the actions that need to be taken beyond fixing the issue. If they measure RTO as just the Engineer fixing the issue (which may be failing over to a second site) then we can usually achieve an RTO of sub an hour.
