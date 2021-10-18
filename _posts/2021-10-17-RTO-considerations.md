@@ -3,6 +3,7 @@ layout: post
 date: 2021-10-17 00:13:00
 categories: General
 title: "What needs to be considered when comng up with an RTO value time."
+draft: true
 ---
 Recovery Time Objective and Recovery Point Objective are the most important requirements designing a HA or DR solution. High Availability (HA) will have a very low RTO and RPO, is automatic and usually achieved by having multiple systems running concurrently. Disaster Recovery is normally a longer manual process that often is triggered when a DataCenter has had a disaster,  In this Article I will go through the time line that needs to be considered for an RTO. I will not go into RPO details here but I will probably do a follow up article if it is requested.
 
