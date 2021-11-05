@@ -1,207 +1,40 @@
 ---
 layout: post
-date: 2021-11-05 00:13:00
-categories: Day2-Ops
-title: "What goes into a Runbook or SOP?"
+date: 2021-10-17 00:13:00
+categories: General
+title: "What makes up an RTO?"
 draft: true
 ---
-
-I spent a lot of time advising clients what they need to keep their system operational. The topic of a RunBook / SOP is always interesting. In my experience only 50-60% of clients have one, 30% of clients know what should go int0o one but have not yet written it and 10% of clients don't think they need it.
+Recovery Time Objective and Recovery Point Objective are the most important requirements designing a HA or DR solution. High Availability (HA) will have a very low RTO and RPO, is automatic and usually achieved by having multiple systems running concurrently. Disaster Recovery is normally a longer manual process that often is triggered when a DataCenter has had a disaster,  In this Article I will go through the time line that needs to be considered for an RTO. I will not go into RPO details here but I will probably do a follow up article if it is requested.
 
 <!--more-->
 
-A run book has one simple objective.
-**The manual to follow to debug and fix a situation that includes  provides all relevant technical and contact information in one place**
+My rough steps for an RTO timeline.
 
-This is what the new SREs follow to fix problems, this is used at 2am to ensure experienced SREs don't make common mistakes.  This should also be seen as hand over documentation and instructions for training new team members.
+**Scenario:**  The event assumes that the engineer does not need support from the vendor to fix the problem. The issue involves the engineer logging on to a system and doing a corrective action.  E.e restart a VM or clearing a cache. The corrective change requires management approval as it may cause an interrupt to another service.
 
-Though I describe this as a single document it is frequently multiple documents that sit together. These are living documents and should be regularly updated as changes or new information occurs.
-
-The table below describes the sections that I would expect to see
-
-
-|----|----|----|
-| Title | Subtitle  | Description  |
-|----|----| ---- |
-| About This Document  | | Paragraph explaining the purpose of the document |  
-| Glossary	|| Key terms described. Any terms a new team member may not know must be described here |
-|	Table of Contents	 || Table of Contents |
-| Software Version 	 ||  Detailed explanation of the software levels installed in each cluster |  
-|	Capacity Planning	 || What is the current known max capacity of each cluster vs what is required. What is the plan to grow the environment  |
-|	System Overview | | |
-| --- | Infrastructure Design |  Link to the detail design of each cluster |
-| --- |	Ownership Map	 | Description of who owns each part of the solution and the areas that it connects to, such as Load Balancers, LDAPs, VMWare, OCP |
-| Security and Access Control | | |
-| --- |	API Connect Roles and Responsibilities	|  Descriptions of the roles used inside the product |
-| --- | On boarding	| The process to add users to each cluster |
-| --- | On Boarding -> Tick List	| Check box for what needs to be done to on board a user, i.e. create user in ldap, add to groups xyz, |
-| --- |	Jump servers	| Details of jump servers if required for each environment |
-| --- | VMWare / OCP | Details of VMWARE or OCP |
-| --- | How to Access each Component	| Step by step instructions on how to access each  component in the cluster |
-| System Configuration | ||
-| --- | Cluster 1 Installation Guide	| Instructions on how each cluster was installed. This should be used to reinstall each cluster if it is needed |
-| --- |	System Backup and Restore 	| Parent section |
-| --- |	System Backup and Restore  -> Back Up Strategy	| Description on how often backups should be taken, to where. |
-| --- |	System Backup and Restore  -> Back Up Host	| Details of the backup target |
-| --- |	System Backup and Restore  -> Backup Requirements	 | How often should back ups be taken. What format |
-| --- |	System Backup and Restore  -> Backup Procedures	 | Procedure for doing a back up manually. This is essential encase the automatic backup fails. |
-| --- |	System Backup and Restore  -> Restore Procedures	 | Procedure for doing a restore  |
-|	Monitoring and Alerting 	| |   |
-| --- | Monitoring Cluster 1: Splunk	| how to access splunk and common queries used |
-| --- | Alerting	| What is the alerting frame work, what constitutes an alert. |
-| 	Operational Tasks	 | | Standard Tasks required of the system. Please see the full sample at the end of this document. I expect this to be screenshot step by step instructions on how to use the system |
-|	 Troubleshooting	| | Instructions on how to debug the system when something goes wrong. This will be ever growing as new problems occur. |
-| Maintenance Tasks	| | Common Tasks that are required to keep the system healthy, such as Patching, Certificate Management |
-|	Failure Scenarios and Recovery Procedures	| | Steps for completing failover and recovery in the event of a major incident. |
-|	Contact and Escalation Details	|  |  I the reader needs additional support or to escalate to someone how do they do it |
-|----|----| ---- |
+no | Stage | Description | Max Time between steps
+---|---|---|---
+1 | Problem Occurs | An outage event has occurred. | n/a
+2 | Problem Detected | Monitoring Solution has detected there was a problem or it was discovered by a user | 30  Seconds
+3 | Alert Sent | Alert is sent to the Operations Team (L2) | 1 second
+4 | Alert Read | Alert is delivered to the Operations Team (L2) | 10 minutes
+5 | Decision: Callout |  The operations team (L2) decides if they need to call  an engineer (L3).  | 10 Minutes
+6 | Engineer Allocated | Engineer contact details are retrieved or pager duty is used to contact the engineer | 10 minutes
+7 | Engineer Alert Sent | Alert is sent to the Engineer (L3) | 30 seconds
+8 | Engineer Alert Read | Alert is Read by the Engineer | 30 minutes
+9 | Engineer Logs on to the network | This may be 2am, so includes the engineer waking up. | 30 minutes
+10 | Engineer Starts investigating | Engineer reviews the ticket | 5 minutes
+11 | Engineer Determines Issue | Engineer understands the problem | *Unable to predict*
+12 | Engineer Calls out Management for approval | In order to fix the existing issue a VM must be restarted that would impact another critical system for a control period of time.  | 5 minutes
+13 | Management Alert Sent | Alert is sent to the Manager | 30 seconds
+14 | Management Alert Read   | Alert is delivered to the Manager | 5 minutes
+15 | Management Responds with a decisions  | Manager provide a go no go answer to the Engineer | 45 minutes
+16 | Engineer Fixes | Engineer Fixes the problem | *Unable to predict*
+17 | Problem Fixed | outage is complete | n/a
+---|---|---|---
 
 
+When I talk to many clients they want a near zero RTO for a DR, but they often do not consider the actions that need to be taken beyond fixing the issue. If they measure RTO as just the Engineer fixing the issue (which may be failing over to a second site) then we can usually achieve an RTO of sub an hour.
 
-Sample Table of Contents
-```
-2.	Table of Contents
-
-1.	About This Document	2
-2.	Table of Contents	3
-3.	Glossary	6
-4.	Software Version 	7
-4.1.	Cluster 1	7
-4.1.1.	Production	7
-4.1.2.	Non Production	7
-4.1.3.	Development (Out of scope)	7
-4.2.	Cluster 2	7
-4.2.1.	Production	7
-4.2.2.	Non Production	7
-4.2.3.	Infrastructure Test	7
-5.	Capacity Planning	9
-5.1.	Current Capacity	9
-5.1.1.	Cluster 1	9
-5.1.2.	Cluster 2	9
-5.2.	Capacity Review Strategies	10
-5.2.1.	Housekeeping	10
-6.	System Overview	12
-6.1.	Infrastructure Design	12
-6.1.1.	Cluster 1	12
-6.1.2.	Cluster 2	12
-6.2.	Ownership Map	12
-6.2.1.	Cluster 1	12
-6.2.2.	Cluster 2	12
-7.	Security and Access Control	13
-7.1.	API Connect Roles and Responsibilities	13
-7.1.1.	Cluster 1	13
-7.1.2.	Cluster 2	13
-7.2.	On boarding	13
-7.2.1.	Tick List	13
-7.3.	Jump servers	13
-7.4.	VMWare	13
-7.5.	How to Access each Component	14
-7.5.1.	API Manager	14
-7.5.2.	API Portal	16
-7.5.3.	DataPower	17
-8.	System Configuration	19
-8.1.	Cluster 1 Installation Guide	19
-8.2.	Cluster 2	19
-9.	System Backup and Restore 	20
-9.1.	Back Up Strategy	20
-9.2.	Back Up Host	20
-9.3.	Backup Requirements	20
-9.4.	Backup Procedures	20
-9.4.1.	Cluster 1	20
-9.4.2.	Cluster 2	20
-9.5.	Restore Procedures	20
-9.5.1.	Cluster 1	20
-9.5.2.	Cluster 2	20
-10.	Monitoring and Alerting 	21
-10.1.	Monitoring Cluster 1: Splunk	21
-10.1.1.	Servers	21
-10.1.2.	Queries	21
-10.2.	Monitoring Cluster 2: DPDM	21
-10.3.	Monitoring Cluster 2: QRADAR	21
-10.4.	Tivoli Alerting	21
-10.4.1.	Cluster 1	21
-10.4.2.	Cluster 2	21
-11.	Operational Tasks	22
-11.1.	Deploying Gateway Extension	22
-11.1.1.	Manually	22
-11.1.2.	Automated Deployment	23
-11.2.	Deploying Routing Domain	23
-11.3.	Deploying Products and APIs 	23
-11.3.1.	Deploying with the Command Line toolkit	23
-11.4.	Deploying Developer Portal Themes	24
-11.4.1.	Prerequisites	24
-11.4.2.	Procedure	24
-11.5.	Uninstall themes from Portal	25
-11.5.1.	Prerequisites	25
-11.5.2.	Procedure	25
-11.6.	Install additional modules to Portal	26
-11.6.1.	Prerequisites	26
-11.6.2.	Procedure	26
-11.7.	Disable a module in Portal	26
-11.7.1.	Prerequisites	26
-11.7.2.	Procedure	27
-11.8.	Uninstall a disabled module in Portal	27
-11.8.1.	Prerequisites	27
-11.8.2.	Procedure	27
-11.9.	Discovering the API Management Domain in DataPower	28
-11.10.	Validate the MPGs in the API Connect Domain are up	29
-11.11.	Impact analyses	30
-11.11.1.	Discover API dependencies per downstream Service	30
-11.11.2.	Discover downstream Service per API.	31
-11.11.3.	Discover Applications per API	32
-11.11.4.	Discover APIs per Application	33
-11.12.	Procedure to move DataPower server between APIC Gateway Services	33
-11.13.	Procedure to restart an API Manager Node	35
-11.14.	Procedure to restart a Developer Portal Node	36
-12.	Troubleshooting	37
-12.1.	DataPower	37
-12.1.1.	Error Codes	37
-12.1.2.	Log Locations	37
-12.2.	Developer Portal	37
-12.2.1.	Log Locations	37
-12.2.2.	Drupal Site Locations	38
-12.3.	API Manager	38
-12.3.1.	Log Files	38
-12.3.2.	Streaming a log file	39
-12.3.3.	Downloading log files from the CMC	39
-12.3.4.	Download log files from the SSH	39
-13.	Maintenance Tasks	40
-13.1.	Certificate Management	40
-13.1.1.	Procedure to update certificates in Back Side TLS Profiles	40
-13.1.2.	Procedure to update certificates in Front Side TLS Profiles	41
-13.2.	Patching	41
-13.2.1.	Normal Cycle	41
-13.2.2.	Zero-Day Vulnerabilities	42
-13.2.3.	Cluster 1	42
-13.2.4.	Cluster 2	42
-13.3.	V4 to V5 Migration - Cluster 2 Only	42
-13.4.	Additional Node	42
-13.4.1.	DataPower	42
-13.4.2.	API Manager	43
-13.4.3.	Developer Portal	43
-13.5.	Removing a Node	43
-13.5.1.	DataPower	43
-13.5.2.	API Manager	43
-13.5.3.	Developer Portal	43
-14.	Failure Scenarios and Recovery Procedures	45
-14.1.	API Manager Host Up but runtime is down	45
-14.2.	Developer Portal Host Up runtime down	45
-14.3.	Data Centre 1 Outage	46
-14.4.	Data Centre 2 Outage	51
-14.5.	API Manager Node Outage Site 1 or 2	55
-14.6.	Both API Manager Nodes Outage in Site 1	57
-14.7.	Both API Manager Nodes Outage in Site 2	62
-14.8.	One or more Developer Portal Node Outage  Site 2 or a single Outage in Site 1.	64
-14.9.	Developer Portal Twp or more Node Outage Site on site 1.	67
-14.10.	DataPower Node Outage Node or Site	69
-14.11.	Data Centre 2 Outage	75
-14.12.	API Manager Node Outage Site 1 or 2	79
-14.13.	Both API Manager Nodes Outage in Data Centre 1	81
-14.14.	Both API Manager Nodes Outage in Site 2	85
-14.15.	One or more Developer Portal Node Outage Site 2 or a single Outage in Site 1.	88
-14.16.	Developer Portal - two or more Node Outage Site on site 1.	91
-14.17.	DataPower Node Outage Node or Data Centre	93
-14.18.	MicroService Layer or DownStream Outage	94
-14.19.	Up Stream Outage	94
-15.	Contact Details	96
-```
+The decision to complete a DR should not be taken lightly and is usually a management decisions, sometimes going up to the CIO, this takes time. It is easy to say that a decision should only need to take five minutes but if the issue occurs at 2am the manager needs to wake up enough to make a thought out choice, and potentially wake his manager as well.
