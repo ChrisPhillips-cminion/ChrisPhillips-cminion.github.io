@@ -35,6 +35,7 @@ My rough steps for an RTO timeline.
 18 | Mean time to verify MTTV | Problem Fixed | outage is complete | n/a
 ---|---|---|---
 
+ *Mean time to xx (MTTx) comes from Richard Wilkins*
 
 When I talk to many clients they want a near zero RTO for a DR, but they often do not consider the actions that need to be taken beyond fixing the issue. If they measure RTO as just the Engineer fixing the issue (which may be failing over to a second site) then we can usually achieve an RTO of sub an hour.
 
