@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2021-11-08 00:13:00
+date: 2021-11-12 00:13:00
 categories: APIConnect
 title: "Adding a new API Gateway to an existing estate."
 ---
