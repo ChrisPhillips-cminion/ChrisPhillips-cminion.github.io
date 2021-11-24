@@ -9,6 +9,9 @@ While installing IBM common services (a preq for CP4I) we hit an issue were some
 
 <!--more-->
 
+This article has been updated pleases see the latest one. 
+
+
 *Please note, if you need to make these changes to your system raise a PMR with IBM before applying to production systems*
 
 
