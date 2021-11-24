@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: CommonServices
-date: 2020-11-24 00:14:00
+date: 2021-11-24 00:14:00
 title: Out Of Memory (OOMKilled) CertMan, secret watcher and ingress on install of Common Services - UPDATED for Nov 2021
 ---
 
