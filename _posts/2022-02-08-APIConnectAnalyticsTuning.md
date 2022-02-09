@@ -3,7 +3,6 @@ layout: post
 categories: APIConnect
 date: 2022-02-08 00:14:00
 title: Tuning API Connect Analytics
-draft: true
 ---
 
 As our customers grow their requirements grow. Recently I have been asked to tune the API Connect analytics subsystem for a through put of multi thousand transactions pers seconds.
@@ -19,6 +18,13 @@ You will need a fast block storage. Faster the better. The majority of the confi
 
 Requests come into the Analytics Subsystem
 
+<div class="mermaid">
+DataPower->>Analytics MTLS GW
+Analytics MTLS GW->>Analytics Ingestion
+Analytics Ingestion->>Analytics Storage Data
+ </div>
+
+
 ```mermaid
 DataPower->>Analytics MTS GW
 Analytics MTS GW->>Analytics Ingestion
@@ -26,7 +32,7 @@ Analytics Ingestion->>Analytics Storage Data
 ```
 
 ### Storage Data
-As I wrote above the majority of the bottlenecks come from the Storage Data pod not being able to write data fast enough. To see if the bottle neck is here follow these sets.
+As I wrote above the majority of the bottlenecks come from the Storage Data pod not being able to write data fast enough. To see if the bottle neck is here follow these steps.
 1. Run your predicted workload through the API GW.
 2. Load a terminal in the storage data pod.
 3. Run top
@@ -44,8 +50,8 @@ The final areas to check for bottlenecks is in the DataPower logs. DataPower wil
 
 ## Tuning
 
-First of all I would increase the number of threads on the Storage Data Pod, this will drive of the CPU wait time, as we are sending more data at the same time to the disk .
-1. Edit the stateful to increase the PROCESSORS environment variable from 4 (default) to 50. We can set a higher limit here as many threads will be stuck waiting for the SAN to respond and so we can spawn additional threads.
+First of all I would increase the number of threads on the Storage Data Pod, this will drive up the CPU wait time, as we are sending more data at the same time to the disk .
+1. Edit the storage data statefulset  to increase the PROCESSORS environment variable from 4 (default) to 50. We can set a higher limit here as many threads will be stuck waiting for the SAN to respond and so we can spawn additional threads.
 2. Storage Data pods will automatically restart, this will take a couple of mins.
 3. Repeat the storage data test above.
 
@@ -62,4 +68,4 @@ pipelineWorkers: 100
 When you have applied the above settings validate the DataPower log and see if it reports any problems.
 
 # Conclusion
-So this article shows how you can increase your a7s through put without increasing the CPU or Memory. Though please note if you are seeing CPU utilisation of the Ingestion or Storage DataPod increasing you will need to increase the CPU limit of those pods.
+So this article shows how you can increase your analytics throughput without increasing the CPU or Memory. Though please note if you are seeing CPU utilisation of the Ingestion or Storage DataPod increasing you will need to increase the CPU limit of those pods.
