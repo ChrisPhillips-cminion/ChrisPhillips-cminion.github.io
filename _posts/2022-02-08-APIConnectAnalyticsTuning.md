@@ -19,17 +19,13 @@ You will need a fast block storage. Faster the better. The majority of the confi
 Requests come into the Analytics Subsystem
 
 <div class="mermaid">
-DataPower->>Analytics MTLS GW
-Analytics MTLS GW->>Analytics Ingestion
-Analytics Ingestion->>Analytics Storage Data
+sequenceDiagram
+    DataPower->>+Analytics MTLS GW: Invokes
+    Analytics MTLS GW->>Analytics Ingestion: Invokes
+    Analytics Ingestion->>Analytics Storage Data: iInvokes
+    Analytics Storage Data->>Disk: Writes
  </div>
 
-
-```mermaid
-DataPower->>Analytics MTS GW
-Analytics MTS GW->>Analytics Ingestion
-Analytics Ingestion->>Analytics Storage Data
-```
 
 ### Storage Data
 As I wrote above the majority of the bottlenecks come from the Storage Data pod not being able to write data fast enough. To see if the bottle neck is here follow these steps.
