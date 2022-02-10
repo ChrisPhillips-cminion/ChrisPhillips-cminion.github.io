@@ -22,7 +22,7 @@ Requests come into the Analytics Subsystem
 sequenceDiagram
     DataPower->>+Analytics MTLS GW: Invokes
     Analytics MTLS GW->>Analytics Ingestion: Invokes
-    Analytics Ingestion->>Analytics Storage Data: iInvokes
+    Analytics Ingestion->>Analytics Storage Data: Invokes
     Analytics Storage Data->>Disk: Writes
  </div>
 
