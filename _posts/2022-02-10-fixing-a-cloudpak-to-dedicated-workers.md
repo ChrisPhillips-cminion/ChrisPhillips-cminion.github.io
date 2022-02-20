@@ -3,7 +3,6 @@ layout: post
 categories: OpenShift
 date: 2022-02-10 00:14:00
 title: Forcing a namespace to deploy to defined worker nodes
-draft: true
 ---
 
 When using OCP licenses provided with IBM Cloud Pak for Integration it is recommended that CP4I is deployed to assigned worker nodes.
