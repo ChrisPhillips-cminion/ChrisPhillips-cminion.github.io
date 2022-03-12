@@ -47,3 +47,11 @@ Integration:
   name: integration
   display_name: Other Integration
   primary: true
+Conference:
+  name: Conference
+  display_name: Conference Appearances
+  primary: true
+Home:
+    name: Home
+    display_name: Home Projects
+    primary: false
