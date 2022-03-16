@@ -11,9 +11,9 @@ I get it, you need to find revenue from APIs to justify the investment costs. Ev
 
 *Full disclousure I work for IBM who are a rival to Google in the API Space, though I am not talking about Google's API Enterprise prodcuts.*
 
-Here is a real usecase, I was working on a personal project where i needed to put a map on a dashboard. (See future upcoming projects). I went to google, as google maps has been my goto for coming up twenty years. However in order to use the google maps API we now need to provide a credit card, and though I wasn't going to go over the free tier I was not comfortable providing my credit card details. So they lost a *home-hacker* because of their need for a credit card.
+Here is a real usecase, I was working on a personal project where i needed to put a map on a dashboard. (See future upcoming projects). I went to Google, as Google Maps has been my goto for coming up twenty years. However in order to use the Google Maps API we now need to provide a credit card, and though I wasn't going to go over the free tier I was not comfortable providing my credit card details. So they lost a *home-hacker* because of their need for a credit card.
 
-I understanding that a need for a credit card is not only so they can bill me if they go over quota, but also so they can identify me. *I dont like sharing my credit card details.* Google is an established company and so they can take the risk of loosing me. However companies who are new to the API space, often require *home-hackers* to get established, to build up their offering and increase their usage. A pay wall or even requiring payment details to access a free tier will put people off.
+I understanding that a need for a credit card is not only so they can bill me if I go over quota, but also so they can identify me. *I dont like sharing my credit card details.* Google is an established company and so they can take the risk of loosing me. However companies who are new to the API space, often require *home-hackers* to get established, to build up their offering and increase their usage. A pay wall or even requiring payment details to access a free tier will put people off.
 
 
 For companies looking at driving revenue from APIs, I would consider both of the following approaches.
