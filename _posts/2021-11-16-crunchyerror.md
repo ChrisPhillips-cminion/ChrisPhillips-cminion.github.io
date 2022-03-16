@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Back up failing with exit code 50"
 
 ---
-
+<!--more-->
 When configuring the backup facility of APIC 10.0.1.4 I ran into this error message
 
 ```
