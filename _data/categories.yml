@@ -8,6 +8,11 @@ APIConnect:
   display_name: API Connect
   icon: /images/apic.png
   primary: true
+API:
+  name: api
+  display_name: API
+  icon: /images/apic.png
+  primary: true
 EventStreams:
   name: eventstreams
   display_name: Event Streams
@@ -51,7 +56,11 @@ Conference:
   name: Conference
   display_name: Conference Appearances
   primary: true
+Day2-Ops:
+  name: day2ops
+  display_name: Day2 Opertations
+  primary: true
 Home:
-    name: Home
-    display_name: Home Projects
-    primary: false
+  name: Home
+  display_name: Home Projects
+  primary: false
