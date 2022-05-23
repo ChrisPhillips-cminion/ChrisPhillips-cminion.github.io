@@ -9,7 +9,7 @@ draft: true
 
 <!--more-->
 
-*I have not managed to find time to write recently due to life getting in the way. I have many idea started so whats this space.*
+*I have not managed to find time to write recently due to life getting in the way. I have many ideas started so whats this space.*
 
 Just because you know you are backing up, it does not mean you know where the back ups are going or if they work!
 
