@@ -12,8 +12,6 @@ title: Always test your backups
 
 Just because you know you are backing up, it does not mean you know where the back ups are going or if they work!
 
-Another high profile example of back ups failing is
-
-[https://about.gitlab.com/blog/2017/02/01/gitlab-dot-com-database-incident/](https://about.gitlab.com/blog/2017/02/01/gitlab-dot-com-database-incident/)
+Another high profile example of back ups failing is [https://about.gitlab.com/blog/2017/02/01/gitlab-dot-com-database-incident/](https://about.gitlab.com/blog/2017/02/01/gitlab-dot-com-database-incident/)
 
 Please test your backups!
