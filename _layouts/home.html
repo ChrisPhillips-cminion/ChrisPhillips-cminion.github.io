@@ -27,7 +27,7 @@ comments: true
       <td class="post-body" align=center valign=top width=20% rowspan=2>
         <a href="/categories.html#{{ post.categories[0] | slugify }}"
                 class="post-meta">
-                {%- if category -%}
+                {%- if category.icon -%}
                   <img src="{{category.icon}}" title="{{category.display_name}}" width=70/>
                 {%- else -%}
                   {{  post.categories[0] }}
