@@ -62,7 +62,7 @@ The catalog sources require two changes to them.
 2. Change the `spec.image` so that the local registry hostname (only) is replaced with `icr.io`
 
 
-Apply the ImageContentSourcePolicy and wait twenty minutes. `oc apply -f image-content-source-policy.yaml` This requires a number of changes to all nodes in the cluster and takes some time.  
+Apply the ImageContentSourcePolicy and wait twenty minutes. `oc apply -f image-content-source-policy.yaml` This will apply a number  changes to all nodes in the cluster and takes some time.  
 
 
 Apply the catalog source(s) `oc apply -f catalog-sources.yaml` (note: please apply any other catalog sources that are generated). If the pods come up in the openshift-marketplace the install can begin. If they do not wait a few more minutes for the ImageContentSourcePolicy to apply and delete the pods.
