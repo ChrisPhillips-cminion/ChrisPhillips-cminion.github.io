@@ -7,7 +7,7 @@ draft: true
 ---
 
 
-Nexus is a third party docker registry that allows users to configure it as a proxy. This means that when a request comes for an image it is downloaded directly and stored in nexus.  If you are not wanting to use nexus as a proxy you can follow the instructions here. https://www.ibm.com/docs/es/cpfs?topic=plugin-bastion-host
+Nexus is a third party docker registry that allows users to configure it as a proxy. This means that when a request comes for an image it is downloaded directly and stored in nexus.  If you are not wanting to use nexus as a proxy you can follow the instructions here. [https://www.ibm.com/docs/es/cpfs?topic=plugin-bastion-host](https://www.ibm.com/docs/es/cpfs?topic=plugin-bastion-host)
 
 <!--more-->
 
@@ -19,6 +19,7 @@ There are many advantages of using a proxy repository
 This guide assumes you already have a nexus repository setup and have an open shift command line tool logged into your cluster.
 
 ## Install IBM-Pak
+These steps are taken directly form [https://www.ibm.com/docs/es/cpfs?topic=plugin-bastion-host](https://www.ibm.com/docs/es/cpfs?topic=plugin-bastion-host)
 1. Download `https://github.com/IBM/ibm-pak-plugin`
 2. Move the file to your path, `mv oc-ibm_pak-linux-amd64 /usr/local/bin/oc-ibm_pak`
 3. Check that `oc ibm-pak --help` returns a help page for the ibm-pak tool
@@ -49,7 +50,7 @@ oc ibm-pak generate mirror-manifests \
 ```
 
 ## Access the imagecontentsourcepolicy and catalogsource
-Goto ` cd ~/.ibm-pak/data/mirror/$CASE_NAME/$CASE_VERSION`
+Goto `cd ~/.ibm-pak/data/mirror/$CASE_NAME/$CASE_VERSION`
 
 This will have the image content source policy and the catalog sources.
 `image-content-source-policy.yaml` is applied to the OCP cluster and tells OCP to route the request for the listed registries to the local nexus registry.
