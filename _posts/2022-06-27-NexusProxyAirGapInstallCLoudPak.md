@@ -34,7 +34,7 @@ export TARGET_REGISTRY=nexus.phillips11.cf
 ```
 
 Where CASE_NAME is the ibm product name and the CASE_VERSION is the version of the case file. These can be retrieved from the knowledge centre of the product you are trying to install. However for API Connect I usually take them from
-
+[https://github.com/IBM/cloud-pak/tree/master/repo/case/](https://github.com/IBM/cloud-pak/tree/master/repo/case/)
 
 ## Generate the catalog sources and imagecontentsourcepolicy
 
