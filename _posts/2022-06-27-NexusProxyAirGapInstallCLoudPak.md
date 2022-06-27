@@ -2,21 +2,21 @@
 layout: post
 categories: CP4I
 date: 2022-06-27 00:14:00
-title: Installing IB  CloudPaks with a Nexus Proxy Docker Registry
+title: Installing IBM CloudPaks with a Nexus Proxy Docker Registry
 draft: true
 ---
 
 
-Using a nexus repository as a proxy for a cloud pad install
-
 Nexus is a third party docker registry that allows users to configure it as a proxy. This means that when a request comes for an image it is downloaded directly and stored in nexus.  If you are not wanting to use nexus as a proxy you can follow the instructions here. https://www.ibm.com/docs/es/cpfs?topic=plugin-bastion-host
 
-There are many advantages s of using a proxy repository
-- Each time an image is required is downloaded from the internet and then each subsequent request can download it from the proxy registry.  
+<!--more-->
+
+There are many advantages of using a proxy repository
+- Each time an image is first requested it is downloaded from the internet and then each subsequent request can download it from the proxy registry.  
 - Nexus offers tools to help check for vulnerabilities in the container images that stored in it.
 - Only one system needs internet connectivity so when new nodes are added they do not need additional network rules enable to allow internet access.
 
-This guide assumes you already have a nexus repository setup and have an open shift command line tool logged into your cluster
+This guide assumes you already have a nexus repository setup and have an open shift command line tool logged into your cluster.
 
 ## Install IBM-Pak
 1. Download `https://github.com/IBM/ibm-pak-plugin`
