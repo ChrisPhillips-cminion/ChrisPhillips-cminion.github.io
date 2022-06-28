@@ -3,7 +3,6 @@ layout: post
 categories: CP4I
 date: 2022-06-27 00:14:00
 title: Installing IBM CloudPaks with a Nexus Proxy Docker Registry
-draft: true
 ---
 
 
