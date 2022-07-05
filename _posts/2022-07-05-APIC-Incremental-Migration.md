@@ -4,7 +4,7 @@ categories: APIConnect
 date: 2022-05-06 00:14:00
 author: ["kaizhang"]
 title: API Connect v5 to v10 Incremental Migration
-drafts: true
+draft: true
 ---
 
 The initial migration from v5 to v10 might take time from days to weeks, or even longer. During the period, the v5 instance might have evolved. Hence, customers often require to bring the changes to the migrated v10 instances. Here we discuss a few scenarios and approaches to handle them accordingly.
