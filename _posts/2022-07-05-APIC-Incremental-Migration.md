@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: APIConnect
-date: 2022-05-06 00:14:00
+date: 2022-07-05 00:14:00
 author: ["kaizhang"]
 title: API Connect v5 to v10 Incremental Migration
 draft: true
