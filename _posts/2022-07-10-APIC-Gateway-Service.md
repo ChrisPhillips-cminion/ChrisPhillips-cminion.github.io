@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: APIConnect
-date: 2022-07-05 00:14:00
+date: 2022-07-10 00:14:00
 title: How many Gateway Services do you need?
 draft: true
 ---
