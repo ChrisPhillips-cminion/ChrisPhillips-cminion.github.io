@@ -45,8 +45,8 @@ To Summarise the pros and cons separating out gateway services.
 Pros
 - No Single point of failure for multiple environments
 - Gateway Extensions can be unique for multiple environments
-- Networking can be as flexible as it needs to be.
--
+- Networking options are more flexible 
+
 
 Cons
 - Simpler to configure and maintain
