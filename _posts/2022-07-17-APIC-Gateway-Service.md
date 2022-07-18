@@ -5,7 +5,7 @@ date: 2022-07-17 00:14:00
 title: How many Gateway Services do you need?
 ---
 
-A Gateway Service in IBM API Connect is the runtime that sits inside DataPower. DataPower in contains are designed to have a single gateway service, however in other form factors (RPM, VM, Physical) it is simple to add multiple gateway services to provide a logical separation. However just because you can have one gateway service or ten gateway services (No known technical limits) for a single provider org what is the correct way.
+A Gateway Service in IBM API Connect is the runtime that sits inside DataPower. DataPower in containers is designed to have a single gateway service, however in other form factors (RPM, VM, Physical) it is simple to add multiple gateway services to provide a logical separation. However just because you can have one gateway service or ten gateway services (No known technical limits) for a single provider org what is the correct way.
 
 <!--more-->
 
