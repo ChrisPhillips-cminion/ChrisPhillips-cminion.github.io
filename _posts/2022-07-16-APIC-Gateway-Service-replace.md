@@ -17,7 +17,7 @@ Sometimes a client configures multiple provider orgs to share a single Gateway S
 #############################################################
 
 user=chris
-password=Igash1sa
+password=pass
 porg=ads
 realm=provider/default-idp-2
 platform_api_url=platform-api-cp4i.mycluster.eu-gb.containers.appdomain.cloud
