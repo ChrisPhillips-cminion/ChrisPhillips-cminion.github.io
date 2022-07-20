@@ -3,7 +3,7 @@ layout: post
 categories: APIConnect
 date: 2022-07-20 00:14:00
 title: Filtering headers from the Analytics data on ingestion.
-author: ["thomaswilkinson","chrisphillips"]
+author: ["ThomasWilkinson","ChrisPhillips"]
 ---
 
 If header logging is enabled all headers are logged into Analytics. However clients usualy do not want to have the client secret stored.
