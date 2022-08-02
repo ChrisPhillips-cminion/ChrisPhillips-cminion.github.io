@@ -18,13 +18,14 @@ Though this is useful it doesn’t provide quite enough information.
 Though the SLA is for a particular application, it needs to factor in the availability of its dependencies. For API Connect this is the Kubernetes, Storage and Network plus other factors I am sure I am missing.  Many people think that in order to reach an SLA of 99.99% each layer needs to be able to be 99.99%. This is a fallacy. Instead you must multiply the SLA of each dependency to find what is available for the application.
 
 For Example
-|---|---|---|
+
+
 | Dependency | SLA | Outage per year|
-|---|---|---|
+| :---        |    :----:   |          ---: |
 | Network | 99.999% (0.99999) | 5m15s|
 | Storage | 99.998% (0.99998) | 10m31s|
 | Kubernetes | 99.997 (0.99997) |  15m45s|
-|---|---|---|
+
 
 We then multiply the SLA of each layer to get the availability for the dependencies, 0.99999 * 0.99998  * 0.99997 is 0.99994 or 99.994%(31m33s). This means the application must designed to have at most 21m3s (52m36s take away 31m33s) of outages a year.
 
