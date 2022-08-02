@@ -2,7 +2,7 @@
 layout: post
 categories: Day2-Ops
 date: 2022-08-02 00:19:00
-title: SLA Budgetting - 99.999% Falacy
+title: SLA Budgetting - 99.999% Fallacy
 draft: true
 ---
 
