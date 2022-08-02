@@ -5,9 +5,12 @@ date: 2022-02-08 00:14:00
 title: Tuning API Connect Analytics
 ---
 
-As our customers grow their requirements grow. Recently I have been asked to tune the API Connect analytics subsystem for a through put of multi thousand transactions pers seconds.
+# THIS ARTICLE HAS BEEN REPLACED with [https://chrisphillips-cminion.github.io/apiconnect/2022/08/02/APIConnectAnalyticsTuning-2.html](https://chrisphillips-cminion.github.io/apiconnect/2022/08/02/APIConnectAnalyticsTuning-2.html) 
+
 
 <!--more-->
+As our customers grow their requirements grow. Recently I have been asked to tune the API Connect analytics subsystem for a through put of multi thousand transactions pers seconds.
+
 
 The exact settings that are required will change from client to client depending on the hardware they have available and their requirements (e.g. payload size if its enabled)
 

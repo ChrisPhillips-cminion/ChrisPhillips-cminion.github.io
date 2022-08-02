@@ -3,7 +3,6 @@ layout: post
 categories: APIConnect
 date: 2022-08-02 00:14:00
 title: Tuning API Connect Analytics - CORRECTION!
-draft: true
 ---
 
 8 months ago I wrote up on how to tune Analytics. There was lots of bad suggestions in that article and this article is here to correct the original.
