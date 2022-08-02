@@ -67,6 +67,7 @@ pipeline.batch.size: 4400
 pipeline.batch.delay: 0
 ```
 2. Manually restart the Ingestion pods
+
 *These values may need to be tuned for your workload but they are my starting point.*
 
 Third I would modify the DataPower settings. If you are using DataPower in a container you would need to create a gateway extension to persist this. This guide will tell you the commands to run on each DataPower via the cli. This needs to be done to each DataPower in the cluster.
@@ -74,6 +75,7 @@ Third I would modify the DataPower settings. If you are using DataPower in a con
 2. Go to the apiconnect domain and enter config G.g. `sw apiconnect; config`
 3. type `analytics-endpoint a7s;  max-records 4096 ; exit`
 4. type `exit` again
+
 *These values may need to be tuned for your workload but they are my starting point.*
 
 When you have applied the above settings validate the DataPower log and see if it reports any problems.
