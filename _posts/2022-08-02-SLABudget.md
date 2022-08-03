@@ -3,7 +3,6 @@ layout: post
 categories: Day2-Ops
 date: 2022-08-02 00:19:00
 title: SLA Budgetting - The 99.9999% Fallacy
-draft: true
 ---
 
 Often project owners state that their application needs an availability of 99.97%.  Though I will be referring to API Connect in this article it is applicable to any application.
