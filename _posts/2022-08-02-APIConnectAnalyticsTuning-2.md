@@ -59,7 +59,7 @@ First of all I would increase the number of threads on the Storage Data Pod, thi
 2. Storage Data pods will automatically restart, this will take a couple of mins.
 
 Second I would increase the number of Workers on the ingestion pod.
-1. Edit the Analytics CR and edit the following lines
+1. Edit the Analytics CR and the `a7s-ingestion-config` configmap and edit the following lines
 ```yaml
 pipeline.workers: 2
 pipeline.batch.size: 4400
