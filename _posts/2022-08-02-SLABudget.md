@@ -28,7 +28,7 @@ For Example
 | Kubernetes | 99.995% (0.99995) |  26m 17s|
 
 
-We then multiply the SLA of each layer to get the availability for the dependencies, 0.99999 * 0.99998  * 0.99997 * 0.99996 * 0.99995 is 0.99985 or 99.985% (1h18m53s). This means the application must designed to have at most 1h18m54s (2h37m47s take away 1h18m53s) of outages a year.
+We then multiply the SLA of each layer to get the availability for the dependencies, 0.99999 * 0.99998  * 0.99997 * 0.99996 * 0.99995 is 0.99985 or 99.985% (1h18m53s). This means the application must be designed to have at most 1h18m54s (2h37m47s take away 1h18m53s) of outages a year.
 
 ## Planned  / Unplanned Outage
 
