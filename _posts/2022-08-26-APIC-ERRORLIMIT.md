@@ -15,12 +15,10 @@ In API Connect there is no out of the box Circuit Breaker pattern but we can bui
 
 ![https://chrisphillips-cminion.github.io/images/flow.png](https://chrisphillips-cminion.github.io/images/flow.png)
 
-This assembly flow is made up of three policies, two ratelimits and an invoke.  The first ratelimit policy will increment (consume) the counter by one. The invoke is the call to the downstream system and is configured to stop the flow when an error is returned.  The second ratelimit will only be reached if the invoke is successful, it then reduces (replenishes) the rate limit counter by one.
+This assembly flow is made up of four policies, three ratelimits and an invoke.  The first ratelimit policy will increment (consume) the counter by one, this exists so we can terminate the request if the rate limit is reached prior to the invoke being made. The second ratelimit policy is used to reduce (replenish) the same counter so we don't impact the counter prior to errors being returned. The invoke is used to call  the downstream system and is configured to stop the flow when an error is returned.  The ratelimit policy in the catch block  will only be reached if the invoke is unsuccessful, it then increases (Consume) the rate limit counter by one.
 
 ![https://chrisphillips-cminion.github.io/images/policy.png](https://chrisphillips-cminion.github.io/images/policy.png)
 
-
-Therefore, if there is an error the rate limit counter is not reduced.  If the rate limit is reached, then requests are blocked with a 429 or 504 until the period is over. For this to work most efficiently the invoke needs to have a low latency for successful calls. The formula to work out the maximum through put is  `Rate Limit (TPS) / Average Successful Invoke Latency (s)`
 
 The criteria for the rate limit must be defined in DataPower. I recommend this is set to an apigw object via a GW extension.
 
@@ -72,6 +70,13 @@ x-ibm-configuration:
             - name: errorcount
               operation: consume
           description: as
+      - ratelimit:
+          version: 2.2.0
+          title: ratelimit
+          source: gateway-named
+          rate-limit:
+            - name: errorcount
+              operation: replenish
       - invoke:
           title: invoke
           version: 2.0.0
@@ -87,18 +92,24 @@ x-ibm-configuration:
             values: []
           inject-proxy-headers: true
           persistent-connection: true
-          stop-on-error:
-            - OperationError
-            - SOAPError
-            - ConnectionError
-      - ratelimit:
-          version: 2.2.0
-          title: ratelimit
-          source: gateway-named
-          rate-limit:
-            - name: errorcount
-              operation: replenish
     finally: []
+    catch:
+      - errors:
+          - ConnectionError
+          - PropertyError
+          - JavaScriptError
+          - SOAPError
+          - OperationError
+          - BadRequestError
+          - RuntimeError
+        execute:
+          - ratelimit:
+              version: 2.2.0
+              title: ratelimit
+              source: gateway-named
+              rate-limit:
+                - name: errorcount
+                  operation: consume
   activity-log:
     enabled: true
     success-content: activity
@@ -158,10 +169,10 @@ securityDefinitions:
     type: apiKey
     in: header
     name: X-IBM-Client-Id
-security:
-  - clientID: []
+security: []
 schemes:
   - https
+
 ```
 
 </div>
