@@ -33,8 +33,6 @@ sw apiconnect;co;
 exit
 ```
 
-Please note that if you use the above rate limit and the latency of the backend system is 0.1 seconds then no more then 100TPS can be handled.
-
 **Sample API**
 <button class="collapsible" id="html1">Click to reveal </button>
 
