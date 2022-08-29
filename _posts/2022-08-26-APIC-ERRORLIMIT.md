@@ -15,7 +15,7 @@ In API Connect there is no out of the box Circuit Breaker pattern but we can bui
 
 ![https://chrisphillips-cminion.github.io/images/flow.png](https://chrisphillips-cminion.github.io/images/flow.png)
 
-This assembly flow is made up of three policies, two ratelimits and an invoke.  The first ratelimit policy will increment (onsume) the counter by one. The invoke is the call to the downstream system and is configured to stop the flow when an error is returned.  The second ratelimit will only be reached if the invoke is successful, it then reduces (replenishes) the rate limit counter by one.
+This assembly flow is made up of three policies, two ratelimits and an invoke.  The first ratelimit policy will increment (consume) the counter by one. The invoke is the call to the downstream system and is configured to stop the flow when an error is returned.  The second ratelimit will only be reached if the invoke is successful, it then reduces (replenishes) the rate limit counter by one.
 
 ![https://chrisphillips-cminion.github.io/images/policy.png](https://chrisphillips-cminion.github.io/images/policy.png)
 
@@ -35,7 +35,7 @@ sw apiconnect;co;
 exit
 ```
 
-Please noe that if you use the above rate limit and the latency of the backend system is 0.1 seconds then no more then 100TPS can be handled.
+Please note that if you use the above rate limit and the latency of the backend system is 0.1 seconds then no more then 100TPS can be handled.
 
 **Sample API**
 <button class="collapsible" id="html1">Click to reveal </button>
