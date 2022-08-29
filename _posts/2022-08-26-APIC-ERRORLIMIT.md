@@ -30,7 +30,7 @@ The below will create a rate limit of ten per second.
 ```
 sw apiconnect;co;
   apigw apiconnect;
-    rate-limit errorcount 10 second on off on on off off na 1 ;
+    assembly-rate-limit errorcount 10 1 second on off on on off off na 1 ;
   exit;
 exit
 ```
