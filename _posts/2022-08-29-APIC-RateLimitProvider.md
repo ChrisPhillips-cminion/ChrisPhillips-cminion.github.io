@@ -174,3 +174,4 @@ schemes:
 * https://www.ibm.com/docs/en/datapower-gateway/10.0.x?topic=processing-api-rate-limit-action
 * https://www.ibm.com/docs/en/api-connect/10.0.x?topic=connect-understanding-rate-limits-apis-plans
 * https://www.ibm.com/docs/en/api-connect/10.0.x?topic=policies-rate-limit
+* https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=environment-extending-gateway-server-behavior
