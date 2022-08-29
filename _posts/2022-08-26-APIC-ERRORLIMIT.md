@@ -1,9 +1,8 @@
 ---
 layout: post
 categories: apiconnect
-date: 2022-08-26 00:14:00
+date: 2022-08-29 00:14:00
 title: Circuit Breaker in API Connect
-draft: true
 ---
 
 A Circuit breaker pattern is becoming a common pattern for remote calls today. The purpose of the circuit breaker is to detect when a series of errors are returned and block traffic for a time period, thus giving the backend system time to recover.
