@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: apiconnect
+categories: APIConnect
 date: 2022-08-29 00:14:00
 title: Circuit Breaker in API Connect
 ---
@@ -9,6 +9,8 @@ A Circuit breaker pattern is becoming a common pattern for remote calls today. T
 
 
 <!--more-->
+
+## APIC Flow
 
 In API Connect there is no out of the box Circuit Breaker pattern but we can build a system that can do a similar function.
 
@@ -21,7 +23,8 @@ This assembly flow is made up of four policies, three ratelimits and an invoke. 
 
 The criteria for the rate limit must be defined in DataPower. I recommend this is set to an apigw object via a GW extension.
 
-**Sample DataPower Config for creating the Rate Limit**
+## Sample DataPower Config for creating the Rate Limit
+
 The below will create a rate limit of ten per second.
 
 ```
@@ -32,7 +35,7 @@ sw apiconnect;co;
 exit
 ```
 
-**Sample API**
+##Sample API
 <button class="collapsible" id="html1">Click to reveal </button>
 
 <div class="content" id="html1data" markdown="1">
