@@ -32,9 +32,6 @@ sw apiconnect;co;
   exit;
 exit
 ```
-**UPDATE 31/8 **
-Thomas Burke correctly suggested that developers may prefer to detect the failure by using a switch case to look at the response code from the invoke rather then throwing an error. This is an excellent idea and so I wanted to highlight it here. 
-
 
 ## Sample API
 <button class="collapsible" id="html1">Click to reveal </button>
