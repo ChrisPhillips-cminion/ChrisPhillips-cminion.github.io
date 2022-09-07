@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: APIConnect
+categories: openshift
 date: 2022-09-07 00:14:00
 title: Debugging ICSP (Image Content Source Policies)  
 ---
