@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: apiconnectz
+categories: apiconnect
 date: 2022-09-07 00:14:00
 title: Setting Payload limits to protect your apis in API Connect
 ---
