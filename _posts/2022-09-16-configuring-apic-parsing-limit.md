@@ -37,7 +37,6 @@ parse-settings: apic-default-parsesettings [up]
 
 To change the document size you must modify the document-size attribute. Please not the object does not exist until after the Gateway is registered with the API Manager.
 
-
 The commands in data power are as follows to set the max size to 512kb
 
 ```
