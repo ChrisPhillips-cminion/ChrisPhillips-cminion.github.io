@@ -6,11 +6,13 @@ title: Setting Payload limits to protect your apis in API Connect
 draft: true
 ---
 
-In API Connect a parsing policy can be used to protect your apis to ensure that large files are not malicious or accidentally clogging up system, by default the max size is 4MB.  However clients frequently want to support files larger then the default size. Though this is not something I recommend (I will make another post about). This post will show the steps to increase or decrease the document size limit.
+In API Connect a parsing policy can be used to protect your apis to ensure that large files are not malicious or accidentally clogging up system, by default the max size is 4MB.  However clients frequently want to support files larger then the default size,  this is not something I recommend (I will make a future post about).
+
+This post will show the steps to increase or decrease the document size limit.
 
 <!--more-->
 
-Firstly the max size limit is only applied when an API uses the parse function. To apply the 4MB limit simply add the parse policy to the start of your API.
+Firstly, the document size limit is only applied when an API uses the parse policy. To apply the 4MB limit simply add the parse policy to the start of your API.
 
 Now to customise the limit the parse-setting option must be modified on each DataPower. I recommend that this is via a gateway extension or added to an existing gateway extension.
 
