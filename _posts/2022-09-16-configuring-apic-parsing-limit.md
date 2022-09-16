@@ -47,6 +47,7 @@ parse-settings apic-default-parsesettings
 document-size 524288
 exit
 exit
+write mem
 ```
 
 I would recommend the following commands are added to a gateway extension if this is running with DataPower in a container.
