@@ -3,7 +3,6 @@ layout: post
 categories: apiconnectz
 date: 2022-09-07 00:14:00
 title: Setting Payload limits to protect your apis in API Connect
-draft: true
 ---
 
 In API Connect a parsing policy can be used to protect your apis to ensure that large files are not malicious or accidentally clogging up system, by default the max size is 4MB.  However clients frequently want to support files larger then the default size,  this is not something I recommend (I will make a future post about).
