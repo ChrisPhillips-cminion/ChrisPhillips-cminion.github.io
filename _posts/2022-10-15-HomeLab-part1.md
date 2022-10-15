@@ -64,7 +64,7 @@ Image
 
 I have a couple of Raspberry Pi’s
 1.	Home Dashboard client
-2.	Octo Print3d for my 3d printer
+2.	Octo Print for my 3d printer
 
 The future projects for this are as follows
 *	Increase Network Ports in my NAS so it can do 2GB LACP
