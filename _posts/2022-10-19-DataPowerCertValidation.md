@@ -7,7 +7,19 @@ author: [ "ChrisPhillips", "RGeorgeInness" ]
 draft: true
 ---
 
-Recently a customer has asked how to disable certificate expiry validtion. In short they wanted to be able to still use certificates if they had reached end of life. Though this is nothing I would recommend
+Recently a customer has asked how to disable certificate expiry validtion. In short they wanted to be able to still use certificates if they had reached end of life. Though this is not something I would recommend I wanted to share the steps.
 
-**UPDATED 2022** - *Since this article was originally published three years ago datapower has added a requirement that each domain should have the same name therefore to achieve the first design you must split your datapower with tenants.*
 <!--more-->
+
+Log into the Datapower CLI and run the following commands in the default domain.
+
+```
+config
+crypto
+cert-monitor
+disable-expired-certs off
+exit
+exit
+```
+
+This can also be done via the UI.
