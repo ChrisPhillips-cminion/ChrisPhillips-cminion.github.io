@@ -6,6 +6,9 @@ title: "DataPower Quorums with two DataPowers"
 ---
 
 Ways to handle the DataPower quorum when there is only enough Licenses for two DataPowers.
+
+
+THIS HAS BEEN UPDATED - [https://chrisphillips-cminion.github.io/apiconnect/2022/10/19/APIC-DataPowerQuorum2Node0.html](https://chrisphillips-cminion.github.io/apiconnect/2022/10/19/APIC-DataPowerQuorum2Node0.html)
 <!--more-->
 
 This article assumes that there are only two DataPowers available to run as the  API Connect Gateway, whether v5c or api-gateway
