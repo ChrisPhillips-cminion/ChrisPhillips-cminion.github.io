@@ -3,7 +3,7 @@ layout: post
 date: 2022-10-19 00:01:00
 categories: DataPower
 title: "Global disabling of Certificate Expiry validation"
-author: [ "ChrisPhillips", "RGeorgeInness" ]
+author: [  "RGeorgeInness", "ChrisPhillips" ]
 draft: true
 ---
 
