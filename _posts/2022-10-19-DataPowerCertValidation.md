@@ -22,4 +22,4 @@ exit
 exit
 ```
 
-This can also be done via the UI.
+This can also be done via the UI
