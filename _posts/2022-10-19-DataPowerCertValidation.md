@@ -20,6 +20,7 @@ cert-monitor
 disable-expired-certs off
 exit
 exit
+write mem
 ```
 
 This can also be done via the UI
