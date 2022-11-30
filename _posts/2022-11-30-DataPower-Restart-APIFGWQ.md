@@ -3,7 +3,6 @@ layout: post
 date: 2022-11-30 00:01:00
 categories: API Connect
 title: "Readiness when restarting API GW Pods"
-draft: true
 ---
 
 The API Gateway consists of one or more DataPower pods. These are listed as `Ready` in the pod list. This article explains what we mean by ready.
