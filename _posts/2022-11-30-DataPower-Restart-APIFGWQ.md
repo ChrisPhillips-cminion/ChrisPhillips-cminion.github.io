@@ -3,7 +3,6 @@ layout: post
 date: 2022-11-30 00:01:00
 categories: API Connect
 title: "Readiness when restarting API GW Pods"
-author: [  "RGeorgeInness", "ChrisPhillips" ]
 draft: true
 ---
 
