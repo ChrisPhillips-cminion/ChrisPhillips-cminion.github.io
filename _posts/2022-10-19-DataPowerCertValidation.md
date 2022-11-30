@@ -6,7 +6,7 @@ title: "Global disabling of Certificate Expiry validation"
 author: [  "RGeorgeInness", "ChrisPhillips" ]
 ---
 
-Recently a customer has asked how to disable certificate expiry validtion. In short they wanted to be able to still use certificates if they had reached end of life. Though this is not something I would recommend I wanted to share the steps.
+Recently a customer has asked how to disable certificate expiry validation. In short they wanted to be able to still use certificates if they had reached end of life. Though this is not something I would recommend I wanted to share the steps.
 
 <!--more-->
 
