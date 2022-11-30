@@ -16,4 +16,4 @@ The API Gateway consists of one or more DataPower pods. These are listed as `Rea
 
 If less then half of API Gateway (DataPower) pods in a cluster are restarted for any reason (manual or automatic) on a working DataPower Service, when the service is marked as `Ready` the APIs are configured and are ready to be served.
 
-If half or more API Gateway (DataPower) pods in a cluster are restarted for any reason on a working cluster at the same time, then this may require a resync with the API Manager. When the pods are market as `Ready` this means the cluster is operational but does not mean that the APIs have synchronised from the API Manager.
+If half or more API Gateway (DataPower) pods in a cluster are restarted for any reason on a working cluster at the same time, then this may require a resync with the API Manager. When the pods are market as `Ready` this means the cluster is operational but does not mean that the APIs have synchronised from the API Manager. This can take up to fifteen minutes after the ready state is reported.
