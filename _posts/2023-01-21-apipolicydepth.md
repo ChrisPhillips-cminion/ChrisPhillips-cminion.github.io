@@ -3,6 +3,7 @@ layout: post
 date: 2023-01-31 00:01:00
 categories: API Connect
 title: "Error: CALL recursive depth too deep"
+draft: true
 ---
 
 One of the reasons my blog doesn't have so many updates is that I don't often find new problems.
@@ -25,3 +26,11 @@ The error message has the an error like below
 ```
 
 Out of the box we support 128 policies to be invoked in a single API Call. This can be increased by setting the `var://service/max-call-depth` vairable to 2048.
+
+
+To override the service variables set the following code in a gatewayscript of the api
+
+```
+var sm = require ('service-metadata');
+sm.setVar("var://service/max-call-depth",2048);
+```
