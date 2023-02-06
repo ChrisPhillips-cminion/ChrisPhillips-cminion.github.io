@@ -3,7 +3,6 @@ layout: post
 date: 2023-02-06 00:01:00
 categories: APIConnect
 title: "Changing the storage class for a running Platform Navigator to allow"
-draft: true
 ---
 
 The Platform Navigator has a requirement for two types of PVC. One of these is RWX and RWO. For many customers these can both be backed onto RWX but occasionally the RWX is not fast enough. One sympton of this is site unavailable error messages.
