@@ -12,21 +12,21 @@ By default, the PN install puts both PVCs into RWX. This article will cover how 
 <!--more-->
 *Note: After this is done the user registry configuration will need to be reconfigured but the capabilities do not need to be reinstalled* 
 
-1.	`oc edit cm ibm-zen-config` 
-a.	Remove the ‘ownerReferences’ section
-b.	Update `zenCoreMetaDbStorageClass` to your RWO storage class
-2.	`oc get pn -oyaml > pn.yaml`
-a.	Add the annotation ‘integration.ibm.com/reconcile-zen-configmap: "false"’ This will stop the CM changes above being over written. 
-3.	`oc delete pn <pn name>`
-a.	Delete the existing PN
-4.	Wait 5 mins
+1.	`oc edit cm ibm-zen-config` <BR>
+    a.	Remove the ‘ownerReferences’ section<BR>
+    b.	Update `zenCoreMetaDbStorageClass` to your RWO storage class<BR>
+2.	`oc get pn -oyaml > pn.yaml`<BR>
+    a.	Add the annotation ‘integration.ibm.com/reconcile-zen-configmap: "false"’ This will stop the CM changes above being over written. <BR>
+3.	`oc delete pn <pn name>`<BR>
+    a.	Delete the existing PN<BR>
+4.	Wait 5 mins<BR>
 5.	`oc get po, pvc`
-a.	Check the PVC and Pods are gone
-6.	`oc get po -n ibm-common-services`
-a.	Check there are no pods in the terminating state
-7.	`oc apply -f pn.yaml`
-a.	Create the new PN
-b.	This will take 15-45mins to complete	
+    a.	Check the PVC and Pods are gone<BR>
+6.	`oc get po -n ibm-common-services`<BR>
+    a.	Check there are no pods in the terminating state<BR>
+7.	`oc apply -f pn.yaml`<BR>
+    a.	Create the new PN<BR>
+    b.	This will take 15-45mins to complete<BR>
 
 The steps above were taken from a slightly different use-case documented https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.2?topic=ui-deploying-platform-rwo-storage#configmap
 
