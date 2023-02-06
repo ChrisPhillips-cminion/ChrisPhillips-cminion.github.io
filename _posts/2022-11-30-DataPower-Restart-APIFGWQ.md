@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-11-30 00:01:00
-categories: API Connect
+categories: APIConnect
 title: "Readiness when restarting API GW Pods"
 ---
 
