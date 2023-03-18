@@ -16,7 +16,7 @@ However this is not often seen as an acceptable answer. So I decided to dive bac
 1. OpenShift Environment - I did this with OCP 4.10
 2. OpenShift Pipelines Operator installed
 
-![/images/ocppipelines.png]
+![https://chrisphillips-cminion.github.io//images/ocppipelines.png](https://chrisphillips-cminion.github.io/images/ocppipelines.png)
 
 **My Task**
 
@@ -30,7 +30,7 @@ This must be loaded into the namespace that will host the pipeline.
 
 **Create the Pipeline**
 
-![/images/pipeline.png]
+![https://chrisphillips-cminion.github.io/images/pipeline.png](https://chrisphillips-cminion.github.io/images/pipeline.png)
 
 I wont repeat a thousand other articles on how to create a pipeline, but I will provide a sample here.
 [https://gist.github.com/ChrisPhillips-cminion/830ac19b20e6985a31e9e6ce7e13eceb](https://gist.github.com/ChrisPhillips-cminion/830ac19b20e6985a31e9e6ce7e13eceb)
