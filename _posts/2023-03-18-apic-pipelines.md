@@ -16,17 +16,61 @@ However this is not often seen as an acceptable answer. So I decided to dive bac
 1. OpenShift Environment - I did this with OCP 4.10
 2. OpenShift Pipelines Operator installed
 
-![https://chrisphillips-cminion.github.io//images/ocppipelines.png](https://chrisphillips-cminion.github.io/images/ocppipelines.png)
+![https://chrisphillips-cminion.github.io/images/ocppipelines.png](https://chrisphillips-cminion.github.io/images/ocppipelines.png)
 
 **My Task**
 
-I have placed my task on github here [https://gist.github.com/ChrisPhillips-cminion/d5659c35ca84cfb6c0d4ea4d64767abe](https://gist.github.com/ChrisPhillips-cminion/d5659c35ca84cfb6c0d4ea4d64767abe)
+I have placed my task on github here [https://gist.github.com/ChrisPhillips-cminion/ea228d9ea3429bad11ad0a1c30f48b59](https://gist.github.com/ChrisPhillips-cminion/ea228d9ea3429bad11ad0a1c30f48b59)
 
 Save the gist to a local file and load it with
 
 `oc apply -f ./apic-publish-task.yaml`
 
 This must be loaded into the namespace that will host the pipeline.
+
+**Script in the task**
+
+The task lined to above contains the following script. This script can be seen as a starting point for any customisations.
+
+|  Environmental Variables |  Description |
+|  ---- |  ---- |
+| dir |  The subdirectory to look for products in |
+| url | The API Manager URL|
+| user | The user to log into api manager  |
+| password | The password to log into api manager  |
+| realm | The user registry |
+| target_porg | The Provider Org to publish the product to |
+| target_catalog | The Catalog to publish the product to |
+| target_space | The Space to publish the product to |
+| replace_subscriptions | Automatically migrate subscriptions to the new product if it is replacing a product of the same name and version |
+
+
+```shell
+#!/bin/sh
+if [ "replace_subscriptions" == "" ] ; then #Set the migrate subscriptions flag, or not
+  migrate_subscriptions=""
+else
+  migrate_subscriptions="--migrate_subscriptions"
+fi
+if [ "$target_space" == "" ] ; then #If spaces are used set the scope to space
+  scope="space"
+else
+  scope="catalog"
+fi
+rm -rf toolkit* #Clean u
+echo Downloading CLI tool #Download the CLI from the API Manager, As the API manager must be assessable to publish APIs there should be near zero risk that it will not be contactable.  
+curl https://$url/client-downloads/toolkit-linux.tgz -k -o toolkit-linux.tgz
+tar zxvf toolkit-linux.tgz
+chmod 755 apic-slim
+echo Login #to api manager
+./apic-slim --accept-license login -s $url --realm $realm --username $user --password $password
+product_list=$(grep -ri product:\ 1.0.0 $dir | sed -e s/:.\*//) #Get the product files from the git repo.
+echo Publishing to $publish_url
+for i in $product_list ; do
+  echo "publishing ./apic-slim products:publish $i -s $url -o $target_porg -c $target_catalog --scope $scope $migrate_subscriptions"
+  ./apic-slim products:publish $i -s $url -o $target_porg -c $target_catalog --scope $scope $migrate_subscriptions
+done
+```
 
 **Create the Pipeline**
 
