@@ -10,7 +10,7 @@ I have been asked almost daily for the last few weeks what is my preferred CIDC 
 
 <!--more-->
 
-However this is not often seen as an acceptable answer. So I decided to dive back into OCP Pipelines. I set myself two hours to see what I could put together. This is by no means perfect but will meet the initial needs.  
+However, this is not often seen as an acceptable answer. I decided to dive back into OCP Pipelines. I set myself two hours to see what I could put together. This is by no means perfect but will meet the initial needs.  
 
 **Requirements**
 1. OpenShift Environment - I did this with OCP 4.10
@@ -30,14 +30,14 @@ This must be loaded into the namespace that will host the pipeline.
 
 **Script in the task**
 
-The task lined to above contains the following script. This script can be seen as a starting point for any customisations.
+The task linked above contains the following script that requires passes in the listed variables. This script can be seen as a starting point for any customisations required.
 
-|  Environmental Variables |  Description |
+| Environmental Variables |  Description |
 |  ---- |  ---- |
-| dir |  The subdirectory to look for products in |
+| dir | The subdirectory to look for products in |
 | url | The API Manager URL|
-| user | The user to log into api manager  |
-| password | The password to log into api manager  |
+| user | The user to log into api manager |
+| password | The password to log into api manager |
 | realm | The user registry |
 | target_porg | The Provider Org to publish the product to |
 | target_catalog | The Catalog to publish the product to |
@@ -57,7 +57,7 @@ if [ "$target_space" == "" ] ; then #If spaces are used set the scope to space
 else
   scope="catalog"
 fi
-rm -rf toolkit* #Clean u
+rm -rf toolkit* #Clean up
 echo Downloading CLI tool #Download the CLI from the API Manager, As the API manager must be assessable to publish APIs there should be near zero risk that it will not be contactable.  
 curl https://$url/client-downloads/toolkit-linux.tgz -k -o toolkit-linux.tgz
 tar zxvf toolkit-linux.tgz
