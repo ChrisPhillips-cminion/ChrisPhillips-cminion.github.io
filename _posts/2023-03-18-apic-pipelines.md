@@ -1,12 +1,11 @@
 ---
 layout: post
-date: 2023-03-18 00:01:00
+date: 2023-03-23 00:01:00
 categories: APIConnect
 title: "OpenShift Pipeline - Publish APIC"
-draft: true
 ---
 
-I have been asked almost daily for the last few weeks what is my preferred CIDC took or process.  My answer is always the same, given APIC has a rest interface the best tool is the one the team know.
+I have been asked almost daily for the last few weeks what is my preferred CICD took or process.  My answer is always the same, given APIC has a rest interface the best tool is the one the team know.
 
 <!--more-->
 
@@ -30,7 +29,7 @@ This must be loaded into the namespace that will host the pipeline.
 
 **Script in the task**
 
-The task linked above contains the following script that requires passes in the listed variables. This script can be seen as a starting point for any customisations required.
+The task linked above contains the following script that requires parameters in the listed variables. This script can be seen as a starting point for any customisations required.
 
 | Environmental Variables |  Description |
 |  ---- |  ---- |
@@ -76,7 +75,9 @@ done
 
 ![https://chrisphillips-cminion.github.io/images/pipeline.png](https://chrisphillips-cminion.github.io/images/pipeline.png)
 
-I wont repeat a thousand other articles on how to create a pipeline, but I will provide a sample here.
+I won't repeat a thousand other articles on how to create a pipeline, but I will provide a sample here.
 [https://gist.github.com/ChrisPhillips-cminion/830ac19b20e6985a31e9e6ce7e13eceb](https://gist.github.com/ChrisPhillips-cminion/830ac19b20e6985a31e9e6ce7e13eceb)
+
+A good introduction for pipelines can be found [https://docs.openshift.com/container-platform/4.12/cicd/pipelines/understanding-openshift-pipelines.html](https://docs.openshift.com/container-platform/4.12/cicd/pipelines/understanding-openshift-pipelines.html)
 
 This simple pipeline will extract from git and then publish the products listed.
