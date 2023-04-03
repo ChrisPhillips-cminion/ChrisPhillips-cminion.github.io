@@ -12,11 +12,11 @@ I have tried to grade each command with a risk as follows
 - Non Destructive - Though it makes changes these changes are unlikely to cause problems. (Use at your own risk)
 - Read Only - Does not make any changes
 
-## 1. Watch the status of zenservice deployment
-**Risk** - Non Destructive
+## 1. Watch the status of ZenService deployment
+**Risk:**  Non Destructive
 This commands allow you to look at the status of the deployment of ZenService, and have it auto updated on the screen.
-**Command:**
 
+**Command:**
 `watch "oc get zenservice -ojsonpath='{.items[0].status}'  | jq"`
 
 **Response:, this will auto refresh, Ctrl+c to end**
@@ -39,3 +39,22 @@ This commands allow you to look at the status of the deployment of ZenService, a
   "zenStatus": "InProgress"
 }
 ```
+
+
+## 2. Extract the admin password from ibm-common-services
+**Risk:** Read Only
+This command prints to the screen the admin password to login to the ZenService frame work. This used by the CP4I integration platform.
+
+**Command:**
+`oc extract secret/platform-auth-idp-credentials      -n ibm-common-services --to=-`
+
+**Response:**
+
+```
+chrisphillips@cminions-MacBook-Pro apic-2dcha % oc extract secret/platform-auth-idp-credentials      -n ibm-common-services --to=-
+# admin_username
+admin
+# admin_password
+TYcTHISISAPASSWORDMfoa3GOD5D0j
+```
+*The password above has been changed from the one shown on my test system.*
