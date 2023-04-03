@@ -5,7 +5,7 @@ categories: Openshift
 title: "Useful Shell Commands"
 ---
 
-I take a bit of pride in my one line shell commands. However I always end up starting from first principles each time. This article will be a living document that will contain the useful commands that I use. These will start simple and get more complex towards the end
+I take a bit of pride in my one-line shell commands. However, I always end up starting from first principles each time. This article will be a living document that will contain the useful commands that I use. These will start simple and get more complex towards the end.
 
 <!--more-->
 I have tried to grade each command with a risk as follows
@@ -14,12 +14,12 @@ I have tried to grade each command with a risk as follows
 
 ## 1. Watch the status of ZenService deployment
 **Risk:**  Non Destructive
-This commands allow you to look at the status of the deployment of ZenService, and have it auto updated on the screen.
+This command allows you to look at the status of the deployment of ZenService, and have it auto updated on the screen.
 
 **Command:**
 `watch "oc get zenservice -ojsonpath='{.items[0].status}'  | jq"`
 
-**Response:, this will auto refresh, Ctrl+c to end**
+**Response: this will auto refresh, Ctrl+c to end**
 
 ```json
 {
@@ -43,7 +43,7 @@ This commands allow you to look at the status of the deployment of ZenService, a
 
 ## 2. Extract the admin password from ibm-common-services
 **Risk:** Read Only
-This command prints to the screen the admin password to login to the ZenService frame work. This used by the CP4I integration platform.
+This command prints to the screen the admin password to login to the ZenService framework. This used by the CP4I integration platform.
 
 **Command:**
 `oc extract secret/platform-auth-idp-credentials      -n ibm-common-services --to=-`
