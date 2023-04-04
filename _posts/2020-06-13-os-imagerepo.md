@@ -4,7 +4,7 @@ date: 2020-6-13 00:01:00
 categories: OpenShift
 title: "OpenShift enabling the Image Registry route and pushing image. "
 ---
-When installing openshift 4.3+ there is no default route created for the image registry. Therefore we are unable to load in images from outside of the cluster.
+When installing OpenShift 4.3+ there is no default route created for the image registry. Therefore we are unable to load in images from outside of the cluster.
 <!--more-->
 
 To enable the route you must run the following command.
@@ -15,7 +15,7 @@ oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"
 
 Then to load images in from outside of the cluster first we find the url of the route.
 ```shell
-oc get route -n openshift-image-registry
+oc get route -n OpenShift-image-registry
 ```
 returns
 ```

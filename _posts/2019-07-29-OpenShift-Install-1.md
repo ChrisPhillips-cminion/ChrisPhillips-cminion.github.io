@@ -8,7 +8,7 @@ draft: true
 <!--more-->
 _So Jeff has gone to a better place. My many year old ATOM that I was using as one of the nodes and bootstrap server for OpenShift 3.11. Its CPU was clocked at 80'c and then overnight it never returned._
 
-Jeff held my inventory file (config file) for my openshift and with the passing off Jeff (and his disk) I have lost the file and all notes I had made.
+Jeff held my inventory file (config file) for my OpenShift and with the passing off Jeff (and his disk) I have lost the file and all notes I had made.
 
 The purpose of this series of Articles is to document my install process of OKD on Fedora 29 (Linux distro). OKD is the OpenSource version of OpenShift.  I want OKD over K8s or K3s because it is the K8s platform of choice by all big businesses.  However as I have stated many many times before I am not an infra guy. I am happier at the application layer and above.
 
@@ -63,9 +63,9 @@ random.phillips11.cf
 
 # host group for nodes, includes region info
 [nodes]
-random.phillips11.cf openshift_node_group_name='node-config-all-in-one' ansible_python_interpreter='/usr/bin/python3' openshift_schedulable=True
-randomstore.phillips11.cf openshift_node_group_name='node-config-compute' openshift_schedulable=True ansible_python_interpreter=/usr/bin/python3
-banana.phillips11.cf openshift_node_group_name='node-config-compute' openshift_schedulable=True ansible_python_interpreter=/usr/bin/python3
+random.phillips11.cf OpenShift_node_group_name='node-config-all-in-one' ansible_python_interpreter='/usr/bin/python3' OpenShift_schedulable=True
+randomstore.phillips11.cf OpenShift_node_group_name='node-config-compute' OpenShift_schedulable=True ansible_python_interpreter=/usr/bin/python3
+banana.phillips11.cf OpenShift_node_group_name='node-config-compute' OpenShift_schedulable=True ansible_python_interpreter=/usr/bin/python3
 
 [nodes:vars]
 ansible_python_interpreter='/usr/bin/python3'

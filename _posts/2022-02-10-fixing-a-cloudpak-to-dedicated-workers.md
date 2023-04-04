@@ -14,7 +14,7 @@ In order to ensure that CP4I is is only asigned to certain worker nodes you must
 1. label the worker nodes
 `oc label no <nodename> nodeuse=cp4i  `
 2. Annotate the namespace
-`oc annotate namespace <namespace> openshift.io/node-selector='nodeuse=cp4i'`
+`oc annotate namespace <namespace> OpenShift.io/node-selector='nodeuse=cp4i'`
 
 Now delete all pods in the namespaces and they will be recreated on the selected nodes. \
 
