@@ -12,6 +12,6 @@ When deploying a kubernetes application and a pod displays an event with
 There are two common reasons for this.
 <!--more-->
 
-The first two thigns to check are
+The first two things to check are
 1. StorageClass is correctly set on the PV
-2. That the StorageClass has the correct `volumeBindingMode`. For API COnnect this must be set to `WaitForFirstConsumer`
+2. That the StorageClass has the correct `volumeBindingMode`. For API Connect this must be set to `WaitForFirstConsumer`
