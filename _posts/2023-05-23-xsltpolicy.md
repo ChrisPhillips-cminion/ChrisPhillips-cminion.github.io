@@ -42,7 +42,7 @@ assembly:
               </xsl:stylesheet>
 ```
 
-Once this policy is created you need to zip up the yaml file and load it into APIC. This is loaded in the UI by going to the `Catalog(or space)->Settings->Gateway Serviecs->View Policies`
+Once this policy is created you need to zip up the yaml file and load it into APIC. This is loaded in via the UI by going to the `Catalog(or space)->Settings->Gateway Serviecs->View Policies`
 
 ![image](/images/xslta)
 
