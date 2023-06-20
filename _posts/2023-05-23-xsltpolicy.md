@@ -44,20 +44,20 @@ assembly:
 
 Once this policy is created you need to zip up the yaml file and load it into APIC. This is loaded in via the UI by going to the `Catalog(or space)->Settings->Gateway Serviecs->View Policies`
 
-![image](/images/xslta)
+![image](/images/xslta.png)
 
 Click on Upload
 
 Drag and Drop the zip file into the first field.
 
-![image](/images/xsltb)
+![image](/images/xsltb.png)
 
 The policy will now be listed in the Policy List.
 
-![image](/images/xsltc)
+![image](/images/xsltc.png)
 
 If you have added this to the sandbox catalog when you go to drafts you will see the custom policy on the canvas.
 
-![image](/images/xsltd)
+![image](/images/xsltd.png)
 
 A video on how to do this with a different policy will be published soon.
