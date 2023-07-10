@@ -10,11 +10,13 @@ In API Connect 10.0.5.3+ and 10.0.6.0+ we can register sub systems without the n
 
 <!--more-->
 
-This is useful for scenarios where it is not desired to have traffic between the manager and the subcomponents does not have to go out of the cluster and back in.
+This is useful where it is not desired to have traffic between the manager and the subcomponents go through the external ingress.
 
-To enable this on the registration instead of using an external URL we must simply use the Kubernetes service hostname.
+To enable this on registration, you must provide the kubernetes svc url instead of using an external URL.
 
-1.	Get a list of all services and take a note of the ones highlighted in red. You may well have a different prefix (small) or none.
+
+To do this
+1.	Get a list of all services and take a note of the ones highlighted in red. You may  have a different prefix (small) or none.
 
 ![image](/images/svclist.png)
 
@@ -23,11 +25,11 @@ To enable this on the registration instead of using an external URL we must simp
 | Component | URL format | Example |
 | ------ | ------------------------ | ----------------------- |
 | Gateway| gw-svc.namespace.svc | small-gw.apiconnect.svc |
-| A7s    | a7s-svc>.namespace.svc | small-a7s.apiconnect.svc |
+| A7s    | a7s-svc.namespace.svc | small-a7s.apiconnect.svc |
 | Portal | portal-svc.namespace.svc | small-portal.apiconnect.svc |
 
 
-3.	When you register the subcomponents you use this end points for the internal management/director endpoints.
+3.	When you register the subcomponents you use these end points for the internal management/director endpoints.
 
 
 That’s it! When the registration completes the internal routes will be used.
