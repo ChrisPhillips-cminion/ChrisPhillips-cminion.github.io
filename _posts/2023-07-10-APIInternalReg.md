@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2023-06-30 01:00:00
+date: 2023-07-10 01:00:00
 categories: APIConnect
 title: "API Connect registration without access to an external load balancer."
 
@@ -24,9 +24,9 @@ To enable this on the registration instead of using an external URL we must simp
 
 | Component | URL format | Example |
 | ------ | ------------------------ | ----------------------- |
-| Gateway| <gw-svc>.<namespace>.svc | small-gw.apiconnect.svc |
-| A7s    | <a7s-svc>.<namespace>.svc | small-a7s.apiconnect.svc |
-| Portal | <portal-svc>.<namespace>.svc | small-portal.apiconnect.svc |
+| Gateway| gw-svc.namespace.svc | small-gw.apiconnect.svc |
+| A7s    | a7s-svc>.namespace.svc | small-a7s.apiconnect.svc |
+| Portal | portal-svc.namespace.svc | small-portal.apiconnect.svc |
 
 
 3.	When you register the subcomponents you use this end points for the internal management/director endpoints.
