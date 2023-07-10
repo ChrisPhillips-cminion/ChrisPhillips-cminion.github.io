@@ -16,11 +16,11 @@ To enable this on registration, you must provide the kubernetes svc url instead 
 
 
 To do this
-1.	Get a list of all services and take a note of the ones highlighted in red. You may  have a different prefix (small) or none.
+1	Get a list of all services and take a note of the ones highlighted in red. You may  have a different prefix (small) or none.
 
 ![image](/images/svclist.png)
 
-2.	For my set up its these three example entries, but yours may be different.
+2	For my set up its these three example entries, but yours may be different.
 
 | Component | URL format | Example |
 | ------ | ------------------------ | ----------------------- |
@@ -29,7 +29,7 @@ To do this
 | Portal | portal-svc.namespace.svc | small-portal.apiconnect.svc |
 
 
-3.	When you register the subcomponents you use these end points for the internal management/director endpoints.
+3	When you register the subcomponents you use these end points for the internal management/director endpoints.
 
 
 That’s it! When the registration completes the internal routes will be used.
