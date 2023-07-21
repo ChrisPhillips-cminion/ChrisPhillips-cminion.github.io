@@ -6,7 +6,7 @@ title: "API Connect decommissioning a gateway service"
 ---
 
 
-In API Connect you can have multiple gateway services. I have written about how to add one before but not how to decommission on that is no longer needed.
+In API Connect you can have multiple gateway services. I have written about how to add one before but not how to decommission on that is no longer needed. This article will not include the steps to remove a DataPower container or domain just the steps for API Connect 
 
 <!--more-->
 
