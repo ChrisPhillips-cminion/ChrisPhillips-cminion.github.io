@@ -2,7 +2,7 @@
 layout: post
 date: 2023-08-14 01:00:00
 categories: APIConnect
-title: "API Connect - Rest call to retrieve APIs."
+title: "API Connect - Rest call to retrieve APPs and Consumer Org information."
 ---
 
 
@@ -12,7 +12,7 @@ API Connect has two Rest Interfaces, one for consumer users the other for provid
 
 ## APIConnect
 
-## Step 1 - Get an accesstoken
+## Step 1 - Get an access token
 See [https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html
 ](https://chrisphillips-cminion.github.io/apiconnect/2019/09/18/GettingoAuthTokenFromAPIC.html)
 
