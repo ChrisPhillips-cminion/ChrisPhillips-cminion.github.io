@@ -11,9 +11,9 @@ API Consumers are what dictate the value to an API Estate. This document goes th
 <!--more-->
 
 
-        *"If a tree falls in a forest and no one is around to hear it, does it make a sound?”* - Physics by Charles Riborg Mann and George Ransom Twiss 1920
+  *"If a tree falls in a forest and no one is around to hear it, does it make a sound?”* - Physics by Charles Riborg Mann and George Ransom Twiss 1920
 
-        *“The objects of sense exist only when they are perceived”* - George Berkeley 1710
+  *“The objects of sense exist only when they are perceived”* - George Berkeley 1710
 
 
 The two quotes above have always made me think hard about what I do. Somethings we do to be seen; other things we do not want to be noticed. This flows nicely into value and success that influence Business Impact. What is the Business Impact vs the Cost of a Change. If we get this right, we are successful. if we get this wrong, we are not. If a change is very expensive but has no visibility, is it successful?  If a change saves money but produces a negative impact on the business, is it successful?
