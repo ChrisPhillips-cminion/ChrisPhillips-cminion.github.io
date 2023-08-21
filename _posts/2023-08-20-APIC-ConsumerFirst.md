@@ -71,6 +71,6 @@ The time it takes to support an API should be as near to zero as possible. Onboa
 
 With the above in place a user can quickly get started using any API. Where as previous a consumer may be put off by complexity, they can now have enough information to instantly get started.  This means it takes less time and effort to consume the API. Providing a more friendly and self-affirming experience for the consumer.
 
-Many customers tell me they do not need a developer portal. Or it is not a priority they are been measured on. This is always a surprise to me, for the following reasons above.
+Many customers tell me they do not need a developer portal. Or it is not a priority they are been measured on. This is always a surprise to me.
 
 In summary this article has shown that all the keyways for deriving value from an API, are dependent on the consumer’s experience. Building APIs to meet the needs of the consumers both functionally (Purpose) and non-functionally (Documentation, Complexity) is key to the success of the API and so the API Estate.  
