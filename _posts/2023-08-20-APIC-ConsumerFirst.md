@@ -2,8 +2,10 @@
 layout: post
 date: 2023-08-19 01:00:00
 categories: APIConnect
-title: "If an API is published and no one is told, does it have value? - API Consumers, the only API Success Criteria"
+title: "If an API is published and no one is told, does it have value?"
 ---
+
+## API Consumers, the only API Success Criteria
 
 API Consumers are what dictate the value to an API Estate. This document goes through the key values of an API and how focusing on the consumer allows an API to be successful.
 
