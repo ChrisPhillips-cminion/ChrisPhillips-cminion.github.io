@@ -58,4 +58,4 @@ If the Weather Company introduced a new major version of an API that required an
 
 ## Closing Summary
 
-In this article we have shown five key reasons for putting external APIs that you depend on behind an internal API Gatewa
+In this article we have shown five key reasons for putting external APIs that you depend on behind an internal API Gateway
