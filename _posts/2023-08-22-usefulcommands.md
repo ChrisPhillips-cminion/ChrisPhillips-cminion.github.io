@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2023-04-03 00:01:00
+date: 2023-08-21 00:01:00
 categories: Openshift
-title: "Useful Shell Commands"
+title: "Useful Shell Commands - Update 1"
 ---
 
 I take a bit of pride in my one-line shell commands. However, I always end up starting from first principles each time. This article will be a living document that will contain the useful commands that I use. These will start simple and get more complex towards the end.
@@ -58,3 +58,14 @@ admin
 TYcTHISISAPASSWORDMfoa3GOD5D0j
 ```
 *The password above has been changed from the one shown on my test system.*
+
+
+## 3. Find the OCP Console URL from a logged in CLI
+
+**Command:**
+`oc whoami --show-console`
+
+**Response:**
+```
+https://console-openshift-console.mycluster-lon06-m3c-8x64-FAKEURL-0000.eu-gb.containers.appdomain.cloud
+```
