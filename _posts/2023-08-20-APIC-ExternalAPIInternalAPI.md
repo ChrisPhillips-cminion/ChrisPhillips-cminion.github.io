@@ -1,9 +1,8 @@
 ---
 layout: post
-date: 2023-08-19 01:00:00
+date: 2023-08-28 01:00:00
 categories: APIConnect
 title: "Protecting the routes out of the castle. Five advantages for exposing external APIs and services as internal APIs to your own developers. "
-draft: true
 ---
 
 Protecting APIs inside of your business so external consumers can be policed is a recognised and well understood pattern. However, what about APIs from outside of your business that that are consumed by your internal developers.
