@@ -3,7 +3,6 @@ layout: post
 date: 2023-09-04 01:00:00
 categories: APIConnect
 title: "API Connect v10 Replacing DataPower API Invocation SSL Certificate"
-draft: true
 ---
 
 API Connect sends DataPower the certifcate it needs to present to end users. This needs to be replaced manually during certificate rotation.
