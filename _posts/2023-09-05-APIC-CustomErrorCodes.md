@@ -5,7 +5,7 @@ categories: APIConnect
 title: "[Link] API error handling, why should you care?"
 ---
 
-This is a great article by Rashid on handling API errors! [https://rashidaljohani.github.io/API-error-handling-why-should-you-care/][https://rashidaljohani.github.io/API-error-handling-why-should-you-care/]
+This is a great article by Rashid on handling API errors! [https://rashidaljohani.github.io/API-error-handling-why-should-you-care/](https://rashidaljohani.github.io/API-error-handling-why-should-you-care/)
 
 
 ![https://rashidaljohani.github.io/images/blogs/API-error-handling-why-should-you-care/banner.png](https://rashidaljohani.github.io/images/blogs/API-error-handling-why-should-you-care/banner.png)
