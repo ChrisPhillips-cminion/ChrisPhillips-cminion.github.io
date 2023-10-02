@@ -3,7 +3,6 @@ layout: post
 date: 2023-09-05 01:00:00
 categories: APIConnect
 title: "[Link] Analytics Rollover and Retention in API Connect v10.0.5"
-draft: true
 ---
 
 Geraint is one of the Senior Engineers in the API Connect Analytics Squad. He has written a great article on how Rollover and Retention is handled in APIC V10.0.5.
