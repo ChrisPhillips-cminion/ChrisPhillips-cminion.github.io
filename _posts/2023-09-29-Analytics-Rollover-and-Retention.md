@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2023-09-05 01:00:00
+date: 2023-09-29 01:00:00
 categories: APIConnect
 title: "[Link] Analytics Rollover and Retention in API Connect v10.0.5"
 ---
