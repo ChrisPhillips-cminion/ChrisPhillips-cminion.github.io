@@ -5,6 +5,7 @@ categories: APIConnect
 title: "API Connect Health Check Endpoints to monitor system stability"
 ---
 As an API Connect platform management team being able to confirm the API Manager and Gateway are working as expected is critical. The API Manager and the Gateway both have key endpoints that should be monitored to determine platform health.
+<!--more-->
 
 ## API Gateway
 When the API Gateway comes up the network interfaces are enabled before the API Content is available. To detect when the APIs are available it is best to health check `https://apigw:9443/webapi-init-check` as this will respond with a 200 when APIs are ready to be served.
