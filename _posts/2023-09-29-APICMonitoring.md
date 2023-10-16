@@ -5,6 +5,7 @@ categories: APIConnect
 title: "API Connect Health Check Endpoints to monitor system stability"
 ---
 As an API Connect platform management team being able to confirm the API Manager and Gateway are working as expected is critical. The API Manager and the Gateway both have key endpoints that should be monitored to determine platform health.
+
 <!--more-->
 
 ## API Gateway
