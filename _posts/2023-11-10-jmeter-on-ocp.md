@@ -1,11 +1,11 @@
 ---
 layout: post
-date: 2023-09-29 01:00:00
+date: 2023-11-10 01:00:00
 categories: APIConnect
 title: "Friday Lunchtime Hack - jmeter on OCP"
 ---
 
-A few years ago I was playing around with jmeter-on-ocp. [https://github.com/ChrisPhillips-cminion/jmeter-on-ocp](https://github.com/ChrisPhillips-cminion/jmeter-on-ocp). Please note this is my fork, i am unsure what is happening to the original but credit must go to https://github.com/alvarolop for the start of this.
+A few years ago I was playing around with jmeter-on-ocp. [https://github.com/ChrisPhillips-cminion/jmeter-on-ocp](https://github.com/ChrisPhillips-cminion/jmeter-on-ocp). Please note this is my fork, I am unsure what is happening to the original but credit must go to https://github.com/alvarolop for the start of this.
 
 <!--more-->
 
