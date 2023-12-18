@@ -16,7 +16,7 @@ Inside the API Connect Cluster YAML you can set the `disabledServices` attribute
 If these attributes are present
 
 |---|---|---|
-| **Attribute** | **If attribute is present on the array** |
+| **Attribute** | **If attribute is present in the array** |
 | analytics |  Does not deploy the Analytics Subsystem |
 | portal |  Does not deploy the Portal Subsystem |
 | gateway | Does not deploy the Gateway Subsyste m|
