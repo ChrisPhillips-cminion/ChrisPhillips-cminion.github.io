@@ -22,7 +22,7 @@ If these attributes are present
 | gateway | Does not deploy the Gateway Subsyste m|
 | configurator | *Ignored if run present without the Platform Navigator.* Does not register the API Manager into the Platform Navigator or subcomponents into the API Manager. |
 
-Here is a complete YAML with all subsystems disabled.
+Here is a complete YAML with all subsystems disabled for 10.0.7.0 CD release.  This works the same way for 10.0.5.x.
 
 ```yaml
 kind: APIConnectCluster
