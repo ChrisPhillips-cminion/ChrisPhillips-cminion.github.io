@@ -3,7 +3,6 @@ layout: post
 date: 2023-12-18 01:00:00
 categories: APIConnect
 title: "API Connect Cluster object - disabling Portal/Analytics/Gateway"
-draft: true
 ---
 
 When deploying API Connect in OpenShift you can deploy the API Connect Cluster Object. *Sometimes this is referred to as the TopLevelCR.* This will deploy a management, analytics, portal, and gateway. If you are using CP4I it will also auto configure it as well.  
