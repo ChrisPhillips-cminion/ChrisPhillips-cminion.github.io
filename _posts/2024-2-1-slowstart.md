@@ -31,15 +31,15 @@ Each service will represent a % of traffic.
 
 The default service will route to all of the target pods.
 
-The new services will have an additional label selector that will look for a label of rate and a value of either 50 or 100. It does not matter what the label is it does not co-respond to the traffic being routed to it.
+The new services will have an additional label selector that will look for a label of rate and a value of 10. It does not matter what the label is, it does not co-respond to the traffic being routed to it.
 
-The Pods that are expecting to handle majority of the load must have an additional label called rate: 100. Pods that are expected to be at the middle tier must have an additional label called rate: 50.
+The Pods that are expecting to handle majority of the load must have an additional label called rate: 10.
 
 From what we have configured so far.
 
 - When the default service is called it will route traffic to any of the three pods
-- When the new service with the label selector for rate:100 is called it will invoke pods only that have the rate:100 label.
-- When the new service with the label selector for rate:50 is called it will invoke pods only that have the rate:50 label.
+- When the new service with the label selector for rate:100 is called it will invoke pods only that have the rate:10 label.
+
 
 ### OpenShift Router
 
