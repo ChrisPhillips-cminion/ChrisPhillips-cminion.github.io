@@ -6,6 +6,10 @@ title: "Slow Start in Kubernetes"
 draft: true
 ---
 "Slow Start" patterns are convenient when a POD is ready to receive traffic, but we may want to only send a small workload of traffic until we have established that it is ready to receive all traffic.
+
+![image](/images/slowstart.png)
+
+
 <!--more-->
 I was asked this week to come up with a solution to the above problem, primarily when HPA scales out to more pods.
 
