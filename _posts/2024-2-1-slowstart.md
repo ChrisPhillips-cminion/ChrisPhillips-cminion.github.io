@@ -3,7 +3,6 @@ layout: post
 date: 2023-02-01 01:00:00
 categories: DataPower
 title: "Slow Start in Kubernetes"
-draft: true
 ---
 "Slow Start" patterns are convenient when a POD is ready to receive traffic, but we may want to only send a small workload of traffic until we have established that it is ready to receive all traffic.
 
