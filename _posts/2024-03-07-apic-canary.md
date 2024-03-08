@@ -6,7 +6,7 @@ title: "API Connect - Harnessing the Canary "
 draft: true
 ---
 
-Canary deployments are a way to roll out changes to a service in a controlled manner, by gradually introducing the changes to a small group of users before rolling them out to the entire user base.
+Canary deployments are a way to roll out changes to a service in a controlled manner, by gradually introducing the changes to a small group of users before rolling them out to the entire user base. API Connect can provide the functionality to different versions of a downstream service using a simple piece of gateway script.
 
 
 <!--more-->
@@ -14,11 +14,11 @@ Canary deployments are a way to roll out changes to a service in a controlled ma
 
 Here's how it works:
 
-1. First, you create a new version of the service with the changes you want to deploy.
-2. Next, you deploy the new version of the service to a small group of users, called a "canary group." This group is typically a subset of your overall user base.
+1. Aa new version of the service with the changes you want to deploy is created.
+2. Deploy the new version of the service. The intention is to allow a smaller proportion of the traffic to be routed to this service.
 3. You then monitor the performance of the new version of the service in the canary group, to see if there are any issues or problems.
-4. If the new version of the service is performing well in the canary group, you gradually roll it out to a larger group of users, called a "rollout group."
-5. You continue to monitor the performance of the new version of the service in the rollout group, and if it's still performing well, you gradually roll it out to the entire user base.
+4. If the new version of the service is performing well in the canary group, you gradually roll it out to a larger proportion of traffic.
+5. You continue to monitor the performance of the new version of the service in the rollout group, and if it's still performing well, you roll it out to the entire user base.
 6. If there are any issues or problems with the new version of the service, you can quickly roll back to the previous version, minimising the impact on your users.
 
 Here's an example of how this might work in a real-world scenario:
