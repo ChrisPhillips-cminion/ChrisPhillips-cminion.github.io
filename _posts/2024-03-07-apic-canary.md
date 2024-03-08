@@ -73,11 +73,6 @@ info:
   x-ibm-name: canary-test
 basePath: /canary-test
 x-ibm-configuration:
-  properties:
-    target-url:
-      value: https://google.com
-      description: URL of the proxy policy
-      encoded: false
   cors:
     enabled: true
   gateway: datapower-api-gateway
