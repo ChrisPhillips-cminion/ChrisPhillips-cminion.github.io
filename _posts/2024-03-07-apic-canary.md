@@ -8,6 +8,10 @@ draft: true
 
 Canary deployments are a way to roll out changes to a service in a controlled manner, by gradually introducing the changes to a small group of users before rolling them out to the entire user base.
 
+
+<!--more-->
+
+
 Here's how it works:
 
 1. First, you create a new version of the service with the changes you want to deploy.
@@ -23,9 +27,8 @@ Let's say you're a company that offers an online shopping service, and you want 
 
 The benefits of canary deployments include:
 
-* Reduced risk: By gradually rolling out changes to a small group of users before rolling them out to the entire user base, you can minimize the risk of introducing bugs or other issues that could impact your users.
+* Reduced risk: By gradually rolling out changes to a small group of users before rolling them out to the entire user base, you can minimise the risk of introducing bugs or other issues that could impact your users.
 * Faster feedback: By monitoring the performance of the new version of the service in the canary group, you can get feedback on its performance more quickly, and make any necessary adjustments before rolling it out
-<!--more-->
 
 This can be achieved in API Connect with some custom GatewayScript.
 
@@ -56,7 +59,9 @@ Object.keys(map).forEach((key) => {
 })
 ```
 
-When the gateway script is called it will generate a number between 0 and the total weighting. This is then used to select an apropriate URL
+When the gateway script is called it will generate a number between 0 and the total weighting. This is then used to select an appropriate URL and sets it to the context variable called `targeturl`.
+
+In the invoke policy  set the `target-url` parameter to  `$(targeturl)`
 
 ## Full API Yaml
 
