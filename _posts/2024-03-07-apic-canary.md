@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2023-03-07 09:00:00
+date: 2024-03-19 09:00:00
 categories: APIConnect
-title: "API Connect - Harnessing the Canary "
+title: "API Connect - Harnessing the Canary"
 ---
 
 Canary deployments are a way to roll out changes to a service in a controlled manner, by gradually introducing the changes to a small group of users before rolling them out to the entire user base. API Connect can provide the functionality to different versions of a downstream service using a simple piece of gateway script.
