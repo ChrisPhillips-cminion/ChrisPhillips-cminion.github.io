@@ -3,15 +3,11 @@ layout: post
 date: 2023-03-07 09:00:00
 categories: APIConnect
 title: "API Connect - Harnessing the Canary "
-draft: true
 ---
 
 Canary deployments are a way to roll out changes to a service in a controlled manner, by gradually introducing the changes to a small group of users before rolling them out to the entire user base. API Connect can provide the functionality to different versions of a downstream service using a simple piece of gateway script.
 
-
 <!--more-->
-
-
 Here's how it works:
 
 1. Aa new version of the service with the changes you want to deploy is created.
@@ -46,6 +42,7 @@ let map = {
     10 : "https://httpbin.org/ip",
     20 : "https://httpbin.org/status/418"
 }
+
 let total = 30;
 
 const number = Math.floor(Math.random() * total) + 1;
@@ -54,6 +51,7 @@ Object.keys(map).forEach((key) => {
     let keyInt = parseInt(key);
     if (count <= number && number <= (count+keyInt)) {
         context.set('targeturl',map[key])
+        console.error('Debug message for Canary - ',map[key])
     }
     count = (count+keyInt);
 })
@@ -98,6 +96,7 @@ x-ibm-configuration:
                 let keyInt = parseInt(key);
                 if (count <= number && number <= (count+keyInt)) {
                     context.set('targeturl',map[key])
+                    console.error('Debug message for Canary - ',map[key]);
                 }
                 count = (count+keyInt);
             })
@@ -179,6 +178,15 @@ securityDefinitions:
     name: X-IBM-Client-Id
 schemes:
   - https
+```
+
+Here is a sample of the log file from when the api was executed three times
+```
+20240319T143318.611Z [apiconnect][0x8580005c][gatewayscript-user][error] apigw(apiconnect): tid(26192)[request][172.30.104.134] gtid(a1ab7cdb65f9a22e00006650): Debug message for Canary -  'https://httpbin.org/status/418'
+20240319T143319.430Z [apiconnect][0x88c00313][mgmt][notice] : tid(656): Successfully retrieved the data for probe ID '2712370395-Landlord-apiconnect-small-gw-0-e9638d7d-3d97-4007-9c00-db7caba186db'.
+20240319T143406.644Z [apiconnect][0x8580005c][gatewayscript-user][error] apigw(apiconnect): tid(26464)[request][172.30.104.134] gtid(a1ab7cdb65f9a25e00006760): Debug message for Canary -  'https://httpbin.org/ip'
+20240319T143406.644Z [apiconnect][0x8580005c][gatewayscript-user][error] apigw(apiconnect): tid(26464)[request][172.30.104.134] gtid(a1ab7cdb65f9a25e00006760): Debug message for Canary -  'https://httpbin.org/status/418'
+20240319T143407.979Z [apiconnect][0x88c00313][mgmt][notice] : tid(656): Successfully retrieved the data for probe ID '2712370395-Landlord-apiconnect-small-gw-0-b4e872cd-b126-4351-82a7-db7caba1288b'.
 ```
 
 
