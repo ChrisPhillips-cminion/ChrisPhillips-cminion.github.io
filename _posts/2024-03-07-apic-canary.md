@@ -10,7 +10,7 @@ Canary deployments are a way to roll out changes to a service in a controlled ma
 <!--more-->
 Here's how it works:
 
-1. Aa new version of the service with the changes you want to deploy is created.
+1. A new version of the service with the changes you want to deploy is created.
 2. Deploy the new version of the service. The intention is to allow a smaller proportion of the traffic to be routed to this service.
 3. You then monitor the performance of the new version of the service in the canary group, to see if there are any issues or problems.
 4. If the new version of the service is performing well in the canary group, you gradually roll it out to a larger proportion of traffic.
