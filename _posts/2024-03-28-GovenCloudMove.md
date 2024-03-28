@@ -8,17 +8,17 @@ draft: true
 
 When migrating to APIC on SaaS it is important to first validate that your APIs are able to work on SaaS prior to attempting the move.
 
-API Connect SaaS on AWS is a multi tenant solution in its basic form. This means the API Gateways are shared between different tenants. If you are using an Advanced plan then you have a dedicated API Gateway.  
+API Connect SaaS on AWS is a multi-tenant solution in its basic form. This means the API Gateways are shared between different tenants. If you are using an Advanced plan then you have a dedicated API Gateway.  
 
 ![](/images/api-lint-saas.png)
 <!--more-->
 
-Those APIs that are run on the basic plan or free trial cannot use GatewayScript or XSLT policies. In addition v5 compatable APIs will not run on APIC SaaS on AWS.
+Those APIs that are run on the basic plan or free trial cannot use GatewayScript or XSLT policies. In addition, v5 compatible APIs will not run on APIC SaaS on AWS.
 
 In API Connect 10.0.7.0 release we provide a linting tool to run a series of spectral rulesets against draft APIs.
 
 I have created the following ruleset that contains two rules.
-1. A rule to report an error if the API is written for the v5 compatable gateway.
+1. A rule to report an error if the API is written for the v5 compatible gateway.
 2. A rule to report if GatewayScript or XSLT policies are used.
 
 
