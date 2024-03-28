@@ -10,7 +10,7 @@ When migrating to APIC on SaaS it is imporant to first validate that your APIs a
 
 API Connect SaaS on AWS is a multi tenant solution in its basic form. This means the API Gateways are shared between different tenants. If you are using an Advanced plan then you have a dedicated API Gateway.  
 
-![/images/apic-lint-saas.png]
+!(/images/apic-lint-saas.png)[/images/apic-lint-saas.png]
 <!--more-->
 
 Users not on the basic plan or free trial need to be aware that apis built for the v5 compatible gateway will not work, nor will APIs that use GatewayScript or XSLT policies.
