@@ -88,12 +88,20 @@ rules:
 ```
 </div>
 
+## Enabling the API Governance feature in 10.0.7.0
 The ruleset can be loaded into API Connect 10.0.7.0 or later once the API Governance function is enabled, this is described here [https://chrisphillips-cminion.github.io/apiconnect/2023/06/22/APIGov-2.html](https://chrisphillips-cminion.github.io/apiconnect/2023/06/22/APIGov-2.html)
 
+## Loading the rule set.
+In the the **Provider Organization**
 1. Go to Resources in a Provider Organization
 2. Go to API governance
 3. Add->Import
-4. Click on validate
-5. Select the rule sets  and click next
-6. Select the APIs to validate and click next.
-7. The scorecard is shown for the APIs you selected.
+
+## Running the validator
+In the the **Provider Organization**
+1. Go to Resources in a Provider Organization
+2. Go to API governance
+3. Click on Validate
+4. Select the rule sets  and click next
+5. Select the APIs to validate and click next.
+6. The scorecard is shown for the APIs you selected.
