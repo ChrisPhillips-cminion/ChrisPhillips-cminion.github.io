@@ -2,7 +2,7 @@
 layout: post
 date: 2024-04-05 09:00:00
 categories: APIConnect
-title: "Suggested Governance Rules"
+title: "Suggested API Governance Rules"
 author: [ "DenisM", "ChrisPhillips" ]
 ---
 
@@ -20,6 +20,8 @@ When using the native DataPower gateway it is recommended to not use the `apim` 
 ### Rule 2
 Check that the policies have had their title changed from the default value. This does not work for User Defined Policies.
 
+
+### GIST
 [https://gist.github.com/ChrisPhillips-cminion/fc200d73ecc4c1232a164df474bc41b6](https://gist.github.com/ChrisPhillips-cminion/fc200d73ecc4c1232a164df474bc41b6)
 
 
