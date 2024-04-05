@@ -9,7 +9,7 @@ author: [ "DenisM", "ChrisPhillips" ]
 
 I have been challenged by API Connects Product Management to come up with some sensible governance rules. I expect this article to grow from time to time as new ideas are formed.
 
-![](/images/api-gp.png)
+![](/images/apic-gp.png)
 
 <!--more-->
 The ruleset in this github gist I hope will grow over time. The initial one has two rules.
