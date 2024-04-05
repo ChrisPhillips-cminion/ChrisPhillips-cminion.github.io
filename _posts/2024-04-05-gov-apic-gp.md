@@ -6,7 +6,10 @@ title: "Suggested API Governance Rules"
 author: [ "DenisM", "ChrisPhillips" ]
 ---
 
-I have been challenged by API Connects Product Management to come up with some sensible governance rules. I expect this article to grow from time to time as new ideas are formed.
+Having a good set of in-house API Governance rules allow your developers to validate that their APIs meet their enterprise standards. Other rules can be used to ensure serviceability considerations are made to support the API or can highlight where anti patterns are being used.
+
+*I have been challenged by API Connect's Product Management to come up with some sensible governance rules. I expect this article to grow from time to time as new ideas are formed.*
+
 
 ![](/images/apic-gp.png)
 
