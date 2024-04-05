@@ -4,6 +4,7 @@ date: 2024-04-03 09:00:00
 categories: APIConnect
 title: "Suggested Governance Rules"
 draft: true
+author: [ "DenisM", "ChrisPhillips" ]
 ---
 
 I have been challenged by API Connects Product Management to come up with some sensible governance rules. I expect this article to grow from time to time as new ideas are formed.
@@ -37,6 +38,6 @@ In the the **Provider Organization**
 1. Go to Resources in a Provider Organization
 2. Go to API governance
 3. Click on Validate
-4. Select the rule sets  and click next
+4. Select the rule sets and click next
 5. Select the APIs to validate and click next.
 6. The scorecard is shown for the APIs you selected.

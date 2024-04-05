@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2024-03-28 09:00:00
-categories: me
+categories: APIConnect
 title: "Migrating to the APIC SaaS from on prem - Part 1 validating your APIs"
 draft: true
 ---
