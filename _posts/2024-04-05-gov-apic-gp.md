@@ -24,7 +24,7 @@ When using the native DataPower gateway it is recommended to not use the `apim` 
 Check that the policies have had their title changed from the default value. This does not work for User Defined Policies.
 
 
-### GIST
+### Download the rule from the GitHub GIST
 [https://gist.github.com/ChrisPhillips-cminion/fc200d73ecc4c1232a164df474bc41b6](https://gist.github.com/ChrisPhillips-cminion/fc200d73ecc4c1232a164df474bc41b6)
 
 
