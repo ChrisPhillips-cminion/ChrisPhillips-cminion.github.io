@@ -8,6 +8,9 @@ APIConnect:
   display_name: API Connect
   icon: /images/apic.png
   primary: true
+ACE:
+  name: ACE
+  display_name: AppConnect
 API:
   name: api
   display_name: API
