@@ -4,9 +4,8 @@ date: 2024-04-12 09:00:00
 categories: ACE
 title: "Additional Flow Instances in IBM ACE"
 author: [ "BenCornwell" ]
-draft: true
 ---
-*This was originally published on 3rd October 2022 on IBM Community. Republished with permission of author*
+*This was originally published on 3rd October 2022 on IBM Community. Republished with permission from author*
 
 
 It is a common mistake to simply add more resources to a system to get more performance. For example, one might enlarge the thread pools and database connection pools, assuming more threads can do more work and therefore process more messages.   This can be true up to a point, but beyond that it may result in no performance increase, or even significantly reduced performance.  This article attempts to describe a situation where these two things can happen.
