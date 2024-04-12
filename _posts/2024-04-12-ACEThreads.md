@@ -39,7 +39,7 @@ If the transformation node  takes 10ms and the database call takes 10ms, that me
 
 NB: It should be pointed out that we may not want CPU to be at 100% on each CPU.  A traditional ACE installation might have two servers for redundancy, and each one might have say eight cores.  If the servers are running in an active/active configuration (two servers running all the time sharing the load) to provide redundancy then each server should only be running at around 50% load, so that if one fails the other can process all the messages.  Similarly, if three servers are running then each could be running at 66% load based on the assumption that only one server is likely to fail at once.  However, if ACE is running in Kubernetes and a pod fails there might only be a short disruption whilst the pod is restarted.  In an asynchronous application then the queue would simply back up for a short time and be drawn down again once the failed pod is back up.  In that context, running close to 100% might be suitable depending on how much processing delay is acceptable.
 
-##  # What happens if we add even more flow instances?
+### What happens if we add even more flow instances?
 Let’s assume that there are 66 transactions being placed on the queue every second.  Assuming we are running on Kubernetes then one pod with a single CPU is enough to handle the load and our queue depth will not grow.  What will happen if we add more flow instances?
 
  The answer is – nothing.  We will still process 66 transitions per second because that’s all that’s arriving; but we will have three threads, one of which will be idle for some of the time.  But as we said earlier, the flow instance still consumes memory and resources.
