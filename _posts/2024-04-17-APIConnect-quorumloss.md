@@ -34,7 +34,7 @@ This section covers subsystems that are running on VMWARE.
 * *with **TMS*** OAuthTokens cannot be validated, and so there may be an interruption for traffic.
 * Unable to publish APIs
 * Unable to store or share revoked OAuth Refresh tokens and Rate Limiting
-~* Can be fixed by fixed by manually making a remaining node primary~
+* ~Can be fixed by fixed by manually making a remaining node primary~
 
 **Manager**
 * API Manager will continue to be accessible and usable
