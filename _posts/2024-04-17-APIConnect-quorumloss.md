@@ -38,7 +38,7 @@ This section covers subsystems that are running on VMWARE.
 
 **Manager**
 * API Manager will continue to be accessible and usable
-* API Manager will be unable to communicate with the other SubSystems
+* API Manager will be unable to communicate with the other subsystems
 
 **Analytics**
 * Continue to view analytics data that is already captured
