@@ -2,7 +2,7 @@
 layout: post
 date: 2024-04-17 00:01:00
 categories: APIConnect
-title: Loosing Quorums (Updated!)
+title: Losing Quorums (Updated!)
 draft: true
 ---
 When each API Connect component looses quorums it changes how the components work.
@@ -41,8 +41,8 @@ This section covers subsystems that are running on VMWARE.
 * API Manager will be unable to communicate with the other subsystems
 
 **Analytics**
-* Continue to view analytics data that is already captured
-* New ingestion data from the gateway would not be possible
+* Access to data stored in the shards on the available nodes
+* Ingestion continues as normal
 
 **Portal**
 * Portal is not accessible
