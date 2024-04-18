@@ -20,7 +20,7 @@ This section covers subsystems that are running on VMWARE.
 * *with **TMS*** OAuthTokens cannot be validated, and so there may be an interruption for traffic.
 * Unable to publish APIs
 * Unable to store or share revoked OAuth Refresh tokens and Rate Limiting
-~* Can be fixed by fixed by manually making a remaining node primary~
+*Can be fixed by fixed by manually making a remaining node primary - see [https://chrisphillips-cminion.github.io/apiconnect/2019/11/19/APIConnect-DataPower-SwitchPrimary.html](https://chrisphillips-cminion.github.io/apiconnect/2019/11/19/APIConnect-DataPower-SwitchPrimary.html)*	
 
 **API Management**, **Portal** and  **Analytics**
 * Outage occurs - This is due to API Connect subsystems in VMWare depending on Kubernetes inside of the VMs.
@@ -42,7 +42,7 @@ This section covers subsystems that are running on VMWARE.
 
 **Analytics**
 * Access to data stored in the shards on the available nodes
-* Ingestion continues as normal
+* Ingestion continues as normal though capacity will be reduced.
 
 **Portal**
 * Portal is not accessible
