@@ -2,7 +2,6 @@ Kubernetes:
   name: Kubernetes
   display_name: Kubernetes
   icon: /images/kube.png
-  primary: true
 APIConnect:
   name: apiconnect
   display_name: API Connect
@@ -11,6 +10,8 @@ APIConnect:
 ACE:
   name: ACE
   display_name: AppConnect
+  icon: /images/ace.png
+  primary: true
 API:
   name: api
   display_name: API
@@ -58,7 +59,6 @@ Integration:
 Conference:
   name: Conference
   display_name: Conference Appearances
-  primary: true
 Day2-Ops:
   name: day2ops
   display_name: Day2 Opertations
