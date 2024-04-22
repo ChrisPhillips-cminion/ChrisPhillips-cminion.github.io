@@ -9,7 +9,7 @@ author: [ "BenCornwell" ]
 
 
 It is a common mistake to simply add more resources to a system to get more performance. For example, one might enlarge the thread pools and database connection pools, assuming more threads can do more work and therefore process more messages.   This can be true up to a point, but beyond that it may result in no performance increase, or even significantly reduced performance.  This article attempts to describe a situation where these two things can happen.
-
+<!--more-->
 ## Introduction to Flow Instances
 IBM App Connect Enterprise (ACE) via the toolkit allows the developer to create message flows that contain nodes that process the message step by step, along with logical constructs.  The flow represents code, and a flow instance  runs this code.  A flow instance is single-threaded, so to gain multiple threads, the flow can be configured with additional instances.  These are an addition to the default one, so to configure ten simultaneous execution threads for a flow, additional instances should be set to 9.
 
