@@ -2,7 +2,7 @@
 layout: post
 date: 2024-05-21 21:00:00
 categories: APIConnect
-title: "MultiPart APIs - Part 2 - What are they? "
+title: "MultiPart APIs - Part 2 - Example use "
 draft: true
 ---
 
