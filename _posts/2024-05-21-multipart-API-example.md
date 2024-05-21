@@ -19,8 +19,12 @@ IMAGE OF ASSSEMBY
 In the Gatewayscript we can use the following
 ```javascript
 var data  = context.get('message')
-if (data.attachments[0].headers['Content-Type'] != 'image/png')
-{
+
+if (data.attachments.length != 2) {
+  context.reject('ImageNoError', 'Expected 2 images, but received '+data.attachments.length);
+  context.message.statusCode = '400 BadData';  
+}
+else if (data.attachments[0].headers['Content-Type'] != 'image/png') {
   context.reject('ImageTypeError', 'Invalid image type for first image');
   context.message.statusCode = '400 BadData';
 }
@@ -28,8 +32,7 @@ else if  (data.attachments[0].body.length > 1024000) {
     context.reject('ImageSizeError', 'Invalid image size for first image, image larger then 1mb');
     context.message.statusCode = '400 BadData';    
 }
-else if (data.attachments[1].headers['Content-Type'] != 'image/png')
-{
+else if (data.attachments[1].headers['Content-Type'] != 'image/png') {
   context.reject('ImageTypeError', 'Invalid image type for second image');
   context.message.statusCode = '400 BadData';
 }
@@ -37,6 +40,7 @@ else if  (data.attachments[1].body.length > 1024000) {
     context.reject('ImageSizeError', 'Invalid image size for second image, image larger then 1mb');
     context.message.statusCode = '400 BadData';    
 }
+
 
 ```
 
@@ -73,25 +77,40 @@ x-ibm-configuration:
           title: gatewayscript
           source: >
             var data  = context.get('message')
-            if (data.attachments[0].headers['Content-Type'] != 'image/png')
+
+
+            if (data.attachments.length != 2) {
+              context.reject('ImageNoError', 'Expected 2 images, but received '+data.attachments.length);
+              context.message.statusCode = '400 BadData';  
+            }
+
+            else if (data.attachments[0].headers['Content-Type'] != 'image/png')
             {
               context.reject('ImageTypeError', 'Invalid image type for first image');
               context.message.statusCode = '400 BadData';
             }
+
             else if  (data.attachments[0].body.length > 1024000) {
                 context.reject('ImageSizeError', 'Invalid image size for first image, image larger then 1mb');
                 context.message.statusCode = '400 BadData';    
             }
+
             else if (data.attachments[1].headers['Content-Type'] != 'image/png')
             {
               context.reject('ImageTypeError', 'Invalid image type for second image');
               context.message.statusCode = '400 BadData';
             }
+
             else if  (data.attachments[1].body.length > 1024000) {
                 context.reject('ImageSizeError', 'Invalid image size for second image, image larger then 1mb');
                 context.message.statusCode = '400 BadData';    
             }
+
+
             context.clear('message.attachments');
+
+
+            context.set('message.body',data.body);
   properties:
     target-url:
       value: http://example.com/operation-name
@@ -112,7 +131,11 @@ paths:
             type: string
       consumes: []
       produces: []
+securityDefinitions:
+  clientID:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
 schemes:
   - https
-
 ```
