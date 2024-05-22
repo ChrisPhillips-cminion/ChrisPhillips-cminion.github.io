@@ -3,7 +3,7 @@ layout: post
 date: 2024-05-22 21:00:00
 categories: APIConnect
 title: "MultiPart APIs - Part 1 - What are they? How can I access the elements in API Connect."
-author: [ "ChrisPhillips","SteveLinn" ]
+
 draft: true
 ---
 
