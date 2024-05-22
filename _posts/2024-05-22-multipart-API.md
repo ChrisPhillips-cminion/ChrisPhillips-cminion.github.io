@@ -1,12 +1,12 @@
 ---
 layout: post
-date: 2024-05-21 21:00:00
+date: 2024-05-22 21:00:00
 categories: APIConnect
-title: "MultiPart APIs - Part 1 - What are they? "
+title: "MultiPart APIs - Part 1 - What are they? How can I access the elements in API Connect."
 draft: true
 ---
 
-MultiPart calls allow multiple set of data to be set to an API as individual items. If you have a series of images and text you need to upload you could write a curl command similar to
+MultiPart API calls allow multiple set of data to be set to an API as individual items. If you have a series of images and text you need to upload you could write a curl command similar to
 
 `curl -vk -F 'name=fred' -F "name2=@image.png" https://APIURL/ -H "content-type: multipart/related"`
 
@@ -26,7 +26,7 @@ Content-Disposition: attachment; name="name2"; filename="image.png"
 Content-Type: image/png
 
 �PNG BINARY DATA
-
+
 
 --------------------------HonVo683Z8qiA5OPd5X6DU--
 ```
@@ -34,9 +34,9 @@ Content-Type: image/png
 
 In API Connect you can handle these kind of requests.
 
-In the Assembly we initiate a parse function. This will take in the payload and set the first entry to be the message.body and message.headers. Each subsequential part is in side the attachments see below.
+In the Assembly we first must add a Parse policy. This will take in the payload and set the first entry to be the `message.body` and `message.headers`. Each subsequent part added to the attachment array on the message object.
 
-An exmaple of the message object is below.
+An example of the message object is below.
 ```json
 {
   "variables": {},
@@ -46,7 +46,7 @@ An exmaple of the message object is below.
   },
   "original": {
     "headers": {
-      "Host": "small-gw-gateway-apic.cp4i-2023-4-420eb34f056ae68f3969289d61f61851-0000.eu-gb.containers.appdomain.cloud",
+      "Host": "small-host.cloud",
       "user-agent": "curl/8.4.0",
       "accept": "*/*",
       "content-length": "764184",

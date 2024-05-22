@@ -6,10 +6,10 @@ title: "MultiPart APIs - Part 2 - Example use "
 draft: true
 ---
 
-In Part 1 we discussed what a multipart API was and how it can be parsed in API Connect. In this part we will take that knowledge and apply it to a real situation.
+In part 1 we discussed what a multipart API was and how it can be parsed in API Connect. In this part we will take that knowledge and apply it to a real situation.
 
 
-*Scenario*: I want to upload two images, validate that the images are png and that the size is less then 1MB.
+*Scenario*: Upload two images, validate that the images are png and that the size is less then 1MB.
 
 <!--more-->
 
@@ -20,22 +20,27 @@ In the Gatewayscript we can use the following
 ```javascript
 var data  = context.get('message')
 
+//Check that two images are loaded
 if (data.attachments.length != 2) {
   context.reject('ImageNoError', 'Expected 2 images, but received '+data.attachments.length);
   context.message.statusCode = '400 BadData';  
 }
+//Check that image one is a PNG
 else if (data.attachments[0].headers['Content-Type'] != 'image/png') {
   context.reject('ImageTypeError', 'Invalid image type for first image');
   context.message.statusCode = '400 BadData';
 }
+//Check that image one is less then 1mb
 else if  (data.attachments[0].body.length > 1024000) {
     context.reject('ImageSizeError', 'Invalid image size for first image, image larger then 1mb');
     context.message.statusCode = '400 BadData';    
 }
+//Check that image two is a PNG
 else if (data.attachments[1].headers['Content-Type'] != 'image/png') {
   context.reject('ImageTypeError', 'Invalid image type for second image');
   context.message.statusCode = '400 BadData';
-}
+}]
+//Check that image two is less then 1mb
 else if  (data.attachments[1].body.length > 1024000) {
     context.reject('ImageSizeError', 'Invalid image size for second image, image larger then 1mb');
     context.message.statusCode = '400 BadData';    
@@ -106,10 +111,10 @@ x-ibm-configuration:
                 context.message.statusCode = '400 BadData';    
             }
 
-
+            //Clean up the response
             context.clear('message.attachments');
 
-
+            //Set the response to be the message.body, i.e. that of the first field 
             context.set('message.body',data.body);
   properties:
     target-url:
