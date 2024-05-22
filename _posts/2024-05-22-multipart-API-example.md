@@ -3,8 +3,8 @@ layout: post
 date: 2024-05-22 21:00:00
 categories: APIConnect
 title: "MultiPart APIs - Part 2 - Example use "
-draft: true
 author: [ "ChrisPhillips","SteveLinn" ]
+draft: true
 ---
 
 In part 1 we discussed what a multipart API was and how it can be parsed in API Connect. In this part we will take that knowledge and apply it to a real situation.

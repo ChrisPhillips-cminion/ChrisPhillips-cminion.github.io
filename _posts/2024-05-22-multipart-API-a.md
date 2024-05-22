@@ -3,8 +3,8 @@ layout: post
 date: 2024-05-22 21:00:00
 categories: APIConnect
 title: "MultiPart APIs - Part 1 - What are they? How can I access the elements in API Connect."
-draft: true
 author: [ "ChrisPhillips","SteveLinn" ]
+draft: true
 ---
 
 MultiPart API calls allow multiple set of data to be set to an API as individual items. If you have a series of images and text you need to upload you could write a curl command similar to
