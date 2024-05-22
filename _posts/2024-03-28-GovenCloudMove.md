@@ -48,8 +48,8 @@ rules:
     name: api-uses-gateway-script-or-xslt-which-is-not-allowed-in-non-advanced-saas
     version: 1.0.0
     title: API Uses Gateway Script or XSLT which is not allowed in non Advanced SaaS
-    description: On non Advanced SaaS Gatewayscript and XSLT is not allowed
-    message: XSLT or Gatewayscript policy is detected
+    description: On non Advanced SaaS GatewayScript and XSLT is not allowed
+    message: XSLT or GatewayScript policy is detected
     given:
       - $.x-ibm-configuration.assembly.execute[*].gatewayscript
       - $.x-ibm-configuration.assembly.execute[*].xslt

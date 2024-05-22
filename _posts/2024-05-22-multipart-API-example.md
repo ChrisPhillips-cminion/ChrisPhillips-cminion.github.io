@@ -14,10 +14,9 @@ In part 1 we discussed what a multipart API was and how it can be parsed in API 
 
 <!--more-->
 
+IMAGE OF ASSEMBLY
 
-IMAGE OF ASSSEMBY
-
-In the Gatewayscript we can use the following
+In the GatewayScript we can use the following
 ```javascript
 var data  = context.get('message')
 

@@ -7,7 +7,7 @@ author: [ "ChrisPhillips","SteveLinn" ]
 draft: true
 ---
 
-MultiPart API calls allow multiple set of data to be set to an API as individual items. If you have a series of images and text you need to upload you could write a curl command similar to
+MultiPart API calls allow multiple sets of data to be sent to an API as individual items. If you have a series of images and text you need to upload you could write a curl command similar to
 
 `curl -vk -F 'name=fred' -F "name2=@image.png" https://APIURL/ -H "content-type: multipart/related"`
 
@@ -35,7 +35,7 @@ Content-Type: image/png
 
 In API Connect you can handle these kind of requests.
 
-In the Assembly we first must add a Parse policy. This will take in the payload and set the first entry to be the `message.body` and `message.headers`. Each subsequent part added to the attachment array on the message object.
+In the Assembly we first must add a Parse policy. This will take in the payload and set the root body part to be the `message.body` and `message.headers`. Each subsequent part is added to the attachment array on the message object.
 
 An example of the message object is below.
 ```json
@@ -83,4 +83,4 @@ An example of the message object is below.
 ```
 
 
-So we can access these fields in gateway script and validate the data - see Part 2 for an example.
+So we can access these fields in GatewayScript and validate the data - see Part 2 for an example.
