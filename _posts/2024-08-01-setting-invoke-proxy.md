@@ -1,10 +1,9 @@
 ---
 layout: post
-date: 2024-05-22 10:00:00
+date: 2024-08-1 10:00:00
 categories: APIConnect
 title: "Setting an invoke proxy"
 author: [ "ChrisPhillips","TreyWilliamson" ]
-draft: true
 ---
 
 Setting a downstream proxy is often a requirement when API Connect needs to make calls to the invoke downstream services on the internet.
