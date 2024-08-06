@@ -10,7 +10,7 @@ While testing things like disaster recovery it is advisable to take offline the 
 
 <!--more-->
 
-## Shutdown
+## Take Offline
 
 The safest way to do this is to update the Management CR and add the template section below into  `.spec`.
 
@@ -88,6 +88,6 @@ spec:
 The Top Level CR can be editted with
 `oc edit apiconnectcluster <top level cr name>`
 
-## Start up again
+## Bring back Online
 
 Remove the template section from the CR.
