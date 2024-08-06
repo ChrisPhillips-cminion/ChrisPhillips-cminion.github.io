@@ -1,0 +1,84 @@
+---
+layout: post
+date: 2024-08-06 10:00:00
+categories: APIConnect
+title: "Shutting down API Manager 10.0.5.x"
+draft: true
+---
+
+While testing things like disaster recovery it is advisable to shut down the API Manager.
+
+<!--more-->
+The safest way to do this is to update the mgmt cr and add the template section below into the cr `.spec`.
+```
+spec:
+  template:
+  - name: apim
+    enabled: false
+  - name: apim-schema
+    enabled: false
+  - name: apim-data
+    enabled: false
+  - name: taskmanager
+    enabled: false
+  - name: lur
+    enabled: false
+  - name: lur-schema
+    enabled: false
+  - name: lur-data
+    enabled: false
+  - name: analytics-proxy
+    enabled: false
+  - name: portal-proxy
+    enabled: false
+  - name: billing
+    enabled: false
+  - name: juhu
+    enabled: false
+  - name: websocket-proxy
+    enabled: false
+  - name: ui
+    enabled: false
+```
+
+The management cr can be editted with
+`oc edit mgmt <mgmt cr name>`
+
+
+
+If you are using the top level CR you need to add the following into the Top Level CR.
+
+```
+spec:
+	management:
+	  template:
+	  - name: apim
+	    enabled: false
+	  - name: apim-schema
+	    enabled: false
+	  - name: apim-data
+	    enabled: false
+	  - name: taskmanager
+	    enabled: false
+	  - name: lur
+	    enabled: false
+	  - name: lur-schema
+	    enabled: false
+	  - name: lur-data
+	    enabled: false
+	  - name: analytics-proxy
+	    enabled: false
+	  - name: portal-proxy
+	    enabled: false
+	  - name: billing
+	    enabled: false
+	  - name: juhu
+	    enabled: false
+	  - name: websocket-proxy
+	    enabled: false
+	  - name: ui
+	    enabled: false
+```
+
+The top level cr can be editted with
+`oc edit apiconnectcluster <top level cr name>`
