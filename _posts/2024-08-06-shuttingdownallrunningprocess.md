@@ -9,7 +9,12 @@ draft: true
 While testing things like disaster recovery it is advisable to shut down the API Manager.
 
 <!--more-->
-The safest way to do this is to update the mgmt cr and add the template section below into the cr `.spec`.
+
+## Shutdown
+
+The safest way to do this is to update the Management CR and add the template section below into  `.spec`.
+
+
 ```
 spec:
   template:
@@ -41,12 +46,12 @@ spec:
     enabled: false
 ```
 
-The management cr can be editted with
+The Management CR can be editted with
 `oc edit mgmt <mgmt cr name>`
 
 
 
-If you are using the top level CR you need to add the following into the Top Level CR.
+If you are using The top Level CR you need to add the following into the Top Level CR `.spec`.
 
 ```
 spec:
@@ -80,5 +85,9 @@ spec:
 	    enabled: false
 ```
 
-The top level cr can be editted with
+The Top Level CR can be editted with
 `oc edit apiconnectcluster <top level cr name>`
+
+## Start up again
+
+Remove the template section from the CR.
