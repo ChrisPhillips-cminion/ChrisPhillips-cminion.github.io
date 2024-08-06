@@ -2,11 +2,11 @@
 layout: post
 date: 2024-08-06 10:00:00
 categories: APIConnect
-title: "Take offline the API Manager 10.0.5.x"
+title: "Take offline the API Manager 10.0.5.x in OpenShift and Kubernetes"
 draft: true
 ---
 
-While testing things like disaster recovery it is advisable to take offline the primary API Manager.
+While testing things like disaster recovery it is advisable to take offline the primary API Manager. This instructions will cover OpenShift and Kubernetes.
 
 <!--more-->
 
@@ -57,31 +57,31 @@ If you are using The top Level CR you need to add the following into the Top Lev
 spec:
   management:
     template:
-    - name: apim
+    - name: mgmt-apim
       enabled: false
-    - name: apim-schema
+    - name: mgmt-apim-schema
       enabled: false
-    - name: apim-data
+    - name: mgmt-apim-data
       enabled: false
-    - name: taskmanager
+    - name: mgmt-taskmanager
       enabled: false
-    - name: lur
+    - name: mgmt-lur
       enabled: false
-    - name: lur-schema
+    - name: mgmt-lur-schema
       enabled: false
-    - name: lur-data
+    - name: mgmt-lur-data
       enabled: false
-    - name: analytics-proxy
+    - name: mgmt-analytics-proxy
       enabled: false
-    - name: portal-proxy
+    - name: mgmt-portal-proxy
       enabled: false
-    - name: billing
+    - name: mgmt-billing
       enabled: false
-    - name: juhu
+    - name: mgmt-juhu
       enabled: false
-    - name: websocket-proxy
+    - name: mgmt-websocket-proxy
       enabled: false
-    - name: ui
+    - name: mgmt-ui
       enabled: false
 ```
 
