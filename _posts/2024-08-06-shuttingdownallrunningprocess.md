@@ -55,34 +55,34 @@ If you are using The top Level CR you need to add the following into the Top Lev
 
 ```
 spec:
-	management:
-	  template:
-	  - name: apim
-	    enabled: false
-	  - name: apim-schema
-	    enabled: false
-	  - name: apim-data
-	    enabled: false
-	  - name: taskmanager
-	    enabled: false
-	  - name: lur
-	    enabled: false
-	  - name: lur-schema
-	    enabled: false
-	  - name: lur-data
-	    enabled: false
-	  - name: analytics-proxy
-	    enabled: false
-	  - name: portal-proxy
-	    enabled: false
-	  - name: billing
-	    enabled: false
-	  - name: juhu
-	    enabled: false
-	  - name: websocket-proxy
-	    enabled: false
-	  - name: ui
-	    enabled: false
+  management:
+    template:
+    - name: apim
+      enabled: false
+    - name: apim-schema
+      enabled: false
+    - name: apim-data
+      enabled: false
+    - name: taskmanager
+      enabled: false
+    - name: lur
+      enabled: false
+    - name: lur-schema
+      enabled: false
+    - name: lur-data
+      enabled: false
+    - name: analytics-proxy
+      enabled: false
+    - name: portal-proxy
+      enabled: false
+    - name: billing
+      enabled: false
+    - name: juhu
+      enabled: false
+    - name: websocket-proxy
+      enabled: false
+    - name: ui
+      enabled: false
 ```
 
 The Top Level CR can be editted with
