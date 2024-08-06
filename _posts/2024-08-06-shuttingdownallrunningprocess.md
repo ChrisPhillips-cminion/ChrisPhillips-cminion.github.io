@@ -55,34 +55,33 @@ If you are using The top Level CR you need to add the following into the Top Lev
 
 ```
 spec:
-  management:
-    template:
-    - name: mgmt-apim
-      enabled: false
-    - name: mgmt-apim-schema
-      enabled: false
-    - name: mgmt-apim-data
-      enabled: false
-    - name: mgmt-taskmanager
-      enabled: false
-    - name: mgmt-lur
-      enabled: false
-    - name: mgmt-lur-schema
-      enabled: false
-    - name: mgmt-lur-data
-      enabled: false
-    - name: mgmt-analytics-proxy
-      enabled: false
-    - name: mgmt-portal-proxy
-      enabled: false
-    - name: mgmt-billing
-      enabled: false
-    - name: mgmt-juhu
-      enabled: false
-    - name: mgmt-websocket-proxy
-      enabled: false
-    - name: mgmt-ui
-      enabled: false
+  template:
+  - name: mgmt-apim
+    enabled: false
+  - name: mgmt-apim-schema
+    enabled: false
+  - name: mgmt-apim-data
+    enabled: false
+  - name: mgmt-taskmanager
+    enabled: false
+  - name: mgmt-lur
+    enabled: false
+  - name: mgmt-lur-schema
+    enabled: false
+  - name: mgmt-lur-data
+    enabled: false
+  - name: mgmt-analytics-proxy
+    enabled: false
+  - name: mgmt-portal-proxy
+    enabled: false
+  - name: mgmt-billing
+    enabled: false
+  - name: mgmt-juhu
+    enabled: false
+  - name: mgmt-websocket-proxy
+    enabled: false
+  - name: mgmt-ui
+    enabled: false
 ```
 
 The Top Level CR can be editted with
