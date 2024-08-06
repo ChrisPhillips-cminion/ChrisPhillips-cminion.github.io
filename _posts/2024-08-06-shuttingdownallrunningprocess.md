@@ -6,7 +6,7 @@ title: "Shutting down API Manager 10.0.5.x"
 draft: true
 ---
 
-While testing things like disaster recovery it is advisable to shut down the API Manager.
+While testing things like disaster recovery it is advisable to take offline the primary API Manager.
 
 <!--more-->
 
