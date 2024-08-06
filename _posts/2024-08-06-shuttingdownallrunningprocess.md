@@ -2,7 +2,7 @@
 layout: post
 date: 2024-08-06 10:00:00
 categories: APIConnect
-title: "Shutting down API Manager 10.0.5.x"
+title: "Take offline the API Manager 10.0.5.x"
 draft: true
 ---
 
