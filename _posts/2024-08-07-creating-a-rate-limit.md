@@ -51,7 +51,7 @@ gwd.proxy.json
 
 This will create a rate limit with the following parameters
 
-| Name | Rate | Interval |Unit | Enable hard limit | Cache only | Is Client | Use API Name | Use Application ID | Use Client ID | Dynamic Value | Weight expression | Actions |
+| Name | Rate | Interval |Unit | Enable hard limit | Cache only | Is Client | Use API Name | Use Application ID | Use Client ID | Dynamic Value | Weight expression |
 | test | 10 | 1 | minute | on | off | on | on | off | off | na | 1 |
 
 
