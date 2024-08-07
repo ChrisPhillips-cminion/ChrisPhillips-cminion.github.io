@@ -2,7 +2,7 @@
 layout: post
 date: 2024-08-7 10:00:00
 categories: APIConnect
-title: "Setting an invoke proxy"
+title: "Creating a rate limit object in DataPower"
 author: [ "ChrisPhillips","AmitKumarSingh" ]
 draft: true
 ---
