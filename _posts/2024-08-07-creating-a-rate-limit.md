@@ -42,7 +42,7 @@ gwd.proxy.json
    "apigw":{
       "_global":{
          "override":[
-					 "assembly-rate-limit chrisblog-ratelimit 10 1 second on off on on off off na 1"
+"assembly-rate-limit chrisblog-ratelimit 10 1 second on off on on off off na 1"
          ]
       }
    }
