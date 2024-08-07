@@ -1,13 +1,16 @@
 ---
 layout: post
-date: 2024-08-1 10:00:00
+date: 2024-08-7 10:00:00
 categories: APIConnect
 title: "Setting an invoke proxy"
-author: [ "ChrisPhillips","TreyWilliamson" ]
+author: [ "ChrisPhillips","AmitKumarSingh" ]
 ---
 
-Setting a downstream proxy is often a requirement when API Connect needs to make calls to the invoke downstream services on the internet.
+When using the **rate limit policy on the Assembly** you need to first create a rate limit in datpower in the API Gateway object. This must be done via a GatewayExtension to stop the policy being removed when a publish request is done from API Connect.
 
+This article will show you to create the rate limit objects in DataPower using a gateway extension.
+
+We will create a rate limit called `chrisblog-ratelimit` that can be referenced from a rate limit policy.
 <!--more-->
 
 This requires a gateway extension to configure, regardless on the form factor of your API Gateway.  This guide requires DataPower 10.5.0.8 or later.
@@ -38,13 +41,17 @@ gwd.proxy.json
    "apigw":{
       "_global":{
          "override":[
-			"proxy * 127.0.0.1 10999"
+					 "assembly-rate-limit chrisblog-ratelimit 10 1 second on off on on off off na 1"
          ]
       }
    }
 }
 ```
-In the above sample we are overriding the proxy object in the apigw.  We have configured the proxy remote host to be 127.0.0.1 and the port to be 10999, please ensure these are updated to match the values you require.
+
+This will create a rate limit with the following parameters
+
+| Name | Rate | Interval |Unit | Enable hard limit | Cache only | Is Client | Use API Name | Use Application ID | Use Client ID | Dynamic Value | Weight expression | Actions |
+| test | 10 | 1 | minute | on | off | on | on | off | off | na | 1 |
 
 
 Then put both files into a zip and you have your gateway extension. This can be loaded via the Cloud Manager into an API Gateway service.
@@ -52,4 +59,4 @@ Then put both files into a zip and you have your gateway extension. This can be 
 ![](/images/gwx.png)
 
 
-Now if you check in the DataPower you can see the proxy is correctly configured.
+Now if you create an api with a rate limit polic set the source to 'gateway-name' and the Rate limit name to 'chrisblog-ratelimit'
