@@ -4,7 +4,6 @@ date: 2024-08-7 10:00:00
 categories: APIConnect
 title: "Creating a rate limit object in DataPower"
 author: [ "ChrisPhillips","AmitKumarSingh" ]
-draft: true
 ---
 
 When using the **rate limit policy on the Assembly** you need to first create a rate limit in datpower in the API Gateway object. This must be done via a GatewayExtension to stop the policy being removed when a publish request is done from API Connect.
