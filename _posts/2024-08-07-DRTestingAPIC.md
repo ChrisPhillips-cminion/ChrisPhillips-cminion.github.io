@@ -1,13 +1,12 @@
 ---
 layout: post
-date: 2024-08-06 10:00:00
+date: 2024-08-07 10:00:00
 categories: APIConnect
 title: "Take offline the API Manager 10.0.5.x in OpenShift and Kubernetes"
 draft: true
 ---
 
-While testing things like disaster recovery it is advisable to take offline the primary API Manager. This instructions will cover OpenShift and Kubernetes.
-
+While testing  disaster recovery it is advisable to take offline the primary API Manager. This instructions will cover OpenShift and Kubernetes.
 <!--more-->
 
 ## Take Offline
@@ -87,6 +86,11 @@ spec:
 The Top Level CR can be editted with
 `oc edit apiconnectcluster <top level cr name>`
 
+Once this is complete the database should be shut down following the steps in the knowledge centre. [https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=factor-shutting-down-postgres-database](https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=factor-shutting-down-postgres-database)
+
+
 ## Bring back Online
 
-Remove the template section from the CR.
+Start the dabase by following these steps [https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=factor-shutting-down-postgres-database#ffm_postgres__title__4](https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=factor-shutting-down-postgres-database#ffm_postgres__title__4)
+
+Once the DataBase has started remove the template section from the CR.
