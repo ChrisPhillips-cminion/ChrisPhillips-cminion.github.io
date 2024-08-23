@@ -5,7 +5,7 @@ categories: APIConnect
 title: "Runing Asynchronous code in API Connect Gatewayscript policy"
 ---
 
-A client asked how they can make two invokes in API Connect asynchronous.  This is not possible with the invoke policies as they must always be synchronous. However it can be done with the JavaScript/GatewayScript.
+A client asked how they can make two invokes in API Connect asynchronous.  This is not possible with the invoke policies as they must always be synchronous. However it can be done with   JavaScript/GatewayScript.
 
 <!--more-->
 
