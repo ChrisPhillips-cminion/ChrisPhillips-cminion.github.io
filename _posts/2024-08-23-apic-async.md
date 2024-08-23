@@ -11,7 +11,7 @@ A client asked how they can make two invokes in API Connect asynchronous.  This 
 
 **Thanks to Steve Linn for pointing out how obvious this was.**
 
-The code below is a very simple snippet. This gateway script has two Promises. The first sleeps for 10seconds and prints out a message to the log. The second sleeps for two seconds and prints out a message to the log.
+The code below is a very simple snippet. This gateway script has two Promises. The first sleeps for ten seconds and prints out a message to the log. The second sleeps for two seconds and prints out a message to the log.
 
 Finally we have a `Promise.all()` that waits for both promises to complete.
 
