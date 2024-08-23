@@ -3,7 +3,6 @@ layout: post
 date: 2024-08-07 10:00:00
 categories: APIConnect
 title: "Take offline the API Manager 10.0.5.x in OpenShift and Kubernetes"
-draft: true
 ---
 
 While testing  disaster recovery it is advisable to take offline the primary API Manager. This instructions will cover OpenShift and Kubernetes.
