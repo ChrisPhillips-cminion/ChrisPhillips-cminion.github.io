@@ -1,9 +1,8 @@
 ---
 layout: post
-date: 2024-08-23 10:00:00
+date: 2024-09-26 10:00:00
 categories: APIConnect
 title: "IBM APIConnect WhitePaper 10.0.8.x"
-draft: true
 ---
 
 For the last year a small team and I have been updating the API Connect WhitePaper to cover changes between 10.0.1 and 10.0.8.  
