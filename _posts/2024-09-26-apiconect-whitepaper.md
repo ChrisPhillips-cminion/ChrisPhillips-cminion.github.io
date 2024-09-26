@@ -6,8 +6,6 @@ title: "IBM APIConnect WhitePaper 10.0.8.x"
 draft: true
 ---
 
-
-
 For the last year a small team and I have been updating the API Connect WhitePaper to cover changes between 10.0.1 and 10.0.8.  
 
 The previous versions of this WhitePaper have assisted clients, IBMers and Business Partners from around the world deploying and understanding IBM API Connect.
@@ -20,4 +18,4 @@ To download a copy please head over to IBM Communities.
 
 [https://community.ibm.com/community/user/integration/viewdocument/ibm-api-connect-v1008x-deploymen?CommunityKey=2106cca0-a9f9-45c6-9b28-01a28f4ce947](https://community.ibm.com/community/user/integration/viewdocument/ibm-api-connect-v1008x-deploymen?CommunityKey=2106cca0-a9f9-45c6-9b28-01a28f4ce947)
 
-![](/images/whp1008.png)
+![](/images/whp1008.jpg)
