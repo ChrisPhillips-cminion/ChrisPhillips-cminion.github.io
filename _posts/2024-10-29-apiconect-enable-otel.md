@@ -11,7 +11,7 @@ This article will explain how to enable Open Telemetry on API Connect 10.0.8.0 w
 
 Thanks to Zach Groseclose and Ben Stern for assisting with this.
 
-For an introduction to OpenTelemetry please refer to a previous article on OpenTelemetry for AppConnect [https://chrisphillips-cminion.github.io/ace/2024/04/22/ACE-Otel.html](https://chrisphillips-cminion.github.io/ace/2024/04/22/ACE-Otel.html)
+For an introduction to OpenTelemetry please refer to our previous article on OpenTelemetry for AppConnect [https://chrisphillips-cminion.github.io/ace/2024/04/22/ACE-Otel.html](https://chrisphillips-cminion.github.io/ace/2024/04/22/ACE-Otel.html)
 
 <!--more-->
 
