@@ -7,13 +7,15 @@ author: ["AmitKumarSingh" ]
 draft: true
 ---
 
-This article will explain how to enable Open Telemetry on API Connect 10.0.8.0 with DataPower 10.6.0.1. In order to apply these settings today a GW extension must be used. This article will explain the steps to build the gateway extension.
+This article will explain how to enable Open Telemetry on API Connect 10.0.8.0 with DataPower 10.6.0.1. In order to apply these settings today, a GW extension must be used. This article will explain the steps to build the gateway extension.
 
 <!--more-->
 
 ## Create the config
-Take the config below and update parameters as required and save as otel.cfg
-**Change the HOSTNAME and PORT in the conig below to match instana agent**
+Take the config below, update parameters as required and save as otel.cfg
+
+**Change the HOSTNAME and PORT in the config below to match your Instana Agent**
+
 ```
 %if% available "otel-exporter"
 otel-exporter "otel-exp"
@@ -51,7 +53,9 @@ exit
 ## Create the GW extension
 
 Place this manifest.json in the same directory as the otel.cfg.
+
 **If you are already using a GW extension this must be merged with your existing one**
+
 ```json
 {
 	"extension": {
@@ -66,7 +70,8 @@ Place this manifest.json in the same directory as the otel.cfg.
 }
 ```
 
-Run these commands in a shells session in the same directory as the manifest.json and otel.cfg this will build the required gateway extension zip file. **Please note the filenames must match**
+Run these commands in a shell session in the same directory as the manifest.json and otel.cfg this will build the required gateway extension zip file.
+**Please note the filenames must match**
 
 ```sh
 date=$(date +%s)
@@ -89,7 +94,7 @@ Click on Add and upload the zip file created in step above and press save
 
 Wait a few minutes for the extension to apply
 
-Once gateway extension is applied, we can see the corresponding opentelemetry on API gateway.
+Once gateway extension is applied, we can see the corresponding Open Telemetry configuration on the API Gateway Object in DataPower
 
 ## Testing
 
