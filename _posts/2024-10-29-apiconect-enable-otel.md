@@ -3,7 +3,7 @@ layout: post
 date: 2024-10-29 10:00:00
 categories: APIConnect
 title: "API Connect and OpenTelemetry"
-author: ["ChrisPhillips", "AmitKumarSingh" ]
+author: [ "AmitKumarSingh", "ChrisPhillips" ]
 draft: true
 ---
 
@@ -19,6 +19,7 @@ For an introduction to OpenTelemetry please refer to our previous article on Ope
 Take the config below, update parameters as required and save as otel.cfg
 
 **Change the HOSTNAME and PORT in the config below to match your OTel Agent (e.g. Instana)**
+
 *The default ports for OpenTelemetry are 4317 (grpc) or 4318(http)*
 
 ```
