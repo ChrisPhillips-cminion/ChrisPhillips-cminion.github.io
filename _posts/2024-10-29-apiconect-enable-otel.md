@@ -3,18 +3,20 @@ layout: post
 date: 2024-10-29 10:00:00
 categories: APIConnect
 title: "API Connect and OpenTelemetry"
-author: ["AmitKumarSingh" ]
+author: ["ChrisPhillips", "AmitKumarSingh" ]
 draft: true
 ---
 
 This article will explain how to enable Open Telemetry on API Connect 10.0.8.0 with DataPower 10.6.0.1. In order to apply these settings today, a GW extension must be used. This article will explain the steps to build the gateway extension.
+
+Thanks to Zach Groseclose and Ben Stern for assisting with this.
 
 <!--more-->
 
 ## Create the config
 Take the config below, update parameters as required and save as otel.cfg
 
-**Change the HOSTNAME and PORT in the config below to match your Instana Agent**
+**Change the HOSTNAME and PORT in the config below to match your OTel Agent (e.g. Instana)**
 
 ```
 %if% available "otel-exporter"
@@ -98,4 +100,4 @@ Once gateway extension is applied, we can see the corresponding Open Telemetry c
 
 ## Testing
 
-Once the configuration is applied DataPower will send trace information to Instana even when a health/readiness check is run.  In containers this is every few seconds.
+Once the configuration is applied DataPower will send trace information to the Otel Collector (e.g. Instana) even when a health/readiness check is run.  In containers this is every few seconds.
