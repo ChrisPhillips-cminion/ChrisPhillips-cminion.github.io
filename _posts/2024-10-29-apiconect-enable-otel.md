@@ -4,7 +4,6 @@ date: 2024-10-29 10:00:00
 categories: APIConnect
 title: "API Connect and OpenTelemetry"
 author: [ "AmitKumarSingh", "ChrisPhillips" ]
-draft: true
 ---
 
 This article will explain how to enable Open Telemetry on API Connect 10.0.8.0 with DataPower 10.6.0.1. In order to apply these settings today, a GW extension must be used. This article will explain the steps to build the gateway extension.
