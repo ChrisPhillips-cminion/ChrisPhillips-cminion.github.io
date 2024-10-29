@@ -27,7 +27,6 @@ otel-exporter "otel-exp"
   type http
   hostname otel-collector.cp4i.svc.cluster.local
   traces-path "/v1/traces"
-  metrics-path "/v1/metrics"
   logs-path "/v1/logs"
   port 4318
   http-content-type binary
