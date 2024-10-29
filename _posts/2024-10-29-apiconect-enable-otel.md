@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-09-26 10:00:00
+date: 2024-10-29 10:00:00
 categories: APIConnect
-title: "IBM APIConnect WhitePaper 10.0.8.x"
+title: "API Connect and OpenTelemetry"
 author: ["AmitKumarSingh" ]
 draft: true
 ---
@@ -93,4 +93,4 @@ Once gateway extension is applied, we can see the corresponding opentelemetry on
 
 ## Testing
 
-Once the configuration is applied DataPower will send trace information to Instana even when a health/readiness check is run.  In containers this is every few seconds. 
+Once the configuration is applied DataPower will send trace information to Instana even when a health/readiness check is run.  In containers this is every few seconds.
