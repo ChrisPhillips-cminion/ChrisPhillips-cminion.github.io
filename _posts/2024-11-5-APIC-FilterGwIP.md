@@ -13,7 +13,7 @@ Amit Kumar Singh from my team built some GatewayScript that will do this check.
 
 <!--more-->
 
-The GatewayScript will look at the `X-Forwarded-For` headers and evaluate if it is in a hard coded CIDR.
+The GatewayScript will look at the `X-Forwarded-For` and `X-Client-IP` headers and evaluate if it is in a hard coded CIDR.
 
 GatewayScript is available here.- [https://github.ibm.com/Amit-Kumar-Singh11/apic-scripts](https://github.ibm.com/Amit-Kumar-Singh11/apic-scripts)
 
