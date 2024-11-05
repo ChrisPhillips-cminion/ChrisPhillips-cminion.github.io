@@ -2,11 +2,11 @@
 layout: post
 date: 2024-11-5 10:00:00
 categories: APIConnect
-title: "API Connect - Filtering by source IP on a gateway."
+title: "API Connect - Filtering requests by source IP with the API Gateway."
 author: [ "ChrisPhillips", "AmitKumarSingh" ]
 ---
 
-I am often asked if there is a way we can limit the range of IPs that we accept calling an API Gateway. This can be done with Global Policies and a little GatewayScript.
+I am often asked if there is a way we can limit the range of IPs that we accept calling an API Gateway. This can be done with a GlobalPolicy and a little GatewayScript.
 
 Amit Kumar Singh from my team built some GatewayScript that will do this check.
 
