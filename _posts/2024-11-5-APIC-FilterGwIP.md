@@ -17,7 +17,7 @@ The GatewayScript will look at the `X-Forwarded-For` headers and evaluate if it 
 
 GatewayScript is available here.- [https://github.ibm.com/Amit-Kumar-Singh11/apic-scripts](https://github.ibm.com/Amit-Kumar-Singh11/apic-scripts)
 
-I have taken Amit's code and wrapped it into a GlobalPolicy extension. This must be applied via the CLI.  
+I have taken Amit's code and wrapped it into a GlobalPolicy. This must be applied via the CLI.  
 <script src="https://gist.github.com/ChrisPhillips-cminion/4979bf545c0e806bcdb1c36cd320724e.js"></script>
 
 I modified the if statement so that if the request does not match, the request is rejected.
