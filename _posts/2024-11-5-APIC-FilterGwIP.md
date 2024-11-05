@@ -20,3 +20,5 @@ Code is available here.- [https://github.ibm.com/Amit-Kumar-Singh11/apic-scripts
 I have taken Amit's code and wrapped it into a gw extension. This code can then be place in a global policy extension. This must be applied via the CLI.  [https://gist.github.com/ChrisPhillips-cminion/4979bf545c0e806bcdb1c36cd320724e](https://gist.github.com/ChrisPhillips-cminion/4979bf545c0e806bcdb1c36cd320724e)
 
 I modified the if statement so that request is rejected if it does not match.
+
+Amit also published his code to the IBM community -  [https://community.ibm.com/community/user/integration/blogs/amit-kumar-singh/2024/11/05/apic-gateway-script-for-check-source-ips-and?CommunityKey=2106cca0-a9f9-45c6-9b28-01a28f4ce947](https://community.ibm.com/community/user/integration/blogs/amit-kumar-singh/2024/11/05/apic-gateway-script-for-check-source-ips-and?CommunityKey=2106cca0-a9f9-45c6-9b28-01a28f4ce947)
