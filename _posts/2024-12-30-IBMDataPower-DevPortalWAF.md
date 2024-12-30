@@ -78,7 +78,7 @@ The WAF handles the requests. WAFs have numerous configuration options which we 
 4. New
 5. Set the following in Main
   - Name - "Developer Portal WAF"
-  - Remote Host - IBM Developer Portal hostname used when deploying the IBM Developert Portal site. (The host alias will resolve this to the intended system)
+  - Remote Host - IBM Developer Portal hostname used when deploying the IBM Developert Portal site. 
   - Remote Port - 443
   - TLS Type - Sever profile
   - TLS Server Profile - As confgured in previous section
