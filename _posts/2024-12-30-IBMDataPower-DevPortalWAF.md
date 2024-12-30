@@ -1,0 +1,63 @@
+---
+layout: post
+date: 2024-11-5 10:00:00
+categories: APIConnect
+title: "Building a Reverse Proxy for the IBM Developer Portal with IBM DataPower"
+author: [ "ChrisPhillips", "SimonKapadia" ]
+draft: true
+---
+
+The IBM Developer Portal is essential for socialising your APIs to external consumers. In order to do this it must be assibsle outside of the Internal Network. We suggest that that a reverse proxy is deployed in the DMZ and that forwards requests to the Developer Portal inside the network, as opposed to have having the Developer Portal directly deployed to the DMZ.
+
+IBM DataPower has facilities to provide this reverse proxy with its WAF capabilities.  This article will explain how to configure for a Physical, Linux or Virtal DataPower. This can be done with DataPower in Kubernetes but the configuration needs to be placed in a ConfigMap and that will be not be covered by these intrustions.
+
+<!--more-->
+
+**Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. We do not support rewriting the site hostname in the reverse proxy. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
+
+DIAGRAM  **Simon will draw a pretty picture**
+
+
+A request will come into IBM DataPower and this will then be forwarded to the Developer Portal pods.  **DataPower is great beacuse simon will write some stuff here.**
+
+## Assumptions
+1. DataPower will use the same DNS server as the external request. *If this is not true the Host Alias steps are not required. *
+2. The Developer Portal site address is not the default and does not use hte default hostname,.
+
+## Configure the Host Alias
+Thie host alias allows to resolve DNS entries inside the datapower from a local table, as opposed to a using the value from the DNS Server. Here we will configure the Host Alias to point to the Developer Portal endpoint.
+
+1. Log into Datapower
+2. Go to the default domain
+3. Go to Host Alias
+4. New
+5. Set the following
+  - Name  - IBM Developer Portal hostname used when deploying the IBM Developert Portal site.
+  - Value - The default IBM Developer Portal hostname
+6. Press Apply
+
+## Configure the TLS Server Profiles
+
+## Configure the TLS Client Profiles
+
+## Configure the Web Application Firewall
+The WAF handles the requests. WAFs have numerous configuration options which we will not cover here. This section will cover the basics to allow the WAF to function. If more advanced configuration is required please contact your local IBM Expert Labs team.
+1. Log into Datapower
+2. Go to the  domain that will contain your Web Application Firewall
+3. Go to Web Application Firewall
+4. New
+5. Set the following in Main
+  - Name - "Developer Portal WAF"
+  - Remote Host - IBM Developer Portal hostname used when deploying the IBM Developert Portal site. (The host alias will resolve this to the intended system)
+  - Remote Port - 443
+  - TLS Type - Sever profile
+  - TLS Server Profile - As confgured in previous section
+  - TLS Client Profile - As confgured in previous section
+  - Security Profile - As confgured in previous section
+  - XML Manager  - Set to default
+6. Set the following in Source Address, after clicking Add
+  - Local IP Address - 0.0.0.0 (Please note this will allow connections from any interface and not be desired)
+  - Local Port - Desired Port to listen to requests from, often 443.
+  - Enable TLS
+  Click Apply to save the Source Address configuration
+7. Click Apply at teh top of the screen to save the WAF
