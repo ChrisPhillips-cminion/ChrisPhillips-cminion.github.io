@@ -33,11 +33,11 @@ The TLS Client Profile is configured to handle the certifcates for receiving cal
 1. Log into Datapower
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to TLS Server Profile and click add
-![/images/TLS-1.png](TLS Server profile)
+![TLS Server profile](/images/TLS-1.png)
 4. Set following
   - Name - "Developer Portal WAF TLS Server Profile"
   - Select the Identifiaction Credetial Object as described in the Assumptions.
-![/images/TLS-2.png](TLS Server profile)
+![TLS Server profile](/images/TLS-2.png)
 5. Click Apply.
 
 ## Configure the TLS Client Profiles
@@ -45,11 +45,11 @@ The TLS Client Profile is configured to handle the certifcates for making downst
 1. Log into Datapower
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to TLS Client Profile and click add
-![/images/TLSC-1.png](TLS Client profile)
+![TLS Client profile](/images/TLSC-1.png)
 4. Set following
   - Name - "Developer Portal WAF TLS Client Profile"
   - Disable - "Validate server certificate"
-![/images/TLSC-2.png](TLS Client profile)
+![TLS Client profile](/images/TLSC-2.png)
 5. Click Apply.
 
 ## Configure the Application Security Policy
