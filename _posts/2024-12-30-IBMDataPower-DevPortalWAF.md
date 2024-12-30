@@ -37,6 +37,7 @@ The TLS Client Profile is configured to handle the certifcates for receiving cal
 4. Set following
   - Name - "Developer Portal WAF TLS Server Profile"
   - Select the Identification Credential Object as described in the Assumptions.
+
 ![TLS Server profile](/images/TLS-2.png)
 5. Click Apply.
 
@@ -49,6 +50,7 @@ The TLS Client Profile is configured to handle the certifcates for making downst
 4. Set following
   - Name - "Developer Portal WAF TLS Client Profile"
   - Disable - "Validate server certificate"
+
 ![TLS Client profile](/images/TLSC-2.png)
 5. Click Apply.
 
