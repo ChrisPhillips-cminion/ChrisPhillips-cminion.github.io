@@ -16,18 +16,18 @@ There are many reasons why you may choose to implement your reverse proxy in Dat
 
 DIAGRAM  **Simon will draw a pretty picture**
 
-
 A request will come into IBM DataPower and this will then be forwarded to the Developer Portal pods.  
 
 <!--more-->
 
-**Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. As mentioned above, we do not support rewriting the site hostname in the reverse proxy, so the site address configured in the Portal must exactly match (be identical to) the address entered in the browser.
+**Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. As mentioned above, we do not support rewriting the site hostname in the reverse proxy, so the site address configured in the Portal must exactly match (be identical to) the address entered in the browser. What this means is that you cannot have an "internal Portal URL" and an "external Portal URL" for the Portal instance. There is one Portal URL and it is the same everywhere. In practise, for this to work, DataPower has to resolve the site hostname to the IP of the actual Portal server, but clients must resolve the hostname to the external IP being served by DataPower.
+
+Here's how to set it up:
 
 ## Assumptions
 1. DataPower will use a different DNS server as the external request. When the DataPower resolves the IBM Developer Portal Site hostname it will be directed to the IBM Developer Portal instance inside the network.
 2. The Developer Portal site address is not the default and does not use the default hostname.
 3. TLS Certificates and Keys are available and the Identification Credential Object is already created.
-
 
 ## Configure the TLS Server Profiles
 The TLS Client Profile is configured to handle the certifcates for receiving calls. In this example we will configure the minimum, but additional options can be enabled to add aditional security. This step
@@ -37,7 +37,7 @@ The TLS Client Profile is configured to handle the certifcates for receiving cal
 ![TLS Server profile](/images/TLS-1.png)
 4. Set the following
   - Name - "Developer Portal WAF TLS Server Profile"
-  - Select the Identification Credential Object as described in the Assumptions.
+  - Select the Identification Credential Object (already created, as described in the Assumptions).
 ![TLS Server profile](/images/TLS-2.png)
 5. Click Apply.
 
@@ -49,12 +49,12 @@ The TLS Client Profile is configured to handle the certifcates for making downst
 ![TLS Client profile](/images/TLSC-1.png)
 4. Set the following
   - Name - "Developer Portal WAF TLS Client Profile"
-  - Disable - "Validate server certificate"
+  - Disable - "Validate server certificate" (note: do NOT disable this in a real world scenario!)
 ![TLS Client profile](/images/TLSC-2.png)
 5. Click Apply.
 
 ## Configure the Application Security Policy
-The Application Security Policy **SIMON EXPLAIN WHAT THIS DOES PLEASE**
+The Application Security Policy configures how the DataPower WAF should handle incoming requests. For the Developer Portal, we must simply pass through all requests unmodified, so we are going to create a policy which does that. However, this would be a good place to e.g. block specific known bad URL patterns, perform further verification of requests, send payloads to an ICAP server, etc.
 1. Log into Datapower
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to Application Security Policy and click Add
