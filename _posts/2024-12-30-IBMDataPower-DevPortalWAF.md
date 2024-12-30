@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2024-11-5 10:00:00
+date: 2024-12-30 10:00:00
 categories: APIConnect
 title: "Building a Reverse Proxy for the IBM Developer Portal with IBM DataPower"
 author: [ "ChrisPhillips", "SimonKapadia" ]
