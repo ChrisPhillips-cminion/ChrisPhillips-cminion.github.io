@@ -11,11 +11,13 @@ The IBM Developer Portal is essential for socialising your APIs to external cons
 
 **IMPORTANT NOTE:** Any reverse proxy placed in front of the Developer Portal must be completely transparent to the Developer Portal. We do not support any modification of the portal URL, port, hostname or path in the reverse proxy, as per the documentation. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
+**DataPower is great beacuse simon will write some stuff here.**
+There are many reasons why you may choose to implement your reverse proxy in DataPower. Link to some docs and stuff.
 
 DIAGRAM  **Simon will draw a pretty picture**
 
 
-A request will come into IBM DataPower and this will then be forwarded to the Developer Portal pods.  **DataPower is great beacuse simon will write some stuff here.**
+A request will come into IBM DataPower and this will then be forwarded to the Developer Portal pods.  
 
 <!--more-->
 
