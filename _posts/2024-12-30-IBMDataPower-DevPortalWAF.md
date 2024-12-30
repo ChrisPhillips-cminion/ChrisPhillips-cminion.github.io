@@ -22,7 +22,9 @@ A request will come into IBM DataPower and this will then be forwarded to the De
 
 ## Assumptions
 1. DataPower will use the same DNS server as the external request. *If this is not true the Host Alias steps are not required. *
-2. The Developer Portal site address is not the default and does not use hte default hostname,.
+2. The Developer Portal site address is not the default and does not use the default hostname.
+3. TLS Certificates and Keys are available and the Identification Credential Object is already created.
+4. The User has permissions to modify host alias in the Default Domain.
 
 ## Configure the Host Alias
 Thie host alias allows to resolve DNS entries inside the datapower from a local table, as opposed to a using the value from the DNS Server. Here we will configure the Host Alias to point to the Developer Portal endpoint.
@@ -37,8 +39,46 @@ Thie host alias allows to resolve DNS entries inside the datapower from a local 
 6. Press Apply
 
 ## Configure the TLS Server Profiles
+The TLS Client Profile is configured to handle the certifcates for receiving calls. In this example we will configure the minimum, but additional options can be enabled to add aditional security. This step
+1. Log into Datapower
+2. Go to the  domain that will contain your Web Application Firewall
+3. Go to TLS Server Profile and click add
+4. Set following
+  - Name - "Developer Portal WAF TLS Server Profile"
+  - Add a new Identification Cred or select one that is already available.
+  Click Apply.
 
 ## Configure the TLS Client Profiles
+The TLS Client Profile is configured to handle the certifcates for making downstream calls. In this example we will configure the minimum, but additional options can be enabled to add aditional security.
+1. Log into Datapower
+2. Go to the  domain that will contain your Web Application Firewall
+3. Go to TLS Client Profile and click add
+4. Set following
+  - Name - "Developer Portal WAF TLS Client Profile"
+  - Disable - "Validate server certificate"
+  Click Apply.
+
+## Configure the Application Security Policy
+The Application Security Policy **SIMON EXPLAIN WHAT THIS DOES PLEASE**
+1. Log into Datapower
+2. Go to the  domain that will contain your Web Application Firewall
+3. Go to Application Security Policy and click Add
+4. Set following in Main
+  - Name - "Developer Portal WAF ASP"
+5. Set following in Request Maps after clicking Add
+  Create a new Matching Rule where the rule is of
+  - Matching Type - URL
+  - URL Match - *
+  Click Apply to save the Web Request Map  
+  Create a new Web Request Profile
+  - Set Name to "Developer Portal WAF WRP"
+  Click Apply to save the Web Request Profile  
+6. Set following in Request Maps after clicking Add
+  - Select the previously created Matching Rule.
+  Create a new Web Response Profile
+  - Set Name to "Developer Portal WAF WRespP"
+  Click Apply to save the Web Response Profile  
+7. Click Apply to save the Application Security Profile
 
 ## Configure the Web Application Firewall
 The WAF handles the requests. WAFs have numerous configuration options which we will not cover here. This section will cover the basics to allow the WAF to function. If more advanced configuration is required please contact your local IBM Expert Labs team.
