@@ -35,7 +35,7 @@ The TLS Client Profile is configured to handle the certifcates for receiving cal
 3. Go to TLS Server Profile and click add
 4. Set following
   - Name - "Developer Portal WAF TLS Server Profile"
-  - Add a new Identification Cred or select one that is already available.
+  - Select the Identifiaction Credetial Object as described in the Assumptions.
   Click Apply.
 
 ## Configure the TLS Client Profiles
@@ -78,7 +78,7 @@ The WAF handles the requests. WAFs have numerous configuration options which we 
 4. New
 5. Set the following in Main
   - Name - "Developer Portal WAF"
-  - Remote Host - IBM Developer Portal hostname used when deploying the IBM Developert Portal site. 
+  - Remote Host - IBM Developer Portal hostname used when deploying the IBM Developert Portal site.
   - Remote Port - 443
   - TLS Type - Sever profile
   - TLS Server Profile - As confgured in previous section
