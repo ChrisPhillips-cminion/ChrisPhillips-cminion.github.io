@@ -34,7 +34,7 @@ The TLS Client Profile is configured to handle the certifcates for receiving cal
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to TLS Server Profile and click add
 ![TLS Server profile](/images/TLS-1.png)
-4. Set following
+4. Set the following
   - Name - "Developer Portal WAF TLS Server Profile"
   - Select the Identification Credential Object as described in the Assumptions.
 
@@ -47,7 +47,7 @@ The TLS Client Profile is configured to handle the certifcates for making downst
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to TLS Client Profile and click add
 ![TLS Client profile](/images/TLSC-1.png)
-4. Set following
+4. Set the following
   - Name - "Developer Portal WAF TLS Client Profile"
   - Disable - "Validate server certificate"
 
@@ -59,9 +59,9 @@ The Application Security Policy **SIMON EXPLAIN WHAT THIS DOES PLEASE**
 1. Log into Datapower
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to Application Security Policy and click Add
-4. Set following in Main
+4. Set the following in Main
   - Name - "Developer Portal WAF ASP"
-5. Set following in Request Maps after clicking Add
+5. Set the following in Request Maps after clicking Add
   Create a new Matching Rule where the rule is of
   - Matching Type - URL
   - URL Match - *
@@ -69,7 +69,7 @@ The Application Security Policy **SIMON EXPLAIN WHAT THIS DOES PLEASE**
   Create a new Web Request Profile
   - Set Name to "Developer Portal WAF WRP"
   Click Apply to save the Web Request Profile  
-6. Set following in Request Maps after clicking Add
+6. Set the following in Request Maps after clicking Add
   - Select the previously created Matching Rule.
   Create a new Web Response Profile
   - Set Name to "Developer Portal WAF WRespP"
