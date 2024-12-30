@@ -11,17 +11,19 @@ The IBM Developer Portal is essential for socialising your APIs to external cons
 
 IBM DataPower has facilities to provide this reverse proxy with its WAF capabilities.  This article will explain how to configure for a Physical, Linux or Virtal DataPower. This can be done with DataPower in Kubernetes but the configuration needs to be placed in a ConfigMap and that will be not be covered by these intrustions.
 
-<!--more-->
 
-**Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. We do not support rewriting the site hostname in the reverse proxy. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
 DIAGRAM  **Simon will draw a pretty picture**
 
 
 A request will come into IBM DataPower and this will then be forwarded to the Developer Portal pods.  **DataPower is great beacuse simon will write some stuff here.**
 
+<!--more-->
+
+**Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. We do not support rewriting the site hostname in the reverse proxy. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
+
 ## Assumptions
-1. DataPower will use the same DNS server as the external request. *If this is not true the Host Alias steps are not required. *
+1. DataPower will use the same DNS server as the external request. *If this is not true the Host Alias steps are not required. 
 2. The Developer Portal site address is not the default and does not use the default hostname.
 3. TLS Certificates and Keys are available and the Identification Credential Object is already created.
 4. The User has permissions to modify host alias in the Default Domain.
@@ -96,7 +98,7 @@ The WAF handles the requests. WAFs have numerous configuration options which we 
   - Security Profile - As confgured in previous section
   - XML Manager  - Set to default
 6. Set the following in Source Address, after clicking Add
-  - Local IP Address - 0.0.0.0 (Please note this will allow connections from any interface and not be desired)
+  - Local IP Address - 0.0.0.0 (Please note this will allow connections from any interface and may not be desired)
   - Local Port - Desired Port to listen to requests from, often 443.
   - Enable TLS
   Click Apply to save the Source Address configuration
