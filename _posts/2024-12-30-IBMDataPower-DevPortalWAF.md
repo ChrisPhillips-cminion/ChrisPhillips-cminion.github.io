@@ -23,7 +23,7 @@ A request will come into IBM DataPower and this will then be forwarded to the De
 **Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. We do not support rewriting the site hostname in the reverse proxy. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
 ## Assumptions
-1. DataPower will use a different DNS server as the external request. When the DataPower resolves the IBM Developer Poral Site hostname it will be directed to the IBM Developer Portal instance inside the network.
+1. DataPower will use a different DNS server as the external request. When the DataPower resolves the IBM Developer Portal Site hostname it will be directed to the IBM Developer Portal instance inside the network.
 2. The Developer Portal site address is not the default and does not use the default hostname.
 3. TLS Certificates and Keys are available and the Identification Credential Object is already created.
 
@@ -33,20 +33,24 @@ The TLS Client Profile is configured to handle the certifcates for receiving cal
 1. Log into Datapower
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to TLS Server Profile and click add
+![/images/TLS-1.png](TLS Server profile)
 4. Set following
   - Name - "Developer Portal WAF TLS Server Profile"
   - Select the Identifiaction Credetial Object as described in the Assumptions.
-  Click Apply.
+![/images/TLS-2.png](TLS Server profile)
+5. Click Apply.
 
 ## Configure the TLS Client Profiles
 The TLS Client Profile is configured to handle the certifcates for making downstream calls. In this example we will configure the minimum, but additional options can be enabled to add aditional security.
 1. Log into Datapower
 2. Go to the  domain that will contain your Web Application Firewall
 3. Go to TLS Client Profile and click add
+![/images/TLSC-1.png](TLS Client profile)
 4. Set following
   - Name - "Developer Portal WAF TLS Client Profile"
   - Disable - "Validate server certificate"
-  Click Apply.
+![/images/TLSC-2.png](TLS Client profile)
+5. Click Apply.
 
 ## Configure the Application Security Policy
 The Application Security Policy **SIMON EXPLAIN WHAT THIS DOES PLEASE**
