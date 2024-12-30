@@ -23,22 +23,10 @@ A request will come into IBM DataPower and this will then be forwarded to the De
 **Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. We do not support rewriting the site hostname in the reverse proxy. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
 ## Assumptions
-1. DataPower will use the same DNS server as the external request. *If this is not true the Host Alias steps are not required. 
+1. DataPower will use a different DNS server as the external request. When the DataPower resolves the IBM Developer Poral Site hostname it will be directed to the IBM Developer Portal instance inside the network.
 2. The Developer Portal site address is not the default and does not use the default hostname.
 3. TLS Certificates and Keys are available and the Identification Credential Object is already created.
-4. The User has permissions to modify host alias in the Default Domain.
 
-## Configure the Host Alias
-Thie host alias allows to resolve DNS entries inside the datapower from a local table, as opposed to a using the value from the DNS Server. Here we will configure the Host Alias to point to the Developer Portal endpoint.
-
-1. Log into Datapower
-2. Go to the default domain
-3. Go to Host Alias
-4. New
-5. Set the following
-  - Name  - IBM Developer Portal hostname used when deploying the IBM Developert Portal site.
-  - Value - The default IBM Developer Portal hostname
-6. Press Apply
 
 ## Configure the TLS Server Profiles
 The TLS Client Profile is configured to handle the certifcates for receiving calls. In this example we will configure the minimum, but additional options can be enabled to add aditional security. This step
