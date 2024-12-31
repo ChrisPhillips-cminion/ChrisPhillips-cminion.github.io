@@ -82,6 +82,7 @@ The WAF handles the requests. WAFs have numerous configuration options which we 
 3. Go to Web Application Firewall
 4. New
 5. Set the following in Main
+![WAF](/images/waf-1.png)
   - Name - "Developer Portal WAF"
   - Remote Host - IBM Developer Portal hostname used when deploying the IBM Developert Portal site.
   - Remote Port - 443
@@ -91,6 +92,7 @@ The WAF handles the requests. WAFs have numerous configuration options which we 
   - Security Profile - As confgured in previous section
   - XML Manager  - Set to default
 6. Set the following in Source Address, after clicking Add
+![WAF](/images/waf-2.png)
   - Local IP Address - 0.0.0.0 (Please note this will allow connections from any interface and may not be desired)
   - Local Port - Desired Port to listen to requests from, often 443.
   - Enable TLS
