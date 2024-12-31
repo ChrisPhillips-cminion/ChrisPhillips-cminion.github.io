@@ -11,18 +11,22 @@ The IBM Developer Portal is essential for socialising your APIs to external cons
 
 **IMPORTANT NOTE:** Any reverse proxy placed in front of the Developer Portal must be completely transparent to the Developer Portal. We do not support any modification of the portal URL, port, hostname or path in the reverse proxy, as per the documentation. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
-**DataPower is great because simon will write some stuff here.**
-There are many reasons why you may choose to implement your reverse proxy in DataPower. Link to some docs and stuff.
+Here is what must be configured. There is exactly one Portal URL, which is the same everywhere:
 
-DIAGRAM  **Simon will draw a pretty picture**
+- specified in the API Manager when deploying the Portal
+- on the Portal Server itself
+- in the DataPower WAF configuration
+- typed into the client browser
 
-A request will come into IBM DataPower and this will then be forwarded to the Developer Portal pods.  
+This URL is the same everywhere.  However, DNS is configured such that for external clients, the portal URL resolves to the DataPower endpoint IP address (in this instance 9.10.11.12), and on DataPower internal DNS or a Host Alias is used such that the portal URL resolves to the Developer Portal server endpoint IP address (in this instance 192.168.14.17).
+
+![DMZ Flow](/images/dmz-flow.png)
+
+A request will come from the Web Browser into IBM DataPower, and this will then be forwarded to the Developer Portal pods, using the same URL all the way through. 
 
 <!--more-->
 
 **Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. As mentioned above, we do not support rewriting the site hostname in the reverse proxy, so the site address configured in the Portal must exactly match (be identical to) the address entered in the browser. What this means is that you cannot have an "internal Portal URL" and an "external Portal URL" for the Portal instance. There is one Portal URL and it is the same everywhere. In practice, for this to work, DataPower has to resolve the site hostname to the IP of the actual Portal server, but clients must resolve the hostname to the external IP being served by DataPower.
-
-Here's how to set it up:
 
 ## Assumptions
 1. DataPower will use a different DNS server as the external request. When the DataPower resolves the IBM Developer Portal Site hostname it will be directed to the IBM Developer Portal instance inside the network.
