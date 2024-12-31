@@ -11,7 +11,7 @@ The IBM Developer Portal is essential for socialising your APIs to external cons
 
 **IMPORTANT NOTE:** Any reverse proxy placed in front of the Developer Portal must be completely transparent to the Developer Portal. We do not support any modification of the portal URL, port, hostname or path in the reverse proxy, as per the documentation. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
-Here is what must be configured. There is exactly one Portal URL, which is the same everywhere:
+Here is what must be configured. The company test.com are setting up their production Portal. There is exactly one Portal URL, portal.test.com, which is the same everywhere:
 
 - specified in the API Manager when deploying the Portal
 - on the Portal Server itself
