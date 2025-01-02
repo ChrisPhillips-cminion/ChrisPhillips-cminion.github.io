@@ -8,6 +8,13 @@ author: [ "ChrisPhillips", "SimonKapadia" ]
 
 The IBM Developer Portal is essential for socialising your APIs to external consumers. In order to do this it must be accessible outside of your Internal Network. It is not good practice to deploy the Developer Portal directly in your DMZ and grant users direct access. The De-Militarised Zone (DMZ) is designed to be a hostile, barren place for attackers; software deployed there should have minimal function, deployed on a hardened platform, and be designed for DMZ deployment. With this in mind, we suggest that that a reverse proxy should be deployed in your DMZ, which forwards requests to the Developer Portal, and the Developer Portal should in turn be deployed in a separate secure zone designed for servers (not directly on your internal lan!). One option for a reverse proxy implementation would be to use IBM DataPower, which has facilities to provide a reverse proxy within its WAF capabilities. This article will explain how to configure a WAF as a Reverse Proxy for the Developer Portal on a Physical, Linux-based or Virtual DataPower. This can also be done with DataPower in Kubernetes but the configuration needs to be placed in a ConfigMap and that will be not be covered by these instructions.
 
+
+![DMZ Flow](/images/dmz-flow.png)
+
+A request will come from the Web Browser into IBM DataPower, and this will then be forwarded to the Developer Portal pods, using the same URL all the way through.
+
+<!--more-->
+
 **IMPORTANT NOTE:** Any reverse proxy placed in front of the Developer Portal must be completely transparent to the Developer Portal. We do not support any modification of the portal URL, port, hostname or path in the reverse proxy, as per the documentation. See [https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements](https://www.ibm.com/docs/en/api-connect/10.0.8?topic=deployment-firewall-requirements)
 
 Here is what must be configured. The company test.com are setting up their production Portal. There is exactly one Portal URL, portal.test.com, which is the same everywhere:
@@ -19,11 +26,6 @@ Here is what must be configured. The company test.com are setting up their produ
 
 This URL is the same everywhere.  However, DNS is configured such that for external clients, the portal URL resolves to the DataPower endpoint IP address (in this instance 9.10.11.12), and on DataPower internal DNS or a Host Alias is used such that the portal URL resolves to the Developer Portal server endpoint IP address (in this instance 192.168.14.17).
 
-![DMZ Flow](/images/dmz-flow.png)
-
-A request will come from the Web Browser into IBM DataPower, and this will then be forwarded to the Developer Portal pods, using the same URL all the way through.
-
-<!--more-->
 
 **Important Note:** The IBM Developer Portal site address must be correctly configured when the site is deployed in the Catalog. As mentioned above, we do not support rewriting the site hostname in the reverse proxy, so the site address configured in the Portal must exactly match (be identical to) the address entered in the browser. What this means is that you cannot have an "internal Portal URL" and an "external Portal URL" for the Portal instance. There is one Portal URL and it is the same everywhere. In practice, for this to work, DataPower has to resolve the site hostname to the IP of the actual Portal server, but clients must resolve the hostname to the external IP being served by DataPower.
 
