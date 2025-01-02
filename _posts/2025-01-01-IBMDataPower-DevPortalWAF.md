@@ -1,10 +1,9 @@
 ---
 layout: post
-date: 2024-12-30 10:00:00
+date: 2024-01-01 09:00:00
 categories: APIConnect
 title: "Building a Reverse Proxy for the IBM Developer Portal with IBM DataPower"
 author: [ "ChrisPhillips", "SimonKapadia" ]
-draft: true
 ---
 
 The IBM Developer Portal is essential for socialising your APIs to external consumers. In order to do this it must be accessible outside of your Internal Network. It is not good practice to deploy the Developer Portal directly in your DMZ and grant users direct access. The De-Militarised Zone (DMZ) is designed to be a hostile, barren place for attackers; software deployed there should have minimal function, deployed on a hardened platform, and be designed for DMZ deployment. With this in mind, we suggest that that a reverse proxy should be deployed in your DMZ, which forwards requests to the Developer Portal, and the Developer Portal should in turn be deployed in a separate secure zone designed for servers (not directly on your internal lan!). One option for a reverse proxy implementation would be to use IBM DataPower, which has facilities to provide a reverse proxy within its WAF capabilities. This article will explain how to configure a WAF as a Reverse Proxy for the Developer Portal on a Physical, Linux-based or Virtual DataPower. This can also be done with DataPower in Kubernetes but the configuration needs to be placed in a ConfigMap and that will be not be covered by these instructions.
@@ -22,7 +21,7 @@ This URL is the same everywhere.  However, DNS is configured such that for exter
 
 ![DMZ Flow](/images/dmz-flow.png)
 
-A request will come from the Web Browser into IBM DataPower, and this will then be forwarded to the Developer Portal pods, using the same URL all the way through. 
+A request will come from the Web Browser into IBM DataPower, and this will then be forwarded to the Developer Portal pods, using the same URL all the way through.
 
 <!--more-->
 
