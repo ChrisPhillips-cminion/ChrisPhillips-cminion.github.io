@@ -2,7 +2,7 @@
 layout: post
 categories: API
 date: 2022-03-16 00:14:00
-title: Public API Monitization, Point of view.
+title: Public API Monetization, Point of view.
 ---
 
 I get it, you need to find revenue from APIs to justify the investment costs. Every customer I have seen with plans for Public APIs has a dream of monetizing them.  However what is the real cost of monetization?
