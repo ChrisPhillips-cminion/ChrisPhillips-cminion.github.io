@@ -4,7 +4,6 @@ date: 2025-01-14 09:00:00
 categories: APIConnect
 title: "API Authorization when using Third Party oAuth Providers in APIC"
 author: [ "ChrisPhillips", "SimonKapadia" ]
-draft: true
 ---
 
 API Connect has the facility to use third party oAuth providers. This means that you can use nearly any oAuth security provider to secure APIs providing it can be reached by the API Gateway.
