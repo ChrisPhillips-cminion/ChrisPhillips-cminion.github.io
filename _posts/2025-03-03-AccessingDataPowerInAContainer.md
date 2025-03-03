@@ -1,17 +1,17 @@
 ---
 layout: post
 date: 2025-03-03 09:00:00
-categories: DataPower
-title: "Accessing DataPower interface in a container"
+categories: IBM DataPower
+title: "Accessing the IBM DataPower interface in a container"
 author: [ "ChrisPhillips", "IvanH" ]
 draft: true
 ---
 
-When accessing DataPower in a container we recommend it is  accessed via the CLI. However, if there is a lot of traffic in the DataPower this can make it difficult to follow as the log messages are sent to the screen.
+When accessing IBM DataPower in a container we recommend it is  accessed via the CLI. However, if there is a lot of traffic in the IBM DataPower this can make it difficult to follow as the log messages are sent to the screen.
 
 <!--more-->
 
-A better way is to enable telnet on the local interface and exec into the DataPower pod and telnet into the application. Todo this create the following config as a ConfigMap
+A better way is to enable telnet on the local interface and exec into the IBM DataPower pod and telnet into the application. Todo this create the following config as a ConfigMap
 
 ```
 cat <EOF > telnet_cli_service.cfg
