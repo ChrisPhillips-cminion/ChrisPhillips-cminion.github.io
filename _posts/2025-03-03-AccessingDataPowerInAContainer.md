@@ -2,9 +2,8 @@
 layout: post
 date: 2025-03-03 09:00:00
 categories: IBM DataPower
-title: "Accessing the IBM DataPower interface in a container"
+title: "Accessing the IBM DataPower Command Line Interface  (CLI) in a container"
 author: [ "ChrisPhillips", "IvanH" ]
-draft: true
 ---
 
 When accessing IBM DataPower in a container we recommend it is  accessed via the CLI. However, if there is a lot of traffic in the IBM DataPower this can make it difficult to follow as the log messages are sent to the screen.
@@ -53,6 +52,7 @@ done
 ```
 
 Where sh-peering-status.txt contains the following with password replaced with the gateway password
+
 ```
 admin
 password
