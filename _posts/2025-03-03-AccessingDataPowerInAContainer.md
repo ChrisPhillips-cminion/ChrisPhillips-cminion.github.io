@@ -45,10 +45,10 @@ kubectl -n apic exec -it apic-gw-0  --  nc 127.0.0.1 2300
 This can be built on to run more complex commands against multiple gw pods with commands like
 
 ```
-for gw in `oc -n cp4i get pods |grep gw|awk '{print $1}'`
+for gw in `oc -n apic get pods |grep gw|awk '{print $1}'`
 do
   echo $gw
-  kubectl -n cp4i  exec -it $gw --  nc 127.0.0.1 2300 < sh-peering-status.txt |strings
+  kubectl -n apic  exec -it $gw --  nc 127.0.0.1 2300 < sh-peering-status.txt |strings
 done
 ```
 
