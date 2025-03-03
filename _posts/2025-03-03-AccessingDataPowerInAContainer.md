@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-03-3 09:00:00
+date: 2025-03-03 09:00:00
 categories: DataPower
 title: "Accessing DataPower interface in a container"
 author: [ "ChrisPhillips", "IvanH" ]
