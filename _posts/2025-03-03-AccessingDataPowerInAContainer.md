@@ -25,7 +25,8 @@ oc -n apic create ConfigMap telnet-service-cm --from-file=telnet_cli_service.cfg
 
 Then add the following into the Gateway Service configuration
 
-**edit GatewayCluster**
+`oc edit gw <gwname> -n apic`
+
 ```
 spec:
   additionalDomainConfig:
@@ -41,17 +42,17 @@ This will cause the pods to restart. Once that restart is complete you can conne
 kubectl -n apic exec -it apic-gw-0  --  nc 127.0.0.1 2300
 ```
 
-And even run more complex commands against multiple pods with commands like
+This can be built on to run more complex commands against multiple gw pods with commands like
 
 ```
 for gw in `oc -n cp4i get pods |grep gw|awk '{print $1}'`
 do
   echo $gw
- kubectl -n cp4i  exec -it $gw --  nc 127.0.0.1 2300 < sh-peering-status.txt |strings
+  kubectl -n cp4i  exec -it $gw --  nc 127.0.0.1 2300 < sh-peering-status.txt |strings
 done
 ```
 
-Where sh-peering-status.txt contains with password replaced with the gw password
+Where sh-peering-status.txt contains the following with password replaced with the gateway password
 ```
 admin
 password
