@@ -3,7 +3,6 @@ layout: post
 categories: APIConnect
 date: 2025-03-15 00:14:00
 title: Upcoming Events
-draft: true
 ---
 
 Over the next two weeks I will take to the stage four times, three in person, only one virtually.
@@ -14,12 +13,13 @@ I will be delivering my - **Why you should own an internal platform for your Ext
 * Wednesday 19th March - IBM TechConnect
 * Thursday 27th March - SRE Days London
 
-<table><tr>
-<td><img style="width: 100%, valign:top" src="https://chrisphillips-cminion.github.io/images/bbdads.png"></td>
-<td><img style="width: 100%, valign:top" src="https://chrisphillips-cminion.github.io/images/sredays-sm.png"></td>
+<table valign=top><tr valign=top>
+<td valign=top><img style="width: 100%, valign:top" src="https://chrisphillips-cminion.github.io/images/bbdads.png"></td>
+<td valign=top><img style="width: 100%, valign:top" src="https://chrisphillips-cminion.github.io/images/sredays-sm.png"></td>
 </tr></table>
 
 <!--more-->
+<HR>
 Links
 * [https://sreday.com/2025-london-q1/](https://sreday.com/2025-london-q1/)
 * [https://www.bluebutterflystudios.co.uk/](https://www.bluebutterflystudios.co.uk/)
