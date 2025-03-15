@@ -1,0 +1,28 @@
+---
+layout: post
+categories: APIConnect
+date: 2025-03-15 00:14:00
+title: Upcoming Events
+draft: true
+---
+
+*This is an update to a previous article. The changes are the samples and examples.*
+
+A Circuit breaker pattern is becoming a common pattern for remote calls today. The purpose of the circuit breaker is to detect when a series of errors are returned and block traffic for a time period, thus giving the backend system time to recover.
+
+These coming two weeks sees me taking to the stage four times (three events), only one virtually.
+
+Tonight (15th)  and Tomorrow (16th), I will be joining my daughter’s dance show as part of the BB Dads with Blue Butterfly Studios. This is the first time I have appeared on stage to dance....
+
+I will be delivering my - **Why you should own an internal platform for your External AI and SaaS Providers** at
+* Wednesday 19th March - IBM TechConnect
+* Thursday 27th March - SRE Days London
+
+
+![https://chrisphillips-cminion.github.io/images/bbdads.png](https://chrisphillips-cminion.github.io/images/bbdads.png)
+![https://chrisphillips-cminion.github.io/images/sredays-sm.png](https://chrisphillips-cminion.github.io/images/sredays-sm.png)
+
+<!--more-->
+Links
+* [https://sreday.com/2025-london-q1/](https://sreday.com/2025-london-q1/)
+* [https://www.bluebutterflystudios.co.uk/](https://www.bluebutterflystudios.co.uk/)
