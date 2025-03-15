@@ -6,10 +6,9 @@ title: Upcoming Events
 draft: true
 ---
 
+Over the next two weeks I will take to the stage four times, three in person, only one virtually.
 
-These coming two weeks sees me taking to the stage four times (three events), only one virtually.
-
-Tonight (15th)  and Tomorrow (16th), I will be joining my daughter’s dance show as part of the BB Dads with Blue Butterfly Studios. This is the first time I have appeared on stage to dance....
+**Tonight (15th)  and Tomorrow (16th)**, I will be joining my daughter’s dance show as part of the **BB Dads** with Blue Butterfly Studios delivering **Top Dads**. This is the first time I have appeared on stage to dance....
 
 I will be delivering my - **Why you should own an internal platform for your External AI and SaaS Providers** at
 * Wednesday 19th March - IBM TechConnect
