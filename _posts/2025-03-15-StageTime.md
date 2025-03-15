@@ -15,9 +15,7 @@ I will be delivering my - **Why you should own an internal platform for your Ext
 * Wednesday 19th March - IBM TechConnect
 * Thursday 27th March - SRE Days London
 
-
-![https://chrisphillips-cminion.github.io/images/bbdads.png](https://chrisphillips-cminion.github.io/images/bbdads.png)
-![https://chrisphillips-cminion.github.io/images/sredays-sm.png](https://chrisphillips-cminion.github.io/images/sredays-sm.png)
+<table><tr><td>![https://chrisphillips-cminion.github.io/images/bbdads.png](https://chrisphillips-cminion.github.io/images/bbdads.png)</td><td>![https://chrisphillips-cminion.github.io/images/sredays-sm.png](https://chrisphillips-cminion.github.io/images/sredays-sm.png)</td></tr></table>
 
 <!--more-->
 Links
