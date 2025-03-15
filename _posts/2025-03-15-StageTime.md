@@ -15,8 +15,8 @@ I will be delivering my - **Why you should own an internal platform for your Ext
 * Thursday 27th March - SRE Days London
 
 <table><tr>
-<td><img style="width: 100%" src="https://chrisphillips-cminion.github.io/images/bbdads.png"></td>
-<td><img style="width: 100%" src="https://chrisphillips-cminion.github.io/images/sredays-sm.png"></td>
+<td><img style="width: 100%, valign:top" src="https://chrisphillips-cminion.github.io/images/bbdads.png"></td>
+<td><img style="width: 100%, valign:top" src="https://chrisphillips-cminion.github.io/images/sredays-sm.png"></td>
 </tr></table>
 
 <!--more-->
