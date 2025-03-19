@@ -5,9 +5,9 @@ date: 2025-03-19 00:14:00
 title: VS Code Alias
 ---
 
-I have been a vim user for 25years of my 40year life as my primary editor. I started using atom along side it five years ago. I am playfully being mocked and so I am starting to learn VSCode.
+I have been a vim user for 25years of my 40year life it is my primary editor. I started using Atom along side it five years ago. I am playfully being mocked and so I am starting to learn VSCode.
 
-I use terminals to navigate my filesystem and some one of the things I liked was that i could just type `vim filename` and i can edit a file, or `atom .` and load the directory in atom. 
+I use terminals to navigate my filesystem and some one of the things I liked was that i could just type `vim filename` and i can edit a file, or `atom .` and load the directory in Atom. 
 
 So this article is to say I have got this working for vscode on a mac.
 
