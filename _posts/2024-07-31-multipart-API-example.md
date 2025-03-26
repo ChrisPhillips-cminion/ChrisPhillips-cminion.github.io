@@ -13,7 +13,7 @@ In part 1 we discussed what a multipart API was and how it can be parsed in API 
 
 <!--more-->
 
-IMAGE OF ASSEMBLY
+
 
 In the GatewayScript we can use the following
 ```javascript
