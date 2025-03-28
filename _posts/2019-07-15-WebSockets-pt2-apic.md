@@ -42,6 +42,7 @@ info:
   description: Used To Authenticate and Authorize WebSocket calls
 schemes:
   - https
+  - ws
 basePath: /WebSocketaa
 security:
   - clientID: []
@@ -53,27 +54,27 @@ securityDefinitions:
 x-ibm-configuration:
   cors:
     enabled: true
-  gateway: datapower-gateway
+  gateway: datapower-api-gateway
   type: rest
   phase: realized
   enforced: true
-  testable: true
+  testable: false
   assembly:
     execute:
       - set-variable:
-          version: 1.0.0
+          version: 2.0.0
           title: set-variable
           actions:
             - set: message.body
               value: SUCCESS
+              type: string
     catch: []
-  properties:
-    target-url:
-      value: 'http://example.com/operation-name'
-      description: The URL of the target service
-      encoded: false
   application-authentication:
     certificate: false
+  activity-log:
+    enabled: true
+    success-content: activity
+    error-content: payload
 paths:
   /:
     get:
@@ -84,6 +85,8 @@ paths:
             type: string
       consumes: []
       produces: []
+host: small-gw-0-cp4i.apps.buttons.hur.hdclab.intranet.ibm.com
+
 ```
 
 </div>
@@ -98,27 +101,29 @@ The sample below extracts the headers from the initial connection and proxies th
 
 If the API returns to DataPower a 200 then the connection continues and is upgraded. If 200 is not responded then a 500 is thrown. This is sample code that should be adapted to handle error scenarios as you need.
 
+**PLEASE NOTE YOU MUST HAVE AN SSL CLEINT PROFILE IN DATAPOWER CALLED apic-connection**
+
 <button class="collapsible" id="js">Click here for the sample.</button>
 
 <div class="content" id="jsdata" markdown="1">
 
 ```javascript
 var urlopen = require('urlopen');
-var requestheader = require('header-metadata');
-var myheaders = requestheader.current.headers;
-
+var hm = require('header-metadata');
+var myheaders = hm.current.headers;
 
 
 var urlopen = require('urlopen');
 
 var options = {
-            target: 'HTTP://APIENDPOINT/',
+            target: 'https://small-gw-gateway-cp4i.apps.buttons.hur.hdclab.intranet.ibm.com/amit-porg/sandbox/small-gw-0-cp4i.apps.buttons.hur.hdclab.intranet.ibm.com/WebSocketaa',
             method: 'get',
-           headers: requestheader.current.headers,
+           headers: hm.current.headers,
        contentType: 'text/plain',
-           timeout: 60
+           timeout: 60,
+  sslClientProfile: 'apic-connection'
 };
-
+console.error('URL OPEN');
 urlopen.open(options, function(error, response) {
   if (error) {
     // an error occurred during the request sending or response header parsing
@@ -127,16 +132,14 @@ urlopen.open(options, function(error, response) {
     // get the response status code
     var responseStatusCode = response.statusCode;
     var responseReasonPhrase = response.reasonPhrase;
-    console.log("Response status code: " + responseStatusCode);
-    console.log("Response reason phrase: " + responseReasonPhrase);
+    console.error("Response status code: " + responseStatusCode);
+    console.error("Response reason phrase: " + responseReasonPhrase);
     // reading response data
-    response.readAsBuffer(function(error, responseData){
-      if (error){
-        throw error ;
-      } else {
-        session.output.write(responseData) ;
+   
+      if (responseStatusCode != 200){
+          hm.current.statusCode = responseStatusCode
+          session.reject(responseReasonPhrase);
       }
-    });
   }
 });
 ```
