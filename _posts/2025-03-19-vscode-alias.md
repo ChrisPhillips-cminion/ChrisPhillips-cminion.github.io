@@ -16,7 +16,7 @@ I use terminals to navigate my filesystem and some one of the things I liked was
 `Control+Shift+P` and select `Install 'code' command in PATH`
 
 However I am going to keep using the alias for now.
-
+<!--more-->
 **OLD POST**
 So this article is to say I have got this working for vscode on a mac.
 
