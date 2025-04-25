@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-04-18 09:00:00
+date: 2025-04-25 09:00:00
 categories: DataPower
 title: "Accessing the IBM DataPower Command Line Interface  (CLI) in a container"
 author: [ "ChrisPhillips", "IvanH" ]
