@@ -12,3 +12,5 @@ API Connect has added facilities to allow you to analyse longer term data. The r
 As well as many other scenarios,
 
 Recently in 10.0.10.0 we have released a rest interface to access this data. - There is a great article here [https://community.ibm.com/community/user/blogs/anagha-biju/2025/06/27/access-long-term-analytics-with-summary-apis-in-v1](https://community.ibm.com/community/user/blogs/anagha-biju/2025/06/27/access-long-term-analytics-with-summary-apis-in-v1) where you can learn more about this interface
+
+<!--more-->
