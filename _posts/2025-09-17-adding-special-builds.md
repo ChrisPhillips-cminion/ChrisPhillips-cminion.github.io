@@ -7,7 +7,7 @@ title: "Special Builds, how to us the internal OCP Image Registry"
 draft: true
 ---
 
-Occasionally you may need to be given a special build from IBM containing fixes for a DT before they are shipped. This is something I try to avoid but if support require additional diagnostic information it is often required. 
+Occasionally you may need to be given a special build from IBM containing fixes for a KnownIssue before they are shipped in a fixpack or a build which can be used to gather additional diagnostics. This is something I try to avoid but if support require additional diagnostic information it is often required.
 
 <!--more-->
 
