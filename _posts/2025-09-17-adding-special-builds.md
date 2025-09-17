@@ -15,18 +15,18 @@ Once you have downloaded the image from IBM Support you need to load it into the
 
 My example here is using podman
 
-1. Load the image into podman
+### 1 Load the image into podman
 
 ```
 >> podman load -i datapower-10.6.0.6em5.tgz
 Loaded image: localhost/ibmcom/datapower:10.6.0.6em5.377125em5-prod
 ```
 
-2. Confirm that the image is now loaded into podman with images
+### 2 Confirm that the image is now loaded into podman with images
 
 ```
 >> podman images | grep "localhost/ibmcom/datapower"
-localhost/ibmcom/datapower                                                                      10.6.0.6em5.377125em5-prod     111811108e14  6 weeks ago    1.84 GB
+localhost/ibmcom/datapower      10.6.0.6em5.377125em5-prod 111811108e14  6 weeks ago    1.84 GB
 ```
 
 3. Now we must retag the image with the target location. My OCP image registry is set to `default-route-openshift-image-registry.apps.myocp.com` and it is recommended that you include the namespace that you will deploy the image to.
@@ -38,8 +38,8 @@ localhost/ibmcom/datapower                                                      
 2. Confirm that the image is now tagged
 
 ```
->> podman images | grep default-route-openshift-image-registry.apps.myocp.com/apic2/datapower                                                                                                     
-default-route-openshift-image-registry.apps.myocp.com/apic2/datapower                           10.6.0.6em5.377125em5-prod     622841208e14  6 weeks ago    1.84 GB
+>> podman images | grep default-route-openshift-image-registry.apps.myocp.com/apic2/datapower     
+default-route-openshift-image-registry.apps.myocp.com/apic2/datapower   10.6.0.6em5.377125em5-prod 622841208e14  6 weeks ago    1.84 GB
 ```
 
 4. Now we must login to the target OCP image registry
@@ -49,7 +49,7 @@ default-route-openshift-image-registry.apps.myocp.com/apic2/datapower           
 Login Succeeded!
 ```
 
-5. then  push
+5. Push the image
 
 ```
 >> podman push default-route-openshift-image-registry.apps.myocp.com/apic2/datapower:10.6.0.6em5.377125em5-prod --tls-verify=false
@@ -84,7 +84,7 @@ Make a note of the image url that starts `image-registry.openshift-image-registr
 
 ```
 oc get secret | grep default-dockercfg
-default-dockercfg-h7vwqq                                          kubernetes.io/dockercfg          1      168d
+default-dockercfg-h7vwqq  kubernetes.io/dockercfg  1  168d
 ```
 
 Make a note of the default-dockercfg secret name.
@@ -112,5 +112,3 @@ spec:
 ```
 
 9. Automatically the required objects will be updated, in this example the DataPower object and then the Stateful set will then be updated.
-
-
