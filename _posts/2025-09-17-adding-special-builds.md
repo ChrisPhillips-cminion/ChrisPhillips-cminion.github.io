@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2025-09-17 09:00:00
-categories: DataPower
+categories: APIConnect
 title: "Special Builds, how to us the internal OCP Image Registry"
 
 draft: true
