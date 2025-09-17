@@ -3,7 +3,7 @@ layout: post
 date: 2025-09-17 09:00:00
 categories: APIConnect
 title: "Special Builds, how to us the internal OCP Image Registry"
-
+author: ["ChrisPhillips","JPSchiller"]
 draft: true
 ---
 
@@ -11,7 +11,10 @@ Occasionally you may need to be given a special build from IBM containing fixes 
 
 <!--more-->
 
-Once you have downloaded the image from IBM Support you need to load it into the OCP image registry. This can be done with skopeo, podman or docker. 
+Special Builds are not published via Fix Central or IBM Entitled Image Registy. You might need to download via a special link provided by IBM Support. Once you downloaded the image provided by IBM Support you need to push it
+to an image registry of your choice e.g. the local Red Hat OpenShift Image Registry.  This can be done with skopeo, podman or docker. 
+
+For more information on the OCP Image Registry - [https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1)
 
 My example here is using podman
 
@@ -78,7 +81,7 @@ Writing manifest to image destination
 sha256:460b2d30b08cbae6799de29025106bf775f47671f4bcc829b09fceb58af4e427   image-registry.openshift-image-registry.svc:5000/apic2/datapower@sha256:460b2d30b08cbae6799de29025106bf775f47671f4bcc829b09fceb58af4e427
 ```
 
-Make a note of the image url that starts `image-registry.openshift-image-registry.svc` as we will use this in the image location
+Make a note of the image url that starts `image-registry.openshift-image-registry.svc` as we will use this in the image location. Note: Its the service url of the image registry that we used before as the image will be pulled by the pod inside the cluster and not via the route and not the route that we tagged and pushed it to. 
 
 **8 Get the name of the service account that has access to this image. Assuming the OCP permissions are default I would use the following command**
 
