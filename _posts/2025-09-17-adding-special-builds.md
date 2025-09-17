@@ -4,7 +4,6 @@ date: 2025-09-17 09:00:00
 categories: APIConnect
 title: "Special Builds, how to us the internal OCP Image Registry"
 author: ["ChrisPhillips","JPSchiller"]
-draft: true
 ---
 
 Occasionally you may need to be given a special build from IBM containing fixes for a KnownIssue before they are shipped in a fixpack or a build which can be used to gather additional diagnostics. This is something I try to avoid but if support require additional diagnostic information it is often required.
