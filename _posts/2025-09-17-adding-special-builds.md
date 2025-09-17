@@ -15,41 +15,41 @@ Once you have downloaded the image from IBM Support you need to load it into the
 
 My example here is using podman
 
-### 1 Load the image into podman
+**1 Load the image into podman**
 
 ```
 >> podman load -i datapower-10.6.0.6em5.tgz
 Loaded image: localhost/ibmcom/datapower:10.6.0.6em5.377125em5-prod
 ```
 
-### 2 Confirm that the image is now loaded into podman with images
+**2 Confirm that the image is now loaded into podman with images**
 
 ```
 >> podman images | grep "localhost/ibmcom/datapower"
 localhost/ibmcom/datapower      10.6.0.6em5.377125em5-prod 111811108e14  6 weeks ago    1.84 GB
 ```
 
-3. Now we must retag the image with the target location. My OCP image registry is set to `default-route-openshift-image-registry.apps.myocp.com` and it is recommended that you include the namespace that you will deploy the image to.
+**3 Now we must retag the image with the target location. My OCP image registry is set to `default-route-openshift-image-registry.apps.myocp.com` and it is recommended that you include the namespace that you will deploy the image to.**
 
 ```
 >> podman tag localhost/ibmcom/datapower:10.6.0.6em5.377125em5-prod  default-route-openshift-image-registry.apps.myocp.com/apic2/datapower:10.6.0.6em5.377125em5-prod
 ```
 
-2. Confirm that the image is now tagged
+**4 Confirm that the image is now tagged**
 
 ```
 >> podman images | grep default-route-openshift-image-registry.apps.myocp.com/apic2/datapower     
 default-route-openshift-image-registry.apps.myocp.com/apic2/datapower   10.6.0.6em5.377125em5-prod 622841208e14  6 weeks ago    1.84 GB
 ```
 
-4. Now we must login to the target OCP image registry
+**5 Now we must login to the target OCP image registry**
 
 ```
 >> podman login -u cp -p $(oc whoami -t) default-route-openshift-image-registry.apps.myocp.com --tls-verify=false
 Login Succeeded!
 ```
 
-5. Push the image
+**6 Push the image**
 
 ```
 >> podman push default-route-openshift-image-registry.apps.myocp.com/apic2/datapower:10.6.0.6em5.377125em5-prod --tls-verify=false
@@ -71,7 +71,7 @@ Copying blob sha256:bba9139fe523a125951b7d6a28f81fa47bd26751a185738bbf5d3fb3ce65
 Writing manifest to image destination
 ```
 
-6. Validate that the image is in the registry
+**7 Validate that the image is in the registry**
 
 ```
 >> oc get images | grep datapower
@@ -80,7 +80,7 @@ sha256:460b2d30b08cbae6799de29025106bf775f47671f4bcc829b09fceb58af4e427   image-
 
 Make a note of the image url that starts `image-registry.openshift-image-registry.svc` as we will use this in the image location
 
-7. Get the name of the service account that has access to this image. Assuming the OCP permissions are default I would use the following command
+**8 Get the name of the service account that has access to this image. Assuming the OCP permissions are default I would use the following command**
 
 ```
 oc get secret | grep default-dockercfg
@@ -89,7 +89,7 @@ default-dockercfg-h7vwqq  kubernetes.io/dockercfg  1  168d
 
 Make a note of the default-dockercfg secret name.
 
-8.  Update the object that needs the new  image and add the service account to the image-key 
+**9  Update the object that needs the new  image and add the service account to the imagePullSecrets**
 
 In the example here are updating the gatewayservice object.
 
@@ -111,4 +111,4 @@ spec:
   image: image-registry.openshift-image-registry.svc:5000/apic2/datapower@sha256:460b2d30b08cbae6799de29025106bf775f47671f4bcc829b09fceb58af4e42
 ```
 
-9. Automatically the required objects will be updated, in this example the DataPower object and then the Stateful set will then be updated.
+**10 Automatically the required objects will be updated, in this example the DataPower object and then the Stateful set will then be updated.**
