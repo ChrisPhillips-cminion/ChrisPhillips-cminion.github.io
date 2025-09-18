@@ -12,7 +12,7 @@ To look at other features that can be enabled take a look here - [https://www.ib
 
 ## Create the Gateway Extension
 
-To enable the DotDot feature you need to create a cfg file that extends the FrontSideHandler (FSH) in datapower. If you look at the `allowed-features` line in the sample below you can see `DotDot` is concatinated to the end of the string with a `+` as a seperator/
+To enable the DotDot feature you need to create a cfg file that extends the FrontSideHandler (FSH) in datapower. If you look at the `allowed-features` line in the sample below you can see `DotDot` is concatenated to the end of the string with a `+` as a separator.
 
 ```
 top
