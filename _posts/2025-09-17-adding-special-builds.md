@@ -2,7 +2,7 @@
 layout: post
 date: 2025-09-17 09:00:00
 categories: APIConnect
-title: "Special Builds, how to us the internal OCP Image Registry"
+title: "Special Builds, how to use the internal OCP Image Registry"
 author: ["ChrisPhillips","JPSchiller"]
 ---
 
