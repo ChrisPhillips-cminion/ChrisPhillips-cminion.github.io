@@ -96,7 +96,7 @@ Make a note of the default-dockercfg secret name.
 In the example here are updating the gatewayservice object.
 
 ```
->> oc edit gatewawyservice small-gw
+>> oc edit gatewayservice small-gw
 ```
 Make the following changes
 
