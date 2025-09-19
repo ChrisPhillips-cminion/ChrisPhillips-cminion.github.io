@@ -14,6 +14,9 @@ small-ocp-gw-1                                                   1/1     Running
 small-ocp-gw-2                                                   0/1     ErrImagePull   0             7s
 ```
 
+<!--more-->
+
+
 The consequence of this is that by default the DataPowerService will not apply updates to the StatefulSet while it is in an error state. Therefore correcting the image in the DataPowerService objects will not resolve this. In order to recover this without causing an outage, you can modify `spec.updateStrategy` from
 
 ```
