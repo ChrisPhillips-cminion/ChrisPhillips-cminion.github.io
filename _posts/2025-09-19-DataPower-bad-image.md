@@ -6,7 +6,7 @@ title: "Fixing a DataPowerService with an invalid image"
 draft: true
 ---
 
-When applying an image override for the DataPowerService human errors can sneak in. If there is a mistake in the image path causing it to be invalid the StatefulSet under the DataPowerService will have two `Running` pods and a third in an `ErrImagePull` error.
+When applying an image override for the DataPowerService human errors can sneak in. If there is a mistake in the image path causing it to be invalid the StatefulSet under the DataPowerService will have two `Running` pods and a third in an `ErrImagePull` state.
 
 ```
 small-ocp-gw-0                                                   1/1     Running        0             23m
