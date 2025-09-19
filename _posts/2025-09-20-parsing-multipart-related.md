@@ -47,11 +47,6 @@ info:
   x-ibm-name: multipartparse
 basePath: /multipartparse
 x-ibm-configuration:
-  properties:
-    target-url:
-      value: https://127.0.0.1:3000/
-      description: URL of the proxy policy
-      encoded: false
   cors:
     enabled: true
   gateway: datapower-api-gateway
