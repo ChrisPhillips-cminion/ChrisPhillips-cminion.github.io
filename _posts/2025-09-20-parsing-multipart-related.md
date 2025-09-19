@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2025-09-19 09:00:00
-categories: API Connect
+categories: APIConnect
 title: "Parsing multipart/related without gateway script"
 ---
 
