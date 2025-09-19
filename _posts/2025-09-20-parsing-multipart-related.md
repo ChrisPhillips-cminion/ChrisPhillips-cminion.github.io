@@ -9,8 +9,7 @@ It is possible parse API request that have a `multipart/related` content type wi
 
 The key thing here is having two parses.
 
-![alt text](/images/two-parse-json-xml.png)t 2025-09-19 at 15.03.13.png>)
-
+![alt text](/images/two-parse-json-xml.png)
 <!--more-->
 
 The first parse extracts the multipart data and puts each entry into an attachment attribute on the message body.
