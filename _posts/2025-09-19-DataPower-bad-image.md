@@ -3,7 +3,6 @@ layout: post
 date: 2025-09-19 09:00:00
 categories: APIConnect
 title: "Fixing a GatewayService  with an invalid image"
-draft: true
 ---
 
 When applying an image override for the GatewayService  human errors can sneak in. If there is a mistake in the image path causing it to be invalid the StatefulSet under the GatewayService will have two `Running` pods and a third in an `ErrImagePull` state. This is only an issue when the GatewayService has `spec.updateStrategy.mode` is set to `automatic` which is the default for API Gateways.  
