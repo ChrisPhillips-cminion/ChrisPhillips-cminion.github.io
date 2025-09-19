@@ -1,19 +1,17 @@
 ---
 layout: post
 date: 2025-09-19 09:00:00
-categories: DataPower
-title: "Parsing multipart/related without gatewayscript"
-draft: true
+categories: API Connect
+title: "Parsing multipart/related without gateway script"
 ---
 
-It is possible parse API request that have a `multipart/related` content type with out using gatewayscript.
+It is possible parse API request that have a `multipart/related` content type without using gateway script.
 
 The key thing here is having two parses.
 
 ![alt text](/images/two-parse-json-xml.png)t 2025-09-19 at 15.03.13.png>)
 
 <!--more-->
-
 
 The first parse extracts the multipart data and puts each entry into an attachment attribute on the message body.
 
@@ -149,3 +147,4 @@ schemes:
 ```
 curl -v -F key1=@manifest.json -F upload=@dotdot.json   https://mydatapower/dev/sandbox/multipartparse/ -k -H "content-type: multipart/related"
 ```
+
