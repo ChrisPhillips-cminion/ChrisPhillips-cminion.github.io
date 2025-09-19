@@ -6,7 +6,7 @@ title: "Fixing a GatewayService or DataPowerService with an invalid image"
 draft: true
 ---
 
-When applying an image override for the GatewayService or  DataPowerService human errors can sneak in. If there is a mistake in the image path causing it to be invalid the StatefulSet under the DataPowerService will have two `Running` pods and a third in an `ErrImagePull` state. This is only an issue when the `updateStrategy.mode` is set to `automatic` which is the default for API Gateways.  
+When applying an image override for the GatewayService or  DataPowerService human errors can sneak in. If there is a mistake in the image path causing it to be invalid the StatefulSet under the DataPowerService will have two `Running` pods and a third in an `ErrImagePull` state. This is only an issue when the DataPowerService has `spec.updateStrategy.mode` is set to `automatic` which is the default for API Gateways.  
 
 ```
 small-ocp-gw-0                                                   1/1     Running        0             23m
