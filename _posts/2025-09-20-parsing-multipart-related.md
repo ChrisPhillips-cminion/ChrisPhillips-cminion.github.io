@@ -5,14 +5,14 @@ categories: APIConnect
 title: "Parsing multipart/related without gateway script"
 ---
 
-It is possible parse API request that have a `multipart/related` content type without using gateway script.
+It is possible to parse an API request that has a `multipart/related` content type without using gateway script.
 
 The key thing here is having two parses.
 
 ![alt text](/images/two-parse-json-xml.png)
 <!--more-->
 
-The first parse extracts the multipart data and puts each entry into an attachment attribute on the message body.
+The first parse extracts the multipart data and puts each entry into an array called message.attachment.
 
 In a second parse we tell the assembly to parse the contents of one of the attachments.
 ```
@@ -25,7 +25,8 @@ In a second parse we tell the assembly to parse the contents of one of the attac
           input: message.attachments[0]
 ```
 
-We can now referenced this parsed text like below
+`message.attachments[0]` will now be parsed. This can be referenced like below in other policies.
+
 ```
       - json-to-xml:
           version: 2.0.0
@@ -146,4 +147,3 @@ schemes:
 ```
 curl -v -F key1=@manifest.json -F upload=@dotdot.json   https://mydatapower/dev/sandbox/multipartparse/ -k -H "content-type: multipart/related"
 ```
-
