@@ -11,12 +11,9 @@ When running an APIConnect Gateway outside of Kubernetes it is often required to
 
 
 1) Make sure the DataPower that you are going to remove is not the Primary for each of the gateway peering objects. 
-
 [https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-viewing-statistics-about-peers-in-peer-groups](https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-viewing-statistics-about-peers-in-peer-groups)
-
  
 1b) If it is the primary, please switch another gateway peering member to the Primary:
-
 [https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=enforcement-switching-replica-primary](https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=enforcement-switching-replica-primary)
 
 
@@ -29,14 +26,6 @@ When running an APIConnect Gateway outside of Kubernetes it is often required to
 
 5) Start the replacement DataPower and configure the API Connect Gateway Service so that it has has the same details as the exisiting ones.
 
-6) In all existing DataPower, for each of the gateway peering objects, add the new  DataPower back into the "peers" list.
+6) In the two existing DataPower, for each of the gateway peering objects, add the new Datapower into the "peers" list.
 
-7) In the two existing DataPower, for each of the gateway peering objects, add the new Datapower into the "peers" list.
-
-8) In the new DataPower, for each of the gateway peering objects, add the existing DataPower into the "peers" list.
-
-
-
-
-
-
+7) In the new DataPower, for each of the gateway peering objects, add the existing DataPower into the "peers" list.
