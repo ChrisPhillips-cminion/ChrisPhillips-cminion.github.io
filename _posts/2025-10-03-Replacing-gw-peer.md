@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-10-03 09:00:00
+date: 2025-10-03 08:00:00
 categories: APIConnect
 title: "Replacing a member from Gateway Service"
 author: ["ChrisPhillips","EricFan"]
@@ -25,3 +25,4 @@ When running an APIConnect Gateway outside of Kubernetes it is often required to
 5) Start the replacement DataPower and configure the API Connect Gateway Service so that it has the same details as the exisiting ones.
 
 6) In the new DataPower, for each of the gateway peering objects, add the existing DataPower into the "peers" list.
+
