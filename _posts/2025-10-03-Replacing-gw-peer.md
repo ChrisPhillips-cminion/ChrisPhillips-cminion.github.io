@@ -1,13 +1,13 @@
 ---
 layout: post
-date: 2025-09-24 09:00:00
+date: 2025-10-03 09:00:00
 categories: APIConnect
 title: "Replacing a member from Gateway Service"
 author: ["ChrisPhillips","EricFan"]
-draft: true
 ---
 
 When running an APIConnect Gateway outside of Kubernetes it is often required to replace a DataPower VM or physical appliance. These steps listed here what is suggested as the process for completing this.
+<!--more-->
 
 1) Make sure the DataPower that you are going to remove is not the Primary for each of the gateway peering objects. 
 [https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-viewing-statistics-about-peers-in-peer-groups](https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-viewing-statistics-about-peers-in-peer-groups)
@@ -22,6 +22,6 @@ When running an APIConnect Gateway outside of Kubernetes it is often required to
 4) In the two existing physical IDG, for each of the gateway peering objects, click Remove stale peers:
 [https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-removing-stale-peers-from-peer-group](https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-removing-stale-peers-from-peer-group)
 
-5) Start the replacement DataPower and configure the API Connect Gateway Service so that it has has the same details as the exisiting ones.
+5) Start the replacement DataPower and configure the API Connect Gateway Service so that it has the same details as the exisiting ones.
 
 6) In the new DataPower, for each of the gateway peering objects, add the existing DataPower into the "peers" list.
