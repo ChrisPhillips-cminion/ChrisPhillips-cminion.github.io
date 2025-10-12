@@ -3,7 +3,7 @@ layout: post
 date: 2025-10-03 08:00:00
 categories: APIConnect
 title: "Viture Luma Pro XR Glasses Review: A Valuable Product with Notable Limitations"
-drat: true
+draft: true
 ---
 
 The Viture Luma Pro XR glasses present an intriguing blend of innovative features and areas for improvement, making them a worthwhile investment when considering their  limitations. As a gadget enthusiast who frequently works in coffee shops and on airplanes, I sought a portable display solution to augment productivity. The Luma Pros  offered a compelling solution, albeit with some trade-offs.

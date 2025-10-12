@@ -3,7 +3,7 @@ layout: post
 date: 2025-10-12 08:00:00
 categories: MQ
 title: "MQ Get the last GET Date"
-drat: true
+draft: true
 ---
 
 On of my customers was writing a script to detect when the last message was got from an MQ QUEUE. 
