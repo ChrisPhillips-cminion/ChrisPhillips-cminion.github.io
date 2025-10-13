@@ -3,6 +3,7 @@ layout: post
 date: 2025-10-12 08:00:00
 categories: MQ
 title: "MQ Get the last GET and PUT Datetime"
+authors: ["AlameluNagarajan","ChrisPhillips]
 draft: true
 ---
 
@@ -35,7 +36,7 @@ AMQ8450I: Display queue status details.
 
 *In order for the LGETTIME LGETDATE LPUTTIME LPUTDATE you must have MONQ enabled for the QUEUE.*
 
-The above shows you the date and time of the last GET and PUT. If you like details for a given channel the following can be done.
+The above shows you the date and time of the last GET and PUT. When there are no MQPUT and no MQGET the last PUT and last GET time will not help. In these scenarios we recommend monitoring LSTMSGTI as well.
 
 The `conname` and channel name can  be put into the following runmqsc command. Please note that in the example above the CONNAME is an IP Address this is determined on how the QMGR is configured.
 
@@ -55,6 +56,6 @@ AMQ8417I: Display Channel Status details.
    STATUS(RUNNING)                         SUBSTATE(RECEIVE)
 ```
 
-The `LSTMSGDA` and `LSTMSGTI` provide the date and time for the last message on the queue for a given channel and connection.
+The `LSTMSGDA` and `LSTMSGTI` provide the date and time when the last MQI call was handled.
 
 Thanks to the MQ Support team in putting this together
