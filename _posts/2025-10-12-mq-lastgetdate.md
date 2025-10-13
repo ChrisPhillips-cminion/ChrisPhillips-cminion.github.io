@@ -3,7 +3,7 @@ layout: post
 date: 2025-10-12 08:00:00
 categories: MQ
 title: "MQ Get the last GET and PUT Datetime"
-author: ["AlameluNagarajan","ChrisPhillips]
+author: ["AlameluNagarajan","ChrisPhillips"]
 draft: true
 ---
 
@@ -44,7 +44,6 @@ DISPLAY CHSTATUS(<channel name>) CONNAME(<conname>) LSTMSGDA LSTMSGTI
 This returns the following.
 
 ```
-
 DISPLAY CHSTATUS(TEST.CHAN) CONNAME(10.131.1.23) LSTMSGDA LSTMSGTI
 AMQ8417I: Display Channel Status details.
    CHANNEL(TEST.CHAN)                      CHLTYPE(SVRCONN)
