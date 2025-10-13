@@ -11,13 +11,11 @@ On of my customers was writing a script to detect when the last message was got 
 
 <!--more-->
 
-
-
 ```
 DISPLAY DISPLAY QSTATUS(<queue name>)  TYPE(HANDLE)  LGETTIME LGETDATE LPUTTIME LPUTDATE CONNAME
 ```
 
-The above runmqsc command  returns something similar to 
+The above runmqsc command  returns something similar to
 
 ```
 DISPLAY QSTATUS(SOURCE.Q) TYPE(HANDLE) CONNAME
@@ -32,7 +30,6 @@ AMQ8450I: Display queue status details.
    LPUTDATE(2025-10-10)                    LPUTTIME(14.37.10) 
    CONNAME(10.129.3.151)  
 ```
-
 
 *In order for the LGETTIME LGETDATE LPUTTIME LPUTDATE you must have MONQ enabled for the QUEUE.*
 
