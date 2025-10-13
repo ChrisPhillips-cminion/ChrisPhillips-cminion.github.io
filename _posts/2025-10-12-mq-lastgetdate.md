@@ -3,7 +3,7 @@ layout: post
 date: 2025-10-12 08:00:00
 categories: MQ
 title: "MQ Get the last GET and PUT Datetime"
-authors: ["AlameluNagarajan","ChrisPhillips]
+author: ["AlameluNagarajan","ChrisPhillips]
 draft: true
 ---
 
