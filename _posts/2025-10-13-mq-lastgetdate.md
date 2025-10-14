@@ -23,7 +23,6 @@ AMQ8450I: Display queue status details.
    CURDEPTH(0)                             LGETDATE(2025-10-10)
    LGETTIME(14.57.31)                      LPUTDATE(2025-10-10)
    LPUTTIME(14.57.01)             
-
 ```
 *In order for the `LGETTIME` `LGETDATE` `LPUTTIME` `LPUTDATE` you must have `MONQ` enabled for the QUEUE.*
 
