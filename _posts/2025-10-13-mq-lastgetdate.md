@@ -70,4 +70,4 @@ The `LSTMSGDA` and `LSTMSGTI` provide the date and time when the last MQI call w
 
 To identify if messages are not retrieved from the queue, if there is difference between `LGETTIME` and `LPUTTIME` and if `LPUTTIME` is recent and `LGETTIME` is very older, this indicates there are no getters.
  
-However if 2 client applications are serving a single queue, if one of the application is able to get the message, then `LGETTIME` and `LPUTTIME` could be latest. In such cases `LSTMSGTI` will help to determine which one of the application is not able to pick the message.
+However if two client applications are serving a single queue, if one of the application is able to get the message, then `LGETTIME` and `LPUTTIME` could be latest. In such cases `LSTMSGTI` will help to determine which one of the application is not able to pick the message.
