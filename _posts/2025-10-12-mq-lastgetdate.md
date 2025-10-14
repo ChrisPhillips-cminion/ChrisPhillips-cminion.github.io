@@ -4,7 +4,6 @@ date: 2025-10-13 08:00:00
 categories: MQ
 title: "MQ Get the last GET and PUT Datetime"
 author: ["AlameluNagarajan","ChrisPhillips"]
-draft: true
 ---
 
 On of my customers was writing a script to detect when the last message was got from an MQ QUEUE. 
