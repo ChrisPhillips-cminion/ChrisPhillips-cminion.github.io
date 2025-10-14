@@ -29,8 +29,7 @@ AMQ8450I: Display queue status details.
 ```
 *In order for the `LGETTIME` `LGETDATE` `LPUTTIME` `LPUTDATE` you must have `MONQ` enabled for the QUEUE.*
 
-The above shows you the date and time of the last GET and PUT. When there are no MQPUT and no MQGET the last PUT and last GET time will not help. In these scenarios we recommend monitoring `LSTMSGTI` as well.
-
+The above shows you the date and time of the last GET and PUT. Some times, last put and get times alone might not help, in these scenarios we recommend monitoring `LSTMSGTI` as well.
 
 To get  `LSTMSGTI` first we need to extract the `CONNAME` with the following command.
 ```
