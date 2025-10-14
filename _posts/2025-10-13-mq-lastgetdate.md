@@ -17,7 +17,7 @@ DISPLAY DISPLAY QSTATUS(<queue name>)  TYPE(QUEUE)  LGETTIME LGETDATE LPUTTIME L
 The above runmqsc command  returns something similar to
 
 ```
-DISPLAY QSTATUS(SOURCE.Q) TYPE(QUEUE)  LGETTIME LGETDATE LPUTTIME LPUTDATE 
+DISPLAY QSTATUS(SOURCE.Q) TYPE(QUEUE)  
 AMQ8450I: Display queue status details.
    QUEUE(SOURCE.Q)                         TYPE(QUEUE)
    CURDEPTH(0)                             LGETDATE(2025-10-10)
