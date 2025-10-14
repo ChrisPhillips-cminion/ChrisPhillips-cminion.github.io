@@ -6,7 +6,7 @@ title: "MQ Get the last GET and PUT Datetime"
 author: ["AlameluNagarajan","ChrisPhillips"]
 ---
 
-On of my customers was writing a script to detect when the last message was got from an MQ QUEUE. 
+One of my customers was writing a script to detect when the last message was got from an MQ QUEUE. 
 
 <!--more-->
 
