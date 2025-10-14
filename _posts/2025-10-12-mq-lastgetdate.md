@@ -51,7 +51,7 @@ AMQ8450I: Display queue status details.
 ```
 
 
-The `conname` and channel name can  be put into the following runmqsc command. Please note that in the example above the `CONNAME` is an IP Address this is determined on how the QMGR is configured.
+The `CONNAME` and channel name can  be put into the following runmqsc command. Please note that in the example above the `CONNAME` is an IP Address this is determined on how the QMGR is configured.
 
 ```
 DISPLAY CHSTATUS(<channel name>) CONNAME(<conname>) LSTMSGDA LSTMSGTI
