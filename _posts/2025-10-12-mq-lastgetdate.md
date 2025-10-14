@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-10-12 08:00:00
+date: 2025-10-13 08:00:00
 categories: MQ
 title: "MQ Get the last GET and PUT Datetime"
 author: ["AlameluNagarajan","ChrisPhillips"]
