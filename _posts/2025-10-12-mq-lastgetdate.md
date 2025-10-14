@@ -11,13 +11,13 @@ On of my customers was writing a script to detect when the last message was got 
 <!--more-->
 
 ```
-DISPLAY DISPLAY QSTATUS(<queue name>)  TYPE(QUEUE)  LGETTIME LGETDATE LPUTTIME LPUTDATE CONNAME
+DISPLAY DISPLAY QSTATUS(<queue name>)  TYPE(QUEUE)  LGETTIME LGETDATE LPUTTIME LPUTDATE 
 ```
 
 The above runmqsc command  returns something similar to
 
 ```
-DISPLAY QSTATUS(SOURCE.Q) TYPE(QUEUE) CONNAME
+DISPLAY QSTATUS(SOURCE.Q) TYPE(QUEUE)  LGETTIME LGETDATE LPUTTIME LPUTDATE 
 AMQ8450I: Display queue status details.
    QUEUE(SOURCE.Q)                         TYPE(HANDLE)
    LGETDATE(2025-10-10)                    LGETTIME(14.57.31)
@@ -67,7 +67,8 @@ AMQ8417I: Display Channel Status details.
    LSTMSGDA(2025-10-10)                    LSTMSGTI(14.57.01)
    STATUS(RUNNING)                         SUBSTATE(RECEIVE)
 ```
-*In order for the `LSTMSGDA` and `LSTMSGTI` you must have `MONCHL` enabled*
+
+*In order for the `LSTMSGDA` and `LSTMSGTI` to be available  `MONCHL` must be enabled*
 
 The `LSTMSGDA` and `LSTMSGTI` provide the date and time when the last MQI call was handled.
 
