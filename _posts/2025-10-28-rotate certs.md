@@ -30,7 +30,7 @@ GET  https://{platformapiendpoint}/api/catalogs/{progname}/{catalogname}/consume
 ```
 
 It will provide you a json response with all consumer org names along with its owner details available in a catalog.
-![alt text](../images/image.png)
+![alt text](/images/image.png)
 
  
 2)	Get the apps for each consumer org
@@ -41,10 +41,10 @@ GET  https://{platformapiendpoint}/consumer-orgs/{progname}/{catalogname}/{consu
 ```
 
 This endpoint will return a json response with app name and its corresponding credential url endpoints. 
-![alt text](../images/image-1.png)
+![alt text](/images/image-1.png)
 
 3)	For each app of a consumer org check the app’s credentials creation date by using the app_credential_urls received in step 2.
-![alt text](../images/image-2.png)
+![alt text](/images/image-2.png)
 
 4)	For each app’s credentials calculate the delta days between current time/date and created_at from the response in step 3 to check whether this credential need to get rotated.
 
@@ -65,7 +65,7 @@ Note:  Pass name & title for POST call with ‘_new’ appended to original one.
 
 It will return the credentials information which gets created along with clientId and clientSecret as part of response. 
 
-![alt text](../images/image-3.png)
+![alt text](/images/image-3.png)
  
 
 7.  Get the clientId and clientSecret from the response and send a secure email to Consumer with credentials details including app and cred information or store in file and share across manually or whatever secure way you wanted it to be shared across to consumer. 
@@ -77,14 +77,14 @@ It will return the credentials information which gets created along with clientI
 DELETE https://{platformapiendpoint}/apps/{progname}/{catalogname}/{consumerorgname}/{appname}/ /credentials/{credentialname}
 ```
 
-![alt text](../images/image-4.png)
+![alt text](/images/image-4.png)
 
 •	Update the newly created credentials with cred name and title to original one to make sure we didn't keep on creating credentials with _new appended each time and always have atmost two with original cred name and with _new appended at a time.
 ```
 PATCH  https://{platformapiendpoint}/apps/{progname}/{catalogname}/{consumerorgname}/{appname}/ /credentials/{credentialname}
 ```
 
-![alt text](../images/image-5.png)
+![alt text](/images/image-5.png)
 
 9.   Raise an error if created date is greater than expected no of days for credential to remove
       but there exist only one credential, that is new credential not created
