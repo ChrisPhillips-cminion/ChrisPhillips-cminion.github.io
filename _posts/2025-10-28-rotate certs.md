@@ -36,7 +36,6 @@ It will provide you a json response with all consumer org names along with its o
 2)	Get the apps for each consumer org
 
 ```
-
 GET  https://{platformapiendpoint}/consumer-orgs/{progname}/{catalogname}/{consumerorgname}/apps?fields=name,app_credential_urls
 ```
 
@@ -108,7 +107,7 @@ requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 ExpiryDays=90
 DeletionDays=100
 current_time = datetime.now(timezone.utc)
-outputdir=”directoryforwritingcredcredential" 
+outputdir="directoryforwritingcredcredential" 
 
 porg = 'porgname'
 catalog = 'catalogname'
