@@ -18,7 +18,7 @@ The client credentials created within IBM APIC does not have any expiry time but
 
 There is no out of box feature as of now in IBM APIC for this but it can be achieved using platform Rest APIs provided by APIC.  You can automate the client credentials rotation using the Rest APIs available.
 
-*Note: WHen you have rotated secrets you must ensure your application calling the apis also has the credentials updated*
+*Note: When you have rotated client id and secrets you must ensure your application calling the apis also has the credentials updated*
 
 <!--more-->
 
