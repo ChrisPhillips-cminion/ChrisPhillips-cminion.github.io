@@ -17,7 +17,7 @@ When running an APIConnect Gateway outside of Kubernetes it is often required to
 
 2) In the DataPower that you are going to remove, disable the APIC domain.
 
-3) In the remaining DataPower, for each of the gateway peering objects, remove the DataPower in the “peers” list that you are removing and add the new DataPower into the list.
+3) In the remaining DataPower, validate the DataPower is not the primary then for each of the gateway peering objects, remove the DataPower in the “peers” list that you are removing and add the new DataPower into the list.
 
 4) In the two existing physical IDG, for each of the gateway peering objects, click Remove stale peers:
 [https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-removing-stale-peers-from-peer-group](https://www.ibm.com/docs/en/datapower-gateway/10.6.x?topic=mode-removing-stale-peers-from-peer-group)
@@ -25,4 +25,3 @@ When running an APIConnect Gateway outside of Kubernetes it is often required to
 5) Start the replacement DataPower and configure the API Connect Gateway Service so that it has the same details as the exisiting ones.
 
 6) In the new DataPower, for each of the gateway peering objects, add the existing DataPower into the "peers" list.
-
