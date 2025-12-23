@@ -1,10 +1,9 @@
 ---
 layout: post
 date: 2025-10-13 08:00:00
-categories: MQ
+categories: APIConnect
 title: "Client Credentials Rotation in IBM APIC "
 author: ["AmitKumarSingh"]
-draft: true
 ---
 
 
