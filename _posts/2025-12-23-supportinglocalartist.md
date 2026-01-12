@@ -83,7 +83,3 @@ If you're looking for a unique, personalized gift for a loved one, I highly reco
 - Or feel free to [contact me](/about), and I'll connect you directly
 
 Supporting independent artists not only gives you a one-of-a-kind piece but also helps talented creators continue doing what they love. This Christmas, consider commissioning something special—it's a gift that truly comes from the heart.
-
----
-
-*Have you commissioned custom artwork before? Share your experiences in the comments below!*
