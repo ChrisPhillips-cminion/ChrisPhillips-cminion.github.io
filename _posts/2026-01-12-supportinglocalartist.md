@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-12-23 09:00:00
+date: 2026-01-12 09:00:00
 categories: Misc
 title: "Supporting Local Artists: A Custom Family Portrait by Carlos Valarezo"
 author: Chris Phillips
