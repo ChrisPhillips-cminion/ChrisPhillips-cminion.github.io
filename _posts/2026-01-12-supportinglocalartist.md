@@ -3,7 +3,6 @@ layout: post
 date: 2025-12-23 09:00:00
 categories: Misc
 title: "Supporting Local Artists: A Custom Family Portrait by Carlos Valarezo"
-draft: true
 author: Chris Phillips
 image: /images/familyphoto/Chris-Family-Full-Res-CMYK.png
 description: "Discover how I commissioned a beautiful custom family portrait from talented illustrator Carlos Valarezo. See the creative process from sketch to final artwork."
