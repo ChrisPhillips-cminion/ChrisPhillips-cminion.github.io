@@ -2,36 +2,88 @@
 layout: post
 date: 2025-12-23 09:00:00
 categories: Misc
-title: "The amazing art of Carlos"
+title: "Supporting Local Artists: A Custom Family Portrait by Carlos Valarezo"
 draft: true
+author: Chris Phillips
+image: /images/familyphoto/Chris-Family-Full-Res-CMYK.png
+description: "Discover how I commissioned a beautiful custom family portrait from talented illustrator Carlos Valarezo. See the creative process from sketch to final artwork."
+tags: [art, commission, family, gift ideas, local artist, illustration]
 ---
 
-Its that time again, where we all fret what to get our love ones for xmas. I try and get something creative for my wife each year, either made by my kids or by friends.
+It's that time of year again when we all search for the perfect gifts for our loved ones. I've always believed in giving something creative and personal—whether it's handmade by my kids or commissioned from talented friends and artists.
 
-![alt text](/images/familyphoto/Chris-Family-Full-Res-CMYK.png)
+![Custom family portrait illustration](/images/familyphoto/Chris-Family-Full-Res-CMYK.png)
+*The final masterpiece: Our family portrait by Carlos Valarezo*
 
+This year, I decided to commission a custom family portrait from **Carlos Valarezo**, a talented illustrator based in Ecuador. I provided him with a detailed brief and a collection of family photos, and he transformed them into the stunning artwork you see above.
 
-This year I approached Carlos. I have worked with his wife before, she designed the theme for my blog and a few others but Carlos is an illustrator. I gave him a spec, a load of photos and he produced the masterpiece above.
+<!--more-->
 
-<!--more -->
+## About Carlos Valarezo
 
-Carlos is based in Ecuador and is married to Josie.
+Carlos is a full-time professional illustrator who specializes in custom commissions. He's married to Josie, who previously designed the theme for this blog and several other projects I've worked on. While I knew Josie's design work well, this was my first time collaborating with Carlos on an illustration project.
 
-![alt text](/images/familyphoto/d6f6666e-4f5b-44c6-a4fa-86be06efc731.jpg)
+![Carlos Valarezo portrait](/images/familyphoto/d6f6666e-4f5b-44c6-a4fa-86be06efc731.jpg)
+*Carlos Valarezo, professional illustrator*
 
-Carlos is a fulltime illustrator open to commissions, and works for very reasonable rates. If you would like to do something unique for a loved one please contact him through [https://www.behance.net/carlosvalarezo](https://www.behance.net/carlosvalarezo) or feel free to send me a message and I will link you up.  
+## The Commission Process
 
-For this commission, I contacted him back in November and we agreed a price. I sent him a lot of photos. As he went along and he sent me updates as he went to ensure that what he was doing was to my liking. Great communication, and a great result. After my wife saw it, he made a couple of tiny alterations.
+### Timeline and Communication
 
-The final delivery was an image with the resolution 4961 x 3508, which should be suitable to print to a good size. Below are some of the images of the journey.
+I reached out to Carlos in **November 2025** to discuss the project. The process was remarkably smooth:
 
-![alt text](/images/familyphoto/chris-family-stage-1.png) 
-![alt text](/images/familyphoto/chris-family-stage-2.png)
-![alt text](/images/familyphoto/chris-family-stage-3.png)
-![alt text](/images/familyphoto/chris-family-stage-4.png)
-![alt text](/images/familyphoto/chris-family-stage-5.png)
-![alt text](/images/familyphoto/chris-family-stage-6.png)
-![alt text](/images/familyphoto/chris-family-stage-7.png)
-![alt text](/images/familyphoto/chris-family-stage-8.png)
+1. **Initial consultation**: We discussed my vision, agreed on pricing, and established a timeline
+2. **Photo submission**: I provided multiple reference photos of my family
+3. **Regular updates**: Carlos sent progress updates throughout the project, ensuring the artwork matched my expectations
+4. **Refinements**: After my wife saw the near-final version, Carlos made a few minor adjustments to perfect the piece
+5. **Final delivery**: High-resolution artwork ready for printing
 
+### What Impressed Me Most
 
+- **Excellent communication**: Carlos was responsive and proactive in sharing updates
+- **Collaborative approach**: He welcomed feedback and made adjustments willingly
+- **Professional quality**: The final artwork exceeded my expectations
+- **Reasonable pricing**: Great value for a custom, high-quality illustration
+- **High resolution**: The final image (4961 x 3508 pixels) is perfect for large-format printing
+
+## The Creative Journey
+
+Below, you can see the evolution of the artwork from initial sketches to the polished final piece. This transparency in the creative process gave me confidence and allowed for input at key stages.
+
+![Stage 1: Initial sketch](/images/familyphoto/chris-family-stage-1.png)
+*Stage 1: Initial composition and layout*
+
+![Stage 2: Refined sketch](/images/familyphoto/chris-family-stage-2.png)
+*Stage 2: Refined character positioning*
+
+![Stage 3: Line work](/images/familyphoto/chris-family-stage-3.png)
+*Stage 3: Clean line work*
+
+![Stage 4: Base colors](/images/familyphoto/chris-family-stage-4.png)
+*Stage 4: Base color application*
+
+![Stage 5: Shading begins](/images/familyphoto/chris-family-stage-5.png)
+*Stage 5: Adding depth with shading*
+
+![Stage 6: Detail work](/images/familyphoto/chris-family-stage-6.png)
+*Stage 6: Detailed shading and textures*
+
+![Stage 7: Color refinement](/images/familyphoto/chris-family-stage-7.png)
+*Stage 7: Color refinement and adjustments*
+
+![Stage 8: Final touches](/images/familyphoto/chris-family-stage-8.png)
+*Stage 8: Final touches and polish*
+
+## Commission Your Own Artwork
+
+If you're looking for a unique, personalized gift for a loved one, I highly recommend Carlos's work. Whether it's a family portrait, pet illustration, or any custom artwork, he delivers exceptional results at reasonable rates.
+
+**Contact Carlos Valarezo:**
+- Portfolio: [https://www.behance.net/carlosvalarezo](https://www.behance.net/carlosvalarezo)
+- Or feel free to [contact me](/about), and I'll connect you directly
+
+Supporting independent artists not only gives you a one-of-a-kind piece but also helps talented creators continue doing what they love. This Christmas, consider commissioning something special—it's a gift that truly comes from the heart.
+
+---
+
+*Have you commissioned custom artwork before? Share your experiences in the comments below!*
