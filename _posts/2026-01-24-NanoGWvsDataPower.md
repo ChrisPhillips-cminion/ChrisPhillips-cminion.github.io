@@ -52,7 +52,6 @@ Choose Nano Gateway when:
 - **You're building cloud-native, microservices-centric applications** where you want the gateway as close to the service as possible
 - **Developer velocity matters**: Fast deployment, policies as code via YAML, and GitOps-friendly configuration
 - **Decentralised control is preferred**: You want individual teams to manage their own gateways with a consistent policy framework
-- **Kubernetes and GitOps pipelines** are your delivery model
 
 Nano Gateway doesn't aim to replace the enterprise gateway; rather it complements it by empowering developers at the edge with security and policy enforcement embedded next to workloads — ideal for fast iteration, elastic scaling, and hybrid-cloud API patterns.
 
