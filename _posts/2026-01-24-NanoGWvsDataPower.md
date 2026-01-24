@@ -62,17 +62,13 @@ Nano Gateway doesn't aim to replace the enterprise gateway; rather it complement
 
 In most real-world enterprise environments I see a hybrid pattern emerging:
 
-- **Nano Gateway at the microservice / app edge** for fast policy enforcement, delegated control and horizontal scale
-- **DataPower Gateway centrally** for unified security policy, protocol mediation, and compliance oversight
+- **Nano Gateway at the microservice / app edge** for fast policy enforcement and horizontal scaling
+- **DataPower Gateway centrally** for more complex and legacy usecases.
 
 This aligns with trends toward distributed governance without sacrificing the enterprise guardrails that large organisations depend on.
 
 ## Summary
 
-Both DataPower Gateway and Nano Gateway have their place in modern API architectures. The key is understanding your requirements:
-
-- Choose **DataPower Gateway** for enterprise-grade, centralized control with multi-protocol support
-- Choose **Nano Gateway** for cloud-native, microservices-focused deployments with developer autonomy
-- Consider a **hybrid approach** that leverages both for comprehensive API management across your organization
+Both DataPower Gateway and Nano Gateway have their place in modern API architectures. The key is understanding your requirements.
 
 The future of API management isn't about choosing one over the other — it's about using the right tool for each layer of your architecture.
