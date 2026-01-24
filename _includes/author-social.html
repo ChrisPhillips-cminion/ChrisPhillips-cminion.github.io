@@ -18,6 +18,12 @@
   {%- if social.rss -%}<a href="{{ 'feed.xml' | relative_url }}" title="{{ social.rss | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg></a>{%- endif -%}
   {%- if social.xing -%}<a href="https://www.xing.com/profile/{{ social.xing | escape }}" title="{{ social.xing | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#xing' | relative_url }}"></use></svg></a>{%- endif -%}
   {%- if social.buymeacoffee -%}
-    <a href="https://www.buymeacoffee.com/XtPMiT0"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee!!&emoji=&slug=XtPMiT0&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
+    <a href="https://www.buymeacoffee.com/XtPMiT0"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee!!&emoji=&slug=XtPMiT0&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" style="max-height: 28px;" /></a>
   {%- endif -%}
+    {%- if social.amazonwishlist -%}
+    <a href="{{ social.amazonwishlist }}" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Amazon-Wishlist-FF9900?style=for-the-badge&logo=amazon&logoColor=white" alt="Amazon Wishlist" />
+</a>
+  {%- endif -%}
+
 <!-- </ul> -->

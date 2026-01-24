@@ -3,7 +3,7 @@ layout: post
 date: 2026-01-24 11:00:00
 categories: APIConnect
 title: "IBM DataPower Nano Gateway vs IBM DataPower Gateway — When to Use Which"
-author: ["ChrisPhillips","GeorgeInness"]
+author: ["ChrisPhillips","RGeorgeInness"]
 draft: true
 image: /images/2026-01-24-nanogw-vs-datapower.png
 description: "Comparing IBM DataPower Gateway and DataPower Nano Gateway to help you choose the right solution for your API and integration needs. Learn when to use each"
@@ -31,12 +31,11 @@ Choose this when your use case requires:
 - **SOAP, XML, and legacy protocol support**: Native support for SOAP web services, XML processing, and legacy protocols that modern gateways don't handle
 - **Complex DataPower functions**: Advanced protocol mediation, XSLT transformations, multi-protocol bridging (SOAP, MQ, legacy protocols)
 - **Complex security requirements**: [FIPS 140-2 Level 3](https://csrc.nist.gov/pubs/fips/140-2/upd2/final) certified hardware security modules (HSMs) for cryptographic operations and key management
-- **Antivirus scanning**: Built-in antivirus capabilities for scanning payloads and attachments to protect against malware and threats
+- **Antivirus scanning**: Connect to antivirus capabilities for scanning payloads and attachments to protect against malware and threats
 - **Complex token management**: Advanced OAuth flows, JWT validation, token transformation, and custom authentication schemes
 - **Enterprise-wide control and governance**: Centralized API traffic control with extensive policy and security support
 - **Multi-protocol support**: Beyond REST/HTTP — messaging, legacy protocols, and middleware bridging
 - **Advanced security and transformation capabilities**: Deep packet inspection, complex routing logic, and sophisticated data transformations
-- **Centralized visibility**: Single point to enforce security, routing, traffic shaping, and detailed diagnostics
 
 This product still shines where SOAP/XML services, complex integration patterns, established infrastructure, stringent security compliance, threat protection, and advanced DataPower capabilities are required — especially in regulated industries and where APIs span many teams and backend technologies.
 
