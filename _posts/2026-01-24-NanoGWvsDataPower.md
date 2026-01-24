@@ -17,9 +17,9 @@ Over the last few quarters I've had more conversations with teams trying to bala
 
 ## What They Are
 
-**IBM DataPower Gateway** is the traditional, enterprise-grade API and application gateway that's been a cornerstone of IBM's integration stack for years. It's built for high security, complex protocol mediation, and scale across hybrid IT landscapes. It supports a rich set of transports and protocols and is positioned as a "DMZ-ready" gateway with deep protocol bridging and robust security controls — think vertical enterprise integrations, multi-protocol mediation, and centralized governance.
+**IBM DataPower** is the traditional, enterprise-grade API and application gateway that's been a cornerstone of IBM's integration stack for years. It's built for high security, complex protocol mediation, and scale across hybrid IT landscapes. It supports a rich set of transports and protocols and is positioned as a "DMZ-ready" gateway with deep protocol bridging and robust security controls — think vertical enterprise integrations, multi-protocol mediation, and centralized governance. IBM DataPowers APIGateway is the traditional runtime for API Connect. It's a mature product with a large ecosystem of plugins and integrations.
 
-In contrast, **DataPower Nano Gateway** is a lightweight, Kubernetes-native API gateway designed for modern microservices and hybrid cloud deployments. It's optimized for ultra-fast startup, minimal runtime footprint and embedded control close to the workload — you run it adjacent to your apps, enforce zero-trust policies, and scale out with declarative configs managed in GitOps pipelines.
+In contrast, **IBM DataPower Nano Gateway** is a lightweight, Kubernetes-native API gateway designed for modern microservices and hybrid cloud deployments. It's optimized for ultra-fast startup, minimal runtime footprint and embedded control close to the workload — you run it adjacent to your apps, enforce zero-trust policies, and scale out with declarative configs managed in GitOps pipelines.
 
 ---
 
