@@ -67,3 +67,11 @@ Home:
   name: Home
   display_name: Home Projects
   primary: false
+Misc:
+  name: Misc
+  display_name: Misc
+  primary: false
+DevOps:
+  name: DevOps
+  display_name: DevOps
+  primary: false

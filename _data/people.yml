@@ -23,6 +23,7 @@ ChrisPhillips:
   bio:
   hide: true
   buymeacoffee: XtPMiT0
+  amazonwishlist: https://www.amazon.co.uk/hz/wishlist/ls/2NTJ8S1VTVADH?ref_=wl_share
 ClaudioTag:
   name: ClaudioTag
   display_name: Claudio Tag
@@ -82,7 +83,7 @@ JamesHewitt:
   linkedin: hewittjames
   twitter: jamstah
   github: jamstah
-  bio: Senior Architect, IBM Cloud Pak for Integration, IBM Master Inventor
+  bio: Chief Architect, IBM Cloud Pak for Integration, IBM Master Inventor
 TakashiSakairi:
   name: TakashiSakairi
   display_name: SAKAIRI Takashi

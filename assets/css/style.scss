@@ -5,3 +5,42 @@
 @import "minima";
 @import 'bourbon/bourbon';
 @import 'sidebar';
+
+/* Home page image styling - 100% width with preserved aspect ratio */
+.post-img td {
+  padding: 0 !important;
+}
+
+.post-img p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.post-img a {
+  display: block !important;
+}
+
+.img-title {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Post header image styling - preserve aspect ratio */
+.post-header-image {
+  margin: 20px 0 !important;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.post-header-image img {
+  max-width: 100% !important;
+  max-height: 500px !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}

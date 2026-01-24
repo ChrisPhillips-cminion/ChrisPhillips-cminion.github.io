@@ -4,6 +4,9 @@ date: 2026-01-24 11:00:00
 categories: DevOps
 title: "Terraform: An Excellent Infrastructure Tool, But Not for API Deployments"
 author: ["ChrisPhillips","JamesHewitt"]
+image: /images/2026-01-24-terraform-infrastructure-not-applications.png
+description: "Terraform excels at infrastructure provisioning but struggles with API deployments. Learn why you should use the right tool for the right job and when Terraform is appropriate."
+tags: [Terraform, DevOps, Infrastructure as Code, API Deployment, CI/CD, Best Practices]
 ---
 
 Terraform is an excellent tool for managing infrastructure. I use it, I recommend it, and I've seen it work brilliantly in production environments. However, I've also seen teams try to force it into application deployment scenarios where it simply doesn't belong. This article explains why Terraform should stay in its lane - infrastructure - and why your APIs deserve better.

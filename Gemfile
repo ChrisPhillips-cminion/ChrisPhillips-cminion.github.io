@@ -29,9 +29,10 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
-#gem "jekyll", "~> 3.8"
-gem "jekyll", github: "jekyll/jekyll"
+# Use latest stable Jekyll version
+gem "jekyll", "~> 4.3"
 gem "liquid-c"
+gem "webrick", "~> 1.8"  # Required for Ruby 3.0+
 group :jekyll_plugins do
   gem "jekyll-archives"
   gem "jekyll-feed"

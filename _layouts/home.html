@@ -60,18 +60,31 @@ comments: true
 
     <tr>
       <td colspan=2 width=100%>
-        <p>{{ post.excerpt }}</p>
+        {%- if post.image  -%}
+          {%- assign excerpt_paragraphs = post.excerpt | split: '</p>' -%}
+          {%- if excerpt_paragraphs.size > 1 -%}
+            <p>{{ excerpt_paragraphs[0] }}</p></p>
+            <tr class="post-img">
+              <td align=center colspan=2><p><a class="post-link" href="{{ post.url | relative_url }}"><img class="img-title" src={{ post.image }} alt="{{ post.title | escape }}" /></a></p></td>
+            </tr>
+            <tr>
+              <td colspan=2 width=100%>
+                {%- for para in excerpt_paragraphs offset:1 -%}
+                  {%- unless forloop.last and para == '' -%}
+                    {{ para }}{%- unless para == '' -%}</p>{%- endunless -%}
+                  {%- endunless -%}
+                {%- endfor -%}
+              </td>
+            </tr>
+          {%- else -%}
+            <p>{{ post.excerpt }}</p>
+          {%- endif -%}
+        {%- else -%}
+          <p>{{ post.excerpt }}</p>
+        {%- endif -%}
       </td>
     </tr>
     <!-- </h3> -->
-    {%- if post.image  -%}
-    <tr class="post-img">
-      <td align=center colspan=2><p><a class="post-link" href="{{ post.url | relative_url }}"><img class="img-title" src={{ post.image }} alt="{{ post.title | escape }}" /></a></p></td>
-
-
-    </tr>
-
-    {%- endif -%}
     <tr>
       <td colspan=2>
         <hr />

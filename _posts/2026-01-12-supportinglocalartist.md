@@ -11,9 +11,6 @@ tags: [art, commission, family, gift ideas, local artist, illustration]
 
 It's that time of year again when we all search for the perfect gifts for our loved ones. I've always believed in giving something creative and personal—whether it's handmade by my kids or commissioned from talented friends and artists.
 
-![Illustrated family portrait showing parents and children in a warm, colorful artistic style with detailed shading and professional composition](/images/familyphoto/Chris-Family-Full-Res-CMYK.png)
-*The final masterpiece: Our family portrait by Carlos Valarezo*
-
 This year, I decided to commission a custom family portrait from **Carlos Valarezo**, a talented illustrator based in Ecuador. I provided him with a detailed brief and a collection of family photos, and he transformed them into the stunning artwork you see above.
 
 <!--more-->

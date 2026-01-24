@@ -1,0 +1,6 @@
+{%- assign author_data = site.data.people[site.author] -%}
+{%- if author_data.amazonwishlist -%}
+<a href="{{ author_data.amazonwishlist }}" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Amazon-Wishlist-FF9900?style=for-the-badge&logo=amazon&logoColor=white" alt="Amazon Wishlist" />
+</a>
+{%- endif -%}
