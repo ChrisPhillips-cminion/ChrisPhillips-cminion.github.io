@@ -1,9 +1,9 @@
 ---
 layout: post
-date: 2026-01-12 11:00:00
+date: 2026-01-24 11:00:00
 categories: DevOps
 title: "Terraform: An Excellent Infrastructure Tool, But Not for API Deployments"
-draft: true
+author: ["ChrisPhillips","JamesHewitt"]
 ---
 
 Terraform is an excellent tool for managing infrastructure. I use it, I recommend it, and I've seen it work brilliantly in production environments. However, I've also seen teams try to force it into application deployment scenarios where it simply doesn't belong. This article explains why Terraform should stay in its lane - infrastructure - and why your APIs deserve better.
@@ -20,13 +20,13 @@ Terraform excels at provisioning infrastructure. Need to spin up VMs, configure 
 
 **Multi-cloud support.** Terraform abstracts away provider differences, letting you manage AWS, Azure, and on-prem resources with the same tooling.
 
-## Section 2: The Application Deployment Problem
+## Section 2: The API Deployment Problem
 
-Applications are not infrastructure. They change multiple times per day. They need rolling updates, health checks, and rollback procedures. They require orchestration that Terraform was never designed to provide.
+API are usually not infrastructure. They change multiple times per day. They need rolling updates, health checks, and rollback procedures. They require orchestration that Terraform was never designed to provide.
 
 ### Frequent Changes Break Terraform's Model
 
-In a modern DevOps environment, applications deploy constantly. Each deployment involves:
+In a modern DevOps environment, APIs and applications deploy constantly. Each deployment involves:
 - Rolling updates across multiple instances
 - Database migrations
 - Cache invalidation
@@ -46,7 +46,7 @@ Can you force Terraform to do these? Sure. Should you? Absolutely not.
 
 ### Lifecycle Management
 
-When you deploy a new application version, you don't destroy and recreate resources - you update them in place with zero downtime. Terraform's create-update-destroy model doesn't fit this pattern.
+When you deploy a new API version, you don't destroy and recreate resources - you update them in place with zero downtime. Terraform's create-update-destroy model doesn't fit this pattern.
 
 ## Section 3: Use the Right Tool
 
@@ -56,7 +56,7 @@ For application deployments, use tools designed for the job:
 - **Ansible** for configuration management
 - **CI/CD pipelines** (Jenkins, GitLab CI, GitHub Actions) for orchestration
 
-These tools understand application deployment patterns. They provide rolling updates, health checks, traffic management, and integration with monitoring systems.
+These tools understand API and application deployment patterns. They provide rolling updates, health checks, traffic management, and integration with monitoring systems.
 
 ## Section 4: The Grey Area: When APIs Become Infrastructure
 
@@ -87,11 +87,11 @@ Even then, think carefully. A dedicated application deployment tool might still 
 
 ## Section 5: In Summary
 
-Terraform is excellent for infrastructure. Use it to provision VMs, networks, load balancers, and storage. But don't use it for application deployments.
+Terraform is excellent for infrastructure. Use it to provision VMs, networks, load balancers, and storage. But don't use it for API deployments.
 
-Applications need tools that understand deployment patterns, orchestration, and rapid change cycles. While rare cases exist where an API might be considered infrastructure, these are uncommon and need careful evaluation.
+API need tools that understand deployment patterns, orchestration, and rapid change cycles. While rare cases exist where an API might be considered infrastructure, these are uncommon and need careful evaluation.
 
-**Use the right tool for the right job.** Provision infrastructure with Terraform. Deploy applications with tools designed for that purpose.
+**Use the right tool for the right job.** Provision infrastructure with Terraform. Deploy APIs and applications with tools designed for that purpose.
 
 ### Further Reading:
 - [Pipelines :: How and why to use them to deploy Products and APIs into API Connect](https://chrisphillips-cminion.github.io/apiconnect/2020/09/18/pipelines.html)
