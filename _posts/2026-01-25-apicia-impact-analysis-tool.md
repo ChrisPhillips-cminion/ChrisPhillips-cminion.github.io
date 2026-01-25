@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-01-25 23:30:00
+date: 2026-01-25 14:30:00
 categories: APIConnect
 title: "Deep Dive: API Connect Impact Analysis Tool v3.0 - Understanding Your API Ecosystem Dependencies"
 image: /images/apicia/tree-navigation.png
