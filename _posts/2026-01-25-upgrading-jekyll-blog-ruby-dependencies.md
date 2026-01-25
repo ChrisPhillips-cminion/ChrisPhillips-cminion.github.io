@@ -1,13 +1,12 @@
 ---
 layout: post
-date: 2026-01-24 17:48:00
+date: 2026-01-25 17:48:00
 categories: Jekyll
 title: "Upgrading a Jekyll Blog: Managing Ruby Versions and Dependencies"
 author: ["ChrisPhillips"]
 image: /images/2026-01-24-jekyll-upgrade.png
 description: "A practical guide to upgrading Jekyll and Ruby dependencies for a GitHub Pages blog, including troubleshooting rbenv and bundler issues."
 tags: [Jekyll, Ruby, rbenv, Bundler, GitHub Pages, Blog, DevOps, Upgrade]
-draft: true
 ---
 
 I'll be the first to admit it: I wasn't practicing what I preach. For someone who regularly writes about best practices, and keeping systems up to date, I had let my own Jekyll blog fall embarrassingly behind. My Jekyll version was ancient, my Ruby dependencies were outdated, and I had been ignoring the problem for far too long.
