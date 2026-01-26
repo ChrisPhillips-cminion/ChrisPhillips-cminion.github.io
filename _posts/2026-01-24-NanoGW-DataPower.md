@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-01-24 11:00:00
+date: 2026-02-24 11:00:00
 categories: APIConnect
-title: "IBM DataPower Nano Gateway vs IBM DataPower Gateway — When to Use Which"
+title: "IBM DataPower Nano Gateway, IBM DataPower API Gateway or Both — When is it better together?"
 author: ["ChrisPhillips","RGeorgeInness"]
 draft: true
 image: /images/2026-01-24-nanogw-vs-datapower.png
