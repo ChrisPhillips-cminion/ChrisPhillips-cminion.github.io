@@ -1,15 +1,15 @@
 ---
 layout: post
-date: 2026-01-25 14:30:00
+date: 2026-01-28 10:10:00
 categories: APIConnect
 title: "Deep Dive: API Connect Impact Analysis Tool v3.0 - Understanding Your API Ecosystem Dependencies"
 image: /images/apicia/tree-navigation.png
 description: "A comprehensive guide to APICIA v3.0, the API Connect Impact Analysis Tool. Learn how to map API dependencies, analyze backend services, and visualize your API ecosystem with interactive HTML reports."
 tags: [APIConnect, Tools, Analysis, Dependencies, Go, DevOps, API Management, ImpactAnalysis]
-draft: true
 ---
 
 Understanding the complex web of dependencies in your API Connect environment is crucial for successful API management. When you need to make changes—whether updating a backend service, modifying a product, or understanding which applications will be affected—you need clear visibility into these relationships. Today, I'm excited to share a deep dive into the API Connect Impact Analysis Tool (APICIA) v3.0, a powerful command-line utility that maps out these dependencies with unprecedented clarity.
+
 
 ## The Challenge: API Connect Dependency Complexity
 
@@ -30,17 +30,10 @@ APICIA is a Go-based command-line tool that connects to your API Connect instanc
 
 <!--more-->
 
-### Installation and Setup
+## Download
 
-First, let's get the tool installed. You'll need Go 1.21 or higher:
+You can download the latest version of APICIA from my repos [GitHub releases page](https://github.com/ChrisPhillips-cminion/APIConnect-ImpactAnalysis/releases). The tool is distributed as a single portable binary with no installer or external dependencies, making it easy to run.
 
-```bash
-git clone <repository-url>
-cd APIConnect-ImpactAnalysis
-make build
-```
-
-This produces a single binary called `apicia` with no external dependencies—a significant advantage over Node.js-based tools.
 
 ### Initial Configuration
 
