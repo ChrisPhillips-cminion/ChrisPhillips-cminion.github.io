@@ -6,6 +6,7 @@ title: "Deep Dive: API Connect Impact Analysis Tool v3.0 - Understanding Your AP
 image: /images/apicia/tree-navigation.png
 description: "A comprehensive guide to APICIA v3.0, the API Connect Impact Analysis Tool. Learn how to map API dependencies, analyze backend services, and visualize your API ecosystem with interactive HTML reports."
 tags: [APIConnect, Tools, Analysis, Dependencies, Go, DevOps, API Management, ImpactAnalysis]
+draft: true
 ---
 
 Understanding the complex web of dependencies in your API Connect environment is crucial for successful API management. When you need to make changes—whether updating a backend service, modifying a product, or understanding which applications will be affected—you need clear visibility into these relationships. Today, I'm excited to share a deep dive into the API Connect Impact Analysis Tool (APICIA) v3.0, a powerful command-line utility that maps out these dependencies with unprecedented clarity.
