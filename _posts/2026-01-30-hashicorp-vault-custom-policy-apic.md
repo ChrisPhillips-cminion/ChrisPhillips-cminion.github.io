@@ -12,6 +12,8 @@ tags: [API Connect, HashiCorp Vault, Security, Custom Policy, Secrets Management
 Stop hardcoding secrets in your APIs! Learn how to build a reusable custom policy that seamlessly integrates HashiCorp Vault with IBM API Connect, transforming complex authentication and secret retrieval into a single, elegant policy call.
 
 
+**📦 Get the Code:** The complete policy code, deployment scripts, and examples are available on GitHub: [apiconnect-vault-integration](https://github.com/ChrisPhillips-cminion/apiconnect-vault-integration)
+
 <!--more-->
 
 **License Notice:** This policy is provided under the MIT License and is offered "AS IS" without warranty of any kind. See the [full license](#license) at the end of this post.
