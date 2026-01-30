@@ -11,7 +11,6 @@ tags: [API Connect, HashiCorp Vault, Security, Custom Policy, Secrets Management
 
 Stop hardcoding secrets in your APIs! Learn how to build a reusable custom policy that seamlessly integrates HashiCorp Vault with IBM API Connect, transforming complex authentication and secret retrieval into a single, elegant policy call.
 
-
 **📦 Get the Code:** The complete policy code, deployment scripts, and examples are available on GitHub: [apiconnect-vault-integration](https://github.com/ChrisPhillips-cminion/apiconnect-vault-integration)
 
 <!--more-->
@@ -125,36 +124,9 @@ cd vault-retrieve-policy
 
 The script will guide you through the deployment process and provide clear feedback on success or any errors encountered.
 
-## Screenshots
-
-[Screenshot: Policy properties in API Manager UI]
-
-[Screenshot: Using the policy in an API assembly]
-
-[Screenshot: Successful secret retrieval in test tool]
-
-## Key Learnings
-
-### 1. Policy Property References
-
-Custom policy properties must be referenced using `$(local.parameter.property-name)`, not `$(property-name)` or `{property-name}`.
-
-### 2. Parse Policy Input vs Output
-
-- **Input**: Use variable name WITHOUT `.body` (e.g., `vault-login-response`)
-- **Output Access**: Use parsed variable WITH `.body` (e.g., `$(parsed-login.body.auth.client_token)`)
-
-### 3. Dynamic Variable Names
-
-The `set-variable` policy cannot use dynamic variable names. Use GatewayScript when you need to set a variable whose name is determined at runtime.
-
-### 4. Gateway Service Names
-
-When deploying policies, use the actual configured gateway service name from your catalog (e.g., `api-gateway-service`), not generic names like `datapower-api-gateway`.
-
 ## Technical Implementation
 
-The policy implements a 7-step workflow:
+The policy implements a multi-step workflow:
 
 ### Step 1: Prepare Login Request
 
