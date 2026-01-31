@@ -11,7 +11,6 @@ When designing high-performance API solutions with IBM API Gateway, understandin
 
 <!--more-->
 
-
 ## Understanding GatewayScript Engine Architecture
 
 IBM API Gateway uses GatewayScript engines to execute custom logic within API policies. The number of concurrent GatewayScript executions your gateway can handle depends on three key factors:
@@ -28,14 +27,14 @@ Each GatewayScript engine can execute one script at a time. If you have 10 engin
 
 ### CPU Cores: The Processing Foundation
 
-The number of CPU cores assigned to your API Gateway determines the overall number of GatewayScript enginers. While GatewayScript engines handle the execution, they still require CPU resources to run. The relationship is always 1:1.
+The number of CPU cores assigned to your API Gateway determines the overall number of GatewayScript engines. While GatewayScript engines handle the execution, they still require CPU resources to run. The relationship is always 1:1.
 
 ## Understanding Concurrent Execution Limits
 
 The maximum number of concurrent GatewayScript executions is limited by:
 
 ```
-Max Concurrent = MIN(Number of Available Engines)
+Max Concurrent = Number of Available Engines
 ```
 
 
@@ -47,11 +46,11 @@ For high-concurrency APIs, consider whether GatewayScript is necessary:
 
 **When to use GatewayScript:**
 - Complex data transformations
-- Complex logic when there are no XSLT skills available
+- Complex logic when there are no XSLT skills available. XSLT does not have the limitation of engines
 
 **When to avoid GatewayScript:**
 - Simple header manipulation (use Set Variable policy)
-- Simple data transformations where the mapping policy will suffice 
+- Simple data transformations where the mapping policy will suffice
 - Basic routing decisions (use Switch policy)
 - Where XSLT skills are available.
 
