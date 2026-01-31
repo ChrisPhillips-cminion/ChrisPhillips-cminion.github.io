@@ -104,7 +104,7 @@ Understanding the relationship between GatewayScript engines, CPU cores, and con
 1. **Engine count determines concurrent execution capacity**
 2. **CPU cores provide the processing power for engines**
 3. **The ratio is one CPU Core to one Enginer**
-4. **For high concurrency, consider dedicated gateway instances**
+4. **For high concurrency, consider dedicated gateway services**
 5. **Use GatewayScript only when necessary**
 6. **Monitor, measure, and tune based on actual workload**
 

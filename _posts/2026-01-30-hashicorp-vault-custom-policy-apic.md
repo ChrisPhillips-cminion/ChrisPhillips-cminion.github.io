@@ -226,24 +226,19 @@ Parses the secret response:
 
 ### Step 7: Store Secret in Output Variable
 
-Uses GatewayScript to dynamically store the secret in the configured output variable:
+Uses set-variable to store the secret in the configured output variable:
 
 ```yaml
-- gatewayscript:
+- set-variable:
     version: 2.0.0
     title: store-secret
-    source: |
-      // Get the parsed secret data
-      var secretData = context.get('parsed-secret.body.data.data');
-      
-      // Get the output variable name from policy properties
-      var outputVar = context.get('local.parameter.output-variable');
-      
-      // Store the secret in the specified output variable
-      context.set(outputVar, secretData);
+    actions:
+      - set: $(local.parameter.output-variable)
+        value: $(parsed-secret.body.data.data)
+        type: any
 ```
 
-**Why GatewayScript?** The `set-variable` policy cannot use a dynamic variable name. GatewayScript allows us to read the output variable name from the policy properties and set it dynamically.
+**Key Point**: The set-variable policy supports dynamic variable names using the `$(local.parameter.output-variable)` syntax, allowing the variable name to be configured via policy properties. The `type: any` setting ensures complex JSON objects are stored correctly.
 
 ## Conclusion
 
@@ -251,7 +246,7 @@ Custom policies are a powerful way to encapsulate complex workflows in API Conne
 
 - Create a reusable custom policy with configurable properties
 - Handle multi-step authentication and data retrieval workflows
-- Use GatewayScript for dynamic variable manipulation
+- Use set-variable policy with dynamic variable names
 - Deploy and update policies using the APIC CLI
 
 The complete policy code and deployment scripts are available in my GitHub repository.
