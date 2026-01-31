@@ -47,9 +47,7 @@ For high-concurrency APIs, consider whether GatewayScript is necessary:
 
 **When to use GatewayScript:**
 - Complex data transformations
-- Custom authentication logic
-- Integration with external systems
-- Business logic that can't be handled by standard policies
+- Complex logic when there are no XSLT skills available
 
 **When to avoid GatewayScript:**
 - Simple header manipulation (use Set Variable policy)
