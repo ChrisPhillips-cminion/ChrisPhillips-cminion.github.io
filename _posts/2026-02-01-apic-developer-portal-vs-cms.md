@@ -24,7 +24,7 @@ The Developer Portal is designed for teams who want powerful customization capab
 - **Built-in Flexibility**: Create custom asset types and add custom fields through configuration
 - **Styling Options**: Apply custom CSS for branding and visual customization
 - **Web Components**: Support for custom web components for advanced UI needs
-- **Managed Updates**: Automatic updates without maintenance overhead
+
 
 **Important Limitation**: You cannot write actual code to customize the Developer Portal - all customization is configuration-based.
 
@@ -37,7 +37,7 @@ The CMS Portal provides complete access to the Drupal ecosystem, enabling virtua
 - **Code-Level Customization**: Write custom code to achieve any desired functionality
 - **Maximum Flexibility**: Implement complex, unique requirements that go beyond standard portal features
 - **Technical Expertise Required**: Requires Drupal development skills and ongoing maintenance
-- **Maintenance Responsibility**: You manage Drupal core updates and security patches
+
 
 ## Detailed Comparison
 
@@ -64,15 +64,6 @@ The CMS Portal provides complete access to the Drupal ecosystem, enabling virtua
 ✓ Advanced integrations
 ```
 
-### Technical Requirements
-
-| Aspect | Developer Portal | CMS Portal |
-|--------|-----------------|------------|
-| **Skills Required** | Portal administration, CSS | Drupal development, PHP, DevOps |
-| **Maintenance** | Managed by IBM | Self-managed |
-| **Updates** | Automatic | Manual (Drupal core updates) |
-| **Hosting** | IBM-managed | Self-hosted or managed |
-| **Security Patches** | Automatic | Your responsibility |
 
 ### Use Case Scenarios
 
