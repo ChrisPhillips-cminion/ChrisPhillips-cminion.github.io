@@ -25,7 +25,6 @@ The Developer Portal is designed for teams who want powerful customization capab
 - **Styling Options**: Apply custom CSS for branding and visual customization
 - **Web Components**: Support for custom web components for advanced UI needs
 
-
 **Important Limitation**: You cannot write actual code to customize the Developer Portal - all customization is configuration-based.
 
 ### CMS Portal: Full Drupal Ecosystem Access
