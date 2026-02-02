@@ -12,6 +12,8 @@ I know some of you have noticed I've been publishing less on my blog lately. The
 
 
 **Image description for accessibility:** Photo shows a bearded Chris Phillips wearing glasses and a black t-shirt with a iSOA skull design, sitting with his two young blonde daughters. One daughter wears a light blue dress with colorful dinosaur prints, the other wears a light pink dress with unicorn prints. Both children have pacifiers. The setting appears to be a casual restaurant or café with other people visible in the background.
+ 
+Thanks to my darling brother Prof Iain Phillips for the great photo of my little girls.
 
 <!--more-->
 
