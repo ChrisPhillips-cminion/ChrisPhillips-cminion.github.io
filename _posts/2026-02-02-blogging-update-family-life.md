@@ -3,7 +3,6 @@ layout: post
 date: 2026-02-02 10:00:00
 categories: Personal
 title: "A Personal Update: Less Travel, More Content, and Life with Little Monsters"
-author: Chris Phillips
 image: /images/IMG_7812.jpeg
 description: "A rare personal post about why my blogging slowed down, what's changing in 2026, and life with two energetic toddlers."
 tags: [personal, blogging, family, work-life-balance]
