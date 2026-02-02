@@ -28,12 +28,14 @@
   padding: 0 !important;
 }
 
-/* Post header image styling - preserve aspect ratio */
+/* Post header image styling - preserve aspect ratio with max constraints */
 .post-header-image {
   margin: 20px 0 !important;
   text-align: center !important;
   display: flex !important;
   justify-content: center !important;
+  align-items: center !important;
+  max-height: 500px !important;
 }
 
 .post-header-image img {
@@ -42,5 +44,16 @@
   width: auto !important;
   height: auto !important;
   display: block !important;
+  object-fit: contain !important;
+}
+
+/* Content images - same responsive logic */
+.post-content img {
+  max-width: 100% !important;
+  max-height: 500px !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  margin: 20px auto !important;
   object-fit: contain !important;
 }
