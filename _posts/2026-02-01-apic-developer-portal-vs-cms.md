@@ -60,7 +60,26 @@ According to [IBM Documentation](https://www.ibm.com/docs/en/api-connect/cloud/s
 | **Maintenance** | Zero | Minimal (IBM-managed) |
 
 **Example Scenario:**
-> A company wants to expose internal APIs to their development teams across different departments. The Consumer Catalog provides immediate access to API documentation without the overhead of deploying and managing a separate portal.
+> **Internal Microservices Platform**
+>
+> A large retail company is modernizing their architecture with microservices and needs to enable internal teams to discover and consume APIs across departments.
+>
+> **Requirements:**
+> - Provide immediate access to API documentation for 200+ internal developers
+> - Enable self-service API key generation for internal applications
+> - No budget for portal infrastructure or administration
+> - Need to launch within days, not weeks
+> - Focus on functionality over customization
+>
+> **Solution with Consumer Catalog:**
+>
+> 1. **Zero Setup**: Enable Consumer Catalog in API Manager (no deployment needed)
+> 2. **Immediate Access**: Developers access portal through API Manager URL
+> 3. **Self-Service**: Teams register applications and generate credentials instantly
+> 4. **Documentation**: API documentation automatically published from OpenAPI specs
+> 5. **Basic Branding**: Apply company logo and colors through simple configuration
+>
+> **Result**: Internal API program launched in 2 days with zero infrastructure overhead. Teams can discover APIs, test endpoints, and generate credentials without any portal administration burden.
 
 ## 2. Developer Portal: Configuration-Based Customization
 
@@ -87,7 +106,33 @@ The Developer Portal is designed for teams who want powerful customization capab
 - You want IBM to handle updates and security
 
 **Example Scenario:**
-> A mid-sized company wants to expose their APIs to external partners with custom branding, specific content types for API documentation, and SSO integration. The Developer Portal's configuration options handle all these requirements without code.
+> **Partner Integration Platform**
+>
+> A SaaS company needs to expose their APIs to external partners and customers, providing a professional developer experience without extensive development resources.
+>
+> **Requirements:**
+> - External-facing portal with custom branding matching corporate identity
+> - Custom content types for tutorials, code samples, and best practices
+> - SSO integration with corporate identity provider
+> - Custom fields for API metadata (SLA tiers, rate limits, support contacts)
+> - Ability to create custom landing pages for different API products
+> - No dedicated Drupal developers on staff
+>
+> **Solution with Developer Portal:**
+>
+> 1. **Deployment**: Deploy Developer Portal through API Connect (IBM-managed)
+> 2. **Branding Customization**:
+>    - Upload custom logo and favicon
+>    - Apply custom CSS for colors, fonts, and styling
+>    - Configure navigation menus through admin UI
+> 3. **Content Configuration**:
+>    - Create custom asset types for "Tutorial" and "Code Sample"
+>    - Add custom fields to API products (SLA tier, support email)
+>    - Build landing pages using built-in page builder
+> 4. **SSO Integration**: Configure OIDC integration through admin interface
+> 5. **Web Components**: Add custom web components for interactive API explorers
+>
+> **Result**: Professional external developer portal launched in 2 weeks with complete branding, custom content types, and SSO—all through configuration without writing code. Portal automatically updates with new API Connect features without maintenance overhead.
 
 ## 3. CMS Portal: Full Drupal Ecosystem Access
 
@@ -111,7 +156,49 @@ The CMS Portal provides complete access to the Drupal ecosystem, enabling virtua
 - You require complete control over every aspect
 
 **Example Scenario:**
-> An enterprise needs to integrate their portal with multiple internal systems, implement complex approval workflows, create custom reporting dashboards, and provide specialized developer onboarding. The CMS Portal's full Drupal access enables all these custom requirements.
+> **Enterprise API Marketplace with Complex Workflows**
+>
+> A global telecommunications company needs a sophisticated API marketplace with deep enterprise integration and custom business logic that goes beyond standard portal capabilities.
+>
+> **Requirements:**
+> - Multi-tier approval workflow (legal, security, business owner review)
+> - Integration with ServiceNow for ticket creation and tracking
+> - Custom reporting dashboard pulling data from multiple sources
+> - Integration with enterprise LDAP and multiple identity providers
+> - Specialized developer onboarding with training modules and certification
+> - Custom billing integration for API monetization
+> - Compliance tracking and audit logging
+> - Custom notification system integrated with Slack and Microsoft Teams
+>
+> **Solution with CMS Portal:**
+>
+> 1. **Full Drupal Deployment**: Deploy CMS Portal with complete Drupal access
+> 2. **Custom Workflow Development**:
+>    - Develop custom Drupal module for multi-tier approval process
+>    - Implement state machine for application lifecycle management
+>    - Create custom forms and validation logic
+> 3. **Enterprise Integration**:
+>    - Build ServiceNow integration module using REST APIs
+>    - Develop custom LDAP authentication module
+>    - Create billing integration with enterprise financial system
+> 4. **Custom Features**:
+>    - Build training module system with progress tracking
+>    - Develop certification workflow with exam integration
+>    - Create custom analytics dashboard using Drupal Views and Charts
+>    - Implement custom notification system with Slack/Teams webhooks
+> 5. **Compliance & Security**:
+>    - Add custom audit logging for all API access
+>    - Implement data retention policies
+>    - Create compliance reporting dashboards
+>
+> **Technical Implementation:**
+> - Custom Drupal modules: 5 modules (~15,000 lines of PHP)
+> - Custom themes: Fully branded theme with responsive design
+> - Integration points: ServiceNow, LDAP, billing system, Slack, Teams
+> - Development time: 3 months with 3 Drupal developers
+> - Ongoing maintenance: 1 developer for updates and enhancements
+>
+> **Result**: Sophisticated API marketplace with enterprise-grade workflows, deep system integration, and custom business logic. Complete control over every aspect of the portal enables unique requirements that wouldn't be possible with standard portal options.
 
 ### CMS Portal Considerations
 
