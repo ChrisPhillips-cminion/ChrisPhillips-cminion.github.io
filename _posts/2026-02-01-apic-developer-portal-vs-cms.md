@@ -15,6 +15,23 @@ Let me walk you through the four options, when to use each one, and how to make 
 
 <!--more-->
 
+## Table of Contents
+{: #toc}
+
+- [The Four Portal Options: A Quick Overview](#the-four-portal-options-a-quick-overview)
+- [Option 1: Consumer Catalog - The Zero-Setup Solution](#option-1-consumer-catalog---the-zero-setup-solution)
+- [Option 2: Developer Portal - Configuration Without Code](#option-2-developer-portal---configuration-without-code)
+- [Option 3: CMS Portal - When You Need Full Control](#option-3-cms-portal---when-you-need-full-control)
+- [Option 4: Headless Portal - Build Your Own Frontend](#option-4-headless-portal---build-your-own-frontend)
+- [Quick Comparison: Which Portal Is Right for You?](#quick-comparison-which-portal-is-right-for-you)
+- [How to Choose: A Decision Framework](#how-to-choose-a-decision-framework)
+- [Migration Paths: Start Simple, Grow as Needed](#migration-paths-start-simple-grow-as-needed)
+- [Best Practices: Lessons from the Field](#best-practices-lessons-from-the-field)
+- [The Bottom Line](#the-bottom-line)
+- [Resources](#resources)
+
+---
+
 ## The Four Portal Options: A Quick Overview
 
 IBM API Connect provides a spectrum of portal solutions, each building on the previous one's capabilities:
@@ -114,32 +131,32 @@ Everything is configuration-based. You can't write custom Drupal modules or modi
 
 ### Real-World Scenario: SaaS Partner Portal
 
-**The Situation:**
-A SaaS company needs an external-facing portal for partners and customers. They want professional branding, custom content, and SSO—but they don't have Drupal developers on staff.
-
-**The Implementation (2 weeks):**
-
-**Week 1: Branding & Structure**
-- Deployed Developer Portal (IBM-managed infrastructure)
-- Uploaded logo, applied custom CSS for brand colors
-- Created custom content types: "Tutorial", "Code Sample", "Best Practice"
-- Added custom fields to APIs: SLA tier, rate limits, support contact
-
-**Week 2: Content & Integration**
-- Built landing pages with the page builder
-- Configured OIDC SSO with their identity provider
-- Added custom web components for interactive API testing
-- Published first APIs and documentation
-
-**The Result:**
-Professional portal that looks like it was custom-built, but it's all configuration. When API Connect releases new features, they get them automatically. No Drupal expertise required.
-
-**What They Didn't Need:**
-- Custom Drupal modules
-- Complex approval workflows
-- Deep enterprise system integration
-
-**The Verdict:** Developer Portal hit the sweet spot—professional customization without the complexity of full CMS.
+> **The Situation:**
+> A SaaS company needs an external-facing portal for partners and customers. They want professional branding, custom content, and SSO—but they don't have Drupal developers on staff.
+>
+> **The Implementation (2 weeks):**
+>
+> **Week 1: Branding & Structure**
+> - Deployed Developer Portal (IBM-managed infrastructure)
+> - Uploaded logo, applied custom CSS for brand colors
+> - Created custom content types: "Tutorial", "Code Sample", "Best Practice"
+> - Added custom fields to APIs: SLA tier, rate limits, support contact
+>
+> **Week 2: Content & Integration**
+> - Built landing pages with the page builder
+> - Configured OIDC SSO with their identity provider
+> - Added custom web components for interactive API testing
+> - Published first APIs and documentation
+>
+> **The Result:**
+> Professional portal that looks like it was custom-built, but it's all configuration. When API Connect releases new features, they get them automatically. No Drupal expertise required.
+>
+> **What They Didn't Need:**
+> - Custom Drupal modules
+> - Complex approval workflows
+> - Deep enterprise system integration
+>
+> **The Verdict:** Developer Portal hit the sweet spot—professional customization without the complexity of full CMS.
 
 ## Option 3: CMS Portal - When You Need Full Control
 
@@ -167,28 +184,28 @@ The CMS Portal gives you complete Drupal access. This is for teams with complex 
 
 ### Real-World Scenario: Telecom Enterprise Marketplace
 
-**The Situation:**
-A global telecom needs a sophisticated API marketplace with multi-tier approval workflows, ServiceNow integration, custom billing, training modules with certification, and compliance tracking. Nothing off-the-shelf will work.
-
-**The Implementation (3 months, 3 Drupal developers):**
-
-**Custom Drupal Modules (5 modules, ~15,000 lines PHP):**
-- Multi-tier approval workflow (legal → security → business owner)
-- ServiceNow integration for ticket creation and tracking
-- Custom billing integration with enterprise financial system
-- Training module system with progress tracking and certification
-- Custom notification system (Slack, Teams, email)
-
-**Enterprise Integration:**
-- LDAP authentication with multiple identity providers
-- Custom analytics dashboard pulling from multiple sources
-- Compliance tracking and audit logging
-- Data retention policies
-
-**The Result:**
-A sophisticated enterprise marketplace that does exactly what they need—because they built it themselves. But it requires ongoing maintenance: security patches, module updates, testing after every change.
-
-**The Verdict:** Worth it for complex enterprise requirements, but only if you have the team to support it.
+> **The Situation:**
+> A global telecom needs a sophisticated API marketplace with multi-tier approval workflows, ServiceNow integration, custom billing, training modules with certification, and compliance tracking. Nothing off-the-shelf will work.
+>
+> **The Implementation (3 months, 3 Drupal developers):**
+>
+> **Custom Drupal Modules (5 modules, ~15,000 lines PHP):**
+> - Multi-tier approval workflow (legal → security → business owner)
+> - ServiceNow integration for ticket creation and tracking
+> - Custom billing integration with enterprise financial system
+> - Training module system with progress tracking and certification
+> - Custom notification system (Slack, Teams, email)
+>
+> **Enterprise Integration:**
+> - LDAP authentication with multiple identity providers
+> - Custom analytics dashboard pulling from multiple sources
+> - Compliance tracking and audit logging
+> - Data retention policies
+>
+> **The Result:**
+> A sophisticated enterprise marketplace that does exactly what they need—because they built it themselves. But it requires ongoing maintenance: security patches, module updates, testing after every change.
+>
+> **The Verdict:** Worth it for complex enterprise requirements, but only if you have the team to support it.
 
 ### The Reality of CMS Portal Maintenance
 
@@ -206,6 +223,8 @@ A sophisticated enterprise marketplace that does exactly what they need—becaus
 - Security patches within 48 hours of release
 - Regular testing cycles
 - Documentation maintenance
+
+[↑ Back to top](#toc)
 
 ## Option 4: Headless Portal - Build Your Own Frontend
 
@@ -237,44 +256,44 @@ The Headless Portal approach gives you complete freedom to build your own custom
 
 ### Real-World Scenario: Fintech Mobile-First Platform
 
-**The Situation:**
-A fintech startup needs a mobile-first developer experience that integrates seamlessly with their existing React-based website. They want the portal to feel like part of their brand, not a separate Drupal site.
-
-**The Implementation (8 weeks, 3 frontend developers):**
-
-**Weeks 1-2: Architecture & Setup**
-- Designed React-based frontend architecture
-- Set up Next.js for server-side rendering and SEO
-- Integrated with API Connect Portal APIs
-- Implemented authentication flow using OIDC
-
-**Weeks 3-5: Core Features**
-- Built custom API documentation viewer with interactive examples
-- Created application registration and management flows
-- Developed subscription management interface
-- Implemented API key generation and rotation
-
-**Weeks 6-8: Polish & Integration**
-- Integrated with existing design system and component library
-- Added mobile-optimized views and progressive web app features
-- Implemented custom analytics and user tracking
-- Built admin dashboard for content management
-
-**Technical Stack:**
-- Frontend: Next.js (React), TypeScript, Tailwind CSS
-- Backend: API Connect Portal APIs
-- Authentication: OIDC with their existing identity provider
-- Hosting: Vercel for frontend, API Connect for backend APIs
-
-**The Result:**
-A seamless, mobile-first developer experience that feels like a natural extension of their brand. Complete control over UX, modern tech stack, and the ability to iterate quickly without Drupal constraints.
-
-**What They Gave Up:**
-- Out-of-the-box portal features (had to build everything)
-- IBM-managed frontend (they own the frontend infrastructure)
-- Quick time-to-market (took longer than standard portal)
-
-**The Verdict:** Perfect for teams with strong frontend capabilities who need complete UX control and want to use modern frameworks.
+> **The Situation:**
+> A fintech startup needs a mobile-first developer experience that integrates seamlessly with their existing React-based website. They want the portal to feel like part of their brand, not a separate Drupal site.
+>
+> **The Implementation (8 weeks, 3 frontend developers):**
+>
+> **Weeks 1-2: Architecture & Setup**
+> - Designed React-based frontend architecture
+> - Set up Next.js for server-side rendering and SEO
+> - Integrated with API Connect Portal APIs
+> - Implemented authentication flow using OIDC
+>
+> **Weeks 3-5: Core Features**
+> - Built custom API documentation viewer with interactive examples
+> - Created application registration and management flows
+> - Developed subscription management interface
+> - Implemented API key generation and rotation
+>
+> **Weeks 6-8: Polish & Integration**
+> - Integrated with existing design system and component library
+> - Added mobile-optimized views and progressive web app features
+> - Implemented custom analytics and user tracking
+> - Built admin dashboard for content management
+>
+> **Technical Stack:**
+> - Frontend: Next.js (React), TypeScript, Tailwind CSS
+> - Backend: API Connect Portal APIs
+> - Authentication: OIDC with their existing identity provider
+> - Hosting: Vercel for frontend, API Connect for backend APIs
+>
+> **The Result:**
+> A seamless, mobile-first developer experience that feels like a natural extension of their brand. Complete control over UX, modern tech stack, and the ability to iterate quickly without Drupal constraints.
+>
+> **What They Gave Up:**
+> - Out-of-the-box portal features (had to build everything)
+> - IBM-managed frontend (they own the frontend infrastructure)
+> - Quick time-to-market (took longer than standard portal)
+>
+> **The Verdict:** Perfect for teams with strong frontend capabilities who need complete UX control and want to use modern frameworks.
 
 ### Headless Portal Considerations
 
@@ -305,6 +324,7 @@ A seamless, mobile-first developer experience that feels like a natural extensio
 - Ongoing: Medium (maintain frontend, adapt to API changes)
 - Requires strong frontend development skills
 
+[↑ Back to top](#toc)
 
 ## Quick Comparison: Which Portal Is Right for You?
 
@@ -317,6 +337,8 @@ A seamless, mobile-first developer experience that feels like a natural extensio
 | **Maintenance** | Zero | Minimal (IBM) | Medium (Frontend) | High (You own it) |
 | **Cost** | Included | Low | Medium-High | High |
 | **Best For** | Internal APIs | Standard portals | Custom UX/Modern frameworks | Enterprise complexity |
+
+[↑ Back to top](#toc)
 
 ## How to Choose: A Decision Framework
 
@@ -356,6 +378,8 @@ A seamless, mobile-first developer experience that feels like a natural extensio
 
 Don't over-engineer. Start simple, migrate later if needed.
 
+[↑ Back to top](#toc)
+
 ## Migration Paths: Start Simple, Grow as Needed
 
 The good news? You can start simple and migrate up as your needs evolve:
@@ -372,6 +396,8 @@ A fintech startup started with Consumer Catalog for internal APIs. Six months la
 - Document everything from day one
 - Plan for growth, but don't over-engineer
 - Headless and CMS are different paths—choose based on your team's strengths
+
+[↑ Back to top](#toc)
 
 ## Best Practices: Lessons from the Field
 
@@ -404,6 +430,8 @@ A fintech startup started with Consumer Catalog for internal APIs. Six months la
 - Budget for ongoing maintenance (it's significant)
 - Only choose this if you truly need Drupal-specific features
 
+[↑ Back to top](#toc)
+
 ## The Bottom Line
 
 **Most teams should start here:**
@@ -427,6 +455,8 @@ The biggest mistake I see? Teams jumping to Headless or CMS Portal because "we m
 - Choose **CMS** if you have Drupal developers and need Drupal-specific features
 
 Choose based on what you need today and your team's strengths, not what you might need in three years. Your future self will thank you.
+
+[↑ Back to top](#toc)
 
 ## Resources
 
