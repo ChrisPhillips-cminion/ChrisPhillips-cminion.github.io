@@ -38,5 +38,3 @@ Thank you all for your patience and continued readership. Here's to a productive
 I've also lost a shit ton of weight! Huge thanks to Bryon Kataoka and Cheryl Bertini-Kataoka  for this awesome t-shirt. Do they come in Baby Sizes? 💪
 
 P.P.S. Apologies for the terrible photo of me!
-
----
