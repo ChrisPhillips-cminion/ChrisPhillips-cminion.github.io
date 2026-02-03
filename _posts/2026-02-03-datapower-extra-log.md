@@ -29,8 +29,8 @@ These five log types provide comprehensive coverage without overwhelming your lo
 |----------|---------|-------------|-------------------|----------------|
 | [**System Usage Table**](#3-system-usage-table) | Real-time resource monitoring | Continuous monitoring | REST/SOMA API query | Low |
 | [**Gateway Director (GWD)**](#4-gateway-director-gwd-logs) | API sync communication | Troubleshooting sync issues | Log target: `apic-gw-service debug` | Low |
-| [**Collection Log**](#5-collection-log) | DataPower object creation | Troubleshooting config issues | Log target: `cli debug`, `mgmt info` | Low |
-| [**dpMon**](#6-dpmon-datapower-monitoring) | Detailed system metrics | Capacity planning & deep analysis | File collection every 2 hours | High (during collection) |
+| [**Collection Log**](#5-collection-log) | DataPower object creation | Troubleshooting config issues | Log targets: `cli debug` and `mgmt info` | Low |
+| [**dpMon**](#6-dpmon-datapower-monitoring) | Detailed system metrics | Capacity planning & deep analysis | File collection every 2 hours | High  |
 | [**ExtLatency**](#7-extlatency-extended-latency) | Transaction latency breakdown | Performance troubleshooting | Log target: `extlatency info` | Medium-High |
 
 ---
@@ -227,7 +227,7 @@ exit
 | GWD | 10 MB or daily | 7 days | Low |
 | Collection | 10 MB or daily | 7 days | Low |
 | ExtLatency | 50 MB or daily | 3 days | Medium-High |
-| dpMon | Automatic (9 files) | Copy every 2 hours | High (during collection) |
+| dpMon | Automatic (9 files) | Copy every 2 hours | High  |
 | System Usage | N/A (API query) | Store in monitoring system | Low |
 
 **Storage Calculation:**
@@ -235,7 +235,7 @@ exit
 For a busy gateway processing 1000 TPS:
 - ExtLatency: ~500 MB/day
 - GWD + Collection: ~100 MB/day
-- dpMon: ~50 MB/hour (during collection)
+- dpMon: ~50 MB/hour 
 
 Plan storage accordingly, especially for ExtLatency in high-traffic environments.
 
