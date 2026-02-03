@@ -6,6 +6,7 @@ title: "Choosing the Right API Connect Portal: Consumer Catalog, Developer Porta
 author: ["ChrisPhillips"]
 description: "A comprehensive guide to choosing between API Connect's four portal options—from zero-setup Consumer Catalog to fully customizable CMS Portal. Includes real-world scenarios, decision frameworks, and migration paths."
 tags: [APIConnect, Developer Portal, CMS, Drupal, API Management, Portal, Architecture]
+draft: true
 ---
 
 "Which portal should I use?" This is one of the most common questions I hear from teams implementing IBM API Connect. The answer isn't always obvious—IBM offers four distinct portal options, each designed for different use cases. Choose wrong, and you'll either over-engineer a simple solution or find yourself constrained by limitations you didn't anticipate.
