@@ -45,6 +45,9 @@ Understanding the total number of transactions "live" in the gateway at any poin
 Total Concurrency = Throughput (TPS) × Latency (seconds)
 ```
 
+*Note: the latency can be obtained from extLantency*
+*Note: If estimating the GwS latency take care to include sync call latency in the GwS latency*
+
 ### Using HTTP Status Data to Calculate Concurrency
 
 You can estimate total gateway concurrency using data from the `show http` status provider:
