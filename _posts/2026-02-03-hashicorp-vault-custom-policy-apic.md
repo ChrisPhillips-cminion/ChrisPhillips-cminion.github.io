@@ -17,7 +17,6 @@ Stop hardcoding secrets in your APIs! Learn how to build a reusable custom polic
 
 **License Notice:** This policy is provided under the MIT License and is offered "AS IS" without warranty of any kind. See the [full license](#license) at the end of this post.
 
-
 ## The Challenge
 
 When building APIs that need to access external systems, you often need to retrieve API keys, passwords, or other secrets. Hardcoding these in your API definitions is a security risk. HashiCorp Vault provides a secure way to store and access secrets, but integrating it requires multiple steps:
