@@ -71,20 +71,20 @@ The Consumer Catalog is the simplest option—it's not even a separate portal. I
 
 ### Real-World Scenario: Internal Microservices Platform
 
-**The Situation:**
-A large retail company is modernizing with microservices. They need 200+ internal developers across departments to discover and consume APIs quickly. Budget is tight, and they need to launch fast.
-
-**Why Consumer Catalog Won:**
-- **Day 1**: Enabled Consumer Catalog in API Manager (literally just a checkbox)
-- **Day 2**: Published first APIs, developers started registering applications
-- **Result**: Zero infrastructure costs, zero maintenance overhead, instant API program
-
-**What They Gave Up:**
-- Custom branding (internal use, so nobody cared)
-- Advanced portal features (didn't need them)
-- Public-facing portal (not required for internal APIs)
-
-**The Verdict:** Perfect fit. They got 80% of what they needed with 0% of the complexity.
+> **The Situation:**
+> A large retail company is modernizing with microservices. They need 200+ internal developers across departments to discover and consume APIs quickly. Budget is tight, and they need to launch fast.
+>
+> **Why Consumer Catalog Won:**
+> - **Step 1**: Enabled Consumer Catalog in API Manager (literally just a checkbox)
+> - **Step 2**: Published first APIs, developers started registering applications
+> - **Result**: Zero infrastructure costs, zero maintenance overhead, instant API program
+>
+> **What They Gave Up:**
+> - Custom branding (internal use, so nobody cared)
+> - Advanced portal features (didn't need them)
+> - Public-facing portal (not required for internal APIs)
+>
+> **The Verdict:** Perfect fit. They got 80% of what they needed with 0% of the complexity.
 
 ## Option 2: Developer Portal - Configuration Without Code
 
