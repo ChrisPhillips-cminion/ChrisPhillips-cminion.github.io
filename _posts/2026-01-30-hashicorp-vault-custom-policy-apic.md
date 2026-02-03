@@ -1,10 +1,10 @@
 ---
 layout: post
-date: 2026-01-30 09:00:00
+date: 2026-02-03 09:00:00
 categories: APIConnect
 title: "Secure Your APIs: Seamless HashiCorp Vault Integration with IBM API Connect Custom Policy"
 author: ["ChrisPhillips"]
-draft: true
+image: "/images/vault.png"
 description: "Build a reusable custom policy that seamlessly integrates HashiCorp Vault with IBM API Connect, transforming complex authentication and secret retrieval into a single, elegant policy call"
 tags: [API Connect, HashiCorp Vault, Security, Custom Policy, Secrets Management, DevOps, API Security]
 ---

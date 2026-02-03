@@ -2,128 +2,213 @@
 layout: post
 date: 2026-01-31 01:00:00
 categories: APIConnect
-title: "Mastering GatewayScript BottleNecks: Performance Optimization for IBM API Gateway"
+title: "Mastering GatewayScript Bottlenecks: Performance Optimization for IBM API Gateway"
 author: ["ChrisPhillips", "IvanH"]
+description: "A comprehensive guide to understanding GatewayScript engines, CPU cores, and concurrency in IBM API Gateway. Learn how to calculate capacity, identify bottlenecks, and optimize for high-performance API deployments."
+tags: [APIConnect, DataPower, GatewayScript, Performance, Optimization, Concurrency]
 draft: true
 ---
 
-When designing high-performance API solutions with IBM API Gateway, understanding the relationship between GatewayScript engines, CPU cores, and concurrent execution is crucial for optimal performance. This comprehensive guide explores these relationships and provides battle-tested recommendations for handling high-concurrency scenarios in production environments.
+Your API Gateway is slow under load. GatewayScript engines are maxed out. Requests are queuing. Sound familiar?
+
+Understanding the relationship between GatewayScript engines, CPU cores, and concurrent execution is crucial for building high-performance API solutions. This guide cuts through the complexity with battle-tested formulas and real-world recommendations for handling high-concurrency scenarios.
 
 <!--more-->
 
-## Understanding GatewayScript Engine Architecture
+## The Fundamentals: Engines, Cores, and Concurrency
 
-IBM API Gateway uses GatewayScript engines to execute custom logic within API policies. The number of concurrent GatewayScript executions your gateway can handle depends on three key factors:
+### The Simple Truth
 
-1. **Number of GatewayScript Engines**: The pool of available engines for executing scripts
-2. **CPU Cores Assigned**: The processing power available to the gateway
-3. **Script Complexity**: The computational intensity of your GatewayScript logic
-
-## How Engines, CPU Cores, and Concurrency Work Together
-
-### GatewayScript Engines: The Execution Workers
-
-Each GatewayScript engine can execute one script at a time. If you have 10 engines configured, you can theoretically execute 10 GatewayScript operations concurrently. When all engines are busy, additional requests requiring GatewayScript execution will queue, waiting for an engine to become available.
-
-### CPU Cores: The Processing Foundation
-
-The number of CPU cores assigned to your API Gateway determines the overall number of GatewayScript engines. While GatewayScript engines handle the execution, they still require CPU resources to run. The relationship is always 1:1.
-
-## Understanding Concurrent Execution Limits
-
-The maximum number of concurrent GatewayScript executions is limited by:
+IBM API Gateway uses GatewayScript engines to execute custom logic. Here's what you need to know:
 
 ```
-Max Concurrent GatewayScript = Number of Available Engines
+1 CPU Core = 1 GatewayScript Engine = 1 Concurrent Execution
 ```
 
-## Calculating Total Gateway Concurrency
+If you have 8 CPU cores assigned to your gateway, you get 8 GatewayScript engines, which means 8 concurrent GatewayScript executions maximum.
 
-Understanding the total number of transactions "live" in the gateway at any point in time is crucial for capacity planning. Gateway concurrency can be calculated using the fundamental relationship between throughput and latency:
+When All Engines Are Busy, they wait for an engine to become available. This is your bottleneck.
 
+### The Two Types of Concurrency (Don't Confuse Them!)
+
+**1. Total Gateway Concurrency**
+- ALL transactions actively being processed
+- Includes routing, transformation, backend calls, GatewayScript, everything
+- Formula: `TPS × Total Latency`
+
+**2. GatewayScript Engine Concurrency**
+- ONLY transactions executing GatewayScript code
+- This is what hits your engine limit
+- Check with: `show gatewayscript-status` (In-use run times)
+
+**Example:**
 ```
-Total Concurrency = Throughput (TPS) × Latency (seconds)
-```
-
-*Note: the latency can be obtained from extLantency*
-*Note: If estimating the GwS latency take care to include sync call latency in the GwS latency*
-
-### Using HTTP Status Data to Calculate Concurrency
-
-You can estimate total gateway concurrency using data from the `show http` status provider:
-
-**Example Calculation:**
-
-From the HTTP status output:
-- **Throughput**: 100 transactions per second (TPS)
-- **Mean Transaction Time**: 50 milliseconds
-
-```
-Total Concurrency = 100 TPS × 0.050 seconds = 5 concurrent transactions
+Total Gateway Concurrency:     50 transactions
+GatewayScript Concurrency:      8 transactions
 ```
 
-**Note:** Ensure dimensional consistency - convert milliseconds to seconds before multiplying.
+Translation: 50 requests are in-flight, but only 8 are using GatewayScript engines. The other 42 are doing other things (backend calls, routing, etc.).
 
-### Understanding the Two Types of Concurrency
+If GatewayScript concurrency approaches your engine count while total concurrency is low, GatewayScript is your bottleneck. Time to optimize or scale.
 
-It's critical to distinguish between:
+## Capacity Planning: How Many Engines Do You Need?
 
-1. **Total Gateway Concurrency**: All transactions actively being processed by the gateway
-   - Calculated from: `TPS × Latency (from show http)`
-   - Represents the complete workload across all gateway components
-
-2. **GatewayScript Engine Concurrency**: Only transactions executing GatewayScript code
-   - Obtained directly from: `show gatewayscript-status` (In-use run times)
-   - Represents the subset of transactions using GatewayScript engines
-
-**Example Scenario:**
-
-```
-Total Gateway Concurrency:     50 transactions (from TPS × latency)
-GatewayScript Concurrency:     8 transactions (from gatewayscript-status)
-```
-
-This indicates that while 50 transactions are in-flight through the gateway, only 8 are currently executing GatewayScript code. The remaining 42 are in other processing stages (routing, transformation, backend calls, etc.).
-
-### Practical Application
-
-Use these metrics together to:
-- **Identify bottlenecks**: If GatewayScript concurrency approaches engine count while total concurrency is low, GatewayScript is the bottleneck
-- **Capacity planning**: Calculate required engines based on expected TPS and GatewayScript execution time
-- **Performance optimization**: If total concurrency is high but GatewayScript concurrency is low, focus optimization elsewhere
-
-**Formula for Required GatewayScript Engines:**
+### The Formula
 
 ```
 Required Engines = Expected TPS × GatewayScript Execution Time (seconds)
 ```
 
-Example: If you expect 200 TPS and GatewayScript takes 25ms per transaction:
+**Example:**
+
+You expect 200 TPS and your GatewayScript takes 25ms per transaction:
+
 ```
 Required Engines = 200 × 0.025 = 5 engines minimum
 ```
 
-Add 20-30% buffer for peak loads and failover scenarios.
+**Add a Buffer:**
 
+Always add 20-30% for peak loads and failover:
+```
+Production Engines = 5 × 1.25 = 6-7 engines (round up to 7)
+```
+
+### Calculating Current Concurrency
+
+Use data from `show http` to understand your current load:
+
+**Example:**
+- Throughput: 100 TPS
+- Mean Transaction Time: 50ms
+
+```
+Total Concurrency = 100 TPS × 0.050 seconds = 5 concurrent transactions
+```
+
+**Important:** Convert milliseconds to seconds before multiplying!
+
+**Where to Get the Data:**
+- Latency: `show http` or ExtLatency logs
+- GatewayScript execution time: Include any synchronous backend calls made within GatewayScript
+
+
+## Monitoring: Know Your Numbers
+
+Before you can optimize, you need to measure. Here are the key commands:
+
+### Check GatewayScript Engine Status
+
+```bash
+top; co; show gatewayscript-status
+```
+
+**What to Look For:**
+
+```
+Available run times: 8    ← Total engines configured
+   In-use run times: 7    ← Currently executing (this is your concurrency!)
+        Queued work: 15   ← Requests waiting (RED FLAG!)
+   Runtime failures: 0    ← Errors in GatewayScript execution
+```
+
+**Red Flags:**
+- **Queued work > 0**: Engines are maxed out, requests are waiting
+- **In-use approaching Available**: You're hitting capacity
+- **Runtime failures > 0**: GatewayScript errors need investigation
+
+### Check CPU Utilization
+
+```bash
+top; co; show cpu
+```
+
+**Sample Output:**
+
+```
+                  10 s    1 min   10 min    1 hr    1 day
+cpu usage (%):      85       80       75      70       65
+```
+
+**Guidelines:**
+- **< 70%**: Healthy
+- **70-80%**: Monitor closely
+- **> 80%**: Time to scale
+
+### Check HTTP Transactions and Latency
+
+```bash
+top; co; switch <domain>; show http
+```
+
+**Sample Output:**
+
+```
+HTTP transactions/second:
+ Service type  Service name  10 s  1 min  10 min
+ apiGateway    apiconnect    200   195    180
+
+HTTP mean transaction times (msec):
+ Service     Proxy       10 s  1 min  10 min
+ apiGateway  apiconnect   45    48     50
+```
+
+**Calculate Total Concurrency:**
+```
+Total Concurrency = 200 TPS × 0.045s = 9 concurrent transactions
+```
+
+### Putting It All Together: Diagnosing Bottlenecks
+
+Run all three commands and analyze the results together:
+
+**Example Health Check:**
+
+```
+Command: show cpu
+Result:  CPU Usage = 85%                    ← High, approaching limit
+
+Command: show http
+Result:  TPS = 200, Latency = 45ms
+Calc:    Total Concurrency = 9 transactions ← Overall gateway load
+
+Command: show gatewayscript-status
+Result:  Available Engines = 8              ← Maximum capacity
+         In-use Engines = 8                 ← All engines busy!
+         Queued Work = 12                   ← Requests waiting (RED FLAG!)
+```
+
+**Diagnosis:**
+
+GatewayScript is the bottleneck. All 8 engines are in use, 12 requests are queuing, and CPU is at 85%. The gateway can handle 9 total concurrent transactions, but GatewayScript can only handle 8 concurrent executions.
+
+**Solutions (in order of preference):**
+
+1. **Optimize GatewayScript code** - Reduce execution time
+2. **Replace with non-engine policies** - XSLT, Set Variable, or Switch policies where possible
+3. **Scale vertically** - Add more CPU cores  
+4. **Scale horizontally** - Add more gateway instances
 
 ## Best Practices for High-Concurrency Scenarios
 
-### 1. Strategic GatewayScript Usage
+### 1. Use GatewayScript Strategically
 
-For high-concurrency APIs, consider whether GatewayScript is necessary:
+**When to Use GatewayScript:**
+- Complex data transformations that can't be done with Map policy
+- Complex business logic (when XSLT skills aren't available)
+- Dynamic routing based on complex conditions
 
-**When to use GatewayScript:**
-- Complex data transformations
-- Complex logic when there are no XSLT skills available. XSLT does not have the limitation of engines
+**When to Avoid GatewayScript:**
+- Simple header manipulation → Use Set Variable policy
+- Simple data transformations → Use Map policy
+- Basic routing decisions → Use Switch policy
+- Any scenario where XSLT can do the job (XSLT has no engine limit)
 
-**When to avoid GatewayScript:**
-- Simple header manipulation (use Set Variable policy)
-- Simple data transformations where the mapping policy will suffice
-- Basic routing decisions (use Switch policy)
-- Where XSLT skills are available.
+**Why This Matters:**
 
+Every GatewayScript execution consumes an engine. If you can accomplish the same thing with a policy that doesn't use engines, you free up capacity for operations that truly need GatewayScript.
 
-### 2. Gateway Isolation for High-Traffic APIs
+### 2. Isolate High-Traffic APIs
 
 For APIs with extremely high concurrency requirements, consider deploying dedicated gateway instances:
 
@@ -152,92 +237,21 @@ For APIs with extremely high concurrency requirements, consider deploying dedica
 ```
 
 
-### 3. Continuous Monitoring and Performance Tuning
-
-Key metrics to monitor:
-- **Engine Utilization**: Number of threads of drouter utilised is usually in ratio to the number of engines utilised
-- **Response Time**: Latency introduced by GatewayScript execution
-- **CPU Usage**: Overall gateway CPU consumption
-
-
-
-### Checking GatewayScript Engine Status
-
-You can monitor GatewayScript engine status using the DataPower CLI command:
-
-**GatewayScript Engine status**
-
-```
-top;co;show gatewayscript-status
-```
-
-*Sample Output:*
-
-```
-Global mode
-
-Available run times: 1 
-   In-use run times: 0 
-        Queued work: 0 
-   Runtime failures: 0 
-```
-
-**CPU Utlisation**
-```
-top;co;show cpu
-```
-
-*Sample Output:*
-
-```
-Global mode
-
-                      10 s       1 min      10 min        1 hr       1 day
-cpu usage (%):           10           5           0           0           0
-```
-
-
-**HTTP Transactions per second and latency for a given domain**
-
-```
-'top;co;switch <domain containing service(s) of interest>;show http'
-```
-
-*Sample Output*
-
-```
-HTTP transactions/second:
-
- Service type Service name 10 s 1 min 10 min 1 hr 1 day 
- ------------ ------------ ---- ----- ------ ---- ----- 
- apiGateway   apiconnect   10   10     0      0    0     
-
-HTTP mean transaction times (msec):
-
- Service    Proxy      10 s 1 min 10 min 1 hr 1 day 
- ---------- ---------- ---- ----- ------ ---- ----- 
- apiGateway apiconnect 1    1     1      0    0   
- ```
-
-
-
-**Tuning Guidelines:**  
-- If CPU usage > 80% consistently: Scale horizontally or vertically
-- If GwS engine availability < 1 consistently: Scale horizontally or vertically.
-- If "Engines Queued" is consistently > 0: Scale horizontally or vertically.
-- If latency is high for the gatewayscript policies check the number of CPU threads being used by drouter
-- Monitor "Engines In Use" vs "Engines Configured" to understand utilization patterns
-- Enable ExtLatency logging to a dedicated LogTarget
+### 3. Other suggestions
+- Enable ExtLatency logging to a dedicated LogTarget for detailed timing
+- Monitor drouter thread usage (correlates with engine usage)
+- Set up alerts for queued work > 0
+- Review GatewayScript code for optimization opportunities
 
 ## Key Takeaways
 
 Understanding the relationship between GatewayScript engines, CPU cores, and concurrency is essential for building high-performance API solutions. Key takeaways:
 
-1. **Engine count determines concurrent execution capacit0y**
+1. **Engine count determines concurrent execution capacity** (1 core = 1 engine = 1 concurrent execution)
 2. **CPU cores provide the processing power for engines**
-3. **The ratio is one CPU Core to one Enginer**
+3. **The ratio is always 1:1** (one CPU core to one engine)
 4. **For high concurrency, consider dedicated gateway services**
-5. **Use GatewayScript only when necessary**
+5. **Use GatewayScript strategically** - only when necessary
 6. **Monitor, measure, and tune based on actual workload**
 
 By following these guidelines and recommendations, you can design API Gateway deployments that efficiently handle high-concurrency workloads while maintaining optimal performance and resource utilization.
