@@ -1,12 +1,11 @@
 ---
 layout: post
-date: 2026-01-31 01:00:00
+date: 2026-02-04 01:00:00
 categories: APIConnect
 title: "Mastering GatewayScript Bottlenecks: Performance Optimization for IBM API Gateway"
 author: ["ChrisPhillips", "IvanH"]
 description: "A comprehensive guide to understanding GatewayScript engines, CPU cores, and concurrency in IBM API Gateway. Learn how to calculate capacity, identify bottlenecks, and optimize for high-performance API deployments."
 tags: [APIConnect, DataPower, GatewayScript, Performance, Optimization, Concurrency]
-draft: true
 ---
 
 Your API Gateway is slow under load. GatewayScript engines are maxed out. Requests are queuing. Sound familiar?
