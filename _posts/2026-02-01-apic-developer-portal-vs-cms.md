@@ -3,7 +3,7 @@ layout: post
 date: 2026-02-01 01:00:00
 categories: APIConnect
 title: "Choosing the Right API Connect Portal: Consumer Catalog, Developer Portal, or Full CMS?"
-author: ["ChrisPhillips"]
+author: ["ChrisPhillips","ChrisDudley"]
 description: "A comprehensive guide to choosing between API Connect's four portal options—from zero-setup Consumer Catalog to fully customizable CMS Portal. Includes real-world scenarios, decision frameworks, and migration paths."
 tags: [APIConnect, Developer Portal, CMS, Drupal, API Management, Portal, Architecture]
 draft: true
@@ -36,9 +36,9 @@ Let me walk you through the four options, when to use each one, and how to make 
 
 IBM API Connect provides a spectrum of portal solutions, each building on the previous one's capabilities:
 
-1. **Consumer Catalog** - Zero setup, embedded in API Manager
+1. **Consumer Catalog** - Zero setup, runs from API Manager
 2. **Developer Portal** - Configuration-based customization, no code required
-3. **CMS Portal** - Full Drupal access for complex enterprise requirements
+3. **CMS Portal** - Full Drupal Content Management System (CMS) for complex enterprise requirements
 4. **Headless Portal** - Use API Connect's APIs with your own custom frontend
 
 Let's dive into each option with real-world scenarios to help you decide.
@@ -116,6 +116,9 @@ The Developer Portal is where most teams land. It gives you a professional, exte
 - IBM manages infrastructure, updates, and security
 - Built-in page builder for landing pages
 
+**Key Capabilities:**
+- **Federation Support**: The Developer Portal can federate content from multiple API providers, allowing a single portal to display APIs from different catalogs and providers. This is particularly useful for organizations with multiple API teams or for creating unified API marketplaces.
+
 **The Key Limitation:**
 Everything is configuration-based. You can't write custom Drupal modules or modify core functionality. For most teams, this is actually a feature—it keeps things simple and maintainable.
 
@@ -157,6 +160,18 @@ Everything is configuration-based. You can't write custom Drupal modules or modi
 > - Deep enterprise system integration
 >
 > **The Verdict:** Developer Portal hit the sweet spot—professional customization without the complexity of full CMS.
+
+### Federation: Multi-Provider Portals
+
+One powerful feature of the Developer Portal is its ability to federate content from multiple API providers. This allows you to create a unified portal that displays APIs from different catalogs or even different API Connect provider organizations.
+
+**Use Cases for Federation:**
+- **Multi-Team Organizations**: Different business units managing their own APIs, but presenting them through a single developer portal
+- **API Marketplaces**: Aggregating APIs from multiple providers into a single discovery portal
+- **Partner Ecosystems**: Combining internal and partner APIs in one location
+
+**Important Limitation:**
+The CMS Portal is tied to a single catalog and cannot federate content from multiple providers. If you need federation capabilities, you must use the Developer Portal or build federation logic into a Headless Portal implementation.
 
 ## Option 3: CMS Portal - When You Need Full Control
 
@@ -210,33 +225,36 @@ The CMS Portal gives you complete Drupal access. This is for teams with complex 
 ### The Reality of CMS Portal Maintenance
 
 **You're Responsible For:**
-- Drupal core security updates (monthly)
-- Contributed module updates
-- Testing all customizations after updates
+- Applying API Connect fixpacks to receive Drupal security updates
+- Testing all customizations after fixpack updates
 - Security advisory monitoring
-- Custom code compatibility
+- Custom code compatibility with new fixpack versions
 - Dev/test/prod environments
 - Backup and recovery
 
 **Ongoing Effort:**
 - Minimum 1 dedicated Drupal developer
-- Security patches within 48 hours of release
-- Regular testing cycles
+- Staying current with API Connect fixpacks to receive Drupal security fixes
+- Regular testing cycles after fixpack updates
 - Documentation maintenance
+
+**Important Note:** You cannot apply Drupal security updates directly. To receive Drupal security fixes, you must stay current with API Connect fixpacks, which include the necessary Drupal updates.
 
 [↑ Back to top](#toc)
 
 ## Option 4: Headless Portal - Build Your Own Frontend
 
-The Headless Portal approach gives you complete freedom to build your own custom frontend while leveraging API Connect's backend APIs for portal functionality. This is for teams who want total control over the user experience.
+The Headless Portal approach gives you complete freedom to build your own custom frontend while leveraging the Developer Portal's backend APIs for portal functionality. This is for teams who want total control over the user experience.
+
+**Important:** The Headless Portal is built on top of the Developer Portal, not directly on API Manager APIs. You must deploy the Developer Portal to use this approach—you're simply replacing the standard Drupal frontend with your own custom UI that interacts with the Developer Portal's APIs.
 
 **What You Get:**
 - Complete frontend freedom (React, Angular, Vue, Next.js, whatever you want)
-- Access to API Connect's Portal APIs for all backend functionality
+- Access to the Developer Portal's APIs for all backend functionality
 - Full control over UX, design, and user flows
 - Ability to integrate portal into existing websites or applications
 - Modern frontend tooling and frameworks
-- No Drupal constraints
+- No Drupal frontend constraints (but Developer Portal must still be deployed)
 
 **What You Build:**
 - Your own frontend application from scratch
@@ -262,9 +280,10 @@ The Headless Portal approach gives you complete freedom to build your own custom
 > **The Implementation (8 weeks, 3 frontend developers):**
 >
 > **Weeks 1-2: Architecture & Setup**
+> - Deployed Developer Portal (required backend)
 > - Designed React-based frontend architecture
 > - Set up Next.js for server-side rendering and SEO
-> - Integrated with API Connect Portal APIs
+> - Integrated with Developer Portal APIs
 > - Implemented authentication flow using OIDC
 >
 > **Weeks 3-5: Core Features**
@@ -281,9 +300,9 @@ The Headless Portal approach gives you complete freedom to build your own custom
 >
 > **Technical Stack:**
 > - Frontend: Next.js (React), TypeScript, Tailwind CSS
-> - Backend: API Connect Portal APIs
+> - Backend: Developer Portal (deployed) with its APIs
 > - Authentication: OIDC with their existing identity provider
-> - Hosting: Vercel for frontend, API Connect for backend APIs
+> - Hosting: Vercel for custom frontend, API Connect for Developer Portal backend
 >
 > **The Result:**
 > A seamless, mobile-first developer experience that feels like a natural extension of their brand. Complete control over UX, modern tech stack, and the ability to iterate quickly without Drupal constraints.
@@ -298,9 +317,10 @@ The Headless Portal approach gives you complete freedom to build your own custom
 ### Headless Portal Considerations
 
 **Technical Requirements:**
+- Deployed Developer Portal (required backend)
 - Strong frontend development team (React, Vue, Angular, etc.)
 - API integration expertise
-- Understanding of API Connect Portal APIs
+- Understanding of Developer Portal APIs
 - Frontend hosting and deployment infrastructure
 - Authentication/authorization implementation
 
@@ -313,10 +333,11 @@ The Headless Portal approach gives you complete freedom to build your own custom
 - Ability to iterate quickly on frontend
 
 **Challenges:**
-- Build everything from scratch (no out-of-the-box features)
+- Must deploy Developer Portal (even though you're not using its UI)
+- Build entire frontend from scratch (no out-of-the-box features)
 - Longer initial development time
 - Maintain frontend infrastructure
-- Keep up with API Connect Portal API changes
+- Keep up with Developer Portal API changes
 - More complex architecture
 
 **Development Effort:**
@@ -345,7 +366,7 @@ The Headless Portal approach gives you complete freedom to build your own custom
 ### Start with These Questions:
 
 **1. Who's your audience?**
-- Internal teams only? → **Consumer Catalog**
+- Internal technical teams only? → **Consumer Catalog**
 - External developers? → Keep reading
 
 **2. What's your customization requirement?**
@@ -355,14 +376,14 @@ The Headless Portal approach gives you complete freedom to build your own custom
 
 **3. What's your team's skill set?**
 - No portal expertise? → **Consumer Catalog or Developer Portal**
-- Strong frontend developers (React, Vue, etc.)? → **Headless Portal**
 - Drupal developers? → **CMS Portal**
+- Strong frontend developers (React, Vue, etc.)? → **Headless Portal**
 
 **4. What's your maintenance appetite?**
 - Zero maintenance? → **Consumer Catalog**
 - Minimal maintenance? → **Developer Portal**
-- Can maintain frontend infrastructure? → **Headless Portal**
 - Can manage full Drupal stack? → **CMS Portal**
+- Can maintain frontend infrastructure? → **Headless Portal**
 
 ### The 80/20 Rule
 
@@ -413,22 +434,22 @@ A fintech startup started with Consumer Catalog for internal APIs. Six months la
 - Document your customizations
 - This meets 80% of external portal needs
 
-### For Headless Portal Users:
-- Choose modern, maintainable frontend frameworks
-- Version control everything
-- Document your API integration patterns
-- Plan for API Connect Portal API changes
-- Build reusable components from the start
-- Consider using a design system
-- Test across devices and browsers
-
 ### For CMS Portal Users:
 - Establish update procedures on day one
 - Implement automated security scanning
 - Follow Drupal coding standards religiously
 - Maintain dev/test/prod environments
-- Budget for ongoing maintenance (it's significant)
+- Budget for ongoing maintenance 
 - Only choose this if you truly need Drupal-specific features
+
+### For Headless Portal Users:
+- Choose modern, maintainable frontend frameworks
+- Version control everything
+- Document your API integration patterns
+- Plan for API Connect Portal API changes
+- Maintain dev/test/prod environments
+- Budget for ongoing maintenance 
+- Build reusable components from the start
 
 [↑ Back to top](#toc)
 
@@ -443,7 +464,7 @@ A fintech startup started with Consumer Catalog for internal APIs. Six months la
 - You need complex Drupal-based enterprise workflows → CMS Portal
 
 **Don't make this mistake:**
-The biggest mistake I see? Teams jumping to Headless or CMS Portal because "we might need it someday." Start simple. Developer Portal handles 80% of use cases. You can always migrate up.
+My biggest concern, is Teams jumping to CMS Portal because "we might need it someday." Start simple. Developer Portal handles 80% of use cases. You can always migrate up.
 
 **My recommendation:**
 - 80% of teams: Consumer Catalog or Developer Portal
