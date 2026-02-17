@@ -81,7 +81,7 @@ The Consumer Catalog is the simplest option—it's not even a separate portal. I
 | Feature | Consumer Catalog | Developer Portal |
 |---------|-----------------|------------------|
 | **Setup Time** | Instant | Hours |
-| **Target Audience** | Internal teams | External developers |
+| **Target Audience** | Internal teams | Internal or External developers |
 | **Customization** | Minimal | Extensive |
 | **Custom Content** | No | Yes |
 | **Maintenance** | Zero | Minimal (IBM-managed) |
@@ -350,13 +350,13 @@ The Headless Portal approach gives you complete freedom to build your own custom
 
 ## Quick Comparison: Which Portal Is Right for You?
 
-| Feature | Consumer Catalog | Developer Portal | Headless Portal | CMS Portal |
+| Feature | Consumer Catalog | Developer Portal | CMS Portal | Headless Portal |
 |---------|-----------------|------------------|-----------------|------------|
 | **Setup Time** | Instant | Hours-Days | Weeks-Months | Months |
-| **Target Audience** | Internal | External | External | External |
+| **Target Audience** | Internal | Internal or External | Internal or External | Internal or External |
 | **Customization** | Minimal | Configuration | Complete Frontend | Full Control |
-| **Skills Needed** | None | Admin | Frontend Dev | Drupal Dev |
-| **Maintenance** | Zero | Minimal (IBM) | Medium (Frontend) | High (You own it) |
+| **Skills Needed** | None | Admin | Drupal Dev | Frontend Dev |
+| **Maintenance** | Zero | Minimal  | Medium  | High |
 | **Cost** | Included | Low | Medium-High | High |
 | **Best For** | Internal APIs | Standard portals | Custom UX/Modern frameworks | Enterprise complexity |
 
