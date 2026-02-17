@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-02-01 01:00:00
+date: 2026-02-17 01:00:00
 categories: APIConnect
 title: "Choosing the Right API Connect Portal: Consumer Catalog, Developer Portal, or Full CMS?"
 author: ["ChrisPhillips","ChrisDudley"]
@@ -39,13 +39,13 @@ IBM API Connect provides a spectrum of portal solutions, each building on the pr
 1. **Consumer Catalog** - Zero setup, runs from API Manager
 2. **Developer Portal** - Configuration-based customization, no code required
 3. **CMS Portal** - Full Drupal Content Management System (CMS) for complex enterprise requirements
-4. **Headless Portal** - Use API Connect's APIs with your own custom frontend
+4. **Headless Portal** - Use your own custom frontend with the the Developer Portal's APIs
 
 Let's dive into each option with real-world scenarios to help you decide.
 
 ## Option 1: Consumer Catalog - The Zero-Setup Solution
 
-The Consumer Catalog is the simplest option—it's not even a separate portal. It's built directly into the API Manager interface, giving you instant API documentation and self-service capabilities without deploying anything.
+The Consumer Catalog is the simplest option—it's not even a separate portal. It's built directly into the API Manager, giving you instant API documentation and self-service capabilities without deploying anything.
 
 **What You Get:**
 - Automatic API documentation from your OpenAPI specs
@@ -55,7 +55,7 @@ The Consumer Catalog is the simplest option—it's not even a separate portal. I
 - Available the moment you create a catalog
 
 **What You Don't Get:**
-- Custom branding beyond basic configuration
+- Custom branding at all
 - Public-facing developer community features
 - Custom content types or workflows
 - Advanced portal features
@@ -68,6 +68,7 @@ The Consumer Catalog is the simplest option—it's not even a separate portal. I
 - Small-scale API initiatives
 - Teams without portal administration resources
 - Scenarios where basic API documentation is sufficient
+- API development where developers want a consumer UX purely to test their APIs
 
 **Limitations:**
 - Cannot customize look and feel extensively
@@ -117,7 +118,7 @@ The Developer Portal is where most teams land. It gives you a professional, exte
 - Built-in page builder for landing pages
 
 **Key Capabilities:**
-- **Federation Support**: The Developer Portal can federate content from multiple API providers, allowing a single portal to display APIs from different catalogs and providers. This is particularly useful for organizations with multiple API teams or for creating unified API marketplaces.
+- **Federation Support**: The Developer Portal is the only portal option that can federate content from multiple API providers, allowing a single portal to display APIs from different catalogs and providers. This is particularly useful for organizations with multiple API teams or for creating unified API marketplaces. This is a core differentiator,  no other portal option supports federation.
 
 **The Key Limitation:**
 Everything is configuration-based. You can't write custom Drupal modules or modify core functionality. For most teams, this is actually a feature—it keeps things simple and maintainable.
@@ -186,9 +187,9 @@ The CMS Portal gives you complete Drupal access. This is for teams with complex 
 - Complete control over everything
 
 **What You Give Up:**
-- IBM-managed infrastructure (you own it all)
-- Automatic updates (you manage Drupal patches)
-- Simplicity (with great power comes great responsibility)
+- Simplicity (with increased function  comes increased complexity)
+- Automatic updates become more complex and error-prone
+- Custom modules may need manual updating between CMS Portal versions
 
 **When to Use CMS Portal:**
 - You need custom workflows that don't exist in standard portals
@@ -238,7 +239,7 @@ The CMS Portal gives you complete Drupal access. This is for teams with complex 
 - Regular testing cycles after fixpack updates
 - Documentation maintenance
 
-**Important Note:** You cannot apply Drupal security updates directly. To receive Drupal security fixes, you must stay current with API Connect fixpacks, which include the necessary Drupal updates.
+**Important Note:** You cannot apply Drupal security updates directly. To receive Drupal security fixes, you must stay current with API Connect fixpacks, which include the necessary Drupal updates. While IBM still manages the fixes and controls aspects like Drupal core and PHP versions, updates are more complex when compared to the Developer Portal.
 
 [↑ Back to top](#toc)
 
@@ -391,19 +392,19 @@ The Headless Portal approach gives you complete freedom to build your own custom
 - Consumer Catalog (internal APIs)
 - Developer Portal (external APIs with standard needs)
 
-**15% of teams need:**
+**15% of teams require:**
+- Developer Portal (complex enterprise workflows and deep system integration)
+
+**5% of teams need:**
 - Headless Portal (custom UX, modern frameworks, integration with existing sites)
 
-**5% of teams require:**
-- CMS Portal (complex enterprise workflows and deep system integration)
-
-Don't over-engineer. Start simple, migrate later if needed.
+Don't over-engineer. Start simple, change later if needed.
 
 [↑ Back to top](#toc)
 
 ## Migration Paths: Start Simple, Grow as Needed
 
-The good news? You can start simple and migrate up as your needs evolve:
+You can start simple and migrate up as your needs evolve:
 
 ```
 Consumer Catalog → Developer Portal → Headless Portal or CMS Portal
@@ -468,12 +469,12 @@ My biggest concern, is Teams jumping to CMS Portal because "we might need it som
 
 **My recommendation:**
 - 80% of teams: Consumer Catalog or Developer Portal
-- 15% of teams: Headless Portal (modern UX, existing site integration)
-- 5% of teams: CMS Portal (complex Drupal-based enterprise requirements)
+- 15% of teams: CMS Portal (complex Drupal-based enterprise requirements)
+- 5% of teams: Headless Portal (modern UX, existing site integration)
 
 **Headless vs CMS: Which to choose?**
-- Choose **Headless** if you have strong frontend developers and want modern frameworks
 - Choose **CMS** if you have Drupal developers and need Drupal-specific features
+- Choose **Headless** if you have strong frontend developers and want modern frameworks
 
 Choose based on what you need today and your team's strengths, not what you might need in three years. Your future self will thank you.
 
@@ -484,7 +485,3 @@ Choose based on what you need today and your team's strengths, not what you migh
 - [IBM Documentation: Consumer Catalog vs Developer Portal](https://www.ibm.com/docs/en/api-connect/cloud/saas?topic=catalogs-consumer-catalog-developer-portal-considerations)
 - [IBM Documentation: Customizing Developer Portal](https://www.ibm.com/docs/en/api-connect/software/12.1.0?topic=portal-customizing-developer)
 - [IBM Documentation: Using CMS Portal](https://www.ibm.com/docs/en/api-connect/software/12.1.0?topic=portal-using-cms)
-
----
-
-*Which portal option did you choose? What factors drove your decision? Share your experience in the comments—I'd love to hear what worked (or didn't work) for your team.*
