@@ -28,11 +28,17 @@ twitter_username: cminion
 github_username:  ChrisPhillips-cminion
 
 # Build settings
-#markdown: kramdown
-markdown: CommonMark
-commonmark:
- options: ["SMART", "FOOTNOTES"]
- extensions: ["strikethrough", "autolink", "table"]
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+# markdown: CommonMark
+# commonmark:
+#  options: ["SMART", "FOOTNOTES"]
+#  extensions: ["strikethrough", "autolink", "table"]
 theme: minima
 plugins:
   - jekyll-feed

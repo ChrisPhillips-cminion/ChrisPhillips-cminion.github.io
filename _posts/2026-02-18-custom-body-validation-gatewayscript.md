@@ -60,30 +60,7 @@ definitions:
           additionalProperties:
             type: boolean
     additionalProperties: false
-  UserInput:
-    type: object
-    required:
-      - name
-      - email
-      - age
-    properties:
-      name:
-        type: string
-        minLength: 2
-        maxLength: 50
-        pattern: ^[a-zA-Z\s]+$
-        description: User's full name (letters and spaces only)
-      email:
-        type: string
-        format: email
-        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
-        description: Valid email address
-      age:
-        type: number
-        minimum: 18
-        maximum: 120
-        description: User's age (must be 18 or older)
-    additionalProperties: false
+
   ValidationSuccess:
     type: object
     properties:
@@ -93,8 +70,7 @@ definitions:
       message:
         type: string
         example: Validation passed
-      data:
-        $ref: '#/definitions/UserInput'
+
   ValidationError:
     type: object
     properties:
@@ -156,52 +132,7 @@ x-ibm-configuration:
       - gatewayscript:
           version: 2.0.0
           title: Handle Validation
-          source: >
-            // Check if this is a validation error from the validate policy
-            var errorName = context.get('error.name');
-            var errorMessage = context.get('error.message');
-
-            // If there's a validation error, parse and format it
-            if (errorName === 'ValidationError' && errorMessage) {
-              var errors = [];
-              
-              // Parse the validation error to extract field-level details
-              var errorLines = errorMessage.split('\n');
-              for (var i = 0; i < errorLines.length; i++) {
-                var line = errorLines[i].trim();
-                if (line && line.length > 0) {
-                  // Extract field information from error message
-                  var fieldMatch = line.match(/property\s+['"]?([^'":\s]+)['"]?/i);
-                  var field = fieldMatch ? fieldMatch[1] : 'unknown';
-                  
-                  errors.push({
-                    field: field,
-                    message: line,
-                    value: 'N/A'
-                  });
-                }
-              }
-              
-              // If no structured errors, create a generic one
-              if (errors.length === 0) {
-                errors.push({
-                  field: 'body',
-                  message: errorMessage,
-                  value: 'N/A'
-                });
-              }
-              
-              // Set error response
-              context.set('message.status.code', 400);
-              context.set('message.body', {
-                status: 'error',
-                message: 'Validation failed',
-                errors: errors
-              });
-              return;
-            }
-
-            // No validation error, perform custom detailed validation
+          source: |
             // Get the parsed request body (already parsed by the parse policy)
             var requestBody = context.get('request.body');
 
@@ -397,10 +328,6 @@ This API uses a flexible approach where both the payload and schema are sent in 
 - **Flexible**: Supports different validation requirements without code changes
 - **Testable**: Easy to test different schemas and payloads
 
-**Example Schema** (`UserInput` in definitions):
-- Provided as documentation and example
-- Shows the expected structure for a user validation scenario
-- Can be used as a template for creating your own schemas
 
 ### 2. Assembly Flow
 
