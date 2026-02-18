@@ -1,12 +1,11 @@
 ---
 layout: post
-date: 2026-02-17 01:00:00
+date: 2026-02-18 01:00:00
 categories: APIConnect
 title: "Choosing the Right API Connect Portal: Consumer Catalog, Developer Portal, or Full CMS?"
 author: ["ChrisPhillips","ChrisDudley"]
 description: "A comprehensive guide to choosing between API Connect's four portal options—from zero-setup Consumer Catalog to fully customizable CMS Portal. Includes real-world scenarios, decision frameworks, and migration paths."
 tags: [APIConnect, Developer Portal, CMS, Drupal, API Management, Portal, Architecture]
-draft: true
 ---
 
 "Which portal should I use?" This is one of the most common questions I hear from teams implementing IBM API Connect. The answer isn't always obvious—IBM offers four distinct portal options, each designed for different use cases. Choose wrong, and you'll either over-engineer a simple solution or find yourself constrained by limitations you didn't anticipate.
@@ -39,7 +38,7 @@ IBM API Connect provides a spectrum of portal solutions, each building on the pr
 1. **Consumer Catalog** - Zero setup, runs from API Manager
 2. **Developer Portal** - Configuration-based customization, no code required
 3. **CMS Portal** - Full Drupal Content Management System (CMS) for complex enterprise requirements
-4. **Headless Portal** - Use your own custom frontend with the the Developer Portal's APIs
+4. **Headless Portal** - Use your own custom frontend with the Developer Portal's APIs
 
 Let's dive into each option with real-world scenarios to help you decide.
 
