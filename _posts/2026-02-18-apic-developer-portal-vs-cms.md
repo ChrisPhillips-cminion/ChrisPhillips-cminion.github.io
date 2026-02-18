@@ -392,7 +392,7 @@ The Headless Portal approach gives you complete freedom to build your own custom
 - Developer Portal (external APIs with standard needs)
 
 **15% of teams require:**
-- Developer Portal (complex enterprise workflows and deep system integration)
+- CMS Portal (complex enterprise workflows and deep system integration)
 
 **5% of teams need:**
 - Headless Portal (custom UX, modern frameworks, integration with existing sites)

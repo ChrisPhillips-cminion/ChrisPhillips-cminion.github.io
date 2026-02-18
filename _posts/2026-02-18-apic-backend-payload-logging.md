@@ -14,7 +14,6 @@ When troubleshooting API issues in IBM API Connect, understanding what happened 
 <!--more-->
 
 ## The Critical Requirement: Payload Logging Must Be Enabled
-
 **Important:** All the backend fields discussed in this article are **only logged when payload logging is enabled** in the Analytics activity log settings. Without this configuration, these fields will not be captured, regardless of your other logging settings.
 
 This is a deliberate design choice to balance observability with performance and storage considerations, as payload logging can significantly increase the volume of data captured.
@@ -324,13 +323,12 @@ To capture these backend fields, you must enable payload logging in your Analyti
 
 ### Configuration Example (YAML)
 
+Ensure the activity log is enabled to capture payloads
 ```yaml
-analytics:
-  activity_log:
+  activity-log:
     enabled: true
-    log_payloads: true
-    retention_days: 7
-    max_payload_size: 1048576  # 1MB
+    success-content: activity
+    error-content: payload
 ```
 
 ### Important Considerations
