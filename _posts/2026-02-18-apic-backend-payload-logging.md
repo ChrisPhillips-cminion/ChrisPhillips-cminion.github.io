@@ -14,9 +14,9 @@ When troubleshooting API issues in IBM API Connect, understanding what happened 
 <!--more-->
 
 ## The Critical Requirement: Payload Logging Must Be Enabled
-**Important:** All the backend fields discussed in this article are **only logged when payload logging is enabled** in the Analytics activity log settings. Without this configuration, these fields will not be captured, regardless of your other logging settings.
+**Important:** All the backend fields discussed in this article are **only logged when payload logging is enabled** in the  activity log settings. Without this configuration, these fields will not be captured, regardless of your other logging settings.
 
-This is a deliberate design choice to balance observability with performance and storage considerations, as payload logging can significantly increase the volume of data captured.
+This is a deliberate design choice to balance observability with security  considerations.
 
 ## Understanding Backend Logging Fields
 
@@ -36,7 +36,6 @@ The HTTP method used when calling the backend service (GET, POST, PUT, DELETE, P
 **Why It Matters:**
 - Verifies that the correct HTTP method is being used for backend calls
 - Helps identify method transformation issues in your API policies
-- Essential for debugging REST API implementations
 
 **Example Use Case:**
 If your API accepts a POST request but the backend expects a GET, this field will show the actual method sent to the backend, helping you identify policy configuration issues.
@@ -255,9 +254,8 @@ The time (in milliseconds) taken by the backend service to process and respond t
 
 **Why It Matters:**
 - Identifies slow backend services
-- Essential for SLA compliance monitoring
 - Helps distinguish backend latency from gateway processing time
-- Critical for capacity planning
+
 
 **Performance Analysis:**
 Compare this field with total API response time to understand where latency occurs:
@@ -292,13 +290,6 @@ The complete URL (including protocol, host, port, path, and query parameters) th
 - Essential for debugging load balancing issues
 - Helps identify incorrect service endpoints
 
-**What It Includes:**
-- Protocol (http/https)
-- Hostname or IP address
-- Port number (if non-standard)
-- Full path
-- Query parameters
-- URL-encoded values
 
 **Example Use Case:**
 When APIs fail to reach the correct backend service, `backend_url` shows the exact URL the gateway attempted to call, helping you identify routing policy errors or incorrect service configurations.
@@ -314,66 +305,10 @@ When APIs fail to reach the correct backend service, `backend_url` shows the exa
 }
 ```
 
-**Security Note:**
-This field may contain sensitive information in query parameters. Review your logging policies to ensure compliance with data protection requirements.
-
----
-
-## Enabling Payload Logging
-
-To capture these backend fields, you must enable payload logging in your Analytics service configuration.
-
-### Configuration Steps
-
-**1. Navigate to Analytics Settings:**
-- Log into API Manager
-- Go to Resources → Analytics
-- Select your Analytics service
-
-**2. Enable Payload Logging:**
-- Navigate to Activity Log settings
-- Enable "Log Payloads"
-- Configure retention policies
-
-**3. Apply to Catalogs:**
-- Ensure the Analytics service is associated with your catalogs
-- Verify the configuration is active
-
-### Configuration Example (YAML)
-
-Ensure the activity log is enabled to capture payloads
-```yaml
-  activity-log:
-    enabled: true
-    success-content: activity
-    error-content: payload
-```
-
-### Important Considerations
-
-**Storage Impact:**
-Payload logging significantly increases storage requirements:
-- Request/response bodies can be large
-- High-traffic APIs generate substantial data volume
-- Plan storage capacity accordingly
-
-**Performance Impact:**
-- Minimal impact on gateway performance
-- Increased network traffic to Analytics service
-- Consider sampling for very high-traffic APIs
-
-**Security:**
-- Payloads may contain sensitive data
-- Implement appropriate access controls
-- Consider data masking for PII
-- Review compliance requirements
 
 
----
+-
 
-## Conclusion
-
-API Connect's backend logging fields provide essential visibility into the communication between your gateway and backend services, but they're only available when payload logging is explicitly enabled. These eight fields—`backend_method`, `backend_request_body`, `backend_request_headers`, `backend_response_body`, `backend_response_headers`, `backend_status_code`, `backend_time_to_serve_request`, and `backend_url`—give you complete insight into backend interactions.
 
 **Key Takeaways:**
 
