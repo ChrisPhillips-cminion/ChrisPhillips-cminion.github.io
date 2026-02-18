@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-02-18 00:00:00
+date: 2026-02-18 02:00:00
 categories: APIConnect
-title: "Understanding Backend Payload Logging in API Connect: Essential Fields for Debugging"
+title: "Understanding Backend Attributes in Analytics Events: Essential Fields for Debugging"
 author: ["ChrisPhillips"]
 description: "A comprehensive guide to API Connect's backend logging fields including request/response bodies, headers, and performance metrics - only available when payload logging is enabled."
 tags: [APIConnect, Logging, Debugging, Analytics, Monitoring]
@@ -106,13 +106,23 @@ When a backend service rejects requests with authentication errors, `backend_req
 **Example Value:**
 ```json
 {
-  "backend_request_headers": {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIs...",
-    "X-IBM-Client-Id": "abc123",
-    "Accept": "application/json",
-    "User-Agent": "IBM-APIConnect/10.0.8"
-  }
+  "backend_request_headers": [
+    {
+      "Content-Type": "application/json"
+    },
+    {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIs..."
+    },
+    {
+      "X-IBM-Client-Id": "abc123"
+    },
+    {
+      "Accept": "application/json"
+    },
+    {
+      "User-Agent": "IBM-APIConnect/10.0.8"
+    }
+  ]
 }
 ```
 
@@ -175,12 +185,20 @@ When investigating caching behavior, `backend_response_headers` shows the actual
 **Example Value:**
 ```json
 {
-  "backend_response_headers": {
-    "Content-Type": "application/json",
-    "Cache-Control": "no-cache, no-store, must-revalidate",
-    "X-RateLimit-Remaining": "95",
-    "X-Response-Time": "45ms"
-  }
+  "backend_response_headers": [
+    {
+      "Content-Type": "application/json"
+    },
+    {
+      "Cache-Control": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "X-RateLimit-Remaining": "95"
+    },
+    {
+      "X-Response-Time": "45ms"
+    }
+  ]
 }
 ```
 
@@ -211,15 +229,15 @@ When investigating API failures, comparing `backend_status_code` with the final 
 **Example Values:**
 ```json
 {
-  "backend_status_code": 200  // Success
+  "backend_status_code": "200"  // Success
 }
 
 {
-  "backend_status_code": 404  // Backend resource not found
+  "backend_status_code": "404"  // Backend resource not found
 }
 
 {
-  "backend_status_code": 503  // Backend service unavailable
+  "backend_status_code": "503"  // Backend service unavailable
 }
 ```
 
@@ -252,7 +270,7 @@ When users report slow API responses, `backend_time_to_serve_request` immediatel
 **Example Value:**
 ```json
 {
-  "backend_time_to_serve_request": 1250  // 1.25 seconds
+  "backend_time_to_serve_request": "1250"  // 1.25 seconds
 }
 ```
 
