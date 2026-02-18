@@ -11,7 +11,7 @@ Configuring the SSL cipher priority order is a critical security requirement whe
 
 <!--more-->
 
-This requires a gateway extension to configure, regardless of the form factor of your API Gateway. This guide requires DataPower 10.5.0.8 or later.
+This requires a gateway extension to configure, regardless of the form factor of your API Gateway. 
 
 A Gateway extension is made up of a manifest, and the files needed for the config work. In this case it is a single gwd_extension json file.
 
@@ -89,10 +89,9 @@ The sample manifest simply references the other file that we need in this sample
 Then put both files into a zip and you have your gateway extension. This can be loaded via the Cloud Manager into an API Gateway service.
 
 ![](/images/gwx.png)
-
 ### Step 4: Verify Configuration
 
-Now if you check in the DataPower you can see the SSL client cipher configuration is correctly set.
+Now if you check in the DataPower you can see the SSL client cipher configuration is correctly set.   
 
 You can verify the configuration by:
 
