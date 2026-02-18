@@ -3,7 +3,7 @@ layout: post
 date: 2026-02-17 10:00:00
 categories: APIConnect
 title: "Setting SSL Cipher Priority Order in API Connect"
-author: [ "ChrisPhillips",""]
+author: [ "ChrisPhillips","PankajGirdhar"]
 draft: true
 ---
 
@@ -27,25 +27,7 @@ The SSL cipher priority order determines which cipher suites are offered and pre
 
 ## Configuration Steps
 
-### Step 1: Create the Manifest File
-
-**manifest.json**
-```json
-{
-	"extension": {
-		"files": [
-			{
-				"filename": "gwd.ssl-cipher.json",
-				"type": "gwd_extension"
-			}
-		]
-	}
-}
-```
-
-The sample manifest simply references the other file that we need in this sample. If you are doing anything more complex then you may need to add additional properties here. It is recommended that you build on the existing one if you are already using one.
-
-### Step 2: Create the Gateway Extension File
+### Step 1: Create the Gateway Extension File
 
 **gwd.ssl-cipher.json**
 ```json
@@ -84,6 +66,23 @@ In the above sample we are overriding the SSL client configuration in the apigw.
 - **Cipher Priority Order**: A prioritized list of cipher suites, with TLS 1.3 ciphers first, followed by TLS 1.2 ciphers
 - **Elliptic Curve Configuration**: Disables auto-negotiation and explicitly sets secp256r1 and secp384r1 curves
 
+### Step 2: Create the Manifest File
+
+**manifest.json**
+```json
+{
+	"extension": {
+		"files": [
+			{
+				"filename": "gwd.ssl-cipher.json",
+				"type": "gwd_extension"
+			}
+		]
+	}
+}
+```
+
+The sample manifest simply references the other file that we need in this sample. If you are doing anything more complex then you may need to add additional properties here. It is recommended that you build on the existing one if you are already using one.
 
 ### Step 3: Package and Deploy
 
