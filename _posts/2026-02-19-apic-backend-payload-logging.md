@@ -3,7 +3,7 @@ layout: post
 date: 2026-02-19 02:00:00
 categories: APIConnect
 title: "Understanding Backend Attributes in Analytics Events: Essential Fields for Debugging"
-author: ["ChrisPhillips"]
+
 image: /images/apic-analytics-assembly-policy-latencies.png
 description: "A comprehensive guide to API Connect's backend logging fields including request/response bodies, headers, and performance metrics - only available when payload logging is enabled."
 tags: [APIConnect, Logging, Debugging, Analytics, Monitoring]

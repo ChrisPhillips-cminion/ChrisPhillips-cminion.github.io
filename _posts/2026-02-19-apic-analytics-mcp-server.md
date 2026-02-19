@@ -3,7 +3,7 @@ layout: post
 date: 2026-02-19 00:00:00
 categories: APIConnect
 title: "API Connect Analytics MCP Server: AI-Powered API Management (Preview)"
-author: ["ChrisPhillips"]
+
 description: "Explore the new API Connect MCP server that brings AI capabilities to API management through the Model Context Protocol, enabling intelligent interactions with your API Connect environment."
 tags: [APIConnect, MCP, AI, Analytics, Automation, Preview]
 draft: true
