@@ -1,9 +1,9 @@
 ---
 layout: post
-date: 2026-02-17 10:00:00
+date: 2026-02-19 10:00:00
 categories: APIConnect
 title: "Setting SSL Cipher Priority Order in API Connect"
-author: [ "ChrisPhillips","PankajGirdhar"]
+author: [ "ChrisPhillips","PankajGirdhar","NickCoble"]
 draft: true
 ---
 
@@ -34,37 +34,57 @@ The SSL cipher priority order determines which cipher suites are offered and pre
 {
    "tls-client":{
       "_global":{
-         "override":[
+         "profile":[
+            "no ciphers",
+            "no curves",
             "protocols TLSv1d2+TLSv1d3",
             "ciphers AES_256_GCM_SHA384 ",
-            "ciphers CHACHA20_POLY1305_SHA256 ",
             "ciphers AES_128_GCM_SHA256 ",
             "ciphers AES_128_CCM_SHA256 ",
             "ciphers AES_128_CCM_8_SHA256 ",
-            "ciphers ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 ",
-            "ciphers ECDHE_RSA_WITH_AES_256_GCM_SHA384 ",
-            "ciphers ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 ",
-            "ciphers ECDHE_RSA_WITH_AES_256_CBC_SHA384 ",
-            "ciphers ECDHE_ECDSA_WITH_AES_256_CBC_SHA ",
-            "ciphers ECDHE_RSA_WITH_AES_256_CBC_SHA ",
-            "ciphers DHE_DSS_WITH_AES_256_GCM_SHA384 ",
-            "ciphers DHE_RSA_WITH_AES_256_GCM_SHA384 ",
-            "ciphers DHE_RSA_WITH_AES_256_CBC_SHA256 ",
-            "ciphers DHE_DSS_WITH_AES_256_CBC_SHA256",
             "disable-renegotiation off",
             "curves secp256r1",
             "curves secp384r1"
          ]
       }
    }
+
+```
+
+### Understanding the Configuration
+
+**Important:** The `"_global"` key in the configuration applies these settings to **ALL TLS client profiles** in the API Gateway. If you want to modify only a specific TLS client profile, replace `"_global"` with the exact profile name (e.g., `"x2020_x2020_tlsp-analytics-ingestion-defaultV1.0.0"`).
+
+**Example for specific profile:**
+```json
+{
+   "tls-client":{
+      "x2020_x2020_tlsp-analytics-ingestion-defaultV1.0.0":{
+         "profile":[
+            "no ciphers",
+            "ciphers AES_256_GCM_SHA384",
+            "ciphers AES_128_GCM_SHA256"
+         ]
+      }
+   }
 }
 ```
 
-In the above sample we are overriding the SSL client configuration in the apigw. The configuration sets:
+In the above sample we are overriding the SSL client configuration in the API Gateway. The configuration sets:
 
 - **Protocols**: Both TLS 1.2 and TLS 1.3 are enabled
-- **Cipher Priority Order**: A prioritized list of cipher suites, with TLS 1.3 ciphers first, followed by TLS 1.2 ciphers
-- **Elliptic Curve Configuration**: Disables auto-negotiation and explicitly sets secp256r1 and secp384r1 curves
+- **Cipher Priority Order**: The ciphers are listed in **strict priority order**. The gateway will:
+  1. **Only offer the ciphers listed** (no other ciphers will be available)
+  2. **Prefer ciphers in the order specified** (top to bottom)
+  3. First cipher listed (AES_256_GCM_SHA384) has highest priority
+  4. Last cipher listed (AES_128_CCM_8_SHA256) has lowest priority
+- **Elliptic Curve Configuration**: Disables auto-negotiation and explicitly sets secp256r1 and secp384r1 curves in priority order
+
+**Key Behavior:**
+- `"no ciphers"` - Clears all existing cipher configurations
+- `"ciphers AES_256_GCM_SHA384"` - Adds this cipher with highest priority
+- Each subsequent `"ciphers"` line adds the cipher in descending priority order
+- **Only the 4 ciphers listed will be available** - all others are disabled
 
 ### Step 2: Create the Manifest File
 
