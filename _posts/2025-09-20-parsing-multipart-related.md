@@ -3,6 +3,9 @@ layout: post
 date: 2025-09-19 09:00:00
 categories: APIConnect
 title: "Parsing multipart/related without gateway script"
+author: ["ChrisPhillips"]
+description: "Learn how to parse multipart/related content in IBM API Connect without using GatewayScript. Includes practical examples and alternative approaches for handling complex MIME types."
+tags: [APIConnect, DataPower, MIME, multipart, API Gateway, Integration, HTTP]
 ---
 
 It is possible to parse an API request that has a `multipart/related` content type without using gateway script.

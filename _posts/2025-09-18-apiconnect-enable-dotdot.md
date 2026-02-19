@@ -3,6 +3,9 @@ layout: post
 date: 2025-09-18 09:00:00
 categories: APIConnect
 title: "Enabling the DotDot feature"
+author: ["ChrisPhillips"]
+description: "How to enable and configure the DotDot feature in IBM API Connect for enhanced path traversal handling and security configurations."
+tags: [APIConnect, Configuration, Security, API Gateway, DataPower, Best Practices]
 ---
 
 DataPower has a number of features that can be enabled in API Connect with Gateway extensions. One of these is the DotDot feature that `Allow requests that contain .. in the URL.` 

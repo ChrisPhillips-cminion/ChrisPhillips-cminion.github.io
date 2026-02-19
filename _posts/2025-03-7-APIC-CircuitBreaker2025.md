@@ -3,7 +3,9 @@ layout: post
 categories: APIConnect
 date: 2025-03-7 00:14:00
 title: Circuit Breaker in API Connect
-
+author: ["ChrisPhillips"]
+description: "Implementing the circuit breaker pattern in IBM API Connect for resilient API architectures. Includes configuration examples, best practices, and failure handling strategies."
+tags: [APIConnect, Circuit Breaker, Resilience, API Design, Fault Tolerance, Microservices, Best Practices]
 ---
 
 *This is an update to a previous article. The changes are the samples and examples.*

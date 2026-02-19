@@ -1,2 +1,8 @@
 User-agent: *
+Allow: /
 Disallow: /drafts/
+Disallow: /assets/css/
+Disallow: /assets/js/
+
+# Sitemap location
+Sitemap: https://chrisphillips-cminion.github.io/sitemap.xml

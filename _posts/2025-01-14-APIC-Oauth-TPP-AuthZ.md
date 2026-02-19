@@ -4,6 +4,8 @@ date: 2025-01-14 09:00:00
 categories: APIConnect
 title: "API Authorization when using Third Party oAuth Providers in APIC"
 author: [ "ChrisPhillips", "SimonKapadia" ]
+description: "Configure OAuth third-party provider authorization in IBM API Connect for secure API access delegation and federated identity management."
+tags: [APIConnect, OAuth, Security, Authorization, Third Party, Identity Management, API Security]
 ---
 
 API Connect has the facility to use third party oAuth providers. This means that you can use nearly any oAuth security provider to secure APIs providing it can be reached by the API Gateway.

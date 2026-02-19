@@ -3,6 +3,9 @@ layout: post
 categories: APIConnect
 date: 2025-03-15 00:14:00
 title: Upcoming Events
+author: ["ChrisPhillips"]
+description: "Upcoming speaking engagements, conferences, and events where Chris Phillips will be presenting on API management, integration, and cloud technologies."
+tags: [events, speaking, conferences, API management, community, presentations]
 ---
 
 Over the next two weeks I will take to the stage four times, three in person, only one virtually.

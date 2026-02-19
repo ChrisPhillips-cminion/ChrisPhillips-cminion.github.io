@@ -7,7 +7,7 @@ author: ["ChrisPhillips"]
 image: /images/apic-analytics-assembly-policy-latencies.png
 description: "A comprehensive guide to API Connect's backend logging fields including request/response bodies, headers, and performance metrics - only available when payload logging is enabled."
 tags: [APIConnect, Logging, Debugging, Analytics, Monitoring]
-draft: true
+draft: false
 ---
 
 When troubleshooting API issues in IBM API Connect, understanding what happened between your gateway and backend services is crucial. API Connect provides detailed backend logging capabilities through its API Event Record fields, but these powerful debugging fields are only available when payload logging is explicitly enabled in your activity log configuration.

@@ -15,10 +15,39 @@
 # in the templates via {{ site.myvariable }}.
 title: Chris Phillips' Blog
 email: chris.phillips@uk.ibm.com
-description: API, Integration and Governance SME and Enthusiast, My opinions are very much mine
-#An blog on APIs and other interesting Technology
-baseurl: "/"
+description: >-
+  Technical blog covering API Connect, IBM DataPower, API Management, Integration,
+  Kubernetes, OpenShift, and Cloud Native technologies. Expert insights on API governance,
+  microservices architecture, and enterprise integration patterns.
+tagline: API, Integration and Governance SME and Enthusiast
+baseurl: ""
 url: "https://chrisphillips-cminion.github.io"
+
+# SEO Settings
+lang: en_US
+locale: en_US
+
+# Social Media & SEO
+twitter:
+  username: cminion
+  card: summary_large_image
+
+social:
+  name: Chris Phillips
+  links:
+    - https://twitter.com/cminion
+    - https://github.com/ChrisPhillips-cminion
+    - https://www.linkedin.com/in/chrisjphillips
+
+# Default SEO image for social sharing
+logo: /images/logo.png
+social_image: /images/logo.png
+
+# Author defaults
+author:
+  name: Chris Phillips
+  twitter: cminion
+  picture: /images/logo.png
 
 highlighter: rouge
 excerpt_separator: <!--more-->

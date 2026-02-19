@@ -3,6 +3,37 @@ layout: default
 comments: true
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | default: page.excerpt | strip_html | truncatewords: 50 | jsonify }},
+  "image": {{ page.image | default: site.social_image | absolute_url | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ page.author[0] | default: site.author.name | jsonify }},
+    "url": {{ site.url | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ site.logo | absolute_url | jsonify }}
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | absolute_url | jsonify }}
+  },
+  "keywords": {{ page.tags | join: ', ' | jsonify }},
+  "articleSection": {{ page.categories[0] | jsonify }}
+}
+</script>
+
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <title>{{ page.title | escape }}</title>
   <header class="post-header">

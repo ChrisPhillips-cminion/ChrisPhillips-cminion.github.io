@@ -3,6 +3,9 @@ layout: post
 date: 2025-06-03 09:00:00
 categories: APIConnect
 title: "Accessing OpenAPI Extensions in the API Runtime."
+author: ["ChrisPhillips"]
+description: "Learn how to access and utilize OpenAPI extensions (x-* fields) in IBM API Connect runtime for custom metadata, routing logic, and enhanced API functionality."
+tags: [APIConnect, OpenAPI, API Design, Extensions, API Gateway, Best Practices]
 ---
 
 API Connect has the ability to load and attacked Open API Extensions. Here we show how to access the content from the extension in the API Runtime. 

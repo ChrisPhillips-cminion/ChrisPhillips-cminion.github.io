@@ -4,6 +4,8 @@ date: 2025-04-25 09:00:00
 categories: DataPower
 title: "Accessing the IBM DataPower Command Line Interface  (CLI) in a container"
 author: [ "ChrisPhillips", "IvanH" ]
+description: "Complete guide to accessing and managing IBM DataPower Gateway running in containers, including CLI access, debugging, and troubleshooting techniques."
+tags: [DataPower, Containers, Kubernetes, Docker, CLI, Troubleshooting, DevOps]
 ---
 
 When accessing IBM DataPower in a container we recommend it is  accessed via the CLI. However, if there is a lot of traffic in the IBM DataPower this can make it difficult to follow as the log messages are sent to the screen.
