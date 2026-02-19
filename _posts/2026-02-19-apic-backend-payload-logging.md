@@ -25,6 +25,13 @@ Let's explore the eight essential backend fields that become available when payl
 
 The backend logging fields are enabled if the corresponding fields are enabled in the Activity Logging configuration. For example, if you have enabled payload logging in the Activity Logging settings, then the backend payload logging fields will be available in the analytics events.
 
+## Visualizing Backend Performance
+API Connect's Analytics interface provides a detailed view of assembly policy latencies, showing how time is distributed across different policies in your API flow. This helps identify which policies contribute most to overall response time.
+
+![Assembly Policy Latencies View](/images/apic-analytics-assembly-policy-latencies.png)
+
+
+
 ---
 
 ## 1. backend_method
@@ -88,7 +95,6 @@ When a backend returns an error about missing or malformed data, examining `back
 All HTTP headers sent from the API Gateway to the backend service, including both original headers and those added by policies.
 
 **Why It Matters:**
-- Verifies authentication headers are correctly set
 - Shows custom headers added by policies
 - Helps debug content-type and encoding issues
 - Essential for troubleshooting backend authentication failures
@@ -170,7 +176,6 @@ All HTTP headers returned by the backend service to the API Gateway.
 - Shows backend-set cookies and session information
 - Reveals caching directives from the backend
 - Helps debug content-type mismatches
-- Essential for troubleshooting CORS issues
 
 **Common Headers to Check:**
 - `Content-Type` - Response payload format
@@ -213,9 +218,7 @@ The HTTP status code returned by the backend service.
 
 **Why It Matters:**
 - Distinguishes backend errors from gateway errors
-- Essential for SLA monitoring and reporting
 - Helps identify backend availability issues
-- Critical for error rate analysis
 
 **Key Distinctions:**
 - **2xx codes:** Backend processed request successfully
@@ -273,15 +276,6 @@ When users report slow API responses, `backend_time_to_serve_request` immediatel
 }
 ```
 
-**Alerting Threshold:**
-Set alerts when `backend_time_to_serve_request` exceeds your SLA thresholds to proactively identify backend performance degradation.
-
-**Visualizing Backend Performance:**
-API Connect's Analytics interface provides a detailed view of assembly policy latencies, showing how time is distributed across different policies in your API flow. This helps identify which policies contribute most to overall response time.
-
-![Assembly Policy Latencies View](/images/apic-analytics-assembly-policy-latencies.png)
-*Assembly policy latencies breakdown showing the time spent in each policy during API execution*
-
 ---
 
 ## 8. backend_url
@@ -312,14 +306,6 @@ When APIs fail to reach the correct backend service, `backend_url` shows the exa
 }
 ```
 
-
-**Key Takeaways:**
-
-1. **Enable payload logging** to access backend fields
-2. **Balance observability with storage costs** through selective logging
-3. **Protect sensitive data** with appropriate security controls
-4. **Use backend fields** to distinguish gateway vs. backend issues
-5. **Monitor performance** using `backend_time_to_serve_request`
 
 By understanding and properly utilizing these backend logging fields, you can dramatically reduce troubleshooting time and gain deep insights into your API ecosystem's behavior.
 
