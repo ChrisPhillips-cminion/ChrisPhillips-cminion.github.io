@@ -4,6 +4,8 @@ date: 2026-02-19 10:00:00
 categories: APIConnect
 title: "Setting SSL Cipher Priority Order in API Connect"
 author: [ "ChrisPhillips","PankajGirdhar","NickCoble"]
+description: "Configure SSL/TLS cipher priority order in IBM API Connect using gateway extensions. Control cipher suite preferences, enforce security standards, and optimize TLS handshakes."
+tags: [APIConnect, SSL, TLS, Security, Ciphers, DataPower, Gateway Extension, Cryptography]
 draft: true
 ---
 
