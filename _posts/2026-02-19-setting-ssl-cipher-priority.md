@@ -133,7 +133,5 @@ You can verify the configuration by:
 ## Additional Resources
 
 - [DataPower SSL Configuration Guide](https://www.ibm.com/docs/en/datapower-gateway)
-- [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
-- [NIST TLS Guidelines](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final)
 - [OpenSSL Cipher Suite Names](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html)
 
