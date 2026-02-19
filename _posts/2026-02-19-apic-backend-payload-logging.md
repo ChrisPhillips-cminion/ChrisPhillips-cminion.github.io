@@ -4,6 +4,7 @@ date: 2026-02-19 02:00:00
 categories: APIConnect
 title: "Understanding Backend Attributes in Analytics Events: Essential Fields for Debugging"
 author: ["ChrisPhillips"]
+image: /images/apic-analytics-assembly-policy-latencies.png
 description: "A comprehensive guide to API Connect's backend logging fields including request/response bodies, headers, and performance metrics - only available when payload logging is enabled."
 tags: [APIConnect, Logging, Debugging, Analytics, Monitoring]
 draft: true
@@ -274,6 +275,12 @@ When users report slow API responses, `backend_time_to_serve_request` immediatel
 
 **Alerting Threshold:**
 Set alerts when `backend_time_to_serve_request` exceeds your SLA thresholds to proactively identify backend performance degradation.
+
+**Visualizing Backend Performance:**
+API Connect's Analytics interface provides a detailed view of assembly policy latencies, showing how time is distributed across different policies in your API flow. This helps identify which policies contribute most to overall response time.
+
+![Assembly Policy Latencies View](/images/apic-analytics-assembly-policy-latencies.png)
+*Assembly policy latencies breakdown showing the time spent in each policy during API execution*
 
 ---
 
