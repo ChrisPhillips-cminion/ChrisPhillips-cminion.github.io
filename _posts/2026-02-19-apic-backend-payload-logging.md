@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-02-18 02:00:00
+date: 2026-02-19 02:00:00
 categories: APIConnect
 title: "Understanding Backend Attributes in Analytics Events: Essential Fields for Debugging"
 author: ["ChrisPhillips"]
@@ -13,16 +13,16 @@ When troubleshooting API issues in IBM API Connect, understanding what happened 
 
 <!--more-->
 
-## The Critical Requirement: Payload Logging Must Be Enabled
-**Important:** All the backend fields discussed in this article are **only logged when payload logging is enabled** in the  activity log settings. Without this configuration, these fields will not be captured, regardless of your other logging settings.
-
-This is a deliberate design choice to balance observability with security  considerations.
 
 ## Understanding Backend Logging Fields
 
 API Connect's [API Event Record Field Reference](https://www.ibm.com/docs/en/api-connect/software/10.0.8_lts?topic=usage-api-event-record-field-reference) documents all available fields for analytics and logging. The backend-specific fields provide deep visibility into the communication between your API Gateway and downstream services.
 
 Let's explore the eight essential backend fields that become available when payload logging is enabled.
+
+## Enabling Backend Logging Fields
+
+The backend logging fields are enabled if the corresponding fields are enabled in the Activity Logging configuration. For example, if you have enabled payload logging in the Activity Logging settings, then the backend payload logging fields will be available in the analytics events.
 
 ---
 
@@ -304,10 +304,6 @@ When APIs fail to reach the correct backend service, `backend_url` shows the exa
   "backend_url": "http://internal-service.cluster.local/customers?id=789&include=orders"
 }
 ```
-
-
-
--
 
 
 **Key Takeaways:**
