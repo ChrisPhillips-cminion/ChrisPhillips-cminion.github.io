@@ -6,7 +6,7 @@ title: "API Connect Analytics MCP Server: AI-Powered API Management (Preview)"
 author: ["ChrisPhillips"]
 description: "Explore the new API Connect MCP server that brings AI capabilities to API management through the Model Context Protocol, enabling intelligent interactions with your API Connect environment."
 tags: [APIConnect, MCP, AI, Analytics, Automation, Preview]
-draft: false
+draft: true
 ---
 
 IBM API Connect now has an MCP (Model Context Protocol) server that enables AI assistants to interact directly with your API Connect environment. This preview release brings intelligent automation to API management, allowing you to query analytics, manage APIs, and troubleshoot issues using natural language.
