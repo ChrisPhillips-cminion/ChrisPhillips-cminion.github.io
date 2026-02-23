@@ -10,7 +10,7 @@ tags: [APIConnect, Logging, Debugging, Analytics, Monitoring]
 draft: false
 ---
 
-When troubleshooting API issues in IBM API Connect, understanding what happened between your gateway and backend services is crucial. API Connect provides detailed backend logging capabilities through its API Event Record fields, but these powerful debugging fields are only available when payload logging is explicitly enabled in your activity log configuration.
+When troubleshooting API issues in IBM API Connect, understanding what happened between your gateway and backend services is crucial. API Connect provides detailed backend logging capabilities through its API Event Record fields. 
 
 <!--more-->
 
