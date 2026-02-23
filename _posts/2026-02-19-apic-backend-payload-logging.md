@@ -19,7 +19,7 @@ When troubleshooting API issues in IBM API Connect, understanding what happened 
 
 API Connect's [API Event Record Field Reference](https://www.ibm.com/docs/en/api-connect/software/10.0.8_lts?topic=usage-api-event-record-field-reference) documents all available fields for analytics and logging. The backend-specific fields provide deep visibility into the communication between your API Gateway and downstream services.
 
-Let's explore the eight essential backend fields that become available when payload logging is enabled.
+
 
 ## Enabling Backend Logging Fields
 
@@ -70,6 +70,9 @@ The complete request payload sent from the API Gateway to the backend service.
 - Critical for debugging data mapping issues
 - Helps identify payload size problems
 
+**Requirement:**
+- Requires Payload logging to be enabled
+
 **Security Consideration:**
 This field can contain sensitive data. Ensure your analytics storage has appropriate access controls and consider data masking policies for sensitive fields.
 
@@ -98,6 +101,9 @@ All HTTP headers sent from the API Gateway to the backend service, including bot
 - Shows custom headers added by policies
 - Helps debug content-type and encoding issues
 - Essential for troubleshooting backend authentication failures
+
+**Requirement:**
+- Requires heading logging to be enabled
 
 **Common Headers to Check:**
 - `Authorization` - Authentication tokens
@@ -147,6 +153,9 @@ The complete response payload received from the backend service before any gatew
 - Helps identify backend errors vs. gateway errors
 - Critical for validating backend behavior
 
+**Requirement:**
+- Requires payload logging to be enabled
+
 **Example Use Case:**
 When clients report receiving incorrect data, comparing `backend_response_body` with the final response shows whether the issue originated from the backend or was introduced during gateway processing.
 
@@ -176,6 +185,9 @@ All HTTP headers returned by the backend service to the API Gateway.
 - Shows backend-set cookies and session information
 - Reveals caching directives from the backend
 - Helps debug content-type mismatches
+
+**Requirement:**
+- Requires header logging to be enabled
 
 **Common Headers to Check:**
 - `Content-Type` - Response payload format
