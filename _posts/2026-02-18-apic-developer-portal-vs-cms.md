@@ -170,8 +170,7 @@ One powerful feature of the Developer Portal is its ability to federate content 
 - **API Marketplaces**: Aggregating APIs from multiple providers into a single discovery portal
 - **Partner Ecosystems**: Combining internal and partner APIs in one location
 
-**Important Limitation:**
-The CMS Portal is tied to a single catalog and cannot federate content from multiple providers. If you need federation capabilities, you must use the Developer Portal or build federation logic into a Headless Portal implementation.
+
 
 ## Option 3: CMS Portal - When You Need Full Control
 
@@ -246,7 +245,7 @@ The CMS Portal gives you complete Drupal access. This is for teams with complex 
 
 The Headless Portal approach gives you complete freedom to build your own custom frontend while leveraging the Developer Portal's backend APIs for portal functionality. This is for teams who want total control over the user experience.
 
-**Important:** The Headless Portal is built on top of the Developer Portal, not directly on API Manager APIs. You must deploy the Developer Portal to use this approach—you're simply replacing the standard Drupal frontend with your own custom UI that interacts with the Developer Portal's APIs.
+**Important:** The Headless Portal is built on top of the Developer Portal, not directly on API Manager APIs. You must deploy the Developer Portal to use this approach—you're simply replacing the standard frontend with your own custom UI that interacts with the Developer Portal's APIs.
 
 **What You Get:**
 - Complete frontend freedom (React, Angular, Vue, Next.js, whatever you want)
@@ -275,7 +274,7 @@ The Headless Portal approach gives you complete freedom to build your own custom
 ### Real-World Scenario: Fintech Mobile-First Platform
 
 > **The Situation:**
-> A fintech startup needs a mobile-first developer experience that integrates seamlessly with their existing React-based website. They want the portal to feel like part of their brand, not a separate Drupal site.
+> A fintech startup needs a mobile-first developer experience that integrates seamlessly with their existing React-based website. They want the portal to feel like part of their brand, not a separate site.
 >
 > **The Implementation (8 weeks, 3 frontend developers):**
 >
@@ -305,7 +304,7 @@ The Headless Portal approach gives you complete freedom to build your own custom
 > - Hosting: Vercel for custom frontend, API Connect for Developer Portal backend
 >
 > **The Result:**
-> A seamless, mobile-first developer experience that feels like a natural extension of their brand. Complete control over UX, modern tech stack, and the ability to iterate quickly without Drupal constraints.
+> A seamless, mobile-first developer experience that feels like a natural extension of their brand. Complete control over UX, modern tech stack.
 >
 > **What They Gave Up:**
 > - Out-of-the-box portal features (had to build everything)
