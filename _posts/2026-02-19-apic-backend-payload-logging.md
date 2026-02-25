@@ -10,7 +10,10 @@ tags: [APIConnect, Logging, Debugging, Analytics, Monitoring]
 draft: false
 ---
 
+Correction - 23/02/2026
+
 When troubleshooting API issues in IBM API Connect, understanding what happened between your gateway and backend services is crucial. API Connect provides detailed backend logging capabilities through its API Event Record fields. 
+
 
 <!--more-->
 
