@@ -141,7 +141,6 @@ while true; do
     QUEUED=$(echo "$RESPONSE" | grep -o '"QueuedWork" : [0-9]*' | sed 's/"QueuedWork" : //')
     FAILURES=$(echo "$RESPONSE" | grep -o '"Failed" : [0-9]*' | sed 's/"Failed" : //')
     
-echo "HEY TREY THIS IS THE QUEUED VALUE:  $QUEUED"
 
     # Calculate utilization percentage
     if [ -n "$AVAILABLE" ] && [ "$AVAILABLE" -gt 0 ]; then
