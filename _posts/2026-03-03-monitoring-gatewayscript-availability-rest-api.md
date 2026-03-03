@@ -6,7 +6,6 @@ title: "Monitoring GatewayScript Availability with DataPower REST API: Real-Time
 author: ["ChrisPhillips", "TreyWilliamson"]
 description: "Learn how to use the DataPower REST Management Interface to continuously monitor GatewayScript engine availability and detect performance bottlenecks in real-time."
 tags: [APIConnect, DataPower, GatewayScript, Monitoring, REST API, Performance]
-draft: true
 ---
 
 In our [previous article on GatewayScript concurrency](/apiconnect/2026/02/04/apigw-gatewayscript-concurrency.html), we explored how to understand and optimize GatewayScript engine performance. But how do you monitor these engines in real-time without constantly logging into the DataPower CLI?
@@ -58,33 +57,15 @@ done
 
 **Sample Output:**
 ```
-    "Available": "8",
-    "Available": "8",
-    "Available": "8",
-    "Available": "7",  ← One engine now in use
-    "Available": "6",  ← Two engines in use
-    "Available": "8",  ← Back to full availability
+    "Available": 8,
+    "Available": 8,
+    "Available": 8,
+    "Available": 8, 
 ```
 
 ## Understanding the Response
 
 The full JSON response from the REST API endpoint contains valuable metrics. Here's the actual output structure:
-
-```json
-{
-  "GatewayScriptStatus": {
-    "Available": "8",
-    "InUse": "2",
-    "Queued": "0",
-    "Failures": "0",
-    "mAdminState": "enabled",
-    "MaxProcessingDuration": "0",
-    "AverageProcessingDuration": "12"
-  }
-}
-```
-
-**Complete Example Output:**
 
 ```bash
 $ curl -k -u admin:password -X GET https://1.2.3.4:5554/mgmt/status/default/GatewayScriptStatus
@@ -98,28 +79,24 @@ $ curl -k -u admin:password -X GET https://1.2.3.4:5554/mgmt/status/default/Gate
     }
   },
   "GatewayScriptStatus": {
-    "Available": "8",
-    "InUse": "2",
-    "Queued": "0",
-    "Failures": "0",
-    "mAdminState": "enabled",
-    "MaxProcessingDuration": "0",
-    "AverageProcessingDuration": "12"
+    "Available": 8,
+    "InUse": 0,
+    "QueuedWork": 0,
+    "Failed": 0
   }
 }
 ```
+
+**Note:** The values are returned as integers (not strings), making them easy to parse and compare in monitoring scripts.
 
 **Key Fields:**
 
 | Field | Description | What to Monitor |
 |-------|-------------|-----------------|
-| `Available` | Total engines configured | Should match CPU core count |
-| `InUse` | Engines currently executing | Watch for approaching Available count |
-| `Queued` | Requests waiting for engines | **RED FLAG if > 0** |
-| `Failures` | GatewayScript execution errors | Should always be 0 |
-| `mAdminState` | Administrative state | Should be "enabled" |
-| `MaxProcessingDuration` | Maximum processing time (ms) | Track for performance spikes |
-| `AverageProcessingDuration` | Average processing time (ms) | Monitor for performance trends |
+| `Available` | Total engines configured (integer) | Should match CPU core count unless on a physical appliance |
+| `InUse` | Engines currently executing (integer) | Watch for approaching Available count |
+| `QueuedWork` | Requests waiting for engines (integer) | **RED FLAG if > 0** |
+| `Failed` | GatewayScript execution errors (integer) | Should always be 0 |
 
 ## Enhanced Monitoring Script
 
@@ -157,11 +134,11 @@ while true; do
         -X GET \
         "https://${DATAPOWER_HOST}:${DATAPOWER_PORT}/mgmt/status/${DOMAIN}/GatewayScriptStatus")
     
-    # Extract values using grep and sed
-    AVAILABLE=$(echo "$RESPONSE" | grep -o '"Available":"[^"]*"' | sed 's/"Available":"\([^"]*\)"/\1/')
-    INUSE=$(echo "$RESPONSE" | grep -o '"InUse":"[^"]*"' | sed 's/"InUse":"\([^"]*\)"/\1/')
-    QUEUED=$(echo "$RESPONSE" | grep -o '"Queued":"[^"]*"' | sed 's/"Queued":"\([^"]*\)"/\1/')
-    FAILURES=$(echo "$RESPONSE" | grep -o '"Failures":"[^"]*"' | sed 's/"Failures":"\([^"]*\)"/\1/')
+    # Extract values using grep and sed (values are integers, not strings)
+    AVAILABLE=$(echo "$RESPONSE" | grep -o '"Available":[0-9]*' | sed 's/"Available"://')
+    INUSE=$(echo "$RESPONSE" | grep -o '"InUse":[0-9]*' | sed 's/"InUse"://')
+    QUEUED=$(echo "$RESPONSE" | grep -o '"QueuedWork":[0-9]*' | sed 's/"QueuedWork"://')
+    FAILURES=$(echo "$RESPONSE" | grep -o '"Failed":[0-9]*' | sed 's/"Failed"://')
     
     # Calculate utilization percentage
     if [ -n "$AVAILABLE" ] && [ "$AVAILABLE" -gt 0 ]; then
@@ -238,10 +215,10 @@ def collect_metrics(host, port, domain, username, password):
         data = response.json()
         
         status = data['GatewayScriptStatus']
-        gw_available.set(int(status['Available']))
-        gw_inuse.set(int(status['InUse']))
-        gw_queued.set(int(status['Queued']))
-        gw_failures.set(int(status['Failures']))
+        gw_available.set(status['Available'])
+        gw_inuse.set(status['InUse'])
+        gw_queued.set(status['QueuedWork'])
+        gw_failures.set(status['Failed'])
         
     except Exception as e:
         print(f"Error collecting metrics: {e}")
@@ -296,10 +273,10 @@ Based on our [previous analysis](/apiconnect/2026/02/04/apigw-gatewayscript-conc
 
 | Metric | Warning | Critical | Action |
 |--------|---------|----------|--------|
-| Utilization | > 70% | > 85% | Review capacity planning |
-| Queued Requests | > 0 | > 5 | Immediate investigation |
-| Failures | > 0 | > 10 | Check GatewayScript code |
-| Available Engines | < Expected | N/A | Configuration issue |
+| Utilization (InUse/Available) | > 70% | > 85% | Review capacity planning |
+| QueuedWork | > 0 | > 5 | Immediate investigation |
+| Failed | > 0 | > 10 | Check GatewayScript code |
+| Available | < Expected | N/A | Configuration issue |
 
 ## Best Practices
 
