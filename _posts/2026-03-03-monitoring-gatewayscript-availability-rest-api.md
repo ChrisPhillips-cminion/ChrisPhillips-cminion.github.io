@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-03-02 01:00:00
+date: 2026-03-03 01:00:00
 categories: APIConnect
 title: "Monitoring GatewayScript Availability with DataPower REST API: Real-Time Performance Tracking"
 author: ["ChrisPhillips", "TreyWilliamson"]
