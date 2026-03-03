@@ -1,11 +1,12 @@
 ---
 layout: post
-date: 2026-03-03 01:00:00
+date: 2026-03-02 01:00:00
 categories: APIConnect
 title: "Monitoring GatewayScript Availability with DataPower REST API: Real-Time Performance Tracking"
 author: ["ChrisPhillips", "TreyWilliamson"]
 description: "Learn how to use the DataPower REST Management Interface to continuously monitor GatewayScript engine availability and detect performance bottlenecks in real-time."
 tags: [APIConnect, DataPower, GatewayScript, Monitoring, REST API, Performance]
+draft: true
 ---
 
 In our [previous article on GatewayScript concurrency](/apiconnect/2026/02/04/apigw-gatewayscript-concurrency.html), we explored how to understand and optimize GatewayScript engine performance. But how do you monitor these engines in real-time without constantly logging into the DataPower CLI?
@@ -106,11 +107,11 @@ For production monitoring, you'll want more detail. Here's an enhanced version:
 #!/bin/bash
 
 # Configuration
-DATAPOWER_HOST="1.2.3.4"
+DATAPOWER_HOST="9.37.230.250"
 DATAPOWER_PORT="5554"
 DOMAIN="default"
 USERNAME="admin"
-PASSWORD="password"
+PASSWORD="Level2was"
 POLL_INTERVAL=5  # seconds
 
 # Colors for output
@@ -135,11 +136,13 @@ while true; do
         "https://${DATAPOWER_HOST}:${DATAPOWER_PORT}/mgmt/status/${DOMAIN}/GatewayScriptStatus")
     
     # Extract values using grep and sed (values are integers, not strings)
-    AVAILABLE=$(echo "$RESPONSE" | grep -o '"Available":[0-9]*' | sed 's/"Available"://')
-    INUSE=$(echo "$RESPONSE" | grep -o '"InUse":[0-9]*' | sed 's/"InUse"://')
-    QUEUED=$(echo "$RESPONSE" | grep -o '"QueuedWork":[0-9]*' | sed 's/"QueuedWork"://')
-    FAILURES=$(echo "$RESPONSE" | grep -o '"Failed":[0-9]*' | sed 's/"Failed"://')
+    AVAILABLE=$(echo "$RESPONSE" | grep -o '"Available" : [0-9]*' | sed 's/"Available" : //')
+    INUSE=$(echo "$RESPONSE" | grep -o '"InUse" : [0-9]*' | sed 's/"InUse" : //')
+    QUEUED=$(echo "$RESPONSE" | grep -o '"QueuedWork" : [0-9]*' | sed 's/"QueuedWork" : //')
+    FAILURES=$(echo "$RESPONSE" | grep -o '"Failed" : [0-9]*' | sed 's/"Failed" : //')
     
+echo "HEY TREY THIS IS THE QUEUED VALUE:  $QUEUED"
+
     # Calculate utilization percentage
     if [ -n "$AVAILABLE" ] && [ "$AVAILABLE" -gt 0 ]; then
         UTILIZATION=$((INUSE * 100 / AVAILABLE))
