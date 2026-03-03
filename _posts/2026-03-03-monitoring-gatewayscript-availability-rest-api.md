@@ -6,7 +6,6 @@ title: "Monitoring GatewayScript Availability with DataPower REST API: Real-Time
 author: ["ChrisPhillips", "TreyWilliamson"]
 description: "Learn how to use the DataPower REST Management Interface to continuously monitor GatewayScript engine availability and detect performance bottlenecks in real-time."
 tags: [APIConnect, DataPower, GatewayScript, Monitoring, REST API, Performance]
-draft: true
 ---
 
 In our [previous article on GatewayScript concurrency](/apiconnect/2026/02/04/apigw-gatewayscript-concurrency.html), we explored how to understand and optimize GatewayScript engine performance. But how do you monitor these engines in real-time without constantly logging into the DataPower CLI?
@@ -191,120 +190,7 @@ Press Ctrl+C to stop
 ⚠️  ALERT: 5 requests queued - engines saturated!
 ```
 
-## Integration with Monitoring Systems
 
-### Prometheus Exporter
-
-For Prometheus integration, you can create a simple exporter:
-
-```python
-#!/usr/bin/env python3
-import requests
-import time
-from prometheus_client import start_http_server, Gauge
-
-# Metrics
-gw_available = Gauge('datapower_gatewayscript_available', 'Available GatewayScript engines')
-gw_inuse = Gauge('datapower_gatewayscript_inuse', 'In-use GatewayScript engines')
-gw_queued = Gauge('datapower_gatewayscript_queued', 'Queued GatewayScript requests')
-gw_failures = Gauge('datapower_gatewayscript_failures', 'GatewayScript failures')
-
-def collect_metrics(host, port, domain, username, password):
-    url = f"https://{host}:{port}/mgmt/status/{domain}/GatewayScriptStatus"
-    
-    try:
-        response = requests.get(url, auth=(username, password), verify=False)
-        data = response.json()
-        
-        status = data['GatewayScriptStatus']
-        gw_available.set(status['Available'])
-        gw_inuse.set(status['InUse'])
-        gw_queued.set(status['QueuedWork'])
-        gw_failures.set(status['Failed'])
-        
-    except Exception as e:
-        print(f"Error collecting metrics: {e}")
-
-if __name__ == '__main__':
-    # Start Prometheus HTTP server
-    start_http_server(8000)
-    
-    # Configuration
-    DATAPOWER_HOST = "1.2.3.4"
-    DATAPOWER_PORT = "5554"
-    DOMAIN = "default"
-    USERNAME = "admin"
-    PASSWORD = "password"
-    
-    print("Prometheus exporter started on port 8000")
-    
-    while True:
-        collect_metrics(DATAPOWER_HOST, DATAPOWER_PORT, DOMAIN, USERNAME, PASSWORD)
-        time.sleep(15)
-```
-
-### Splunk Integration
-
-For Splunk, you can use the REST API to feed data directly:
-
-```bash
-#!/bin/bash
-
-SPLUNK_HEC_URL="https://splunk.example.com:8088/services/collector"
-SPLUNK_TOKEN="your-hec-token"
-
-while true; do
-    RESPONSE=$(curl -k -s -u admin:password \
-        "https://1.2.3.4:5554/mgmt/status/default/GatewayScriptStatus")
-    
-    # Send to Splunk HEC
-    curl -k -X POST "${SPLUNK_HEC_URL}" \
-        -H "Authorization: Splunk ${SPLUNK_TOKEN}" \
-        -d "{
-            \"sourcetype\": \"datapower:gatewayscript\",
-            \"event\": ${RESPONSE}
-        }"
-    
-    sleep 30
-done
-```
-
-## Alerting Thresholds
-
-Based on our [previous analysis](/apiconnect/2026/02/04/apigw-gatewayscript-concurrency.html), here are recommended alert thresholds:
-
-| Metric | Warning | Critical | Action |
-|--------|---------|----------|--------|
-| Utilization (InUse/Available) | > 70% | > 85% | Review capacity planning |
-| QueuedWork | > 0 | > 5 | Immediate investigation |
-| Failed | > 0 | > 10 | Check GatewayScript code |
-| Available | < Expected | N/A | Configuration issue |
-
-## Best Practices
-
-1. **Poll Frequency**: 
-   - Development: 5-10 seconds
-   - Production: 15-30 seconds (balance between visibility and load)
-
-2. **Authentication**:
-   - Use dedicated monitoring user with read-only permissions
-   - Store credentials securely (environment variables, secrets manager)
-   - Never hardcode credentials in scripts
-
-3. **Error Handling**:
-   - Implement retry logic for transient failures
-   - Log connection errors separately
-   - Alert on monitoring script failures
-
-4. **Data Retention**:
-   - Store historical data for trend analysis
-   - Keep at least 30 days for capacity planning
-   - Archive older data for compliance
-
-5. **Multiple Domains**:
-   - Monitor all domains separately
-   - Aggregate metrics for overall health
-   - Domain-specific alerting
 
 ## Troubleshooting
 
@@ -355,5 +241,3 @@ Combined with the capacity planning formulas from our [previous article](/apicon
 - [API Connect Performance Tuning](https://www.ibm.com/docs/en/api-connect)
 
 ---
-
-*Have questions about monitoring DataPower or API Gateway performance? Feel free to reach out or leave a comment below.*
