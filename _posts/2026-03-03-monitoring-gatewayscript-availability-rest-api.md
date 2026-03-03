@@ -238,6 +238,6 @@ Combined with the capacity planning formulas from our [previous article](/apicon
 
 - [DataPower REST Management Interface Documentation](https://www.ibm.com/docs/en/datapower-gateway)
 - [GatewayScript Concurrency Guide](/apiconnect/2026/02/04/apigw-gatewayscript-concurrency.html)
-- [API Connect Performance Tuning](https://www.ibm.com/docs/en/api-connect)
+
 
 ---
