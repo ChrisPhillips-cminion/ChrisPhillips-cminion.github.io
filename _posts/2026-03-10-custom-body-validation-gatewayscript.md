@@ -1,10 +1,9 @@
 ---
 layout: post
-date: 2026-02-18 10:00:00
+date: 2026-03-10 10:00:00
 categories: APIConnect
 title: "Custom Request Body Validation with GatewayScript in API Connect"
 author: [ "ChrisPhillips", "SimonKapadia" ]
-draft: true
 ---
 
 When building APIs, robust input validation is critical for security, data integrity, and providing clear error messages to API consumers. While API Connect provides built-in validation through OpenAPI schemas, sometimes you need to explan why the validation failed to the consumers. This article demonstrates how to implement custom request body validation using GatewayScript that validates against a JSON schema and returns detailed error messages for each invalid field.
