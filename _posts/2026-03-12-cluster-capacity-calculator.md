@@ -29,9 +29,9 @@ Use the calculator below to determine your cluster size, then read on to underst
     </div>
     
     <div class="input-group">
-      <label for="avgCpu">Expected Average CPU at High Load (%):</label>
-      <input type="number" id="avgCpu" min="1" max="100" value="60" />
-      <small>Total CPU load across the cluster during peak traffic</small>
+      <label for="avgCpu">Expected Average CPU at High Load (%) today multiplied by number of nodes:</label>
+      <input type="number" id="avgCpu" min="1" value="60" />
+      <small>Total CPU load across the cluster during peak traffic (current CPU % × number of nodes). Can exceed 100%.</small>
     </div>
     
     <div class="input-group">
@@ -234,8 +234,8 @@ function calculateNodes() {
     return;
   }
   
-  if (avgCpu <= 0 || avgCpu > 100) {
-    alert('Expected Average CPU must be between 1 and 100');
+  if (avgCpu <= 0) {
+    alert('Expected Average CPU must be greater than 0');
     return;
   }
   
