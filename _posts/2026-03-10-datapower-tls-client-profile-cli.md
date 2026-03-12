@@ -5,7 +5,6 @@ categories: DataPower
 title: "Configuring TLS Client Profiles in DataPower CLI"
 description: "Learn how to configure TLS client profiles in IBM DataPower using the CLI. Complete guide covering protocol versions, cipher suites, certificate validation, and best practices for secure downstream connections."
 tags: [DataPower, TLS, SSL, CLI, Security, Encryption, Ciphers, Certificate]
-draft: true
 ---
 
 When working with DataPower, configuring TLS client profiles through the CLI provides a fast and scriptable way to manage SSL/TLS settings for downstream connections. This article demonstrates how to configure TLS client profiles using the DataPower command-line interface, including protocol versions and cipher suite selection.
@@ -26,14 +25,16 @@ A TLS client profile in DataPower defines the SSL/TLS settings used when DataPow
 Here's the basic command structure to configure a TLS client profile in the DataPower CLI:
 
 ```bash
-top ; sw DOMAINanme ; co ; ssl-client downstreamprofile
+top ; sw domainname ; co ; crypto ; ssl-client downstreamprofile
     protocols TLSv1d2+TLSv1d3
     ciphers AES_256_GCM_SHA384
     ciphers AES_128_GCM_SHA256
     ciphers AES_128_CCM_SHA256
     ciphers AES_128_CCM_8_SHA256
-exit
+exit ; exit ; 
 ```
+
+Exit is needed twice to leave both `crypto` and `co`
 
 Let's break down each component:
 
@@ -167,7 +168,6 @@ show ssl-client
 ```
 
 ## Additional Resources
-
 - [IBM DataPower Gateway Documentation](https://www.ibm.com/docs/en/datapower-gateway)
 - [Creating a TLS Client Profile](https://www.ibm.com/docs/en/datapower-gateway/10.5.x?topic=profiles-creating-tls-client-profile)
 - [DataPower CLI Reference](https://www.ibm.com/docs/en/datapower-gateway/10.0?topic=interface-command-line)
