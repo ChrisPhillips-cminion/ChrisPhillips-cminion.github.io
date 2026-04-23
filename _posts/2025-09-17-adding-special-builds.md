@@ -93,12 +93,12 @@ default-dockercfg-h7vwqq  kubernetes.io/dockercfg  1  168d
 
 Make a note of the default-dockercfg secret name.
 
-**9  Update the object that needs the new  image and add the service account to the imagePullSecrets**
+**9  Update the object that needs the new  image and add the service account to the imagePullSecrets** -- DataPower
 
-In the example here are updating the gatewayservice object.
+In the example here are updating the datapowerservice object.
 
 ```
->> oc edit gatewayservice small-gw
+>> oc edit datapowerservice small-gw
 ```
 Make the following changes
 
@@ -114,5 +114,16 @@ and update the image
 spec:
   image: image-registry.openshift-image-registry.svc:5000/apic2/datapower@sha256:460b2d30b08cbae6799de29025106bf775f47671f4bcc829b09fceb58af4e42
 ```
+
+**9  Update the object that needs the new  image and add the service account to the imagePullSecrets** -- APIConnect
+
+In the example here are updating the gatewayservice object.
+
+```
+>> oc edit gatewayservice small-gw
+```
+
+Then follow the instructions here 
+[https://www.ibm.com/docs/en/api-connect/software/10.0.8_lts?topic=kubernetes-upgrading-datapower-operator-operand-independently-apic](https://www.ibm.com/docs/en/api-connect/software/10.0.8_lts?topic=kubernetes-upgrading-datapower-operator-operand-independently-apic)
 
 **10 Automatically the required objects will be updated, in this example the DataPower object and then the Stateful set will then be updated.**
