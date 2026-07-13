@@ -23,7 +23,7 @@ DataPower's memory is divided into several regions:
 - **Application buffers:** DataPower uses buffers for XML parsing, JSON processing, HTTP connection handling, and XSLT transformations. These are allocated from a shared buffer pool.
 - **Compilation cache:** GatewayScript and XSLT compiled code is cached. More traffic means more compiled code in cache, which means more memory used.
 
-**What this means for comparing HA pairs:** The raw percentage reported by `show memory` on each appliance is the percentage of installed memory in use across the whole system. Because the two appliances in an HA pair may have different uptime (and therefore different cache/buffer fill levels), their reported percentages will naturally differ even under identical traffic loads. The Abu Dhabi case demonstrated this exactly.
+**What this means for comparing HA pairs:** The raw percentage reported by `show memory` on each appliance is the percentage of installed memory in use across the whole system. Because the two appliances in an HA pair may have different uptime (and therefore different cache/buffer fill levels), their reported percentages will naturally differ even under identical traffic loads.
 
 **Key metrics from `show memory` (DataPower CLI):**
 
@@ -113,7 +113,7 @@ The first time an XSLT stylesheet or GatewayScript module is executed after a do
 
 **Collecting CPU data for IBM support cases:**
 
-IBM support often asks for CPU screenshots — the pattern is well-established. The Abu Dhabi team attached screenshots of their HA pair CPU graphs showing sustained elevated CPU, which helped identify a genuine performance issue rather than burst traffic.
+IBM support often asks for CPU screenshots — the pattern is well-established. HA pair CPU graphs showing sustained elevated CPU can help distinguish a genuine performance issue from burst traffic.
 
 For a support case, collect:
 
@@ -200,5 +200,5 @@ Answer these before you call IBM:
 4. **Is Available memory (from `show memory`) decreasing consistently day-over-day, or has it plateaued?** Provide a graph of memory usage over at least 48 hours.
 5. **What error messages appear in the DataPower logs?** Export the relevant log entries for the problem period. Never describe errors — show them.
 
-Having these five answers ready when you call IBM support will dramatically accelerate the case resolution. Screenshots of CPU and memory graphs (as IBM support asked for in the Abu Dhabi case) are worth more than written descriptions.
+Having these five answers ready when you call IBM support will dramatically accelerate the case resolution. Screenshots of CPU and memory graphs are worth more than written descriptions.
 
