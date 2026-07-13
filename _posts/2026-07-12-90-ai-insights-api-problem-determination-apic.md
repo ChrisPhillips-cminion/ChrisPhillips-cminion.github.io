@@ -8,11 +8,11 @@ tags: [APIConnect, APIConnectv12, AIInsights, ProblemDetermination, Troubleshoot
 draft: true
 ---
 
-When an API starts behaving unexpectedly — errors spike, latency climbs, or a consumer reports a problem — you enter problem determination mode. Traditionally, this means pulling logs from multiple places, correlating timestamps, checking backend health, and working backward from symptoms. It's time-consuming and requires deep familiarity with your API ecosystem. API Connect v12.1.1 introduces **AI-powered problem determination** via AI Insights, designed to dramatically accelerate this process.
+When an API starts failing or slowing down, problem determination usually means checking several data sources and trying to build a timeline from them. API Connect v12.1.1 uses AI Insights to make that initial investigation easier.
 
-Importantly, it's not just the AI-generated insight that helps — v12.1.1 may also surface richer event context alongside each event than was available in earlier reporting views. Depending on the report and deployment, this can give operators more raw material to work with before they even review the AI-generated summary.
+Depending on the report and deployment, v12.1.1 may also expose more event detail than earlier reporting views. That gives the operator more context to work with before reviewing the AI-generated summary.
 
-In this article, I'll walk you through how AI Insights analyses individual API events, how it transforms raw event data into structured operational insights, and how the enriched event data in v12.1.1 gives you more to work with during problem determination.
+This article covers how AI Insights can be used during problem determination and how the extra event context can help.
 
 <!--more-->
 

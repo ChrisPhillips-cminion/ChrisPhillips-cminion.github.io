@@ -8,7 +8,9 @@ tags: [APIConnect, CMSPortal, SubscriptionWizard, TermsOfService, DeveloperExper
 draft: true
 ---
 
-Consumer-facing API programmes often need to present legal terms — a Terms of Service (ToS), an Acceptable Use Policy, a Data Processing Agreement — before a developer can subscribe to an API. API Connect's CMS Portal supports this natively via the subscription wizard, and in v12 the configuration experience has been improved. This article covers everything you need to know about when to use ToS in subscription workflows, how to configure it in the CMS Portal admin, and how your consumers will experience the acknowledgement.
+If a developer must accept legal terms before subscribing to an API, the CMS Portal subscription wizard can be used for that step. This is useful for Terms of Service, Acceptable Use Policies, or similar legal documents.
+
+This article covers when to use ToS in the subscription flow, how to configure it, and what the consumer will see.
 
 <!--more-->
 
@@ -138,5 +140,3 @@ Configuring Terms of Service in the API Connect CMS Portal subscription wizard i
 
 If you're building a consumer-facing API programme, don't skip this. The time you invest in a clear, well-presented ToS will save you significant legal headaches later.
 
----
-*Questions about CMS Portal configuration or developer experience design? Find me on Twitter [@cminion](https://twitter.com/cminion).*

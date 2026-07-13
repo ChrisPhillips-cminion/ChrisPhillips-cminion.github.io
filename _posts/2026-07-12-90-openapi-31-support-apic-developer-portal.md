@@ -8,7 +8,7 @@ tags: [APIConnect, OpenAPI, DeveloperPortal, APIStandards]
 draft: true
 ---
 
-OpenAPI 3.1 was released in 2021, but support across the API tooling ecosystem has been gradual. IBM API Connect v12 brings full first-class support for OpenAPI 3.1 throughout the platform, including the Developer Portal. This article is a practical guide to working with OpenAPI 3.1 in API Connect — what changed from 3.0, how to create and publish 3.1 APIs, and where to watch out for limitations.
+OpenAPI 3.1 support is useful if you want newer JSON Schema behaviour and want the same definition to flow through API Connect and the Developer Portal. This article covers what changed from 3.0, how to create and publish 3.1 APIs, and what to test carefully.
 
 <!--more-->
 
@@ -294,6 +294,3 @@ apic lint my-api.yaml --openapi-version 3.1
 OpenAPI 3.1 support in API Connect v12 is solid and production-ready. The main practical benefit for most API teams is the ability to use full JSON Schema for richer request/response validation descriptions. The Developer Portal renders 3.1 APIs correctly, and the gateway processes them without issues.
 
 If you're starting a new API today, use OpenAPI 3.1. If you're maintaining existing 3.0 APIs, plan a migration — the ecosystem is moving in that direction, and 3.1's JSON Schema alignment will pay dividends in the long run.
-
----
-*Questions about OpenAPI versioning or tooling? Find me on Twitter [@cminion](https://twitter.com/cminion).*

@@ -8,9 +8,9 @@ tags: [APIConnect, APIConnectv12, Analytics, UsageEvolution, APIProgram]
 draft: true
 ---
 
-One of the hardest things to see in an API programme is the *trajectory* — not just where your APIs are today, but how the portfolio has evolved over time. Which APIs have grown in usage? Which are declining and might be candidates for deprecation? How has your consumer base changed? API Connect v12.1.1 introduces the **Usage Evolution Report**, purpose-built for answering these questions.
+If you want to see how API usage changes over time, a point-in-time report is not enough. The **Usage Evolution Report** in API Connect v12.1.1 is intended to show how usage and other metrics move across reporting periods.
 
-In this article, I'll explain what the Usage Evolution Report shows, how to access it, what metrics are tracked across time periods, and how to use it to make smarter API portfolio decisions.
+This article covers what the report shows, how to access it, and how to use it.
 
 <!--more-->
 
@@ -42,8 +42,7 @@ Think of it as a "before and after" report for your API programme: where were yo
 4. Select the **scope**: All APIs, specific API, specific product, specific plan, or specific consumer org
 5. The report generates with trend visualisations for each tracked dimension
 
-> **[Screenshot Placeholder: /images/usage-evolution-report-overview.png]**
-> *The Usage Evolution Report showing API count, application count, and traffic trends over a 90-day window.*
+The report view should show the selected metrics as trends over the chosen comparison window.
 
 ## Metrics Tracked Across Time Periods
 
@@ -211,5 +210,3 @@ The Usage Evolution Report in API Connect v12.1.1 gives you the longitudinal vie
 
 Make it a habit to review the Usage Evolution Report at the start of each quarter — you'll spot trends earlier and make better API portfolio decisions as a result.
 
----
-*Questions or stories about using API analytics for strategic decisions? Find me on Twitter [@cminion](https://twitter.com/cminion).*

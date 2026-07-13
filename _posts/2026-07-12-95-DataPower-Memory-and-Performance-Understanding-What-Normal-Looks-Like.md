@@ -8,11 +8,11 @@ tags: [DataPower, Performance, Memory, Troubleshooting, Firmware]
 draft: true
 ---
 
-"50% memory usage and rising — is this normal?" is a question I get a lot, usually preceded by "We've had the appliance for six months and we've never seen it this high." The answer is almost always "it depends" — but "it depends" is not a satisfying answer when you're looking at a DataPower at 2am and trying to decide whether to open a severity-1 with IBM.
+A common DataPower question is whether rising memory usage or a CPU spike is normal or the start of a real problem. The answer depends on traffic, uptime, firmware level, and what has changed recently.
 
-A good example of why comparing raw memory percentages between HA pair appliances is misleading: the secondary appliance showed consistently higher memory usage than the primary — same firmware version, same traffic pattern, same configuration. We had screenshots of both appliances' memory dashboards and were preparing to open a ticket about the secondary. When we looked at it properly, both appliances were within normal parameters for their firmware version and traffic load. The apparent difference was because the secondary had been running for a longer period since its last restart, while the primary had been restarted during a recent maintenance window. The baseline was simply different.
+Comparing raw memory percentages between HA pair appliances can also be misleading. Two appliances with the same firmware and configuration can show different memory usage simply because one has been running longer or has a different cache state.
 
-This article is about knowing what normal looks like for your specific environment, so you can tell the difference between expected growth and a genuine problem.
+This article covers what normal looks like, what usually causes memory and CPU changes, and what to collect before opening a support case.
 
 ## 1. How DataPower Allocates Memory
 

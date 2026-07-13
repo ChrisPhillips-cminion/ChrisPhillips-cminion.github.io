@@ -8,9 +8,9 @@ tags: [APIConnect, APIConnectv12, Analytics, AIInsights, Reporting]
 draft: true
 ---
 
-If you've ever stared at an API Connect analytics report and thought "this is a lot of data, but what does it actually *mean*?", you're not alone. API analytics dashboards are great at showing you numbers — request counts, error rates, latency distributions — but translating those numbers into operational insight often requires experience and guesswork. API Connect v12.1.1 changes that with **AI Insights for Analytics Reports**.
+API Connect analytics reports show a lot of data, but the harder part is understanding what it means. AI Insights is intended to help with that by turning report data into short explanations and recommendations.
 
-In this article, I'll explain what AI Insights is, why it matters for your API programme, how it integrates into the analytics reporting experience, and practical examples of the insights it generates.
+This article covers what AI Insights is, where it appears in reporting, and the kind of output it can provide.
 
 <!--more-->
 

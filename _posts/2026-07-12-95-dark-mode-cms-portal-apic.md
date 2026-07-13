@@ -8,9 +8,9 @@ tags: [APIConnect, CMSPortal, DarkMode, Theming, DeveloperPortal]
 draft: true
 ---
 
-Dark mode has moved from a nice-to-have to an expectation for modern web applications. Developers spending long hours in IDEs and terminals appreciate being able to switch their tooling to dark themes, and your API portal is no exception. API Connect v12 brings proper dark mode support to the CMS Portal's theming system, allowing you to build custom themes that work in both light and dark modes.
+Dark mode support matters if your portal uses a custom theme and you want it to work well in both light and dark views. API Connect v12 adds dark-mode support to the CMS Portal theme system.
 
-In this article, I'll explain what dark mode means in the context of CMS Portal themes, how to enable and configure it for your custom theme, the branding considerations you need to think about, and current known limitations.
+This article covers how dark mode works in the CMS Portal, how to configure it, and what to test.
 
 <!--more-->
 
@@ -215,6 +215,3 @@ Test your dark mode theme thoroughly across:
 Dark mode support in the CMS Portal is a meaningful quality-of-life improvement for your developer community. By building your custom theme on semantic CSS variables from the start, dark mode support becomes nearly automatic — you just need to define the dark palette alongside your light palette.
 
 Invest the time to test it properly, especially around accessibility contrast ratios. A poorly implemented dark mode that's hard to read is worse than no dark mode at all.
-
----
-*Have you implemented dark mode in your CMS Portal? Share your experience or questions on Twitter [@cminion](https://twitter.com/cminion).*

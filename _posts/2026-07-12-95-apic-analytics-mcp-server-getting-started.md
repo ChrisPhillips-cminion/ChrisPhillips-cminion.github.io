@@ -8,9 +8,9 @@ tags: [APIConnect, MCP, Analytics, Automation, AI]
 draft: true
 ---
 
-The Model Context Protocol (MCP) is rapidly becoming the standard way to connect AI tools to external data sources and services. IBM has released a **preview** of the API Connect MCP Server at [github.com/ibm-apiconnect/apic-mcp-server](https://github.com/ibm-apiconnect/apic-mcp-server), which lets AI assistants and agents query your API Connect analytics data directly — no manual report generation, no custom API wrappers. If you're building AI-powered workflows that need API programme data, this is a compelling integration point.
+The API Connect MCP Server preview is a way to query API Connect analytics data from MCP-capable clients. If you want to ask natural-language questions about API usage from an AI client, this package is one way to do it.
 
-In this article, I'll walk you through what the MCP server is, how to install it, how to connect it to your AI client of choice, and what analytics tools it exposes.
+This article covers what the MCP server is, how to install it, how to connect it to a client, and what analytics tools it exposes.
 
 <!--more-->
 

@@ -7,9 +7,9 @@ description: "A summary of the IBM API Connect v12.1.1.0 LTS release (GA June 20
 tags: [APIConnect, APIConnectv12, LTS, ReleaseNotes]
 ---
 
-IBM API Connect v12.1.1.0 is positioned as a **Long-Term Support (LTS)** release. For teams planning production upgrades, that matters because LTS releases are generally the versions organisations standardise on for longer-lived environments.
+IBM API Connect v12.1.1.0 is positioned as a **Long-Term Support (LTS)** release. If you are planning production upgrades, that makes it a version worth reviewing closely.
 
-This article is a summary of what's new in v12.1.1.0, the key themes that define this release, and what the LTS designation means for your production API programme.
+This article summarises the main themes in v12.1.1.0 and the areas worth checking in the IBM documentation.
 
 <!--more-->
 
