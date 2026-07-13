@@ -79,7 +79,7 @@ plugins:
 paginate: 10
 paginate_path: "/page:num/"
 
-future: false
+future: true
 site:
   disqus:
     shortname: chrisphillips-blog
