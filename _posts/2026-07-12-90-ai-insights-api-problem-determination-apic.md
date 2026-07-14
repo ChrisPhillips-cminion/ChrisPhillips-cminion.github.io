@@ -6,6 +6,7 @@ title: "Simplify API Problem Determination with AI Insights and Enriched Analyti
 description: "Learn how AI Insights and enriched analytics data in API Connect v12.1.1 transform raw API events into structured operational insights for faster problem determination."
 tags: [APIConnect, APIConnectv12, AIInsights, ProblemDetermination, Troubleshooting]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 When an API starts failing or slowing down, problem determination usually means checking several data sources and trying to build a timeline from them. API Connect v12.1.1 uses AI Insights to make that initial investigation easier.

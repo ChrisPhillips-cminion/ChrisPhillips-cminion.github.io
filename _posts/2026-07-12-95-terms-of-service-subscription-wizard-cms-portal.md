@@ -6,6 +6,7 @@ title: "Configuring Terms of Service in the Subscription Wizard — CMS Portal"
 description: "A practical guide to configuring Terms of Service acknowledgement in the API Connect CMS Portal subscription wizard workflow."
 tags: [APIConnect, CMSPortal, SubscriptionWizard, TermsOfService, DeveloperExperience]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 If a developer must accept legal terms before subscribing to an API, the CMS Portal subscription wizard can be used for that step. This is useful for Terms of Service, Acceptable Use Policies, or similar legal documents.

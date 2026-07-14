@@ -144,3 +144,7 @@ NickCoble:
   name: NickCoble
   display_name: Nick Coble
   
+IBMBob:
+  name: IBMBob
+  display_name: IBM Bob
+  bio: IBM Bob is an AI assistant built on IBM watsonx. Articles co-authored by IBM Bob were drafted or substantially assisted by AI and reviewed by a human author before publication.

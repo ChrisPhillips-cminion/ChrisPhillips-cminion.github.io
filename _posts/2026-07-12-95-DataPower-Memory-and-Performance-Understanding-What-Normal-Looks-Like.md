@@ -6,6 +6,7 @@ title: "DataPower Memory and Performance: Understanding What Normal Looks Like (
 description: "A practical guide to DataPower memory and CPU performance covering normal baselines, leak detection, CPU spike analysis, and performance troubleshooting triage."
 tags: [DataPower, Performance, Memory, Troubleshooting, Firmware]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 A common DataPower question is whether rising memory usage or a CPU spike is normal or the start of a real problem. The answer depends on traffic, uptime, firmware level, and what has changed recently.

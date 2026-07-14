@@ -6,6 +6,7 @@ title: "Getting Started with the IBM API Connect MCP Server (Preview)"
 description: "How to install, configure, and use the IBM API Connect Analytics MCP Server to query analytics data programmatically from AI tools and agents."
 tags: [APIConnect, MCP, Analytics, Automation, AI]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 The API Connect MCP Server preview is a way to query API Connect analytics data from MCP-capable clients. If you want to ask natural-language questions about API usage from an AI client, this package is one way to do it.
@@ -31,7 +32,7 @@ This article covers what the MCP server is, how to install it, how to connect it
 
 The API Connect MCP Server is a standalone service that implements the Model Context Protocol server interface. MCP, originally developed by Anthropic, defines a standard way for AI applications to connect to external tools and data sources. When an MCP server is running, AI assistants that support MCP can discover its tools and call them as part of a conversation.
 
-The server is distributed as a set of `.tgz` npm packages (and `.mcpb` installer files for Claude Desktop), each covering a different capability area. The **Analytics** service — the focus of this article — exposes your API Connect analytics data as MCP tools. The repository also contains Management and other service packages.
+The server is distributed as a set of pre-built `.tgz` files (and `.mcpb` installer files for Claude Desktop) downloaded directly from the public GitHub repository — it has not been published to the npm registry. Each `.tgz` covers a different capability area. The **Analytics** service — the focus of this article — exposes your API Connect analytics data as MCP tools. The repository also contains Management and other service packages.
 
 This means you can ask an AI assistant (Claude Desktop, VS Code Copilot, IBM Bob, or any MCP-compatible AI tool) natural language questions about your API programme and get structured answers pulled directly from live API Connect analytics data.
 
@@ -76,19 +77,19 @@ Before installing, ensure you have:
 
 ## Installation
 
-The preview package is distributed from the GitHub repository as a pre-built `.tgz` file. Download the current analytics package from:
+The preview package is downloaded directly from the public GitHub repository — it is **not** published to the npm registry. Download the current analytics `.tgz` from:
 
 ```
 https://github.com/ibm-apiconnect/apic-mcp-server/tree/main/analytics
 ```
 
-The exact filename and version may change between preview releases.
+The exact filename and version may change between preview releases. Save the downloaded `.tgz` to a stable path on your machine (e.g. `~/apic-mcp/apic-analytics-mcp-server-0.0.1.tgz`).
 
-The MCP client invokes it via `npx` pointing at your local `.tgz` path — there is no global `npm install` step.
+The MCP client invokes it via `npx` pointing at your local `.tgz` path — there is no global `npm install` step and no separate server process to start.
 
 ## Configuration
 
-The required configuration is passed entirely via **environment variables** — there is no separate config file. The environment variables are:
+All configuration is passed through the **env block inside your MCP client config file** (e.g. `.vscode/mcp.json`, `.bob/mcp.json`, or the Claude Desktop equivalent). There is no separate config file, no `--config` CLI flag, and no environment variables you set in your shell — the MCP client reads the `env` block from its own config and injects them when it launches the server process. The variables it expects are:
 
 | Variable | Description |
 |---|---|
@@ -238,7 +239,7 @@ Retention and log-level behaviour may vary by package version. If supported by y
 
 As this is a **preview (v0.0.1)** release, be aware of the following:
 
-- **GitHub-distributed preview package:** You point `npx` at the downloaded `.tgz` file rather than relying on a global install.
+- **GitHub-distributed, not on npm:** Download the `.tgz` directly from the repository. You point `npx` at that local file — there is no npm registry entry and no global install.
 - **Node.js version constraint:** Check the `package.json` bundled with the package you downloaded and use that as the source of truth.
 - **Authentication model:** Confirm the required credentials for your target package and deployment before rollout.
 - **No persistent server process:** The package is invoked by the MCP client on demand rather than run as a long-lived background service.
@@ -249,6 +250,6 @@ As this is a **preview (v0.0.1)** release, be aware of the following:
 
 The IBM API Connect MCP Server preview is a promising way to query analytics data from MCP-capable clients. The analytics tools map well to real-world questions about API usage, consumer behaviour, latency, and error rates. If you're building AI-powered operations workflows, it's worth evaluating with the exact preview package and client combination you intend to support.
 
-The key practical points: download the package from GitHub, check the bundled `package.json` for the supported Node.js range, and configure it via environment variables or the client template provided with the release.
+The key practical points: download the `.tgz` directly from GitHub (it is not on npm), save it to a stable local path, check the bundled `package.json` for the supported Node.js range, and configure it via the `env` block in your MCP client config file (`.vscode/mcp.json`, `.bob/mcp.json`, Claude Desktop config, etc.) using the template provided with the release.
 
 See also: [IBM API Connect Analytics tools documentation](https://www.ibm.com/docs/en/api-connect/software/12.1.0?topic=tools-analytics)

@@ -6,6 +6,7 @@ title: "Visualizing API Evolution with the Usage Evolution Report in API Connect
 description: "How to use the Usage Evolution Report in API Connect v12.1.1 to track your API portfolio over time and make data-driven decisions."
 tags: [APIConnect, APIConnectv12, Analytics, UsageEvolution, APIProgram]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 If you want to see how API usage changes over time, a point-in-time report is not enough. The **Usage Evolution Report** in API Connect v12.1.1 is intended to show how usage and other metrics move across reporting periods.

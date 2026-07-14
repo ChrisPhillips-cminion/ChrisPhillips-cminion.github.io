@@ -6,6 +6,7 @@ title: "OpenAPI 3.1 Support in IBM API Connect Developer Portal"
 description: "A practical guide to creating, publishing, and managing APIs with OpenAPI 3.1 in the IBM API Connect Developer Portal."
 tags: [APIConnect, OpenAPI, DeveloperPortal, APIStandards]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 OpenAPI 3.1 support is useful if you want newer JSON Schema behaviour and want the same definition to flow through API Connect and the Developer Portal. This article covers what changed from 3.0, how to create and publish 3.1 APIs, and what to test carefully.

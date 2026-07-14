@@ -6,6 +6,7 @@ title: "AI Insights for Analytics Reports in IBM API Connect v12.1.1"
 description: "Discover how AI Insights transforms raw API analytics data into actionable intelligence within the API Connect reporting experience."
 tags: [APIConnect, APIConnectv12, Analytics, AIInsights, Reporting]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 API Connect analytics reports show a lot of data, but the harder part is understanding what it means. AI Insights is intended to help with that by turning report data into short explanations and recommendations.

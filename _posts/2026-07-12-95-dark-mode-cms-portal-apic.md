@@ -6,6 +6,7 @@ title: "Dark Mode Support in IBM API Connect CMS Portal"
 description: "How to enable and configure dark mode for custom themes in the IBM API Connect CMS Portal, including branding considerations and current limitations."
 tags: [APIConnect, CMSPortal, DarkMode, Theming, DeveloperPortal]
 draft: true
+author: ["ChrisPhillips", "IBMBob"]
 ---
 
 Dark mode support matters if your portal uses a custom theme and you want it to work well in both light and dark views. API Connect v12 adds dark-mode support to the CMS Portal theme system.
