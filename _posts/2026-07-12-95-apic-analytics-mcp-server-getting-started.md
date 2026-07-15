@@ -248,7 +248,7 @@ As this is a **preview (v0.0.1)** release, be aware of the following:
 
 ## Summary
 
-The IBM API Connect MCP Server preview is a promising way to query analytics data from MCP-capable clients. The analytics tools map well to real-world questions about API usage, consumer behaviour, latency, and error rates. If you're building AI-powered operations workflows, it's worth evaluating with the exact preview package and client combination you intend to support.
+The IBM API Connect MCP Server is a  way to query analytics data from MCP-capable clients. The analytics tools map well to real-world questions about API usage, consumer behaviour, latency, and error rates. If you're building AI-powered operations workflows, it's worth evaluating with the exact preview package and client combination you intend to support.
 
 The key practical points: download the `.tgz` directly from GitHub (it is not on npm), save it to a stable local path, check the bundled `package.json` for the supported Node.js range, and configure it via the `env` block in your MCP client config file (`.vscode/mcp.json`, `.bob/mcp.json`, Claude Desktop config, etc.) using the template provided with the release.
 

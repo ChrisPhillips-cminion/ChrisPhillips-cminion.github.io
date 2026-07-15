@@ -1,11 +1,10 @@
 ---
 layout: post
-date: 2026-07-12 09:00:00
+date: 2026-07-15 09:00:00
 categories: APIConnect
 title: "AI Insights for Analytics Reports in IBM API Connect v12.1.1"
 description: "Discover how AI Insights transforms raw API analytics data into actionable intelligence within the API Connect reporting experience."
 tags: [APIConnect, APIConnectv12, Analytics, AIInsights, Reporting]
-draft: true
 author: ["ChrisPhillips", "IBMBob"]
 ---
 
