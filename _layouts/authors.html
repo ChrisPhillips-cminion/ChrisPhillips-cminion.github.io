@@ -29,7 +29,7 @@ comments: true
         {% endif %}
         <table>
           {% for post in site.posts %}
-{%- if post.author contains author.name -%}
+{%- if post.author contains author.name and post.draft != true -%}
                <li><a href="{{ post.url | relative_url }}">{{ post.date | date: date_format }} - {{ post.title }}</a></li>
                {% endif %}
 
