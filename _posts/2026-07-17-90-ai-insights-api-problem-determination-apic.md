@@ -1,11 +1,10 @@
 ---
 layout: post
-date: 2026-07-12 10:00:00
+date: 2026-07-17 10:00:00
 categories: APIConnect
 title: "Simplify API Problem Determination with AI Insights and Enriched Analytics in API Connect v12.1.1"
 description: "Learn how AI Insights and enriched analytics data in API Connect v12.1.1 transform raw API events into structured operational insights for faster problem determination."
 tags: [APIConnect, APIConnectv12, AIInsights, ProblemDetermination, Troubleshooting]
-draft: true
 author: ["ChrisPhillips", "IBMBob"]
 ---
 
