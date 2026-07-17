@@ -9,24 +9,25 @@ draft: true
 author: ["ChrisPhillips", "IBMBob"]
 ---
 
-A common DataPower question is whether rising memory usage or a CPU spike is normal or the start of a real problem. The answer depends on traffic, uptime, firmware level, and what has changed recently.
+Rising memory on a DataPower appliance is not automatically a problem — but knowing whether it is requires understanding what the numbers actually mean.
 
-Comparing raw memory percentages between HA pair appliances can also be misleading. Two appliances with the same firmware and configuration can show different memory usage simply because one has been running longer or has a different cache state.
+![CPU Sample graph](/images/cpu.png)
 
-This article covers what normal looks like, what usually causes memory and CPU changes, and what to collect before opening a support case.
+
+<!--more-->
+
+Comparing raw memory percentages between HA pair appliances is misleading. Two appliances with identical firmware and configuration can show different memory usage simply because one has been running longer or has a warmer cache.
 
 ## 1. How DataPower Allocates Memory
 
-DataPower's memory is divided into several regions:
+DataPower divides memory into several regions:
 
-- **Firmware-reserved memory:** The operating system and DataPower firmware services reserve a portion of total memory. This is not available for application use.
-- **Domain memory:** Each DataPower domain has its own memory allocation. Domains process API traffic and run configurations.
-- **Application buffers:** DataPower uses buffers for XML parsing, JSON processing, HTTP connection handling, and XSLT transformations. These are allocated from a shared buffer pool.
-- **Compilation cache:** GatewayScript and XSLT compiled code is cached. More traffic means more compiled code in cache, which means more memory used.
+- **Firmware-reserved:** The OS and DataPower firmware services reserve a fixed portion. It is not available for application use.
+- **Domain memory:** Each domain has its own chunk. Domains process API traffic and hold configurations.
+- **Application buffers:** Used for XML parsing, JSON processing, HTTP connection handling, and XSLT transformations. Allocated from a shared buffer pool.
+- **Compilation cache:** GatewayScript and XSLT compiled code is cached in memory. More traffic means more compiled code, which means more memory used.
 
-**What this means for comparing HA pairs:** The raw percentage reported by `show memory` on each appliance is the percentage of installed memory in use across the whole system. Because the two appliances in an HA pair may have different uptime (and therefore different cache/buffer fill levels), their reported percentages will naturally differ even under identical traffic loads.
-
-**Key metrics from `show memory` (DataPower CLI):**
+The `show memory` output from the CLI:
 
 ```
 DataPower# show memory
@@ -41,38 +42,38 @@ Requested memory:  4915200 KB
 Hold memory:       131072 KB
 ```
 
-The number to watch is **Available memory** trending over time — if it decreases consistently day-over-day without corresponding traffic growth, you may have a memory leak. Note that `show memory` shows system-level memory, not per-domain breakdown; per-domain stats are in the error report's `DomainStatusObject`.
+Watch **Available memory** trending over time. If it decreases consistently day-over-day without corresponding traffic growth, that is a memory leak. Note that `show memory` is system-level — per-domain breakdown is in the error report's `DomainStatusObject`.
 
 ## 2. Normal Memory Growth vs. Genuine Memory Leak
 
-Memory growth in DataPower is expected in three scenarios:
+Expected growth happens in three scenarios:
 
-**Expected growth:**
 - New APIs deployed → new domain configurations loaded → more domain memory
 - Traffic growth → more application buffers allocated
 - Longer uptime → larger compilation cache
 
-**Leak indicators:**
-- **Available memory** (from `show memory`) decreases by more than 10% per day with no change in traffic or configuration
+Leak indicators:
+
+- **Available memory** drops by more than 10% per day with no change in traffic or configuration
 - A specific domain's memory allocation grows continuously without plateauing
-- After restarting the domain (without restarting the appliance), memory does not return to baseline
+- After restarting the domain (not the appliance), memory does not return to baseline
 
-**Diagnosing with error report:**
+**Diagnosing with an error report:**
 
-The DataPower error report is a directory of XML status files. Generate one with:
+Generate one with:
 
 ```bash
 generate error-report
 ```
 
-The relevant files for memory leak diagnosis are:
+Relevant files for memory leak diagnosis:
 
-- **`DomainsMemoryStatus2.xml`** — per-domain memory tracking. Fields include `ServicesCurrent`, `ServicesOneMinute` through `ServicesOneDay`, `DocumentCaches`, `StylesheetCaches`. Watch `ServicesOneDay` growing relative to `ServicesCurrent` — sustained growth without traffic growth indicates a leak.
-- **`MemoryStatus2.xml`** — system-level memory snapshot (`Usage`, `AvailableMemory`, `UsedMemory`, `TotalMemory`).
-- **`DocumentCachingSummary.xml`** — per-XMLManager document cache stats (`DocCount`, `CacheSizeKiB`).
-- **`StylesheetCachingSummary2.xml`** — per-XMLManager stylesheet cache stats (`CacheCount`, `CacheKBCount`).
+- **`DomainsMemoryStatus2.xml`** — per-domain memory. Watch `ServicesOneDay` growing relative to `ServicesCurrent` with flat traffic — that is a leak.
+- **`MemoryStatus2.xml`** — system-level snapshot (`Usage`, `AvailableMemory`, `UsedMemory`, `TotalMemory`).
+- **`DocumentCachingSummary.xml`** — per-XMLManager document cache (`DocCount`, `CacheSizeKiB`).
+- **`StylesheetCachingSummary2.xml`** — per-XMLManager stylesheet cache (`CacheCount`, `CacheKBCount`).
 
-**Example `DomainsMemoryStatus2.xml` entry:**
+Example `DomainsMemoryStatus2.xml` entry:
 
 ```xml
 <DomainsMemoryStatus2>
@@ -90,36 +91,26 @@ The relevant files for memory leak diagnosis are:
 </DomainsMemoryStatus2>
 ```
 
-If `ServicesLifetime` is growing steadily while `ServicesCurrent` is stable and traffic is flat, you likely have a memory leak in that domain's configuration or GatewayScript code.
+If `ServicesLifetime` is growing steadily while `ServicesCurrent` is stable and traffic is flat, you have a memory leak in that domain's configuration or GatewayScript code.
 
 ## 3. CPU Spikes: Three Most Common Causes
 
 **Cause 1: Burst traffic**
 
-A sudden increase in API traffic — a batch job starting, a traffic spike from a partner system — will cause CPU to spike as DataPower processes the incoming requests. This is expected behaviour.
-
-**Diagnosis:** Correlate the CPU spike with request logs showing increased traffic volume. If the spike lasts exactly as long as the burst and then subsides, this is normal.
+A sudden increase in API calls — a batch job starting, a partner system spiking — will drive CPU up as DataPower processes the requests. Correlate the spike with request logs showing increased traffic volume. If it subsides when the burst ends, it is normal.
 
 **Cause 2: Large payload processing**
 
-Processing multi-megabyte XML or JSON payloads (common in B2B integrations, file transfer APIs) causes brief CPU spikes as DataPower parses, validates, and transforms the content. The larger the payload, the more CPU consumed.
-
-**Diagnosis:** Use `show statistics` to check global connection counts and payload processing metrics — note this is a global view, not per-domain. Large request volumes correlating with the spike confirm payload-driven CPU usage. This is expected for large payloads but can become a problem if partners start sending payloads larger than your configured limits.
+Multi-megabyte XML or JSON payloads (common in B2B and file transfer APIs) cause brief CPU spikes during parsing, validation, and transformation. Use `show statistics` to check global connection counts and correlate with the spike. This is expected for large payloads, but becomes a problem if partners start sending payloads above your configured limits.
 
 **Cause 3: First-call XSLT/GatewayScript compilation**
 
-The first time an XSLT stylesheet or GatewayScript module is executed after a domain restart, it must be compiled. This compilation is CPU-intensive. Subsequent calls use the cached compiled version and are significantly faster.
+The first call after a domain restart or a new deployment compiles XSLT stylesheets and GatewayScript modules. Compilation is CPU-intensive. Subsequent calls use the cached version and are significantly faster. If the spike happens once and does not recur, this is the cause. If it happens repeatedly, the compilation cache is too small.
 
-**Diagnosis:** If CPU spikes correlate with a domain restart, an XSLT or GatewayScript deployment, or an API product publish, this is almost certainly first-call compilation. It should only happen once. If it happens repeatedly, the compilation cache may be too small.
-
-**Collecting CPU data for IBM support cases:**
-
-IBM support often asks for CPU screenshots — the pattern is well-established. HA pair CPU graphs showing sustained elevated CPU can help distinguish a genuine performance issue from burst traffic.
-
-For a support case, collect:
+**Collecting CPU data for a support case:**
 
 ```bash
-# Firmware version (include in every support case)
+# Firmware version — include in every support case
 show version
 
 # System identity, serial number, uptime
@@ -136,70 +127,53 @@ show cpu
 show memory
 ```
 
-> **Note:** `show statistics` and `show cpu` are global commands — they do not accept a `domain` parameter. Per-domain memory metrics are in the error report's `DomainsMemoryStatus2.xml`, not via a CLI `show` command.
+> **Note:** `show statistics` and `show cpu` are global commands — they do not accept a `domain` parameter. Per-domain memory metrics are in the error report's `DomainsMemoryStatus2.xml`.
 
-## 4. Collecting Right Diagnostic Data for Performance Issues
-
-Before opening a performance support case, collect:
-
-**Object and statistics from error report:**
+## 4. What to Collect Before Opening a Performance Support Case
 
 ```bash
 # Generate error report
 generate error-report
 
-# Key files to inspect in the error report directory:
-# - MemoryStatus2.xml          — system memory (Usage, AvailableMemory, UsedMemory, TotalMemory)
-# - DomainsMemoryStatus2.xml   — per-domain memory (ServicesOneDay, ServicesLifetime, DocumentCaches)
-# - SystemUsage.xml            — CPU load (Load field, 0-100 scale)
-# - DocumentCachingSummary.xml — document cache per XMLManager (DocCount, CacheSizeKiB)
-# - StylesheetCachingSummary2.xml — stylesheet cache per XMLManager (CacheCount, CacheKBCount)
-# - HTTPConnections.xml        — HTTP connection pool stats per XMLManager (reqTenSec through reqOneDay)
+# Key files to inspect:
+# - MemoryStatus2.xml              — system memory (Usage, AvailableMemory, UsedMemory, TotalMemory)
+# - DomainsMemoryStatus2.xml       — per-domain memory (ServicesOneDay, ServicesLifetime, DocumentCaches)
+# - SystemUsage.xml                — CPU load (Load field, 0–100 scale)
+# - DocumentCachingSummary.xml     — document cache per XMLManager (DocCount, CacheSizeKiB)
+# - StylesheetCachingSummary2.xml  — stylesheet cache per XMLManager (CacheCount, CacheKBCount)
+# - HTTPConnections.xml            — HTTP connection pool stats (reqTenSec through reqOneDay)
 ```
-
-**Key DataPower CLI commands:**
 
 ```bash
-# Memory summary (system-level: available, used, reserved, total)
 show memory
-
-# Global connection count (included in show statistics output)
 show statistics
-
-# CPU usage intervals (10s / 1m / 10m / 1h / 24h)
 show cpu
-
-# For per-domain memory and request metrics, generate an error report:
 generate error-report
 # Then inspect DomainsMemoryStatus2.xml for per-domain memory counters.
-# Per-domain memory breakdown is not available via a single CLI show command.
 ```
 
-> **Note:** `show domain-memory`, `show connections` (as a standalone command), `show cpu domain all`, and `show xml-managers` are not separate CLI commands. Use `show statistics` for global connection counts, `show cpu` for CPU intervals, and the error report files (`DomainsMemoryStatus2.xml`, `HTTPConnections.xml`) for per-domain and connection pool detail.
+> **Note:** `show domain-memory`, `show connections`, `show cpu domain all`, and `show xml-managers` are not valid standalone CLI commands. Use `show statistics` for global connection counts, `show cpu` for CPU intervals, and the error report for per-domain detail.
 
 ## 5. Performance Tuning Levers
 
 **Document cache sizing:**
 
-The document cache controls how many compiled stylesheets and parsed documents DataPower retains in memory. Configure it via the WebGUI under **Objects → XML Manager → [your XML manager] → Document Cache** or via the DataPower CLI in the relevant domain context. The key settings to tune are maximum number of cached entries and the TTL for cache expiry. If you observe high first-call latency but low subsequent latency, the cache size may be too small. If memory is growing without traffic growth, the TTL may be too long.
+Configure via **Objects → XML Manager → [your XML manager] → Document Cache** in the WebGUI, or via the CLI in the relevant domain context. Tune the maximum number of cached entries and the TTL. High first-call latency with low subsequent latency means the cache is too small. Memory growing without traffic growth means the TTL is too long.
 
 **Connection pool configuration:**
 
-Connection pool settings (max connections, idle timeout, connection timeout) are configured per Multi-Protocol Gateway or HTTP Front Side Handler in the WebGUI or CLI. The defaults are tuned for balanced workloads. Only adjust these with specific evidence that pool exhaustion is occurring — look for `connection refused` or `connection pool full` errors in the DataPower log.
+Set per Multi-Protocol Gateway or HTTP Front Side Handler. The defaults are tuned for balanced workloads. Only change them if you have evidence of pool exhaustion — look for `connection refused` or `connection pool full` errors in the DataPower log.
 
-**Thread count — caveat on defaults:**
+**Thread count:**
 
-DataPower's default thread count is tuned for a balanced workload. Increasing thread counts beyond firmware-recommended values can actually decrease performance by causing excessive context switching. Do not change thread count without IBM guidance.
+Do not change thread count without IBM guidance. Increasing beyond firmware-recommended values can decrease performance through excessive context switching.
 
-## 6. Triage Checklist: Five Questions Before Opening a Support Case
+## 6. Five Questions Before You Call IBM
 
-Answer these before you call IBM:
+1. Is the appliance still processing traffic? If yes, are response times degraded or is it fully functional? Get the exact numbers before and after.
+2. What changed immediately before the issue started? New API, firmware upgrade, configuration change, traffic pattern change?
+3. Is the issue on one appliance or both in the HA pair? If one, is it primary or secondary? What does HA status show?
+4. Is Available memory decreasing consistently day-over-day, or has it plateaued? Provide a graph over at least 48 hours.
+5. What error messages appear in the DataPower logs? Export the relevant entries. Never describe errors — show them.
 
-1. **Is the appliance still processing traffic?** If yes, is performance degraded or is it fully functional? Note exact response times before and after the issue started.
-2. **What changed immediately before the issue started?** New API deployed? Firmware upgraded? Configuration change? Traffic pattern change?
-3. **Is the issue on one appliance or both in an HA pair?** If only one, is it the primary or secondary? What does HA status show?
-4. **Is Available memory (from `show memory`) decreasing consistently day-over-day, or has it plateaued?** Provide a graph of memory usage over at least 48 hours.
-5. **What error messages appear in the DataPower logs?** Export the relevant log entries for the problem period. Never describe errors — show them.
-
-Having these five answers ready when you call IBM support will dramatically accelerate the case resolution. Screenshots of CPU and memory graphs are worth more than written descriptions.
-
+Screenshots of CPU and memory graphs are worth more than written descriptions.
