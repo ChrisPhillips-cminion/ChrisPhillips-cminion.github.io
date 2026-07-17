@@ -3,8 +3,6 @@ layout: post
 date: 2026-07-17 10:00:00
 categories: APIConnect
 title: "Simplify API Problem Determination with AI Insights and Enriched Analytics in API Connect v12.1.1"
-description: "Learn how AI Insights and enriched analytics data in API Connect v12.1.1 transform raw API events into structured operational insights for faster problem determination."
-tags: [APIConnect, APIConnectv12, AIInsights, ProblemDetermination, Troubleshooting]
 author: ["ChrisPhillips", "IBMBob"]
 ---
 
@@ -16,101 +14,79 @@ This article covers how AI Insights can be used during problem determination and
 
 <!--more-->
 
-## Table of Contents
+## The Problem
 
-1. [The Problem Determination Challenge](#the-problem-determination-challenge)
-2. [How AI Insights Analyses API Events](#how-ai-insights-analyses-api-events)
-3. [From Raw Events to Structured Insights](#from-raw-events-to-structured-insights)
-4. [The Investigation Workflow](#the-investigation-workflow)
-5. [Example: Investigating an Error Spike](#example-investigating-an-error-spike)
-6. [Limitations and Notes](#limitations-and-notes)
+When something goes wrong with an API, you're typically pulling from several sources at once:
 
-## The Problem Determination Challenge
+- **Gateway logs**: backend response times, protocol-level errors
+- **Analytics events**: who called what, when, at what rate
+- **Backend telemetry**: your own service health metrics
+- **Consumer reports**: usually vague — "it's slow" or "it's not working"
 
-API problem determination typically involves some combination of:
+Correlating those sources takes time. Even with good tooling, the context-switching overhead is significant.
 
+AI Insights acts as a first-pass investigator. It ingests the event data available in API Connect and synthesises a structured narrative: what changed, when, what else was happening at the same time, and what the likely cause is.
 
-- **Gateway logs**: Backend response times, protocol-level errors
-- **Analytics events**: Who called what when, Request counts, error rates per API/plan/application
-- **Backend telemetry**: Your own service health metrics
-- **Consumer reports**: Often vague — "your API is slow" or "it's not working"
+## How AI Insights Analyses Events
 
-Correlating across all these sources takes time and expertise. Even when you have good tooling, the mental overhead of switching between contexts and building a timeline is significant.
+When you open the AI Insights panel for a set of filtered events, it runs several types of analysis:
 
-AI Insights in v12.1.1 acts as a first-pass investigator. It ingests the same event data available in API Connect and synthesises a structured narrative: what changed, when, what else was happening at the same time, and what the likely cause is.
+**Baseline comparison** — compares current metrics against historical baselines for the same API, plan, and application. A jump from 0.1% to 5% error rate gets flagged immediately.
 
-## How AI Insights Analyses API Events
+**Temporal correlation** — looks for correlated events across dimensions. If latency spiked at the same time a specific backend returned errors, it surfaces that correlation rather than making you discover it manually.
 
-When you open the AI Insights panel for a specific API event or set of filtered events, the feature may perform several types of analysis on the filtered analytics data:
+**Anomaly classification** — classifies anomalies into categories: backend latency regression, auth/authorisation issues, rate limit violations, schema validation failures, upstream timeouts. Each classification includes a confidence score.
 
-### Baseline Comparison
-It compares current metrics against historical baselines for the same API, plan, and application. If error rates normally sit at 0.1% and suddenly jump to 5%, it flags that deviation immediately.
+**Root cause signalling** — attempts to identify the most likely root cause category. Not a guaranteed diagnosis — a strongly informed hypothesis that directs the investigation.
 
-### Temporal Correlation
-It looks for correlated events across dimensions. For example, if your latency spiked at the same time a specific backend service returned errors, AI Insights surfaces that correlation rather than making you discover it manually.
+## From Raw Events to Structured Insight
 
-### Anomaly Classification
-It classifies anomalies into categories: backend latency regression, authentication/authorisation issues, rate limit violations, schema validation failures, upstream timeouts, and more. Each classification comes with a confidence score.
-
-### Root Cause Signalling
-Based on the event fingerprint, AI Insights attempts to identify the most likely root cause category — not a guaranteed diagnosis, but a strongly informed hypothesis that can direct your investigation.
-
-## From Raw Events to Structured Insights
-
-Here's an illustrative example of how raw event data might be summarised into an AI insight. Imagine your API gateway logs this sequence of events for the `/orders` endpoint:
+Here's what the raw gateway log for a failing `/orders` endpoint might look like:
 
 ```
-2026-07-12 08:14:23.441 [gateway] HTTP 500 — POST /orders 
+2026-07-12 08:14:23.441 [gateway] HTTP 500 — POST /orders
   backend_latency=4521ms upstream_timeout
-2026-07-12 08:14:25.112 [gateway] HTTP 500 — POST /orders 
+2026-07-12 08:14:25.112 [gateway] HTTP 500 — POST /orders
   backend_latency=4301ms upstream_timeout
-2026-07-12 08:14:27.003 [gateway] HTTP 504 — POST /orders 
+2026-07-12 08:14:27.003 [gateway] HTTP 504 — POST /orders
   gateway_timeout
 ```
 
-Raw, this is a sequence of error codes. An AI-generated summary might express it like this:
+The same data expressed as an AI-generated summary:
 
 ```
 🔴 [CRITICAL] Upstream Service Degradation Detected — /orders
 
-A pattern of backend timeouts has been detected on the /orders endpoint:
-- 8 timeout errors (HTTP 500/504) in the past 12 minutes
-- Average backend response time: 4,380ms (vs. baseline of 230ms)
-- All failures are from POST /orders operations
-- Correlated event: Backend /order-service health endpoint returned 
-  HTTP 503 at 08:14 UTC
+8 timeout errors (HTTP 500/504) in the past 12 minutes.
+Average backend response time: 4,380ms (vs. baseline of 230ms).
+All failures are POST /orders operations.
+Correlated event: Backend /order-service health endpoint returned
+HTTP 503 at 08:14 UTC.
 
 Likely root cause: Upstream order service is overloaded or unreachable.
-Recommended actions:
+Recommended:
   1. Check order-service pod/container health in your backend cluster
   2. Review recent deployments to order-service
   3. Consider temporary rate limiting on /orders to protect the backend
 ```
 
-## The Investigation Workflow
+## An Investigation Walkthrough
 
-Here's how I'd use AI Insights in a real problem determination session:
+A consumer reports: "Our application is getting errors on the `/payments` endpoint since this morning."
 
-### Step 1: Consumer Reports an Issue
-"Hi, our application is getting errors on the `/payments` endpoint since this morning."
+1. Open API Analytics for `/payments`, time range: today.
+2. Open the AI Insights panel. It shows:
+   ```
+   ⚠️ [WARNING] Validation Error Spike on /payments
+   POST requests with content-type application/json have returned 400 errors
+   at 3.2x the normal rate since 2026-07-12 06:00 UTC.
+   Error body: "card_number: must be a 16-digit string" —
+   suggests a schema validation change was published.
+   ```
+3. Check the API definition — a schema update was published at 06:00 UTC.
+4. Notify the consumer: they need to update their payload format.
 
-### Step 2: Open AI Insights for `/payments`
-Rather than starting from raw logs, I open the API Analytics report for `/payments` with a time range covering "today". Depending on the report, v12.1.1 may expose more event detail than earlier versions, which can make the initial investigation faster. Then I look at the AI Insights panel on top of that.
-
-### Step 3: Read the AI Insight
-The AI Insights panel might show something like:
-```
-⚠️ [WARNING] Validation Error Spike on /payments
-POST requests to /payments with content-type application/json 
-have returned 400 errors at 3.2x the normal rate since 2026-07-12 06:00 UTC.
-Error body analysis: "card_number: must be a 16-digit string" — 
-this suggests a schema validation change was published.
-```
-
-### Step 4: Validate and Confirm
-I check the API definition — yes, a schema update was published at 06:00 UTC. I notify the API consumer that they'll need to update their payload format.
-
-This whole investigation took under 2 minutes instead of 20.
+Under 2 minutes instead of 20.
 
 ## Example: Investigating an Error Spike
 
