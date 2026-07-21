@@ -27,7 +27,7 @@ DataPower divides memory into several regions:
 - **Application buffers:** Used for XML parsing, JSON processing, HTTP connection handling, and XSLT transformations. Allocated from a shared buffer pool.
 - **Compilation cache:** GatewayScript and XSLT compiled code is cached in memory. More traffic means more compiled code, which means more memory used.
 
-The `show memory` output from the CLI:
+The `show memory` output from the CLI ([IBM docs: show memory](https://www.ibm.com/docs/en/datapower-gateway/10.6.0?topic=commands-show-memory)):
 
 ```
 DataPower# show memory
@@ -40,9 +40,21 @@ Reserved memory:   1048576 KB
 Total memory:      7340032 KB
 Requested memory:  4915200 KB
 Hold memory:       131072 KB
+Inactive memory:   524288 KB
 ```
 
-Watch **Available memory** trending over time. If it decreases consistently day-over-day without corresponding traffic growth, that is a memory leak. Note that `show memory` is system-level — per-domain breakdown is in the error report's `DomainStatusObject`.
+Fields to know:
+
+- **Installed memory** — total physical RAM on the appliance.
+- **Total memory** — memory available to DataPower after firmware overhead.
+- **Used memory** — memory actively in use.
+- **Available memory** — free memory. Watch this trending over time; consistent day-over-day drops without traffic growth indicate a leak.
+- **Reserved memory** — pre-allocated for internal use, not available to services.
+- **Requested memory** — memory requested by running processes (can exceed Used when memory is fragmented).
+- **Hold memory** — memory held by the system that has been freed by processes but not yet returned to the pool.
+- **Inactive memory** — memory allocated but not recently accessed. DataPower can reclaim it under pressure. A large inactive pool is normal and healthy; it means the system is caching aggressively. It only becomes a concern if Available drops while Inactive is also near zero.
+
+Note that `show memory` is system-level — per-domain breakdown is in the error report's `DomainsMemoryStatus2.xml`.
 
 ## 2. Normal Memory Growth vs. Genuine Memory Leak
 
@@ -154,7 +166,24 @@ generate error-report
 
 > **Note:** `show domain-memory`, `show connections`, `show cpu domain all`, and `show xml-managers` are not valid standalone CLI commands. Use `show statistics` for global connection counts, `show cpu` for CPU intervals, and the error report for per-domain detail.
 
-## 5. Performance Tuning Levers
+## 5. How DataPower Throttles Under Memory Pressure
+
+When memory runs low, DataPower engages a throttling mechanism before it reaches a critical state. There are three thresholds to understand ([IBM docs: Memory Management](https://www.ibm.com/docs/en/datapower-gateway/10.6.0?topic=management-memory)):
+
+**Throttle At (% memory remaining)**
+When available memory drops to this percentage, DataPower begins denying new incoming connections. It is not dropping traffic arbitrarily — it is buying the appliance time to complete the work already in flight and reclaim memory back below the threshold. Existing connections continue to be processed normally.
+
+**Timeout**
+Once throttling begins, this is the window DataPower has to recover. If available memory does not climb back above the Throttle At threshold within this time, DataPower performs a **Throttler Reload** — a controlled firmware restart. The purpose is graceful recovery: completing or draining in-flight transactions, preserving data integrity, and returning the appliance to a known-good state.
+
+**Terminate At (% memory remaining)**
+A hard safety net. If memory continues to fall below this value even while throttling is active, DataPower does not wait for the timeout — it starts the Throttler Reload immediately. This guards against runaway memory growth that throttling alone cannot stop.
+
+The Throttler Reload is not a crash — it is a deliberate, controlled action to protect the appliance and its data. The sequence is: throttle → allow time to recover → reload if recovery fails or if memory hits the hard limit.
+
+Configure these thresholds in the WebGUI under **Administration → Device → Memory Management** ([IBM docs: Configuring memory thresholds](https://www.ibm.com/docs/en/datapower-gateway/10.6.0?topic=management-configuring-memory-thresholds)).
+
+## 6. Performance Tuning Levers
 
 **Document cache sizing:**
 
@@ -168,7 +197,7 @@ Set per Multi-Protocol Gateway or HTTP Front Side Handler. The defaults are tune
 
 Do not change thread count without IBM guidance. Increasing beyond firmware-recommended values can decrease performance through excessive context switching.
 
-## 6. Five Questions Before You Call IBM
+## 7. Five Questions Before You Call IBM
 
 1. Is the appliance still processing traffic? If yes, are response times degraded or is it fully functional? Get the exact numbers before and after.
 2. What changed immediately before the issue started? New API, firmware upgrade, configuration change, traffic pattern change?
