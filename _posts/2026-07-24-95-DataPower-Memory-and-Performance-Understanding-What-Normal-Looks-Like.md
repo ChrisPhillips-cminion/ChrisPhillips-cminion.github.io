@@ -26,6 +26,7 @@ DataPower divides memory into several regions:
 - **Domain memory:** Each domain has its own chunk. Domains process API traffic and hold configurations.
 - **Application buffers:** Used for XML parsing, JSON processing, HTTP connection handling, and XSLT transformations. Allocated from a shared buffer pool.
 - **Compilation cache:** GatewayScript and XSLT compiled code is cached in memory. More traffic means more compiled code, which means more memory used.
+- **Filesystem regions (`temporary`, `image`, `internal`):** These count as physical memory usage. `temporary` is used by API Connect and gateway peering to load shared state. `internal` is where GatewayScript and XSLT are compiled and executed. `image` holds firmware and domain package data. None of this shows up at startup — it accumulates as caches warm, APIs are deployed, and peering loads its data. This is expected growth, not a leak.
 
 The `show memory` output from the CLI ([IBM docs: show memory](https://www.ibm.com/docs/en/datapower-gateway/10.6.0?topic=commands-show-memory)):
 
@@ -62,7 +63,7 @@ Expected growth happens in three scenarios:
 
 - New APIs deployed → new domain configurations loaded → more domain memory
 - Traffic growth → more application buffers allocated
-- Longer uptime → larger compilation cache
+- Longer uptime → larger compilation cache, and more data loaded into `temporary` (API Connect/gateway peering state) and `internal` (compiled GatewayScript/XSLT). This is why memory on a freshly restarted appliance will always look lower than the same appliance after a few hours under load.
 
 Leak indicators:
 
