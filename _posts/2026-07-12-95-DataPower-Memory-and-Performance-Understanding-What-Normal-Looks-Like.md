@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-07-12 18:07:00
+date: 2026-07-24 18:07:00
 categories: [DataPower]
 title: "DataPower Memory and Performance: Understanding What Normal Looks Like (Before You Open a Ticket)"
 description: "A practical guide to DataPower memory and CPU performance covering normal baselines, leak detection, CPU spike analysis, and performance troubleshooting triage."
@@ -54,7 +54,7 @@ Fields to know:
 - **Hold memory** — memory held by the system that has been freed by processes but not yet returned to the pool.
 - **Inactive memory** — memory allocated but not recently accessed. DataPower can reclaim it under pressure. A large inactive pool is normal and healthy; it means the system is caching aggressively. It only becomes a concern if Available drops while Inactive is also near zero.
 
-Note that `show memory` is system-level — per-domain breakdown is in the error report's `DomainsMemoryStatus2.xml`.
+Note that `show memory` is system-level — per-domain breakdown is in the error report's `DomainsMemoryStatus2.xml`. The per-domain figures in that file must be treated as indicative rather than precise.
 
 ## 2. Normal Memory Growth vs. Genuine Memory Leak
 
@@ -66,9 +66,10 @@ Expected growth happens in three scenarios:
 
 Leak indicators:
 
-- **Available memory** drops by more than 10% per day with no change in traffic or configuration
-- A specific domain's memory allocation grows continuously without plateauing
-- After restarting the domain (not the appliance), memory does not return to baseline
+- **Available memory** (system-level) drops by more than 10% per day with no change in traffic or configuration
+- After restarting a domain (not the appliance), system-level memory does not return to baseline
+
+> **Note:** Genuine memory leaks will not show up in the domain/service-level memory status providers (`DomainsMemoryStatus2.xml`). That is precisely why they are leaks — the accounting doesn't capture them. If you suspect a leak, track it at the system level via `show memory` and `MemoryStatus2.xml` over time.
 
 **Diagnosing with an error report:**
 
@@ -80,8 +81,8 @@ generate error-report
 
 Relevant files for memory leak diagnosis:
 
-- **`DomainsMemoryStatus2.xml`** — per-domain memory. Watch `ServicesOneDay` growing relative to `ServicesCurrent` with flat traffic — that is a leak.
-- **`MemoryStatus2.xml`** — system-level snapshot (`Usage`, `AvailableMemory`, `UsedMemory`, `TotalMemory`).
+- **`MemoryStatus2.xml`** — system-level snapshot (`Usage`, `AvailableMemory`, `UsedMemory`, `TotalMemory`). This is the primary file for leak detection — track `AvailableMemory` over time.
+- **`DomainsMemoryStatus2.xml`** — per-domain memory counters. These figures have known accuracy limitations and will not reveal a genuine memory leak (leaks don't surface in domain-level accounting). Use them as a rough guide to which domain is the largest consumer, not as precise measurements.
 - **`DocumentCachingSummary.xml`** — per-XMLManager document cache (`DocCount`, `CacheSizeKiB`).
 - **`StylesheetCachingSummary2.xml`** — per-XMLManager stylesheet cache (`CacheCount`, `CacheKBCount`).
 
@@ -103,7 +104,7 @@ Example `DomainsMemoryStatus2.xml` entry:
 </DomainsMemoryStatus2>
 ```
 
-If `ServicesLifetime` is growing steadily while `ServicesCurrent` is stable and traffic is flat, you have a memory leak in that domain's configuration or GatewayScript code.
+If `ServicesLifetime` is growing steadily while `ServicesCurrent` is stable and traffic is flat, it may indicate configuration growth or cache accumulation in that domain — but confirm against system-level memory trends in `MemoryStatus2.xml` before concluding it is a leak. A genuine memory leak will not be visible here.
 
 ## 3. CPU Spikes: Three Most Common Causes
 
@@ -137,6 +138,12 @@ show cpu
 
 # Current memory usage (system-level)
 show memory
+
+# TCP connection summary — often more revealing for CPU cases than anything else
+show tcp-conn
+
+# Full TCP connection table
+show tcp-table
 ```
 
 > **Note:** `show statistics` and `show cpu` are global commands — they do not accept a `domain` parameter. Per-domain memory metrics are in the error report's `DomainsMemoryStatus2.xml`.
@@ -160,9 +167,14 @@ generate error-report
 show memory
 show statistics
 show cpu
+show tcp-conn
+show tcp-table
 generate error-report
 # Then inspect DomainsMemoryStatus2.xml for per-domain memory counters.
+# Remember: genuine leaks will not appear in per-domain figures — use MemoryStatus2.xml.
 ```
+
+> **ExtLatency:** If the problem is performance (latency, slow response times) rather than a memory leak, enable **Extended Transaction Logging (ExtLatency)** before collecting further data. This is not enabled by default but is the single most useful data source for diagnosing latency problems. Enable it under **Administration → Device → Extended Transaction Logging** in the WebGUI, or via the CLI in the relevant domain.
 
 > **Note:** `show domain-memory`, `show connections`, `show cpu domain all`, and `show xml-managers` are not valid standalone CLI commands. Use `show statistics` for global connection counts, `show cpu` for CPU intervals, and the error report for per-domain detail.
 
