@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: APIConnect
-date: 2026-02-03 00:14:00
+date: 2026-07-24 00:14:00
 title: "Essential DataPower Logging when using API Connect: 5 Critical Log Types for Production Monitoring"
 author: ["ChrisPhillips"]
 description: "A practical guide to the five most important logging configurations for IBM DataPower in production environments, including system usage, API synchronization, and performance monitoring."
@@ -28,7 +28,7 @@ These five log types provide comprehensive coverage without overwhelming your lo
 | Log Type | Purpose | When to Use | Collection Method | Storage Impact |
 |----------|---------|-------------|-------------------|----------------|
 | [**System Usage Table**](#3-system-usage-table) | Real-time resource monitoring | Continuous monitoring | REST/SOMA API query | Low |
-| [**Gateway Director (GWD)**](#4-gateway-director-gwd-logs) | API sync communication | Troubleshooting sync issues | Log target: `apic-gw-service debug` | Low |
+| [**API Connect Gateway Service**](#4-api-connect-gateway-service-logs) | API sync communication | Troubleshooting sync issues | Log target: `apic-gw-service debug` | Low |
 | [**Collection Log**](#5-collection-log) | DataPower object creation | Troubleshooting config issues | Log targets: `cli debug` and `mgmt info` | Low |
 | [**dpMon**](#6-dpmon-datapower-monitoring) | Detailed system metrics | Capacity planning & deep analysis | File collection every 2 hours | High  |
 | [**ExtLatency**](#7-extlatency-extended-latency) | Transaction latency breakdown | Performance troubleshooting | Log target: `extlatency info` | Medium-High |
@@ -54,11 +54,13 @@ When your gateway starts queuing requests or experiencing performance issues, th
 
 **Example REST Query:**
 ```bash
-curl -k -u admin:password \
+curl -u admin:password \
   https://datapower-host:5554/mgmt/status/default/SystemUsageTable
 ```
 
-## 4. Gateway Director (GWD) Logs
+> **Note:** The example above uses basic auth with inline credentials for illustration only. In production, use a credentials store or environment variable rather than a literal password, and ensure the management interface is protected by a valid TLS certificate (avoid `-k` / `--insecure`).
+
+## 4. API Connect Gateway Service Logs
 
 **What It Does:**
 Captures communication between API Manager and DataPower, showing API synchronization activity.
@@ -78,7 +80,7 @@ kubectl logs <datapower-pod-name> -n <namespace>
 ```
 
 **Why It Matters:**
-When APIs aren't syncing properly or you're seeing unexpected behavior after publishing, GWD logs show you exactly what's happening during the synchronization process.
+When APIs aren't syncing properly or you're seeing unexpected behavior after publishing, API Connect Gateway Service logs show you exactly what's happening during the synchronization process.
 
 **What to Look For:**
 - API publish/unpublish events
@@ -158,14 +160,12 @@ Provides detailed latency breakdown for every transaction, showing exactly where
 
 **Configuration:**
 
-Create a log target with these subscriptions:
+First, enable Extended Transaction Logging at the device level: **Administration → Device → Extended Transaction Logging** in the WebGUI, or via the CLI in the relevant domain.
+
+Then create a log target with this subscription:
 ```
 event extlatency info
-event memory-report debug
 ```
-
-**Why Include Memory Report:**
-Memory issues often correlate with performance problems. Having both latency and memory data together helps identify root causes faster.
 
 **Kubernetes Best Practice:**
 Send to the default log in the default domain for pod log collection.
@@ -178,12 +178,6 @@ ExtLatency logs show time spent in each processing stage:
 - Backend calls
 - Response processing
 - Total transaction time
-
-**Example Log Entry:**
-```
-[extlatency][info] tid(12345) gtid(67890) org(myorg) api(myapi) 
-  total=145ms parse=2ms policy=15ms backend=120ms response=8ms
-```
 
 **Why It Matters:**
 When users report slow APIs, ExtLatency tells you exactly where the time is going. Is it your backend? Policy execution? Network latency?
@@ -199,8 +193,10 @@ When users report slow APIs, ExtLatency tells you exactly where the time is goin
 For each log type (except System Usage Table and dpMon), create a log target:
 
 **Via CLI:**
+
+Note: the log target must be created in the domain where the service runs (e.g. `apiconnect`), not the default domain.
 ```
-configure terminal
+top; configure; switch <domain>
 logging target <target-name>
   type file
   format text
@@ -209,6 +205,7 @@ logging target <target-name>
   local-file logtemp:///<filename>
   event <subscription>
 exit
+write memory
 ```
 
 **Via WebGUI:**
@@ -224,7 +221,7 @@ exit
 
 | Log Type | Rotation | Retention | Storage Impact |
 |----------|----------|-----------|----------------|
-| GWD | 10 MB or daily | 7 days | Low |
+| APIC GW Service | 10 MB or daily | 7 days | Low |
 | Collection | 10 MB or daily | 7 days | Low |
 | ExtLatency | 50 MB or daily | 3 days | Medium-High |
 | dpMon | Automatic (9 files) | Copy every 2 hours | High  |
@@ -234,7 +231,7 @@ exit
 
 For a busy gateway processing 1000 TPS:
 - ExtLatency: ~500 MB/day
-- GWD + Collection: ~100 MB/day
+- APIC GW Service + Collection: ~100 MB/day
 - dpMon: ~50 MB/hour 
 
 Plan storage accordingly, especially for ExtLatency in high-traffic environments.
@@ -253,7 +250,7 @@ From **ExtLatency:**
 - Backend latency > expected baseline
 - Sudden latency spikes
 
-From **GWD/Collection Logs:**
+From **APIC GW Service/Collection Logs:**
 - Synchronization failures
 - Object creation errors
 - Communication timeouts
@@ -275,7 +272,7 @@ From **GWD/Collection Logs:**
 ### 11.2. API Sync Failures
 
 **Check:**
-1. GWD logs - Communication errors
+1. APIC GW Service logs - Communication errors
 2. Collection logs - Object creation failures
 
 **Common Causes:**
