@@ -1,12 +1,12 @@
 ---
 layout: post
 categories: APIConnect
-date: 2026-07-24 00:14:00
+date: 2026-07-28 00:14:00
 title: "Essential DataPower Logging when using API Connect: 5 Critical Log Types for Production Monitoring"
 author: ["ChrisPhillips"]
 description: "A practical guide to the five most important logging configurations for IBM DataPower in production environments, including system usage, API synchronization, and performance monitoring."
 tags: [DataPower, Logging, Monitoring, APIConnect, Performance, Troubleshooting]
-draft: true
+
 ---
 
 When configuring IBM DataPower for production, proper logging is essential for troubleshooting, performance monitoring, and capacity planning. This guide covers five critical logging types that every DataPower deployment should have enabled.
