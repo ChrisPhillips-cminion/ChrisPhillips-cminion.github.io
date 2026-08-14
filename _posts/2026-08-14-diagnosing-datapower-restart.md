@@ -96,45 +96,11 @@ Once you find the restart line, scroll up 60–120 seconds to see what was happe
 
 ---
 
-## 5. Reading a Backtrace File
+## 5.  Backtrace File
 
-Backtrace files are only present after a firmware panic (unhandled error). They are not present after a Throttler Reload.
+Backtrace files are only present after a firmware panic (unhandled error). Before 10.6.5.0 they are not present after a Throttler Reload. These are only for IBM Support and Engineering to review and cannot be read by those outside of IBM. 
 
-A backtrace looks like this:
 
-```
-Thread 1 (Thread 0x7f... (LWP 12345)):
-#0  0x00007f... in dp_internal_function ()
-#1  0x00007f... in dp_xml_parse ()
-#2  0x00007f... in dp_assembly_execute ()
-#3  0x00007f... in dp_transaction_process ()
-...
-
-Thread 2 (Thread 0x7f... (LWP 12346)):
-#0  0x00007f... in pthread_cond_wait ()
-...
-```
-
-**What to look for:**
-
-- **Thread 1** is almost always the thread that triggered the panic. The top of its stack (frame `#0`, `#1`, `#2`) identifies the subsystem that was executing.
-- Common subsystem indicators:
-
-| Stack frame contains | Likely area |
-|---|---|
-| `dp_xml_parse`, `dp_xslt` | XML/XSLT processing — large or malformed payload |
-| `dp_gatewayscript`, `dp_js_engine` | GatewayScript execution — script error or OOM |
-| `dp_ssl`, `dp_tls` | TLS handshake — cipher/cert issue causing abort |
-| `dp_gateway_peering` | Peering subsystem — network or state corruption |
-| `dp_mgmt`, `dp_config` | Management plane — configuration load failure |
-
-- **Do not try to decode the memory addresses** — they are ASLR-randomised and meaningless without the firmware symbol table. IBM Support has the symbol tables. Send the full backtrace.
-
-> **The most useful thing you can do with a backtrace is send it to IBM Support along with:**
-> 1. The full `error-report.zip`
-> 2. The exact firmware version (`show version` output)
-> 3. The timestamp of the crash and your timezone
-> 4. What was happening on the appliance at the time (traffic spike, deployment, config change)
 
 ---
 
