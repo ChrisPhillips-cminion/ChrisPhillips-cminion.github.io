@@ -39,13 +39,7 @@ top
 generate error-report
 ```
 
-The report is written to `temporary:///error-report-<timestamp>.zip` and also to `logtemp:///error-report-<timestamp>.zip`. Download it from the WebGUI under **Administration → Main → Error Report** or via the REST Management Interface:
-
-```bash
-curl -k -u admin:password \
-  https://<datapower-host>:5554/mgmt/filestore/temporary/ \
-  | grep error-report
-```
+The report is written to `temporary:///error-report-<timestamp>.zip` and also to `logtemp:///error-report-<timestamp>.zip`. Download it from the WebGUI under **Administration → Main → Error Report** or via the REST Management Interface 
 
 > **Note:** On a containerised DataPower (OCP/Kubernetes), the `error-report` is written inside the pod's ephemeral filesystem. Retrieve it before the pod restarts again, or configure a persistent log target to ship it externally.
 
