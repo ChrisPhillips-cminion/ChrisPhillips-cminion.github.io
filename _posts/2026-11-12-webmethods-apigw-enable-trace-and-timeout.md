@@ -6,15 +6,14 @@ title: "webMethods API Gateway: Enable the Tracer and Set the Trace Timeout"
 author: ["ChrisPhillips", "ChrisGilroy", "IBMBob"]
 description: "How to turn on the tracer for an API in IBM webMethods API Gateway (SaaS) 11.1, read the results, and change how long the tracer stays on using tracerTimeoutSecs."
 tags: [webMethods, APIGateway, Trace, Debugging, Troubleshooting]
-draft: true
 ---
 
 An API call is failing and you cannot see why. The tracer in webMethods API Gateway shows each policy that ran, how long it took, and the request and response at every hop.
 
-<!--more-->
 
 This post is based on the IBM webMethods API Gateway (SaaS) 11.1.0 documentation.
 
+<!--more-->
 ## Enable the tracer
 
 You need the **Manage APIs** privilege, and the API must be in an active state.
