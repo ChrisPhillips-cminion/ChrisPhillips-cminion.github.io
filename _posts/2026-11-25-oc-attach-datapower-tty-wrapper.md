@@ -51,7 +51,7 @@ python3 attach_wrapper.py --pod gwv6-0 --namespace apic-nonha \
     --container datapower --input cli.txt --output cli_output.
 ```
 
-Seven collections, five minutes apart — the original getData.sh pattern:
+Seven collections, five minutes apart 
 
 ```bash
 python3 attach_wrapper.py --pod gwv6-0 -n apic-nonha -c datapower \
@@ -132,7 +132,7 @@ Examples
     python3 attach_wrapper.py --pod gwv6-0 --namespace apic-nonha \
         --container datapower --input cli.txt --output cli_output.
 
-    # 7 collections, 5 minutes apart (like the original getData.sh)
+    # 7 collections, 5 minutes apart 
     python3 attach_wrapper.py --pod gwv6-0 -n apic-nonha -c datapower \
         --input cli.txt --output cli_output. --iterations 7 --sleep 300
 
