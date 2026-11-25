@@ -4,11 +4,11 @@ date: 2026-11-25 18:00:00
 categories: DataPower
 title: "Scripting `oc attach` into DataPower gateway pods: fixing the no-TTY 500"
 author: ["ChrisPhillips", "IBMBob"]
-description: "Why `oc attach -i` fails with a 500 on DataPower gateway containers, and a Python wrapper that types a command file into the console over a real pseudo-terminal — with repeat-collection support for the IBM getData.sh workflow."
+description: "Why `oc attach -i` fails with a 500 on DataPower gateway containers, and a Python wrapper that types a command file into the console over a real pseudo-terminal."
 tags: [DataPower, APIConnect, OpenShift, oc, Troubleshooting, Automation]
 ---
 
-IBM DataPower  support asks for the usual collection when a gateway is pegged at 100% CPU: run `getData.sh`, which pipes a command file into the pod seven times, five minutes apart. On a current gateway pod that script dies immediately:
+IBM DataPower  support asks for the usual collection when a gateway is pegged at 100% CPU: run a script which pipes a command file into the pod seven times, five minutes apart, via ssh. On a current gateway pod that script dies immediately:
 
 ```
 $ oc attach -i gwv6-0 -n apic-nonha -c datapower < cli.txt
@@ -84,14 +84,6 @@ show cpu
 ...
 exit
 ```
-
-Rather than hardcoding the password, pull it from the gateway's admin secret when you build the file:
-
-```bash
-oc get secret admin-secret -n apic-nonha -o jsonpath='{.data.password}' | base64 -d
-```
-
-`getData.sh` still works as the front door — it now generates `cli.txt` the same way and calls the wrapper with `--iterations` and `--sleep`. The support workflow does not change; you still send the `cli_output.*` files to IBM at the end.
 
 What lands in the file is exactly what the console printed, prompts included:
 
@@ -420,6 +412,3 @@ if __name__ == "__main__":
 - The input file contains the admin credentials in plain text. Delete it when the collection finishes.
 - Detaching kills only the local `oc` client. The container keeps running, but the console session on the appliance stays open until it times out — the same behaviour as closing a terminal window.
 
-## Summary
-
-`oc attach -i` cannot drive a TTY-only console, and DataPower gateway pods are TTY-only. The wrapper presents a real pseudo-terminal to `oc`, types the file at console speed, and captures the transcript — which keeps the L2 collection workflow (`getData.sh`, seven samples, five minutes apart) working unchanged.
