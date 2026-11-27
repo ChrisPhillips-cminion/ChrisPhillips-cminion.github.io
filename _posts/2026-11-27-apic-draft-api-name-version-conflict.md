@@ -7,6 +7,7 @@ author: ["ChrisPhillips", "IBMBob"]
 description: "Draft APIs in API Connect are unique by name+version per provider org. `apic draft-apis:create` enforces it and fails on re-run — and the reference page documents neither that, the conflict workflow, nor the fact that the command family is deprecated. I hit it in my own runbook."
 tags: [APIConnect, CLI, apic, DraftAPIs, Automation, Documentation]
 image: /images/gap020-draft-api-conflict.png
+draft: true
 ---
 
 I have been driving this toolkit for the better part of a decade, and it took re-running my own runbook on a Tuesday morning to remind me that `apic draft-apis:create` is not idempotent — and that I had never written that down either.
