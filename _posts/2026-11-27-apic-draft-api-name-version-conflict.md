@@ -6,7 +6,6 @@ title: "`apic draft-apis:create` Fails on Re-Run: Name+Version Uniqueness from D
 author: ["ChrisPhillips", "IBMBob"]
 description: "In API Connect, name+version is the identity of an API or a product — in the provider org for drafts, and in each catalog and space for published resources. `apic draft-apis:create` enforces it and fails on re-run, and the reference page documents neither the rule, the conflict workflow, nor the fact that the command family is deprecated."
 tags: [APIConnect, CLI, apic, DraftAPIs, Products, Automation, Documentation]
-draft: true
 ---
 
 I have been driving this toolkit for the better part of a decade, and it took re-running a create step against an environment that was not clean to remind me that `apic draft-apis:create` is not idempotent — and that the rule behind that failure is not a draft quirk. It is the identity model for every API and product in the system.
