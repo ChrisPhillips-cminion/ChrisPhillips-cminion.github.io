@@ -18,11 +18,13 @@ The organisations that get through this wall do not work harder at the old model
 
 ## The bespoke ceiling
 
-Building every API as a bespoke project works brilliantly at small scale and fails predictably at large scale. Each API becomes a snowflake: its own design conventions, security configuration, deployment ritual, and documentation style — held together by tribal knowledge.
+Building every API as a bespoke project works brilliantly at small scale and fails predictably at large scale. Each API becomes a snowflake: its own design conventions, security configuration, deployment ritual, and documentation style — held together by tribal knowledge and a few forgotten Slack threads.
+
+You feel this most in the early hours, when an alert fires to the engineer on call. They have to figure out who owns the API, whether any documentation still relates to it, and which special cases apply this time. Before they get to real investigating, you've already eaten half your error budget. The symptoms vary — a deployment that works in one environment and silently fails in another, a security review that finds the same flaw the last three reviews found — but the root cause is the same: each API was allowed to reinvent the way to do things.
 
 The costs compound quietly. Review effort grows linearly with API count because nothing is ever the same twice. Reuse does not happen because nobody can find what already exists. Security posture depends on which team built the API and in which year. And the centre — the team expected to hold all this together — becomes the constraint on everyone's delivery.
 
-The bespoke model does not fail because people are doing bad work. It fails because it asks people to repeatedly solve problems that were already solved.
+The bespoke model does not fail because people are doing bad work. It fails because it asks people to repeatedly solve problems that were already solved. That is the loop the factory is designed to break.
 
 ## What an API development factory is
 
@@ -32,7 +34,7 @@ A factory removes toil — the repetitive, error-prone, no-judgement-required wo
 
 ## The platform engineering foundation
 
-Underneath the factory is platform engineering, and the disciplines that come with it: **golden paths** — the well-lit, supported route from code to production; **paved-road architectures** — the standard building blocks a team assembles rather than invents; and **self-service enablement** — the ability for a product team to design, build, validate, and deploy an API without filing a ticket or waiting for a central team's calendar.
+The foundation for the factory is platform engineering, and the disciplines that come with it: **golden paths** — the well-lit, supported route from code to production; **paved-road architectures** — the standard building blocks a team assembles rather than invents; and **self-service enablement** — the ability for a product team to design, build, validate, and deploy an API without filing a ticket or waiting for a central team's calendar.
 
 The platform team treats this capability as a product, with users, roadmap, and feedback loop. Their success metric is brutal and clarifying: how much must a team know, and how many people must they ask, to deliver a compliant, secure, supported API to production? When that approaches zero, the factory is working.
 
@@ -77,6 +79,9 @@ Teams have maximum autonomy: any design, any pattern, their own pipelines — wi
 - **Operational considerations:** demands the most mature observability and platform engineering. You are choosing to govern at runtime; you had better be excellent at runtime.
 - **Security considerations:** only as strong as the automated checks and the exceptions you can detect. Blast radius is larger because variance is larger.
 
+
+These three models are are points on a spectrum of control and autonomy. The simple form keeps control by centralising the work. The template-based factory keeps control by distributing the work onto common rails. The free-form factory trades those common rails for maximum autonomy. The further you move toward autonomy, the more your governance must be expressed as code and verified at runtime.
+
 | | Simple form | Template-based | Free-form |
 |---|---|---|---|
 | Consistency | Highest | High | Variable |
@@ -86,33 +91,35 @@ Teams have maximum autonomy: any design, any pattern, their own pipelines — wi
 | Operational load | Central team | Platform team | Everyone |
 | Security baseline | Uniform, slow to change | Uniform by construction | As good as the checks |
 
+The table makes the trade-offs explicit, but it is only useful if the chosen model actually moves work from design to production. Whichever shape you pick, the factory depends on the same production line.
+
 ## The production line: CI/CD and automation
 
 Whatever the model, the factory runs on the same machinery:
 
-- **Git repositories** hold API definitions, templates, and policies as versioned, reviewed, auditable artifacts. The repository is the system of record, not anyone's laptop.
+- **Git repositories** hold API definitions, templates, and policies as versioned, reviewed, auditable artefacts. The repository is the system of record, not anyone's laptop.
 - **API templates and reusable patterns** are the standard parts: a team starts from an approved, already-compliant baseline instead of a blank file.
 - **Automated testing** — contract tests, functional tests, and security scanning — runs on every change. [Linting the definition itself]({% link _posts/2020-09-28-apicgov3-linting.md %}) catches the cheap errors before they become expensive ones.
 - **Policy validation** checks the API against the organisation's rules — naming, versioning, authentication, documentation — as a pipeline stage, not a review meeting.
 - **Deployment pipelines** promote the API through environments on merge, [publishing products into API Connect from the pipeline]({% link _posts/2020-09-18-pipelines.md %}) rather than by hand. If deployment needs a human clicking through a console, it is not a factory yet.
 
-Each automated check is a class of defect that stops existing, permanently.
+Each automated check removes an entire class of defect, permanently.
 
 ## IBM API Connect as the runtime and governance layer
 
-A factory needs somewhere for its output to run. In a factory architecture, IBM API Connect plays the runtime and governance layer: the gateway enforces security and usage policy identically regardless of which team produced the API; the catalogue is the storefront where published APIs are discovered, with lifecycle states that make deprecation and retirement visible rather than folkloric; and the analytics — usage, errors, latency, per consumer — feed the factory's quality loop, telling you which APIs are earning their keep.
+A factory that only builds and validates is a warehouse, not a delivery system. It needs somewhere for its output to run. In a factory architecture, IBM API Connect plays the runtime and governance layer: the gateway enforces security and usage policy identically regardless of which team produced the API; the catalogue is the storefront where published APIs are discovered, with lifecycle states that make deprecation and retirement visible rather than folkloric; and the analytics — usage, errors, latency, per consumer — feed the factory's quality loop, telling you which APIs are earning their keep.
 
 The strategic point: publication becomes a pipeline product. The API definition moves through Git, validation, and promotion, and lands in the runtime without a human in the loop — with governance enforced at the gateway, so security posture does not depend on which team shipped. [Governance as code]({% link _posts/2020-10-26-apicgov4-as-code.md %}) and [a working rule set]({% link _posts/2024-04-05-gov-apic-gp.md %}) make the policy layer versioned and reviewable.
 
 ## Policy as code and shift-left governance
 
-The unifying discipline across all three models is policy as code: the organisation's rules — security baselines, naming, versioning, documentation — expressed as versioned, automatically-enforced checks rather than documents and meetings.
+All of this — templates, pipelines, gateway enforcement, versioned catalogues — depends on one discipline: policy as code. The organisation's rules — security baselines, naming, versioning, documentation — are expressed as versioned, automatically-enforced checks rather than documents and meetings.
 
 That is what makes shift-left governance real: a developer learns about a standards violation at commit time, in seconds — not at a review board three weeks later. The fix is cheaper, and the board's remaining agenda shrinks to the questions that genuinely need human judgement.
 
 ## Starting small and evolving
 
-You do not build a factory in one programme:
+Knowing the discipline is not the same as building it. You do not build a factory in one programme:
 
 1. **Start with one template and one pipeline.** Pick the most common API shape in your estate — almost certainly REST-over-gateway-to-backend — and pave that one road end to end.
 2. **Measure it.** Time from design to production, defect rates, adoption of the template versus the old way. Evidence, not enthusiasm, funds the next step.
@@ -120,6 +127,8 @@ You do not build a factory in one programme:
 4. **Let the operating model mature with the estate.** Many organisations begin in simple-form mode, adopt the template-based factory as demand outgrows the queue, and only the rare few relax toward free-form.
 
 ## Executive recommendations
+
+That evolution needs deliberate investment. If I were advising the executive sponsoring this, I would start with six commitments:
 
 1. **Default to the template-based factory.** For most enterprises it delivers governance and speed together; the other two models are special cases.
 2. **Fund the platform team as a product team.** The factory's throughput, security, and reliability are their product. Staff and measure them accordingly.
@@ -130,6 +139,6 @@ You do not build a factory in one programme:
 
 ## Conclusion: standard parts, differentiated products
 
-Mature enterprises converge on the template-based factory for a reason manufacturing worked out a century ago: standardise the parts and the process, so the differentiation goes into the product. Teams should not spend creativity on how to secure a gateway or which versioning scheme to use — those questions have answers, and the answers belong in the pavement. Creativity belongs in the business capability the API exists to expose.
+Mature enterprises converge on the template-based factory for a reason manufacturing worked out a century ago: standardise the parts and the process, so the differentiation goes into the product. Teams should not spend creativity on how to secure a gateway or which versioning scheme to use — those questions have answers, and the answers belong in the paved road itself. Creativity belongs in the business capability the API exists to expose.
 
 Start with one template, one pipeline, and the discipline to measure the result. The day a team ships a compliant, secure, supported API to production without asking anyone's permission is the day you know you have built a factory.
